@@ -13,8 +13,6 @@ tags:
   - bug
 ---
 
-## 背景
-
 许多 Android 开发者可能经常遇到这样的情况：测试的时候好好的，一上线，各种系统的 crash 就报上来了，而且很多是偶现的，比如：
 
 - `WindowManager$BadTokenException`
