@@ -1,6 +1,7 @@
 ---
 title: Booster 质量优化框架
 date: 2019-06-04 20:00:00
+category: 性能优化
 tags:
   - booster
   - android
