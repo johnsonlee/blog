@@ -6,13 +6,18 @@ cache: npm
 branches:
   only:
     - master
+before_install:
+    - rm -rvf public/*
+    - git config --global user.email "travis@travis-ci.org"
+    - git config --global user.name "Travis CI"
+    - git -C public init
+    - git -C public remote add origin https://${GH_TOKEN}@github.com/johnsonlee/johnsonlee.github.io.git
+    - git -C public fetch --all --progress
+    - git -C public checkout master --progress
 script:
   - hexo generate
 deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $GH_TOKEN
-  keep-history: true
+  provider: script
+  script: bash scripts/deploy.sh
   on:
-    branch: master
-  local-dir: public
+      branch: master
