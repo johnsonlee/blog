@@ -294,7 +294,7 @@ fun Greeting(name: String) {
     - 扩展方法和属性
 1. IDE 强力支持，能够做到所见即所得
 
-至于 Android Studio 是如何做到所见即所得，我大胆推测一下，应该跟 [Booster 系列之——布局：XML vs 纯代码](https://juejin.im/post/5d298d66f265da1bd605d288) 这篇文章提到的 *Layout Lib* 原理类似，只不过由原来解析 XML 变成了解析 Kotlin 代码或者字节码，至于实际的实现，还得细细研究一下 Android Studio 的源码。
+至于 Android Studio 是如何做到所见即所得，我大胆推测一下，应该跟 [布局：XML vs 代码](/2019/07/13/booster-xml-layout-to-code/) 这篇文章提到的 *Layout Lib* 原理类似，只不过由原来解析 XML 变成了解析 Kotlin 代码或者字节码，至于实际的实现，还得细细研究一下 Android Studio 的源码。
 
 ## 总结
 
