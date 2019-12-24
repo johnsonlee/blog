@@ -20,18 +20,14 @@ tags:
 
 针对资源的优化是最能体现收益的，比什么字节码、指令优化对于包体积的减少要来得快，而且相对更容易一些，所以，想把原来资源优化分成以下几个模块：
 
-1. pngquant 压缩 resource 中的 png
-1. pngquant 压缩 resource 中的 jpg
-1. pngquant 压缩 assets 中的 png
-1. pngquant 压缩 assets 中的 jpg
-1. webp 压缩 resource 中的 png
-1. webp 压缩 resource 中的 jpg
-1. webp 压缩 assets 中的 png
-1. webp 压缩 assets 中的 jpg
+1. *pngquant* 压缩 resource
+1. *pngquant* 压缩 assets
+1. *webp* 压缩 resource
+1. *webp* 压缩 assets
 1. 去重复 resource
 1. 去重复 assets
 1. 资源索引内联
-1. ButterKnife 资源索引内联
+1. *ButterKnife* 资源索引内联
 
 由于 *pngquant* 的 *license* 问题，所以，跟 *pngquant* 相关的模块都得采用 *GPL License* 跟 *Apache License* 分开，将 *pngquant* 内置到 *JAR* 包中。
 
