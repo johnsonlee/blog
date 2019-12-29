@@ -1,9 +1,8 @@
 ---
 title: Booster Assets 去重
 date: 2019-06-22 20:00:00
-category:
-  - Booster
-  - 性能优化
+categories:
+  - [性能优化, Booster]
 tags:
   - booster
   - android

@@ -1,9 +1,8 @@
 ---
 title: 布局：XML vs 代码
 date: 2019-07-13 20:00:00
-category:
-  - Booster
-  - 性能优化
+categories:
+  - [性能优化, Booster]
 tags:
   - booster
   - android

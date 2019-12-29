@@ -1,8 +1,7 @@
 ---
 title: 在滴滴工作的那些年
 date: 2019-12-19 00:00:00
-category:
-  - 职场
+category: 职场
 tags:
   - didi
   - 滴滴
