@@ -2,7 +2,7 @@
 title: Booster 布局转译器
 date: 2019-10-30 21:00:00
 categories:
-  - [性能优化, Booster]
+  - 性能优化
 tags:
   - booster
   - android

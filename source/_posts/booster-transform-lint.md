@@ -2,7 +2,7 @@
 title: Booster 性能瓶颈检测
 date: 2019-06-05 20:00:00
 categories:
-  - [性能优化, Booster]
+  - 性能优化
 tags:
   - booster
   - android
