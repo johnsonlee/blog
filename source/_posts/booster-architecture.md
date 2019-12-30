@@ -2,7 +2,6 @@
 title: 深入理解 Booster 架构
 date: 2019-12-30 01:34:11
 categories:
-  - 性能优化
   - 架构设计
 tags:
   - booster
