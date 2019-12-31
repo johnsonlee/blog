@@ -9,7 +9,7 @@ tags:
 
 v0.28.0 版本更新内容：
 
-- 解决 transform 过程中个别 JAR 存在重复的 *Zip Entry* 导致编译失败的问题[^1]
+1. 解决 transform 过程中个别 JAR 存在重复的 *Zip Entry* 导致编译失败的问题[^1]
 
   国内很多 APP 都用到了 *pinyin4j* 这个库，以 [pinyin4j-0.25.0](https://repo1.maven.org/maven2/com/belerweb/pinyin4j/2.5.0/pinyin4j-2.5.0.jar) 为例：
 
