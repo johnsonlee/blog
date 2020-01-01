@@ -15,7 +15,7 @@ Booster 又双叒叕发布了新的版本—— v1.0.0（一改原来 0.x.x 的�
 
 1. 优化 *transform* 处理过程，性能提升 50%
 
-  在之前的版本中，针对 *JAR* 文件中的 *class* 的 *transform* 一直是串行执行的，*JAR* 读/写操作属于 I/O 密集型任务，*transformClassesWithBoosterForXxx* 任务的耗时往往占了构建时间的很大一部分，为了提升构建效率，此版本采用了并行读/写 *JAR* 的方式，性能提升了 50%+，以下是 *Beanchmark* 结果：
+  在之前的版本中，针对 *JAR* 文件中的 *class* 的 *transform* 一直是串行执行的，*JAR* 读/写操作属于 I/O 密集型任务，*transformClassesWithBoosterForXxx* 任务的耗时往往占了构建时间的很大一部分，为了提升构建效率，此版本采用了并行读/写 *JAR* 的方式，性能提升了 50%+，以下是 *Benchmark* 结果：
 
   | Benchmark                                              | Mode | Cnt |  Score |  Error | Units |
   |--------------------------------------------------------|------|-----|--------|--------|-------|
