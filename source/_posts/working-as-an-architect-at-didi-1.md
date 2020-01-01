@@ -41,14 +41,14 @@ com.android.dex.DexException: Too many classes in --main-dex-list, main dex capa
 == <init>() ==
 activate Application
 create ApplicationDelegate
-Application --> ApplicationDelegate: invoke <init> via reflection
-activate ApplicationDelegate
+Application --> ApplicationDelegate
 create ApplicationLifecycleListener
-ApplicationDelegate -> ApplicationLifecycleListener: <init>()
-activate ApplicationLifecycleListener
+ApplicationDelegate -> ApplicationLifecycleListener
 == onCreate() ==
 Application --> ApplicationDelegate: invoke onCreate() via reflection
+activate ApplicationDelegate
 ApplicationDelegate -> ApplicationLifecycleListener: onCreate()
+activate ApplicationLifecycleListener
 @enduml
 ```
 
