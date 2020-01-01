@@ -39,13 +39,13 @@ com.android.dex.DexException: Too many classes in --main-dex-list, main dex capa
 ```plantuml
 @startuml
 == <init>() ==
-activate Application
+activate DidiApplication
 create ApplicationDelegate
-Application --> ApplicationDelegate
+DidiApplication --> ApplicationDelegate
 create ApplicationLifecycleListener
 ApplicationDelegate -> ApplicationLifecycleListener
 == onCreate() ==
-Application --> ApplicationDelegate: invoke onCreate() via reflection
+DidiApplication --> ApplicationDelegate: invoke onCreate() via reflection
 activate ApplicationDelegate
 ApplicationDelegate -> ApplicationLifecycleListener: onCreate()
 activate ApplicationLifecycleListener
