@@ -23,7 +23,7 @@ com.android.dex.DexException: Too many classes in --main-dex-list, main dex capa
 
 ## 自定义 \-\-main-dex-list
 
-当时，工程用的 AGP (Android Gradle Plugin) 版本是 *1.3.x*，还是可以通过修改构建脚本来指定 *\-\-main-dex-list* 的，只不过，这个方案有两个问题：
+当时，工程用的 AGP (Android Gradle Plugin) 版本是 *1.3.x* ，还是可以通过修改构建脚本来指定 *\-\-main-dex-list* 的，只不过，这个方案有两个问题：
 
 1. 手动定制 *\-\-main-dex-list* 过于繁琐，每次代码变更，都要重新检查一遍，如果有变化，还行手动修改
 1. 最新的 *AGP* 版本已经不支持直接修改 *\-\-main-dex-list* 了
@@ -32,7 +32,7 @@ com.android.dex.DexException: Too many classes in --main-dex-list, main dex capa
 
 ## 打断直接引用
 
-正在我冥思苦想的时候，关二哥突然跑过来说道：“森哥，我想到了一个方法，不知道靠不靠谱”，于是，顺手拿起记号笔在白板上画起来，没等他画完，我便看出了他的思路，赞叹道：“靠谱啊！只是要稍微改造一下目前的工程架构”，“嗯，不过工作量不大”，“OK，那就这么干！”
+正在我冥思苦想的时候，关二哥突然跑过来说道：“森哥，我想到了一个方法，不知道靠不靠谱”，于是，顺手拿起记号笔在白板上画起来，没等他画完，我便看出了他的思路，赞叹道：“靠谱啊！只是要稍微改造一下目前的工程架构”，“嗯，而且工作量不大”，“OK，那就这么干！”
 
 具体的思路就是在 `Application` 和业务之间加一层（没有什么是不能通过加一层解决的） `ApplicationDelegate` ，原来在 `Application` 的逻辑移到 `ApplicationDelegate` 中，然后在 `Application` 中通过反射调用 `ApplicationDelegate` ，这样，直接引用就被打断了：
 
@@ -52,5 +52,5 @@ activate ApplicationLifecycleListener
 @enduml
 ```
 
-经过一晚的奋战，大功告成！
+经过一晚的奋战，大功告成！紧崩的神经终于可以放松一下了，以为这样就可以顺利发布了，现在回想起来，当时还是太年轻了（未完待续。。。）
 
