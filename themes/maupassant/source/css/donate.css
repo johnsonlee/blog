@@ -70,7 +70,7 @@ a{
 	/*float: left;*/
 	float: right;
 	text-align: center;
-	border-left: 1px solid #ddd;
+	/*border-left: 1px solid #ddd;*/
 	background: no-repeat center center;
 	background-color: rgba(204, 217, 220,0.1);
 	background-size: 45px;
