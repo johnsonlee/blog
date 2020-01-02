@@ -40,6 +40,7 @@ com.android.dex.DexException: Too many classes in --main-dex-list, main dex capa
 
 ```plantuml
 @startuml
+hide footbox
 == <init>() ==
 activate DidiApplication
 create ApplicationDelegate
