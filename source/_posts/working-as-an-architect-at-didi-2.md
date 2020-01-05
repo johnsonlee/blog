@@ -99,7 +99,7 @@ adb shell cat /proc/17214/stat
 
 “森哥，慢点儿，我拿个小本本记一下，你这些命令都是咋记住的？”
 
-“呵，用多了就记住了”我笑着说道，“你看，这列应该就是 APP 进程相对系统启动的时间，我们得用 `SystemClock` 来计算启动耗时”，于是，又改了一下代码：
+“呵，用多了就记住了”，我笑着说道，“你看，这列应该就是 APP 进程相对系统启动的时间，我们得用 `SystemClock` 来计算启动耗时”，于是，又改了一下代码：
 
 ```java
 public class DidiApplication extends Application {
