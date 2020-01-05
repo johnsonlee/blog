@@ -57,6 +57,3 @@ activate ApplicationLifecycleListener
 
 经过一晚的奋战，大功告成！紧崩的神经终于可以放松一下了，以为这样就可以顺利发布了，现在回想起来，当时还是太年轻了。。。
 
-（未完待续）
-
-
