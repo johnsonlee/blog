@@ -22,7 +22,7 @@ Booster 又双叒叕发布了新的版本—— v1.0.0（一改原来 0.x.x 的�
   | JarFileTransformBenchmark.transformJarFileParallelly   | avgt |  10 | 31.310 | ±8.916 | ms/op |
   | JarFileTransformBenchmark.transformJarFileSequentially | avgt |  10 | 66.343 | ±2.902 | ms/op |
 
-  *Benchmark* 源码：[JarFileTransformBenchmark.java](https://github.com/johnsonlee/booster-benchmark/blob/master/src/jmh/kotlin/io/johnsonlee/booster/benchmark/JarFileTransformBenchmark.kt)
+  *Benchmark* 源码：[JarFileTransformBenchmark.java](https://github.com/johnsonlee/booster-benchmark/blob/master/jar-file-transform/src/jmh/kotlin/io/johnsonlee/booster/benchmark/JarFileTransformBenchmark.kt)
 
 1. 优化 [booster-task-compression](https://github.com/didi/booster/tree/master/booster-task-compression)
 
