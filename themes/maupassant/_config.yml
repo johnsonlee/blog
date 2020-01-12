@@ -102,3 +102,6 @@ css: css
 
 # Theme version
 version: 0.0.0
+
+graphviz:
+  enable: true
