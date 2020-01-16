@@ -25,3 +25,4 @@ tags:
 1. [VariantProcessor](https://github.com/didi/booster/blob/master/booster-task-spi/src/main/kotlin/com/didiglobal/booster/task/spi/VariantProcessor.kt) 支持通过 [@Priority](https://github.com/didi/booster/blob/master/booster-annotations/src/main/kotlin/com/didiglobal/booster/annotations/Priority.kt) 进行排序
 1. *Transform* 性能优化
 
+另外，与 [booster-task-compression-pngquant](https://github.com/didi/booster/blob/master/booster-task-compression-pngquant) 搭配使用的 [booster-pngquant-provider](https://github.com/johnsonlee/booster-pngquant-provider) 已发布 [v1.0.0](https://github.com/johnsonlee/booster-pngquant-provider/releases/tag/v1.0.0) 版本
