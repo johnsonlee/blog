@@ -3,11 +3,8 @@ title: Booster v1.0.0 发布
 date: 2020-01-01 00:14:06
 categories: Booster
 tags:
-  - booster
-  - android
-  - performance
-  - optimization
-  - gradle
+  - Booster
+  - ReleaseNote
 ---
 
 Booster 又双叒叕发布了新的版本—— v1.0.0（一改原来 0.x.x 的版本命名，以表示对新年的庆祝），此次更新的内容也是相当的给力：

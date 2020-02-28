@@ -3,7 +3,8 @@ title: Booster v0.28.0 发布
 date: 2019-12-29 22:32:11
 categories: Booster
 tags:
-  - booster
+  - Booster
+  - ReleaseNote
 ---
 
 v0.28.0 版本更新内容：

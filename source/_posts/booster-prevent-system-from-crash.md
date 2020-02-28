@@ -3,12 +3,8 @@ title: Booster 为系统 bug 兜底
 date: 2019-07-02 20:16:35
 categories: Booster
 tags:
-  - booster
-  - android
-  - performance
-  - optimization
-  - gradle
-  - bug
+  - Booster
+  - 性能优化
 ---
 
 许多 Android 开发者可能经常遇到这样的情况：测试的时候好好的，一上线，各种系统的 crash 就报上来了，而且很多是偶现的，比如：

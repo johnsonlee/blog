@@ -3,13 +3,8 @@ title: Booster 质量优化框架
 date: 2019-06-04 20:00:00
 categories: Booster
 tags:
-  - booster
-  - android
-  - performance
-  - optimization
-  - gradle
-  - transform
-  - asm
+  - Booster
+  - 性能优化
 ---
 
 Booster 是一款专门为移动应用设计的易用、轻量级且可扩展的质量优化框架，其目标主要是为了解决 APP 复杂度的提升而带来的性能、稳定性、包体积等问题。

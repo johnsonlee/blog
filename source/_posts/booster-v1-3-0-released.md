@@ -3,11 +3,8 @@ title: Booster v1.3.0 发布
 date: 2020-01-17 00:00:00
 categories: Booster
 tags:
-  - booster
-  - android
-  - performance
-  - optimization
-  - gradle
+  - Booster
+  - ReleaseNote
 ---
 
 为了庆祝 Booster 荣获「滴滴 2019 年优秀开源项目」奖项，Booster 又双叒叕发布了新的版本—— v1.3.0，本次更新内容如下：

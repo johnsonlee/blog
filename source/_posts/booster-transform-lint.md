@@ -3,14 +3,8 @@ title: Booster 性能瓶颈检测
 date: 2019-06-05 20:00:00
 categories: Booster
 tags:
-  - booster
-  - android
-  - performance
-  - optimization
-  - gradle
-  - transform
-  - asm
-  - lint
+  - Booster
+  - 性能优化
 ---
 
 对于一款 APP 来说，卡顿率、ANR 率是衡量这个 APP 质量的两个重要指标，目前已经有很多成熟的 APM 工具和平台来统计 APP 的运行时性能，但是对于实行敏捷开发的产品来说，从 APP 开发，到灰度发布，再到全量，要经历一个漫长的过程，等到收集到上报的卡顿和 ANR，再去修复，又要经历灰度、全量这一漫长的过程。

@@ -3,9 +3,8 @@ title: 深入理解 Booster 架构
 date: 2019-12-30 01:34:11
 categories: Booster
 tags:
-  - booster
-  - architecture
-  - design pattern
+  - Booster
+  - 性能优化
 ---
 
 本来没打算写这篇文章，毕竟项目工程规模并不复杂，网上也有很多分析 *Booster* 的文章，但大多都只是对工程的结构介绍一下，加上总有同学问起，索性详细的介绍一下。如果说 Booster 框架在设计上有什么亮点的话，大致罗列一下：

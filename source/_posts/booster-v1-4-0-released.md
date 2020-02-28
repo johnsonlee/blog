@@ -3,11 +3,8 @@ title: Booster v1.4.0 发布
 date: 2020-02-22 00:00:00
 categories: Booster
 tags:
-  - booster
-  - android
-  - performance
-  - optimization
-  - gradle
+  - Booster
+  - ReleaseNote
 ---
 
 Booster 又双叒叕发布了新的版本—— v1.4.0，本次更新内容如下：

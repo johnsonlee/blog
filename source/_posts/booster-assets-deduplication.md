@@ -3,11 +3,8 @@ title: Booster Assets 去重
 date: 2019-06-22 20:00:00
 categories: Booster
 tags:
-  - booster
-  - android
-  - performance
-  - optimization
-  - gradle
+  - Booster
+  - 性能优化
 ---
 
 一般 assets 出现大量重复的情况是不多见的，只有多业务线的大体量 APP 才有可能遇到。然而非常不幸的是，我们就遇到了这样的问题，虽然对包体积的影响不是很明显（也就几百 KB），但是几百 KB 对于做包体积优化的同学来说，蚊子肉也是肉啊。

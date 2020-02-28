@@ -3,13 +3,8 @@ title: Booster 布局转译器
 date: 2019-10-30 21:00:00
 categories: Booster
 tags:
-  - booster
-  - android
-  - performance
-  - optimization
-  - gradle
-  - layout
-  - transpiler
+  - Booster
+  - 性能优化
 ---
 
 在上一篇文章中已经介绍过 booster 正在做的 *Layout Transpiler* —— 将 XML 布局文件翻译成 *class* 的转译器，在实现的过程中发现了 Android 系统在设计上的各种坑，而且是天坑，几乎是绕不过去了，最近 Android 官方发布了 *JetPack Compose* 让我眼前一亮，这不就是我想要达到的效果么，只不过是换了一种形式罢了。

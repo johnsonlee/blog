@@ -3,11 +3,8 @@ title: Booster 2020 年规划
 date: 2019-12-24 23:18:42
 categories: Booster
 tags:
-  - booster
-  - android
-  - performance
-  - optimization
-  - gradle
+  - Booster
+  - 性能优化
 ---
 
 2019 年 4 月 23 日 Booster 正式开源，短短一半年不到的时间，star 数已经 2.3k 了，说实话，还真有点超出预期，也给自己无限的动力，不断的完善它，希望能真的能帮助大家解决实实在在的问题，而不是为了开源吸粉赚 star，无奈下半年忙着车载的业务，也只有周末的时候偶尔提交几个 commit 和处理志国提交的 PR，还得抽空写写 Booster 项目中的一些想法、实现思路和细节，如果多抽点时间来完善 Booster 的话，估计现在已经 3k 以上的 star 了。

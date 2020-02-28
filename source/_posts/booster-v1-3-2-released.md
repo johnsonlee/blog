@@ -3,11 +3,8 @@ title: Booster v1.3.2 发布
 date: 2020-02-19 00:00:00
 categories: Booster
 tags:
-  - booster
-  - android
-  - performance
-  - optimization
-  - gradle
+  - Booster
+  - ReleaseNote
 ---
 
 Booster 又双叒叕发布了新的版本—— v1.3.2，本次更新内容如下：

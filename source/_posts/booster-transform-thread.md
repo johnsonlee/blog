@@ -3,14 +3,8 @@ title: Booster 多线程优化
 date: 2019-06-09 20:00:00
 categories: Booster
 tags:
-  - booster
-  - android
-  - performance
-  - optimization
-  - gradle
-  - transform
-  - asm
-  - thread
+  - Booster
+  - 性能优化
 ---
 
 对于开发者来说，线程管理一直是最头疼的问题之一，尤其是业务复杂的 APP，每个业务模块都有着几十甚至上百个线程，而且，作为业务方，都希望本业务的线程优先级最高，能够在调度的过程中获得更多的 CPU 时间片，然而，过多的竞争意味着过多的资源浪费在了线程调度上。
