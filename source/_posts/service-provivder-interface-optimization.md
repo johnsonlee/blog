@@ -1,8 +1,7 @@
 ---
 title: SPI 性能优化
 date: 2020-01-23 00:00:00
-categories:
-  - 性能优化
+categories: Booster
 tags:
   - booster
   - android

@@ -1,8 +1,7 @@
 ---
 title: Booster 2020 年规划
 date: 2019-12-24 23:18:42
-categories:
-  - 性能优化
+categories: Booster
 tags:
   - booster
   - android

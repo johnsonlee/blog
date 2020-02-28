@@ -1,8 +1,7 @@
 ---
 title: Booster 多线程优化
 date: 2019-06-09 20:00:00
-categories:
-  - 性能优化
+categories: Booster
 tags:
   - booster
   - android

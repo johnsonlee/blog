@@ -1,9 +1,9 @@
 ---
 title: 我在滴滴做架构（三）
 date: 2020-01-13 00:00:00
-categories: 架构设计
+categories: 我在滴滴做架构
 tags:
-  - architecture
+  - 职场
 ---
 
 > 本故事纯属虚构，如有雷同，纯属巧合

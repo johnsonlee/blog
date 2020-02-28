@@ -1,8 +1,7 @@
 ---
 title: Booster 为系统 bug 兜底
 date: 2019-07-02 20:16:35
-categories:
-  - 性能优化
+categories: Booster
 tags:
   - booster
   - android

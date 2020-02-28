@@ -1,8 +1,7 @@
 ---
 title: 深入理解 Booster 架构
 date: 2019-12-30 01:34:11
-categories:
-  - 架构设计
+categories: Booster
 tags:
   - booster
   - architecture

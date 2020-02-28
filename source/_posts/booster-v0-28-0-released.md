@@ -1,8 +1,7 @@
 ---
 title: Booster v0.28.0 发布
 date: 2019-12-29 22:32:11
-categories:
-  - 性能优化
+categories: Booster
 tags:
   - booster
 ---

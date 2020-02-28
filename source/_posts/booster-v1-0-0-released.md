@@ -1,8 +1,7 @@
 ---
 title: Booster v1.0.0 发布
 date: 2020-01-01 00:14:06
-categories:
-  - 性能优化
+categories: Booster
 tags:
   - booster
   - android
