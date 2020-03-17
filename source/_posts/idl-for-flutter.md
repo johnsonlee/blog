@@ -1,5 +1,6 @@
 ---
 title: Flutter 混合开发架构
+date: 2020-02-23 00:00:00
 categories: 架构设计
 tags: flutter
 ---
