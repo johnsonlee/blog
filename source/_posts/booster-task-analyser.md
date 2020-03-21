@@ -5,7 +5,7 @@ categories: 性能优化
 tags: Booster
 ---
 
-最近一直在优化 [booster-task-analyser](https://github.com/didi/booster/tree/master/booster-task-analyser) ，一方面是功能特性的完善，另一方面是性能的优化，在此之前，静态分析的工作是由[booster-transform-lint](https://github.com/didi/booster/tree/v1.4.0/booster-transform-lint)完成的，虽然已经很早就开源了这个模块，但是对静态分析的结果一直不是很满意，加上其它一些方面的考虑，索性重写一个，所以就有了[booster-task-analyser](https://github.com/didi/booster/tree/master/booster-task-analyser)，用来替代[booster-transform-lint](https://github.com/didi/booster/tree/v1.4.0/booster-transform-lint)。
+最近一直在优化 [booster-task-analyser](https://github.com/didi/booster/tree/master/booster-task-analyser) ，一方面是功能特性的完善，另一方面是性能的优化，在此之前，静态分析的工作是由 [booster-transform-lint](https://github.com/didi/booster/tree/v1.4.0/booster-transform-lint) 完成的，虽然已经很早就开源了这个模块，但是对静态分析的结果一直不是很满意，加上其它一些方面的考虑，索性重写一个，所以就有了 [booster-task-analyser](https://github.com/didi/booster/tree/master/booster-task-analyser)，用来替代 [booster-transform-lint](https://github.com/didi/booster/tree/v1.4.0/booster-transform-lint)。
 
 重新设计静态分析模块主要是基于几个方面的考虑：
 
@@ -13,7 +13,7 @@ tags: Booster
 1. CHA (Class Hierarchy Analysis) 需要提前拿到所有类信息，而 *Transformer* 是流水线处理，也不太合适；
 1. 静态分析的过程可能会比较慢，作为 *Transformer* 可能会严重影响构建效率，而且应用的构建并不依赖静态分析的产出物；
 
-所以，[booster-task-analyser](https://github.com/didi/booster/tree/master/booster-task-analyser)基于 *Task* 来实现：
+所以，[booster-task-analyser](https://github.com/didi/booster/tree/master/booster-task-analyser) 基于 *Task* 来实现：
 
 ```graphviz
 digraph analyser {
@@ -126,10 +126,10 @@ digraph analyser {
 1. 找到调用该方法的上一个节点（可能是多个）；
 1. 根据上一个节点，找到该节点对应的 *INVOKE* 指令；
 1. 然后从该指令对应的栈帧（Stack Frame）开始回溯，确定 *handler* 的来源；
-1. 上面的例子中，可以确定 *handler* 来自 `GETFIELD` 指令，由此可以确定，该 *handler* 是 `HomeAcitivity` 的成员；
+1. *handler* 来自 `GETFIELD` 指令，由此可以确定，该 *handler* 是 `HomeAcitivity` 的成员；
 1. 再从各方法中搜索对 *handler* 进行赋值的 *SETFIELD* 指令，最终可以确定是在构造方法中
 
-由此可见，*Call Graph* 对于静态分析至关重要。
+由此可见，*Call Graph* 对于静态分析至关重要，当然，这个例子也比较简单，如果 `Handler` 在多个方法之间作为参数传递的话，算法复杂度就会大大增加。
 
 ## ClassSet
 
@@ -138,7 +138,7 @@ digraph analyser {
 1. 根据类名快速查询 `ClassNode`；
 1. 根据类名快速定位该类所属的 *classpath* —— 文件夹/JAR；
 
-出于性能和复用性角度的考虑，*ClassSet* 的设计成如下形式：
+出于性能和复用性角度的考虑，*ClassSet* 设计成如下形式：
 
 ```plantuml
 @startuml
@@ -222,7 +222,7 @@ public interface ProfileView {
 }
 
 public interface ProfilePresenter {
-    void updateUserInfo();
+    void refreshUserInfo();
 }
 
 public class ProfilePresenterImpl implements ProfilePresenter {
