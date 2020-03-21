@@ -22,3 +22,4 @@ tags:
     - 支持自定义黑名单和白名单
 
 1. 新增 [booster-api](https://github.com/didi/booster/blob/master/booster-api) 模块，便于 feature 开发和单元测试
+1. 弃用 [booster-transform-verifier](https://github.com/didi/booster/blob/master/booster-transform-verifier) 模块
