@@ -1,8 +1,10 @@
 ---
 title: Booster 静态分析
 date: 2020-03-21 00:00:00
-categories: 性能优化
-tags: Booster
+categories: Booster
+tags:
+  - Booster
+  - 性能优化
 ---
 
 最近一直在优化 [booster-task-analyser](https://github.com/didi/booster/tree/master/booster-task-analyser) ，一方面是功能特性的完善，另一方面是性能的优化，在此之前，静态分析的工作是由 [booster-transform-lint](https://github.com/didi/booster/tree/v1.4.0/booster-transform-lint) 完成的，虽然已经很早就开源了这个模块，但是对静态分析的结果一直不是很满意，加上其它一些方面的考虑，索性重写一个，所以就有了 [booster-task-analyser](https://github.com/didi/booster/tree/master/booster-task-analyser)，用来替代 [booster-transform-lint](https://github.com/didi/booster/tree/v1.4.0/booster-transform-lint)。
