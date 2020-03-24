@@ -2,7 +2,9 @@
 
 set -x
 
-find .
+pwd
+
+find . \( -path ./.git -o -path ./node_modules \) -prune -o -print
 
 echo "johnsonlee.io" > public/CNAME \
     && git -C public add . \
