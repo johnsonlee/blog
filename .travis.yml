@@ -10,8 +10,6 @@ before_install:
     - rm -rvf public && mkdir public
     - git config --global user.name "johnsonlee"
     - git config --global user.email "g.johnsonlee@gmail.com"
-    - git -C public init
-    - git -C public remote add origin https://${GH_TOKEN}@github.com/johnsonlee/johnsonlee.github.io.git
 script:
   - hexo generate
   - hexo gzip
