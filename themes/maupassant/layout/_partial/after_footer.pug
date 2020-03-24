@@ -1,7 +1,26 @@
+if theme.google_analytics
+  script.
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create','#{theme.google_analytics}','auto');ga('send','pageview');
+
+if theme.baidu_analytics
+  script.
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.async = 1;
+      hm.src = 'https://hm.baidu.com/hm.js?' + '#{theme.baidu_analytics}';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+
 if theme.fancybox == true
-  script(type='text/javascript', src='//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', async)
+  script(type='text/javascript', src='/libs/fancybox/3.5.7/jquery.fancybox.min.js', async)
   script(type='text/javascript', src=url_for(theme.js) + '/fancybox.js' + '?v=' + theme.version, async)
-  link(rel='stylesheet', type='text/css', href='//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css')
+  link(rel='stylesheet', type='text/css', href='/libs/fancybox/3.5.7/jquery.fancybox.min.css')
 
 if theme.tinysou
   script.
@@ -29,7 +48,7 @@ if theme.swiftype
     _st('install','#{theme.swiftype}','2.0.0');
 
 if theme.self_search == true
-  script(type='text/javascript', src=url_for(theme.js) + '/search.js' + '?v=' + theme.version)
+  script(type='text/javascript', src=url_for(theme.js) + '/search.js' + '?v=' + theme.version, async)
   script.
      var search_path = '#{config.search.path}';
      if (search_path.length == 0) {
@@ -51,11 +70,11 @@ if page.mathjax
 if page.mathjax2
   include mathjax2.pug
 
-script(type='text/javascript', src=url_for(theme.js) + '/codeblock-resizer.js' + '?v=' + theme.version)
-script(type='text/javascript', src=url_for(theme.js) + '/smartresize.js' + '?v=' + theme.version)
+script(type='text/javascript', src=url_for(theme.js) + '/codeblock-resizer.js' + '?v=' + theme.version, async)
+script(type='text/javascript', src=url_for(theme.js) + '/smartresize.js' + '?v=' + theme.version, async)
 
 if theme.graphviz.enable == true
-  script(type='text/javascript', src=url_for(theme.js) + '/viz.js' + '?v=' + theme.version)
+  script(type='text/javascript', src='/libs/viz/2.1.2/viz.js', async)
   script.
     String.prototype.replaceAll = function(search, replacement) {
       var target = this;
