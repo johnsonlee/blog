@@ -7,16 +7,35 @@ head
     meta(name='description', content=config.description)
     meta(name='baidu-site-verification', content='sSd2p2uQfO')
     block title
-    link(rel='stylesheet', type='text/css', href=url_for(theme.css) + '/style.css')
-    link(rel='stylesheet', type='text/css', href='/libs/normalize/8.0.1/normalize.min.css')
-    link(rel='stylesheet', type='text/css', href='/libs/pure/1.0.0/pure-min.css')
-    link(rel='stylesheet', type='text/css', href='/libs/pure/1.0.0/grids-responsive-min.css')
-    link(rel='stylesheet', href='/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='preload', type='text/css', href=url_for(theme.css) + '/style.css', as='style', onload='this.rel="stylesheet"')
+    link(rel='preload', type='text/css', href='/libs/normalize/8.0.1/normalize.min.css', as='style', onload='this.rel="stylesheet"')
+    link(rel='preload', type='text/css', href='/libs/pure/1.0.0/pure-min.css', as='style', onload='this.rel="stylesheet"')
+    link(rel='preload', type='text/css', href='/libs/pure/1.0.0/grids-responsive-min.css', as='style', onload='this.rel="stylesheet"')
+    link(rel='preload', href='/libs/font-awesome/4.7.0/css/font-awesome.min.css', as='style', onload='this.rel="stylesheet"')
     link(rel='icon', mask='',sizes='any', href=url_for('favicon.ico'))
     link(rel='Shortcut Icon', type='image/x-icon', href=url_for('favicon.ico'))
     link(rel='apple-touch-icon', href=url_for('apple-touch-icon.png'))
     link(rel='apple-touch-icon-precomposed', href=url_for('apple-touch-icon.png'))
     if config.feed
       link(rel='alternate', type=feed_type, href=url_for(config.feed.path))
-    script(type='text/javascript', src='/libs/jquery/3.4.0/jquery.min.js')
+    script(type='text/javascript', src='/libs/loadCSS/2.1.0/loadCSS.js', async)
+    script.
+      function load() {
+        return Promise.all(Array.prototype.map.call(arguments, (src) => {
+          return new Promise((resolve, reject) => {
+            var script = document.createElement("script");
+            script.asrc = 1;
+            script.src = src;
+            var sibling = document.getElementsByTagName("script")[0];
+            sibling.parentNode.insertBefore(script, sibling);
+            script.onload = function() {
+              resolve();
+            }
+          })
+        }));
+      }
+      String.prototype.replaceAll = function(search, replacement) {
+        var target = this;
+        return target.split(search).join(replacement);
+      };
 

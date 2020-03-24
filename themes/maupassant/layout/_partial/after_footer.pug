@@ -20,7 +20,7 @@ if theme.baidu_analytics
 if theme.fancybox == true
   script(type='text/javascript', src='/libs/fancybox/3.5.7/jquery.fancybox.min.js', async)
   script(type='text/javascript', src=url_for(theme.js) + '/fancybox.js', async)
-  link(rel='stylesheet', type='text/css', href='/libs/fancybox/3.5.7/jquery.fancybox.min.css')
+  link(rel='preload', type='text/css', href='/libs/fancybox/3.5.7/jquery.fancybox.min.css', as='style', onload='this.rel="stylesheet"')
 
 if theme.tinysou
   script.
@@ -48,14 +48,15 @@ if theme.swiftype
     _st('install','#{theme.swiftype}','2.0.0');
 
 if theme.self_search == true
-  script(type='text/javascript', src=url_for(theme.js) + '/search.js', async)
   script.
-     var search_path = '#{config.search.path}';
-     if (search_path.length == 0) {
+    function setupSearch() {
+      var search_path = '#{config.search.path}';
+      if (search_path.length == 0) {
         search_path = 'search.xml';
-     }
-     var path = '#{config.root}' + search_path;
-     searchFunc(path, 'local-search-input', 'local-search-result');
+      }
+      var path = '#{config.root}' + search_path;
+      searchFunc(path, 'local-search-input', 'local-search-result');
+    }
 
 if theme.canvas_nest.enable == true
     - var color=theme.canvas_nest.color || "0,0,0"
@@ -70,36 +71,34 @@ if page.mathjax
 if page.mathjax2
   include mathjax2.pug
 
-script(type='text/javascript', src=url_for(theme.js) + '/codeblock-resizer.js', async)
-script(type='text/javascript', src=url_for(theme.js) + '/smartresize.js', async)
-
 if theme.graphviz.enable == true
-  script(type='text/javascript', src='/libs/viz/2.1.2/viz.js', async)
   script.
-    String.prototype.replaceAll = function(search, replacement) {
-      var target = this;
-      return target.split(search).join(replacement);
-    };
+    load('/libs/viz/2.1.2/viz.js').then(() => {
+      let vizObjects = document.querySelectorAll('.graphviz')
 
-    let vizObjects = document.querySelectorAll('.graphviz')
-
-    if (vizObjects.length > 0) {
-      (function(graphs) {
-        var viz = document.createElement("script");
-        viz.asrc = 1;
-        viz.src = '/libs/viz/2.1.2/viz.js';
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(viz, s);
-        viz.onload = function() {
-          for (let graph of graphs) {
-            let svg = undefined;
-            try {
-              svg = Viz(graph.textContent.replaceAll('–', '--'), 'svg');
-            } catch(e) {
-              svg = `<pre class="error">${e}</pre>`;
-            }
-            graph.outerHTML = svg;
+      if (vizObjects.length > 0) {
+        for (let graph of graphs) {
+          let svg = undefined;
+          try {
+            svg = Viz(graph.textContent.replaceAll('–', '--'), 'svg');
+          } catch(e) {
+            svg = `<pre class="error">${e}</pre>`;
           }
+          graph.outerHTML = svg;
         }
-      })(vizObjects);
-    }
+      }
+    });
+    
+script.
+  load('/libs/jquery/3.4.0/jquery.min.js').then(() => {
+      load(
+        '/js/search.js',
+        '/js/share.js',
+        '/js/smartresize.js',
+        '/js/totop.js'
+      ).then(() => {
+        load('/js/codeblock-resizer.js').then(() => {});
+        ('function' == typeof setupSearch) && setupSearch();
+      });
+  });
+    
