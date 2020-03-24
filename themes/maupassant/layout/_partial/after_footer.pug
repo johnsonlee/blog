@@ -83,12 +83,23 @@ if theme.graphviz.enable == true
 
     let vizObjects = document.querySelectorAll('.graphviz')
 
-    for (let item of vizObjects) {
-      let svg = undefined
-      try {
-        svg = Viz(item.textContent.replaceAll('–', '--'), 'svg')
-      } catch(e) {
-        svg = `<pre class="error">${e}</pre>`
-      }
-      item.outerHTML = svg
+    if (vizObjects.length > 0) {
+      (function(graphs) {
+        var viz = document.createElement("script");
+        viz.asrc = 1;
+        viz.src = '/libs/viz/2.1.2/viz.js';
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(viz, s);
+        viz.onload = function() {
+          for (let graph of graphs) {
+            let svg = undefined;
+            try {
+              svg = Viz(graph.textContent.replaceAll('–', '--'), 'svg');
+            } catch(e) {
+              svg = `<pre class="error">${e}</pre>`;
+            }
+            graph.outerHTML = svg;
+          }
+        }
+      })(vizObjects);
     }
