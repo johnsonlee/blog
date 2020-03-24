@@ -15,6 +15,7 @@ before_install:
 script:
   - hexo generate
   - hexo gzip
+  - bash find public
 deploy:
   provider: script
   script: bash .scripts/deploy.sh
