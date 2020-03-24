@@ -12,7 +12,6 @@ before_install:
     - git config --global user.email "g.johnsonlee@gmail.com"
 script:
   - hexo generate
-  - hexo gzip
 deploy:
   provider: script
   skip_cleanup: true
