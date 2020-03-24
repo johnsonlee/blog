@@ -19,7 +19,7 @@ if theme.baidu_analytics
 
 if theme.fancybox == true
   script(type='text/javascript', src='/libs/fancybox/3.5.7/jquery.fancybox.min.js', async)
-  script(type='text/javascript', src=url_for(theme.js) + '/fancybox.js' + '?v=' + theme.version, async)
+  script(type='text/javascript', src=url_for(theme.js) + '/fancybox.js', async)
   link(rel='stylesheet', type='text/css', href='/libs/fancybox/3.5.7/jquery.fancybox.min.css')
 
 if theme.tinysou
@@ -48,7 +48,7 @@ if theme.swiftype
     _st('install','#{theme.swiftype}','2.0.0');
 
 if theme.self_search == true
-  script(type='text/javascript', src=url_for(theme.js) + '/search.js' + '?v=' + theme.version, async)
+  script(type='text/javascript', src=url_for(theme.js) + '/search.js', async)
   script.
      var search_path = '#{config.search.path}';
      if (search_path.length == 0) {
@@ -70,8 +70,8 @@ if page.mathjax
 if page.mathjax2
   include mathjax2.pug
 
-script(type='text/javascript', src=url_for(theme.js) + '/codeblock-resizer.js' + '?v=' + theme.version, async)
-script(type='text/javascript', src=url_for(theme.js) + '/smartresize.js' + '?v=' + theme.version, async)
+script(type='text/javascript', src=url_for(theme.js) + '/codeblock-resizer.js', async)
+script(type='text/javascript', src=url_for(theme.js) + '/smartresize.js', async)
 
 if theme.graphviz.enable == true
   script(type='text/javascript', src='/libs/viz/2.1.2/viz.js', async)

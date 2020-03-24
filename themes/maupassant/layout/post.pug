@@ -58,7 +58,7 @@ block content
       br
 
     if theme.shareto == true
-      script(type='text/javascript', src=url_for(theme.js) + '/share.js' + '?v=' + theme.version, async)
+      script(type='text/javascript', src=url_for(theme.js) + '/share.js', async)
       a.article-share-link(data-url=page.permalink, data-id=page._id, data-qrcode=qrcode(page.permalink))= __('shareto')
 
     include _partial/tag.pug

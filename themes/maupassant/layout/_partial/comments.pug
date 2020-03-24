@@ -78,8 +78,8 @@ if theme.livere
 
 if theme.gitment.enable == true
     #container
-    link(rel='stylesheet', href=url_for(theme.css) + '/default.css' + '?v=' + theme.version)
-    script(src=url_for(theme.js) + '/gitment.browser.js' + '?v=' + theme.version)
+    link(rel='stylesheet', href=url_for(theme.css) + '/default.css')
+    script(src=url_for(theme.js) + '/gitment.browser.js')
     script.
       var gitment = new Gitment({
         id: window.location.pathname.substring(1,window.location.pathname.length),
