@@ -101,6 +101,45 @@ Java 原生的 SPI 是通过 *ClassLoader* 在 *CLASSPATH* 中搜索 *META-INF/s
   }
   ```
 
+## 示例
+
+### HttpProtocolConfig.kt
+
+```kotlin
+interface HttpProtocolConfig {
+
+    fun getProtocol(): String
+
+}
+```
+
+### HttpProtocolConfigProvider.kt
+
+```kotlin
+@Service(HttpProtocolConfig.class)
+class HttpProtocolConfigProvider : HttpProtocolConfig {
+
+    override fun getProtocol() = if (BuildConfig.DEBUG) "http" else "https"
+
+}
+```
+
+### HomePresenter.kt
+
+```kotlin
+class HomePresenter : Presenter() {
+
+    private val config = ServiceLoader.load(HttpProtocolConfig::class.java).first()
+
+    fun loadConfig() {
+        println(config.getProtocol())
+    }
+
+}
+```
+
 ## 源代码
 
 该方案已经完全开源，项目地址：https://github.com/johnsonlee/service-loader-android
+
+示例代码详见：https://github.com/johnsonlee/service-loader-android/tree/master/example
