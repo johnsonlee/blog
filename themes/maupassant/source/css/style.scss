@@ -289,13 +289,13 @@ div {
                 background: #f7f8f8;
                 font-family: Menlo, Consolas, monospace !important;
             }
-            a {
-                color: #01579f;
-                padding-bottom: 2px;
-                word-break: normal;
-                &:hover {
-                    text-decoration: underline;
-                }
+        }
+        a {
+            color: #01579f;
+            padding-bottom: 2px;
+            word-break: normal;
+            &:hover {
+                text-decoration: underline;
             }
         }
         .caption {
