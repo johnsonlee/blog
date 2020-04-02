@@ -15,9 +15,12 @@ tags:
 
 其实早在 1976 年，*Promise* 的概念就已被提出来，然而，它真正的流行起来还是因为 [jQuery Deferred Objects](https://api.jquery.com/category/deferred-object/)，在 2012 年的时候，*Promise* 被作为规范提了出来，最终被 *ES 2015* 所采纳，为什么当年 *Promise* 会如此流行呢？
 
-咱们还是先看看下面这段代码说起：
+咱们还是先看看下面这个简单的例子：
 
 ```javascript
+／**
+  * 异步加载资源
+  *／
 function loadResources(res, callback) {
     xhr.get(res, function(e, resp) {
         if (e) {
@@ -28,6 +31,9 @@ function loadResources(res, callback) {
     })
 }
 
+/**
+ * 异步加载模块
+ */
 function loadModule(name, callback) {
     loadResources(name + "/manifest.json", function(manifest) {
         var style = manifest.getStyle();
@@ -45,7 +51,7 @@ function loadModule(name, callback) {
 }
 ```
 
-这就是传说中的 [Callback Hell](http://callbackhell.com/)，当然 *Node.js* 之父也拿它没办法，只好将代码缩进由 4 个空格变成 2 个空格，咱们再来看看 *Promise* 是如何解决 [Callback Hell](http://callbackhell.com/) 的：
+这就是传说中的 [Callback Hell](http://callbackhell.com/)，当年 *Node.js* 之父也拿它没办法，只好将代码缩进由 4 个空格变成 2 个空格（这就是为什么 *Node.js* 的世界很流行 2 个空格缩进的原因），咱们再来看看 *Promise* 是如何解决 [Callback Hell](http://callbackhell.com/) 的：
 
 ```javascript
 function loadResources(res) {
@@ -67,7 +73,7 @@ function loadModule(name) {
 }
 ```
 
-怎么样？是不是有种耳目一新的感觉？从此，*JavaScript* 的世界里再也没有那烦人的 [Callback Hell](http://callbackhell.com/) 了，看到 *ES 5* 的 *Promise* 这么好用，*Java* 世界的同学就按耐不住了，为何不把 *Promise* 用 *Java* 实现呢？我当年就这么干过，只不过呢那时候还没有 *Java 8* 的 *lambda* ，如果用 *Java 7* 或者更早的版本来实现，语法表达上更是蹩脚，还不如用 *Java* 原生的 *Fork/Join* 框架呢，所以，干脆放弃了。自从玩转了 *Kotlin* ，加上 *Kotlin* 比 *Java* 语法更灵活，又激发了造轮子的欲望，于是，周末的时候，撸了一个 [Kotlin 版的 Promise](https://github.com/johnsonlee/promise/tree/demo)。
+怎么样？是不是有种耳目一新的感觉？从此，*JavaScript* 的世界里再也没有那烦人的 [Callback Hell](http://callbackhell.com/) 了，看到 *ES 5* 的 *Promise* 这么好用，*Java* 世界的同学就按耐不住了，为何不把 *Promise* 用 *Java* 实现呢？我当年就这么干过，只不过呢那时候还没有 *Java 8* 的 *lambda* ，如果用 *Java 7* 或者更早的版本来实现，语法表达上更是蹩脚，还不如用 *Java* 原生的 *Fork/Join* 框架呢，所以，干脆放弃了。自从玩转了 *Kotlin* ，加上 *Kotlin* 比 *Java* 语法更简洁，又激发了造轮子的欲望，于是，周末的时候，撸了一个 [Kotlin 版的 Promise](https://github.com/johnsonlee/promise/tree/demo)，[Main.kt](https://github.com/johnsonlee/promise/blob/demo/src/main/kotlin/io/johnsonlee/promise/Main.kt) 中的例子来自 [Stargazer](https://github.com/johnsonlee/stargazer/blob/master/src/github/api/v3.js) 这个项目（当时用来监测 [Booster star 趋势](https://johnsonlee.github.io/stargazer/#/didi/booster)）。
 
 ## Generator Function vs Callback Hell
 
@@ -86,6 +92,8 @@ app.use(function(req, res, next) {
     req.requestTime = new Date();
     next();
 });
+
+app.listen(3000);
 ```
 
 再来看看 [KOA](https://koajs.com/) 的黑魔法：
@@ -98,9 +106,13 @@ app.use(function* (next) {
     this.requestTime = new Date();
     yield next;
 });
+
+app.listen(3000);
 ```
 
 `function*` 就是 *ES 6* 推出的 *Generator Function* ，[KOA](https://koajs.com/) 用它替代了 [Express](https://expressjs.com/) 中的 [Callback Hell](http://callbackhell.com/)。
+
+> 考虑到 API 兼容性问题，在 *JavaScript* 的世界里，*Generator Function* 是可以和 *Promise* 互转的
 
 ## async/await vs Coroutines
 
@@ -114,13 +126,13 @@ async function loadResources(res) {
 
 async function loadModule(name) {
     let manifest = loadResources(name + "/manifest.json")
-    await manifest.getStyle();
-    await manifest.getScript();
-    await manifest.getLayout();
+    await loadResources(manifest.getStyle());
+    await loadResources(manifest.getScript());
+    await loadResources(manifest.getLayout());
 }
 ```
 
-看起来是不是比 *Promise* 清爽了许多？了解了 *JavaScript* 世界的异步编程方式，再来看 *Kotlin Coroutines* ：
+看起来是不是比 *Promise* 清爽了许多？其实这只是 *ES 6* 语法糖而已，实际上支持 *ES 6* 的编译器（比如：TypeScript Compiler）将 *TypeScript* 编译成 *ES 2015* 时，会将 *async/await* 翻译成 *Promise* 。了解了 *JavaScript* 世界的异步编程方式，再来看 *Kotlin Coroutines* ：
 
 ```kotlin
 class DownloadAsyncActivity : AppCompatActivity() {
@@ -169,4 +181,8 @@ class DownloadAsyncActivity : AppCompatActivity() {
 | Genrator Function | [Sequence](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.coroutines.experimental/-sequence-builder/) |
 | async/await       | [Suspend Function](https://kotlinlang.org/docs/reference/coroutines/flow.html#suspending-functions)        |
 
-看完还会觉得 *Kotlin Coroutines* 很难吗？
+看到这里，大家还会觉得 *Kotlin Coroutines* 很难吗？可能有人会问，异步编程搞得这么花哨，到底能干什么呢？
+
+## 异步编程的应用
+
+做移动端开发的同学可能深有体会，每当 *App* 工程复杂度达到一定水平时，就要搞一次性能优化，常见的就是 *启动优化* ，因为 *App* 启动阶段，要干的事情太多了，一堆的 *SDK* 要初始化，一堆的业务要初始化，有人会说，把不必要的初始化延后，或者能在子线程初始化的，异步不就行了吗？—— 思路是对的，但是，实现起来是困难的，因为没有一个很好用的异步编程模型，如果在启动阶段，要初始化的模块之间还有依赖顺序，比如有些基础模块就最先初始化（如：埋点、网络、A/B 等），这时候，一个简洁的异步编程模型就能让我们从繁琐的逻辑中释放出来，将注意力集中在业务流程上来，这也是为什么 *JavaScript* 的世界创造了如此多优秀的异步编程模型的原因。
