@@ -74,9 +74,9 @@ if page.mathjax2
 if theme.graphviz.enable == true
   script.
     load('/libs/viz/2.1.2/viz.js').then(() => {
-      let vizObjects = document.querySelectorAll('.graphviz')
+      let graphs = document.querySelectorAll('.graphviz')
 
-      if (vizObjects.length > 0) {
+      if (graphs.length > 0) {
         for (let graph of graphs) {
           let svg = undefined;
           try {
