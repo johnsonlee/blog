@@ -79,7 +79,7 @@ interface Greeting {
 
 ## 编译器
 
-[IDL (Interface Description Language)](https://en.wikipedia.org/wiki/Interface_description_language) 只是一种规划的描述，并没有实现，如果想要调用上面的 `Greeting` 接口，需要有对应的语言的实现，比如，想要在 *Java* 中调用 `Greeting` 就需要有像这样的 *Java* 接口定义：
+[IDL (Interface Description Language)](https://en.wikipedia.org/wiki/Interface_description_language) 只是一种规范的描述，并没有实现，如果想要调用上面的 `Greeting` 接口，需要有对应的语言的实现，比如，想要在 *Java* 中调用 `Greeting` 就需要有像这样的 *Java* 接口定义：
 
 ```java
 interface Greeting {
