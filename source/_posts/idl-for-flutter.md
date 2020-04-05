@@ -99,7 +99,7 @@ abstract class Greeting {
 }
 ```
 
-因此，需要一个编译器来根据 *IDL* 生成指定的语言的 *API*，如果想要在 *IDE* 中更方便的进行 *Flutter* 混合开发，还需要有 IDE 插件的支持，像常用的 *IntelliJ IDEA* 、*Android Studio* 需要开发相应的 *IDEA* 插件来编译 *IDL* 文件。
+因此，需要一个编译器来根据 *IDL* 生成指定的语言的 *API* ，如果想要在 *IDE* 中更方便的进行 *Flutter* 混合开发，还需要有 IDE 插件的支持，像常用的 *IntelliJ IDEA* 、*Android Studio* 需要开发相应的 *IDEA* 插件来编译 *IDL* 文件。
 
 ```plantuml
 @startuml
