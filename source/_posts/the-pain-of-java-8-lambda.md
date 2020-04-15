@@ -9,7 +9,7 @@ tags:
 
 前段时间为 [booster-task-analyser](https://github.com/didi/booster/blob/master/booster-task-analyser) 做性能优化，不禁开始怀念 *Java* ，于是乎，又尝试用 *Java* 写点东西，但总是感觉很不爽，尤其是在 *lambda* 表达式中 *try-catch* ，太烦人了，本来就一行代码的事情，硬生生写成 6 行（效率就是被这么给降下来的），我当时就想，能不能让 *Java 8* 的 *lambda* 写起来更爽一点？
 
-## 未经检查的异常
+## Unchecked Exception
 
 在 *Java* 中，只有两种类型的 *Throwable* 是不必强制 *try-catch* 的：
 
