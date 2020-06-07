@@ -8,7 +8,7 @@ date: 2019-01-01 10:00:00
 ## 开源贡献
 
 - [DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)
-- [didi/booster](https://github.com/didi/booster) & [深入理解 Booster](https://booster.johnsonlee.io/)
+- [didi/booster](https://github.com/didi/booster) & [《深入理解 Booster》](https://booster.johnsonlee.io/)
 - [didi/VirtualApk](https://github.com/didi/VirtualApk)
 - [jakewharton/diffuse](https://github.com/jakewharton/diffuse)
 - [javaparser/javaparser](https://github.com/javaparser/javaparser)
