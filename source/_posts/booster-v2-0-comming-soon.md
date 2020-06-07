@@ -6,7 +6,7 @@ tags:
   - Booster
 ---
 
-前不久 *Android* 官方终于正式发布了 *Android Gradle Plugin* `v3.6`，而且，`v4.0` 也已经是 *Release* 状态，在体验了一把 *Android Studio 4.0* 的构建速度之快后，*Booster* 团队决定加速 *Android Gradle Plugin* 版本适配工作，一方面，为了解决现有的特性在 *Android Gradle Plugin* `v4.0` 上的问题，另一方面，推出自 *Android Gradle Plugin* `v3.0` 以来全版本适配方案，以解决开发者对 *Android Gradle Plugin* 的适配问题。
+前不久 *Android* 官方终于正式发布了 *Android Gradle Plugin* `v4.0`，在体验了一把 *Android Studio 4.0* 的构建速度之快后，*Booster* 团队决定加速 *Android Gradle Plugin* 版本适配工作，一方面，为了解决现有的特性在 *Android Gradle Plugin* `v4.0` 上的问题，另一方面，推出自 *Android Gradle Plugin* `v3.0` 以来全版本适配方案，以解决开发者对 *Android Gradle Plugin* 的适配问题。
 
 从 *Andriod Gradle Plugin* `v3.6` 开始发生了很大的变化，例如：
 
