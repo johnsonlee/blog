@@ -26,6 +26,7 @@ tags:
 
     高版本 *Protobuf* 生成的 *Java* 代码与现有的 *Java* 代码不兼容
 
+1. 移除了 `com.android.feature` 和 `com.android.instantapp` 插件
 1. 增加了 `buildFeature` 对构建进行更细粒度的控制
 1. 在没有 `minSdkVersion` 限制的情况下支持 *Java 8 API* ，如：*Stream API* 等
 
