@@ -65,3 +65,5 @@ tags:
 
         }
         ```
+
+更多详情，请参考：[深入理解 Booster](https://booster.johnsonlee.io)
