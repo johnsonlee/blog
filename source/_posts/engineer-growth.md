@@ -78,7 +78,11 @@ tags:
 其实我的方法很简单，仅供大家参考：
 
 1. 坚持阅读（书），给自己定个目标，不用太激进，重要在坚持，而不是追求速度
-1. 订阅 *RSS* ，像 *GitHub* ，*Twitter* 等一些社交媒体都有 *RSS* 接口，最好的办法就是关注业内大牛的动态，或者 *Twitter* 话题，每天花 1-2 小时在上面
+1. 订阅 *RSS* ，像 *GitHub* ，*Twitter* 等一些社交媒体都有 *RSS* 接口，最好的办法就是关注业内大牛的动态，或者根据 *Twitter* 话题生成 *RSS* ，每天花 1-2 小时在上面
+
+    - 我的 [GitHub RSS](http://github.com/johnsonlee.atom)
+    - 我的 [博客 RSS](http://johnsonlee.io/atom.xml)
+
 1. 动手实践，比如新出了一个工具或者一门语言，动手写个好玩儿的 *demo* （不是 *helloworld* 那种）
 1. 养成定期总结的习惯
 
