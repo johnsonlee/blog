@@ -7,7 +7,7 @@ tags:
   - Kotlin
 ---
 
-最近做字节码相关的朋友求救：“森哥，ASM 怎么才能识别 kotlin 的 data class?”，我想，这是啥需求还要区分 *data class* 和非 *data class* ，后来一问，原来是要把工程中所有实现了 `Serializable` 和 *data class* 单独提取出来，将 *Redis* 中的 *POJO* 缓存进行可视化。
+最近做字节码相关的朋友求救：“森哥，ASM 怎么才能识别 kotlin 的 data class?”，我想，这是啥需求还要区分 *data class* 和非 *data class* ，后来一问，原来是要把工程中所有实现了 `Serializable` 接口的 *Java* 类和 *Kotlin* 的 *data class* 单独提取出来，将 *Redis* 中的 *POJO* 缓存进行可视化。
 
 研究了一下 *data class* 的字节码，发现还是有一些特征的，比如：
 
