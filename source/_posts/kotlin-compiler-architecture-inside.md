@@ -7,7 +7,7 @@ tags:
   - Compiler
 ---
 
-周末在家正刷着 *GitHub* 呢，朋友发来消息：“森哥，像 *ksp* , *allopen* 这些 *Kotlin* 的编译器插件，它们是怎么 *run* 起来的，看了半天一头雾水”，我心想，不应该呀，十有八九是通过 *SPI* 来实现插件的加载的“，于是，我赶紧瞅了一眼 [JetBrains/Kotlin](https://github.com/JetBrains/kotlin) 的代码，找到了 [KotlinGradleSubplugin.kt](https://github.com/JetBrains/kotlin/blob/master/libraries/tools/kotlin-gradle-plugin-api/src/main/kotlin/org/jetbrains/kotlin/gradle/plugin/KotlinGradleSubplugin.kt)，于是，假装很懂的样子，发了一个 [KotlinGradleSubplugin.kt](https://github.com/JetBrains/kotlin/blob/master/libraries/tools/kotlin-gradle-plugin-api/src/main/kotlin/org/jetbrains/kotlin/gradle/plugin/KotlinGradleSubplugin.kt) 的代码截图给他。
+周末在家正刷着 *GitHub* 呢，微信收到一条消息：“森哥，像 *ksp* , *allopen* 这些 *Kotlin* 的编译器插件，它们是怎么 *run* 起来的，看了半天一头雾水”，我心想，不应该呀，十有八九是通过 *SPI* 来实现插件的加载的“，于是，我赶紧瞅了一眼 [JetBrains/Kotlin](https://github.com/JetBrains/kotlin) 的代码，找到了 [KotlinGradleSubplugin.kt](https://github.com/JetBrains/kotlin/blob/master/libraries/tools/kotlin-gradle-plugin-api/src/main/kotlin/org/jetbrains/kotlin/gradle/plugin/KotlinGradleSubplugin.kt)，于是，假装很懂的样子，发了一个 [KotlinGradleSubplugin.kt](https://github.com/JetBrains/kotlin/blob/master/libraries/tools/kotlin-gradle-plugin-api/src/main/kotlin/org/jetbrains/kotlin/gradle/plugin/KotlinGradleSubplugin.kt) 的代码截图给他。
 
 “这个我看过了，我想知道 [all-open](https://kotlinlang.org/docs/reference/compiler-plugins.html#all-open-compiler-plugin) 这个插件究竟是在什么时候修改类的修饰符的”
 
