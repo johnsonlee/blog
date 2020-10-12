@@ -28,7 +28,7 @@ block content
           != post.excerpt
       else if post.content
         - var br = 0
-        - for (var i = 0; i < 5; ++i) {
+        - for (var i = 0; i < 6; ++i) {
           - br = post.content.indexOf('\n',br+1)
           if br<0
             - break
