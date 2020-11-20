@@ -57,3 +57,8 @@ tags:
 有了 [Projector](https://github.com/JetBrains/projector-server/blob/master/README-JETBRAINS.md)，在移动设备上运行 *IDE* 不再受客户端技术的限制了，像我这种懒得背电脑的人来说，带个 iPad 就足够了，租个 *AWS* 再挂个 *EBS* ，不需要的时候，就可以把实例销毁了，需要用的时候，直接新建一个实例挂上 *EBS* 就可以了。
 
 尤其是像 *Android* 开发 APP 编译太慢机器老卡死的，完全可以上云端开发了，反正公司内部研发用的机器闲着也是闲着，别告诉我你们还在用 `rsync` 把本地代码同步到云端去编译，直接在云端开发不香么？
+
+
+## 快速体验
+
+感兴趣的同学可以直接从 [johnsonlee/ascloud](https://github.com/johnsonlee/ascloud) 下载 *Docker* 配置进行体验。
