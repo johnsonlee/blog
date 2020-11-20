@@ -28,7 +28,7 @@ tags:
 
 ### 插件系统
 
-为了实现 *IDE* 的可扩展能力，整个 *Cloud IDE* 的架构采用了可插拨的方式，前端根据配置按需从后端加载不同的模块，在当时 *Promise* 还没有成为标准的年代，在 *JavaScript* 中实现 *Fork-Join* 并不是一件容易的事情，虽然有 *require.js* ，也只能解决一部分问题。
+为了实现 *IDE* 的可扩展能力，整个 *Cloud IDE* 的架构采用了可插拔的方式，前端根据配置按需从后端加载不同的模块，在当时 *Promise* 还没有成为标准的年代，在 *JavaScript* 中实现 *Fork-Join* 并不是一件容易的事情，虽然有 *require.js* ，也只能解决一部分问题。
 
 ### Web Terminal
 
