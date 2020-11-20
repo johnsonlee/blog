@@ -50,7 +50,7 @@ tags:
 
 当年在科泰做 *IDE* 的可视化设计器就是用的这个思方案，*IDE* 将 *layout* 给渲染引擎，然后渲染引擎生成一个图，并将 *layout* 上的各个 *Widget* 的边界返回给 *IDE* ，在可视化设计器看到的效果，其实只是一个背景图而已，当选中某个 *Widget* 时，会显示当前被选中的 *Widget* 的边界，而这个边界只是一个空的框框而已，只不过从视觉上看起来像是真的一个 *Widget* 被拖动了。
 
-而 [Projector](https://github.com/JetBrains/projector-server/blob/master/README-JETBRAINS.md) 正是用的这个思路，单独实现了一套 `java.awt`，这也是这个方案得以落地的基石，这样，整个 *View System* 都被这套新的 *AWT* 实现给接管了，这样，就可以在服务端运行一个没有 *GUI* 的 *IDE* ，然后，新实现的 *AWT* 将渲染出来的图形通过网络传给客户端，这样保证了视觉效果的一致性，这跟 *X Window* 也是同样的思路。
+而 [Projector](https://github.com/JetBrains/projector-server/blob/master/README-JETBRAINS.md) 正是用的这个思路，单独实现了一套 `java.awt`，这也是这个方案得以落地的基石，这样，整个 *View System* 都被这套新的 *AWT* 实现给接管了，这样，就可以在服务端运行一个没有 *GUI* 的 *IDE* ，然后，新实现的 *AWT* 将图形系统的绘制以指令的形式序列化，然后通过网络传给客户端，然后在客户端还原这些绘制指令，以此达到视觉上的一致性。
 
 ### 应用场景
 
