@@ -18,7 +18,7 @@ tags:
 
 ### 编辑器
 
-既然是 *IDE* ，编辑器是基本功能，所幸 [Cloud 9](https://aws.amazon.com/cn/cloud9/)开源了一款高性能的代码编辑器 [ACE Editor](https://ace.c9.io/)，基础设施的问题解决了，但是，要在这个原始的编辑器上为支持各种语言，还需要 *Parser* 来辅助。
+既然是 *IDE* ，编辑器是基本功能，所幸 [Cloud 9](https://aws.amazon.com/cn/cloud9/)开源了一款高性能的代码编辑器 [ACE Editor](https://ace.c9.io/)，基础设施的问题解决了，但是，要在这个原始的编辑器上为支持各种语言，还需要 *Parser* 来辅助，而且编辑器的体验很大程度上依赖于本地机器的算力。
 
 ### UI 框架
 
