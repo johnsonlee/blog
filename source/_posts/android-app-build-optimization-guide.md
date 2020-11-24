@@ -43,7 +43,7 @@ tags:
 
 ## 使用 G1 GC
 
-基本上 *Android* 开发都是用的 *Java 8* ，但 *Java 8* 的默认 *GC* 是 *Parallel GC* ，相对于 *G1 GC* ，性能上还是有些差距，可以通过升级 *JDK* 版本，或者设置 *JVM* 参数 `-XX:+UseG1GC` 来启用 *G1 GC* ：
+基本上 *Android* 开发都是用的 *Java 8* ，但 *Java 8* 的默认 *GC* 是 *Parallel GC* ，相对于 *G1 GC* ，性能上还是有些差距，可以通过升级 *JDK* 版本，或者设置 *JVM* 参数 `-XX:+UseG1GC` 来启用 *G1 GC* 。
 
 ## 使用多进程编译
 
