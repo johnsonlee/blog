@@ -22,13 +22,13 @@ tags:
 
 ### UI 框架
 
-前端的 UI 实现同样采用了 *Cloud 9* 开源的一款前端 *UI* 框架 -- APF，使用的是类似 *XML* 的模板语言，有点类似 *Vue* ，*Cloud 9* 团队给它起了一个牛逼的名字 —— *Live Markup Language* ，这应该算是前端 *MVVM* 的鼻祖了吧，可惜源代码目前在官网已经找不到了，当年 [Cloud 9](https://aws.amazon.com/cn/cloud9/) 把它贡献给了 *ajaxorg* ，我们一度以为它会成为前端的标准，没想到最后是这样的结局。
+前端的 UI 实现同样采用了 *Cloud 9* 开源的一款前端框架 -- APF，使用的是类似 *XML* 的模板语言，有点类似 *Vue* ，*Cloud 9* 团队给它起了一个牛逼的名字 —— *Live Markup Language* ，这应该算是前端 *MVVM* 的鼻祖了吧，可惜源代码目前在官网已经找不到了，当年 [Cloud 9](https://aws.amazon.com/cn/cloud9/) 把它贡献给了 *ajaxorg* ，我们一度以为它会成为前端的标准，没想到最后是这样的结局。
 
 当时做技术方案选型，调研了很多 UI 框架，像 *Dart* 这种不入流的语言，当时也调研过，没想到这么多年后，被 *Flutter* 派上了用场。
 
 ### 插件系统
 
-为了实现 *IDE* 的可扩展能力，整个 *Cloud IDE* 的架构采用了可插拔的方式，前端根据配置按需从后端加载不同的模块，在当时 *Promise* 还没有成为标准的年代，在 *JavaScript* 中实现 *Fork-Join* 并不是一件容易的事情，虽然有 *require.js* ，也只能解决一部分问题。
+为了实现 *IDE* 的可扩展能力，整个 *Cloud IDE* 的架构采用了可插拔的方式，前端根据配置按需从后端加载不同的模块。在当时 *Promise* 还没有成为标准的年代，在 *JavaScript* 中实现 *Fork-Join* 并不是一件容易的事情，虽然有 *require.js* ，但也只能解决一部分问题。
 
 ### Web Terminal
 
