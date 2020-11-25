@@ -48,7 +48,7 @@ tags:
 
 就拿 *Android* 提供的可视化设计器来说，你可以在左边写代码，右边预览效果，这个究竟是怎么实现的？*Android Studio* 将 *Android View* 系统的代码加载到 *PC* 端，然后通过 `ClassLoader` 对 `Canvas` 进行了 *Hook* ，原本绘制在 `framebuf` 上的图形，被 *Layout Library* 拦截了下来，绘制到了一张 `Image` 上，这样，再把这张 `Image` 贴到 *IDE* 上，就实现了所见即所得，具体的代码可以参考之前的文章中提到的 [Layout Library](http://localhost:5000/2019/07/13/booster-xml-layout-to-code/#Layout-Library) 。
 
-当年在科泰做 *IDE* 的可视化设计器就是用的这个思方案，*IDE* 将 *layout* 给渲染引擎，然后渲染引擎生成一个图，并将 *layout* 上的各个 *Widget* 的边界返回给 *IDE* ，在可视化设计器看到的效果，其实只是一个背景图而已，当选中某个 *Widget* 时，会显示当前被选中的 *Widget* 的边界，而这个边界只是一个空的框框而已，只不过从视觉上看起来像是真的一个 *Widget* 被拖动了。
+当年在科泰做 *IDE* 的可视化设计器就是这个思路，*IDE* 将 *layout* 给渲染引擎，然后渲染引擎生成一个图，并将 *layout* 上的各个 *Widget* 的边界返回给 *IDE* ，在可视化设计器看到的效果，其实只是一个背景图而已，当选中某个 *Widget* 时，会显示当前被选中的 *Widget* 的边界，而这个边界只是一个空的框框而已，只不过从视觉上看起来像是真的一个 *Widget* 被拖动了。
 
 而 [Projector](https://github.com/JetBrains/projector-server/blob/master/README-JETBRAINS.md) 正是用的这个思路，单独实现了一套 `java.awt`，这也是这个方案得以落地的基石，这样，整个 *View System* 都被这套新的 *AWT* 实现给接管了，这样，就可以在服务端运行一个没有 *GUI* 的 *IDE* ，然后，新实现的 *AWT* 将图形系统的绘制以指令的形式序列化，然后通过网络传给客户端，然后在客户端还原这些绘制指令，以此达到视觉上的一致性。
 
