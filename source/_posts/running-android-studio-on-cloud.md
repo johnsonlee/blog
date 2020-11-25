@@ -10,7 +10,7 @@ tags:
 
 ## Cloud IDE
 
-当年，几乎所有的 *Cloud IDE* 的方案都是拿 *Web* 技术重新设计一套前后端分离的架构，除了 [Cloud 9](https://aws.amazon.com/cn/cloud9/) ，还有 *Eclipse* 的 [Che](https://www.eclipse.org/che/)，后来，不知道什么原因，[Cloud 9](https://aws.amazon.com/cn/cloud9/) 被 AWS 给收了。当时对于我们做 *Cloud IDE* 来说，还是相当有挑战的。
+当年，几乎所有的 *Cloud IDE* 的方案都是拿 *Web* 技术重新设计一套前后端分离的架构，除了 [Cloud 9](https://aws.amazon.com/cn/cloud9/) ，还有 *Eclipse* 的 [Che](https://www.eclipse.org/che/)，现在大家对 *Cloud IDE* 都习以为常了，然而在当年对于我们做 *Cloud IDE* 来说，还是相当有挑战的。后来，不知道什么原因，[Cloud 9](https://aws.amazon.com/cn/cloud9/) 被 AWS 给收了，而 *Eclipse* 的 [Che](https://www.eclipse.org/che/) 也成了 [Kubernetes](https://kubernetes.io/zh/) 的专用 *IDE* 。
 
 ### 虚拟化技术
 
@@ -18,7 +18,7 @@ tags:
 
 ### 编辑器
 
-既然是 *IDE* ，编辑器是基本功能，所幸 [Cloud 9](https://aws.amazon.com/cn/cloud9/)开源了一款高性能的代码编辑器 [ACE Editor](https://ace.c9.io/)，基础设施的问题解决了，但是，要在这个原始的编辑器上为支持各种语言，还需要 *Parser* 来辅助，而且编辑器的体验很大程度上依赖于本地机器的算力。
+既然是 *IDE* ，编辑器是基本功能，所幸 [Cloud 9](https://aws.amazon.com/cn/cloud9/)开源了一款高性能的代码编辑器 [ACE Editor](https://ace.c9.io/)，基础设施的问题解决了，但是，要在这个原始的编辑器上面支持各种语言，还需要 *Parser* 来辅助，而且编辑器的体验很大程度上依赖于本地机器的算力。
 
 ### UI 框架
 
