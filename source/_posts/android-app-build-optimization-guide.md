@@ -101,7 +101,7 @@ tags:
 
 ## 使用 dagger-reflect
 
-如何项目中有使用 `dagger` 实现依赖注入，无可避免的在每个模块中引入 *APT* ，这会大大降低构建的速度，为了避免 *APT* 带来的构建性能损耗，可以在开发阶段使用 [dagger-reflect](https://github.com/JakeWharton/dagger-reflect) 来完成消除 *APT* 带来的影响。
+如果项目中有使用 `dagger` 实现依赖注入，无可避免的在每个模块中引入 *APT* ，这会大大降低构建的速度，为了避免 *APT* 带来的构建性能损耗，可以在开发阶段使用 [dagger-reflect](https://github.com/JakeWharton/dagger-reflect) 来完成消除 *APT* 带来的影响。
 
 如果项目中使用的是别的依赖注入框架，如果还没有对 *debug* 构建进行优化，可以参考 [dagger-reflect](https://github.com/JakeWharton/dagger-reflect) 的全反射消除 *APT* 的方案。
 
