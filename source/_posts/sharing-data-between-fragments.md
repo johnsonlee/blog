@@ -69,7 +69,7 @@ class Fragment2 : Fragment() {
 
 1. 如果还有别的数据需要在其它的 `Fragment` 之间共享，都往 `MainActivity` 里加的话，无疑给 `MainActivity` 带来了过多的不必要的负担，而且，这也不是 `MainActiivty` 的职责所在；
 
-1. 如果 `Fragment1` 不仅在 `MainActivity` 里用到，而且还在其它的 `Activity` 用到，那如何将 `Fragment1` 在不同的 `Activity` 复用而又增加因为复用给 `Activity` 带来额外的维护成本？
+1. 如果 `Fragment1` 不仅在 `MainActivity` 里用到，而且还在其它的 `Activity` 用到，那如何保证 `Fragment1` 在不同的 `Activity` 复用而不会带来额外的维护成本？
 
 ## 优雅的解决方案
 
