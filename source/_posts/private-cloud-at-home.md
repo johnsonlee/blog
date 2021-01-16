@@ -94,7 +94,7 @@ p230:/ #
     一般都是用的 *AMLogic* 提供的 *USB Burning Tools* 软件直接连着设备刷机（俗称线刷），但 *USB Burning Tools* 只有 *Windows* 和 *Linux* 版本，*mac OS* 只能通过 *USB* 启动盘来刷机
 1. 双公头 *USB* 线（线刷才需要），最好多备几根
 1. [Armbian]((https://www.armbian.com/)) 镜像文件，网上一搜一大把，如果懒得找，可以用这个：[云盘链接](https://pan.baidu.com/s/1BIjHHfi90Oa7Le91Q8gkOg#list/path=%2Fsharelink3676369119-208190339200021%2FN1_Openwrt&parentPath=%2Fsharelink3676369119-208190339200021)
-1. *8GB U* 盘至少一个，有些 *U* 盘兼容性不好，可能启动不了，需要多换几个试试，反正我用的第一个 *U* 盘就不行，捣鼓了很久，都开始）
+1. *8GB U* 盘至少一个，有些 *U* 盘兼容性不好，可能启动不了，需要多换几个试试，反正我用的第一个 *U* 盘就不行，捣鼓了很久，都开始怀疑人生了，结果换了一个立马就好使了）
 1. 启动盘制作工具 - [balena Etcher](https://www.balena.io/etcher/) (线刷可忽略)
 1. *USB* 键盘一个
 1. *HDMI* 线一根
