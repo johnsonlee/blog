@@ -169,7 +169,10 @@ docker volume create portainer_data && docker run -d \
 
 ```bash
 git clone https://github.com/johnsonlee/proxify
-cd proxify && docker-compose up -d
+cd proxify && docker-compose up -d \
+    -e TROJAN_SERVER_HOST=xxx \
+    -e TROJAN_SERVER_PORT=xxx \
+    -e TROJAN_PASSWORD=xxx
 ```
 
 默认 *SOCK5* 的端口为 *1080* ，*HTTP(S)* 的端口为 *1081* 
