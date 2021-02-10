@@ -1,7 +1,7 @@
 ---
 title: 这就是 Gradle 所谓的并行构建？
 date: 2020-11-01 02:00:00
-categories: Continous Integration
+categories: CI/CD
 tags:
   - Gradle
 ---
