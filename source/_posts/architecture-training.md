@@ -1,7 +1,7 @@
 ---
 title: 架构师训练营
 date: 2021-03-30 00:00:00
-categories: 架构设计
+categories: 架构师训练营
 tags:
   - Android
   - iOS
