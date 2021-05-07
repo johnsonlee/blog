@@ -64,10 +64,6 @@ class CyclomaticComplexityVisitor : ASTVisitor {
     override fun visit(node: WhileStatement) {
         cyclomatic++
     }
-
-    override fun visit(node: WhileStatement) {
-        cyclomatic++
-    }
 }
 ```
 
