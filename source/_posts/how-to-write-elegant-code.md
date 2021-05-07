@@ -22,7 +22,7 @@ M = E - N + 2P
 - `M` - 复杂度
 - `E` - 控制流图中的边 (Edge) 的个数
 - `N` - 控制流图中的节点 (Node) 的个数
-- `P` - 
+- `P` - 控制流图中的连接的元件 (参见：[图论](https://en.wikipedia.org/wiki/Component_(graph_theory)) 中元件的定义) 数
 
 > 参考：https://en.wikipedia.org/wiki/Cyclomatic_complexity
 
