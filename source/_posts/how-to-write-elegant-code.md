@@ -90,7 +90,7 @@ class CyclomaticComplexityVisitor : ASTVisitor {
 1. 注释
     对于要公开或者发布出去的代码，API 一定要写好注释，尤其是逻辑复杂的设计，如果能配上文本格式的设计图 (如 [draw.io](https://app.diagrams.net/)) 就更好了
 1. 使用通用的架构设计模式
-    业内总结的架构模式和设计模式基本上能满足绝大部分软件的架构设计了，如 *Service Locator Pattern* , *Dependency Injection Pattern* , *GoF Design Patterns* 等等，通用的架构设计模式更容易被其他的代码阅读所理解，因为这些都已经成为业内共识了。
+    业内总结的架构模式和设计模式基本上能满足绝大部分软件的架构设计了，如 [Service Locator Pattern](https://en.wikipedia.org/wiki/Service_locator_pattern), [Dependency Injection Pattern](https://en.wikipedia.org/wiki/Dependency_injection), [GoF Design Patterns (23种设计模式)](https://en.wikipedia.org/wiki/Design_Patterns) 等等，通用的架构设计模式更容易被其他的代码阅读者所理解，因为这些模式都已经成为业内共识了。
 1. 遵循 KISS (Keep it Simple & Stupid) 原则
     KISS 原则与代码复杂度是一个对立的关系，保持代码简洁、直接，不要让阅读者过度思考
 1. Less is more
@@ -100,4 +100,4 @@ class CyclomaticComplexityVisitor : ASTVisitor {
 
 ## 单元测试
 
-见过很多 *Library/SDK* 在实现完代码后，就提 *Pull Request* ，虽然有概要设计文档，但很多 *Code Reviewer* 并不直接参与这个项目的设计和开发，没有太多上下文，加上很多开发者没有养成写 *Unit Test* 的习惯，导致需要花很长时间来理清楚设计者的意图和代码的入口，如果能为每个公开的 *API* 提供单元测试用例，这样就能更好的帮助代码阅读者理解 *Library/SDK* 是如何使用的，也就能更快的帮助阅读者理解整个架构的工作流程，而不至于陷入细节而无法看到整个架构的全貌。
+见过很多 *Library/SDK* 在实现完代码后，就提 *Pull Request* ，虽然有概要设计文档，但很多 *Code Reviewer* 并不直接参与这个项目的设计和开发，没有太多上下文，加上很多开发者没有养成写 *Unit Test* 的习惯，导致代码的阅读者需要花很长时间来理清楚设计者的意图和代码的入口，如果能为每个公开的 *API* 提供单元测试用例，这样就能更好的帮助代码阅读者理解 *Library/SDK* 是如何使用的，也就能更快的帮助阅读者理解整个架构的工作流程，而不至于陷入细节而无法看到整个架构的全貌。
