@@ -73,11 +73,19 @@ class CyclomaticComplexityVisitor : ASTVisitor {
 
 > 详细代码请参考：[CyclomaticComplexityVisitor](https://github.com/johnsonlee/architecture-evaluation-tool/blob/master/de.cau.cs.se.software.evaluation/src/de/cau/cs/se/software/evaluation/transformation/CyclomaticComplexityVisitor.xtend)
 
+如何有效的降低代码的复杂度呢？比较直接的手段有：
+
+1. 将大方法分解成小方法，从而降低单个方法的复杂度
+1. 充分利用语言特性对重复的逻辑进行重构和提炼
+
 ## 语言特性
 
 如何有效的降低代码复杂度呢？其中最重要的一点就是 —— 尽可能的使用语言自身的特性来简化代码，要写得一手好码，就得掌握一门编程语言，像 Java 这门语言，从 *JDK 1.0* 到 *Java 17* 几乎每个大版本都有增加新的特性。写 *Kotlin* 也是同样的道理，相比之下，*Kotlin* 更容易写出简洁而优雅的代码，这也是为什么 *SonarQube* 默认的 *Kotlin* 的复杂度为 *15* 而 *Java* 是 *30* 。
 
-> 关于 Java 的语言特性，可以参考 [Java 各版本的新特性](../../07/java-new-features/), Kotlin 的语言特性可以参考：[KEEP (Kotlin Evolution and Enhancement Process)](https://github.com/Kotlin/KEEP)
+像 Java 8 提供的 *Lambda* 表达式、方法引用、字段引用、*Stream API* 等都可以让代码变得更简洁而清晰，像 *Kotlin* 的 [Delegation](https://kotlinlang.org/docs/delegation.html)、[Scope Functions](https://kotlinlang.org/docs/scope-functions.html) (`let`, `also`, `apply`, `run`, `with`, `takeIf`, `takeUnless`) 和 [Local Function](https://kotlinlang.org/docs/functions.html#local-functions) 以及 `?:` 运算符，还有一些实用的扩展方法 (`lazy`, `use`, `withDefault`) 等等。
+
+> 关于 Java 的语言特性，可以参考 [Java 各版本的新特性](../../07/java-new-features/),
+> 关于 Kotlin 的语言特性，可以参考：[KEEP (Kotlin Evolution and Enhancement Process)](https://github.com/Kotlin/KEEP)
 
 ## 代码可读性
 
