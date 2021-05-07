@@ -65,7 +65,7 @@ Java 11 开始支持 [Unicode Standard](http://www.unicode.org/standard/standard
 
 在 Java 11 中增加了一个新的命令行标志：*-XX:+UseDynamicNumberOfCompilerThreads* 用于动态地控制编译器线程。在默认开启的分层编译模式中，无论可用内存和编译请求的数量如何，虚拟机都会在多 CPU 系统上启动了大量的编译线程。 因为即使是空闲时，线程也会消耗内存（几乎所有时间都是如此），这会导致资源的低效使用。
 
-为了解决这个问题，Java 11 已经更改了实现方式，在启动期间只启动每种类型的一个编译器线程，并动态处理后续线程的启动和关闭。 它由新的命令行标志 *-XX:+UseDynamicNumberOfCompilerThreads* 控制，默认开启。
+为了解决这个问题，Java 11 已经更改了实现方式，在启动期间只为每种编译类型（参见：[Understanding Java JIT Compilation with JITWatch, Part 1](https://www.oracle.com/technical-resources/articles/java/architect-evans-pt1.html)）启动一个编译器线程，并动态处理后续线程的启动和关闭。 它由新的命令行标志 *-XX:+UseDynamicNumberOfCompilerThreads* 控制，默认开启。
 
 ## ZGC - A Scalable Low-Latency Garbage Collector
 
