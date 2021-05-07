@@ -103,13 +103,20 @@ class CyclomaticComplexityVisitor : ASTVisitor {
     对于要公开或者发布出去的代码，API 一定要写好注释，尤其是逻辑复杂的设计，如果能配上文本格式的设计图 (如 [draw.io](https://app.diagrams.net/)) 就更好了
 1. 使用通用的架构设计模式
     业内总结的架构模式和设计模式基本上能满足绝大部分软件的架构设计了，如 [Service Locator Pattern](https://en.wikipedia.org/wiki/Service_locator_pattern), [Dependency Injection Pattern](https://en.wikipedia.org/wiki/Dependency_injection), [GoF Design Patterns (23种设计模式)](https://en.wikipedia.org/wiki/Design_Patterns) 等等，通用的架构设计模式更容易被其他的代码阅读者所理解，因为这些模式都已经成为业内共识了。
-1. 遵循 KISS (Keep it Simple & Stupid) 原则
-    KISS 原则与代码复杂度是一个对立的关系，保持代码简洁、直接，不要让阅读者过度思考
-1. Less is more
-    并不是功能越多越好，专注于最迫切需要解决的问题上，去除一些非必须的东西
-1. [Worse is better](https://www.dreamsongs.com/RiseOfWorseIsBetter.html)
-    在现实世界中，绝大多数软件的研发都是有时间和资源限制的，几乎不可能做到时间和资源都充足的情况，为了做到可持续交付，往往都是先满足 80% 的需求，让用户先使用起来，尽管不是很完美，但已经满足了大部分的需求，剩下的 20% 在后续的迭代中逐步完善。
 
 ## 单元测试
 
 有人可能会问，单元测试不是用来保证工程质量的么？跟代码优不优雅有什么关系？代码是否优雅既可以是客观上的指标，也可以主观上的感受，见过很多 *Library/SDK* 在实现完代码后，就提 *Pull Request* ，做得好一点的还写个概要设计文档，不好的，连个像样的 README 都没有，往往现实中，很多 *Code Reviewer* 并不直接参与这个项目的设计和开发，没有太多上下文，加上很多开发者没有养成写 *Unit Test* 的习惯，导致代码的阅读者需要花很长时间来理清楚设计者的意图和代码的入口，如果能为每个公开的 *API* 提供单元测试用例，这样就能更好的帮助代码阅读者理解 *Library/SDK* 是如何使用的，也就能更快的帮助阅读者理解整个架构的工作流程，而不至于陷入细节而无法看到整个架构的全貌。
+
+## KISS 原则
+
+KISS (Keep it Simple & Stupid) 原则与代码复杂度是呈反比例关系，代码越简单，相应的复杂度越低，所以，保持代码简洁、直接，不要让阅读者过度思考，更不要让使用者过度思考，最好提供简单明了的包含 *Getting Start* 章节的 README 文档和示例工程，让使用者能在最短的时间之内将 demo 运行起来，这也是为什么 *Java* 不被学生所喜欢的原因（学生更喜欢脚本型的语言，比如：*Python* ），光配置一个环境就够麻烦的了，执行一个 *Hello World* 还要先 *javac* ，然后再 *java* 执行 *class* ，这也是为什么 *Java 9* 中增加了 [The Java Shell](../../07/java-9-new-features/#The-Java-Shell) 这一新特性。
+
+## Less Is More
+
+并不是功能越多越好，专注于最迫切需要解决的问题上，去除一些非必须的东西
+
+## [Worse Is Better](https://www.dreamsongs.com/RiseOfWorseIsBetter.html)
+
+在现实世界中，绝大多数软件的研发都是有时间和资源限制的，几乎不可能做到时间和资源都充足的情况，为了做到可持续交付，往往都是先满足 80% 的需求，让用户先使用起来，尽管不是很完美，但已经满足了大部分的需求，剩下的 20% 在后续的迭代中逐步完善。
+
