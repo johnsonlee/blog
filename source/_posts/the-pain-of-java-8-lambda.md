@@ -1,7 +1,7 @@
 ---
 title: Java 8 Lambda 之殇
 date: 2020-04-15 01:00:00
-categories: 架构设计
+categories: Java
 tags:
   - Java 8
   - Lambda

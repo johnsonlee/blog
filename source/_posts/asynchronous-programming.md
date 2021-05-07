@@ -1,12 +1,12 @@
 ---
 title: 不懂 Kotlin Coroutines ？
 date: 2020-04-01 01:00:00
-categories: 架构设计
+categories: Kotlin
 tags:
+  - Kotlin
   - ES5
   - ES6
   - JavaScript
-  - Kotlin
 ---
 
 还记得在 *jQuery* 还没有诞生的年代，我在大学宿舍用一个通宵撸出了 *Tree* 组件，足足令我兴奋了一整天，自此之后，感觉自己已经深得 *JavaScript* 之精髓，工作多年后，因为项目的缘故，又重拾 *JavaScript* 发现 *Node.js* 竟然如此让人着迷，就好像一把尘封了多年的利剑再现峰芒，一周的时间便撸了一个前端插件化框架，尽管是在 *require.js* 流行的年代，但 *require.js* 依然无法解决按依赖顺序动态加载插件模块的问题（因为模块中不仅仅只有 *js* 代码，还有 *css* ，*json* 等资源），没办法，只好自己动手造轮子了（要是那时候有 *webpack* 该多好啊）。

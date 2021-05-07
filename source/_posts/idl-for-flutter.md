@@ -1,8 +1,10 @@
 ---
 title: Flutter 混合开发架构
 date: 2020-02-23 00:00:00
-categories: 架构设计
-tags: Flutter
+categories: Flutter
+tags:
+  - Dart
+  - Flutter
 ---
 
 自 2019 年的 GDD 之后，*Flutter* 成为了移动端的一颗耀眼的新星，由于其独特的设计，在性能和开发体验上远超 *React Native* 、*Weex* 等一些跨端开发框架，然而，从现有的原生技术栈切到 *Flutter* 是有一定的成本的，所以，不太可能推翻原有的原生架构，都会先拿非核心业务来试试水。
