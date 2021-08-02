@@ -228,20 +228,6 @@ BoxDemo.addBox(Integer.valueOf(10), listOfIntegerBoxes);
 BoxDemo.<Integer>addBox(Integer.valueOf(10), listOfIntegerBoxes);
 ```
 
-### 范型类型实例化
-
-在 Java 8 中实例化范型类型不用指定类型，如集合的实例化，在 Java 8 以前：
-
-```java
-List<String> list = new ArrayList<String>();
-```
-
-在 Java 8 中可以这样：
-
-```java
-List<String> list = new ArrayList<>();
-```
-
 ### 目标类型
 
 在 Java 7 中编译器就支持利用目标类型来推断泛型方法调用的参数类型，如：
