@@ -18,11 +18,11 @@ tags:
 
 # 何去何从
 
-国内很多团队都或多或少的用 AGP 的 Transform API 来搞点儿黑科技，那么问题来了，如果 AGO 8.0 要彻底废弃 Transform API 会怎样？尤其是那些重度依赖字节码插桩的项目，有人说，什么 AGP 7.0，我们连4.0 都还没用上呢！
+国内很多团队都或多或少的用 AGP 的 Transform API 来搞点儿黑科技，那么问题来了，如果 AGP 8.0 要彻底废弃 Transform API 会怎样？尤其是那些重度依赖字节码插桩的项目，有人说，什么 AGP 7.0，我们连4.0 都还没用上呢！
 
 虽然 AGP 官方没有明确给出 Transform API 的替代品，但从新增的 API 来看，方向已经很明确了，用 Gradle 提供的 [TransformAction](https://docs.gradle.org/current/dsl/org.gradle.api.artifacts.transform.TransformAction.html) 来替代原来的 Transform API，而且，AGP 很早就已经开始使用 Gradle [TransformAction](https://docs.gradle.org/current/dsl/org.gradle.api.artifacts.transform.TransformAction.html) 来对依赖项进行 transform 了。
 
-# TrnasformAction
+# TransformAction
 
 关于 [TransformAction](https://docs.gradle.org/current/dsl/org.gradle.api.artifacts.transform.TransformAction.html) 如何使用，Gradle 官方已经提供了很详细的文档--[Transforming dependency artifacts on resolution](https://docs.gradle.org/current/userguide/artifact_transforms.html)，与 AGP 类似，也是需要先注册，只不过 AGP 是通过 *Android Extension* 来注册 *Transform* ，Gradle 是通过 *DependencyHandler* 来注册 *TransformAction* ，差异并不算很大
 
