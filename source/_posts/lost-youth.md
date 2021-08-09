@@ -12,31 +12,31 @@ tags:
 
 ### BEYOND - 光辉岁月（前奏）
 
-<audio controls style="width:100%">
-  <source src="/assets/music/光辉岁月-前奏.m4a" type="audio/mpeg">
+<audio controls preload="auto" style="width:100%">
+  <source src="/assets/music/光辉岁月-前奏.m4a" type="audio/mp4">
 </audio>
 
 ### BEYOND - 光辉岁月（尾奏）
 
-<audio controls style="width:100%">
-  <source src="/assets/music/光辉岁月-尾奏.m4a" type="audio/mpeg">
+<audio controls preload="auto" style="width:100%">
+  <source src="/assets/music/光辉岁月-尾奏.m4a" type="audio/mp4">
 </audio>
 
 ### BEYOND - 不再犹豫
 
-<audio controls style="width:100%">
-  <source src="/assets/music/不再犹豫.m4a" type="audio/mpeg">
+<audio controls preload="auto" style="width:100%">
+  <source src="/assets/music/不再犹豫.m4a" type="audio/mp4">
 </audio>
 
 ### BEYOND - 谁伴我闯荡
 
-<audio controls style="width:100%">
-  <source src="/assets/music/谁伴我闯荡.m4a" type="audio/mpeg">
+<audio controls preload="auto" style="width:100%">
+  <source src="/assets/music/谁伴我闯荡.m4a" type="audio/mp4">
 </audio>
 
 ### 陈楚生 - 有没有人告诉你
 
-<audio controls style="width:100%">
-  <source src="/assets/music/有没有人告诉你.m4a" type="audio/mpeg">
+<audio controls preload="auto" style="width:100%">
+  <source src="/assets/music/有没有人告诉你.m4a" type="audio/mp4">
 </audio>
 
