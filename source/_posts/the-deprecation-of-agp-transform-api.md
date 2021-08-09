@@ -12,7 +12,7 @@ tags:
 
 # 初见端倪
 
-从 AGP 4.2 开始，就出现了几个跟操作字节码相关的新 API ，比如：com.android.grdle.instrumentation 包下的 AsmClassVisitorFactory，咋一看，不知道这玩意儿是干啥的，第一次见到这个 API ，我的第一反应是 AGP 不会是搞了个跟 Booster 类似的东西吧，然而研究了一番发现，是我想多了，AGP 团队压根儿就还没到这份儿上呢，自己的 bug 都修不过来，还有心思整字节码注入，况且单从在 Android 上玩字节码这件事情上来看，全球范围内，中国在这方面的经验要甩其他区域甚至硅谷大厂好几条街，都已经丧心病狂到拿 ASM 写业务代码，卷到你开始怀疑人生，这一项技术的应用，连硅谷的移动端团队都望尘莫及。
+从 AGP 4.2 开始，就出现了几个跟操作字节码相关的新 API ，比如：*com.android.gradle.instrumentation* 包下的 *AsmClassVisitorFactory* ，咋一看，不知道这玩意儿是干啥的，第一次见到这个 API ，我的第一反应是 AGP 不会是搞了个跟 Booster 类似的东西吧，然而研究了一番发现，是我想多了，AGP 团队压根儿就还没到这份儿上呢，自己的 bug 都修不过来，还有心思整字节码注入，况且单从在 Android 上玩字节码这件事情上来看，全球范围内，中国在这方面的经验要甩其他区域甚至硅谷大厂好几条街，都已经丧心病狂到拿 ASM 写业务代码，卷到你开始怀疑人生，这一项技术的应用，连硅谷的移动端团队都望尘莫及。
 
 经过一番研究，终于有了眉目，AGP 新增的这几个跟 Instrumentation 相关的 API 是来自 Gradle，并不是 AGP 原创，这么一来，也就解释了为什么 AGP 的版本要与 Gradle 的版本保持一致，从 4.2 直接跳到 7.0 了，不光是 AGP 需要 Transform，Java 也需要，所以由  Gradle 来提供统一的 Transform API 也合情合理。
 
