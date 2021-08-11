@@ -31,14 +31,14 @@ Java 11 于 2018 年 9 月 25 日发布，该版本目前已开放以进行错�
 
 ## Launch Single-File Source-Code Programs
 
-自从 Java 9 引入了 *jshell* ，Java 语言开始朝着脚本语言的方向演化，在 Java 11 中，我们可以在类 Unix 系统上使用 *shebang* 标识符直接运行单个 *.java* 文件，如：
+自从 Java 9 引入了 *jshell* ，Java 语言开始朝着脚本语言的方向演化，在 Java 11 中，我们可以在类 Unix 系统上使用 *shebang* 标识符直接运行单个 *java* 文件，例如：
 
 ```java
 #!/usr/bin/java --source 11
 
-public class Main {
+public class Hello {
     public static void main(String[] args) {
-        System.out.println("Hello, Java 11!);
+        System.out.println("Hello, Java 11!");
     }
 }
 ```
@@ -46,8 +46,11 @@ public class Main {
 然后在命令行中直接执行：
 
 ```shell
-java Main.java
+chmod +x hello
+./hello
 ```
+
+> 注意：*shebang* 文件的后缀不能以 *.java* 结尾，否则会被 Java Launcher 认为是普通的 Java 源文件而报错 `error: illegal character: '#'`
 
 ## Unicode 10
 
