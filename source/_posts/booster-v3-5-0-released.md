@@ -9,5 +9,8 @@ tags:
 
 Booster 又双叒叕发布了新的版本—— v3.5.0，本次更新内容如下：
 
-1. 增加 *booster-transform-service-loader* 模块，支持 `ServiceLoader` 性能优化
+1. 增加 *booster-transform-service-loader* 模块，支持 `ServiceLoader` 性能优化，使用方法：
+    ```kotlin
+    val service = ServiceLoader.load(Service::class.java).iterator() // iterator() 是必要的
+    ```
 1. 优化 *booster-transform-r-inline* 模块，支持 *constraintlayout v2.0*
