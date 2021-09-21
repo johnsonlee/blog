@@ -129,14 +129,13 @@ istore_1
 * `iinc` 操作的对象是 Local Variable Array
 * `iload_1` 和 `istore_1` 操作的对象是 Operand Stack
 
-那么，再来看上面三个指令，似乎答案已经被揭晓了：
+那么，再来看上面三个指令，似乎答案已经被揭晓了，假设在 `iload_1` 执行之前，栈的结构为 `...`（左边为栈底，右边为栈顶），那么：
 
-1. 假设在 `iload_1` 执行之前，栈的结构为 `...`（左边为栈底，右边为栈顶）
-1. `iload_1` 从 Local Variable Array #1（变量 `i`）的值 `0` 中加载到了 Operand Stack 中，栈的结构从 `...` 变为 `..., 0`
+1. `iload_1` 将 Local Variable Array [1]（变量 `i`）的值加载到了 Operand Stack 中，栈的结构从 `...` 变为 `..., 0`
 1. `iinc` 直接对 Local Variable Array 中对应的变量 `i` 进行自增，变成了 `1`，然而，这时候，Operand Stack 中，栈的结构还是 `..., 0`
-1. `istore_1` 将栈顶的 `0` 弹出来，存入 Local Variable Array #1（变量 `i`），栈的结构变为 `...`
+1. `istore_1` 将栈顶的 `0` 弹出来，存入 Local Variable Array [1]（变量 `i`）中，栈的结构变为 `...`
 
-所以，问题的根源在于 —— `iinc` 的结果没有同步到 Operand Stack 中！如果要解决这一问题，就需要在 `iinc` 之后，执行 `iload_1` 将 Local Variable Array #1（变量 `i`）的值加载到 Operand Stack 中，即：
+所以，问题的根源在于 —— `iinc` 的结果没有同步到 Operand Stack 中！如果要解决这一问题，就需要在 `iinc` 之后，执行 `iload_1` 将 Local Variable Array [1]（变量 `i`）的值加载到 Operand Stack 中，即：
 
 ```
 iinc          1, 1
