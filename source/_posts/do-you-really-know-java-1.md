@@ -65,8 +65,10 @@ class DreamBuilder : Human {
     if (isControlledByMySelf(dreamland) && shouldFallIntoDeeper(dreamland)) {
       val objects = prepareObjects(...)
       val newDreamland = buildDreamland(dreamland, objects)
+
+      // 一起进入下一层梦境
       newDreamland.humans.forEach { human ->
-        human.fallInto(dreamland)                     // 一起进入下一层梦境
+        human.fallInto(dreamland)
       }
       // 一起从深层的梦境中回来
     }
@@ -74,15 +76,19 @@ class DreamBuilder : Human {
   }
 
   fun fallIntoDreamland(objects: Set<Any>) {
-    val elements = objects + this                     // 把自己作为梦境的一部分
-    val dreamland = buildDreamland(null, elements)    // 在现实中构造梦境
+    // 把自己作为梦境的一部分
+    val elements = objects + this
+    // 在现实中构造梦境
+    val dreamland = buildDreamland(null, elements)
+    // 一起进入梦境
     val threads = dreamland.humans.map { human ->
       thread {
-       human.fallInto(dreamland)                      // 一起进入梦境
+       human.fallInto(dreamland)
       }
     }
+    // 一起回到现实
     threads.forEach { thread ->
-      thread.join()                                   // 一起回到现实
+      thread.join()
     }
     // 销毁梦境
   }
