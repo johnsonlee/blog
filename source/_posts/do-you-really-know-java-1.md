@@ -118,7 +118,7 @@ iinc          1, 1
 istore_1
 ```
 
-看起来，这三个指令貌似没什么毛病呀，为什么 `iinc` 指令并没有“生效”呢？我们来看看 [JVM 字节码指令](https://en.wikipedia.org/wiki/List_of_Java_bytecode_instructions) 中关于这 3 个指令的定义：
+看起来，这 3 个指令貌似没什么毛病呀，为什么 `iinc` 指令并没有“生效”呢？我们来看看 [JVM 字节码指令](https://en.wikipedia.org/wiki/List_of_Java_bytecode_instructions) 中关于这 3 个指令的定义：
 
 | Mnemonic | Opcode | Other bytes   | Stack     | Description                                          |
 |:--------:|:------:|:--------------|:---------:|:-----------------------------------------------------|
