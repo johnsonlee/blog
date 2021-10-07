@@ -1,9 +1,8 @@
 ---
 title: 这就是 Gradle 所谓的并行构建？
 date: 2020-11-01 02:00:00
-categories: CI/CD
-tags:
-  - Gradle
+categories: Gradle
+  - Build
 ---
 
 两周前，我就向 [Booster](https://github.com/didi/booster) 用户承诺 10 月底会发布 `3.0.0` ，集成测试在 10 月中旬其实就已经完成了，后来把集成测试框架 [testkit-gradle-plugin](https://github.com/bootstage/testkit-gradle-plugin) 又重写了一遍（已经是第 3 次重写了），加上 [Travis-CI](https://travis-ci.com) 正在从 https://travis-ci.org 迁移到 https://travis-ci.com ，而 [Booster](https://github.com/didi/booster) 还是在 https://travis-ci.org 上，导致 CI 长时间的排队，加上跑集成测试时间过长（超过 50 分钟)，任务被 [Travis-CI](https://travis-ci.com) 强行终止，所以，直到 10 月的最后一天才发布 [v3.0.0-alpha-3](https://github.com/johnsonlee/booster/releases/tag/v3.0.0-alpha-3)，其实，在发布 *alpha* 版本的时候，任务被 [Travis-CI](https://travis-ci.com) 强行终止的问题都还没解决，只好把集成测试从 CI 中暂时移除掉，不过，这个问题已经有了解决方案。
