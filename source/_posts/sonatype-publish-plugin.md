@@ -250,7 +250,10 @@ version = "1.0.0"
 ./gradlew clean publishToSonatype \
     -POSSRH_USERNAME=johnsonlee \
     -POSSRH_PASSWORD=********** \
-    -POSSRH_PACKAGE_GROUP=io.johnsonlee
+    -POSSRH_PACKAGE_GROUP=io.johnsonlee \
+    -Psinging.keyId=xxxxxxxx \
+    -Psinging.password=******** \
+    -Psinging.secretKeyRingFile=/Users/johnsonlee/.gnupg/secring.gpg
 ```
 
 待上传到 [Sonatype](https://oss.sonatype.org/) 的 __staging__ 仓库后，然后通过如下命令来发布到正式仓库：
@@ -263,3 +266,18 @@ version = "1.0.0"
 ```
 
 发布成功后，便可以在 [Maven Central](https://search.maven.org/search) 上搜索到了，关于详细介绍，请参阅[项目介绍](https://github.com/johnsonlee/sonatype-publish-plugin)。
+
+该插件不仅支持支持发布到 [Sonatype](https://oss.sonatype.org/)，还支持发布到私有 Nexus 仓库，例如公司内网的 Nexus 服务，只需要配置一下这几个属性或环境变量即可：
+
+* `NEXUS_URL`
+* `NEXUS_USERNAME`
+* `NEXUS_PASSWORD`
+
+然后通过如下命令来发布到私有 Nexus 仓库：
+
+```bash
+./gradlew clean publish \
+    -PNEXUS_URL=http://nexus.johnsonlee.io/ \
+    -PNEXUS_USERNAME=johnsonlee \
+    -PNEXUS_PASSWORD=**********
+```
