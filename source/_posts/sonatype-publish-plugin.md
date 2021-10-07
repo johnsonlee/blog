@@ -237,7 +237,7 @@ project.run {
 
 ```kotlin
 plugins {
-  id("io.johnsonlee.sonatype-publish-plugin") version "1.2.0"
+  id("io.johnsonlee.sonatype-publish-plugin") version "1.3.0"
 }
 
 group = "io.johnsonlee"
