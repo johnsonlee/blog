@@ -239,6 +239,9 @@ project.run {
 plugins {
   id("io.johnsonlee.sonatype-publish-plugin") version "1.2.0"
 }
+
+group = "io.johnsonlee"
+version = "1.0.0"
 ```
 
 开发者只需要配置好相应的环境变量就可以通过命令直接上传了：
