@@ -75,6 +75,29 @@ class markWord {
 
 > https://github.com/openjdk/jdk15/blob/master/src/hotspot/share/oops/markWord.hpp
 
+## ART 实现
+
+从 __Androi__ 的源码中，我们可以看到 `Object` 类的 `hashCode()` 实现：
+
+```java
+public int hashCode() {
+  return identityHashCode(this);
+}
+
+static int identityHashCode(Object obj) {
+  int lockWord = obj.shadow$_monitor_;
+  final int lockWordStateMask = 0xC0000000;  // Top 2 bits.
+  final int lockWordStateHash = 0x80000000;  // Top 2 bits are value 2 (kStateHash).
+  final int lockWordHashMask = 0x0FFFFFFF;  // Low 28 bits.
+  if ((lockWord & lockWordStateMask) == lockWordStateHash) {
+      return lockWord & lockWordHashMask;
+  }
+  return identityHashCodeNative(obj);
+}
+```
+
+与 __HotSpot__ 相同，都是用了 1 个 __word__ 来存储其 `hash` 值。
+
 ## 重写 `hashCode()`
 
 既然对象的 `hash` 值会被存下来，那重写 `hashCode()` 会导致每个对象的 `hash` 值会不一致吗？比如，一个普通的 __POJO__ 的定义如下：
@@ -139,7 +162,7 @@ public static void main(String[] args) {
 * __JVM__ 计算出来的 `hash`，即 `System.identityHashCode(Object)` 计算出来的 `hash`
 * 重写 `hashCode(Object)` 计算出来的 `hash`
 
-而 `Object` 头部的 `markWord` 中的 `hash` 是由 __JVM__ 计算出来的 `hash`，用来标识对象在 _runtime_ 的唯一性，默认情况下，如果未重写 `hashCode(Object)`，这两套 `hash` 值是相同的，因此，才会出现同一个实例前后两次调用 `hashCode()` 的返回值不一样，但是在 _runtime_ 的 `hash` 值却是一致的：
+而 `Object` 头部的 `markWord` 中的 `hash` 是由 __JVM/ART__ 计算出来的 `hash`，用来标识对象在 _runtime_ 的唯一性，默认情况下，如果未重写 `hashCode(Object)`，这两套 `hash` 值是相同的，因此，才会出现同一个实例前后两次调用 `hashCode()` 的返回值不一样，但是在 _runtime_ 的 `hash` 值却是一致的：
 
 ```java
 public static void main(String[] args) {
