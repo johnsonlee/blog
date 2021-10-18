@@ -77,7 +77,7 @@ class markWord {
 
 ## ART 实现
 
-从 __Androi__ 的源码中，我们可以看到 `Object` 类的 `hashCode()` 实现：
+从 __Android__ 的源码中，我们可以看到 `Object` 类的 `hashCode()` 实现：
 
 ```java
 public int hashCode() {
