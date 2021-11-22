@@ -10,7 +10,7 @@ tags:
 
 ## 不可测试
 
-如果你从来没有基于这类框架写过单元测试，可能无法理解问题的所在，为了方便理解问题，我们来看看 __App__ 的构建和运行流程和 __Local UT__ 的构建和运行流程
+如果你从来没有基于这类框架写过单元测试，可能无法理解问题的所在，为了方便理解问题，我们先来看看 __App__ 的构建和运行流程以及 __Local UT__ 的构建和运行流程
 
 ### Local UT 构建和运行
 
@@ -21,7 +21,7 @@ skinparam backgroundColor transparent
 archimate #Application test as "Test Case"  <<application>>
 archimate #Technology class as "Test.class"  <<technology-artifact>>
 archimate #Implementation classloader as "URLClassLoader"  <<component>>
-archimate #Technology source as "Source"  <<technology-artifact>>
+archimate #Technology source as "Test.java"  <<technology-artifact>>
 
 test -d-> classloader
 classloader -d-> class : "  load"
@@ -36,7 +36,7 @@ source -r-> class : compile
 skinparam backgroundColor transparent
 
 archimate #Application app as "App"  <<application>>
-archimate #Technology source as "Source"  <<technology-artifact>>
+archimate #Technology source as "Test.java"  <<technology-artifact>>
 archimate #Technology class as "Test.class" <<technology-artifact>>
 archimate #Implementation transformer as "Transform"  <<component>>
 archimate #Technology dex as "classes.dex"  <<technology-artifact>>
@@ -138,7 +138,7 @@ skinparam backgroundColor transparent
 
 archimate #Application test as "Test Case"  <<application>>
 archimate #Application app as "App"  <<application>>
-archimate #Technology source as "Source"  <<technology-artifact>>
+archimate #Technology source as "Test.java"  <<technology-artifact>>
 archimate #Technology class as "Test.class"  <<technology-artifact>>
 archimate #Implementation classloader as "TransformClassLoader"  <<component>>
 archimate #Implementation transformer as "Transformer"  <<component>>
