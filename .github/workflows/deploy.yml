@@ -17,7 +17,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2.1.5
         with:
-          node-version: '10.x'
+          node-version: '12.4.0'
 
       - name: Install dependencies
         run: |
@@ -26,7 +26,7 @@ jobs:
       - name: Build
         run: |
           rm -rvf public && mkdir public
-          npx hexo generate
+          npm run build
 
       - name: Deploy
         working-directory: ./public
