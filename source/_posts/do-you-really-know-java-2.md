@@ -153,7 +153,13 @@ public static void main(String[] args) {
 }
 ```
 
-结果是 `false`，前面不是说 `hash` 值会被存在 `Object` 的头部不会变吗？为什么又是 `false` 呢？到底是怎么回事儿？
+输入结果如下：
+
+```
+false
+```
+
+前面不是说 `hash` 值会被存在 `Object` 的头部不会变吗？为什么又是 `false` 呢？到底是怎么回事儿？
 
 ## System.identityHashCode(Object)
 
@@ -162,7 +168,11 @@ public static void main(String[] args) {
 * __JVM__ 计算出来的 `hash`，即 `System.identityHashCode(Object)` 计算出来的 `hash`
 * 重写 `hashCode(Object)` 计算出来的 `hash`
 
-而 `Object` 头部的 `markWord` 中的 `hash` 是由 __JVM/ART__ 计算出来的 `hash`，用来标识对象在 _runtime_ 的唯一性，默认情况下，如果未重写 `hashCode(Object)`，这两套 `hash` 值是相同的，因此，才会出现同一个实例前后两次调用 `hashCode()` 的返回值不一样，但是在 _runtime_ 的 `hash` 值却是一致的：
+而 `Object` 头部的 `markWord` 中的 `hash` 是由 __JVM/ART__ 计算出来的 `hash`，用来标识对象在 _runtime_ 的唯一性。
+
+默认情况下，如果未重写 `hashCode(Object)`，这两套 `hash` 值是相同的。
+
+因此，才会出现上述同一个实例前后两次调用 `hashCode()` 的返回值不一样，但是在 _runtime_ 的 `hash` 值却是一致的：
 
 ```java
 public static void main(String[] args) {
@@ -172,4 +182,10 @@ public static void main(String[] args) {
   int hash2 = System.identityHashCode(data);
   System.out.println(hash1 == hash2);
 }
+```
+
+输出结果如下：
+
+```
+true
 ```
