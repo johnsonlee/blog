@@ -140,7 +140,7 @@ archimate #Application test as "Test Case"  <<application>>
 archimate #Application app as "App"  <<application>>
 archimate #Technology source as "Test.java"  <<technology-artifact>>
 archimate #Technology class as "Test.class"  <<technology-artifact>>
-archimate #Implementation classloader as "TransformClassLoader"  <<component>>
+archimate #Implementation classloader as "TransformerClassLoader"  <<component>>
 archimate #Implementation transformer as "Transformer"  <<component>>
 archimate #Technology dex as "classes.dex"  <<technology-artifact>>
 archimate #Implementation dexloader as "DexLoader"  <<component>>
