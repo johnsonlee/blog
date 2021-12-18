@@ -29,15 +29,19 @@ jobs:
           npm run build
 
       - name: Deploy
-        working-directory: ./public
-        run: |
-          echo "johnsonlee.io" > CNAME
-          git init
-          git config user.name "johnsonlee"
-          git config user.email "g.johnsonlee@gmail.com"
-          git remote add origin https://johnsonlee:${GH_DEPLOY_TOKEN}@github.com/johnsonlee/johnsonlee.github.io.git
-          git add .
-          git commit -m "Deployed by GitHub actions" -a
-          git push -u origin HEAD:master --force
+        uses: nick-invision/retry@v2
+        with:
+          timeout_minutes: 10
+          max_attempts: 3
+          command: |
+            cd public
+            echo "johnsonlee.io" > CNAME
+            git init
+            git config user.name "johnsonlee"
+            git config user.email "g.johnsonlee@gmail.com"
+            git remote add origin https://johnsonlee:${GH_DEPLOY_TOKEN}@github.com/johnsonlee/johnsonlee.github.io.git
+            git add .
+            git commit -m "Deployed by GitHub actions" -a
+            git push -u origin HEAD:master --force
         env:
           GH_DEPLOY_TOKEN: ${{ secrets.GH_DEPLOY_TOKEN }}
