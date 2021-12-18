@@ -144,7 +144,7 @@ deactivate JUnitTestClassExecutor
 @enduml
 ```
 
-至此，我们已经搞清楚了 `JUnitTestClassExecutor` 的运行时序，既然要在每个被 `@Test` 标注的方法执行前做点啥，那我们要做的便是重写 `JUnitTestClassExecutor` 的  `methodBlock(FrameworkMethod)` 方法，将 `FrameworkMethod` 引用的 `Method` 替换成修改后的 `Method`。
+至此，我们已经搞清楚了 `JUnitTestClassExecutor` 的运行时序，既然要在每个被 `@Test` 标注的方法执行前做点啥，那我们要做的便是重写 `BlockJUnit4ClassRunner` 的  `methodBlock(FrameworkMethod)` 方法，将 `FrameworkMethod` 引用的 `Method` 替换成修改后的 `Method`。
 
 > 修改后的 `Method` 从哪里来呢？
 
