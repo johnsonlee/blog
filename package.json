@@ -29,6 +29,7 @@
     "hexo-renderer-stylus": "^2.0.1",
     "hexo-server": "^2.0.0",
     "hexo-wordcount": "^6.0.1",
+    "lodash": "^4.17.21",
     "typescript": "^4.5.3"
   },
   "devDependencies": {
