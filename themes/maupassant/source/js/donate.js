@@ -45,7 +45,7 @@ jQuery(document).ready(function() {
 	$("#donateBox li,#donateBox li a").css("width", Math.ceil(74+(74*(4-count)/count))+"px");
 	function showQR(QR) {
 		if(QR) {
-			MainBox.css('background-image', 'url(' + QR + ')');
+			MainBox.attr('src', QR);
 		}
 		$('#DonateText,#donateBox,#github').addClass('blur');
 		QRBox.fadeIn(300, function(argument) {
