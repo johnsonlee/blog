@@ -107,7 +107,7 @@ file.writeTo(System.out)
 
 做过前端开发的同学可能对模板引擎比较熟悉，例如：[EJS (Embedded JavaScript template engine)](https://ejs.co/)，像早期的 JSP 技术用到的模板引擎 [Freemarker](https://freemarker.apache.org/) 和 [Velocity](https://velocity.apache.org/) 皆来自大名鼎鼎的 Apache 基金会。大家可能会问，模板引擎跟 [JavaPoet](https://github.com/square/javapoet) 和 [KotlinPoet](https://github.com/square/kotlinpoet) 有什么关系？
 
-明确地说，模板引擎跟 [JavaPoet](https://github.com/square/javapoet) 和 [KotlinPoet](https://github.com/square/kotlinpoet) 并没有什么关系，但跟我们要解决的问题有关系，对于代码生成这件事情而言，我们最终的目的就是「生成源代码」，这跟我们用模板引擎生成 *HTML* 有什么本质区别吗？答案已经很明了，*HTML* 本身也是一种源代码，既然用模板引擎可能生成 *HTML* 源代码，为什么不能用模板引擎来生成 *Java* 代码、*Kotlin* 代码、*Swift* 代码等等？
+明确地说，模板引擎跟 [JavaPoet](https://github.com/square/javapoet) 和 [KotlinPoet](https://github.com/square/kotlinpoet) 并没有什么关系，但跟我们要解决的问题有关系，对于代码生成这件事情而言，我们最终的目的就是「生成源代码」，这跟我们用模板引擎生成 *HTML* 有什么本质区别吗？答案已经很明了，*HTML* 本身也是一种源代码，既然用模板引擎可以生成 *HTML* 源代码，为什么不能用模板引擎来生成 *Java* 代码、*Kotlin* 代码、*Swift* 代码等等？
 
 可能大家会想到另一个问题：
 
