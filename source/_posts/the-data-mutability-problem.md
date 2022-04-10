@@ -39,7 +39,7 @@ class Registry {
 
 ```java
 public void wtf(Registry registry) {
-  registry.get("key").add("wtf", Wtf.class)
+  registry.get("key").put("wtf", Wtf.class)
 }
 ```
 
