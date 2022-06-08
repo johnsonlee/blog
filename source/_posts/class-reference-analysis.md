@@ -49,7 +49,7 @@ when (val android = project.getAndroid<BaseExtension>()) {
 }
 ```
 
-Gradle 对于依赖关系分析的 API 也仅限于提供模块级别，如果想要细化的 Class 或者 Member 的级别，就需要自己单独实现了。
+Gradle 对于依赖关系分析的 API 也仅限于提供模块级别，如果想要细化到 Class 或者 Member 的级别，就需要自己单独实现了。
 
 ## 模块间类依赖关系
 
