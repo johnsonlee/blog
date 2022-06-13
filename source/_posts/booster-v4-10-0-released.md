@@ -10,7 +10,7 @@ tags:
 Booster 又双叒叕发布了新的版本—— v4.10.0，本次更新内容如下：
 
 - 完善 [booster-cha](https://github.com/didi/booster/blob/v4.10.0/booster-cha)，防止内存泄漏，支持从 AAR 加载 class
-- 修得 composite build 下 transform 输出冲突的问题
+- 修复 composite build 下 transform 输出冲突的问题
 - 完善 [booster-command](https://github.com/didi/booster/blob/v4.10.0/booster-command) 新增 `Command.execute(String[])` API
 - [booster-task-analyser](https://github.com/didi/booster/blob/v4.10.0/booster-task-analyser) 新增类引用分析功能
 - [booster-graph](https://github.com/didi/booster/blob/v4.10.0/booster-graph) 拆分为 [booster-graph](https://github.com/didi/booster/blob/v4.10.0/booster-graph), [booster-graph-dot](https://github.com/didi/booster/blob/v4.10.0/booster-graph-dot) 和 [booster-graph-json](https://github.com/didi/booster/blob/v4.10.0/booster-graph-json)
