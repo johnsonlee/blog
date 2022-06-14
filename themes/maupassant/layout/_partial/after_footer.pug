@@ -91,14 +91,13 @@ if theme.graphviz.enable == true
     
 script.
   load('/libs/jquery/3.4.0/jquery.min.js').then(() => {
-      load(
-        '/js/search.js',
-        '/js/share.js',
-        '/js/smartresize.js',
-        '/js/totop.js'
-      ).then(() => {
-        load('/js/codeblock-resizer.js').then(() => {});
-        ('function' == typeof setupSearch) && setupSearch();
-      });
+    load(
+      '/js/search.js',
+      '/js/share.js',
+      '/js/smartresize.js',
+      '/js/totop.js'
+    ).then(() => {
+      load('/js/codeblock-resizer.js').then(() => {});
+      ('function' == typeof setupSearch) && setupSearch();
+    });
   });
-    

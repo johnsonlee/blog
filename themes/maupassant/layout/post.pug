@@ -64,5 +64,11 @@ block content
     include _partial/tag.pug
     include _partial/post_nav.pug
 
+    script(type='text/javascript', id='diffblog-plugin-script', async='false' src='https://diff.blog/static/js/diffblog_plugin_v1.js')
+    script.
+      document.getElementById("diffblog-plugin-script").addEventListener('load', () => {
+        DiffBlog('0jhfofmazizsde2k5pw64l8p2sy592xanbfvhtabsoy93kenap');
+      });
+
     if page.comments
       include _partial/comments.pug
