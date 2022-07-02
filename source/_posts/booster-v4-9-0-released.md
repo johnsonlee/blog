@@ -14,6 +14,6 @@ Booster 又双叒叕发布了新的版本—— v4.9.0，本次更新内容如�
 - 修复集成测试用例
 - 完善 `booster-graph` 模块，新增 `GroupedNode`, `GraphRenderer.Options` 以及 `JsonGraphRenderer`
 
-> 参见：[Release Notes](https://github.com/didi/booster/blob/v4.9.0/RELEASE-NOTES.md#v490)
+> 参见：[Release Notes](https://github.com/didi/booster/blob/master/RELEASE-NOTES.md#v490)
 > 参见：[API Rereference](https://reference.johnsonlee.io/booster)
 > 参见：[深入理解 Booster](https://booster.johnsonlee.io)

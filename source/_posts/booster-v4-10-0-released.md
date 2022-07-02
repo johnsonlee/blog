@@ -16,6 +16,6 @@ Booster 又双叒叕发布了新的版本—— v4.10.0，本次更新内容如�
 - [booster-graph](https://github.com/didi/booster/blob/v4.10.0/booster-graph) 拆分为 [booster-graph](https://github.com/didi/booster/blob/v4.10.0/booster-graph), [booster-graph-dot](https://github.com/didi/booster/blob/v4.10.0/booster-graph-dot) 和 [booster-graph-json](https://github.com/didi/booster/blob/v4.10.0/booster-graph-json)
 - 适配 AGP 7.1 和 7.2
 
-> 参见：[Release Notes](https://github.com/didi/booster/blob/v4.9.0/RELEASE-NOTES.md#v490)
+> 参见：[Release Notes](https://github.com/didi/booster/blob/master/RELEASE-NOTES.md#v4100)
 > 参见：[API Rereference](https://reference.johnsonlee.io/booster)
 > 参见：[深入理解 Booster](https://booster.johnsonlee.io)
