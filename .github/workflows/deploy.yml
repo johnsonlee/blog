@@ -17,7 +17,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2.1.5
         with:
-          node-version: '12.4.0'
+          node-version: '12.22'
 
       - name: Install dependencies
         run: |
@@ -27,7 +27,7 @@ jobs:
         uses: nick-invision/retry@v2
         with:
           timeout_minutes: 10
-          max_attempts: 3
+          max_attempts: 5
           command: |
             rm -rvf public && mkdir public
             npm run build
@@ -36,7 +36,7 @@ jobs:
         uses: nick-invision/retry@v2
         with:
           timeout_minutes: 10
-          max_attempts: 3
+          max_attempts: 5
           command: |
             cd public
             echo "johnsonlee.io" > CNAME
