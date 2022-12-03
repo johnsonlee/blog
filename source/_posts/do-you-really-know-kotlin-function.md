@@ -5,6 +5,7 @@ categories: Kotlin
 tags:
   - Kotlin
   - Compiler
+  - Lambda
 ---
 
 在 Booster 4.15.0 之前，一直使用的是 Kotlin 1.3，之所一直用比较低的 Kotlin 版本，主要的原因还是考虑到 Kotlin 版本的兼容性问题，但要支持 AGP 7.3 就不得不升有 Kotlin 版本，因为 AGP 7.3 就依赖了 Kotlin 1.5，所以，Booster 4.15.0 花了很长的时间来解决兼容性的问题。
