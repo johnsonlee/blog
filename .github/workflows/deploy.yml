@@ -6,46 +6,80 @@ on:
 
   workflow_dispatch:
 
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-
+        uses: actions/checkout@v3
       - name: Setup Node.js
-        uses: actions/setup-node@v2.1.5
+        uses: actions/setup-node@v3
         with:
-          node-version: '12.22'
-
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: ./package-lock.json
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '2.7.18'
+      - name: Cache node modules
+        id: cache-nodemodules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
       - name: Install dependencies
+        if: steps.cache-nodemodules.outputs.cache-hit != 'true'
         run: |
           npm install
-
       - name: Build
-        uses: nick-invision/retry@v2
-        with:
-          timeout_minutes: 10
-          max_attempts: 5
-          command: |
-            rm -rvf public && mkdir public
-            npm run build
-
-      - name: Deploy
-        uses: nick-invision/retry@v2
-        with:
-          timeout_minutes: 10
-          max_attempts: 5
-          command: |
-            cd public
-            echo "johnsonlee.io" > CNAME
-            git init
-            git config user.name "johnsonlee"
-            git config user.email "g.johnsonlee@gmail.com"
-            git remote add origin https://johnsonlee:${GH_DEPLOY_TOKEN}@github.com/johnsonlee/johnsonlee.github.io.git
-            git add .
-            git commit -m "Deployed by GitHub actions" -a
-            git push -u origin HEAD:master --force
+        run: |
+          rm -rvf public && mkdir public
+          npm run build
+      - name: Deploy to johnsonlee.io
+        working-directory: ./public
+        run: |
+          echo "johnsonlee.io" > CNAME
+          rm -rf .git
+          git init
+          git config user.name "johnsonlee"
+          git config user.email "g.johnsonlee@gmail.com"
+          git remote add origin https://johnsonlee:${GH_DEPLOY_TOKEN}@github.com/johnsonlee/johnsonlee.github.io.git
+          git add .
+          git commit -m "Deployed by GitHub actions at $(date '+%F %T %:z')" -a
+          git push -u origin HEAD:master --force
+          git push -u origin HEAD:gh-pages --force
         env:
           GH_DEPLOY_TOKEN: ${{ secrets.GH_DEPLOY_TOKEN }}
+      - name: Deploy to blog.johnsonlee.io
+        working-directory: ./public
+        run: |
+          echo "blog.johnsonlee.io" > CNAME
+          rm -rf .git
+          git init
+          git config user.name "johnsonlee"
+          git config user.email "g.johnsonlee@gmail.com"
+          git remote add origin https://johnsonlee:${GH_DEPLOY_TOKEN}@github.com/johnsonlee/blog.git
+          git add .
+          git commit -m "Deployed by GitHub actions at $(date '+%F %T %:z')" -a
+          git push -u origin HEAD:gh-pages --force
+        env:
+          GH_DEPLOY_TOKEN: ${{ secrets.GH_DEPLOY_TOKEN }}
+      - name: Upload error logs
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: logs
+          path: ~/.npm/_logs/*.log
+
