@@ -9,10 +9,10 @@
     "deploy": "npx hexo deploy"
   },
   "hexo": {
-    "version": "5.4.2"
+    "version": "6.3.0"
   },
   "dependencies": {
-    "hexo": "^5.4.0",
+    "hexo": "^6.2.0",
     "hexo-deployer-git": "^3.0.0",
     "hexo-filter-mathjax": "^0.8.0",
     "hexo-filter-plantuml": "^2.1.1",
@@ -30,7 +30,7 @@
     "hexo-server": "^2.0.0",
     "hexo-wordcount": "^6.0.1",
     "lodash": "^4.17.21",
-    "typescript": "^4.5.3"
+    "typescript": "^4.9.3"
   },
   "devDependencies": {
     "hexo-command-gzip": "^0.1.0"
