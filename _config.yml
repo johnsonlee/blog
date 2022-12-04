@@ -6,7 +6,7 @@
 title: Johnson Lee
 subtitle: Get into trouble, make mistakes, fight, love, live
 description: Johnson's personal blog
-keywords: johnsonlee,booster,android,java,kotlin,performance,optimizer,flutter,javascript,typescript,node.js
+keywords: 李景森,架构设计,滴滴,快手,性能优化,我在滴滴做架构,johnsonlee,johnson,lijingsen,jingsen,booster,virtualapk,android,java,kotlin,performance,optimizer,flutter,javascript,typescript,node.js
 author: Johnson Lee
 language: zh-CN
 timezone: ''
@@ -64,6 +64,27 @@ index_generator:
 # Category & Tag
 default_category: uncategorized
 category_map:
+  Android: android
+  Architecture Design: architecture-design
+  Biology: biology
+  Booster: booster
+  Career: career
+  Cloud: cloud
+  Computer Science: computer-science
+  DIY: diy
+  Flutter: flutter
+  Gradle: gradle
+  Graphics: graphics
+  iOS: ios
+  Java: java
+  Kotlin: kotlin
+  Life: life
+  Mobile: mobile
+  Observability: observability
+  Open Source: open-source
+  Reading: reading
+  Survival: survival
+  Web: web
 tag_map:
 
 # Metadata elements
