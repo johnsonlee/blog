@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "hexo": "^6.3.0",
+    "hexo-algolia": "^1.3.2",
     "hexo-deployer-git": "^3.0.0",
     "hexo-filter-mathjax": "^0.8.0",
     "hexo-filter-plantuml": "^2.1.1",

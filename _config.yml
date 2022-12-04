@@ -117,3 +117,9 @@ feed:
   icon: icon.png
   autodiscovery: true
   template:
+
+algolia:
+  applicationID: '453Q8KJZ6R'
+  apiKey: '7b786a1a2be08b379cb67058a68e5e55'
+  indexName: 'blog.johnsonlee.io'
+
