@@ -27,6 +27,30 @@ body {
     -moz-osx-font-smoothing: grayscale;
     font-size: 14px;
 }
+h1 {
+    counter-reset: h2counter;
+}
+h2 {
+    counter-reset: h3counter;
+}
+h3 {
+    counter-reset: h4counter;
+}
+h2:before {
+    content: counter(h2counter) ".\0000a0\0000a0";
+    counter-increment: h2counter;
+}
+h2:hover::before {
+    content: counter(h2counter) ".\0000a0\0000a0";
+}
+h3:before {
+    content: counter(h2counter) "." counter(h3counter) ".\0000a0\0000a0";
+    counter-increment: h3counter;
+}
+h4:before {
+    content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) ".\0000a0\0000a0";
+    counter-increment: h4counter;
+}
 .body_container {
     padding: 0 60px;
     max-width: 1150px;
@@ -274,6 +298,9 @@ div {
         }
         h3 {
             margin: 1.4em 0 1.1em;
+        }
+        pre[class*="language-"] {
+            border-radius: 0.5em;
         }
         pre code {
             padding: 0 2em;
@@ -1209,6 +1236,27 @@ figure.highlight,
         .number,
         .literal {
             color: #0086b3;
+        }
+    }
+    // Kotlin
+    &.kotlin .code {
+        .built_in,
+        .title {
+            color: #795da3;
+        }
+        .javadoc {
+            color: #969896;
+        }
+        .meta,
+        .annotation,
+        .javadoctag {
+            color: #a71d5d;
+        }
+        .number {
+            color: #0086b3;
+        }
+        .params {
+            color: #1d3e81;
         }
     }
     // Makefile
