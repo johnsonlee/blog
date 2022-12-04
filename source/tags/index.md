@@ -1,4 +1,4 @@
 ---
+title: tags
 layout: tagcloud
-title: Tags
 ---

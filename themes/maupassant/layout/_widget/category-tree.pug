@@ -1,0 +1,20 @@
+- const findCategories = parent => {
+-   const options = {}
+-   if (parent) {
+-     options.parent = parent
+-   } else {
+-     options.parent = {$exists: false}
+-   }
+-   return site.categories.find(options).filter(cat => cat.length).sort('name')
+- }
+- const listHierarchicalCategories = (level, depth, parent) => {
+-   let children = level == 0 ? '<ul>' : `<ul style="padding:revert">`;
+-   findCategories(parent).forEach((cat, i) => {
+-     children += `<li><a href="${url_for.call(this, cat.path)}">${cat.name} (${cat.length})</a>`
+-     if (depth && depth > 1 && level + 1 < depth) {
+-       children += listHierarchicalCategories(level + 1, depth, cat._id);
+-     }
+-     children += `</li>`
+-   })
+-   return children + '</ul>';
+- }

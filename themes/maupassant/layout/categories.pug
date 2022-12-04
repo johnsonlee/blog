@@ -1,0 +1,6 @@
+extends base
+block title
+  title= __(page.title) + ' | ' + config.title
+block content
+  include _widget/category-tree.pug
+  != listHierarchicalCategories(0, 10)
