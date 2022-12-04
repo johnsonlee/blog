@@ -8,6 +8,7 @@ head
     meta(name='baidu-site-verification', content='sSd2p2uQfO')
     meta(name='keywords', content=config.keywords)
     block title
+    link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300')
     link(rel='stylesheet', type='text/css', href=url_for(theme.css) + '/style.css')
     link(rel='preload', type='text/css', href='/libs/pure/1.0.0/pure-min.css', as='style', onload='this.rel="stylesheet"')
     link(rel='preload', type='text/css', href='/libs/pure/1.0.0/grids-responsive-min.css', as='style', onload='this.rel="stylesheet"')
@@ -38,4 +39,3 @@ head
         var target = this;
         return target.split(search).join(replacement);
       };
-
