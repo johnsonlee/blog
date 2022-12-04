@@ -126,7 +126,7 @@ final class refs/LambdaKt$main$1 extends kotlin/jvm/internal/FunctionReference  
 
 通过上述的反编译代码，我们不难发现，Kotlin 编译器生成了很多额外的方法，而这些方法其实大部分都很少用到，对于一些几乎不怎么用到的方法，为什么要生成呢？能不能不生成呢？
 
-答案是肯定的，这也就是 Kotlin 1.4 针对 `FunctionReference` 的优化，增加了 [AdaptedFunctionReference](https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/jvm/runtime/kotlin/jvm/internal/AdaptedFunctionReference.java)，同时，也修改了 [FunctionReferenceImpl](://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/jvm/runtime/kotlin/jvm/internal/FunctionReferenceImpl.java) 新增加了 2 个构造方法：
+答案是肯定的，这也就是 Kotlin 1.4 针对 `FunctionReference` 的优化，增加了 [AdaptedFunctionReference](https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/jvm/runtime/kotlin/jvm/internal/AdaptedFunctionReference.java)，同时，也修改了 [FunctionReferenceImpl](https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/jvm/runtime/kotlin/jvm/internal/FunctionReferenceImpl.java) 新增加了 2 个构造方法：
 
 ```java
 public FunctionReferenceImpl(
@@ -162,7 +162,7 @@ public FunctionReferenceImpl(
 }
 ```
 
-然后，通过在 [FunctionReferenceImpl](://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/jvm/runtime/kotlin/jvm/internal/FunctionReferenceImpl.java) 的父类 [FunctionReference](https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/jvm/runtime/kotlin/jvm/internal/FunctionReference.java) 中增加了 1 个构造方法把参数通过构造方法传给父类 [CallableReference](https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/jvm/runtime/kotlin/jvm/internal/CallableReference.java)：
+然后，通过在 [FunctionReferenceImpl](https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/jvm/runtime/kotlin/jvm/internal/FunctionReferenceImpl.java) 的父类 [FunctionReference](https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/jvm/runtime/kotlin/jvm/internal/FunctionReference.java) 中增加了 1 个构造方法把参数通过构造方法传给父类 [CallableReference](https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/jvm/runtime/kotlin/jvm/internal/CallableReference.java)：
 
 ```java
 @SinceKotlin(version = "1.4")
@@ -203,6 +203,38 @@ protected CallableReference(Object receiver, Class owner, String name, String si
     this.signature = signature;
     this.isTopLevel = isTopLevel;
 }
+```
+
+如下图所示：
+
+```plantuml
+@startuml
+abstract class CallableReference {
+    - owner: Class;
+    - name: String;
+    - signature: String;
+    - isTopLevel: boolean;
+    + CallableReference(receiver: Object, owner: Class, name: String, signature: String, isTopLevel: boolean)
+}
+
+class FunctionReference extends CallableReference implements FunctionBase {
+    + FunctionReference(arity: int, receiver: Object, owner: Class, name: String, signature: String, flags: int)
+}
+
+class FunctionReferenceImpl extends FunctionReference {
+    + FunctionReferenceImpl(arity: int, receiver: Object, owner: Class, name: String, signature: String, flags: int)
+}
+
+class AdaptedFunctionReference implements FunctionBase {
+    - receiver: Object;
+    - owner: Class;
+    - name: String;
+    - signature: String;
+    - isTopLevel: boolean;
+    - arity: int;
+    - flags: int
+}
+@enduml
 ```
 
 所以，原来在匿名内部类中生成的大部分返回值为常量的方法通过构造传递给基类来实现了，从而减小了整个应用的字节码大小。
