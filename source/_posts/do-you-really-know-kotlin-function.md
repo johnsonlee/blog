@@ -243,7 +243,7 @@ NoSuchMethodError: 'void kotlin.jvm.internal.FunctionReferenceImpl.<init>(int, j
 
 这对于用 Kotlin 开发的类库来说是很麻烦的事情，就像 Booster，很多工程还在用着低版本的 AGP，而 Booster 又要兼容最新版本的 AGP，而最新版本的 AGP 又要求最低 Kotlin 版本为 1.5，导致了用 Kotlin 1.5 编译出来的 Booster 无法在用着低版本的 AGP 工程中运行。
 
-## 解决方案
+## Callable Reference 的解决方案
 
 上面的问题相信工程师都遇到过，通过扒 Kotlin 源码，发现了对于以上优化可以通过编译选项来禁用：
 
@@ -264,6 +264,32 @@ tasks.withType<KotlinCompile> {
     }
 }
 ```
+
+## 系统性的解决方案
+
+针对兼容性问题，Java 是有系统性的解决方案的，用过 Gradle 的同学应该都记得，Java 编译任务可以配置这两个参数：
+
+1. `sourceCompatibility`
+1. `targetCompatibility`
+
+示例如下：
+
+```groovy
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetComaptibility = JavaVersion.VERSION_1_8
+}
+```
+
+正是前面提到的 *API* 与 *ABI* 两个层面来进行兼容性管理：
+
+| 层面 | 方案                  |
+|:----:|:---------------------:|
+| API  | `sourceCompatibility` |
+| ABI  | `targetCompatibility` |
+
+那 Kotlin 如何来实现 *API* 与 *ABI* 的版本管理呢？欲知后事如何，且听下回分解 🤪
+
 
 ## 参考资料
 
