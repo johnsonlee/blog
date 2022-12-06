@@ -40,6 +40,68 @@ date: 2022-12-07 00:00:00
 
 Kotlin 的一些语言特性是在编译器层面实现的，不同版本的 Kotlin 编译器的实现方式可能有些不一样，虽然对于使用 Kotlin 进行开发的工程师而言，都是调用 Kotlin 标准库，但是 Kotlin 编译器会生成一些字节码甚至 class 来实现让工程师看起来很酷的语法糖，比如：随处可见的 `Function`
 
+## 真正头疼的问题
+
+### 不兼容的字节码
+
+还记得 [Kotlin 填坑记之 FunctionReference](/2022/12/03/do-you-really-know-kotlin-function/) 中遇到的问题吗？
+
+```kotlin
+fun f(fn: (Any) -> Unit) {}
+
+fun ff() {
+    f(::println)
+}
+```
+
+如果我们用 `org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31` 来编译以上代码，就会得到下面的字节码：
+
+```
+final synthetic class io/johnsonlee/kotlin/TestKt$ff$1 extends kotlin/jvm/internal/FunctionReferenceImpl implements kotlin/jvm/functions/Function1 {
+
+  // access flags 0x0
+  <init>()V
+    ALOAD 0
+    ICONST_1
+    LDC Lkotlin/io/ConsoleKt;.class
+    LDC "println"
+    LDC "println(Ljava/lang/Object;)V"
+    LDC 1
+    INVOKESPECIAL kotlin/jvm/internal/FunctionReferenceImpl.<init> (ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    RETURN
+    MAXSTACK = 6
+    MAXLOCALS = 1
+
+}
+```
+
+也就是说，Kotlin 编译器生成的字节码中包含了低版本中不存在的内容，从而导致其它的 Kotlin 低于 1.4 的工程在使用了该字节码后，运行时报错 `NoSuchMethodError`。
+
+### 不兼容的元数据
+
+Kotlin 除了生成 class 字节码，还会生成其它的二进制内容：
+
+1. Metadata (`@Metadata`)
+1. Module mapping (`*.kotlin_module`)
+1. ......
+
+以上这些二进制内容都包含有版本信息以及版本兼容性约束信息。
+
+以 `@Metadata` 为例，默认的兼容策略是 `x.y` 兼容 `x.{y + 1}`，除非版本有严格的语义。
+
+那这些二进制内容的版本信息是如何确定的呢？
+
+#### Metadata Version
+
+`@Metadata` 的版本信息默认是由 Kotlin Compiler 的版本决定的，对于 Gradle 工程来说，其实就是由 *kotlin-gradle-plugin* 的版本决定。修改 *kotlin-gradle-plugin* 的版本就会影响到 `@Metadata` 的版本。
+
+#### Module Mapping Version
+
+`*.kotlin_module` 的版本同样也是由 Kotlin Compiler 的版本决定，而且跟 `@Metadata` 的版本是一致，如果出现版本不兼容的情况，编译就会报：
+
+```
+Module was compiled with an incompatible version of Kotlin. The binary version of its metadata is a.b.c, expected version is x.y.z.
+```
 
 ## Java 的解决方案
 
@@ -70,8 +132,8 @@ Kotlin 也提供编译选项来指定版本：
 
 | #    | Kotlin Compiler Options | Gradle Compiler Task Options |
 |:----:|:-----------------------:|:----------------------------:|
-| API  | `-language-version`     | `languageVersion`            |
-| ABI  | `-api-version`          | `apiVersion`                 |
+| API  | `-api-version`          | `apiVersion`                 |
+| ABI  | `-language-version`     | `languageVersion`            |
 
 如下所示：
 
@@ -93,91 +155,14 @@ Kotlin 与 Java 编译选项的对应关系如下：
 
 | #    | Kotlin Compiler Options | Java Compiler Options |
 |:----:|:-----------------------:|:---------------------:|
-| API  | `-language-version`     | `-source`             |
-| ABI  | `-api-version`          | `-target`             |
+| API  | `-api-version`          | `-source`             |
+| ABI  | `-language-version`     | `-target`             |
 
-啊哈，原来 Kotlin 的兼容性管理跟 Java 一样如此简单，如果你真这么想，那可就大错特错了，好戏还在后头呢！（不然我写这篇文章干嘛？）
-
-> WTF?! 😲😲😲
-
-## 真正头疼的问题
-
-### 不兼容的字节码
-
-Kotlin 的官方文档 [Compatibility Modes](https://kotlinlang.org/docs/compatibility-modes.html) 写得倒是挺好的，然而并没有什么卵用，为什么这么说呢？还记得 [Kotlin 填坑记之 FunctionReference](/2022/12/03/do-you-really-know-kotlin-function/) 中遇到的问题吗？
-
-```kotlin
-fun f(fn: (Any) -> Unit) {}
-
-fun ff() {
-    f(::println)
-}
-```
-
-按照 Kotlin 官方的说法，限制 `-language-version` 就可以解决 *API* 和 *ABI* 的问题，然而，如果我们用 `org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31` 来编译以上代码，无论 `-language-version` 是 `1.5` 还是 `1.4` 或者 `1.3` 都会得到下面的字节码：
-
-```
-final synthetic class io/johnsonlee/kotlin/TestKt$ff$1 extends kotlin/jvm/internal/FunctionReferenceImpl implements kotlin/jvm/functions/Function1 {
-
-  // access flags 0x0
-  <init>()V
-    ALOAD 0
-    ICONST_1
-    LDC Lkotlin/io/ConsoleKt;.class
-    LDC "println"
-    LDC "println(Ljava/lang/Object;)V"
-    LDC 1
-    INVOKESPECIAL kotlin/jvm/internal/FunctionReferenceImpl.<init> (ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
-    RETURN
-    MAXSTACK = 6
-    MAXLOCALS = 1
-
-}
-```
-
-也就是说，即使指定 `-language-version` 降低了语言和 *API* 版本，也只是在源代码层面解决了兼容性的问题，生成的字节码还是包含了低版本中不存在的内容，从而导致其它的 Kotlin 低于 1.4 的工程在使用了该字节码后，运行时报错 `NoSuchMethodError`。
-
-### 不兼容的元数据
-
-Kotlin 除了生成 class 字节码，还会生成其它的二进制内容：
-
-1. Metadata (`@Metadata`)
-1. Module mapping (`*.kotlin_module`)
-1. ......
-
-以上这些二进制内容都包含有版本信息以及版本兼容性约束信息。
-
-以 `@Metadata` 为例，默认的兼容策略是 `x.y` 兼容 `x.{y + 1}`，除非版本有严格的语义。
-
-那这些二进制内容的版本信息是如何确定的呢？
-
-#### Metadata Version
-
-`@Metadata` 的版本信息是由 Kotlin Compiler 的版本决定的，跟 `-api-version` 和 `-language-version` 没有半毛钱关系，对于 Gradle 工程来说，其实就是由 *kotlin-gradle-plugin* 的版本决定。
-
-也就是说，如果想要修改 `@Metadata` 的版本，只能修改 *kotlin-gradle-plugin* 的版本。
-
-#### Module Mapping Version
-
-`*.kotlin_module` 的版本同样也是由 Kotlin Compiler 的版本决定，而且跟 `@Metadata` 的版本是一致，如果出现版本不兼容的情况，编译就会报：
-
-```
-Module was compiled with an incompatible version of Kotlin. The binary version of its metadata is a.b.c, expected version is x.y.z.
-```
-
-这种情况下，可以通过指定编译选项跳过 metadata 检查，例如：
-
-```kotlin
-tasks.withType<KotlinCompile> {
-    kotlinOptions {
-        freeCompilerArgs = listOf("-Xskip-metadata-version-check")
-    }
-}
-```
-
-如果以上方法都解决不了，请确认引入的 *kotlin-gradle-plugin* 版本是否正确，同时关注一下 *kotlin-dsl* 插件的版本，防止其他 Kotlin 插件版本过高。
+啊哈，原来 Kotlin 的兼容性管理跟 Java 一样如此简单，那么到底怎么使用这两个编译选项呢？
 
 ## 最佳实践
+
+### 统一 Kotlin 版本
 
 工程中的 Kotlin 版本最好是使用 `embeddedKotlinVersion` (Gradle 内嵌的 Kotlin 版本)，例如：
 
@@ -200,4 +185,50 @@ plugins {
     kotlin("jvm") version embeddedKotlinVersion
 }
 ```
+
+### 指定 `-language-version` 或 `-api-version`
+
+以前面 [FunctionReference](https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/jvm/runtime/kotlin/jvm/internal/FunctionReference.java) 的问题为例，我们的目标是要在字节码层面向下兼容，也就是 *ABI* 层面，如果要让生成的字节码不包含 1.4 的内容（向下兼容 Kotlin 1.3），则指定 `-language-version` 或者 `-api-version` 都可以：
+
+```kotlin
+tasks.withType<KotlinCompile> {
+    kotlinOptions {
+        languageVersion = "1.3"
+    }
+}
+```
+
+或者：
+
+```kotlin
+tasks.withType<KotlinCompile> {
+    kotlinOptions {
+        apiVersion = "1.3"
+    }
+}
+```
+
+无论是 `-api-version` 还是 `-language-version` 编译后的字节码都是：
+
+```
+io.johnsonlee.kotlin.TestKt$ff$1();
+    descriptor: ()V
+    flags: (0x0000)
+    Code:
+      stack=2, locals=1, args_size=1
+         0: aload_0
+         1: iconst_1
+         2: invokespecial #57 // Method kotlin/jvm/internal/FunctionReference."<init>":(I)V
+         5: return
+```
+
+不难发现，`FunctionReference` 的字节码表示方式变了。
+
+既然都可以，那用 `-language-version` 和用`-api-version` 到底有什么区别呢？
+
+区别在于：
+
+> 用 `-language-version` 编译出的字节码的 `@Metadata` 版本则为 `1.1.18` 而用 `-api-version` 编译出的字节码的 `@Metadata` 版本还是 `1.5.1`
+
+这说明，`-api-version` 并不能在 *ABI* 层面做到完全的兼容性，而 `-language-version` 的影响范围更大，不仅限制了不同版本的语言特性，同时还限制了包括 metadata 在内的二进制的版本。
 
