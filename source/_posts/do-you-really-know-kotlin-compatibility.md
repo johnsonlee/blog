@@ -104,7 +104,7 @@ Kotlin 与 Java 编译选项的对应关系如下：
 
 ### 不兼容的字节码
 
-Kotlin 的官方文档 [Compatibility Modes](https://kotlinlang.org/docs/compatibility-modes.html) 写得倒是提好的，然而并没有什么卵用，为什么这么说呢？还记得 [Kotlin 填坑记之 FunctionReference](/2022/12/03/do-you-really-know-kotlin-function/) 中遇到的问题吗？
+Kotlin 的官方文档 [Compatibility Modes](https://kotlinlang.org/docs/compatibility-modes.html) 写得倒是挺好的，然而并没有什么卵用，为什么这么说呢？还记得 [Kotlin 填坑记之 FunctionReference](/2022/12/03/do-you-really-know-kotlin-function/) 中遇到的问题吗？
 
 ```kotlin
 fun f(fn: (Any) -> Unit) {}
@@ -114,7 +114,7 @@ fun ff() {
 }
 ```
 
-按照 Kotlin 官方的说法，限制 `-language-version` 就可以解决 *API* 和 *ABI* 的问题，然而，如何我们用 `org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31` 来编译以上代码，无论 `-language-version` 是 `1.5` 还是 `1.4` 或者 `1.3` 都会得到下面的字节码：
+按照 Kotlin 官方的说法，限制 `-language-version` 就可以解决 *API* 和 *ABI* 的问题，然而，如果我们用 `org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31` 来编译以上代码，无论 `-language-version` 是 `1.5` 还是 `1.4` 或者 `1.3` 都会得到下面的字节码：
 
 ```
 final synthetic class io/johnsonlee/kotlin/TestKt$ff$1 extends kotlin/jvm/internal/FunctionReferenceImpl implements kotlin/jvm/functions/Function1 {
@@ -135,7 +135,7 @@ final synthetic class io/johnsonlee/kotlin/TestKt$ff$1 extends kotlin/jvm/intern
 }
 ```
 
-也就是说，即使指定 `-language-version` 降低了语言和 *API* 版本，也只是在源代码层面解决了兼容性的问题，生成的字节码还是包含了高版本的内容，从而导致其他 Kotlin 低于 1.4 的工程在使用了该字节码后，运行时报错 `NoSuchMethodError`。
+也就是说，即使指定 `-language-version` 降低了语言和 *API* 版本，也只是在源代码层面解决了兼容性的问题，生成的字节码还是包含了低版本中不存在的内容，从而导致其它的 Kotlin 低于 1.4 的工程在使用了该字节码后，运行时报错 `NoSuchMethodError`。
 
 ### 不兼容的元数据
 
@@ -175,7 +175,7 @@ tasks.withType<KotlinCompile> {
 }
 ```
 
-如果以上方法都解决不了，请确认引入的 *kotlin-gradle-plugin* 版本是否正确，同时关注一下 `kotlin-dsl` 插件的版本。
+如果以上方法都解决不了，请确认引入的 *kotlin-gradle-plugin* 版本是否正确，同时关注一下 *kotlin-dsl* 插件的版本，防止其他 Kotlin 插件版本过高。
 
 ## 最佳实践
 
