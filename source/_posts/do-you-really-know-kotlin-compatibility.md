@@ -232,3 +232,14 @@ io.johnsonlee.kotlin.TestKt$ff$1();
 
 这说明，`-api-version` 并不能在 *ABI* 层面做到完全的兼容性，而 `-language-version` 的影响范围更大，不仅限制了不同版本的语言特性，同时还限制了包括 metadata 在内的二进制的版本。
 
+尽管 `-language-version` 和 `-api-version` 会影响编译出的字节码的内容，但是，它们并不能改变工程依赖的 Kotlin `stdlib` 的版本，即使使用了 1.5 的 *kotlin-gradle-plugin*，如果将 `-language-version` 或者 `-api-version` 设置为 1.3，工程的依赖也不会发生变化，这也是为什么 Kotlin 能做向下兼兼容的原因，即使有些 API 在高版本不让用了，比如 `toLowerCase()` 在 1.5 以上就不让用了，并不是这个 API 真的删除了，而只是编译器不让用了：
+
+```kotlin
+@DeprecatedSinceKotlin(
+    warningSince = "1.3",
+    errorSince = "1.5"
+)
+```
+
+如果对于已经用 `-language-version="1.3"` 编译好的 class，用 1.5 的 `stdlib` 也是没有问题的。
+
