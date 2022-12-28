@@ -157,6 +157,7 @@ class FunctionReference extends CallableReference implements FunctionBase {
 }
 
 class FunctionReferenceImpl extends FunctionReference {
+    + FunctionReferenceImpl(arity: int, owner: Class, name: String, signature: String, flags: int)
     + FunctionReferenceImpl(arity: int, receiver: Object, owner: Class, name: String, signature: String, flags: int)
 }
 
