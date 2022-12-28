@@ -14,7 +14,7 @@ date: 2022-12-03 14:00:00
 
 ## Kotlin 的头等公民 —— Function
 
-头等函数 (`Function`) 在函数式编程语言不可或缺的特性，Kotlin 也不例外，由于 `Function` 在 Kotlin 中被广泛使用，也是兼容性问题的高发区，大家有没有好奇 Kotlin 的 `Function` 在字节码层面是如何实现的呢？以下面的代码为例：
+头等函数 (`Function`) 是函数式编程语言不可或缺的特性，Kotlin 也不例外，由于 `Function` 在 Kotlin 中被广泛使用，也是兼容性问题的高发区，大家有没有好奇 Kotlin 的 `Function` 在字节码层面是如何实现的呢？以下面的代码为例：
 
 ```kotlin
 (Int) -> Int
