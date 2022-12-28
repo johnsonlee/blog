@@ -173,7 +173,7 @@ class AdaptedFunctionReference implements FunctionBase {
 @enduml
 ```
 
-Kotlin 1.4 增加了 [AdaptedFunctionReference](https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/jvm/runtime/kotlin/jvm/internal/AdaptedFunctionReference.java)，同时也修改了 [FunctionReferenceImpl](https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/jvm/runtime/kotlin/jvm/internal/FunctionReferenceImpl.java) 新增加了 2 个构造方法：
+Kotlin 1.4 增加了 [AdaptedFunctionReference](https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/jvm/runtime/kotlin/jvm/internal/AdaptedFunctionReference.java)，同时也在 [FunctionReferenceImpl](https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/jvm/runtime/kotlin/jvm/internal/FunctionReferenceImpl.java) 中新增加了 2 个构造方法：
 
 ```java
 @SinceKotlin(version = "1.4")
@@ -251,7 +251,7 @@ protected CallableReference(Object receiver, Class owner, String name, String si
 NoSuchMethodError: 'void kotlin.jvm.internal.FunctionReferenceImpl.<init>(int, java.lang.Class, java.lang.String, java.lang.String, int)'
 ```
 
-这对于用 Kotlin 开发的类库来说是很麻烦的事情，就像 Booster，很多工程还在用着低版本的 AGP，而 Booster 又要兼容最新版本的 AGP，而最新版本的 AGP 又要求最低 Kotlin 版本为 1.5，导致了用 Kotlin 1.5 编译出来的 Booster 无法在用在低版本的 AGP 工程中运行，除非显示指定 Kotlin 的版本为 1.5 及以上。
+这对于用 Kotlin 开发的类库来说是很麻烦的事情，就像 Booster，很多工程还在用着低版本的 AGP，而 Booster 又要兼容最新版本的 AGP，而最新版本的 AGP 又要求最低 Kotlin 版本为 1.5，导致了用 Kotlin 1.5 编译出来的 Booster 无法在用在低版本的 AGP 工程中运行，除非显式指定 Kotlin 的版本为 1.5 及以上。
 
 ## Callable Reference 的解决方案
 
