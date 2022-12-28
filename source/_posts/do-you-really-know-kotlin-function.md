@@ -47,7 +47,9 @@ Kotlin 天生就能很好的支持 Lambda 表达式，并在标准库中定义�
 Arrays.asList(args).forEach(System.out::println);
 ```
 
-其中，`System.out::println` 就是对 `System.out` 实例的 `println` 方法的引用，那跟 Lambda 到底有什么区别呢？这得从 Lambda 在字节码层面的表示方式说起，Lambda 的实现方式一般有以下几种：
+其中，`System.out::println` 就是对 `System.out` 实例的 `println` 方法的引用，那跟 Lambda 到底有什么区别呢？这得从 Lambda 在字节码层面的表示方式说起。
+
+Lambda 的实现方式一般有以下几种：
 
 1. 内部类
 1. 方法句柄 [MethodHandle](https://docs.oracle.com/javase/8/docs/api/java/lang/invoke/MethodHandle.html)
@@ -59,7 +61,7 @@ Arrays.asList(args).forEach(System.out::println);
 1. 在不依赖特定的实现方式的情况下最大限度的提高未来优化的灵活性
 1. 字节码层面表示的稳定性
 
-由于 Lambda 的实现会产生匿名方法，为了避免不必要的匿名方法，所以 Java 或者 Kotlin 都支持在 Lambda 和方法引用之间进行转换，也就是说，通过方法引用来替代 Lambda，例如：
+由于 Lambda 的实现会产生匿名方法，为了避免不必要的匿名方法，Java 或者 Kotlin 都支持在 Lambda 和方法引用之间进行转换，也就是说，通过方法引用来替代 Lambda，例如：
 
 * Lambda 表示
 
@@ -112,12 +114,22 @@ call(::func)
 ```java
 final class refs/LambdaKt$main$1 extends kotlin/jvm/internal/FunctionReference  implements kotlin/jvm/functions/Function0  {
     public synthetic bridge invoke()Ljava/lang/Object;
+
     public final invoke()V
-    public final getOwner()Lkotlin/reflect/KDeclarationContainer; // overrides CallableReference#getOwner
-    public final getName()Ljava/lang/String; // overrides CallableReference#getName
-    public final getSignature()Ljava/lang/String; // overrides CallableReference#getSignature
+
+    // overrides CallableReference#getOwner
+    public final getOwner()Lkotlin/reflect/KDeclarationContainer;
+
+    // overrides CallableReference#getName
+    public final getName()Ljava/lang/String;
+
+    // overrides CallableReference#getSignature
+    public final getSignature()Ljava/lang/String;
+
     <init>()V
+
     public final static Lrefs/LambdaKt$main$1; INSTANCE
+
     static <clinit>()V
 }
 ```
@@ -128,18 +140,41 @@ final class refs/LambdaKt$main$1 extends kotlin/jvm/internal/FunctionReference  
 
 通过上述的反编译代码，我们不难发现，Kotlin 编译器生成了很多额外的方法，而这些方法其实大部分都很少用到，对于一些几乎不怎么用到的方法，为什么要生成呢？能不能不生成呢？
 
-答案是肯定的，这也就是 Kotlin 1.4 针对 `FunctionReference` 的优化，增加了 [AdaptedFunctionReference](https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/jvm/runtime/kotlin/jvm/internal/AdaptedFunctionReference.java)，同时，也修改了 [FunctionReferenceImpl](https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/jvm/runtime/kotlin/jvm/internal/FunctionReferenceImpl.java) 新增加了 2 个构造方法：
+答案是肯定的，这也就是 Kotlin 1.4 针对 `FunctionReference` 的优化，如下图所示：
 
-```java
-public FunctionReferenceImpl(
-    int arity,
-    KDeclarationContainer owner,
-    String name,
-    String signature
-) {
-    super(/* ... */);
+```plantuml
+@startuml
+abstract class CallableReference {
+    - owner: Class;
+    - name: String;
+    - signature: String;
+    - isTopLevel: boolean;
+    + CallableReference(receiver: Object, owner: Class, name: String, signature: String, isTopLevel: boolean)
 }
 
+class FunctionReference extends CallableReference implements FunctionBase {
+    + FunctionReference(arity: int, receiver: Object, owner: Class, name: String, signature: String, flags: int)
+}
+
+class FunctionReferenceImpl extends FunctionReference {
+    + FunctionReferenceImpl(arity: int, receiver: Object, owner: Class, name: String, signature: String, flags: int)
+}
+
+class AdaptedFunctionReference implements FunctionBase {
+    - receiver: Object;
+    - owner: Class;
+    - name: String;
+    - signature: String;
+    - isTopLevel: boolean;
+    - arity: int;
+    - flags: int
+}
+@enduml
+```
+
+Kotlin 1.4 增加了 [AdaptedFunctionReference](https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/jvm/runtime/kotlin/jvm/internal/AdaptedFunctionReference.java)，同时也修改了 [FunctionReferenceImpl](https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/jvm/runtime/kotlin/jvm/internal/FunctionReferenceImpl.java) 新增加了 2 个构造方法：
+
+```java
 @SinceKotlin(version = "1.4")
 public FunctionReferenceImpl(
     int arity,
@@ -164,7 +199,7 @@ public FunctionReferenceImpl(
 }
 ```
 
-然后，通过在 [FunctionReferenceImpl](https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/jvm/runtime/kotlin/jvm/internal/FunctionReferenceImpl.java) 的父类 [FunctionReference](https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/jvm/runtime/kotlin/jvm/internal/FunctionReference.java) 中增加了 1 个构造方法把参数通过构造方法传给父类 [CallableReference](https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/jvm/runtime/kotlin/jvm/internal/CallableReference.java)：
+然后，通过在 [FunctionReferenceImpl](https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/jvm/runtime/kotlin/jvm/internal/FunctionReferenceImpl.java) 的父类 [FunctionReference](https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/jvm/runtime/kotlin/jvm/internal/FunctionReference.java) 中增加了 1 个构造方法将参数传给基类 [CallableReference](https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/jvm/runtime/kotlin/jvm/internal/CallableReference.java)：
 
 ```java
 @SinceKotlin(version = "1.4")
@@ -207,38 +242,6 @@ protected CallableReference(Object receiver, Class owner, String name, String si
 }
 ```
 
-如下图所示：
-
-```plantuml
-@startuml
-abstract class CallableReference {
-    - owner: Class;
-    - name: String;
-    - signature: String;
-    - isTopLevel: boolean;
-    + CallableReference(receiver: Object, owner: Class, name: String, signature: String, isTopLevel: boolean)
-}
-
-class FunctionReference extends CallableReference implements FunctionBase {
-    + FunctionReference(arity: int, receiver: Object, owner: Class, name: String, signature: String, flags: int)
-}
-
-class FunctionReferenceImpl extends FunctionReference {
-    + FunctionReferenceImpl(arity: int, receiver: Object, owner: Class, name: String, signature: String, flags: int)
-}
-
-class AdaptedFunctionReference implements FunctionBase {
-    - receiver: Object;
-    - owner: Class;
-    - name: String;
-    - signature: String;
-    - isTopLevel: boolean;
-    - arity: int;
-    - flags: int
-}
-@enduml
-```
-
 所以，原来在匿名内部类中生成的大部分返回值为常量的方法通过构造传递给基类来实现了，从而减小了整个应用的字节码大小。
 
 但是，这个优化是默认启用的，这就导致同样的一份 Kotlin 代码，编译出来的字节码不兼容，Kotlin 1.4 以上编译出来的字节码中引入了 Kotlin 1.4 以上才有的 `FunctionReferenceImpl` 构造方法，这也是升级 Kotlin 时经常遇到的错误：
@@ -247,7 +250,7 @@ class AdaptedFunctionReference implements FunctionBase {
 NoSuchMethodError: 'void kotlin.jvm.internal.FunctionReferenceImpl.<init>(int, java.lang.Class, java.lang.String, java.lang.String, int)'
 ```
 
-这对于用 Kotlin 开发的类库来说是很麻烦的事情，就像 Booster，很多工程还在用着低版本的 AGP，而 Booster 又要兼容最新版本的 AGP，而最新版本的 AGP 又要求最低 Kotlin 版本为 1.5，导致了用 Kotlin 1.5 编译出来的 Booster 无法在用着低版本的 AGP 工程中运行。
+这对于用 Kotlin 开发的类库来说是很麻烦的事情，就像 Booster，很多工程还在用着低版本的 AGP，而 Booster 又要兼容最新版本的 AGP，而最新版本的 AGP 又要求最低 Kotlin 版本为 1.5，导致了用 Kotlin 1.5 编译出来的 Booster 无法在用在低版本的 AGP 工程中运行，除非显示指定 Kotlin 的版本为 1.5 及以上。
 
 ## Callable Reference 的解决方案
 
