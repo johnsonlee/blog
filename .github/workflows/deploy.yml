@@ -47,11 +47,6 @@ jobs:
         run: |
           rm -rvf public && mkdir public
           npm run build
-      - name: Update algolia index
-        run: |
-          npx hexo algolia
-        env:
-          HEXO_ALGOLIA_INDEXING_KEY: ${{ secrets.HEXO_ALGOLIA_INDEXING_KEY }}
       - name: Deploy to johnsonlee.io
         working-directory: ./public
         run: |
