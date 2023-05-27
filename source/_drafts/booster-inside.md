@@ -1,6 +1,8 @@
 ---
 title: 深入理解 Booster
-categories: 架构设计
+categories:
+  - Computer Science
+  - Architecture Design
 ---
 
 ```plantuml
