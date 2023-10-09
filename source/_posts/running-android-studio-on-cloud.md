@@ -2,7 +2,8 @@
 title: Android Studio 在云端
 categories:
   - Computer Science
-  - Cloud
+  - Mobile
+  - Android
 tags:
   - Android Studio
 date: 2020-11-20 20:00:00
