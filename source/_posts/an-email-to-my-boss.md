@@ -24,7 +24,7 @@ date: 2024-01-07 07:00:00
 > 1. Who is our customer?
 > 
 > - From employee’s perspective, leadership is the customer 
-> - From engineer’s perspective, peoples who use Coupang’s service are our customers
+> - From engineer’s perspective, peoples who use our service are our customers
 > 
 > 2. What’s the job the customers expect us to do?
 > 
