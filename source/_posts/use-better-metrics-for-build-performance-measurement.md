@@ -81,6 +81,15 @@ What?! 😯😯😯 为什么跟我的推算有如此大的出入呢？
 
 然后从原始的构建记录中去掉被截掉的构建记录（噪点数据）就得到了上图的缩尾直方图。
 
+## 真正的问题
+
+通过缩尾直方图，我们不难发现：
+
+* 14.29% 的工程师每天要花至少 2 小时在构建上
+* 42.86% 的工程师每天要花至少 1 小时在构建上
+
+很显然，这一结论更符合我的体感，而不是“人均每天花在构建上的时长在 35 分钟左右”
+
 ## Reference
 
 * [PPT: How Amazon use better metrics for improved website performance](https://d1.awsstatic.com/events/Summits/reinvent2022/AMZ302_How-Amazon-uses-better-metrics-for-improved-website-performance.pdf)
