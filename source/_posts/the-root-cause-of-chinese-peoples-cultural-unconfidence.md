@@ -4,6 +4,7 @@ categories:
   - Independent Thinking
 tags:
   - 独立思考
+  - Korea
 date: 2023-09-24 17:00:00
 ---
 
