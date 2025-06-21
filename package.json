@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "npx hexo server -p 5000 --debug --draft --open",
+    "start": "npx hexo server -p 8000 --debug --draft --open",
     "build": "npx hexo generate",
     "clean": "npx hexo clean",
     "deploy": "npx hexo deploy"
