@@ -2,6 +2,7 @@
 title: 为什么计算机要区分文本和数字?
 categories:
   - Computer Science
+  - Programming
 tags:
   - Programming
 date: 2025-12-19 20:00:00

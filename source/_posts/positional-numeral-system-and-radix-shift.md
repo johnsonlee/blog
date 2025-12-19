@@ -2,6 +2,7 @@
 title: 为什么乘除10的幂几乎不用思考?
 categories:
   - Computer Science
+  - Programming
 tags:
   - Programming
 date: 2025-12-20 10:00:00
