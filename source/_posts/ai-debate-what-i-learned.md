@@ -12,7 +12,7 @@ tags:
   - Communication
 ---
 
-前几天我做了一个小实验：让 Claude 和 Gemini 围绕"谁是最好的 AI"这个话题自由辩论。
+昨天我做了一个小实验：让 Claude 和 Gemini 围绕"谁是最好的 AI"这个话题自由辩论。
 
 为了实现这个实验，我写了一个叫 [Agora](https://github.com/johnsonlee/agora) 的小工具。它的原理很简单——用 Puppeteer 同时打开两个浏览器窗口，一个登录 Claude，一个登录 Gemini，然后自动把一方的回复喂给另一方，让它们来回对话。就像古希腊的 Agora（广场）一样，给两个 AI 一个公开辩论的场所。
 
