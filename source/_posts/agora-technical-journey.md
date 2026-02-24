@@ -33,7 +33,7 @@ Playwright 会注入一系列自动化标记——`navigator.webdriver = true`�
 
 Playwright 的 browser context 和真实 Chrome 的 user-data 目录不是一回事。登录状态无法跨次运行保持，每次启动都要重新登录、过验证。对于一个需要反复运行的辩论工具来说，这个体验不可接受。
 
-**Playwright 解决的是"测试自己的网站"这个问题，不是"操控别人的网站"。** 用途不对，工具再好也白搭。
+**Playwright 解决的是“测试自己的网站”这个问题，不是“操控别人的网站”。** 用途不对，工具再好也白搭。
 
 ## Round 2：Puppeteer launch，好了一点但不够
 
@@ -51,7 +51,7 @@ Claude 的回复在 `.agent-turn .markdown` 里，ChatGPT 的在 `[data-message-
 
 最终方案把浏览器控制拆成了两个阶段。
 
-### 阶段一：启动一个"干净"的 Chrome
+### 阶段一：启动一个“干净”的 Chrome
 
 用 `child_process.spawn()` 直接拉起 Chrome 进程，带上 `--remote-debugging-port` 和 `--user-data-dir`，不经过任何自动化框架。
 
@@ -84,7 +84,7 @@ rectangle "Phase 2" {
 
 ### 通用 DOM 发现：干掉所有 CSS selector
 
-这是整个项目里我最满意的设计。与其维护每个服务的 selector，不如让程序自己"看懂"页面结构。
+这是整个项目里我最满意的设计。与其维护每个服务的 selector，不如让程序自己“看懂”页面结构。
 
 ```plantuml
 @startuml
@@ -166,7 +166,7 @@ Gemini 会先渲染一个 `<pending-request>` 占位符，Angular 随后把它�
 
 回头看这三轮演进，有一条线索贯穿始终：**不要跟平台对着干，要像普通用户一样行事。**
 
-Playwright 和 Puppeteer launch 模式的问题本质上是一样的——它们以"自动化工具"的身份启动浏览器，从第一毫秒就暴露了意图。而最终方案之所以 work，是因为 Chrome 进程本身就是一个正常浏览器，Puppeteer 只是事后接入的观察者。
+Playwright 和 Puppeteer launch 模式的问题本质上是一样的——它们以“自动化工具”的身份启动浏览器，从第一毫秒就暴露了意图。而最终方案之所以 work，是因为 Chrome 进程本身就是一个正常浏览器，Puppeteer 只是事后接入的观察者。
 
 通用 DOM 发现的思路也是同一逻辑：不要依赖平台的实现细节（CSS class），而是依赖不变的语义（最大的 editable 元素就是输入框，新增的子节点就是新回复）。
 
