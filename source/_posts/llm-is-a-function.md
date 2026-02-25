@@ -31,7 +31,7 @@ mathjax: true
 每个 Token——一个词、一个子词、一个标点——被映射成这个空间里的一个向量。这步操作叫 Embedding，本质上就是一张查找表：Token ID 进去，d 维向量出来。
 
 {% raw %}
-$$\text{Embedding}: \text{token\_id} \rightarrow \mathbb{R}^d$$
+$$\text{Embedding}: \text{token{\_}id} \rightarrow \mathbb{R}^d$$
 {% endraw %}
 
 训练之前，这些向量是随机初始化的。"猫"和"狗"可能离得很远，"猫"和"利率"可能紧挨着。但训练结束后，语义相近的词会被拉到附近——不是人工设定的，是梯度下降自己调出来的。
