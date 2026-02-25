@@ -30,7 +30,9 @@ mathjax: true
 
 每个 Token——一个词、一个子词、一个标点——被映射成这个空间里的一个向量。这步操作叫 Embedding，本质上就是一张查找表：Token ID 进去，d 维向量出来。
 
+{% raw %}
 $$\text{Embedding}: \text{token\_id} \rightarrow \mathbb{R}^d$$
+{% endraw %}
 
 训练之前，这些向量是随机初始化的。"猫"和"狗"可能离得很远，"猫"和"利率"可能紧挨着。但训练结束后，语义相近的词会被拉到附近——不是人工设定的，是梯度下降自己调出来的。
 
@@ -44,15 +46,17 @@ $$\text{Embedding}: \text{token\_id} \rightarrow \mathbb{R}^d$$
 
 数学上，它把每个向量变换成三个角色：
 
-- Q (Query)：我在找什么
-- K (Key)：我能提供什么
-- V (Value)：我实际的内容
+- **Q (Query)** ：我在找什么
+- **K (Key)** ：我能提供什么
+- **V (Value)** ：我实际的内容
 
 然后用一个公式完成匹配和聚合：
 
-$$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d\_k}}\right)V$$
+{% raw %}
+$$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$
+{% endraw %}
 
-$QK^T$ 算的是每对位置之间的相关性分数。$\sqrt{d\_k}$ 是个缩放因子，防止点积过大导致 softmax 输出趋近 one-hot（梯度消失）。softmax 把分数归一化成权重，再用权重对 V 做加权求和。
+{% raw %}$QK^T${% endraw %} 算的是每对位置之间的相关性分数。{% raw %}$\sqrt{d_k}${% endraw %} 是个缩放因子，防止点积过大导致 softmax 输出趋近 one-hot（梯度消失）。softmax 把分数归一化成权重，再用权重对 V 做加权求和。
 
 一句话概括：**Attention 就是一个可学习的、动态的加权求和。**
 
@@ -62,7 +66,9 @@ Multi-Head Attention 则是同时做多组这样的运算。每个 Head 学到�
 
 每个 Transformer Block 里，Attention 之后紧跟一个 Feed-Forward Network（FFN）：
 
-$$\text{FFN}(x) = W\_2 \cdot \text{ReLU}(W\_1 \cdot x + b\_1) + b\_2$$
+{% raw %}
+$$\text{FFN}(x) = W_2 \cdot \text{ReLU}(W_1 \cdot x + b_1) + b_2$$
+{% endraw %}
 
 两层全连接，中间一个激活函数。看起来平平无奇，但近年来 Mechanistic Interpretability 研究揭示了一个有趣的分工：
 
@@ -76,7 +82,9 @@ $$\text{FFN}(x) = W\_2 \cdot \text{ReLU}(W\_1 \cdot x + b\_1) + b\_2$$
 
 给定前 n 个 Token，预测第 n+1 个。计算预测的概率分布和真实分布之间的交叉熵损失，反向传播，更新参数。
 
-$$\mathcal{L} = -\sum\_{t=1}^{T} \log P(x\_t | x\_1, x\_2, \ldots, x\_{t-1})$$
+{% raw %}
+$$\mathcal{L} = -\sum_{t=1}^{T} \log P(x_t | x_1, x_2, \ldots, x_{t-1})$$
+{% endraw %}
 
 就这么一个目标。没有人教它语法，没有人教它逻辑，没有人教它写代码。但当模型足够大、数据足够多，这些能力就"涌现"了。
 
@@ -86,9 +94,11 @@ $$\mathcal{L} = -\sum\_{t=1}^{T} \log P(x\_t | x\_1, x\_2, \ldots, x\_{t-1})$$
 
 回到开头的论点：LLM 就是一个函数。
 
-$$f\_\theta: \text{Token}^n \rightarrow \mathbb{R}^{|V|}$$
+{% raw %}
+$$f_\theta: \text{Token}^n \rightarrow \mathbb{R}^{|V|}$$
+{% endraw %}
 
-几十亿到几千亿个参数 $\theta$，通过海量数据训练出来，将 Token 序列映射到词表上的概率分布。单次 forward pass，纯矩阵运算，无副作用，确定性输出。
+几十亿到几千亿个参数 {% raw %}$\theta${% endraw %}，通过海量数据训练出来，将 Token 序列映射到词表上的概率分布。单次 forward pass，纯矩阵运算，无副作用，确定性输出。
 
 那对话呢？不过是这个函数的自回归调用——上一步的输出拼到输入末尾，再调一次。Temperature 和 Top-p 采样引入了随机性，但那是推理阶段的工程选择，不是模型本身的属性。
 
