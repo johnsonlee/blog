@@ -46,9 +46,9 @@ $$\text{Embedding}: \text{token{\_}id} \rightarrow \mathbb{R}^d$$
 
 数学上，它把每个向量变换成三个角色：
 
-- **Q (Query)** ：我在找什么
-- **K (Key)** ：我能提供什么
-- **V (Value)** ：我实际的内容
+- **Q（Query）**：我在找什么
+- **K（Key）**：我能提供什么
+- **V（Value）**：我实际的内容
 
 然后用一个公式完成匹配和聚合：
 
