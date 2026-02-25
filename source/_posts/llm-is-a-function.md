@@ -40,7 +40,9 @@ $$\text{Embedding}: \text{token{\_}id} \rightarrow \mathbb{R}^d$$
 
 ## Attention：动态路由
 
-有了向量，下一步是让它们彼此“交流”。这就是 Attention 机制做的事。
+但这里有个问题：Embedding 给每个 token 的是一个**静态的、与上下文无关的**位置。“苹果”不管出现在“我吃了一个苹果”还是“苹果发布了新 iPhone”，查表拿到的向量是同一个——它只编码了“苹果”的平均语义，不知道在当前这句话里它到底是水果还是公司。
+
+Attention 做的就是：**根据上下文，动态调整每个 token 的表示。** Embedding 是给每个 token 分配一个“默认人设”，Attention 是让它们互相交流之后，根据语境各自调整。没有 Attention，每个词都活在自己的世界里，不知道邻居是谁。
 
 对于序列中的每个位置，Attention 回答一个问题：**我应该关注谁？关注多少？**
 
