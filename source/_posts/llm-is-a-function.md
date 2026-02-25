@@ -89,7 +89,7 @@ $$\mathcal{L} = -\sum_{t=1}^{T} \log P(x_t | x_1, x_2, \ldots, x_{t-1})$$
 {% endraw %}
 
 {% raw %}
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 670" width="960" height="670" font-family="system-ui, -apple-system, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 670" width="100%" style="max-width:720px" font-family="system-ui, -apple-system, sans-serif">
   <defs>
     <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
       <path d="M0,0 L8,3 L0,6" fill="#555"/>
