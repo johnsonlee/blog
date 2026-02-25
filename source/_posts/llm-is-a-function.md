@@ -88,6 +88,154 @@ $$\text{FFN}(x) = W_2 \cdot \text{ReLU}(W_1 \cdot x + b_1) + b_2$$
 $$\mathcal{L} = -\sum_{t=1}^{T} \log P(x_t | x_1, x_2, \ldots, x_{t-1})$$
 {% endraw %}
 
+把上面从 Token 到训练的完整流程画出来，是这样的：
+
+{% raw %}
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 670" width="960" height="670" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#555"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#c0392b"/>
+    </marker>
+  </defs>
+
+  <!-- ===== 词表 (Vocabulary) ===== -->
+  <rect x="28" y="52" width="130" height="130" rx="8" fill="#f0f4ff" stroke="#4a6fa5" stroke-width="1.5"/>
+  <text x="93" y="72" text-anchor="middle" font-size="13" font-weight="bold" fill="#4a6fa5">词表 V</text>
+  <text x="44" y="92" font-size="11" fill="#555">0 → "的"</text>
+  <text x="44" y="108" font-size="11" fill="#555">1 → "苹果"</text>
+  <text x="44" y="124" font-size="11" fill="#555">2 → "坐"</text>
+  <text x="44" y="140" font-size="11" fill="#555">3 → "猫"</text>
+  <text x="44" y="158" font-size="11" fill="#999">… 50,000 个</text>
+  <text x="93" y="176" text-anchor="middle" font-size="10" fill="#888">tokenizer 生成</text>
+
+  <!-- Arrow: 词表 → Embedding -->
+  <text x="93" y="208" text-anchor="middle" font-size="12" fill="#333">"苹果" → id=1</text>
+  <line x1="93" y1="215" x2="93" y2="248" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ===== Embedding 表 ===== -->
+  <rect x="18" y="252" width="150" height="120" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="93" y="272" text-anchor="middle" font-size="13" font-weight="bold" fill="#2e7d32">Embedding 表</text>
+  <text x="93" y="290" text-anchor="middle" font-size="10" fill="#888">|V| × d 矩阵（可学习）</text>
+  <text x="34" y="310" font-size="10" fill="#555" font-family="monospace">0: [0.12, -0.45, ...]</text>
+  <text x="34" y="326" font-size="10" fill="#e65100" font-weight="bold" font-family="monospace">1: [0.83, 0.21, ...]</text>
+  <text x="34" y="342" font-size="10" fill="#555" font-family="monospace">2: [-0.31, 0.67, ...]</text>
+  <text x="34" y="358" font-size="10" fill="#999" font-family="monospace">…</text>
+
+  <!-- Arrow: Embedding → token vector x -->
+  <line x1="168" y1="312" x2="218" y2="312" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ===== Token 向量 x ===== -->
+  <rect x="220" y="284" width="120" height="56" rx="8" fill="#fff8e1" stroke="#f57f17" stroke-width="1.5"/>
+  <text x="280" y="306" text-anchor="middle" font-size="13" font-weight="bold" fill="#333">向量 x</text>
+  <text x="280" y="324" text-anchor="middle" font-size="10" fill="#888">[0.83, 0.21, …] d 维</text>
+  <text x="280" y="336" text-anchor="middle" font-size="9" fill="#aaa">静态，与上下文无关</text>
+
+  <!-- Arrow: x → Q/K/V 投影 -->
+  <line x1="340" y1="312" x2="410" y2="312" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ===== Q/K/V 权重矩阵 ===== -->
+  <rect x="412" y="230" width="180" height="166" rx="8" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="502" y="252" text-anchor="middle" font-size="13" font-weight="bold" fill="#e65100">线性投影（可学习）</text>
+
+  <rect x="424" y="262" width="156" height="34" rx="5" fill="#ffe0b2" stroke="#e65100" stroke-width="1"/>
+  <text x="502" y="276" text-anchor="middle" font-size="11" fill="#333" font-weight="bold">W_Q</text>
+  <text x="502" y="290" text-anchor="middle" font-size="9" fill="#888">d × d_k → Q ="我在找什么"</text>
+
+  <rect x="424" y="302" width="156" height="34" rx="5" fill="#ffe0b2" stroke="#e65100" stroke-width="1"/>
+  <text x="502" y="316" text-anchor="middle" font-size="11" fill="#333" font-weight="bold">W_K</text>
+  <text x="502" y="330" text-anchor="middle" font-size="9" fill="#888">d × d_k → K ="我能提供什么"</text>
+
+  <rect x="424" y="342" width="156" height="34" rx="5" fill="#ffe0b2" stroke="#e65100" stroke-width="1"/>
+  <text x="502" y="356" text-anchor="middle" font-size="11" fill="#333" font-weight="bold">W_V</text>
+  <text x="502" y="370" text-anchor="middle" font-size="9" fill="#888">d × d_k → V ="实际内容"</text>
+
+  <text x="502" y="392" text-anchor="middle" font-size="9" fill="#999">训练前随机初始化，训练中梯度更新</text>
+
+  <!-- Arrow: Q/K/V → Attention -->
+  <line x1="592" y1="312" x2="642" y2="312" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ===== Attention ===== -->
+  <rect x="644" y="274" width="130" height="76" rx="8" fill="#fce4ec" stroke="#c62828" stroke-width="1.5"/>
+  <text x="709" y="298" text-anchor="middle" font-size="13" font-weight="bold" fill="#333">Attention</text>
+  <text x="709" y="316" text-anchor="middle" font-size="10" fill="#888">softmax(QKᵀ/√d)·V</text>
+  <text x="709" y="332" text-anchor="middle" font-size="10" fill="#888">上下文融合</text>
+  <text x="709" y="346" text-anchor="middle" font-size="9" fill="#aaa">"苹果"→ 水果 or 公司?</text>
+
+  <!-- Arrow: Attention → FFN -->
+  <line x1="774" y1="312" x2="814" y2="312" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ===== FFN ===== -->
+  <rect x="816" y="284" width="110" height="56" rx="8" fill="#e8eaf6" stroke="#283593" stroke-width="1.5"/>
+  <text x="871" y="308" text-anchor="middle" font-size="13" font-weight="bold" fill="#333">FFN</text>
+  <text x="871" y="326" text-anchor="middle" font-size="10" fill="#888">知识存储</text>
+
+  <!-- ×N layers bracket -->
+  <rect x="634" y="264" width="302" height="96" rx="12" fill="none" stroke="#bbb" stroke-width="1" stroke-dasharray="5,4"/>
+  <text x="785" y="376" text-anchor="middle" font-size="11" fill="#999" font-style="italic">× N 层（12 ~ 96 层）</text>
+
+  <!-- Arrow: FFN → 输出 -->
+  <line x1="871" y1="340" x2="871" y2="410" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ===== 输出层 ===== -->
+  <rect x="801" y="412" width="140" height="50" rx="8" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="1.5"/>
+  <text x="871" y="434" text-anchor="middle" font-size="13" fill="#333">输出层</text>
+  <text x="871" y="450" text-anchor="middle" font-size="10" fill="#888">→ 词表概率分布</text>
+
+  <!-- Arrow down -->
+  <line x1="871" y1="462" x2="871" y2="498" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Prediction -->
+  <rect x="811" y="500" width="120" height="40" rx="8" fill="#e0f7fa" stroke="#00695c" stroke-width="1.5"/>
+  <text x="871" y="518" text-anchor="middle" font-size="12" fill="#333">预测："坐"</text>
+  <text x="871" y="533" text-anchor="middle" font-size="10" fill="#888">P("坐")=0.72</text>
+
+  <!-- Arrow: prediction → loss -->
+  <line x1="811" y1="520" x2="700" y2="520" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Ground truth -->
+  <rect x="560" y="555" width="120" height="32" rx="6" fill="#f5f5f5" stroke="#999" stroke-width="1"/>
+  <text x="620" y="576" text-anchor="middle" font-size="11" fill="#666">真实答案："坐"</text>
+  <line x1="620" y1="555" x2="620" y2="540" stroke="#555" stroke-width="1" marker-end="url(#arrow)"/>
+
+  <!-- Loss -->
+  <rect x="570" y="500" width="120" height="40" rx="8" fill="#ffebee" stroke="#c62828" stroke-width="1.5"/>
+  <text x="630" y="518" text-anchor="middle" font-size="13" font-weight="bold" fill="#c62828">计算损失</text>
+  <text x="630" y="533" text-anchor="middle" font-size="10" fill="#c62828">交叉熵</text>
+
+  <!-- Arrow: loss → backprop -->
+  <line x1="570" y1="520" x2="460" y2="520" stroke="#c0392b" stroke-width="1.5" marker-end="url(#arrow-red)"/>
+
+  <!-- Backprop -->
+  <rect x="240" y="500" width="220" height="40" rx="8" fill="#ffcdd2" stroke="#c62828" stroke-width="1.5"/>
+  <text x="350" y="518" text-anchor="middle" font-size="12" font-weight="bold" fill="#c62828">反向传播 → 更新所有参数 θ</text>
+  <text x="350" y="533" text-anchor="middle" font-size="9" fill="#c62828">Embedding 表 · W_Q · W_K · W_V · W_FFN ...</text>
+
+  <!-- Backprop arrows back to learnable components -->
+  <line x1="300" y1="500" x2="135" y2="375" stroke="#c0392b" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-red)"/>
+  <line x1="420" y1="500" x2="502" y2="398" stroke="#c0392b" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-red)"/>
+
+  <!-- 参数 theta label -->
+  <rect x="28" y="416" width="184" height="50" rx="6" fill="#fff" stroke="#c0392b" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="120" y="436" text-anchor="middle" font-size="11" fill="#c62828" font-weight="bold">参数 θ = 全部可学习的权重</text>
+  <text x="120" y="452" text-anchor="middle" font-size="9" fill="#c62828">训练就是在调 θ，让 f_θ(X)≈Y</text>
+
+  <!-- Legend (centered) -->
+  <g transform="translate(220, 640)">
+    <line x1="0" y1="0" x2="30" y2="0" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <text x="38" y="4" font-size="11" fill="#666">前向传播</text>
+    <line x1="130" y1="0" x2="160" y2="0" stroke="#c0392b" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-red)"/>
+    <text x="168" y="4" font-size="11" fill="#c0392b">反向传播</text>
+    <rect x="270" y="-8" width="14" height="14" rx="3" fill="#ffe0b2" stroke="#e65100" stroke-width="1"/>
+    <text x="292" y="4" font-size="11" fill="#666">可学习参数</text>
+    <rect x="390" y="-8" width="14" height="14" rx="3" fill="#f0f4ff" stroke="#4a6fa5" stroke-width="1"/>
+    <text x="412" y="4" font-size="11" fill="#666">固定组件</text>
+  </g>
+</svg>
+{% endraw %}
+
 就这么一个目标。没有人教它语法，没有人教它逻辑，没有人教它写代码。但当模型足够大、数据足够多，这些能力就“涌现”了。
 
 为什么？因为要准确预测下一个 Token，你必须理解上下文。要理解上下文，你就得隐式地学会语法、语义、逻辑、常识、甚至世界知识。**预测下一个词，是对语言理解能力的极致压缩。**
