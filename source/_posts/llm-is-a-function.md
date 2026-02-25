@@ -88,8 +88,6 @@ $$\text{FFN}(x) = W_2 \cdot \text{ReLU}(W_1 \cdot x + b_1) + b_2$$
 $$\mathcal{L} = -\sum_{t=1}^{T} \log P(x_t | x_1, x_2, \ldots, x_{t-1})$$
 {% endraw %}
 
-把上面从 Token 到训练的完整流程画出来，是这样的：
-
 {% raw %}
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 670" width="960" height="670" font-family="system-ui, -apple-system, sans-serif">
   <defs>
