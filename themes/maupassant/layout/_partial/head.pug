@@ -4,9 +4,30 @@ head
     meta(content='yes', name='apple-mobile-web-app-capable')
     meta(content='black-translucent', name='apple-mobile-web-app-status-bar-style')
     meta(content='telephone=no', name='format-detection')
-    meta(name='description', content=config.description)
+    -
+      var rawDesc = is_post() ? (page.description || strip_html(page.excerpt) || strip_html(page.content)) : '';
+      var seoDescription = rawDesc ? rawDesc.replace(/\s+/g, ' ').trim().substring(0, 200) : config.description;
+    meta(name='description', content=seoDescription)
     meta(name='baidu-site-verification', content='sSd2p2uQfO')
     meta(name='keywords', content=config.keywords)
+    link(rel='canonical', href=page.permalink || config.url + url_for(page.path))
+    //- Open Graph
+    meta(property='og:title', content=page.title || config.title)
+    meta(property='og:description', content=seoDescription)
+    meta(property='og:type', content=is_post() ? 'article' : 'website')
+    meta(property='og:url', content=page.permalink || config.url + url_for(page.path))
+    meta(property='og:site_name', content=config.title)
+    meta(property='og:locale', content='zh_CN')
+    if is_post()
+      meta(property='article:published_time', content=page.date.toISOString())
+      meta(property='article:author', content=config.author)
+      if page.tags && page.tags.length
+        each tag in page.tags.toArray()
+          meta(property='article:tag', content=tag.name)
+    //- Twitter Card
+    meta(name='twitter:card', content='summary')
+    meta(name='twitter:title', content=page.title || config.title)
+    meta(name='twitter:description', content=seoDescription)
     block title
     link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300')
     link(rel='stylesheet', type='text/css', href=url_for(theme.css) + '/style.css')

@@ -73,5 +73,32 @@ block content
         DiffBlog('0jhfofmazizsde2k5pw64l8p2sy592xanbfvhtabsoy93kenap');
       });
 
+    -
+      var ldRawDesc = page.description || strip_html(page.excerpt) || strip_html(page.content) || config.description;
+      var ldDescription = ldRawDesc.replace(/\s+/g, ' ').trim().substring(0, 200);
+      var jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": page.title,
+        "datePublished": page.date.toISOString(),
+        "dateModified": (page.updated || page.date).toISOString(),
+        "author": {
+          "@type": "Person",
+          "name": config.author,
+          "url": config.url
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": config.author,
+          "url": config.url
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": page.permalink
+        },
+        "description": ldDescription
+      };
+    script(type='application/ld+json')!= JSON.stringify(jsonLd)
+
     if page.comments
       include _partial/comments.pug

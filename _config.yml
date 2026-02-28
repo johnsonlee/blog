@@ -5,7 +5,7 @@
 # Site
 title: Johnson Lee
 subtitle: Get into trouble, make mistakes, fight, love, live
-description: Johnson's personal blog
+description: Johnson Lee 的技术博客 — 移动开发、软件架构、性能优化、AI 与开源
 keywords: 李景森,架构设计,滴滴,快手,性能优化,我在滴滴做架构,johnsonlee,johnson,lijingsen,jingsen,booster,virtualapk,android,java,kotlin,performance,optimizer,flutter,javascript,typescript,node.js
 author: Johnson Lee
 language: zh-CN
@@ -138,6 +138,10 @@ feed:
   icon: icon.png
   autodiscovery: true
   template:
+
+sitemap:
+  path: sitemap.xml
+  rel: true
 
 algolia:
   applicationID: '453Q8KJZ6R'
