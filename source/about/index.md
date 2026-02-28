@@ -3,7 +3,7 @@ title: 关于我
 date: 2019-01-01 10:00:00
 ---
 
-李景森 (Johnson)，Senior Staff Engineer & Bar Raiser @ Coupang，坐标首尔。写了 20 多年代码，主力 Java 和 Android，后来陆续深入了 Kotlin、JavaScript/TypeScript、Node.js，最近在折腾 Rust。
+李景森 (Johnson)，Senior Staff Engineer & Bar Raiser @ Coupang，坐标首尔。写了 20 多年代码，主力 Java 和 Android，后来陆续深入了 Kotlin、JavaScript/TypeScript、Node.js，最近在折腾 AI。
 
 我的职业路径不算典型——三星、滴滴、快手、Coupang，横跨中韩，从写业务代码到做架构设计到定义技术方向，再到作为 Bar Raiser 把关招聘标准。每一站选择的标准都不是钱最多的那个 offer，而是能给我不同视角的那个。
 
