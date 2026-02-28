@@ -39,6 +39,12 @@ AI 不会替代工程师，但会重新定义工程师的价值。我关注的�
 - [jakewharton/diffuse](https://github.com/jakewharton/diffuse)
 - [DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)
 
+## 专利
+
+- Coupang 韩国专利（[完整列表](https://patents.google.com/?inventor=%EC%A7%95%EC%84%BC+%EB%A6%AC)）
+- Coupang 台湾专利（[完整列表](https://patents.google.com/?inventor=%E6%9D%8E%E6%99%AF%E6%A3%AE&assignee=%E9%9F%93%E5%95%86%E9%9F%93%E9%A0%98%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8)）
+- 快手专利（[完整列表](https://patents.google.com/?inventor=%E6%9D%8E%E6%99%AF%E6%A3%AE&assignee=%E5%8C%97%E4%BA%AC%E8%BE%BE%E4%BD%B3%E4%BA%92%E8%81%94%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8)）
+
 ## 联系我
 
 - Email: [g.johnsonlee@gmail.com](mailto:g.johnsonlee@gmail.com)
