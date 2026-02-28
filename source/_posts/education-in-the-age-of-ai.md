@@ -3,7 +3,7 @@ title: AI 时代的教育
 categories:
   - Independent Thinking
 tags:
-  - 教育
+  - Education
 date: 2025-12-06 12:00:00
 ---
 

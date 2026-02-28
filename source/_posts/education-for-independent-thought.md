@@ -3,7 +3,7 @@ title: 培养独立思考的教育
 categories:
   - Independent Thinking
 tags:
-  - 独立思考
+  - Independent Thinking
 date: 2022-11-28 00:00:00
 ---
 

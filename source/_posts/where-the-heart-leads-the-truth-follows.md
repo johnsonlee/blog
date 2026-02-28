@@ -3,7 +3,7 @@ title: 心之所向，道之所在
 categories:
   - Independent Thinking
 tags:
-  - 独立思考
+  - Independent Thinking
 date: 2024-01-01 16:00:00
 ---
 

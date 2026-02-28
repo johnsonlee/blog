@@ -3,7 +3,7 @@ title: 兴趣不是最好的老师
 categories:
   - Independent Thinking
 tags:
-  - 独立思考
+  - Independent Thinking
 date: 2020-10-07 00:00:00
 ---
 

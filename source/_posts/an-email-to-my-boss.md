@@ -3,7 +3,7 @@ title: 一封写给老板的邮件
 categories:
   - Independent Thinking
 tags:
-  - 独立思考
+  - Independent Thinking
 date: 2024-01-07 07:00:00
 ---
 
