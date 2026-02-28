@@ -6,7 +6,7 @@ categories:
 tags:
   - AI
   - Claude
-  - Thinking
+  - Independent Thinking
 ---
 
 自从用 Claude 完成了 [Graphite](https://github.com/johnsonlee/graphite) -- 基于 JVM 字节码的静态分析框架，工程质量和解决问题的方法和效率着实把我给震撼到了，然后又让它用 Rust 写了 [Rustyman](https://github.com/johnsonlee/rustyman) -- 面向 AI 的网络代理服务，效果也很是出奇的好，名副其实的 10x 工程师。于是，便产生了一个大胆的想法 -- [TestPilot](https://github.com/johnsonlee/testpilot)，在纯 JVM 上运行 Android APK 。拿到需求后，它便进入了 Plan 模式，根据对需求的理解提出了双层架构的方案，然后规划了 Road Map，分了 3 个阶段来进行，从 Phase 1 - MVP 到 Phase 3 - Production Ready。在 MVP 阶段表现跟前两个项目一样丝滑，到了 Phase 2 一开始风风火火的重写各种 Android 系统类，也没觉得有什么不对，逐步完了 Activity, View, Fragment, ViewPager, RecyclerView 的重写，接下来它提出要重写 ConstraintLayout 的时候，我意识到不对劲了-- 重写系统类我能理解，但为什么要重写一个二方库？ConstraintLayout 并不属于 Android Framework？于是便跟它一起仔细地 review 了整个方案，才发现它对底层依赖的 layoutlib 的能力不太了解，才提出重写系统类的方案，这不禁让我开始思考一个问题：**Claude 的能力边界到底在哪里？**

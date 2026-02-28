@@ -4,7 +4,7 @@ categories:
   - Computer Science
   - Mobile
 tags:
-  - 预加载
+  - Preloading
 date: 2021-03-24 07:00:00
 ---
 

@@ -3,7 +3,7 @@ title: 重温《故人故事》
 categories:
   - Life
 tags:
-  - 独立思考
+  - Independent Thinking
 date: 2021-02-14 00:00:00
 ---
 

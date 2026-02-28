@@ -3,8 +3,8 @@ title: 度日如年与度日如年
 categories:
   - Life
 tags:
-  - 职场
-  - 独立思考
+  - Career
+  - Independent Thinking
 date: 2021-09-20 02:00:00
 ---
 

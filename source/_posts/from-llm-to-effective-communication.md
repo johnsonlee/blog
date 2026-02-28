@@ -6,9 +6,9 @@ categories:
 tags:
   - LLM
   - Communication
-  - Thinking
+  - Independent Thinking
   - AI
-  - 教育
+  - Education
 ---
 
 最近在给儿子讲 LLM 的工作原理，做了一套 [PPT](https://llm.johnsonlee.io/) 。讲到 context window 的时候，我随手举了个例子：

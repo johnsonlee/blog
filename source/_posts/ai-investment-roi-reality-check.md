@@ -5,7 +5,7 @@ categories:
   - Independent Thinking
 tags:
   - AI
-  - Investment
+  - Investing
   - ROI
   - Big Tech
   - Infrastructure

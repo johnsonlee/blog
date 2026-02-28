@@ -3,7 +3,7 @@ title: AI 时代的 Mentor
 categories:
   - Independent Thinking
 tags:
-  - 教育
+  - Education
 date: 2026-01-01 01:00:00
 ---
 

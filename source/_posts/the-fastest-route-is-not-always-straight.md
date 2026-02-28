@@ -3,7 +3,7 @@ title: 谁说世界上没有捷径
 categories:
   - Independent Thinking
 tags:
-  - 独立思考
+  - Independent Thinking
 date: 2020-10-13 00:00:00
 ---
 

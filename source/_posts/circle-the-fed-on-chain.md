@@ -1,7 +1,7 @@
 ---
 title: Circle - 链上的美联储
 categories:
-  - Investment
+  - Investing
 tags:
   - Stock
 date: 2025-06-23 22:00:00

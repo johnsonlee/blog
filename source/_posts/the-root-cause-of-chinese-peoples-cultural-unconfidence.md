@@ -3,7 +3,7 @@ title: 中国人文化不自信的根源
 categories:
   - Independent Thinking
 tags:
-  - 独立思考
+  - Independent Thinking
   - Korea
 date: 2023-09-24 17:00:00
 ---

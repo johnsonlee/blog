@@ -4,7 +4,7 @@ categories:
   - Computer Science
   - Java
 tags:
-  - Java 8
+  - Java
   - Lambda
 date: 2020-04-15 01:00:00
 ---

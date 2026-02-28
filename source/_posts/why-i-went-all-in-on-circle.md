@@ -1,7 +1,7 @@
 ---
 title: 为什么 All in CRCL?
 categories:
-  - Investment
+  - Investing
 tags:
   - Stock
 date: 2025-06-22 16:00:00

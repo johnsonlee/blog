@@ -5,7 +5,7 @@ categories: Life
 tags:
   - Korea
   - Seoul
-  - Thinking
+  - Independent Thinking
 ---
 
 每周六早上都要送儿子去 Banpo 运动场去练习足球，最近因为 Winter Break 放了两周假，足球都没碰过，我想大概是荒废了。休假的时候还想着，这荒废的两周把之前的努力都给抵消掉了。家乡有句老话「三天不打鸟，牯牛都射不倒」，所以我心里其实已经有了预期：一上场又会暴露一堆毛病。

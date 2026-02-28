@@ -5,7 +5,7 @@ categories:
   - Independent Thinking
 tags:
   - AI
-  - Thinking
+  - Independent Thinking
   - Self-Reflection
   - Claude
 ---

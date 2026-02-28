@@ -3,7 +3,7 @@ title: 推荐阅读（思维篇）
 categories:
   - Reading
 tags:
-  - Thinking
+  - Independent Thinking
 date: 2024-04-20 00:00:00
 ---
 

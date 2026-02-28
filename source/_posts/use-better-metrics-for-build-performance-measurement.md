@@ -4,7 +4,7 @@ categories:
   - Computer Science
   - Mobile
 tags:
-  - 独立思考
+  - Independent Thinking
 date: 2024-01-27 23:00:00
 ---
 

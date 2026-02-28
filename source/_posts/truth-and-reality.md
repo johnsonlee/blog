@@ -3,7 +3,7 @@ title: 真相与现实
 categories:
   - Independent Thinking
 tags:
-  - 社会
+  - Society
 date: 2021-06-10 00:00:00
 ---
 

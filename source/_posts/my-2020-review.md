@@ -3,8 +3,8 @@ title: 回顾 2020 年
 categories:
   - Career
 tags:
-  - 职场
-  - 独立思考
+  - Career
+  - Independent Thinking
 date: 2021-02-06 00:00:00
 ---
 

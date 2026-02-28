@@ -5,7 +5,7 @@ categories:
   - Mobile
   - Android
 tags:
-  - Android Studio
+  - Android
 date: 2020-11-20 20:00:00
 ---
 
