@@ -1,7 +1,7 @@
 ---
 title: 2年涨30%，是什么支撑韩国的房价？
 date: 2025-12-24 22:00:00
-categories: Investment
+categories: Investing
 tags:
   - Korea
   - Housing
