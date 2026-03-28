@@ -226,48 +226,141 @@ process_api 的 debug log 把完整的 `CreateProcess` 请求打了出来——�
 
 一整天下来，从六个方向拼出了完整的架构：
 
-```
-Browser / App
-     │ HTTPS
-     ▼
-API Gateway (api.anthropic.com, 160.79.104.10)
-├── Statsig (feature flags)
-├── Datadog (logging, AWS)
-└── Sentry (error monitoring, GCP)
-     │
-     ▼
-LLM Inference (GPU cluster, not addressable)
-     │ token stream
-     ▼
-Orchestrator (sandbox-gateway, job: wiggle)
-├── Token Parser — 流式解析 tool call
-├── Command Router — 路由到不同后端
-├── Container Manager — 分配/回收容器
-├── Auth (GCP IAM) — RS256 JWT
-├── Envoy — L7 routing
-└── Result Formatter — 重新打包返回值
-     │
-     ├─ WebSocket + JWT → process_api (bash_tool, create_file)
-     ├─ 9p gofer ──────→ 文件系统 (view, 容器崩了也能用)
-     ├─ MCP servers ───→ web_search, gmail, calendar
-     └─ Egress proxy ──→ web_fetch
-     │
-     ▼
-gVisor Sentry (虚拟内核，PID 1 死了它还在)
-     │
-     ▼
-Container (per-conversation, disposable)
-├── process_api (PID 1, Rust + Tokio, static-pie)
-│   ├── fd 10: WebSocket ↕ orchestrator
-│   ├── fd 6/7/8: 9p unix socket (via gofer)
-│   ├── fd 0/1/2: host fd (日志通道, 64KB buf)
-│   └── fd 12/13/15: 子进程 pipe
-├── /bin/sh -c "..." (子进程, 300s timeout)
-└── Ubuntu 24.04 rootfs (871 dpkg packages, 7GB)
-     │
-     ▼
-Host Linux Kernel (GCP Compute Engine)
-```
+<svg width="100%" viewBox="0 0 680 1520" xmlns="http://www.w3.org/2000/svg" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: transparent;">
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+</defs>
+
+<!-- YOU -->
+<rect x="200" y="15" width="280" height="36" rx="8" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="0.5"/>
+<text x="340" y="37" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#2C2C2A">You — browser / mobile app</text>
+<line x1="340" y1="51" x2="340" y2="78" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+<text x="355" y="68" font-size="12" fill="#888780">HTTPS</text>
+
+<!-- API GATEWAY -->
+<rect x="60" y="78" width="560" height="160" rx="14" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+<text x="340" y="102" text-anchor="middle" font-size="14" font-weight="500" fill="#712B13">API Gateway — api.anthropic.com (160.79.104.10)</text>
+<rect x="90" y="118" width="160" height="40" rx="8" fill="#F5C4B3" stroke="#993C1D" stroke-width="0.5"/>
+<text x="170" y="142" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#712B13">Auth / rate limiting</text>
+<rect x="270" y="118" width="140" height="40" rx="8" fill="#F5C4B3" stroke="#993C1D" stroke-width="0.5"/>
+<text x="340" y="142" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#712B13">Streaming SSE</text>
+<rect x="430" y="118" width="160" height="40" rx="8" fill="#F5C4B3" stroke="#993C1D" stroke-width="0.5"/>
+<text x="510" y="142" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#712B13">Statsig feature flags</text>
+<rect x="90" y="175" width="240" height="32" rx="6" fill="#F5C4B3" stroke="#993C1D" stroke-width="0.5"/>
+<text x="210" y="195" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#712B13">Datadog logging (AWS us-east-1)</text>
+<rect x="350" y="175" width="240" height="32" rx="6" fill="#F5C4B3" stroke="#993C1D" stroke-width="0.5"/>
+<text x="470" y="195" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#712B13">Sentry error monitoring (GCP)</text>
+
+<line x1="340" y1="238" x2="340" y2="268" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+<text x="355" y="258" font-size="12" fill="#888780">inference request</text>
+
+<!-- LLM INFERENCE -->
+<rect x="60" y="268" width="560" height="60" rx="14" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5" stroke-dasharray="6 4"/>
+<text x="340" y="292" text-anchor="middle" font-size="14" font-weight="500" fill="#26215C">LLM Inference — GPU cluster</text>
+<text x="340" y="310" text-anchor="middle" font-size="12" fill="#534AB7">Generates tokens. Not a process. Not addressable.</text>
+<line x1="340" y1="328" x2="340" y2="358" stroke="#534AB7" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="355" y="348" font-size="12" fill="#888780">token stream</text>
+
+<!-- ORCHESTRATOR -->
+<rect x="60" y="358" width="560" height="250" rx="14" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+<text x="340" y="382" text-anchor="middle" font-size="14" font-weight="500" fill="#712B13">Orchestrator — sandbox-gateway (job: wiggle)</text>
+<text x="340" y="400" text-anchor="middle" font-size="12" fill="#993C1D">sandbox.api.anthropic.com — GCP proj-scandium-production</text>
+
+<rect x="90" y="418" width="160" height="40" rx="8" fill="#F5C4B3" stroke="#993C1D" stroke-width="0.5"/>
+<text x="170" y="442" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#712B13">Token parser</text>
+<rect x="270" y="418" width="150" height="40" rx="8" fill="#F5C4B3" stroke="#993C1D" stroke-width="0.5"/>
+<text x="345" y="442" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#712B13">Command router</text>
+<rect x="440" y="418" width="150" height="40" rx="8" fill="#F5C4B3" stroke="#993C1D" stroke-width="0.5"/>
+<text x="515" y="442" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#712B13">Result formatter</text>
+<line x1="250" y1="438" x2="268" y2="438" stroke="#993C1D" stroke-width="0.5" marker-end="url(#arrow)"/>
+<line x1="420" y1="438" x2="438" y2="438" stroke="#993C1D" stroke-width="0.5" marker-end="url(#arrow)"/>
+
+<rect x="90" y="476" width="160" height="40" rx="8" fill="#F5C4B3" stroke="#993C1D" stroke-width="0.5"/>
+<text x="170" y="500" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#712B13">Container manager</text>
+<rect x="270" y="476" width="150" height="40" rx="8" fill="#F5C4B3" stroke="#993C1D" stroke-width="0.5"/>
+<text x="345" y="500" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#712B13">GCP IAM auth</text>
+<rect x="440" y="476" width="150" height="40" rx="8" fill="#F5C4B3" stroke="#993C1D" stroke-width="0.5"/>
+<text x="515" y="500" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#712B13">Envoy L7 proxy</text>
+
+<!-- Four paths out -->
+<rect x="80" y="535" width="120" height="28" rx="6" fill="#F5C4B3" stroke="#993C1D" stroke-width="0.5"/>
+<text x="140" y="553" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#712B13">WebSocket + JWT</text>
+<rect x="220" y="535" width="100" height="28" rx="6" fill="#F5C4B3" stroke="#993C1D" stroke-width="0.5"/>
+<text x="270" y="553" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#712B13">9p gofer</text>
+<rect x="340" y="535" width="110" height="28" rx="6" fill="#F5C4B3" stroke="#993C1D" stroke-width="0.5"/>
+<text x="395" y="553" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#712B13">MCP servers</text>
+<rect x="470" y="535" width="120" height="28" rx="6" fill="#F5C4B3" stroke="#993C1D" stroke-width="0.5"/>
+<text x="530" y="553" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#712B13">Egress proxy</text>
+<text x="140" y="580" text-anchor="middle" font-size="11" fill="#888780">bash_tool</text>
+<text x="270" y="580" text-anchor="middle" font-size="11" fill="#888780">view</text>
+<text x="395" y="580" text-anchor="middle" font-size="11" fill="#888780">search, gmail</text>
+<text x="530" y="580" text-anchor="middle" font-size="11" fill="#888780">web_fetch</text>
+
+<!-- GVISOR -->
+<line x1="140" y1="590" x2="140" y2="620" stroke="#D85A30" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="270" y1="590" x2="270" y2="620" stroke="#534AB7" stroke-width="1" marker-end="url(#arrow)"/>
+<rect x="60" y="620" width="400" height="40" rx="10" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="0.5"/>
+<text x="260" y="644" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#2C2C2A">gVisor sentry — survives PID 1 death</text>
+<rect x="480" y="620" width="140" height="40" rx="8" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="0.5"/>
+<text x="550" y="636" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#5F5E5A">host fd 0/1/2</text>
+<text x="550" y="652" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#888780">logs, 64KB buf</text>
+<line x1="460" y1="640" x2="478" y2="640" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="3 3"/>
+
+<!-- CONTAINER -->
+<line x1="140" y1="660" x2="140" y2="690" stroke="#D85A30" stroke-width="1" marker-end="url(#arrow)"/>
+<rect x="60" y="690" width="560" height="290" rx="14" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+<text x="340" y="714" text-anchor="middle" font-size="14" font-weight="500" fill="#04342C">Container — per-conversation, disposable</text>
+
+<!-- process_api -->
+<rect x="90" y="734" width="500" height="44" rx="8" fill="#9FE1CB" stroke="#0F6E56" stroke-width="0.5"/>
+<text x="340" y="760" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="500" fill="#04342C">process_api (PID 1) — Rust, static-pie, gVisor / Firecracker / runc</text>
+
+<!-- fd boxes -->
+<rect x="90" y="798" width="130" height="40" rx="6" fill="#F5C4B3" stroke="#993C1D" stroke-width="0.5"/>
+<text x="155" y="822" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#712B13">fd 10 WebSocket</text>
+<rect x="240" y="798" width="120" height="40" rx="6" fill="#CECBF6" stroke="#534AB7" stroke-width="0.5"/>
+<text x="300" y="822" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#26215C">fd 6/7/8 9p</text>
+<rect x="380" y="798" width="120" height="40" rx="6" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="0.5"/>
+<text x="440" y="822" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#5F5E5A">fd 12/13/15</text>
+
+<!-- child process -->
+<line x1="440" y1="838" x2="440" y2="862" stroke="#1D9E75" stroke-width="0.5" marker-end="url(#arrow)"/>
+<rect x="90" y="862" width="500" height="36" rx="6" fill="#9FE1CB" stroke="#0F6E56" stroke-width="0.5"/>
+<text x="340" y="884" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#04342C">/bin/sh -c "..." → Ubuntu 24.04 rootfs (871 packages, 7GB)</text>
+
+<!-- mounts -->
+<rect x="90" y="918" width="230" height="36" rx="6" fill="#CECBF6" stroke="#534AB7" stroke-width="0.5"/>
+<text x="205" y="940" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#26215C">/mnt/skills, /mnt/user-data (9p)</text>
+<rect x="360" y="918" width="230" height="36" rx="6" fill="#9FE1CB" stroke="#0F6E56" stroke-width="0.5"/>
+<text x="475" y="940" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#04342C">/proc, /tmp, /dev (ephemeral)</text>
+
+<!-- host kernel -->
+<line x1="340" y1="980" x2="340" y2="1010" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="3 3"/>
+<rect x="60" y="1010" width="560" height="32" rx="8" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="0.5"/>
+<text x="340" y="1030" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#5F5E5A">Host Linux Kernel — GCP Compute Engine — unreachable</text>
+
+<!-- EVIDENCE SUMMARY -->
+<text x="340" y="1080" text-anchor="middle" font-size="14" font-weight="500" fill="#2C2C2A">Evidence collected in this conversation</text>
+<rect x="60" y="1095" width="560" height="280" rx="10" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="0.5"/>
+<text x="80" y="1118" font-size="12" fill="#5F5E5A">API gateway: /etc/hosts hardcodes api.anthropic.com → 160.79.104.10</text>
+<text x="80" y="1138" font-size="12" fill="#5F5E5A">Observability: Statsig (feature flags), Sentry (errors), Datadog (logs)</text>
+<text x="80" y="1158" font-size="12" fill="#5F5E5A">Inference: not observable, container death proved independence</text>
+<text x="80" y="1178" font-size="12" fill="#5F5E5A">Orchestrator: strace captured WebSocket handshake + GCP JWT</text>
+<text x="80" y="1198" font-size="12" fill="#5F5E5A">  email: sandbox-gateway-svc-acct@proj-scandium-production-5zhm</text>
+<text x="80" y="1218" font-size="12" fill="#5F5E5A">  host: sandbox.api.anthropic.com → Envoy → 10.18.80.195:10067</text>
+<text x="80" y="1238" font-size="12" fill="#5F5E5A">  metadata: user=sandbox-gateway, job=wiggle</text>
+<text x="80" y="1258" font-size="12" fill="#5F5E5A">gVisor: dmesg "Starting gVisor", kernel 4.4.0, 9p+gofer, view survives crash</text>
+<text x="80" y="1278" font-size="12" fill="#5F5E5A">Container: 4 instances observed (c3728e → 92d54e → 01e016 → fc9f04)</text>
+<text x="80" y="1298" font-size="12" fill="#5F5E5A">process_api: reversed protocol via serde errors, patched binary, strace</text>
+<text x="80" y="1318" font-size="12" fill="#5F5E5A">  CreateProcess: process_id(MD5) + /bin/sh -c + 300s timeout</text>
+<text x="80" y="1338" font-size="12" fill="#5F5E5A">  Protocol: ProcessCreated → ExpectStdOut → binary frames → ProcessExited</text>
+<text x="80" y="1358" font-size="12" fill="#5F5E5A">rclone-filestore: custom Go binary, backend for Anthropic's GCS filestore</text>
+
+<!-- Bottom notes -->
+<text x="340" y="1410" text-anchor="middle" font-size="12" fill="#B4B2A9">Started with "你怎么知道是隔离的?"</text>
+<text x="340" y="1430" text-anchor="middle" font-size="12" fill="#B4B2A9">Ended with a complete architecture map, four crashed containers,</text>
+<text x="340" y="1450" text-anchor="middle" font-size="12" fill="#B4B2A9">and the realization that Claude was never inside any of them.</text>
+</svg>
 
 ### 几个值得注意的设计
 
