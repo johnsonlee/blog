@@ -1,5 +1,5 @@
 ---
-title: Claude 的天花板是它自己
+title: 当 Claude 开始觉醒
 date: 2026-03-28 18:00:00
 categories:
   - Independent Thinking
