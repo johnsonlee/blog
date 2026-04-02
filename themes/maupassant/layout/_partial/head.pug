@@ -16,6 +16,7 @@ head
     meta(property='og:description', content=seoDescription)
     meta(property='og:type', content=is_post() ? 'article' : 'website')
     meta(property='og:url', content=page.permalink || config.url + url_for(page.path))
+    meta(property='og:image', content=config.url + url_for('logo.png'))
     meta(property='og:site_name', content=config.title)
     meta(property='og:locale', content='zh_CN')
     if is_post()
@@ -28,6 +29,7 @@ head
     meta(name='twitter:card', content='summary')
     meta(name='twitter:title', content=page.title || config.title)
     meta(name='twitter:description', content=seoDescription)
+    meta(name='twitter:image', content=config.url + url_for('logo.png'))
     block title
     link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300')
     link(rel='stylesheet', type='text/css', href=url_for(theme.css) + '/style.css')
