@@ -19,7 +19,10 @@ html(lang=config.language)
   include _partial/head.pug
 
   body: .body_container
-    img(src=url_for('logo.png'), style='display:none')
+    if is_post()
+      img(src=url_for('og-cards/' + page.slug + '.png'), style='display:none')
+    else
+      img(src=url_for('logo.png'), style='display:none')
     #header
       .site-name
         h1.hidden= current_title
