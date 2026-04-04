@@ -6,6 +6,87 @@
  * @link http://chopstack.com
  */
 
+$font-primary: "Share Tech Mono", "PingFangSC-Regular", "Hiragino Sans GB", "Microsoft YaHei", monospace;
+$font-code: "Share Tech Mono", Menlo, Consolas, monospace;
+
+// ===== Color System =====
+:root {
+  --bg-primary: #FFF;
+  --bg-secondary: #F8F8F8;
+  --bg-code: #f7f8f8;
+  --bg-copyright: #F9F9F9;
+
+  --text-primary: #444;
+  --text-secondary: #555;
+  --text-tertiary: #6E7173;
+  --text-muted: #888;
+  --text-faint: #999;
+  --text-code: #333;
+
+  --link-color: #6E7173;
+  --link-hover: #444;
+  --link-accent: #01579f;
+
+  --border-primary: #ddd;
+  --border-secondary: #eee;
+  --border-code-gutter: #e6e6e6;
+  --border-toc: #bbb;
+  --border-copyright: #FF1700;
+  --border-pagination-active: #D26911;
+  --border-table-header: #909ba2;
+
+  --logo-color: #555;
+  --logo-hover: #777;
+
+  --hl-comment: #969896;
+  --hl-string: #183691;
+  --hl-keyword: #a71d5d;
+  --hl-literal: #0086b3;
+  --hl-title: #795da3;
+  --hl-variable: #333;
+  --hl-tag: #63a35c;
+  --hl-subst: #df5000;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --bg-code: #0f3460;
+  --bg-copyright: #16213e;
+
+  --text-primary: #e0e0e0;
+  --text-secondary: #c0c0c0;
+  --text-tertiary: #a0a0a0;
+  --text-muted: #909090;
+  --text-faint: #808080;
+  --text-code: #e0e0e0;
+
+  --link-color: #a0a0a0;
+  --link-hover: #e0e0e0;
+  --link-accent: #5ca0d3;
+
+  --border-primary: #2a2a4a;
+  --border-secondary: #2a2a4a;
+  --border-code-gutter: #2a2a4a;
+  --border-toc: #3a3a5a;
+  --border-copyright: #FF1700;
+  --border-pagination-active: #D26911;
+  --border-table-header: #4a4a6a;
+
+  --logo-color: #c0c0c0;
+  --logo-hover: #e0e0e0;
+
+  --hl-comment: #6a9955;
+  --hl-string: #ce9178;
+  --hl-keyword: #c586c0;
+  --hl-literal: #4ec9b0;
+  --hl-title: #dcdcaa;
+  --hl-variable: #9cdcfe;
+  --hl-tag: #4ec9b0;
+  --hl-subst: #d7ba7d;
+}
+
+
 /*
 pure css setting
 When setting the primary font stack, apply it to the Pure grid units along
@@ -16,13 +97,13 @@ html, button, input, select, textarea,
 .MJXc-TeX-unknown-R,
 .pure-g [class *= "pure-u"] {
     /* Set your content font stack here: */
-    font-family: "PingFangSC-Regular", Helvetica, "Helvetica Neue", "Segoe UI", "Hiragino Sans GB", "Source Han Sans CN", "Microsoft YaHei", "STHeiti", "WenQuanYi Micro Hei", sans-serif !important;
+    font-family: $font-primary !important;
 }
 
 body {
-    background-color: #FFF;
-    color: #444;
-    font-family: "TIBch", "Classic Grotesque W01", "Helvetica Neue", Arial, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: $font-primary;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 14px;
@@ -61,7 +142,7 @@ h4:before {
     padding-top: 20px;
 }
 a, button.submit {
-    color: #6E7173;
+    color: var(--link-color);
     text-decoration: none;
     -webkit-transition: all .1s ease-in;
     -moz-transition: all .1s ease-in;
@@ -69,7 +150,7 @@ a, button.submit {
     transition: all .1s ease-in;
 }
 a:hover, a:active {
-    color: #444;
+    color: var(--link-hover);
 }
 a:focus {
     outline:auto;
@@ -84,7 +165,7 @@ div {
 #header {
     padding: 58px 0 0;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--border-primary);
     position: relative;
     .site-name {
         margin-bottom: 40px;
@@ -95,15 +176,15 @@ div {
             overflow: hidden;
         }
         #logo {
-            font: bold 38px/1.12 "Open Sans", "Times New Roman", Georgia, Times, sans-serif;
-            color: #555;
+            font: bold 38px/1.12 $font-primary;
+            color: var(--logo-color);
             span, &:hover {
-                color: #777;
+                color: var(--logo-hover);
             }
         }
         .description {
             margin: .2em 0 0;
-            color: #999;
+            color: var(--text-faint);
         }
     }
     #nav-menu {
@@ -116,22 +197,22 @@ div {
             display: inline-block;
             padding: 3px 20px 3px;
             line-height: 30px;
-            color: #444;
+            color: var(--text-primary);
             font-size: 13px;
             border: 1px solid transparent;
             &:hover {
-                border-bottom-color: #444;
+                border-bottom-color: var(--text-primary);
             }
             &.current {
-                border: 1px solid #ddd;
-                border-bottom-color: #fff;
+                border: 1px solid var(--border-primary);
+                border-bottom-color: var(--bg-primary);
             }
         }
     }
 }
 
 #sidebar {
-    border-left: 1px solid #ddd;
+    border-left: 1px solid var(--border-primary);
     padding-left: 35px;
     margin-top: 40px;
     padding-bottom: 20px;
@@ -139,20 +220,20 @@ div {
     .widget {
         margin-bottom: 30px;
         .widget-title {
-            color: #6E7173;
+            color: var(--text-tertiary);
             line-height: 2.7;
             margin-top: 0;
             font-size: 16px;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid var(--border-primary);
             display: block;
             font-weight: normal;
         }
         .comments-title {
-            color: #6E7173;
+            color: var(--text-tertiary);
             line-height: 2.7;
             margin-top: 0;
             font-size: 16px;
-            border-bottom: 0px solid #ddd;
+            border-bottom: 0px solid var(--border-primary);
             display: block;
             font-weight: normal;
         }
@@ -173,7 +254,7 @@ div {
         }
         .category-list-count {
              padding-left: 5px;
-             color: #6E7173;
+             color: var(--text-tertiary);
         }
         .category-list-count::before {
             content: "(";
@@ -185,11 +266,11 @@ div {
             position: relative;
             overflow: hidden;
             input {
-                background: #fff 8px 8px no-repeat
+                background: var(--bg-primary) 8px 8px no-repeat
                     url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6%2BR8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAG11AABzoAAA%2FN0AAINkAABw6AAA7GgAADA%2BAAAQkOTsmeoAAAESSURBVHjajNCxS9VRGMbxz71E4OwgoXPQxVEpXCI47%2BZqGP0LCoJO7UVD3QZzb3SwcHB7F3Uw3Zpd%2FAPCcJKG7Dj4u%2FK7Pwp94HDg5Xyf5z1Pr9YKImKANTzFXxzjU2ae6qhXaxURr%2FAFl9hHDy%2FwEK8z89sYVEp5gh84wMvMvGiSJ%2FEV85jNzLMR1McqfmN5BEBmnmMJFSvtpH7jdJiZv7q7Z%2BZPfMdcF6rN%2FT%2F1m2LGBkd4HhFT3dcRMY2FpskxaLNpayciHrWAGeziD7b%2BVfkithuTk8bkGa4wgWFmbrSTZOYeBvjc%2BucQj%2FEe6xHx4Taq1nrnKaW8K6XUUsrHWuvNevdRRLzFGwzvDbXAB9cDAHvhedDruuxSAAAAAElFTkSuQmCC);
                 padding: 7px 11px 7px 28px;
                 line-height: 16px;
-                border: 1px solid #bbb;
+                border: 1px solid var(--border-toc);
                 width: 65%;
                 -webkit-border-radius: 5px;
                 -moz-border-radius: 5px;
@@ -209,24 +290,24 @@ div {
     margin-top: 1.1em;
     font-size: 20px;
     font-weight: normal;
-    color: #888;
+    color: var(--text-muted);
 }
 
 .post {
     padding: 25px 0 15px;
     .post-title {
         margin: 0;
-        color: #555;
+        color: var(--text-secondary);
         text-align: left;
-        font: bold 25px/1.1 "Open Sans", "ff-tisa-web-pro", Cambria, "Times New Roman", Georgia, Times, sans-serif;
+        font: bold 25px/1.1 $font-primary;
         a {
-            color: #555;
+            color: var(--text-secondary);
         }
     }
     .post-meta {
         padding: 0;
         margin: 15px 0 0;
-        color: #6E7173;
+        color: var(--text-tertiary);
         float: left;
         display: inline;
         text-indent: .15em;
@@ -253,7 +334,7 @@ div {
     .ds-thread-count {
         padding: 0;
         margin: 15px 0 0;
-        color: #6E7173;
+        color: var(--text-tertiary);
         float: right;
         display: inline;
         text-indent: .15em;
@@ -263,13 +344,13 @@ div {
           padding-right: 0.3em;
         }
         &:hover {
-            color: #444;
+            color: var(--link-hover);
         }
     }
     .disqus-comment-count {
         padding: 0;
         margin: 15px 0 0;
-        color: #6E7173;
+        color: var(--text-tertiary);
         float: right;
         display: inline;
         text-indent: .15em;
@@ -279,21 +360,21 @@ div {
           padding-right: 0.3em;
         }
         &:hover {
-            color: #444;
+            color: var(--link-hover);
         }
     }
     .post-content {
         clear: left;
         font-size: 15px;
         line-height: 1.77;
-        color: #444;
+        color: var(--text-primary);
         padding-top: 15px;
         text-align: justify;
         text-justify: distribute;
         word-break: normal;
         h2 {
             margin: 1.4em 0 1.1em;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--border-secondary);
             overflow: hidden;
         }
         h3 {
@@ -313,12 +394,12 @@ div {
                 display: inline-block;
                 margin: 0 5px;
                 padding: 0 5px;
-                background: #f7f8f8;
-                font-family: Menlo, Consolas, monospace !important;
+                background: var(--bg-code);
+                font-family: $font-code !important;
             }
         }
         a {
-            color: #01579f;
+            color: var(--link-accent);
             padding-bottom: 2px;
             word-break: normal;
             &:hover {
@@ -326,7 +407,7 @@ div {
             }
         }
         .caption {
-            color: #444;
+            color: var(--text-primary);
             display: block;
             font-size: 0.9em;
             margin-top: 0.1em;
@@ -336,7 +417,7 @@ div {
         hr {
             margin: 2.4em auto;
             border: none;
-            border-top: 1px solid #eee;
+            border-top: 1px solid var(--border-secondary);
             position: relative;
         }
         img {
@@ -355,11 +436,11 @@ div {
                 display: inline-block;
                 margin: 0 5px;
                 padding: 0px 5px;
-                background: #f7f8f8;
-                font-family: Menlo, Consolas, monospace !important;
+                background: var(--bg-code);
+                font-family: $font-code !important;
             }
             a {
-                color: #01579f;
+                color: var(--link-accent);
                 padding-bottom: 2px;
                 word-break: normal;
                 &:hover {
@@ -408,7 +489,7 @@ div {
 }
 
 .page-navigator {
-    border-top: 1px solid #ddd;
+    border-top: 1px solid var(--border-primary);
     list-style: none;
     margin-top: 25px;
     padding: 25px 0 0;
@@ -423,11 +504,11 @@ div {
         height: 25px;
         line-height: 25px;
         padding: 5px 9px;
-        border: 1px solid #DDD;
+        border: 1px solid var(--border-primary);
         text-align: center;
         &:hover {
-            background: #F8F8F8;
-            border-bottom-color: #D26911;
+            background: var(--bg-secondary);
+            border-bottom-color: var(--border-pagination-active);
         }
         &.prev {
             float: left;
@@ -447,8 +528,8 @@ div {
         }
     }
     .current {
-        background: #F8F8F8;
-        border-bottom-color: #D26911;
+        background: var(--bg-secondary);
+        border-bottom-color: var(--border-pagination-active);
     }
     .space {
         border: none;
@@ -460,7 +541,7 @@ div {
     padding: .8em 0 3.6em;
     margin-top: 1em;
     line-height: 2.5;
-    color: #6E7173;
+    color: var(--text-tertiary);
     text-align: center;
     span {
         font-size: .9em;
@@ -474,7 +555,7 @@ div {
     padding-bottom: .8em;
     h2 {
         margin: 0;
-        font: bold 25px / 1.1 "Open Sans", "ff-tisa-web-pro", Cambria, "Times New Roman", Georgia, Times, sans-serif;
+        font: bold 25px / 1.1 $font-primary;
     }
     .date {
         padding-right: .7em;
@@ -529,16 +610,16 @@ blockquote,.stressed {
     box-sizing: border-box;
     margin: 2.5em 0;
     padding: 0 0 0 50px;
-    color: #555;
+    color: var(--text-secondary);
     border-left: none;
 }
 blockquote::before,.stressed-quote::before {
     content: "\201C";
     display: block;
-    font-family: times;
+    font-family: $font-primary;
     font-style: normal;
     font-size: 48px;
-    color: #444;
+    color: var(--text-primary);
     font-weight: bold;
     line-height: 30px;
     margin-left: -50px;
@@ -619,7 +700,7 @@ pre {
 
 #process {
     padding: 80px 0;
-    background-color: #fff;
+    background-color: var(--bg-primary);
 }
 #process .col-md-2 i {
     font-size: 50px;
@@ -682,7 +763,7 @@ pre {
     text-align: left;
 }
 #process span.number {
-    font-family: 'Georgia', serif, Helvetica, "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+    font-family: $font-primary;
     font-style: italic;
     font-size: 20px;
     line-height: 0;
@@ -709,7 +790,7 @@ pre {
     transform: rotate(180deg);
 }
 .timeline-label p {
-    font-family: Helvetica, "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+    font-family: $font-primary;
     margin-bottom: 3px
 }
 #process .timeline-centered .timeline-entry .timeline-entry-inner {
@@ -744,7 +825,7 @@ pre {
     font-size: 12px;
 }
 #process .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon {
-    background: #fff;
+    background: var(--bg-primary);
     color: #737881;
     display: block;
     width: 40px;
@@ -771,7 +852,7 @@ pre {
 }
 #process .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label {
     position: relative;
-    background: #eee;
+    background: var(--bg-secondary);
     padding: 30px;
     margin-left: 60px;
     -webkit-background-clip: padding-box;
@@ -789,7 +870,7 @@ pre {
     height: 0;
     border-style: solid;
     border-width: 9px 9px 9px 0;
-    border-color: transparent #eee transparent transparent;
+    border-color: transparent var(--bg-secondary) transparent transparent;
     left: 0;
     top: 50%;
     margin-top: -9px;
@@ -799,7 +880,7 @@ pre {
   position: absolute;
   display: block;
   width: 4px;
-  background: #eee;
+  background: var(--bg-secondary);
   top: -3%;
   right: -30px;
   bottom: -3%;
@@ -807,11 +888,11 @@ pre {
 #process .present,
 #process .born {
   font-size: 14px;
-  font-family: 'Georgia', serif, Helvetica, "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+  font-family: $font-primary;
   font-style: italic;
-  color: #333;
+  color: var(--text-code);
   padding: 10px;
-  background-color: #eee;
+  background-color: var(--bg-secondary);
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -826,7 +907,7 @@ pre {
   width: 0;
   position: absolute;
   border-color: rgba(136, 183, 213, 0);
-  border-left-color: #eee;
+  border-left-color: var(--bg-secondary);
   border-width: 10px;
   margin-top: -10px
 }
@@ -855,7 +936,7 @@ pre {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  border: 3px solid #eee;
+  border: 3px solid var(--bg-secondary);
 }
 #process .dot_bt {
   position: absolute;
@@ -868,7 +949,7 @@ pre {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  border: 3px solid #eee;
+  border: 3px solid var(--bg-secondary);
 }
 @media (max-width:768px) {
     #process .line {
@@ -895,10 +976,10 @@ pre {
 /* read more*/
 .readmore a {
     font-size: 14px;
-    color: #444;
+    color: var(--text-primary);
     margin: -10px 0;
     padding: 5px 10px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-primary);
     border-radius: 5px;
     float: right;
     &:after {
@@ -907,18 +988,18 @@ pre {
         padding-left: 0.3em;
     }
     &:hover {
-        background: #F8F8F8;
-        border-bottom-color: #D26911;
+        background: var(--bg-secondary);
+        border-bottom-color: var(--border-pagination-active);
     }
 }
 
 /* syntax highlight*/
 figure.highlight,
 .codeblock {
-    background:     #f7f8f8;
+    background:     var(--bg-code);
     margin:         10px 0;
     line-height:    1.1em;
-    color:          #333;
+    color:          var(--text-code);
     padding-top:    15px;
     overflow:       hidden;
 
@@ -932,7 +1013,7 @@ figure.highlight,
     .code,
     .tag {
         background-color: inherit;
-        font-family: Menlo, Consolas, monospace;
+        font-family: $font-code;
         border:      none;
         padding:     0;
         margin:      0;
@@ -955,18 +1036,18 @@ figure.highlight,
         font-size:     13px;
         padding:       0 15px 20px;
         margin:        0;
-        background:    #f7f8f8;
-        color:         #999999;
+        background:    var(--bg-code);
+        color:         var(--text-faint);
 
         a {
             float: right;
-            color: #01579f;
+            color: var(--link-accent);
         }
     }
     // Gutter which contains line numbers
     .gutter {
-        background:   #f7f8f8;
-        border-right: 1px solid #e6e6e6;
+        background:   var(--bg-code);
+        border-right: 1px solid var(--border-code-gutter);
         padding:      0.3em 15px;
         user-select:  none;
     }
@@ -992,7 +1073,7 @@ figure.highlight,
 .gist {
     .line,
     .line-number {
-        font-family: Menlo, Consolas, monospace;
+        font-family: $font-code;
         font-size:   1em;
         margin:      0 0 5px 0;
         user-select: none;
@@ -1003,13 +1084,13 @@ figure.highlight,
 .highlight {
     // General
     .comment {
-        color: #969896;
+        color: var(--hl-comment);
     }
     .string {
-        color: #183691;
+        color: var(--hl-string);
     }
     .keyword {
-        color: #a71d5d;
+        color: var(--hl-keyword);
     }
     // ApacheConf
     &.apacheconf .code {
@@ -1019,41 +1100,41 @@ figure.highlight,
         .variable,
         .cbracket,
         .keyword {
-            color: #0086b3;
+            color: var(--hl-literal);
         }
         .sqbracket {
-            color: #df5000;
+            color: var(--hl-subst);
         }
         .section,
         .tag {
-            color: #63a35c;
+            color: var(--hl-tag);
         }
     }
     // Bash
     &.bash .code {
         .shebang {
-            color: #969896;
+            color: var(--hl-comment);
         }
         .literal,
         .built_in {
-            color: #0086b3;
+            color: var(--hl-literal);
         }
         .variable {
-            color: #333;
+            color: var(--hl-variable);
         }
         .title {
-            color: #795da3;
+            color: var(--hl-title);
         }
     }
     // coffescript
     &.coffeescript .code {
         .title {
-            color: #795da3;
+            color: var(--hl-title);
         }
         .literal,
         .built_in,
         .number {
-            color: #0086b3;
+            color: var(--hl-literal);
         }
         .reserved,
         .attribute {
@@ -1062,54 +1143,54 @@ figure.highlight,
         .subst,
         .regexp,
         .attribute {
-            color: #df5000;
+            color: var(--hl-subst);
         }
     }
     // C/C++
     &.cpp .code,
     &.c .code {
         .preprocessor {
-            color: #df5000;
+            color: var(--hl-subst);
         }
         .meta-keyword {
-            color: #a71d5d;
+            color: var(--hl-keyword);
         }
         .title {
-            color: #795da3;
+            color: var(--hl-title);
         }
         .number,
         .built_in {
-            color: #0086b3;
+            color: var(--hl-literal);
         }
     }
     // Clojure
     &.clj .code {
         .builtin-name {
-            color: #df5000;
+            color: var(--hl-subst);
         }
         .name {
-            color: #795da3;
+            color: var(--hl-title);
         }
         .number {
-            color: #0086b3;
+            color: var(--hl-literal);
         }
     }
     // C#
     &.cs .code {
         .preprocessor,
         .preprocessor .keyword {
-            color: #333;
+            color: var(--hl-variable);
         }
         .title {
-            color: #795da3;
+            color: var(--hl-title);
         }
         .number,
         .built_in {
-            color: #0086b3;
+            color: var(--hl-literal);
         }
         .xmlDocTag,
         .doctag {
-            color: #63a35c;
+            color: var(--hl-tag);
         }
     }
     // CSS
@@ -1117,34 +1198,34 @@ figure.highlight,
         .at_rule,
         .important,
         .meta {
-            color: #a71d5d;
+            color: var(--hl-keyword);
         }
         .attribute,
         .hexcolor,
         .number,
         .function {
-            color: #0086b3;
+            color: var(--hl-literal);
         }
         .attr_selector,
         .value {
-            color: #333;
+            color: var(--hl-variable);
         }
         .id,
         .class,
         .pseudo,
         .selector-pseudo {
-            color: #795da3;
+            color: var(--hl-title);
         }
         .tag,
         .selector-tag {
-            color: #63a35c;
+            color: var(--hl-tag);
         }
     }
     // Diff
     &.diff .code {
         .chunk,
         .meta {
-            color: #795da3;
+            color: var(--hl-title);
             font-weight: bold;
         }
         .addition {
@@ -1160,45 +1241,45 @@ figure.highlight,
     &.http .code {
         .attribute,
         .attr {
-            color: #183691;
+            color: var(--hl-string);
         }
         .literal {
-            color: #0086b3;
+            color: var(--hl-literal);
         }
         .request {
-            color: #a71d5d;
+            color: var(--hl-keyword);
         }
     }
     // INI
     &.ini .code {
         .title,
         .section {
-            color: #795da3;
+            color: var(--hl-title);
         }
         .setting,
         .attr {
-            color: #a71d5d;
+            color: var(--hl-keyword);
         }
         .value,
         .keyword {
-            color: #333;
+            color: var(--hl-variable);
         }
     }
     // JAVA
     &.java .code {
         .title {
-            color: #795da3;
+            color: var(--hl-title);
         }
         .javadoc {
-            color: #969896;
+            color: var(--hl-comment);
         }
         .meta,
         .annotation,
         .javadoctag {
-            color: #a71d5d;
+            color: var(--hl-keyword);
         }
         .number {
-            color: #0086b3;
+            color: var(--hl-literal);
         }
         .params {
             color: #1d3e81;
@@ -1208,52 +1289,52 @@ figure.highlight,
     &.js .code {
         .built_in,
         .title {
-            color: #795da3;
+            color: var(--hl-title);
         }
         .javadoc {
-            color: #969896;
+            color: var(--hl-comment);
         }
         .tag,
         .javadoctag {
-            color: #a71d5d;
+            color: var(--hl-keyword);
         }
         .tag .title {
-            color: #333;
+            color: var(--hl-variable);
         }
         .regexp {
-            color: #df5000;
+            color: var(--hl-subst);
         }
         .literal,
         .number {
-            color: #0086b3;
+            color: var(--hl-literal);
         }
     }
     // JSON
     &.json .code {
         .attribute {
-            color: #183691;
+            color: var(--hl-string);
         }
         .number,
         .literal {
-            color: #0086b3;
+            color: var(--hl-literal);
         }
     }
     // Kotlin
     &.kotlin .code {
         .built_in,
         .title {
-            color: #795da3;
+            color: var(--hl-title);
         }
         .javadoc {
-            color: #969896;
+            color: var(--hl-comment);
         }
         .meta,
         .annotation,
         .javadoctag {
-            color: #a71d5d;
+            color: var(--hl-keyword);
         }
         .number {
-            color: #0086b3;
+            color: var(--hl-literal);
         }
         .params {
             color: #1d3e81;
@@ -1262,14 +1343,14 @@ figure.highlight,
     // Makefile
     &.mak .code {
         .constant {
-            color: #333;
+            color: var(--hl-variable);
         }
         .title {
-            color: #795da3;
+            color: var(--hl-title);
         }
         .keyword,
         .meta-keyword {
-            color: #0086b3;
+            color: var(--hl-literal);
         }
     }
     // Markdown
@@ -1281,12 +1362,12 @@ figure.highlight,
         .blockquote,
         .quote,
         .section {
-            color: #183691;
+            color: var(--hl-string);
         }
         .link_reference,
         .symbol,
         .code {
-            color: #0086b3;
+            color: var(--hl-literal);
         }
         .link_url,
         .link {
@@ -1297,68 +1378,68 @@ figure.highlight,
     &.nginx .code {
         .title,
         .attribute {
-            color: #a71d5d;
+            color: var(--hl-keyword);
         }
         .built_in,
         .literal {
-            color: #0086b3;
+            color: var(--hl-literal);
         }
         .regexp {
-            color: #183691;
+            color: var(--hl-string);
         }
         .variable {
-            color: #333;
+            color: var(--hl-variable);
         }
     }
     // Objective-C
     &.objectivec .code {
         .preprocessor,
         .meta {
-            color: #a71d5d;
+            color: var(--hl-keyword);
 
             .title {
-                color: #df5000;
+                color: var(--hl-subst);
             }
         }
         .meta-string {
-            color: #183691;
+            color: var(--hl-string);
         }
         .title {
-            color: #795da3;
+            color: var(--hl-title);
         }
         .literal,
         .number,
         .built_in {
-            color: #0086b3;
+            color: var(--hl-literal);
         }
     }
     // Perl
     &.perl .code {
         .sub {
-            color: #795da3;
+            color: var(--hl-title);
         }
         .title {
-            color: #795da3;
+            color: var(--hl-title);
         }
         .regexp {
-            color: #df5000;
+            color: var(--hl-subst);
         }
     }
     // PHP
     &.php .code {
         .phpdoc,
         .doctag {
-            color: #a71d5d;
+            color: var(--hl-keyword);
         }
         .regexp {
-            color: #df5000;
+            color: var(--hl-subst);
         }
         .literal,
         .number {
-            color: #0086b3;
+            color: var(--hl-literal);
         }
         .title {
-            color: #795da3;
+            color: var(--hl-title);
         }
     }
     // Python
@@ -1366,82 +1447,82 @@ figure.highlight,
         .decorator,
         .title,
         .meta {
-            color: #795da3;
+            color: var(--hl-title);
         }
         .number {
-            color: #0086b3;
+            color: var(--hl-literal);
         }
     }
     // Ruby
     &.ruby .code {
         .parent,
         .title {
-            color: #795da3;
+            color: var(--hl-title);
         }
         .prompt,
         .constant,
         .number,
         .subst .keyword,
         .symbol {
-            color: #0086b3;
+            color: var(--hl-literal);
         }
     }
     // SQL
     &.sql {
         .built_in {
-            color: #a71d5d;
+            color: var(--hl-keyword);
         }
         .number {
-            color: #0086b3;
+            color: var(--hl-literal);
         }
     }
     // XML, HTML
     &.xml,
     &.html {
         .tag {
-            color: #333;
+            color: var(--hl-variable);
         }
         .value {
-            color: #183691;
+            color: var(--hl-string);
         }
         .attribute,
         .attr {
-            color: #795da3;
+            color: var(--hl-title);
         }
         .title,
         .name {
-            color: #63a35c;
+            color: var(--hl-tag);
         }
     }
     // Puppet
     &.puppet {
         .title {
-            color: #795da3;
+            color: var(--hl-title);
         }
         .function {
-            color: #0086b3;
+            color: var(--hl-literal);
         }
         .name {
-            color: #a71d5d;
+            color: var(--hl-keyword);
         }
         .attr {
-            color: #0086b3;
+            color: var(--hl-literal);
         }
     }
     // LESS
     &.less {
         .tag,
         .at_rule {
-            color: #a71d5d;
+            color: var(--hl-keyword);
         }
         .number,
         .hexcolor,
         .function,
         .attribute {
-            color: #0086b3;
+            color: var(--hl-literal);
         }
         .built_in {
-            color: #df5000;
+            color: var(--hl-subst);
         }
         .id,
         .pseudo,
@@ -1449,16 +1530,16 @@ figure.highlight,
         .selector-id,
         .selector-class,
         .selector-tag {
-            color: #795da3;
+            color: var(--hl-title);
         }
     }
     // Lisp
     &.lisp .code {
         .name {
-            color: #df5000;
+            color: var(--hl-subst);
         }
         .number {
-            color: #0086b3;
+            color: var(--hl-literal);
         }
     }
     // SCSS
@@ -1466,19 +1547,19 @@ figure.highlight,
         .tag,
         .at_rule,
         .important {
-            color: #a71d5d;
+            color: var(--hl-keyword);
         }
         .number,
         .hexcolor,
         .function,
         .attribute {
-            color: #0086b3;
+            color: var(--hl-literal);
         }
         .variable {
-            color: #333;
+            color: var(--hl-variable);
         }
         .built_in {
-            color: #df5000;
+            color: var(--hl-subst);
         }
         .id,
         .pseudo,
@@ -1486,27 +1567,27 @@ figure.highlight,
         .preprocessor,
         .selector-class,
         .selector-id {
-            color: #795da3;
+            color: var(--hl-title);
         }
         .tag,
         .selector-tag {
-            color: #63a35c;
+            color: var(--hl-tag);
         }
     }
     // Stylus
     &.stylus {
         .at_rule {
-            color: #a71d5d;
+            color: var(--hl-keyword);
         }
         .tag,
         .selector-tag {
-            color: #63a35c;
+            color: var(--hl-tag);
         }
         .number,
         .hexcolor,
         .attribute,
         .params {
-            color: #0086b3;
+            color: var(--hl-literal);
         }
         .class,
         .id,
@@ -1515,48 +1596,48 @@ figure.highlight,
         .selector-id,
         .selector-pseudo,
         .selector-class {
-            color: #795da3;
+            color: var(--hl-title);
         }
     }
     // Go
     &.go {
         .typename {
-            color: #a71d5d;
+            color: var(--hl-keyword);
         }
         .built_in,
         .constant {
-            color: #0086b3;
+            color: var(--hl-literal);
         }
     }
     // Swift
     &.swift {
         .preprocessor {
-            color: #a71d5d;
+            color: var(--hl-keyword);
         }
         .title {
-            color: #795da3;
+            color: var(--hl-title);
         }
         .built_in,
         .number,
         .type {
-            color: #0086b3;
+            color: var(--hl-literal);
         }
     }
     // YAML
     &.yml {
         .line,
         .attr {
-            color: #63a35c;
+            color: var(--hl-tag);
         }
         .line,
         .string,
         .type,
         .literal,
         .meta {
-            color: #183691;
+            color: var(--hl-string);
         }
         .number {
-            color: #0086b3;
+            color: var(--hl-literal);
         }
     }
 }
@@ -1568,12 +1649,12 @@ figure.highlight,
       margin-bottom: 20px;
       padding: 10px;
       white-space: nowrap;
-      border-top: 1px solid #eee;
+      border-top: 1px solid var(--border-secondary);
       a {
         display: inline-block;
         line-height: 25px;
         font-size: 15px;
-        color: #555;
+        color: var(--text-secondary);
         border-bottom: none;
         float: left;
         &.pre {
@@ -1601,7 +1682,7 @@ figure.highlight,
 
 /* toc*/
 .toc-article {
-  border: 1px solid #bbb;
+  border: 1px solid var(--border-toc);
   border-radius: 7px;
   margin: 1.1em 0 0 2em;
   padding: 0.7em 0.7em 0 0.7em;
@@ -1638,14 +1719,14 @@ table {
     th {
         font-weight: bold;
         padding: 5px 10px;
-        border-bottom: 2px solid #909ba2;
+        border-bottom: 2px solid var(--border-table-header);
     }
     td {
         padding: 5px 10px;
     }
     tr {
         &:nth-child(2n) {
-            background: #f7f8f8;
+            background: var(--bg-code);
         }
     }
 }
@@ -1665,7 +1746,7 @@ table {
 .article-share-box {
   position: absolute;
   display: none;
-  background: #fff;
+  background: var(--bg-primary);
   box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2);
   border-radius: 3px;
   margin-left: -145px;
@@ -1680,11 +1761,11 @@ table {
   width: 100%;
   background: none;
   box-sizing: border-box;
-  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 14px $font-primary;
   padding: 0 15px;
-  color: #555;
+  color: var(--text-secondary);
   outline: none;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-primary);
   border-radius: 3px 3px 0 0;
   height: 36px;
   line-height: 36px;
@@ -1692,7 +1773,7 @@ table {
 
 .article-share-links {
   clearfix: none;
-  background: #eee;
+  background: var(--bg-secondary);
 }
 
 .article-share-element {
@@ -1701,7 +1782,7 @@ table {
     display: block;
     float: left;
     position: relative;
-    color: #999;
+    color: var(--text-faint);
     text-shadow: 0 1px #fff;
     &:before {
       font-size: 20px;
@@ -1774,16 +1855,16 @@ ul.search-result-list {
 a.search-result-title {
   font-weight: bold;
   font-size: 15px;
-  color: #555;
+  color: var(--text-secondary);
 }
 p.search-result {
-  color: #444;
+  color: var(--text-primary);
   text-align: justify;
 }
 em.search-keyword {
   font-weight: bold;
   font-style: normal;
-  color: #01579f;
+  color: var(--link-accent);
 }
 
 /* Disqus Button */
@@ -1793,7 +1874,7 @@ em.search-keyword {
   min-width: 50px;
   padding: 0 14px;
   display: inline-block;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: $font-primary;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0;
@@ -1818,10 +1899,36 @@ em.search-keyword {
 .post-copyright {
     margin: 2em 0 0;
     padding: 0.5em 1em;
-    border-left: 3px solid #FF1700;
-    background-color: #F9F9F9;
+    border-left: 3px solid var(--border-copyright);
+    background-color: var(--bg-copyright);
     list-style: none;
     li {
         margin: 8px 0;
     }
+}
+
+// ===== Dark Mode Toggle =====
+#dark-mode-toggle {
+  display: inline-block;
+  background: none;
+  border: none;
+  padding: 3px 8px;
+  cursor: pointer;
+  color: var(--text-tertiary);
+  line-height: 30px;
+  vertical-align: middle;
+  margin-left: 6px;
+  transition: color 0.2s;
+  &:hover {
+    color: var(--text-primary);
+  }
+  .icon-sun { display: none; }
+  .icon-moon { display: inline-block; vertical-align: middle; }
+}
+[data-theme="dark"] #dark-mode-toggle {
+  .icon-sun { display: inline-block; vertical-align: middle; }
+  .icon-moon { display: none; }
+}
+[data-theme="dark"] img:not([src*=".svg"]) {
+  filter: brightness(0.85);
 }
