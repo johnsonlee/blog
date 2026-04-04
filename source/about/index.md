@@ -3,7 +3,7 @@ title: 关于我
 date: 2019-01-01 10:00:00
 ---
 
-李景森 (Johnson)，Senior Staff Engineer & Bar Raiser @ Coupang，坐标首尔。写了 20 多年代码，主力 Java 和 Android，后来陆续深入了 Kotlin、JavaScript/TypeScript、Node.js，最近在折腾 AI。
+李景森 (Johnson)，Senior Staff Engineer & Bar Raiser @ Coupang，坐标首尔。现专注 AI——Agent 架构、LLM 工程化、AI 对软件行业的重塑。此前 20 年全栈工程背景（Java、Android、Kotlin、TypeScript）。
 
 我的职业路径不算典型——三星、滴滴、快手、Coupang，横跨中韩，从写业务代码到做架构设计到定义技术方向，再到作为 Bar Raiser 把关招聘标准。每一站选择的标准都不是钱最多的那个 offer，而是能给我不同视角的那个。
 
@@ -19,13 +19,13 @@ date: 2019-01-01 10:00:00
 
 这个博客记录我对技术和世界的思考，大致分几类：
 
+### AI 与软件工程的未来
+
+这是我现在写得最多的方向。从 LLM 的本质（为什么它更像函数而不是数据库）到 Agent 经济对 App 生态的冲击，从 Claude Code 的实战深挖到 AI 对招聘、教育、技术管理的连锁反应，再到 $700B AI 投入的现实账本——我关注的不是 AI 能写多少行代码，而是当 Execution 变得廉价后，Judgment 如何成为核心竞争力。
+
 ### 工程与架构
 
 移动端架构、构建系统、性能优化、字节码分析——这些是我的老本行。不过我越来越少写"怎么做"，更多写"为什么这样做"和"为什么不该那样做"。
-
-### AI 与工程师的未来
-
-AI 不会替代工程师，但会重新定义工程师的价值。我关注的不是 AI 能写多少行代码，而是当 Execution 变得廉价后，Judgment 如何成为核心竞争力。
 
 ### 独立思考与投资
 
