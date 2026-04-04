@@ -93,27 +93,40 @@ def generate_card(title, category, output_path):
     # Accent bar on left
     draw.rectangle([0, 0, 6, SIZE], fill=accent)
 
-    # Category label
+    # Measure content height to vertically center
     font_cat = ImageFont.truetype(FONT_PATH, 22)
-    if category:
-        draw.text((40, 36), category.upper(), fill=accent, font=font_cat)
-
-    # Title
     font_title = ImageFont.truetype(FONT_PATH, 42)
+    font_site = ImageFont.truetype(FONT_PATH, 18)
+
     lines = wrap_text(draw, title, font_title, SIZE - 80)
     lines = lines[:5]
 
-    y = 80
+    cat_h = 30 if category else 0
+    title_h = len(lines) * 54
+    site_h = 26
+    gap = 24
+    total_h = cat_h + gap + title_h + gap + site_h
+    y_start = (SIZE - total_h) // 2
+
+    # Category label
+    y = y_start
+    if category:
+        draw.text((40, y), category.upper(), fill=accent, font=font_cat)
+        y += cat_h + gap
+    else:
+        y += gap
+
+    # Title
     for line in lines:
         draw.text((40, y), line, fill='#EEEEEE', font=font_title)
         y += 54
 
-    # Bottom: site name
-    font_site = ImageFont.truetype(FONT_PATH, 18)
-    draw.text((40, SIZE - 52), f'>_ {SITE_NAME}', fill='#666666', font=font_site)
+    # Site name
+    y += gap
+    draw.text((40, y), f'>_ {SITE_NAME}', fill='#666666', font=font_site)
 
-    # Bottom accent line
-    draw.rectangle([40, SIZE - 22, 150, SIZE - 18], fill=accent)
+    # Accent line below site name
+    draw.rectangle([40, y + 30, 150, y + 34], fill=accent)
 
     img.save(output_path, 'PNG', optimize=True)
 
