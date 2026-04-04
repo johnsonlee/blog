@@ -18,9 +18,8 @@ html(lang=config.language)
 
   include _partial/head.pug
 
-  body
+  body: .body_container
     img(src=url_for('logo.png'), style='display:none')
-    .body_container
     #header
       .site-name
         h1.hidden= current_title
