@@ -71,7 +71,7 @@ menu:
     directory: tags/
     icon: fa-tag
   - page: about
-    directory: about/
+    directory: https://about.johnsonlee.io/
     icon: fa-user
   - page: rss
     directory: atom.xml
