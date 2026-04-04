@@ -33,7 +33,9 @@ head
     meta(name='twitter:description', content=seoDescription)
     meta(name='twitter:image', content=ogImage)
     block title
-    link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300')
+    script.
+      (function(){var t=localStorage.getItem('theme-preference');if(!t)t=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})();
+    link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap')
     link(rel='stylesheet', type='text/css', href=url_for(theme.css) + '/style.css')
     link(rel='preload', type='text/css', href='/libs/pure/1.0.0/pure-min.css', as='style', onload='this.rel="stylesheet"')
     link(rel='preload', type='text/css', href='/libs/pure/1.0.0/grids-responsive-min.css', as='style', onload='this.rel="stylesheet"')
@@ -44,6 +46,7 @@ head
     link(rel='apple-touch-icon-precomposed', href=url_for('apple-touch-icon.png'))
     if config.feed
       link(rel='alternate', type=feed_type, href=url_for(config.feed.path))
+    script(type='text/javascript', src=url_for(theme.js) + '/darkmode.js')
     script(type='text/javascript', src='/libs/loadCSS/2.1.0/loadCSS.js', async)
     script.
       function load() {
