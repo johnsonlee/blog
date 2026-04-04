@@ -17,32 +17,28 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
-# Category color palette
-CATEGORY_COLORS = {
-    'Android':             '#3DDC84',
-    'Architecture Design': '#5C6BC0',
-    'Biology':             '#66BB6A',
-    'Booster':             '#FF7043',
-    'Career':              '#AB47BC',
-    'Cloud':               '#29B6F6',
-    'Computer Science':    '#26A69A',
-    'DIY':                 '#FFA726',
-    'Flutter':             '#42A5F5',
-    'Gradle':              '#02303A',
-    'Graphics':            '#EC407A',
-    'iOS':                 '#007AFF',
-    'Java':                '#E76F00',
-    'Kotlin':              '#7F52FF',
-    'Life':                '#78909C',
-    'Mobile':              '#00ACC1',
-    'Observability':       '#EF5350',
-    'Open Source':         '#43A047',
-    'Reading':             '#8D6E63',
-    'Survival':            '#546E7A',
-    'Investing':           '#FFB300',
-    'Web':                 '#FF5722',
-}
-DEFAULT_COLOR = '#37474F'
+def category_color(name):
+    """Generate a stable, visually distinct color from category name."""
+    if not name:
+        return '#37474F'
+    h = int(hashlib.md5(name.encode()).hexdigest()[:8], 16)
+    hue = h % 360
+    saturation = 55 + (h >> 12) % 25  # 55-79%
+    lightness = 45 + (h >> 20) % 15   # 45-59%
+    # HSL to RGB
+    s, l = saturation / 100, lightness / 100
+    c = (1 - abs(2 * l - 1)) * s
+    x = c * (1 - abs((hue / 60) % 2 - 1))
+    m = l - c / 2
+    if hue < 60:    r, g, b = c, x, 0
+    elif hue < 120: r, g, b = x, c, 0
+    elif hue < 180: r, g, b = 0, c, x
+    elif hue < 240: r, g, b = 0, x, c
+    elif hue < 300: r, g, b = x, 0, c
+    else:           r, g, b = c, 0, x
+    return '#{:02x}{:02x}{:02x}'.format(
+        int((r + m) * 255), int((g + m) * 255), int((b + m) * 255)
+    )
 
 WIDTH, HEIGHT = 1200, 630
 FONT_PATH = '/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc'
@@ -89,7 +85,7 @@ def wrap_text(draw, text, font, max_width):
 
 def generate_card(title, category, output_path):
     """Generate a single OG card image."""
-    accent = CATEGORY_COLORS.get(category, DEFAULT_COLOR)
+    accent = category_color(category)
 
     # Parse hex color
     r = int(accent[1:3], 16)
