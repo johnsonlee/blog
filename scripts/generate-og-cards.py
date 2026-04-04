@@ -3,7 +3,7 @@
 
 Usage: python3 generate-og-cards.py <source_dir> <output_dir>
 
-Reads all markdown files in source_dir/_posts/, generates a 1200x630 card
+Reads all markdown files in source_dir/_posts/, generates a 600x600 square card
 image for each post, and saves to output_dir/{slug}.png.
 
 Only regenerates if the post is newer than the existing image.
@@ -40,7 +40,7 @@ def category_color(name):
         int((r + m) * 255), int((g + m) * 255), int((b + m) * 255)
     )
 
-WIDTH, HEIGHT = 1200, 630
+SIZE = 600
 FONT_PATH = '/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc'
 SITE_NAME = 'Johnson Lee'
 
@@ -87,39 +87,33 @@ def generate_card(title, category, output_path):
     """Generate a single OG card image."""
     accent = category_color(category)
 
-    # Parse hex color
-    r = int(accent[1:3], 16)
-    g = int(accent[3:5], 16)
-    b = int(accent[5:7], 16)
-
-    # Dark background
-    img = Image.new('RGB', (WIDTH, HEIGHT), '#1a1a2e')
+    img = Image.new('RGB', (SIZE, SIZE), '#1a1a2e')
     draw = ImageDraw.Draw(img)
 
     # Accent bar on left
-    draw.rectangle([0, 0, 8, HEIGHT], fill=accent)
+    draw.rectangle([0, 0, 6, SIZE], fill=accent)
 
     # Category label
-    font_cat = ImageFont.truetype(FONT_PATH, 28)
+    font_cat = ImageFont.truetype(FONT_PATH, 22)
     if category:
-        draw.text((60, 50), category.upper(), fill=accent, font=font_cat)
+        draw.text((40, 36), category.upper(), fill=accent, font=font_cat)
 
     # Title
-    font_title = ImageFont.truetype(FONT_PATH, 56)
-    lines = wrap_text(draw, title, font_title, WIDTH - 120)
-    lines = lines[:4]  # max 4 lines
+    font_title = ImageFont.truetype(FONT_PATH, 42)
+    lines = wrap_text(draw, title, font_title, SIZE - 80)
+    lines = lines[:5]
 
-    y = 120
+    y = 80
     for line in lines:
-        draw.text((60, y), line, fill='#EEEEEE', font=font_title)
-        y += 72
+        draw.text((40, y), line, fill='#EEEEEE', font=font_title)
+        y += 54
 
-    # Bottom: site name + terminal prompt icon
-    font_site = ImageFont.truetype(FONT_PATH, 24)
-    draw.text((60, HEIGHT - 70), f'>_ {SITE_NAME}', fill='#666666', font=font_site)
+    # Bottom: site name
+    font_site = ImageFont.truetype(FONT_PATH, 18)
+    draw.text((40, SIZE - 52), f'>_ {SITE_NAME}', fill='#666666', font=font_site)
 
     # Bottom accent line
-    draw.rectangle([60, HEIGHT - 30, 200, HEIGHT - 26], fill=accent)
+    draw.rectangle([40, SIZE - 22, 150, SIZE - 18], fill=accent)
 
     img.save(output_path, 'PNG', optimize=True)
 
