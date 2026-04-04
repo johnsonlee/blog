@@ -46,6 +46,11 @@ $font-code: "Share Tech Mono", Menlo, Consolas, monospace;
   --hl-variable: #333;
   --hl-tag: #63a35c;
   --hl-subst: #df5000;
+
+  --diff-addition-color: #55a532;
+  --diff-addition-bg: #eaffea;
+  --diff-deletion-color: #bd2c00;
+  --diff-deletion-bg: #ffecec;
 }
 
 [data-theme="dark"] {
@@ -84,6 +89,11 @@ $font-code: "Share Tech Mono", Menlo, Consolas, monospace;
   --hl-variable: #9cdcfe;
   --hl-tag: #4ec9b0;
   --hl-subst: #d7ba7d;
+
+  --diff-addition-color: #4ec9b0;
+  --diff-addition-bg: rgba(78, 201, 176, 0.15);
+  --diff-deletion-color: #f48771;
+  --diff-deletion-bg: rgba(244, 135, 113, 0.15);
 }
 
 
@@ -1229,12 +1239,12 @@ figure.highlight,
             font-weight: bold;
         }
         .addition {
-            color: #55a532;
-            background-color: #eaffea;
+            color: var(--diff-addition-color);
+            background-color: var(--diff-addition-bg);
         }
         .deletion {
-            color: #bd2c00;
-            background-color: #ffecec;
+            color: var(--diff-deletion-color);
+            background-color: var(--diff-deletion-bg);
         }
     }
     // HTTP
@@ -1905,6 +1915,85 @@ em.search-keyword {
     li {
         margin: 8px 0;
     }
+}
+
+// ===== Gitalk Dark Mode =====
+[data-theme="dark"] {
+  .gt-container {
+    a {
+      color: var(--link-accent) !important;
+    }
+    .gt-header-textarea {
+      background-color: var(--bg-secondary) !important;
+      color: var(--text-primary) !important;
+      border-color: var(--border-primary) !important;
+    }
+    .gt-btn {
+      background-color: var(--link-accent) !important;
+      border-color: var(--link-accent) !important;
+    }
+    .gt-btn-preview {
+      background-color: transparent !important;
+      border-color: var(--border-primary) !important;
+      color: var(--text-primary) !important;
+    }
+    .gt-comment {
+      border-color: var(--border-primary) !important;
+    }
+    .gt-comment-content {
+      background-color: var(--bg-secondary) !important;
+      color: var(--text-primary) !important;
+    }
+    .gt-comment-body {
+      color: var(--text-primary) !important;
+    }
+    .gt-comment-header {
+      color: var(--text-tertiary) !important;
+      border-bottom-color: var(--border-secondary) !important;
+    }
+    .gt-comment-username {
+      color: var(--link-accent) !important;
+    }
+    .gt-comment-admin .gt-comment-content {
+      background-color: var(--bg-secondary) !important;
+    }
+    .gt-ico svg {
+      fill: var(--text-tertiary) !important;
+    }
+    .gt-ico:hover svg {
+      fill: var(--text-primary) !important;
+    }
+    .gt-header-controls-tip,
+    .gt-no-init,
+    .gt-initing,
+    .gt-counts {
+      color: var(--text-tertiary) !important;
+    }
+    .gt-popup {
+      background-color: var(--bg-secondary) !important;
+      border-color: var(--border-primary) !important;
+    }
+    .gt-popup-item {
+      color: var(--text-primary) !important;
+      &:hover {
+        background-color: var(--bg-code) !important;
+      }
+    }
+    .gt-header-preview {
+      background-color: var(--bg-secondary) !important;
+      border-color: var(--border-primary) !important;
+      color: var(--text-primary) !important;
+    }
+    .gt-link {
+      border-bottom-color: var(--link-accent) !important;
+    }
+    .gt-meta {
+      border-bottom-color: var(--border-primary) !important;
+    }
+    .markdown-body {
+      color: var(--text-primary) !important;
+    }
+  }
 }
 
 // ===== Dark Mode Toggle =====
