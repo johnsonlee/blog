@@ -254,26 +254,26 @@ a{
 }
 /* Dark Mode */
 [data-theme="dark"] body {
-	background: #1a1a2e;
+	background: #020617;
 }
 [data-theme="dark"] a {
-	color: #e0e0e0;
+	color: #e2e8f0;
 }
 [data-theme="dark"] #donateBox {
-	background-color: #16213e;
-	border-color: #2a2a4a;
+	background-color: #1e293b;
+	border-color: rgba(255, 255, 255, 0.1);
 }
 [data-theme="dark"] #donateBox li {
-	background-color: rgba(15, 52, 96, 0.3);
+	background-color: rgba(255, 255, 255, 0.05);
 }
 [data-theme="dark"] #donateBox li:hover {
-	background-color: rgba(15, 52, 96, 0.6);
+	background-color: rgba(255, 255, 255, 0.1);
 }
 [data-theme="dark"] #QRBox {
-	background-color: rgba(26, 26, 46, 0.8);
+	background-color: rgba(2, 6, 23, 0.8);
 }
 [data-theme="dark"] #MainBox {
-	background-color: #16213e;
+	background-color: #1e293b;
 	box-shadow: 0px 2px 7px rgba(0,0,0,0.5);
 }
 

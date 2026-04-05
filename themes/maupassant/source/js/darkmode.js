@@ -19,16 +19,6 @@
 
   setTheme(getPreference());
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var toggle = document.getElementById('dark-mode-toggle');
-    if (toggle) {
-      toggle.addEventListener('click', function() {
-        var current = document.documentElement.getAttribute('data-theme');
-        setTheme(current === 'dark' ? 'light' : 'dark');
-      });
-    }
-  });
-
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
     if (!localStorage.getItem(STORAGE_KEY)) {
       setTheme(e.matches ? 'dark' : 'light');
