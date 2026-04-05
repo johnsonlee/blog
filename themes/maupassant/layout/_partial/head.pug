@@ -3,6 +3,7 @@ head
     meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0', name='viewport')
     meta(content='yes', name='apple-mobile-web-app-capable')
     meta(content='black-translucent', name='apple-mobile-web-app-status-bar-style')
+    meta(name='theme-color', content='#FFF', id='theme-color')
     meta(content='telephone=no', name='format-detection')
     -
       var rawDesc = is_post() ? (page.description || strip_html(page.excerpt) || strip_html(page.content)) : '';
@@ -38,7 +39,7 @@ head
     meta(name='twitter:image', content=ogImage)
     block title
     script.
-      (function(){var h=new Date().getHours();if(h<6||h>=19)document.documentElement.setAttribute('data-weather','night')})();
+      (function(){var h=new Date().getHours();if(h<6||h>=19){document.documentElement.setAttribute('data-weather','night');var m=document.getElementById('theme-color');if(m)m.setAttribute('content','#020617')}})();
     link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap')
     link(rel='stylesheet', type='text/css', href=url_for(theme.css) + '/style.css')
     link(rel='preload', type='text/css', href='/libs/pure/1.0.0/pure-min.css', as='style', onload='this.rel="stylesheet"')
