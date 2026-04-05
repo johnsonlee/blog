@@ -13,7 +13,7 @@ if theme.gitalk.enable == true
             repo: '#{theme.gitalk.repo}',
             owner: '#{theme.gitalk.owner}',
             admin: ['#{theme.gitalk.admin}'],
-            id: md5(location.pathname),
+            id: md5(location.pathname.replace(/^\/en\//, '/').replace(/\.en\//, '/')),
             distractionFreeMode: false
           })
           gitalk.render('container')
