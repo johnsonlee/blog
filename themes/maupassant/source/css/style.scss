@@ -2173,6 +2173,7 @@ em.search-keyword {
 
 // Sunny — warm gold tones
 [data-weather="sunny"] {
+  --bg-primary: #FFFBEB; // amber-50
   .post-title, .post-title a { color: #b45309; } // amber-700
   .post-title a:hover { color: #92400e; } // amber-800
   .post-content {
@@ -2188,6 +2189,7 @@ em.search-keyword {
 
 // Cloudy — muted steel blue
 [data-weather="cloudy"] {
+  --bg-primary: #F8F8F8;
   .post-title, .post-title a { color: #475569; } // slate-600
   .post-title a:hover { color: #334155; } // slate-700
   .post-content {
@@ -2203,6 +2205,7 @@ em.search-keyword {
 
 // Foggy ��� muted warm gray
 [data-weather="foggy"] {
+  --bg-primary: #F0F0F0;
   .post-title, .post-title a { color: #57534e; } // stone-600
   .post-title a:hover { color: #44403c; } // stone-700
   .post-content {
@@ -2218,6 +2221,7 @@ em.search-keyword {
 
 // Rainy — cool blue teal
 [data-weather="rainy"] {
+  --bg-primary: #EEF2F7;
   .post-title, .post-title a { color: #0e7490; } // cyan-700
   .post-title a:hover { color: #155e75; } // cyan-800
   .post-content {
@@ -2233,6 +2237,7 @@ em.search-keyword {
 
 // Snowy — icy silver blue
 [data-weather="snowy"] {
+  --bg-primary: #F5F7FA;
   .post-title, .post-title a { color: #1e3a5f; } // custom dark blue
   .post-title a:hover { color: #1e40af; } // blue-800
   .post-content {
