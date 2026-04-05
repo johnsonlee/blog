@@ -13,11 +13,14 @@ hexo.extend.filter.register('before_post_render', function(data) {
 // Build i18n pair map after all posts are loaded
 hexo.extend.filter.register('before_generate', function() {
   i18nMap = {};
+  var count = 0;
   hexo.locals.get('posts').forEach(function(post) {
     if (!post.i18n_key) return;
+    count++;
     if (!i18nMap[post.i18n_key]) i18nMap[post.i18n_key] = {};
     i18nMap[post.i18n_key][post.lang || 'zh-CN'] = post;
   });
+  hexo.log.info('i18n: found %d posts with i18n_key, map keys: %s', count, Object.keys(i18nMap).join(', '));
 });
 
 // Helper: get URL for a post based on its language
@@ -36,6 +39,9 @@ hexo.extend.filter.register('template_locals', function(locals) {
   if (!page) return locals;
 
   // Inject i18n_pair for posts with i18n_key
+  if (page.slug && page.slug.indexOf('ai-writes') >= 0) {
+    hexo.log.info('i18n DEBUG ai-writes: slug=%s i18n_key=%s path=%s keys=%j', page.slug, page.i18n_key, page.path, Object.keys(page).sort().join(','));
+  }
   if (page.i18n_key && i18nMap[page.i18n_key]) {
     var pair = {};
     Object.keys(i18nMap[page.i18n_key]).forEach(function(lang) {
@@ -45,11 +51,9 @@ hexo.extend.filter.register('template_locals', function(locals) {
     page.i18n_lang = page.lang || 'zh-CN';
   }
 
-  // Filter English posts out of default index/archive pages
+  // Mark page with i18n flag so templates can filter English posts
   if (page.posts && !page.lang) {
-    page.posts = page.posts.filter(function(post) {
-      return post.lang !== 'en';
-    });
+    page._i18n_filter_en = true;
   }
 
   return locals;
@@ -97,7 +101,7 @@ hexo.extend.generator.register('i18n_en_index', function(locals) {
     result.push({
       path: path + 'index.html',
       data: {
-        posts: mappedPosts.slice(i * perPage, (i + 1) * perPage),
+        posts: (function(arr) { arr.toArray = function() { return arr; }; return arr; })(mappedPosts.slice(i * perPage, (i + 1) * perPage)),
         total: totalPages,
         current: i + 1,
         current_url: path,
