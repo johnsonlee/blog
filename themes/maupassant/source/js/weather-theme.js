@@ -63,7 +63,7 @@
   }
 
   var themeColors = {
-    sunny: '#FFF', cloudy: '#F8F8F8', foggy: '#F0F0F0',
+    sunny: '#FFFBEB', cloudy: '#F8F8F8', foggy: '#F0F0F0',
     rainy: '#EEF2F7', snowy: '#F5F7FA', night: '#020617'
   };
 
