@@ -66,27 +66,27 @@
     var parser = new DOMParser();
     var doc = parser.parseFromString(html, 'text/html');
 
-    // Replace entire body
-    document.body.innerHTML = doc.body.innerHTML;
+    // Only swap content areas, leave scripts/Gitalk/weather untouched
+    var swaps = [
+      '.post-title',
+      '.post-content',
+      '.post-meta',
+      '.content_container .post-copyright',
+      '#nav-menu',
+      '#sidebar'
+    ];
 
-    // Re-execute inline scripts (innerHTML doesn't run them)
-    document.body.querySelectorAll('script').forEach(function(old) {
-      var s = document.createElement('script');
-      if (old.src) {
-        s.src = old.src;
-        if (old.async) s.async = true;
-        if (old.defer) s.defer = true;
-      } else {
-        s.textContent = old.textContent;
-      }
-      old.parentNode.replaceChild(s, old);
+    swaps.forEach(function(sel) {
+      var src = doc.querySelector(sel);
+      var dst = document.querySelector(sel);
+      if (src && dst) dst.innerHTML = src.innerHTML;
     });
 
-    // Update head: title and lang
+    // Update title and lang
     document.title = doc.title;
     document.documentElement.setAttribute('lang', lang || 'en');
 
-    // Translate UI elements that Hexo's __() didn't catch
+    // Translate UI text
     translateUI(lang || 'en');
   }
 
