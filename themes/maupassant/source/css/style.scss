@@ -165,11 +165,12 @@ html, button, input, select, textarea,
     font-family: $font-primary !important;
 }
 
-// FontAwesome: icon via ::before stays FontAwesome, text inherits page font
+// FontAwesome uses font shorthand (font: ... FontAwesome) which sets font-family.
+// Override with !important so page font wins for text, keep FontAwesome for icons.
 .fa {
-    font-family: $font-primary;
+    font-family: $font-primary !important;
     &::before {
-        font-family: 'FontAwesome';
+        font-family: 'FontAwesome' !important;
     }
 }
 
