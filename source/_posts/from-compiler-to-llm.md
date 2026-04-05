@@ -9,6 +9,7 @@ tags:
   - Software Engineering
   - Architecture
   - Agent
+i18n_key: from-compiler-to-llm
 ---
 
 同样是调用 Claude API 写代码，Cursor 做成了估值百亿的产品，而无数“套壳”应用悄无声息地死掉了。区别在哪？

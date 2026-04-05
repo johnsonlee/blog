@@ -7,6 +7,7 @@ tags:
   - Kotlin
   - Compatibility
 date: 2022-12-07 00:00:00
+i18n_key: do-you-really-know-kotlin-compatibility
 ---
 
 

@@ -8,6 +8,7 @@ tags:
   - Booster
   - Performance Optimization
 date: 2019-07-02 20:16:35
+i18n_key: booster-prevent-system-from-crash
 ---
 
 许多 Android 开发者可能经常遇到这样的情况：测试的时候好好的，一上线，各种系统的 crash 就报上来了，而且很多是偶现的，比如：

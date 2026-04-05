@@ -9,6 +9,7 @@ tags:
   - Self-Reference
   - LLM
   - Attention
+i18n_key: ai-consciousness-self-reference
 ---
 
 当前的 LLM 能说“我认为”，但那不是自指，是模仿。它在训练数据里见过无数个“我”，学会了在合适的位置输出这个 token。它说“我认为”和说“他认为”调用的是同一套机制，没有任何一个 token 享有特权地位。

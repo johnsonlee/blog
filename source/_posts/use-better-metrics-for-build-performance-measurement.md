@@ -6,6 +6,7 @@ categories:
 tags:
   - Independent Thinking
 date: 2024-01-27 23:00:00
+i18n_key: use-better-metrics-for-build-performance-measurement
 ---
 
 最近因为做架构重构，频繁大规模改代码，发现 Android 工程的构建速度简直到了无法忍受的地步，记得以前用 Intel 芯片的 Mac Book Pro 的时候，全量构建一次大概要 40 分钟，一番 deep dive 发现并不是工程有多挫，真正的原凶竟然是安全软件，顶配的 Mac Book Pro 跑出了 Mac Book Air 的感觉，后来有了 Apple M1 构建速度一下子提升了一个数量级，但最近体感明显的变慢了，我就很纳闷了，难道就我一个人觉得慢吗？

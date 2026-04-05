@@ -6,6 +6,7 @@ categories:
 tags:
   - Android
 date: 2021-12-18 00:00:00
+i18n_key: testable-app-architecture-design-2
 ---
 
 在[可测试应用架构设计（一）](/2021/11/23/testable-app-architecture-design-1/)中有介绍过 *Booster* 是如何解决 `Transformer` 在本地单元测试环境和编译环境中的复用问题，在本节中，我们来一起探索如何利用 *Booster* 提供的 `TransformerClassLoader` 来解决应用架构的可测试性问题。

@@ -7,6 +7,7 @@ categories:
 tags:
   - Android
 date: 2020-11-20 20:00:00
+i18n_key: running-android-studio-on-cloud
 ---
 
 早在 7 年前，云计算刚刚起步，那时候 *Docker* 还没有流行起来，我们 *SAMSUNG* 一帮人就开始在捣鼓 *Cloud IDE* ，当时业界做得最好的是 [Cloud 9](https://aws.amazon.com/cn/cloud9/) ，当然，我们也参考了 [Cloud 9](https://aws.amazon.com/cn/cloud9/) 的方案，部分组件参用了 [Cloud 9](https://aws.amazon.com/cn/cloud9/) 的开源实现，而 *Cloud IDE* 的插件系统和一些 UI 视图都是从零开始搭建。

@@ -6,6 +6,7 @@ categories:
 tags:
   - AI
   - Claude
+i18n_key: the-right-tool-matters
 ---
 
 前几天提了一个 PR，是一个 MCP Server 的实现，从设计到编码到测试，前后大概花了 1 小时。同事看到 PR 后，在 Slack 上 @我说：“这也太快了吧？我研究了好几天都没搞明白 MCP 的 transport 怎么接。”

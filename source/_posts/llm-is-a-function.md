@@ -10,6 +10,7 @@ tags:
   - Transformer
   - Deep Learning
 mathjax: true
+i18n_key: llm-is-a-function
 ---
 
 前段时间，儿子问我：“爸爸，ChatGPT 是怎么知道该说什么的？”

@@ -7,6 +7,7 @@ tags:
   - Java
   - Kotlin
 date: 2022-04-10 00:00:00
+i18n_key: its-time-to-abandon-javapoet-kotlinpoet
 ---
 
 相信大家对于 [JavaPoet](https://github.com/square/javapoet) 和 [KotlinPoet](https://github.com/square/kotlinpoet) 并不陌生，皆出自大名定鼎鼎的 [Square](https://square.github.io/)。一般地，我们在用 [APT (Annotation Processing Toolkit)](https://docs.oracle.com/javase/7/docs/technotes/guides/apt/index.html) 或者 [KAPT](https://kotlinlang.org/docs/kapt.html) 在编译期生成源代码时，一般都会用 [JavaPoet](https://github.com/square/javapoet) 来生成 Java 源代码，而用 [KotlinPoet](https://github.com/square/kotlinpoet) 来生成 Kotlin 源代码，乍一看，哇！好酷，感觉特别有逼格。

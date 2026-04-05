@@ -9,6 +9,7 @@ tags:
   - Investment
   - Future
   - UBI
+i18n_key: end-of-population-based-economy
 ---
 
 上班，领工资，吃饭，买东西，还房贷。这套循环运转了几千年，我们把它叫做"经济"。

@@ -8,6 +8,7 @@ tags:
   - MVVM
   - JetPack
 date: 2020-12-05 21:00:00
+i18n_key: sharing-data-between-fragments
 ---
 
 在日常的需求迭代中，我们经常会遇到 `Fragment` 之间共享数据的需求，比如 `Fragment A` 的数据需要给 `Fragment B` ，有什么样的方案可以实现呢？

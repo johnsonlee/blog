@@ -9,6 +9,7 @@ tags:
   - Copilot
   - Google
   - Technology
+i18n_key: experience-first-or-technology-first
 ---
 
 Steve Jobs 有一句被引用了无数次的话：

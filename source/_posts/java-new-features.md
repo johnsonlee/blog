@@ -6,6 +6,7 @@ categories:
 tags:
   - Java
 date: 2021-05-07 00:00:00
+i18n_key: java-new-features
 ---
 
 - [Java 11 新特性](../java-11-new-features/)

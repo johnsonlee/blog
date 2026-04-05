@@ -7,6 +7,7 @@ categories:
 tags:
   - Booster
 date: 2022-01-16 23:00:00
+i18n_key: booster-collector-api
 ---
 
 Booster 之所以保持着高性能，除了并行 I/O 以外，还有一个很重要的方面 —— 单次 I/O。可能有人会问，什么叫单次 I/O？所谓单次 I/O 是指，在 Transform 的过程中，对于每一个输入 (JAR/DIR) ，Booster 只需要一次读和一次写，便可以实现整个 app 的字节码以流水线的方式进行处理，也就是 *Bytecode Transform Pipeline*。这就意味着，每个 `Transformer` 只有一次机会来处理 *class* ，但如果想要在 `Transformer` 先收集一些信息，再在 *Transform* 的过程中将这些收集到的信息，以字节码的方式写入到某个 *class* 中，就不太容易实现。一个典型的例子便是 *SPI* 优化，虽然 *R8* 可以对 *SPI* 进行化，但是，对写代码的姿势有一定的要求。

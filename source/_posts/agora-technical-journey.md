@@ -11,6 +11,7 @@ tags:
   - AI
   - DOM
   - Web Scraping
+i18n_key: agora-technical-journey
 ---
 
 为了更深入地了解 AI 的思维和推理模式，脑子里冒出一个大胆的想法——让两个 AI 像人一样互相辩论。于是就有了 [Agora](https://github.com/johnsonlee/agora) 这个项目。

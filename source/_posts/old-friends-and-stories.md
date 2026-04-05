@@ -5,6 +5,7 @@ categories:
 tags:
   - Independent Thinking
 date: 2021-02-14 00:00:00
+i18n_key: old-friends-and-stories
 ---
 
 翻开旧日的日记，无意间发现了多年前写的一篇文章 —— 《故人故事》，现在读起来仍然朗朗上口、意境尤在，只是早已忘了当年的我是为何写下此篇：

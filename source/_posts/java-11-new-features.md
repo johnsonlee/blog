@@ -6,6 +6,7 @@ categories:
 tags:
   - Java
 date: 2021-05-07 11:00:00
+i18n_key: java-11-new-features
 ---
 
 Java 11 于 2018 年 9 月 25 日发布，该版本目前已开放以进行错误修复。它提供 LTS 或长期支持，这也是为什么新版本的 *IntelliJ IDEA* 及 *Android Studio* 都将内置的 JDK 版本升级到了 Java 11 的原因。

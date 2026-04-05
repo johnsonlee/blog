@@ -9,6 +9,7 @@ tags:
   - Contrarian
   - Alpha
   - Risk Management
+i18n_key: wall-street-blindspots-contrarian-investing
 ---
 
 Jim Cramer 在 2008 年 3 月 11 日对着镜头斩钉截铁地说：“不！不！不！Bear Stearns 没问题。别把钱从 Bear 撤出来，那太傻了。”

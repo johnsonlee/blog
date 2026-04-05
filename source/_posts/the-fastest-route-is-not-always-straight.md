@@ -5,6 +5,7 @@ categories:
 tags:
   - Independent Thinking
 date: 2020-10-13 00:00:00
+i18n_key: the-fastest-route-is-not-always-straight
 ---
 
 "两点之间最快的路径是 \_\_\_\_\_\_\_\_？"

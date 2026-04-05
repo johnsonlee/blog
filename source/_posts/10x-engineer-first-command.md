@@ -9,6 +9,7 @@ tags:
   - Claude Code
   - Productivity
   - AI
+i18n_key: 10x-engineer-first-command
 ---
 
 Dotfiles 管理不是什么新鲜事。Shell 配置、Vim 插件、Git alias——这套东西我几年前就放进了 [Git 仓库](https://github.com/johnsonlee/-)，一行 `curl` 搞定新电脑。但最近我发现，这个仓库里最值钱的东西，不再是 `.bash_profile` 或 `.vimrc`，而是 `.claude/`。

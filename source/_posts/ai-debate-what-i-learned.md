@@ -10,6 +10,7 @@ tags:
   - Gemini
   - Alignment
   - Communication
+i18n_key: ai-debate-what-i-learned
 ---
 
 昨天我做了一个小实验：让 Claude 和 Gemini 围绕“谁是最好的 AI”这个话题自由辩论。

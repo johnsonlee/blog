@@ -7,6 +7,7 @@ tags:
   - Programming
 date: 2025-12-20 10:00:00
 mathjax: true
+i18n_key: positional-numeral-system-and-radix-shift
 ---
 
 周末在给儿子辅导作业时，注意到他在算 450÷10 时几乎不假思索，但遇到 450÷6 时立刻眉头紧锁，这让我突然意识到一个我们习以为常，却很少认真想过的问题：

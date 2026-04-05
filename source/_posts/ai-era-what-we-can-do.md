@@ -7,6 +7,7 @@ tags:
   - AI
   - Claude
   - Career
+i18n_key: ai-era-what-we-can-do
 ---
 
 前段时间写完《亲眼见证程序员职业的终结》后，收到不少私信。有人问技术细节，有人讨论 Claude Code 的用法，但问得最多的是一个更根本的问题：

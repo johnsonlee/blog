@@ -5,6 +5,7 @@ categories:
 tags:
   - Career
 date: 2020-01-01 22:22:10
+i18n_key: working-as-an-architect-at-didi-1
 ---
 
 > 本故事纯属虚构，如有雷同，纯属巧合

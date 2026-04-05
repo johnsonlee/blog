@@ -7,6 +7,7 @@ tags:
   - Programming
 date: 2025-12-19 20:00:00
 mathjax: true
+i18n_key: why-computers-represent-text-and-numbers-differently
 ---
 
 最近从零开始教儿子学编程，在讲解计算机是如何表示文本和数字的时候，儿子突然冒出了一个问题：

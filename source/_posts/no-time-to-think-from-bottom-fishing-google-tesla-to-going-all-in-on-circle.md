@@ -5,6 +5,7 @@ categories:
 tags:
   - Stock
 date: 2025-06-21 16:00:00
+i18n_key: no-time-to-think-from-bottom-fishing-google-tesla-to-going-all-in-on-circle
 ---
 
 最开始注意到 [$CRCL](https://finance.yahoo.com/quote/CRCL)，是在富途的“美股异动机会”榜单上。自从 IPO 之后，总是收到关于 [$CRCL](https://finance.yahoo.com/quote/CRCL) 消息推送，这支股几乎是以“火箭”速度冲上了富途的 「美股异动机会」 [$CRCL](https://finance.yahoo.com/quote/CRCL) 的走势一眼看上去就过热，典型的 IPO 情绪溢价：上市两周，涨了 300%，散户抱团、社媒刷屏、FOMO 情绪浓得像是 2021 年的翻版。毕竟，我的投资风格一直很明确：不追高、专抄底，在回调中去寻找价值，从人弃我取中获得安全边际。而当时的 CRCL，显然还没有进入我的雷达区。[$CRCL](https://finance.yahoo.com/quote/CRCL) 上市才十来天，暴涨了 385%，怎么看都不像是那种能跌出机会的标的。更像是已经涨过了头，泡沫高悬，不适合参与。

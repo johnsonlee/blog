@@ -6,6 +6,7 @@ categories:
 tags:
   - JVM
 date: 2020-05-12 00:00:00
+i18n_key: a-bug-of-java-type-system
 ---
 
 最近看到一道比较有意思的 *Java* 面试题，在这里给大家分享一下，题目如下：

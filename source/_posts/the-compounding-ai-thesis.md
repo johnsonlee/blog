@@ -8,6 +8,7 @@ tags:
   - Claude
   - Programming
   - Career
+i18n_key: the-compounding-ai-thesis
 ---
 
 之前在做 [Booster](https://github.com/johnsonlee/booster) 的时候，就想实现一个能做数据流分析的框架，但个人精力有限，只能束之高阁。自从 Claude Opus 4.5 发布后，业界一度为之轰动，我抱着试一试的心态，趁着周末在家休息，于是订阅了 Claude Pro，创建了 [Graphite](https://github.com/johnsonlee/graphite) 这个项目，应用场景主要是基于 JVM 字节码做静态分析。这类工具之前也做过，技术复杂度心里大概是有数的：设计数据结构、实现 dataflow analysis、处理各种 edge case、写 CLI、写测试……保守估计，之前纯手写一个能用的版本大概花了2天，1天开发，1天调试和处理 edge case。结果，Claude Code 用了 **1 小时** 就完成了一个可运行的版本。

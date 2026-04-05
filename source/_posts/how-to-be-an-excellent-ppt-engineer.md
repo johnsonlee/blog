@@ -3,6 +3,7 @@ title: 如何成为优秀的 PPT 工程师
 categories:
   - Career
 date: 2022-11-13 00:00:00
+i18n_key: how-to-be-an-excellent-ppt-engineer
 ---
 
 最近看了很多工程师写的文档，发现工程师们普通存在的问题，要么通篇都是文字一个图也没有，要么技术规划全是一堆的 task，根本看不清楚这些 task 跟整体的目标是什么关系，等等，即便是高级工程师，有类似问题的也大有人在。

@@ -6,6 +6,7 @@ categories:
 tags:
   - Java
 date: 2021-05-07 08:00:00
+i18n_key: java-8-new-features
 ---
 
 Java 8 于 2014 年 3 月 18 日发布，包含了一些原本计划在 Java 7 中发布但后来却推迟的功能。Java 8 不再支持 *Windows XP* ，但 *JDK 8* 第 25 版更新仍然可以在 *Windows XP* 上安装和运行。先前 *JDK 8* 的更新版本可以在 *Windows XP* 中运行，但必须通过强制解压安装程序来进行安装。2014 年 10 月后，Java 8 成为官方网站上默认的下载版本。

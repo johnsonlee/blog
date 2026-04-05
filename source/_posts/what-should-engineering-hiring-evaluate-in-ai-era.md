@@ -10,6 +10,7 @@ tags:
   - Hiring
   - Interview
   - Engineering Leadership
+i18n_key: what-should-engineering-hiring-evaluate-in-ai-era
 ---
 
 最近被邀请去帮其他部门面试。题目一看，还是熟悉的配方：两轮 coding、一轮 design、一轮 leadership principle。

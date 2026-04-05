@@ -9,6 +9,7 @@ tags:
   - Performance Optimization
   - SPI
 date: 2020-01-23 00:00:00
+i18n_key: service-provider-interface-optimization
 ---
 
 做 Java 开发的同学应该对 [SPI (Service Provider Interface)](https://docs.oracle.com/javase/tutorial/ext/basics/spi.html) 不会陌生，无论是 JDK、Gradle 亦或是一些第三方框架，都或多或少的用它来实现可扩展的能力，为什么在 Android 平台上却鲜为人知呢？

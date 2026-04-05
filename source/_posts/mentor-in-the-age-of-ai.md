@@ -5,6 +5,7 @@ categories:
 tags:
   - Education
 date: 2026-01-01 01:00:00
+i18n_key: mentor-in-the-age-of-ai
 ---
 
 就在放 Winter Holiday 的前一天，Term 3 的 School Report 下来了。看到 Report 的那一刻，我当场气炸，零下 10 度的寒风里，我连抽了 3 根烟。回家后我把报告递给老婆看，她看完冒出一句：「还行啊。」

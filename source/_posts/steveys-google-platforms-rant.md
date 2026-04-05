@@ -3,6 +3,7 @@ title: "[译] Stevey's Google Platforms Rant"
 categories:
   - Independent Thinking
 date: 2023-04-15 00:00:00
+i18n_key: steveys-google-platforms-rant
 ---
 
 I was at Amazon for about six and a half years, and now I've been at Google for that long. One thing that struck me immediately about the two companies -- an impression that has been reinforced almost daily -- is that Amazon does everything wrong, and Google does everything right. Sure, it's a sweeping generalization, but a surprisingly accurate one. It's pretty crazy. There are probably a hundred or even two hundred different ways you can compare the two companies, and Google is superior in all but three of them, if I recall correctly. I actually did a spreadsheet at one point but Legal wouldn't let me show it to anyone, even though recruiting loved it.

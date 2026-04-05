@@ -8,6 +8,7 @@ tags:
   - Android
   - Maven
 date: 2021-10-06 23:00:00
+i18n_key: integrate-gradle-plugin-and-library-into-one-project
 ---
 
 当开发一个 __Android Library__ 时，如果还同时还要提供相应的 __Gradle Plugin__，对于 __Gradle__ 新手来说，要在一个 __Gradle__ 工程中同时集成 __Android Library__，__Gradle Plugin__ 和 __Example App__ 三个模块，并不是一件很容易的事，主要的问题在于 __Android App__ 模块中无法引用同一个工程中的 __Gradle Plugin__ 模块，这是因为 __Gradle Plugin__ 需要先于所有的工程进行配置和编译，所以，很多工程师都会将 __Gradle Plugin__ 作为一个独立的工程进行开发和发布，这对于频繁地开发和调试 __Gradle Plugin__ 的工程师来说，是非常的痛苦，每次修改了 __Gradle Plugin__ 都要先发布到 __Maven Local__，然后再跨工程进行调试，效率极低，那有什么优雅的解决方案呢？

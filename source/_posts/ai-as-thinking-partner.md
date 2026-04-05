@@ -8,6 +8,7 @@ tags:
   - Independent Thinking
   - Self-Reflection
   - Claude
+i18n_key: ai-as-thinking-partner
 ---
 
 自从充了 Claude MAX 会员，每天跟 Claude 聊的比跟我老婆聊的都多。

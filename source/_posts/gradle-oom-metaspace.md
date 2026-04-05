@@ -6,6 +6,7 @@ categories:
 tags:
   - AGP
 date: 2020-10-27 00:00:00
+i18n_key: gradle-oom-metaspace
 ---
 
 最近在准备 [Booster](https://github.com/didi/booster) 的 `v3.0.0` 发布前的测试，为了保证 [Booster](https://github.com/didi/booster) 的质量，对 *Android Gradle Plugin* 从 `3.0.0` 到 `4.1.0` 挨个版本进行了适配，并写了大量的集成测试，在跑测试用例的过程中，刚开始跑 *debug* 的构建测试用例一切挺顺利的，后来脑子一抽，把 *release* 构建也加上吧，没想到，整个测试用例就卡在 *Android Gradle Plugin* `3.5.0` 的用例上不动了，试了很多次，也一直这样，后来一看，原来已经是 *OOM* 了，还 dump 了一堆 *hprof* 文件，看了一下 *JUnit* 的测试报告才发现，原来是 *Metaspace* 爆了。

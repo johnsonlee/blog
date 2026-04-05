@@ -8,6 +8,7 @@ tags:
   - DeepMind
   - AlphaFold2
   - CASP
+i18n_key: what-blocks-human-evolution
 ---
 
 这两天，生物学术界炸锅了，困扰了分子（结构）生物学 50 多年的问题被 *Google DeepMind* 团队在短短数年间给解决了。

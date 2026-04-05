@@ -8,6 +8,7 @@ tags:
   - Booster
   - Performance Optimization
 date: 2019-07-13 20:00:00
+i18n_key: booster-xml-layout-to-code
 ---
 
 做过开发的同学都深有体会，用 XML 来撸 UI 的效率简直是吊打手写代码，在 Anko (Kotlin 库) 还没有流行之前，大家对 XML 还是亲睐有加，虽然性能上偶尔会有卡顿，但是总体来说，还是勉强能接受，但是 Anko 的流行，也让我们开始思考，有没有办法既能享受 XML 撸 UI 的快感，又能享受像 Anko 一样的性能呢？

@@ -8,6 +8,7 @@ tags:
   - Agent
   - Claude
   - Career
+i18n_key: agent-economy-app-future
 ---
 
 最近在跟团队讨论 AI 辅助开发的时候，话题突然跑偏到了一个更宏观的问题：如果未来所有软件都支持 Agent，那我们现在做的这些 App 还有存在的意义吗？

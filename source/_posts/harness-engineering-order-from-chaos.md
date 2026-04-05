@@ -8,6 +8,7 @@ tags:
   - Harness Engineering
   - Software Engineering
   - Career
+i18n_key: harness-engineering-order-from-chaos
 ---
 
 茱莉亚·罗伯茨在一次访谈中聊到中国麻将，说了一句很妙的话："To create order out of chaos based on random drawing of tiles"——通过随机的抓牌，从混乱中创造秩序。

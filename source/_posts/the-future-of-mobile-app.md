@@ -7,6 +7,7 @@ tags:
   - Android
   - iOS
 date: 2020-12-04 00:00:00
+i18n_key: the-future-of-mobile-app
 ---
 
 前段时间体验了一把在浏览器中使用 *Android Studio* 开发 *Android* 应用，感觉到了前所未有的激动，我之所以激动并不是因为 *IntelliJ* 全家桶都可以在云端运行，而是这种架构模式可能就是整个移动互联网的未来。

@@ -9,6 +9,7 @@ tags:
   - Token
   - Equality
   - Digital Divide
+i18n_key: token-equality-illusion
 ---
 
 “知识平权”大概是这两年最令人兴奋的叙事之一。

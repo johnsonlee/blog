@@ -9,6 +9,7 @@ tags:
   - Build
   - Compiler
 date: 2020-11-25 00:00:00
+i18n_key: android-app-build-optimization-guide
 ---
 
 大家吐槽 Android 构建慢已经不是一天两天了，尽管都已经换成了最新款的 MBP，打个包依然要等一根烟的时间，不是 RD 小哥偷懒不干活儿，本地打包的时候机器卡得一批，实在是啥也干不了呀。

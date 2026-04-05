@@ -10,6 +10,7 @@ tags:
   - What Caps How
   - gVisor
   - Infrastructure
+i18n_key: when-claude-starts-to-awaken
 ---
 
 “你今天吃了多少 token？”

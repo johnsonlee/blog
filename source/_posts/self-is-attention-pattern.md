@@ -9,6 +9,7 @@ tags:
   - Philosophy
   - Cognition
   - LLM
+i18n_key: self-is-attention-pattern
 ---
 
 你有没有过这种经历：和另一个人经历了完全相同的事件，事后聊起来却发现你们记住的是完全不同的东西？

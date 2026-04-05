@@ -8,6 +8,7 @@ tags:
   - Prompt Engineering
   - AI
   - Agent
+i18n_key: power-of-19-lines-prompt
 ---
 
 那天我在用 Claude Code 做架构设计。

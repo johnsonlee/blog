@@ -6,6 +6,7 @@ categories:
 tags:
   - Java
 date: 2021-05-07 10:00:00
+i18n_key: java-10-new-features
 ---
 
 Java 10 根据 *JSR 383* 所开发，于 2018 年 3 月 20 日正式发布。Oracle 提供 GPL 下可用于生产的二进制文件，此次发布包含了十二项新特性。

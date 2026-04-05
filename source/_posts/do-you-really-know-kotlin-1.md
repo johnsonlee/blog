@@ -4,6 +4,7 @@ categories:
   - Computer Science
   - Kotlin
 date: 2021-10-29 23:00:00
+i18n_key: do-you-really-know-kotlin-1
 ---
 
 最近用 __KAPT__ 来生成 __Kotlin__ 代码，遇到了一个头疼的问题，生成的 __Kotlin__ 代码需要调用源 __Kotlin__ 代码中被 `Annotation` 标注的属性，理论上讲，直接用 `.` 操作符来调用属性不就行了吗？然而，事情并没有想象的那么简单。

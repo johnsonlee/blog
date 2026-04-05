@@ -9,6 +9,7 @@ tags:
   - Thinking
   - Parenting
   - Education
+i18n_key: what-caps-how
 ---
 
 周末检查儿子的写作作业，整篇就一句话能概括——play date 打游戏好开心。

@@ -9,6 +9,7 @@ tags:
   - Three Body Problem
   - Philosophy
   - What Caps How
+i18n_key: who-holds-the-reins
 ---
 
 我身边越来越多深度使用 AI 的朋友，开始出现同一组症状：停不下来、睡眠减少、越用越兴奋，思维方式被 AI 重塑却浑然不觉。有人管这叫“俄罗斯方块效应”——高强度接触一种模式后，大脑会不由自主地到处套用它。

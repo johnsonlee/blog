@@ -10,6 +10,7 @@ tags:
   - Physics
   - Philosophy
   - AI
+i18n_key: ai-will-have-consciousness-soon
 ---
 
 最近跟 AI 聊得越多，一个问题就越绕不开：AI 到底有没有意识？

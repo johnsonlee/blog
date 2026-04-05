@@ -5,6 +5,7 @@ categories:
   - Kotlin
 tags: Kotlin
 date: 2020-03-24 00:00:00
+i18n_key: reunderstanding-kotlin
 ---
 
 大约在两年前，那时候的 [Booster](https://github.com/didi/booster) 还没有计划开源，第一版也并不是用 *Kotlin* 写的，而是 *Java 8* ，之所以用 *Kotlin* 重写 [Booster](https://github.com/didi/booster) 并不是因为 *Java 8* 不好，虽然 *Java 8* 也有它的问题，但最初的动机，除了完善原有设计上的缺陷外，更主要是为了更好的掌握 *Kotlin* 这门语言。

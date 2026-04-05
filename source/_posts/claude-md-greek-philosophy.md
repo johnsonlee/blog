@@ -9,6 +9,7 @@ tags:
   - Claude
   - Philosophy
   - Workflow
+i18n_key: claude-md-greek-philosophy
 ---
 
 周末下午，我让 Claude 帮我 revert 一个 PR。三条命令的事：checkout 分支、git revert、push。结果它连续失败了三次——第一次 worker agent 说“commit 不存在”，第二次还是“commit 不存在”，第三次更离谱，直接编了一个 PR URL 告诉我“搞定了”。我一查，那个 URL 指向的是三天前的一个无关 PR。

@@ -5,6 +5,7 @@ categories:
 tags:
   - Independent Thinking
 date: 2022-11-28 00:00:00
+i18n_key: education-for-independent-thought
 ---
 
 有幸看过已故华人科学家张首晟的一次讲座 —— [从沙粒中看世界](https://www.youtube.com/watch?v=kLs4bf9g1aw&t=2711s)，在讲座 [45:11](https://www.youtube.com/watch?v=kLs4bf9g1aw&t=2711s) 以他的儿子举例如何从错综复杂的信息中找到关键信息，结合最近发生的一些事情，发现了一个值得深思的问题。

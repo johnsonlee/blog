@@ -8,6 +8,7 @@ tags:
   - Booster
   - Performance Optimization
 date: 2019-11-12 21:00:00
+i18n_key: booster-transform-shared-preferences
 ---
 
 ## 背景

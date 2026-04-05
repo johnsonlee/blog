@@ -5,6 +5,7 @@ categories:
 tags:
   - Career
 date: 2020-04-01 00:00:00
+i18n_key: working-as-an-architect-at-didi-0
 ---
 
 - [第〇一章：难逃的墨菲定律](/2020/01/01/working-as-an-architect-at-didi-1)

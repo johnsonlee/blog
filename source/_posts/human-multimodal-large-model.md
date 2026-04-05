@@ -9,6 +9,7 @@ tags:
   - Philosophy
   - Context
   - LLM
+i18n_key: human-multimodal-large-model
 ---
 
 如果有人跟你说“人类就是一个大模型”，你的第一反应可能是觉得这是个粗糙的隐喻。但如果你真的沿着这条路一直走下去，不在任何让你不舒服的地方停下来，最后到达的地方会超出你的预期。

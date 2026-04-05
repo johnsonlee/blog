@@ -7,6 +7,7 @@ categories:
 tags:
   - Gradle
 date: 2023-10-08 15:00:00
+i18n_key: running-android-code-on-jvm
 ---
 
 没看错，就是在 JVM 上运行 Android 代码，而且，还不需要模拟器或者虚拟化技术，各位是不是很好奇，究竟如何做到把 Android 的代码跑在 JVM 上？别着急，咱们 step by step。

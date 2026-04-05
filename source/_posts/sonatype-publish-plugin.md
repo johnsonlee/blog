@@ -8,6 +8,7 @@ tags:
   - Java
   - Maven
 date: 2021-10-07 10:00:00
+i18n_key: sonatype-publish-plugin
 ---
 
 发布过开源库的同学肯定深有感触，想要将一个开源库发布到 __Maven Central__ 对于开发者来说并不简单，尤其是通过 [Sonatype](https://oss.sonatype.org/) 来发布，需要满足一系列的[条件](https://central.sonatype.org/publish/requirements/)，而且对于 __Gradle__ 工程来说，尽管都是用 `maven-publish` 插件来进行发布，但不同的类型的工程，其发布所需的配置还有些不太一样，比如：__Gradle Plugin__，__Androdi Library__ 和 __Java Library__，尤其是多模块的 __Gradle__ 工程，要为每个模块写一堆看起来相似又不完全相同的 __DSL__ 很是麻烦，而且 __Gradle__ 的 __DSL__ 对于新手来说，简直是一脸懵逼。

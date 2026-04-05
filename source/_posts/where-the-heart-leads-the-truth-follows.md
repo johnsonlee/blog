@@ -5,6 +5,7 @@ categories:
 tags:
   - Independent Thinking
 date: 2024-01-01 16:00:00
+i18n_key: where-the-heart-leads-the-truth-follows
 ---
 
 几个月前，偶然发现了一本新书《Why Greatness Cannot Be Planned》，中文名《为什么伟大不能被计划》，作者竟是来自 OpenAI 的科学家。那时，OpenAI 的 ChatGPT 正红遍网络，出于好奇，我在微信读书找到了这本书的中文版，本想睡前随意翻阅几页，却没想到仅仅读了两页，就被其深刻的见解震撼，感叹世间竟有此等奇书！

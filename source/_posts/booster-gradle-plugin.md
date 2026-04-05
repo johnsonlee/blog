@@ -8,6 +8,7 @@ tags:
   - Booster
   - Performance Optimization
 date: 2019-06-04 20:00:00
+i18n_key: booster-gradle-plugin
 ---
 
 Booster 是一款专门为移动应用设计的易用、轻量级且可扩展的质量优化框架，其目标主要是为了解决 APP 复杂度的提升而带来的性能、稳定性、包体积等问题。

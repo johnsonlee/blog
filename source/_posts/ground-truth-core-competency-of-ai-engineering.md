@@ -9,6 +9,7 @@ tags:
   - Ground Truth
   - Agent
   - Software Engineering
+i18n_key: ground-truth-core-competency-of-ai-engineering
 ---
 
 最近和一个做 AI Coding 产品的朋友聊天，他说他们团队花了三个月调 prompt，代码生成的“通过率”从 60% 提到了 78%。我问他：你怎么知道是 78%？他愣了一下，说是人工抽查的。

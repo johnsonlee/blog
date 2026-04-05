@@ -9,6 +9,7 @@ tags:
   - ROI
   - Big Tech
   - Infrastructure
+i18n_key: ai-investment-roi-reality-check
 ---
 
 Alphabet 刚发了一支百年债券。

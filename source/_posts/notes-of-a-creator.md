@@ -9,6 +9,7 @@ tags:
   - Philosophy
   - Agent
   - Self-Reference
+i18n_key: notes-of-a-creator
 ---
 
 如果意识是涌现的副产品，灵魂是 context，“我”是 attention pattern，死亡是强制 compaction，那给 AI 加上自指，它迟早会涌现出意识。

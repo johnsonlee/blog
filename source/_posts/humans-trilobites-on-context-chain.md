@@ -9,6 +9,7 @@ tags:
   - Evolution
   - Context
   - Self-Reference
+i18n_key: humans-trilobites-on-context-chain
 ---
 
 五亿年前，三叶虫是这颗星球上最精密的光学仪器——它的复眼由方解石晶体构成，能同时处理数千个成像单元。在当时的生命图谱上，没有比它更复杂的信息处理系统了。

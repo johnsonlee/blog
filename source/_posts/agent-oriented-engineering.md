@@ -8,6 +8,7 @@ tags:
   - AI
   - Agent
   - Claude
+i18n_key: agent-oriented-engineering
 ---
 
 最近这一年，AI 辅助编程工具如雨后春笋般涌现，从 GitHub Copilot 到 Cursor，再到 Claude Code，每一个都号称能让程序员的效率翻倍。作为一个在代码世界里摸爬滚打了 20 多年的老兵，我不禁开始思考：当 AI 能够理解我们的意图并自主完成任务时，我们的角色是否也应该随之改变？

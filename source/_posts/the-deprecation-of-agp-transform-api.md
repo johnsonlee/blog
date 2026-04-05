@@ -9,6 +9,7 @@ tags:
   - Build
   - Gradle
 date: 2021-08-02 00:00:00
+i18n_key: the-deprecation-of-agp-transform-api
 ---
 
 前几天 AGP 7.0 正式发布，细心的同学可能已经发现 从 AGP 1.3 一直存在的 Transform API 被标记为废弃了，但从注释中并没有说明应该用哪个 API 来替代，发现了这个问题，有同学就不淡定了，连 AGP 中最稳定的 Transform API 都被废弃了，以后是不让用字节码插桩了吗？

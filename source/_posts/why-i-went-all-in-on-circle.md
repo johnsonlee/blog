@@ -5,6 +5,7 @@ categories:
 tags:
   - Stock
 date: 2025-06-22 16:00:00
+i18n_key: why-i-went-all-in-on-circle
 ---
 
 在上一篇 [无暇思考：从抄底 Google/Tesla 到 All in Circle](./no-time-to-think-from-bottom-fishing-google-tesla-to-going-all-in-on-circle.md) 中有提到，我凭直觉做出 All in 的决策，为什么会 All in 一个还没来得及深入研究的东西呢？这还得从 [$NVDA](https://finance.yahoo.com/quote/NVDA) 和 [$TSLA](https://finance.yahoo.com/quote/TSLA) 说起。

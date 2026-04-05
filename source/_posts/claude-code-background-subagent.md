@@ -9,6 +9,7 @@ tags:
   - Claude
   - Productivity
   - Workflow
+i18n_key: claude-code-background-subagent
 ---
 
 之前聊过，AI 的工程能力已经达到了 Staff Engineer 的水平。但用了几个月 Claude Code，我发现一个反直觉的事实：**这位 Staff Engineer 天天在画 UI 写 CRUD。** 你让它改一个文件，它在主 session 里一路干到底——读代码、分析依赖、写 patch、跑测试。整个 context window 被塞得满满当当，你想插一句"顺便看看另一个 bug"，得等它干完才行。明明手下有人，非要自己撸代码。

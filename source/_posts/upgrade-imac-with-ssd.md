@@ -2,6 +2,7 @@
 title: iMac 升级 SSD
 date: 2022-05-06 00:00:00
 categories: DIY
+i18n_key: upgrade-imac-with-ssd
 ---
 
 前段时间，我的 7 年高龄的 Mac Book Pro (Late 2013) 老是出现磁盘空间不足的情况，256G 的 SSD 实在是有点捉襟见肘了，于是打算换个 M1 ，上官网看一下价格，一个顶配算下来得 3 万多 RMB，太特么贵了，想当年，我这个 Mac Book Pro 也差不算是顶配了，才 1.7 万呢，用了这么多年，除了磁盘空间有点小之外，没啥其它的毛病，要不还是换个硬盘好了。

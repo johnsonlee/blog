@@ -7,6 +7,7 @@ tags:
   - Gradle
   - java-gradle-plugin
 date: 2020-10-28 23:30:00
+i18n_key: against-dsl
 ---
 
 最近在撸一个测试 *Gradle Plugin* 的 *Plugin* -- [bootstage/testkit-gradle-plugin](https://github.com/bootstage/testkit-gradle-plugin)，由于跑 *Gradle Plugin* 的 *Unit Test* 必须要使用 *Gradle* 的 `plugins` DSL 来启用插件，所以，万般无奈之下，只好用了 *Gradle* 官方推荐的最佳实践，结果掉进了坑里。

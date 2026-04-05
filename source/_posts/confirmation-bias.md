@@ -11,6 +11,7 @@ tags:
   - Gemini
   - Financial Analysis
   - Model Evaluation
+i18n_key: confirmation-bias
 ---
 
 当我们对一件事有了立场，就会不自觉地用对这个立场有利的证据来强化它，而忽略事实本身。这不是什么新发现——心理学把它叫 confirmation bias。

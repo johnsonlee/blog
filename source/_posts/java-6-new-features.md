@@ -6,6 +6,7 @@ categories:
 tags:
   - Java
 date: 2021-05-07 06:00:00
+i18n_key: java-6-new-features
 ---
 
 Java 6 代号为 *Mustang* 。版本发布于 2006 年 12 月 11 日，*Sun* 把原本的名称 *“J2SE”* 改为 *“Java SE”* ，然后再从版本号中去掉 *“.0”* ，而开发者内部编号仍然是 *1.6.0* 。这个版本是根据 *JSR 270* 开发。

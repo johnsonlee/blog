@@ -7,6 +7,7 @@ tags:
   - AI
   - Productivity
   - Mental Health
+i18n_key: tetris-effect-of-ai-conversations
 ---
 
 连续半个月高强度使用 AI 之后，原本睡觉不怎么做梦的我，开始每天晚上梦见自己在和 AI 对话。不是偶尔一次，是连续好多天，从未间断。意识到这件事的时候，第一反应是：我的大脑是不是在不知不觉中被 AI 侵入了？后来查了一下，发现这并不是个例，而且有一个更专业的说法 — **俄罗斯方块效应（Tetris Effect）**。

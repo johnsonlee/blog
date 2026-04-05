@@ -8,6 +8,7 @@ tags:
   - Software Engineering
   - Product Management
   - Project Management
+i18n_key: fast-is-the-most-expensive-slow
 ---
 
 周末在做一个 side project——用 Rust 写的 macOS 语音助手。项目一开始，我让 Claude 帮我生成了一份 ROADMAP。结果非常漂亮：7 个 milestone，每个都列出了具体的 feature、文件结构、依赖关系，连模块怎么拆都替我想好了。比我自己规划的要系统得多。
