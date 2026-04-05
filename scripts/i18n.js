@@ -2,25 +2,26 @@
 
 var i18nMap = {};
 
-// Fix English post slugs (remove .en suffix)
-hexo.extend.filter.register('before_post_render', function(data) {
-  if (data.lang === 'en') {
-    data.slug = data.slug.replace(/\.en$/, '');
-  }
-  return data;
-});
+// Keep .en in slug — default generator creates /yyyy/mm/dd/xxx.en/ (harmless)
+// Our i18n_en_posts generator creates the clean /en/yyyy/mm/dd/xxx/ URL
 
-// Build i18n pair map after all posts are loaded
-hexo.extend.filter.register('before_generate', function() {
+// Build i18n pair map (lazy, rebuilt when needed)
+var i18nMapBuilt = false;
+
+function ensureI18nMap() {
+  if (i18nMapBuilt) return;
   i18nMap = {};
-  var count = 0;
   hexo.locals.get('posts').forEach(function(post) {
     if (!post.i18n_key) return;
-    count++;
     if (!i18nMap[post.i18n_key]) i18nMap[post.i18n_key] = {};
     i18nMap[post.i18n_key][post.lang || 'zh-CN'] = post;
   });
-  hexo.log.info('i18n: found %d posts with i18n_key, map keys: %s', count, Object.keys(i18nMap).join(', '));
+  i18nMapBuilt = true;
+}
+
+// Rebuild on generate (for watch mode / file changes)
+hexo.extend.filter.register('before_generate', function() {
+  i18nMapBuilt = false;
 });
 
 // Helper: get URL for a post based on its language
@@ -39,9 +40,7 @@ hexo.extend.filter.register('template_locals', function(locals) {
   if (!page) return locals;
 
   // Inject i18n_pair for posts with i18n_key
-  if (page.slug && page.slug.indexOf('ai-writes') >= 0) {
-    hexo.log.info('i18n DEBUG ai-writes: slug=%s i18n_key=%s path=%s keys=%j', page.slug, page.i18n_key, page.path, Object.keys(page).sort().join(','));
-  }
+  ensureI18nMap();
   if (page.i18n_key && i18nMap[page.i18n_key]) {
     var pair = {};
     Object.keys(i18nMap[page.i18n_key]).forEach(function(lang) {
