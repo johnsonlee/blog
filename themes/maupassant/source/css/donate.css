@@ -252,27 +252,27 @@ a{
 		opacity: 1;
 	}
 }
-/* Dark Mode */
-[data-theme="dark"] body {
+/* Dark Mode / Night */
+[data-theme="dark"] body, [data-weather="night"] body {
 	background: #020617;
 }
-[data-theme="dark"] a {
+[data-theme="dark"] a, [data-weather="night"] a {
 	color: #e2e8f0;
 }
-[data-theme="dark"] #donateBox {
+[data-theme="dark"] #donateBox, [data-weather="night"] #donateBox {
 	background-color: #1e293b;
 	border-color: rgba(255, 255, 255, 0.1);
 }
-[data-theme="dark"] #donateBox li {
+[data-theme="dark"] #donateBox li, [data-weather="night"] #donateBox li {
 	background-color: rgba(255, 255, 255, 0.05);
 }
-[data-theme="dark"] #donateBox li:hover {
+[data-theme="dark"] #donateBox li:hover, [data-weather="night"] #donateBox li:hover {
 	background-color: rgba(255, 255, 255, 0.1);
 }
-[data-theme="dark"] #QRBox {
+[data-theme="dark"] #QRBox, [data-weather="night"] #QRBox {
 	background-color: rgba(2, 6, 23, 0.8);
 }
-[data-theme="dark"] #MainBox {
+[data-theme="dark"] #MainBox, [data-weather="night"] #MainBox {
 	background-color: #1e293b;
 	box-shadow: 0px 2px 7px rgba(0,0,0,0.5);
 }

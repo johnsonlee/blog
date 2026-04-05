@@ -7,8 +7,28 @@
 	<link rel="stylesheet" href="../css/donate.css">
 	<script>
 	(function(){
-		try { var t = parent.document.documentElement.getAttribute('data-theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e) {}
-		try { var t = localStorage.getItem('theme-preference'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e) {}
+		// Sync weather/theme from parent page
+		try {
+			var w = parent.document.documentElement.getAttribute('data-weather');
+			if (w) document.documentElement.setAttribute('data-weather', w);
+			var t = parent.document.documentElement.getAttribute('data-theme');
+			if (t) document.documentElement.setAttribute('data-theme', t);
+		} catch(e) {}
+		// Fallback: check time
+		var h = new Date().getHours();
+		if (h < 6 || h >= 19) document.documentElement.setAttribute('data-weather', 'night');
+		// Watch for parent changes
+		try {
+			new MutationObserver(function(muts) {
+				muts.forEach(function(m) {
+					if (m.attributeName === 'data-weather' || m.attributeName === 'data-theme') {
+						var v = parent.document.documentElement.getAttribute(m.attributeName);
+						if (v) document.documentElement.setAttribute(m.attributeName, v);
+						else document.documentElement.removeAttribute(m.attributeName);
+					}
+				});
+			}).observe(parent.document.documentElement, { attributes: true });
+		} catch(e) {}
 	})();
 	</script>
 	<script src="//lib.baomitu.com/jquery/3.4.0/jquery.min.js"></script>
