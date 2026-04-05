@@ -9,6 +9,7 @@ tags:
   - Blog
   - Productivity
   - Workflow
+i18n_key: ai-writes-my-blog
 ---
 
 上周有个朋友看完我的博客，发消息问我：“你哪来这么多时间写这些长文？”
