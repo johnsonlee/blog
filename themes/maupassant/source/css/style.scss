@@ -264,7 +264,12 @@ div {
             line-height: 30px;
             color: var(--text-primary);
             font-size: 13px;
-            font-family: $font-primary;
+            i.fa {
+                font-family: $font-primary;
+                &::before {
+                    font-family: 'FontAwesome';
+                }
+            }
             border: 1px solid transparent;
             &:hover {
                 border-bottom-color: var(--text-primary);
@@ -657,6 +662,14 @@ div {
                 height: 27px;
                 font-size: 13px;
             }
+        }
+    }
+}
+html[lang="en"] {
+    @media screen and (max-width: 48em) {
+        #header #nav-menu a {
+            padding: 0 6px;
+            font-size: 12px;
         }
     }
 }
@@ -2061,8 +2074,10 @@ em.search-keyword {
   font-size: 12px;
   font-family: $font-primary;
   color: var(--text-tertiary);
+  background: none;
   border: 1px solid var(--border-primary);
   border-radius: 3px;
+  cursor: pointer;
   text-decoration: none;
   &:hover {
     color: var(--text-primary);

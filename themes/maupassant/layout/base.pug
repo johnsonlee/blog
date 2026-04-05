@@ -32,12 +32,7 @@ html(lang=page.lang || config.language)
         - for (var i in theme.menu)
           +a_with_current(theme.menu[i].directory, __(theme.menu[i].page), theme.menu[i].icon)
       if page.i18n_pair
-        - var currentLang = page.lang || 'zh-CN'
-        - var otherLang = currentLang === 'en' ? 'zh-CN' : 'en'
-        - var otherUrl = page.i18n_pair[otherLang]
-        - var label = currentLang === 'en' ? '中文' : 'EN'
-        if otherUrl
-          a.lang-switch(href=otherUrl, title=otherLang === 'en' ? 'English' : '中文')= label
+        button.lang-switch(type='button', data-target-lang='en', title='English') EN
 
     #layout.pure-g
       .pure-u-1.pure-u-md-3-4: .content_container

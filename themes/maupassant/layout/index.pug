@@ -7,7 +7,8 @@ block title
     title= config.title
 
 block content
-  for post in page.posts.toArray()
+  - var posts = page.posts.toArray().filter(function(p) { return p.lang !== 'en'; })
+  for post in posts
     .post
       h1.post-title
         include _partial/helpers.pug

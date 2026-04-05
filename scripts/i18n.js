@@ -67,7 +67,7 @@ hexo.extend.generator.register('i18n_en_posts', function(locals) {
     var path = 'en/' + post.date.format('YYYY/MM/DD') + '/' + slug + '/';
     return {
       path: path + 'index.html',
-      data: Object.assign({}, post, { slug: slug, path: path + 'index.html' }),
+      data: Object.assign({}, post, { slug: slug, path: path + 'index.html', lang: 'en', language: 'en' }),
       layout: ['post', 'page', 'index']
     };
   });
@@ -106,6 +106,7 @@ hexo.extend.generator.register('i18n_en_index', function(locals) {
         current_url: path,
         base: 'en/',
         lang: 'en',
+        language: 'en',
         __index: true
       },
       layout: ['index', 'archive']
