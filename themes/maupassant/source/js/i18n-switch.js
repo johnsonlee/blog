@@ -69,6 +69,19 @@
     // Replace entire body
     document.body.innerHTML = doc.body.innerHTML;
 
+    // Re-execute inline scripts (innerHTML doesn't run them)
+    document.body.querySelectorAll('script').forEach(function(old) {
+      var s = document.createElement('script');
+      if (old.src) {
+        s.src = old.src;
+        if (old.async) s.async = true;
+        if (old.defer) s.defer = true;
+      } else {
+        s.textContent = old.textContent;
+      }
+      old.parentNode.replaceChild(s, old);
+    });
+
     // Update head: title and lang
     document.title = doc.title;
     document.documentElement.setAttribute('lang', lang || 'en');
