@@ -165,6 +165,14 @@ html, button, input, select, textarea,
     font-family: $font-primary !important;
 }
 
+// FontAwesome: icon via ::before stays FontAwesome, text inherits page font
+.fa {
+    font-family: $font-primary;
+    &::before {
+        font-family: 'FontAwesome';
+    }
+}
+
 body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
@@ -264,12 +272,6 @@ div {
             line-height: 30px;
             color: var(--text-primary);
             font-size: 13px;
-            i.fa {
-                font-family: $font-primary;
-                &::before {
-                    font-family: 'FontAwesome';
-                }
-            }
             border: 1px solid transparent;
             &:hover {
                 border-bottom-color: var(--text-primary);
