@@ -9,6 +9,7 @@ tags:
   - LLM
   - Code Generation
   - Agent
+i18n_key: ssd-redundancy-beats-sophistication
 ---
 
 最近“蒸馏同事”这个梗挺火——用 AI 把同事的经验榨干，变成自己的能力。段子归段子，但 Apple 上周放了篇论文，认真回答了一个更离谱的问题：
