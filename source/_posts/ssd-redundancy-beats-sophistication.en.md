@@ -1,6 +1,8 @@
 ---
 title: "Distill Your Coworker? Just Distill Yourself"
 date: 2026-04-07 09:00:00
+lang: en
+i18n_key: ssd-redundancy-beats-sophistication
 categories:
   - Computer Science
 tags:
