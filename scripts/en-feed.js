@@ -1,7 +1,7 @@
 'use strict';
 
 // Custom Atom feed generator for English posts.
-// Emits /en/atom.xml containing only posts with `lang: en`,
+// Emits /atom.en.xml containing only posts with `lang: en`,
 // using the /en/YYYY/MM/DD/slug/ permalinks produced by scripts/i18n.js.
 
 const { encodeURL, full_url_for } = require('hexo-util');
@@ -36,7 +36,7 @@ hexo.extend.generator.register('en_feed', function(locals) {
 
   const siteUrl = config.url.replace(/\/+$/, '');
   const enHomeUrl = siteUrl + '/en/';
-  const feedUrl = siteUrl + '/en/atom.xml';
+  const feedUrl = siteUrl + '/atom.en.xml';
 
   let posts = locals.posts
     .filter(post => post.lang === 'en' && post.draft !== true)
@@ -121,7 +121,7 @@ hexo.extend.generator.register('en_feed', function(locals) {
   lines.push('</feed>');
 
   return {
-    path: 'en/atom.xml',
+    path: 'atom.en.xml',
     data: lines.join('\n')
   };
 });
