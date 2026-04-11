@@ -9,7 +9,7 @@
     "deploy": "npx hexo deploy"
   },
   "hexo": {
-    "version": "6.3.0"
+    "version": "7.3.0"
   },
   "dependencies": {
     "hexo": "^8.1.1",
