@@ -32,7 +32,10 @@ hexo.extend.generator.register('en_feed', function(locals) {
   const limit = feedConfig.limit || 100;
   const contentLimit = feedConfig.content_limit || 140;
   const contentLimitDelim = feedConfig.content_limit_delim || ' ';
-  const includeContent = feedConfig.content;
+  // Default to full-text when `feed.content` is unset or truthy. Explicit
+  // `feed.content: false` in _config.yml disables it (for both atom.xml
+  // and atom.en.xml).
+  const includeContent = feedConfig.content !== false;
 
   const siteUrl = config.url.replace(/\/+$/, '');
   const enHomeUrl = siteUrl + '/en/';
