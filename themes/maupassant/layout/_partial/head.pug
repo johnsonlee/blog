@@ -51,7 +51,7 @@ head
     link(rel='apple-touch-icon-precomposed', href=url_for('apple-touch-icon.png'))
     if config.feed
       link(rel='alternate', type=feed_type, href=url_for(config.feed.path), title=config.title)
-      link(rel='alternate', type=feed_type, href=url_for('en/atom.xml'), title=config.title + ' (English)', hreflang='en')
+      link(rel='alternate', type=feed_type, href=url_for('atom.en.xml'), title=config.title + ' (English)', hreflang='en')
     script(type='text/javascript', src=url_for(theme.js) + '/weather-theme.js', defer)
     script(type='text/javascript', src=url_for(theme.js) + '/weather-canvas.js', defer)
     script(type='text/javascript', src=url_for(theme.js) + '/i18n-switch.js', defer)
