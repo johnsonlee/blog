@@ -9,6 +9,8 @@ tags:
   - Self-Evolution
   - Eval Function
   - Biology
+lang: en
+i18n_key: one-eval-function-3-8-billion-years
 ---
 
 3.8 billion years ago, the first self-replicating molecule appeared on Earth. Today, we're trying to make AI evolve on its own.
