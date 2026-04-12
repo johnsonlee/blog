@@ -9,6 +9,7 @@ tags:
   - Self-Evolution
   - Eval Function
   - Biology
+i18n_key: one-eval-function-3-8-billion-years
 ---
 
 38 亿年前，地球上出现了第一个能自我复制的分子。今天，我们在尝试让 AI 自主进化。
