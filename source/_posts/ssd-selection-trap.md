@@ -9,6 +9,7 @@ tags:
   - Self-Improvement
   - Inference
   - Verifier
+i18n_key: ssd-selection-trap
 ---
 
 SSD（[Simple Self-Distillation](https://github.com/apple/ml-ssd)）是 Apple 提出的一种自蒸馏方法——从 frozen 模型里多 sample，在自己的原始输出上做 SFT，让模型自我改进。本文讨论的是 SSD 的一个变种场景：**inference-time 的 multi-sample selection**——多 sample 之后怎么选那个“最优”。
