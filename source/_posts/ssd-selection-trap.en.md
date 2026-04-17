@@ -31,7 +31,7 @@ The totals are close. **But no sample is strongest on every section.** Whichever
 
 The naive fix is to splice across samples—take the strongest section from each, stitch them together.
 
-Doesn't work. Sections are semantically coupled: later sections reference and depend on judgments made in earlier ones. Splicing across samples breaks the internal consistency the inner agent was implicitly maintaining. The result is **structurally legal, semantically broken**.
+Doesn't work. Sections are semantically coupled: later sections reference and depend on judgments made in earlier ones. Splicing across samples breaks the internal consistency each individual sample naturally maintained. The result is **structurally legal, semantically broken**.
 
 With splicing ruled out, the real question surfaces: **how do you make SSD's top-1 actually be the comprehensive optimum?**
 
@@ -45,7 +45,7 @@ Token count measures verbosity, not effort. When an LLM is "thinking deep," the 
 
 **The correlation between token count and thought depth, on LLMs, is near zero—possibly negative.**
 
-Using tokens as a scoring signal produces a predictable Goodhart: the agent learns to **write longer**, not **think deeper**. Precise judgments dilute into lists of possibilities. Core conclusions get buried in hedging. Fuller surface, thinner substance.
+Using tokens as a scoring signal produces a predictable Goodhart: generation learns to **write longer**, not **think deeper**. Precise judgments dilute into lists of possibilities. Core conclusions get buried in hedging. Fuller surface, thinner substance.
 
 ## Wrong Direction #2: Reasoning Depth
 
@@ -99,30 +99,30 @@ How it works:
 2. On all N samples, **additionally** compute grounding-based per-section scores
 3. Compare top-1's per-section grounding scores against **the max per section across samples**
 4. When top-1 falls meaningfully below the max on any section—**record the gap**
-5. The gap doesn't change the current selection. It feeds back as a signal to the evolution mechanism
-6. Long-term goal: SSD evolves to a point where top-1's grounding scores match or approach the per-section max
+5. The gap doesn't change the current selection. It stays as an independent signal
+6. Long-term goal: the next round of SSD produces a top-1 whose per-section grounding scores match or approach the per-section max
 
-Selection logic stays simple. Grounding observes, doesn't judge. Gaps produce learning signal, not selection rollback.
+Selection logic stays simple. Grounding observes, doesn't judge. Gaps produce signal, not selection rollback.
 
-**The evolution objective upgrades from "maximize verifier scalar" to "maximize verifier scalar with no meaningful per-section grounding gap."**
+**The optimization objective upgrades from "maximize verifier scalar" to "maximize verifier scalar with no meaningful per-section grounding gap."**
 
-## What the Agent Actually Learns
+## Signal Shape Determines Direction
 
-This is the key question. Signal shape determines evolution direction.
+This is the key question. Signal shape determines which direction samples concentrate in.
 
-Under pure scalar argmax, the agent learns **"push the total up"**—which means spending compute on sections that are cheap to improve, keeping hard sections at baseline. Marginal return optimizes that way.
+Under pure scalar argmax, the mode that gets rewarded is **"push the total up"**—generation spends compute on sections that are cheap to improve and keeps hard sections at baseline. Marginal return optimizes that way.
 
-Add the grounding-gap signal, and the agent learns **"don't let any section fall behind the other samples."** That objective is much closer to "comprehensive optimum" than "total optimum."
+Add the grounding-gap signal, and the rewarded mode becomes **"don't let any section fall behind the other samples."** That objective is much closer to "comprehensive optimum" than "total optimum."
 
-What would gaming this signal require? The agent would need to reference more real code structures, identify more real dependencies, cover more real impact paths—and static analysis verifies all of it. You can't fabricate.
+What would gaming this signal require? Staying competitive on grounding scores means referencing more real code structures, identifying more real dependencies, covering more real impact paths—and static analysis verifies all of it. You can't fabricate.
 
-**This is evolution on a deterministic track.** The agent's gaming strategy and actual quality improvement are the same thing here—no divergence.
+**Gaming and actual quality improvement are the same thing here—no divergence.**
 
 ## The Larger Point
 
 Underneath this specific SSD selection problem sits a larger methodological one.
 
-The core risk in self-improvement systems has never been "the agent isn't strong enough." It's "the signal structure is wrong, and the agent gets pulled in the wrong direction by it." Scalar totals, token counts, reasoning depth—they fail in the same way: **compress a high-dimensional quality question into a low-dimensional number, then optimize on that number**.
+The core risk in self-improvement systems has never been "capability isn't strong enough." It's "the signal structure is wrong, and generation gets pulled in the wrong direction by it." Scalar totals, token counts, reasoning depth—they fail in the same way: **compress a high-dimensional quality question into a low-dimensional number, then optimize on that number**.
 
 The way out runs the other direction—**preserve the high-dimensional structure of the signal, let deterministic multi-source signals cross-check each other, instead of collapsing to a scalar**.
 
