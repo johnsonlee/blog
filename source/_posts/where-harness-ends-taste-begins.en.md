@@ -9,6 +9,8 @@ tags:
   - Architecture
   - Code Quality
   - Maintainability
+lang: en
+i18n_key: where-harness-ends-taste-begins
 ---
 
 Lately, the code my Agent writes needs more and more fixing on review. Hardcoded values, magic numbers, exceptions thrown straight at the user instead of friendly errors, exceptions caught and swallowed, memory creeping up, loops inside loops — what used to show up occasionally now shows up in almost every PR.
