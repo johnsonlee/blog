@@ -160,30 +160,6 @@ No horse, no speed. No harness, the horse runs wild. No rider, even a perfectly 
 
 What's truly scarce in the Agent era isn't engineers who can write rules. It's architects who **know which parts of engineering excellence can be externalized into harness, and which must remain the rider's call**. That translation capacity is itself the irreplaceable core competency.
 
-## What You Can Do on Monday
-
-If you want to start moving on this today, five concrete things:
-
-### Audit the verbal rules. Make them locally executable.
-
-List every comment you've made three or more times in code review over the past six months. For each, ask: can this be a static rule? Prioritize IDE plugins, pre-commit hooks, custom detekt rules. CI as the safety net. **Verbal rules don't scale. Machine rules can keep up with Agent output.**
-
-### Put JMH on critical paths. Establish performance budgets.
-
-Pick the 3-5 most important business paths. Each gets a JMH benchmark and a hard ceiling for memory, latency, and complexity. Local one-command run. CI compares against baseline. Threshold breach blocks the PR.
-
-### Use call-graph tools to harden architectural contracts.
-
-ArchUnit + call-graph tools (Graphite or similar) — encode module dependency direction, data flow direction, and mutability rules as verifiable contracts. Locally runnable, CI-enforced.
-
-### Refactor the error contract.
-
-Define a unified Result / error code system. Custom detekt rules forbid naked throws and empty catches, with real-time feedback in the IDE. Errors must be traceable, with trace IDs threading the entire path.
-
-### Inject the harness into the Agent's context.
-
-Don't just give the Agent a task description. Feed it the rule set, architectural contracts, and performance budgets. Let the Agent be constrained at generation time, not rejected at review time. **Let the Agent call the local toolchain to receive feedback, closing the self-correction loop.**
-
 ## The Architect's Role Has Changed
 
 In the human-governance era, an architect's primary output was "design" — diagrams, documents, specifications, review comments. These outputs were for humans to read and humans, through their own engineering excellence, to enforce.
