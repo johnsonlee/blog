@@ -9,6 +9,7 @@ tags:
   - Architecture
   - Code Quality
   - Maintainability
+i18n_key: where-harness-ends-taste-begins
 ---
 
 最近 Agent 写的代码，review 时要改的东西越来越多。硬编码、魔法数字、抛异常时不给用户友好提示、catch 了又吞掉、内存悄悄上涨、循环里塞着循环——以前偶尔出现，现在几乎每个 PR 都能看到。
