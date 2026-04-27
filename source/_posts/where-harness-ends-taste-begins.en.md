@@ -156,13 +156,7 @@ Architecture is, fundamentally, a matter of taste. "Should these two modules be 
 
 What harness can do is translate **the artifacts of taste** into machine-executable contracts. The architect decides "these two modules communicate only through an EventBus" — that's taste. ArchUnit / call-graph tools verifying that the contract isn't broken — that's harness. **Taste defines the direction. Harness guards the direction.**
 
-Back to the riding metaphor: the Agent is the horse, harness is constraint engineering, and taste is the rider.
-
-- No horse, no speed
-- No harness, the horse runs wild
-- No rider, even a perfectly steady ride is in the wrong direction
-
-All three are necessary. The most precise tack in the world won't help if the rider has no judgment. The most discerning rider in the world can't control the horse without tack.
+No horse, no speed. No harness, the horse runs wild. No rider, even a perfectly steady ride is in the wrong direction. The most precise tack in the world won't help if the rider has no judgment. The most discerning rider in the world can't control the horse without tack.
 
 What's truly scarce in the Agent era isn't engineers who can write rules. It's architects who **know which parts of engineering excellence can be externalized into harness, and which must remain the rider's call**. That translation capacity is itself the irreplaceable core competency.
 
