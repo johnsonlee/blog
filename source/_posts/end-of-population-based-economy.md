@@ -6,7 +6,7 @@ categories:
 tags:
   - AI
   - Economy
-  - Investment
+  - Investing
   - Future
   - UBI
 i18n_key: end-of-population-based-economy

@@ -1,7 +1,7 @@
 ---
 title: 无暇思考：从抄底 Google/Tesla 到 All in Circle
 categories:
-  - Investment
+  - Investing
 tags:
   - Stock
 date: 2025-06-21 16:00:00

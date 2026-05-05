@@ -3,7 +3,7 @@ title: "No Time to Think: From Buying the Dip on Google/Tesla to All In on Circl
 lang: en
 i18n_key: crcl-01-no-time-to-think
 categories:
-  - Investment
+  - Investing
 tags:
   - Stock
 date: 2025-06-21 16:00:00

@@ -6,7 +6,7 @@ categories:
 tags:
   - AI
   - Economy
-  - Investment
+  - Investing
   - Future
   - UBI
 lang: en
