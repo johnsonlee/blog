@@ -10,95 +10,117 @@ lang: en
 i18n_key: shanghai-still-shanghai
 ---
 
-For the May Day holiday, we flew from Seoul to Shanghai. Twelve full years had passed since I last set foot on this land. After settling the kids at the hotel, I took my wife up to The Stage Magnolia Observation Deck that night — over three hundred meters high, looking down on all of Lujiazui and the Huangpu River. The moment I stepped out of the elevator and saw the lights spread out beneath my feet, it suddenly hit me: twelve years ago I was on this same land too — except back then I was on the other side of the river, looking up at these very towers.
+For the May Day holiday, we flew from Seoul to Shanghai. Twelve full years had passed since I last set foot on this land.
+
+After settling the kids at the hotel, I took my wife up to The Stage Magnolia Observation Deck that night — over three hundred meters high, looking down on all of Lujiazui and the Huangpu River. The moment I stepped out the door, the city lights spread out beneath my feet like a rising tide.
+
+I remembered: twelve years ago, I was on this same land too — except back then, I was standing on the other side of the river, looking up at these very towers.
 
 <!-- more -->
 
 ## The Shanghai We Once Tried to Conquer Together
 
-It was 2009, just after the Spring Festival.
+It was 2009, just after the Spring Festival. A few of us — good brothers — boarded the train to Shanghai together.
 
-Five or six of us — good brothers — boarded the train to Shanghai together. The market still hadn't recovered from the 2008 financial crisis. Job seekers were everywhere; opportunities were scarce. Before I left, my mother pressed 2,800 yuan into my hand.
+Before I left, my mother pressed 2,800 yuan into my hand.
 
-The first thing we did in Shanghai was find a place to live. We found a service apartment, 600 yuan per room, and three of us crammed into one. The room had a 1.3-meter-wide bed and a small desk. That was it. Three grown men sharing one bed — someone got pushed off in the middle of the night more times than I can remember.
+The K-series train car was packed beyond breathing. People everywhere — the washrooms, the aisles, the doorways — there was barely room to put your feet down. Luckily we'd managed to grab seated tickets ahead of time. Otherwise, we probably couldn't have even stretched our legs the whole way.
 
-Resumes went out. Nothing came back. For two solid weeks, not a single phone call.
+The Lunar New Year festivities hadn't quite faded, but the outside world still hadn't recovered from the 2008 financial crisis.
 
-I was the first one to get an interview. Probation pay 2,500, full-time 3,000.
+The first thing we did in Shanghai was find a place to live. We found a serviced apartment — 600 yuan per room — and three of us crammed into one. The room had a 1.3-meter-wide bed and a small desk. That was it. Three grown men sharing one bed — someone rolls over in the middle of the night and the whole bed shakes. By the small hours, someone would often get pushed right off.
 
-A second offer came in at 5,000, but they kept me waiting two days. I gave up and took the first one.
+Back then, we thought the hardest part was the cramped living.
+
+Turned out the real hardship was what came after: résumés sent out, sinking like stones, vanishing without a trace. Two solid weeks. Not a single phone call.
+
+I was the first one to get an interview. Probation pay: 2,500. Full-time: 3,000.
+
+Right after that first interview, a second company called — offering 5,000. But the offer letter didn't come for two days. I was afraid of dragging it out, so I just went with the first one.
+
+Back then, choices didn't come with much breathing room. A lot of decisions weren't made because you could see the future clearly.
 
 ## That 50 Yuan
 
-After I started working, my roommates still hadn't landed anything. One of them started losing it — couldn't sleep at night, muttering nonsense between waking and dreaming.
+After I started working, my roommates still hadn't landed anything.
 
-Lucky for us, our team still had an opening. I tried to get one of them in. Problem was, only one slot, two candidates — both my roommates qualified.
+One of them started losing it. At first it was just tossing and turning, unable to sleep. Then it got worse — he'd mutter nonsense in that half-awake, half-dreaming state.
 
-In the end, Hui stepped aside. Said the other guy was under more psychological pressure and gave up the spot for him.
+Luckily, our team still had an opening, and I managed to get one of them a shot. Problem was: one slot, two candidates — both my roommates qualified.
 
-Hui never found a suitable job after that. His money was running out.
+In the end, Hui stepped aside. He figured the other guy was under more pressure, so he gave up the spot.
 
-The night before he left, the three of us had dinner together. Hui turned to the other roommate and asked to borrow 500 yuan — for the train ticket home and some pocket money.
+After that, Hui never found a suitable job. His money was running out.
 
-That guy fished around in his pocket for a long while, and handed over a single 50.
+Before he left, the three of us had dinner together. At the table, Hui turned to the other roommate and asked to borrow 500 yuan — for the train ticket home and some pocket money.
+
+The guy fished around in his pocket for a long while, then handed over a single 50.
 
 The two of us froze.
 
-Hui took the 50 without a word.
+Hui looked at that 50, hesitated for a moment, and put it away without a word.
+
+After dinner, Hui asked me:
+
+> Did I not make myself clear?
+
+I said:
+
+> No — I heard you say 500, loud and clear.
 
 Later, Hui paid that 50 back.
 
 From that day on, that person was no longer part of our circle.
 
-## Years Later
+## The Years After
 
 Everyone in that group, except Hui, eventually got an offer.
 
-Once we'd gotten through the rough early stretch, work slowly settled in. Income climbed steadily, year over year. The circle of people around me grew tighter and more familiar.
+Once we'd survived those tight early days, the market bounced back from the crisis fast. Job openings sprouted everywhere. Within a year, fresh graduates were already starting at 5,000–6,000.
 
-By any measure, this was the kind of life everyone was fighting tooth and nail to have.
+Life got smoother year after year. Income steadier year after year.
 
-But when life gets too smooth, something starts to feel off. That kind of "everything I need is already here" comfort — it's more like honey in a jar. The sugar is real, but people get stuck in there and can't climb out.
+By any measure, this was the kind of life everyone had been fighting tooth and nail for. But once things get smooth enough, the circle around you starts to solidify. Same people every day, same topics, same routines, same sense of security. That kind of comfort is like a honey jar — the sweetness is real, but stay too long and you forget what the air outside even smells like.
 
-The days were good days. The trouble is, you could see the whole rest of them from where you stood.
+I started feeling uneasy. I wanted to see what the world beyond this circle looked like — and whether I could still stand on my own without it.
 
-I started wanting something else — to step outside, to see what the world beyond this circle looked like, to find out if I could still stand on my own without it.
-
-After I left, the rest of them gradually settled in Shanghai — bought apartments, registered hukou, the whole package. By the unspoken standard we'd all been chasing, they had taken root.
+After I left Shanghai, the rest of them gradually settled in — bought apartments, registered hukou. By the unspoken standard we'd all been chasing, they had taken root.
 
 Hui was one exception — he never got his break, went home, and never came back to Shanghai.
 
 I was a different kind of exception — I'd gotten the offer, found my footing, but I had no plan to stay.
 
-Back then, the unspoken goal among us all was the same: stay in Shanghai. Making it here was the highest mark of success.
+Back then, the unspoken goal among us was the same: stay in Shanghai. Making it here was the highest mark of success.
 
-I thought the opposite. This circle didn't need one more of me. But maybe somewhere else did. In 2013, a friend in Beijing called and asked me to start a company with him. I went. I didn't leave with any sense of drama — left some luggage at a friend's place, packed the rest, didn't even properly say goodbye.
+I thought the opposite — this circle didn't need one more of me. But maybe somewhere else did.
 
-Hardly anyone understood why I'd give up Shanghai for a city where I had no foundation. Family thought it was reckless. Friends thought it was risky. Honestly, even I wasn't sure.
+In 2013, a friend in Beijing called and asked me to start a company with him. I went. Didn't leave with any sense of drama — left some luggage at a friend's place, packed the rest, didn't even properly say goodbye.
 
-But there was one thing I was clear about back then: **stay in one place long enough, and you'll start to mistake the small slice of world in front of you for the whole world**.
+Hardly anyone understood why I'd give up Shanghai for a city where I had no foundation. Family thought it was reckless. Friends thought it was risky. Even I wasn't sure.
+
+But there was one thing I was clear about: **stay in one place long enough, and you'll start to mistake the small slice of world in front of you for the whole world**.
 
 ## Twelve Years Later
 
 Later, I went from Beijing to Seoul.
 
-Of those brothers from back then, all but Hui put down roots in Shanghai. The guy who couldn't lend out the 500 — he eventually bought a place in Shanghai too. But none of us count him in our circle anymore.
+Of those brothers from back then, all but Hui put down roots in Shanghai. I heard from other friends that the guy who could only spare Hui that 50 yuan eventually bought a place in Shanghai too, settled down. But none of us count him in our circle anymore.
 
 Each one of us has spent twelve years writing a different footnote on the question: stay or go.
 
-Standing on top of the Magnolia Observation Deck this time, looking down — the feeling is hard to put into words. The distance under my feet was something I couldn't have imagined in 2009 when I first arrived. The Bund is on one side, Lujiazui on the other, and the Line 2 I used to squeeze onto every morning runs right under the river beneath me.
+Standing on top of the Magnolia Observation Deck this time, looking down — the feeling is hard to put into words. The distance under my feet was something I couldn't have imagined when I first arrived in 2009. The Bund is on one side, Lujiazui on the other, and the Line 2 I used to squeeze onto every morning runs right under the river beneath me.
 
 My wife had no idea what I was thinking. She took a photo and asked, "Seen enough?"
 
 "Seen enough," I said.
 
-## Closing
+Only some things — no matter how long you look — you can never quite put into words.
 
-On the way down, inside the sealed elevator car, the mirrors on all four walls folded that single ceiling light into endless layers — stacked one over another, like time with no end in sight.
+## Forward
 
-And just like that, I was back to that night, three of us crammed onto a 1.3-meter bed — one person rolls over and the whole bed shakes; somebody falls off in the middle of the night, every other night.
+On the way down, inside the sealed elevator car, geometric lines of light folded and refracted across the mirrored walls — layer upon layer, beam upon beam — as if being pulled into a black hole in the fabric of time. My thoughts wound backward with it, back to that night when three of us were crammed onto that 1.3-meter bed — one person rolls over and the whole bed shakes; somebody falls off in the middle of the night.
 
-Back then, no one would have guessed that twelve years later, someone from that bed would be standing at the top of this city's tallest tower, looking down on the place he'd once struggled so hard to belong to.
+Back then, no one would have guessed that twelve years later, someone from that bed would be standing at the top of this city, looking down on the place he'd once struggled so hard to belong to.
 
 No one would have guessed that a single 50 yuan note could erase a person from our lives forever.
 
@@ -114,13 +136,13 @@ I sat on the edge of the bed for a while.
 
 Our generation came out of small hometowns and now drifts between the world's biggest cities — where to put down roots, when to pull them up again. Each of us keeps that ledger in our own head.
 
-Looking at the two boys beside me — these two young travelers about to start their own road — I felt a strange daze.
+Looking at the two young travelers beside me, about to set out on their own road, I felt a strange daze —
 
 Will they have a Shanghai of their own one day?
 
 Who will they end up sharing a 1.3-meter bed with? In which city will they pick up the phone call that changes everything? How long will they stay in their own honey jar — and one day, will they decide to walk out?
 
-Will there be a "Hui" in their lives too?
+Will there be a "Hui" in their story too?
 
 I don't know any of this.
 
