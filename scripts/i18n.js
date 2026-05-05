@@ -50,6 +50,37 @@ hexo.extend.filter.register('template_locals', function(locals) {
     page.i18n_lang = page.lang || 'zh-CN';
   }
 
+  // Language-aware prev/next navigation
+  if (page.title && (page.prev || page.next || page.lang === 'en')) {
+    var pageLang = page.lang || 'zh-CN';
+    var allPosts = hexo.locals.get('posts').sort('-date').toArray();
+    var sameLangPosts = allPosts.filter(function(p) {
+      return (p.lang || 'zh-CN') === pageLang;
+    });
+    // Find current post in same-language list by i18n_key or slug
+    var currentSlug = page.slug ? page.slug.replace(/\.en$/, '') : '';
+    var idx = -1;
+    for (var i = 0; i < sameLangPosts.length; i++) {
+      var pSlug = sameLangPosts[i].slug ? sameLangPosts[i].slug.replace(/\.en$/, '') : '';
+      if (page.i18n_key && sameLangPosts[i].i18n_key === page.i18n_key) {
+        idx = i; break;
+      }
+      if (pSlug === currentSlug) {
+        idx = i; break;
+      }
+    }
+    if (idx !== -1) {
+      // Hexo convention: prev = newer post (lower index), next = older post (higher index)
+      page.prev = idx > 0 ? sameLangPosts[idx - 1] : null;
+      page.next = idx < sameLangPosts.length - 1 ? sameLangPosts[idx + 1] : null;
+      // Set prev_link/next_link for English posts to use /en/ URLs
+      if (pageLang === 'en') {
+        if (page.prev) page.prev_link = getPostUrl(page.prev);
+        if (page.next) page.next_link = getPostUrl(page.next);
+      }
+    }
+  }
+
   // Mark page with i18n flag so templates can filter English posts
   if (page.posts && !page.lang) {
     page._i18n_filter_en = true;
