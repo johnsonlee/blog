@@ -100,6 +100,22 @@ Hardly anyone understood why I'd give up Shanghai for a city where I had no foun
 
 But there was one thing I was clear about: **stay in one place long enough, and you'll start to mistake the small slice of world in front of you for the whole world**.
 
+## Closure
+
+About a year into Beijing, life had settled into a rhythm. It was also during that time that I met my wife.
+
+We hadn't known each other long when the National Day holiday came around. I invited her on a "trip" to Shanghai. I called it a trip, but I had an ulterior motive — to pick up all the belongings I'd left at a friend's place.
+
+Those bags had been there since the day I left Shanghai for Beijing. My friend had already packed them up neatly, stacked on top of the wardrobe.
+
+I stood on a chair and pulled the suitcase down from the top of the wardrobe. It was heavier than I expected. Just as I got it out, my grip slipped — luckily my wife reacted fast and caught it before it hit the floor.
+
+In that moment, a thought flashed through my mind: I'm going to marry this woman.
+
+Setting the suitcase down, it suddenly struck me — five years in Shanghai, and when it came time to truly let go, it all fit in one big suitcase.
+
+My wife and I wheeled that heavy suitcase out together, leaving behind the Shanghai we'd once tried to conquer. And with that, I'd made a clean break.
+
 ## Twelve Years Later
 
 Later, I went from Beijing to Seoul.
