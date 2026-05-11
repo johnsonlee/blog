@@ -6,7 +6,7 @@ const path = require('path');
 hexo.extend.filter.register('after_generate', () => {
   const sourceDir = hexo.source_dir;
   const outputDir = path.join(hexo.public_dir, 'og-cards');
-  const script = path.join(hexo.base_dir, 'scripts', 'generate-og-cards.py');
+  const script = path.join(hexo.base_dir, 'tools', 'generate-og-cards.py');
 
   hexo.log.info('Generating OG card images...');
 
