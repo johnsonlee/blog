@@ -1,0 +1,11 @@
+if theme.wechat_mp && theme.wechat_mp.enable
+  .wechat-mp
+    .wechat-mp-inner
+      .wechat-mp-text
+        .wechat-mp-title
+          i.fa.fa-weixin
+          |  关注公众号
+        .wechat-mp-name= theme.wechat_mp.name
+        .wechat-mp-desc 扫码，第一时间收到新文章推送
+      .wechat-mp-qr
+        img(src=url_for(theme.wechat_mp.qrcode), alt=theme.wechat_mp.name, onerror='this.parentElement.style.display="none"')

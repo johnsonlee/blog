@@ -55,6 +55,11 @@ donate:
 #  btc_qr: ## Path of Bitcoin QRcode image, e.g. /img/BTCQR.png
 #  btc_key: ## Bitcoin key, e.g. 1KuK5eK2BLsqpsFVXXSBG5wbSAwZVadt6L
 #  paypal_url: ## Paypal URL, e.g. https://www.paypal.me/tufu9441
+wechat_mp:
+  enable: true ## Show WeChat Official Account promotion after each post
+  name: johnsonlee.io ## WeChat Official Account name
+  qrcode: /img/WeChatMPQR.png ## Path to QR code image
+
 post_copyright:
   enable: true ## If you want to display the copyright info after each post, please set the value to true and fill the following items on your need.
   author: johnsonlee ## Your author name, e.g. tufu9441

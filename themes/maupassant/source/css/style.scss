@@ -1989,6 +1989,45 @@ em.search-keyword {
     }
 }
 
+// ===== WeChat MP Promotion =====
+.wechat-mp {
+    margin: 2em 0;
+    padding: 1.2em 1.5em;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-secondary);
+    border-radius: 4px;
+    .wechat-mp-inner {
+        display: flex;
+        align-items: center;
+        gap: 1.5em;
+    }
+    .wechat-mp-text {
+        flex: 1;
+    }
+    .wechat-mp-title {
+        font-size: 0.85em;
+        color: var(--text-tertiary);
+        margin-bottom: 0.4em;
+        .fa-weixin { color: #07C160; }
+    }
+    .wechat-mp-name {
+        font-size: 1.1em;
+        font-weight: bold;
+        color: var(--text-primary);
+        margin-bottom: 0.4em;
+    }
+    .wechat-mp-desc {
+        font-size: 0.85em;
+        color: var(--text-muted);
+    }
+    .wechat-mp-qr img {
+        width: 100px;
+        height: 100px;
+        display: block;
+        border-radius: 4px;
+    }
+}
+
 // ===== Gitalk Dark Mode =====
 [data-theme="dark"], [data-weather="night"] {
   .gt-container {
