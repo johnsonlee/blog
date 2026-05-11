@@ -100,3 +100,5 @@ graphite-explore /data/app-graph --port 8080
 这也是 Graphite 想做的事。不是再造一个更聪明的 grep，而是给 Agent 一张更接近真实执行语义的地图。源码是输入，bytecode 是事实，program graph 是 Agent 能用的上下文。不是把 code 塞进 context window，而是把 code 本身变成 Agent 可以查询、验证、推理的上下文。这就是“Code 即上下文”。
 
 如果未来的工程团队里，每个 Agent 都能实时查询调用图、数据流、类型层次和注解关系，那么“理解代码”这件事本身就会被重新定义。不是读完多少文件，而是能不能问对问题，并拿到可靠答案。工具在变，工作在变，代码上下文也该变了。你还准备继续把几百万 token 的源码塞进 context window 吗？
+
+> GitHub: https://github.com/johnsonlee/graphite
