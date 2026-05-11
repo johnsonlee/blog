@@ -65,7 +65,7 @@ The result is not "these might be relevant." The result is that these data-flow 
 
 ## 6, or 19
 
-Graphite started as a way to verify AB experiment cleanup. At first, I scanned the code the traditional way: patterns, AST, grep, call-site search. It found some of the places, but it never felt complete. Later, after building a graph from bytecode and tracing from constant nodes along data-flow edges into the target call sites, the result became 19. Not 6.
+Graphite started as a way to verify AB experiment cleanup. I began with the old tools: grep, AST queries, call-site search, and one more pattern after another. The answer was 6. The problem was not that these tools were useless. It was that pattern-based methods are incomplete by nature: rename a constant, pass an argument through one more layer, wrap the call in a helper, and the pattern breaks. Later, after building a graph from bytecode and tracing from constant nodes along data-flow edges into the target call sites, the number became 19. Not 6.
 
 The extra cases were exactly the ones AST-level approaches tend to miss: local variable propagation, cross-module constants, and indirect calls inside conditional branches. That difference is critical. If you are only doing code search, missing a few spots may not matter. But if you ask an Agent to delete code, change interfaces, migrate frameworks, or clean up dead code automatically, one missed call site can become a production incident.
 
