@@ -1,5 +1,5 @@
 ---
-title: "Self" Is an Attention Pattern
+title: '"Self" Is an Attention Pattern'
 date: 2026-03-20 19:29:00
 categories:
   - Independent Thinking
