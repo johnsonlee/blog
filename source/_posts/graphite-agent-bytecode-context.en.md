@@ -101,3 +101,5 @@ The old software toolchain was designed around humans. IDEs help humans jump aro
 That is what Graphite is trying to do. It is not another smarter grep. It is a map for Agents that is closer to real execution semantics. Source code is input. Bytecode is fact. A program graph is context the Agent can use. Do not stuff code into a context window. Turn code itself into context the Agent can query, verify, and reason about. That is what "Code Is Context" means.
 
 If every Agent on an engineering team could query call graphs, data flow, type hierarchies, and annotation relationships in real time, then "understanding code" would be redefined. It would no longer mean how many files you have read. It would mean whether you can ask the right questions and get reliable answers. The tools are changing. The work is changing. Code context should change too. Are you still planning to stuff millions of tokens of source code into a context window?
+
+> GitHub: https://github.com/johnsonlee/graphite
