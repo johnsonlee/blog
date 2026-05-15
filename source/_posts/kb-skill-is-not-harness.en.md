@@ -53,7 +53,7 @@ Many people think "the model is more obedient" means "the system is constrained.
 
 ## A Real Harness Has at Least Five Layers
 
-I now prefer to split a harness into five layers.
+More precisely, a harness should have at least five layers.
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 600" role="img" aria-labelledby="harness-layers-title-en harness-layers-desc-en" style="max-width: 100%; height: auto;">
   <title id="harness-layers-title-en">The Five Layers of Harness</title>
@@ -152,9 +152,9 @@ The keyword here is not "review." It is gate.
 
 A gate means: if it does not pass, it cannot continue. Not "the model thinks it is fine," not "it looks okay to a human," not "it should probably be fine," but a deterministic check that blocks the output.
 
-This is why I keep emphasizing the fast-loop. The fast-loop is not responsible for proving the truth of the universe. It is responsible for immediately cutting off obviously unqualified results after each Agent output in a cheap, deterministic, repeatable way.
+This is where the fast-loop earns its place. The fast-loop is not responsible for proving the truth of the universe. It is responsible for immediately cutting off obviously unqualified results after each Agent output in a cheap, deterministic, repeatable way.
 
-I usually break a fast-loop gate into seven rules:
+A solid fast-loop gate should block at least seven classes of problems:
 
 1. The output must satisfy the schema. If it does not, fail immediately.
 2. Every factual claim must trace back to context, tool results, or an explicit assumption.
