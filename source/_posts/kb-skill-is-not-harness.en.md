@@ -66,7 +66,7 @@ I now prefer to split a harness into five layers.
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#4b5563"/>
     </marker>
   </defs>
-  <rect x="20" y="20" width="880" height="560" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <rect x="20" y="20" width="880" height="560" rx="8" fill="none" stroke="#cbd5e1"/>
   <text x="460" y="58" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#111827">The Five Layers of Harness</text>
   <text x="460" y="86" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#4b5563">Harness = the structure that puts probabilistic models inside deterministic systems</text>
 
