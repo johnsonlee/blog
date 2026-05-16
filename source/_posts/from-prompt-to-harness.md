@@ -1,5 +1,5 @@
 ---
-title: "KB/SKILL ≠ Harness"
+title: "从 Prompt 到 Harness"
 date: 2026-05-15 09:44:41
 categories:
   - Independent Thinking
@@ -9,7 +9,7 @@ tags:
   - Prompt Engineering
   - Eval
   - Agent
-i18n_key: kb-skill-is-not-harness
+i18n_key: from-prompt-to-harness
 ---
 
 最近我看到一个很有意思的现象。
