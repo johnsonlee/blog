@@ -64,7 +64,7 @@ RETURN c.value, cs.caller_class, cs.caller_name
 
 ## 6 个，还是 19 个
 
-最早做 Graphite，是为了验证 AB 实验清理。那时我先用传统方式扫：pattern、AST、grep、调用点搜索。结果能找到一部分，但总觉得不踏实。后来把 bytecode 建图，再从常量节点沿着数据流追到目标调用点，结果变成了 19 个，不是 6 个。
+最早做 Graphite，是为了验证 AB 实验清理。我一开始用的还是老办法：grep、AST query、调用点搜索，一层层补 pattern。结果找到 6 个。不是这些工具没用，而是基于 pattern 的方法天然扫不全：常量换个名字，参数多传一层，调用包进 helper，pattern 就断了。后来把 bytecode 建图，从常量节点沿着数据流一路追到目标调用点，数字变成了 19。不是 6。
 
 多出来的那些，正是 AST 很容易漏掉的地方：局部变量传递、跨 module 常量、条件分支里的间接调用。这类差异很致命。如果你只是做 code search，漏几个点无所谓；但如果你让 Agent 自动删代码、改接口、迁移框架、清理 dead code，漏掉一个点就可能是生产事故。
 
