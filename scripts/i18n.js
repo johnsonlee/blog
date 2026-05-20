@@ -1,5 +1,10 @@
 'use strict';
 
+var indexGenerator = require('hexo-generator-index/lib/generator');
+var archiveGenerator = require('hexo-generator-archive/lib/generator');
+var categoryGenerator = require('hexo-generator-category/lib/generator');
+var tagGenerator = require('hexo-generator-tag/lib/generator');
+
 var i18nMap = {};
 
 // Keep .en in slug — default generator creates /yyyy/mm/dd/xxx.en/ (harmless)
@@ -33,6 +38,59 @@ function getPostUrl(post) {
   }
   return '/' + datePath + '/' + slug + '/';
 }
+
+function isDefaultLangPost(post) {
+  return post.lang !== 'en';
+}
+
+function withDefaultLangPosts(locals) {
+  return Object.assign({}, locals, {
+    posts: locals.posts.filter(isDefaultLangPost)
+  });
+}
+
+function cloneTermWithDefaultLangPosts(term) {
+  var posts = term.posts.filter(isDefaultLangPost);
+  var clone = Object.create(term);
+  Object.defineProperty(clone, 'posts', {
+    value: posts,
+    enumerable: true
+  });
+  Object.defineProperty(clone, 'length', {
+    value: posts.length,
+    enumerable: true
+  });
+  return clone;
+}
+
+function withDefaultLangTerms(locals, key) {
+  var nextLocals = Object.assign({}, locals);
+  nextLocals[key] = locals[key].map(cloneTermWithDefaultLangPosts);
+  nextLocals[key].toArray = function() {
+    return nextLocals[key];
+  };
+  return nextLocals;
+}
+
+// Override the default list generators so Chinese pagination is calculated
+// after filtering out English translation posts.
+hexo.extend.generator.register('index', function(locals) {
+  return indexGenerator.call(this, withDefaultLangPosts(locals));
+});
+
+if (!(hexo.config.archive && hexo.config.archive.enabled === false)) {
+  hexo.extend.generator.register('archive', function(locals) {
+    return archiveGenerator.call(this, withDefaultLangPosts(locals));
+  });
+}
+
+hexo.extend.generator.register('category', function(locals) {
+  return categoryGenerator.call(this, withDefaultLangTerms(locals, 'categories'));
+});
+
+hexo.extend.generator.register('tag', function(locals) {
+  return tagGenerator.call(this, withDefaultLangTerms(withDefaultLangPosts(locals), 'tags'));
+});
 
 // Inject i18n data into template locals
 hexo.extend.filter.register('template_locals', function(locals) {
