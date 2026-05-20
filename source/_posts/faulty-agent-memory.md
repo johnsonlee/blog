@@ -238,3 +238,7 @@ raw episode 不直接丢弃，至少在一个可审计窗口内保留；任何 a
 如果答案是"不知道"，它就不是记忆，它是污染源。
 
 自然界不复制最优，因为今天的 best 可能是明天的 worst。Agent 也不该克隆自己的记忆，因为今天最合理的解释，可能正是明天最大的偏见。
+
+## References
+
+- [Useful Memories Become Faulty When Continuously Updated by LLMs](https://arxiv.org/pdf/2605.12978)

@@ -219,3 +219,7 @@ So when I look at any agent memory design now, my first question is:
 If the answer is "it doesn't" — that's not memory. That's a contamination source.
 
 Nature never clones its best because today's optimum might be tomorrow's dead end. Agents shouldn't clone their memories either, because today's most reasonable interpretation might be tomorrow's biggest bias.
+
+## References
+
+- [Useful Memories Become Faulty When Continuously Updated by LLMs](https://arxiv.org/pdf/2605.12978)
