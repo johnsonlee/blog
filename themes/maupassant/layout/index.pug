@@ -7,7 +7,9 @@ block title
     title= config.title
 
 block content
-  - var posts = page.posts.toArray().filter(function(p) { return p.lang !== 'en'; })
+  - var posts = page.posts.toArray()
+  if page._i18n_filter_en
+    - posts = posts.filter(function(p) { return p.lang !== 'en'; })
   for post in posts
     .post
       h1.post-title
