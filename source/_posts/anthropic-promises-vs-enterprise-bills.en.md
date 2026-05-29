@@ -13,39 +13,9 @@ lang: en
 i18n_key: anthropic-promises-vs-enterprise-bills
 ---
 
-The boss asked: "How's our AI automated testing going?"
+The boss asked: "How's our AI automated testing going?" Nobody spoke. A month earlier, someone had said it plainly: AI is unreliable, you can't build automated testing this way — what test systems fear most isn't incapability, it's instability. Back then, it sounded like an excuse. From the boss's position, it was genuinely hard to tell: was AI actually unreliable, or were the people just not good enough?
 
-Nobody spoke.
-
-A month earlier, someone had said it out loud — not for the first time.
-
-The warning was clear: AI is unreliable, you can't build automated testing this way. What test systems fear most isn't incapability — it's instability.
-
-Back then, it sounded like an excuse.
-
-From the boss's position, it was genuinely hard to tell.
-
-Is AI actually unreliable, or are your people just not good enough?
-
-That's the most absurd part of the past few months.
-
-In those polished, industry-disrupting demos, Agents could read requirements, write tests, run cases, file bugs, even judge whether a page looked correct. The narrative was frictionless: no more manual clicking, no QA scripts, no engineers filling in test gaps — AI would automate the entire quality system.
-
-It sounded like software engineering was finally entering a new era.
-
-Then the bill arrived.
-
-After burning through millions of dollars, the team reached a conclusion: AI can't handle automated testing. You still need people and scripts.
-
-Wait — we went through all that for *this*?
-
-The surreal part isn't that AI failed to replace testing. It's that enterprises spent millions to rediscover something engineers knew ten years ago: software quality doesn't come from "looks smart." It comes from engineering discipline, stable interfaces, deterministic feedback, and boring-but-reliable automation scripts run over and over.
-
-Anthropic, of course, would never frame it that way.
-
-Anthropic talks about Agents, reasoning, computer use, end-to-end task completion, "every company will have a workforce of digital employees." Sounds impressive. Translated into plain language:
-
-You pay first. Whether it works — that's a problem for the future.
+After burning through millions of dollars, the team's conclusion was this: AI can't handle automated testing. You still need people and scripts. We went through all that for *this*? The surreal part isn't that AI failed to replace testing — it's that enterprises spent millions to rediscover something engineers knew ten years ago: software quality comes from engineering discipline, stable interfaces, deterministic feedback, and boring-but-reliable scripts run over and over. Anthropic, of course, would never frame it that way. It talks about Agents, reasoning, end-to-end task completion, "every company will have a workforce of digital employees" — translated into plain language: you pay first, whether it works is a problem for the future.
 
 ## Anthropic's Real Advantage Isn't the Model — It's the Narrative
 
@@ -70,8 +40,6 @@ Brilliant. Every problem that can't be solved today gets packaged and mailed to 
 Anthropic doesn't sell certainty. It sells the ability to package uncertainty as certainty. That's where enterprises get caught. Not because leadership is foolish. Not because engineers don't understand. But because the story is too complete. It hits exactly what enterprises want to hear: fewer hires, fewer scripts, less process overhead, less grinding work — let Agents handle everything automatically.
 
 Who wouldn't want to believe it?
-
-<!-- more -->
 
 ## In the AI Hype Cycle, Technical Judgment Gets Mistaken for Excuses
 
