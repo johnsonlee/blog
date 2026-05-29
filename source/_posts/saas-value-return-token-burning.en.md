@@ -20,6 +20,8 @@ When Snowflake's earnings dropped, markets seemed to exhale. Not the "AI will di
 
 For the past six months, one question has been hanging over SaaS stocks: if AI can do the work directly, does traditional software still have value? More bluntly — if Agents become the new interface, does SaaS degrade from an operating system to a database? Snowflake gave the market a lifeline. Product revenue kept growing fast, full-year guidance went up, and AI demand didn't gut the business model. It actually made markets believe again that data infrastructure is still a core asset in the AI era.
 
+<!--more-->
+
 But the real takeaway here isn't "AI is bullish for SaaS again." The real signal is: markets are willing to value SaaS again — but only if you can prove AI isn't a margin-destroying black hole.
 
 SaaS stocks are undergoing a value reset. Not back to the pre-AI era — back to the most basic business logic: **the value of a software company isn't determined by how many tokens it consumed. It's determined by how much cash it made.**
@@ -68,32 +70,6 @@ The CEO thinks they're buying productivity.
 
 The CFO sees a new cost center.
 
-## Markets Have Stopped Listening to Stories
-
-In 2021, fast growth was all a SaaS company needed. Losses were fine.
-
-The logic was simple: grab land now, figure out profits later.
-
-By 2026, that pitch doesn't land anymore.
-
-Investors are back to scrutinizing Rule of 40, free cash flow, gross margin. Not because they suddenly got conservative — but because AI made "profits will come eventually" sound a lot less inevitable.
-
-Before, losses meant you were expanding.
-
-Now, losses might mean every user click is costing you money.
-
-Those are two very different kinds of losses.
-
-The first is investment.
-
-The second is COGS.
-
-Markets will value investment. They won't indefinitely absorb runaway COGS.
-
-That's why SaaS pricing logic is shifting: it used to be about growth; now it's about how much is left after the growth. It used to be about the AI roadmap; now it's about whether the AI roadmap crushes the margin.
-
-**AI can't just add revenue. It has to prove it won't eat the software economics model.**
-
 ## The Story Model Providers Sold Is Becoming Enterprise Invoices
 
 Over the past year, the best storytellers weren't SaaS companies. They were model companies.
@@ -130,7 +106,33 @@ In the short term, this looks like an innovation budget. In the long term, it's 
 
 **What SaaS companies fear most isn't that AI is too weak. It's that AI is strong enough but not cheap enough.**
 
-## The AI Narrative for SaaS Is Getting Repriced
+## Markets Have Stopped Listening to Stories
+
+In 2021, fast growth was all a SaaS company needed. Losses were fine.
+
+The logic was simple: grab land now, figure out profits later.
+
+By 2026, that pitch doesn't land anymore.
+
+Investors are back to scrutinizing Rule of 40, free cash flow, gross margin. Not because they suddenly got conservative — but because AI made "profits will come eventually" sound a lot less inevitable.
+
+Before, losses meant you were expanding.
+
+Now, losses might mean every user click is costing you money.
+
+Those are two very different kinds of losses.
+
+The first is investment.
+
+The second is COGS.
+
+Markets will value investment. They won't indefinitely absorb runaway COGS.
+
+That's why SaaS pricing logic is shifting: it used to be about growth; now it's about how much is left after the growth. It used to be about the AI roadmap; now it's about whether the AI roadmap crushes the margin.
+
+**AI can't just add revenue. It has to prove it won't eat the software economics model.**
+
+## The Market Will Split SaaS Into Two Groups
 
 Going forward, the market will split SaaS companies into two groups.
 
@@ -216,7 +218,7 @@ The real world doesn't reward demos.
 
 **The real world rewards unit economics.**
 
-## The Final Question Isn't Whether to Use AI. It's Who Pays for the Tokens.
+## Who Pays for the Tokens
 
 Every SaaS company is about to face the same problem: how do you pass through the AI cost?
 
