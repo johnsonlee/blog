@@ -10,7 +10,7 @@ tags:
   - Testing
   - ROI
 lang: en
-i18n_key: ai-automation-testing-bill
+i18n_key: anthropic-promises-vs-enterprise-bills
 ---
 
 The boss asked: "How's our AI automated testing going?"
@@ -47,8 +47,6 @@ Anthropic talks about Agents, reasoning, computer use, end-to-end task completio
 
 You pay first. Whether it works — that's a problem for the future.
 
-<!-- more -->
-
 ## Anthropic's Real Advantage Isn't the Model — It's the Narrative
 
 To be clear: Anthropic's models aren't weak.
@@ -72,6 +70,8 @@ Brilliant. Every problem that can't be solved today gets packaged and mailed to 
 Anthropic doesn't sell certainty. It sells the ability to package uncertainty as certainty. That's where enterprises get caught. Not because leadership is foolish. Not because engineers don't understand. But because the story is too complete. It hits exactly what enterprises want to hear: fewer hires, fewer scripts, less process overhead, less grinding work — let Agents handle everything automatically.
 
 Who wouldn't want to believe it?
+
+<!-- more -->
 
 ## In the AI Hype Cycle, Technical Judgment Gets Mistaken for Excuses
 
