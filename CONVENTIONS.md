@@ -68,7 +68,10 @@ tags:
 - Optimize posts lightly for WeChat readers without turning the article into WeChat-style motivational writing.
 - Mobile reading is the default assumption for WeChat: paragraphs should usually render as 1-3 lines on a phone.
 - Keep sharp judgment sentences as standalone paragraphs when they carry the argument.
-- Merge consecutive explanatory one-liners when they create unnecessary scrolling friction.
+- Do not split explanatory progression into a stack of one-sentence paragraphs. If several adjacent sentences explain the same point, merge them into one paragraph.
+- Standalone one-sentence paragraphs are allowed only for punchlines, sharp contrasts, explicit questions, or section-closing judgments.
+- Three or more consecutive one-sentence paragraphs are a warning sign. Merge them, convert a real enumeration into a list, or deliberately justify the ladder-like rhythm.
+- `npm run check:post-style` enforces this on changed posts; fix failures by improving paragraph rhythm, not by gaming punctuation.
 - Put the section's conclusion or core tension near the beginning of each section so readers can scan.
 - Use bold sparingly for a few key judgments, not as decoration.
 - Keep established English technical terms, but avoid packing too many English-heavy terms into one phone screen when a simpler phrasing works.
@@ -103,6 +106,7 @@ Write in Johnson's style: conversational with peers, opinionated, and concise.
 - Use questions to move the argument forward.
 - Use concrete imagined scenes to make abstract concepts visible.
 - Keep paragraphs breathable. A normal paragraph is usually 2-4 sentences, and mobile-facing posts may be shorter.
+- Before finalizing a post, scan each section for slide-like rhythm: repeated short standalone lines, repeated sentence openings, or list-shaped prose that is not an actual list. Revise those passages into coherent paragraphs.
 
 ### Structure
 
