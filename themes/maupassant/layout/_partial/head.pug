@@ -6,8 +6,20 @@ head
     meta(name='theme-color', content='#FFF', id='theme-color')
     meta(content='telephone=no', name='format-detection')
     -
+      var decodeHtmlEntities = function(text) {
+        return text
+          .replace(/&quot;/g, '"')
+          .replace(/&#34;/g, '"')
+          .replace(/&#x27;/g, "'")
+          .replace(/&#39;/g, "'")
+          .replace(/&ldquo;/g, '“')
+          .replace(/&rdquo;/g, '”')
+          .replace(/&lsquo;/g, '‘')
+          .replace(/&rsquo;/g, '’')
+          .replace(/&amp;/g, '&');
+      };
       var rawDesc = is_post() ? (page.description || strip_html(page.excerpt) || strip_html(page.content)) : '';
-      var seoDescription = rawDesc ? rawDesc.replace(/\s+/g, ' ').trim().substring(0, 200) : config.description;
+      var seoDescription = rawDesc ? decodeHtmlEntities(rawDesc).replace(/\s+/g, ' ').trim().substring(0, 200) : config.description;
     meta(name='description', content=seoDescription)
     meta(name='baidu-site-verification', content='sSd2p2uQfO')
     meta(name='keywords', content=config.keywords)

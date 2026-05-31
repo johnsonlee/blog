@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "npx hexo server -p 8000 --debug --draft --open",
-    "build": "npx hexo generate",
+    "build": "npm run check:conventions && npx hexo generate && npm run check:quotes",
+    "check:conventions": "node tools/check-conventions.js",
+    "check:quotes": "node tools/check-quotes.js",
     "clean": "npx hexo clean",
     "deploy": "npx hexo deploy"
   },
