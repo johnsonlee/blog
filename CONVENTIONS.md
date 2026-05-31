@@ -2,6 +2,12 @@
 
 This file contains post-format and writing conventions only.
 
+## Scope
+
+- Include rules that affect how posts are named, structured, excerpted, written, or rendered.
+- Do not include project overview, repository layout, setup steps, command references, deployment notes, or agent workflow instructions.
+- Keep operational documentation in the relevant README, package scripts, or agent instructions instead.
+
 ## Post Files
 
 - Published posts live in `source/_posts/`.
@@ -116,6 +122,8 @@ Overall narrative line: **hook -> observation -> insight / analogy -> judgment**
 - Use `**bold**` for core claims and key judgments.
 - Do not overuse bold. One bold phrase or sentence per paragraph is usually the maximum.
 - Bold text should usually be a complete judgment, not a single decorative word.
+- Use Chinese double quotes `“...”` when the quoted content is Chinese.
+- Use English straight double quotes `"..."` when the quoted content is English, even inside a Chinese paragraph.
 - Check the generated HTML when using quotation marks in mixed Chinese and English text, and avoid broken smart quotes.
 
 ### Avoid
