@@ -1,0 +1,132 @@
+# Conventions
+
+This file contains post-format and writing conventions only.
+
+## Post Files
+
+- Published posts live in `source/_posts/`.
+- Post filenames use lowercase kebab-case: `my-post-title.md`.
+- Bilingual posts use paired files: `<slug>.md` and `<slug>.en.md`.
+- The paired Chinese and English posts must share the same `i18n_key`.
+- English posts must include `lang: en`; Chinese posts do not need a `lang` field.
+- The permalink pattern is `:year/:month/:day/:title/`.
+
+## Front Matter
+
+Use this shape for Chinese posts:
+
+```yaml
+---
+title: Post Title
+date: YYYY-MM-DD HH:MM:SS
+categories:
+  - Category Name
+tags:
+  - Tag1
+  - Tag2
+i18n_key: post-slug
+---
+```
+
+Use this shape for English posts:
+
+```yaml
+---
+title: "English Title"
+date: YYYY-MM-DD HH:MM:SS
+lang: en
+i18n_key: post-slug
+categories:
+  - Category Name
+tags:
+  - Tag1
+  - Tag2
+---
+```
+
+- Categories should reuse existing category names from `_config.yml` and existing posts.
+- Tags are in English.
+- Keep `date`, `categories`, `tags`, and `i18n_key` aligned between paired Chinese and English posts.
+
+## Excerpts
+
+- Use `<!-- more -->` to control the excerpt shown in post lists.
+- Place `<!-- more -->` after the short hook that should appear on the posts list, usually after 1-2 short paragraphs.
+- The target excerpt length is about 4-5 rendered lines on the posts list.
+- Do not put `<!-- more -->` so early that the list shows only one line.
+- Do not push `<!-- more -->` so far down that the list becomes a long intro.
+- For bilingual posts, put `<!-- more -->` at the corresponding semantic boundary in both language files.
+
+## WeChat Reading
+
+- Optimize posts lightly for WeChat readers without turning the article into WeChat-style motivational writing.
+- Mobile reading is the default assumption for WeChat: paragraphs should usually render as 1-3 lines on a phone.
+- Keep sharp judgment sentences as standalone paragraphs when they carry the argument.
+- Merge consecutive explanatory one-liners when they create unnecessary scrolling friction.
+- Put the section's conclusion or core tension near the beginning of each section so readers can scan.
+- Use bold sparingly for a few key judgments, not as decoration.
+- Keep established English technical terms, but avoid packing too many English-heavy terms into one phone screen when a simpler phrasing works.
+- The goal is a readable mobile rhythm while preserving the blog's direct, opinionated voice.
+
+## Writing Style
+
+Write in Johnson's style: conversational with peers, opinionated, and concise.
+
+### Stance Consistency
+
+- Keep new posts consistent with Johnson's existing views.
+- For topics Johnson has written about before, such as AI's effect on engineers, Agent economics, or investing analysis, check the previous stance before writing.
+- Do not soften the conclusion just to make it sound safer.
+- If the stance is unclear, ask instead of defaulting to a neutral middle-ground position.
+
+### Language
+
+- Chinese posts should primarily use Chinese while keeping established technical terms, product names, and acronyms in English, such as Token, Agent, API, ROI, App, Feed, trade-off, and judgment.
+- Do not force translations for English terms that are already standard in the field.
+- Natural code-switching is acceptable in Chinese posts when it matches the author's voice.
+- Non-technical posts should not force the author's technical identity into the framing.
+- Use embedded SVG for diagrams when needed in non-technical posts.
+- Technical posts should use fewer code blocks and more PlantUML diagrams when diagrams communicate the idea better.
+
+### Tone And Rhythm
+
+- Keep the tone conversational but substantive.
+- Do not write like an academic paper, press release, or neutral corporate memo.
+- Make clear judgments and avoid trying to please both sides.
+- Cut filler aggressively. If a word, phrase, or paragraph does not carry the argument, remove it.
+- Use questions to move the argument forward.
+- Use concrete imagined scenes to make abstract concepts visible.
+- Keep paragraphs breathable. A normal paragraph is usually 2-4 sentences, and mobile-facing posts may be shorter.
+
+### Structure
+
+Overall narrative line: **hook -> observation -> insight / analogy -> judgment**
+
+- Start with a concrete, vivid hook rather than an abstract problem statement.
+- The opening should make readers want to continue.
+- Let paragraphs advance the argument. Do not rely on empty transition phrases.
+- `##` headings must carry information.
+- Avoid generic headings such as "First Point" or "Background".
+- Use `###` for subpoints inside a section. Do not simulate headings with bold text.
+- The ending should return to the opening or core tension and make a clear judgment.
+- Ending with a sharp question or compressed final sentence is acceptable when it fits the argument.
+
+### Emphasis
+
+- Use `**bold**` for core claims and key judgments.
+- Do not overuse bold. One bold phrase or sentence per paragraph is usually the maximum.
+- Bold text should usually be a complete judgment, not a single decorative word.
+- Check the generated HTML when using quotation marks in mixed Chinese and English text, and avoid broken smart quotes.
+
+### Avoid
+
+- Do not use textbook structures such as "first, second, finally".
+- Do not use empty stock phrases or obvious cliches.
+- Do not repeatedly start paragraphs with the same background framing.
+- Do not overuse emoji.
+- Do not write in a press-release or PR style.
+- Do not use a detached author label; use first person when the article needs a personal stance.
+- Do not use bold text as a heading. Use `###`.
+- Do not keep self-evident modifiers.
+- Do not use filler connectors when the sentence can state the point directly.
+- Do not start with generic technology-progress boilerplate or end with a vague "wait and see" conclusion.
