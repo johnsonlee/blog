@@ -1,5 +1,5 @@
 ---
-title: "The Real AI PC Was Hidden in WWDC"
+title: "Every Signal Points to On-Device"
 date: 2026-06-13 12:30:00
 lang: en
 i18n_key: ai-pc-local-inference
@@ -14,11 +14,13 @@ tags:
   - Token
 ---
 
-Everyone is shouting "AI PC" these days. Microsoft pushes Copilot+ PC, Intel, AMD and Qualcomm line up to talk NPUs, NVIDIA keeps pushing RTX AI PC and Personal AI Supercomputer. Then WWDC arrived, and Apple didn't say "AI PC" once.
+An AI bill that climbs the more you use it, a "the new era of PC" chant several giants let out at once, and a Siri quietly rewritten at WWDC — these three things look unrelated, yet they're all saying the same sentence.
 
 <!-- more -->
 
-But put WWDC and this whole AI PC narrative side by side, and you notice something counterintuitive: **the loudest one isn't the one doing it most thoroughly, and the one doing it most thoroughly didn't shout at all.**
+**The future isn't in the cloud. It's on the device in your hand.**
+
+They come from three completely different directions: the bill is the cost direction, "new PC" is the industry direction, Siri is the engineering direction. The three lines never talked to each other, yet they all point to the same place — on-device models. Let's take them apart one by one.
 
 ## Microsoft Says PC, NVIDIA Says Workstation, Apple Says Ecosystem
 
@@ -133,10 +135,10 @@ It isn't. The old PC's core was the browser, Office, local files, keyboard and m
 
 Over the past decade, documents, photos, software and models all got taken by the cloud. AI created a reverse force — data too private, latency can't be too high, tokens too expensive, personal context too scattered — and pulled compute back to the device side.
 
-That's the meaning of Apple's WWDC. It didn't package itself as an AI PC company, but it did exactly the most core thing of the AI PC era:
+That's the real takeaway from WWDC. Apple didn't package itself as an AI PC company, yet it turned the model into a default capability of the device and the operating system — the most core thing of the AI PC era, done in a form it never had to shout about.
 
-> Turn AI from an application in the cloud into a default capability of the device and the operating system.
+Back to those three things from the start. The bill forces you to save, the industry chants new PC, Siri rewrote itself — from money, from industry, from engineering, all three directions say the same sentence:
 
-The so-called new era of PC was never the PC returning to the center. It's personal computing devices becoming, once again, the center of AI inference, context and task scheduling.
+> The model is moving from the cloud back onto the device, and this time there's no turning back.
 
-Apple doesn't need the words "AI PC," because it already holds the thing underneath the words.
+Whoever makes that the default first takes the entry point of the next decade.
