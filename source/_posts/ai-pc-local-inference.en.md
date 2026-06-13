@@ -1,5 +1,5 @@
 ---
-title: "Apple Trailed in AI for Years; This Time It Bet Right"
+title: "After Years Behind in AI, Apple Finally Bet Right"
 date: 2026-06-13 12:30:00
 lang: en
 i18n_key: ai-pc-local-inference

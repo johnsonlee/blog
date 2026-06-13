@@ -1,5 +1,5 @@
 ---
-title: 苹果的 AI 掉队这么多年，这次押对了
+title: 掉队 AI 多年的苹果，这回终于押对了
 date: 2026-06-13 12:30:00
 categories:
   - Independent Thinking
