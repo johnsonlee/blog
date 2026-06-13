@@ -38,7 +38,7 @@ Microsoft is selling a machine, NVIDIA is selling a node, Apple is selling a web
 
 Why move it, I already covered in the [last piece](/en/2026/05/31/a-new-era-of-pc/): cloud tokens are too expensive, enterprise AI bills get heavier the more you use them, and firing every high-frequency, low-to-mid-complexity task at the most expensive cloud model is just paying a tax to the model vendors every day. I won't repeat that judgment here. This piece is about the other half — what Apple gave at WWDC is the most complete OS-level answer this road has so far.
 
-## An LLM Is No Longer a Feature of Some App, but a Capability of the OS
+## This Time, the Model Answers to the OS
 
 Watching WWDC, it's easy to fixate on "did Siri actually get smarter." That question is too small.
 
@@ -52,7 +52,7 @@ This is the real dividing line of the AI PC era:
 
 Windows is doing this. macOS and iOS are doing it too. The only difference is the entry point — Microsoft enters from enterprise Copilot, Apple from personal context. And personal context leans local by nature.
 
-## Running an LLM on an iPhone: The Hard Part Isn't Compression, It's DRAM
+## What Even Lets an iPhone Run a Big Model?
 
 When people talk about on-device LLMs, they stop at one sentence: the model is quantized, so it can run.
 
@@ -107,7 +107,7 @@ Because swapping experts has a cost, Apple doesn't follow the server's token-lev
 
 A server can brute-force frequent token-level swapping with HBM and large VRAM; a phone or thin-and-light laptop can't. So there's only one engineering path for on-device AI — shrink the active working set, raise cache reuse, hold down memory thrashing and power. This isn't Apple's special trick. It's what everyone has to do sooner or later.
 
-## On-Device Is the First Filter, Not a Replacement for the Cloud
+## On-Device Only Handles the First Layer
 
 Don't read AI PC as "we won't need cloud models anymore." The opposite — cloud models will keep existing and keep getting stronger.
 
@@ -115,7 +115,7 @@ What changes is the division of labor. The local device catches the tasks that "
 
 So the future isn't "cloud AI vs. local AI." It's the local model doing the first layer, the cloud model doing the second, and the OS and agents doing task routing in between. That's the meaning of Private Cloud Compute — on-device isn't the endpoint, it's the first filter: small tasks solved locally, heavy tasks to the cloud, private data kept on the device as much as possible, the user asked to confirm when necessary.
 
-## What These Players Are Fighting Over Is the Same Thing: The Default Entry Point
+## They're All Fighting for the Same Entry Point
 
 Pull the view up, and Microsoft, NVIDIA and Apple are all talking about different products on the surface while fighting over the same thing underneath.
 
@@ -127,7 +127,7 @@ And Apple's position here is unusual. It isn't the strongest single model, but i
 
 By then memory is no longer about "opening a few Chrome tabs." It's space for model weights, the KV cache, local context, multimodal buffers and the agent's workspace. 8GB could still fool an ordinary user in the past; in the AI PC era it gets more and more awkward. Unified memory will be repriced.
 
-## So "A New Era of PC" Isn't the PC Going Back to the Past
+## It's Not the Old PC Coming Back
 
 The most deceptive thing about the term AI PC is that it makes people think the PC industry is returning to its golden growth years.
 
