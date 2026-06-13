@@ -1,5 +1,5 @@
 ---
-title: "Apple Doesn't Need the Words AI PC"
+title: "The Real AI PC Was Hidden in WWDC"
 date: 2026-06-13 12:30:00
 lang: en
 i18n_key: ai-pc-local-inference

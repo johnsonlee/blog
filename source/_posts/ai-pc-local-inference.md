@@ -1,5 +1,5 @@
 ---
-title: 苹果不需要 AI PC 这个词
+title: 真正的 AI PC，藏在 WWDC 里
 date: 2026-06-13 12:30:00
 categories:
   - Independent Thinking
