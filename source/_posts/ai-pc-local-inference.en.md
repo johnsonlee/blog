@@ -117,23 +117,26 @@ NAND bandwidth and latency cannot sustain token-by-token inference. The hot path
 ```plantuml
 @startuml
 !theme plain
+left to right direction
 skinparam backgroundColor white
 skinparam defaultFontName Arial
-skinparam defaultFontSize 14
+skinparam defaultFontSize 13
+skinparam ArrowColor #333333
 skinparam rectangle {
-    RoundCorner 12
+    RoundCorner 10
     BorderColor #666666
+    Padding 18
 }
 
-rectangle "**OS / Scheduling & Routing**\ndecides which capabilities a prompt needs" as os #F8BBD9
-rectangle "**NPU / GPU / CPU**\ninference execution units" as exec #C8E6C9
-rectangle "**DRAM**\ncurrent task workbench\nactive experts + KV cache" as dram #B3E5FC
-rectangle "**NAND**\nfull model warehouse\nall weights live here" as nand #FFE0B2
+rectangle "OS" as os #F8BBD9
+rectangle "NPU / GPU / CPU" as exec #C8E6C9
+rectangle "DRAM" as dram #B3E5FC
+rectangle "NAND" as nand #FFE0B2
 
 os --> exec
 exec --> dram
-dram --> nand : request needed experts
-nand --> dram : load active working set
+dram --> nand
+nand --> dram
 @enduml
 ```
 
