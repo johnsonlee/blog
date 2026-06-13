@@ -1,5 +1,5 @@
 ---
-title: "The AI PC Is Already in Your Pocket"
+title: "Apple Trailed in AI for Years; This Time It Bet Right"
 date: 2026-06-13 12:30:00
 lang: en
 i18n_key: ai-pc-local-inference
@@ -141,4 +141,4 @@ Back to those three things from the start. The bill forces you to save, the indu
 
 > The model is moving from the cloud back onto the device, and this time there's no turning back.
 
-Whoever makes that the default first takes the entry point of the next decade.
+Whoever makes that the default first takes the entry point of the next decade. Apple trailed in AI for years — this time, it bet on the right side.
