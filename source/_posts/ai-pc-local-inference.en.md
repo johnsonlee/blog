@@ -1,5 +1,5 @@
 ---
-title: "The Cloud Can't Hold AI Anymore"
+title: "The AI PC Is Already in Your Pocket"
 date: 2026-06-13 12:30:00
 lang: en
 i18n_key: ai-pc-local-inference

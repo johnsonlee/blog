@@ -1,5 +1,5 @@
 ---
-title: 云端关不住 AI 了
+title: AI PC 已经在你口袋里了
 date: 2026-06-13 12:30:00
 categories:
   - Independent Thinking
