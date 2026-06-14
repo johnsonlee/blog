@@ -15,7 +15,7 @@ i18n_key: ai-pc-local-inference
 
 Siri 这个名字，现在多少有点尴尬。2011 年它进 iPhone 时，像是未来提前来了；十几年后，它更像一个偶尔能用的语音快捷方式。你问复杂一点的问题，它听错、答偏、转去网页搜索，用户也懒得再生气。
 
-所以 WWDC26 再把 Siri 推回 Apple Intelligence 的中心时，问题很尖锐：凭什么这次会不一样？
+所以 WWDC26 再把 Siri 推回 Apple Intelligence 的中心时，大家的第一反应大概是：就这？这不是早就有了吗？
 
 答案藏在发布会后半段那些更硬的词里：Foundation Models、App Intents、Private Cloud Compute、Core AI。再往下挖，就是一个更粗暴的问题：iPhone 怎么在本地跑 LLM？
 

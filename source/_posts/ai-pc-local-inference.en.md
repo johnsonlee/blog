@@ -16,7 +16,7 @@ tags:
 
 Siri is an awkward name now. In 2011, Siri entering the iPhone felt like the future arriving early. More than a decade later, it feels like a voice shortcut that sometimes works. Ask anything slightly complicated and it mishears, answers around the question, or throws you into web search. Users have stopped even getting angry.
 
-So when WWDC26 put Siri back at the center of Apple Intelligence, the sharp question is simple: why should this time be different?
+So when WWDC26 put Siri back at the center of Apple Intelligence, the first reaction is easy to imagine: that's it? Didn't Siri already exist?
 
 The answer sits behind the harder words in the second half of the keynote: Foundation Models, App Intents, Private Cloud Compute, Core AI. Keep digging and the question becomes much more concrete: how does an iPhone run an LLM locally?
 
