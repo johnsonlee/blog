@@ -107,6 +107,8 @@ Write in Johnson's style: conversational with peers, opinionated, and concise.
 - Use concrete imagined scenes to make abstract concepts visible.
 - Keep paragraphs breathable. A normal paragraph is usually 2-4 sentences, and mobile-facing posts may be shorter.
 - Before finalizing a post, scan each section for slide-like rhythm: repeated short standalone lines, repeated sentence openings, or list-shaped prose that is not an actual list. Revise those passages into coherent paragraphs.
+- Do not use a contrast-then-elevation setup. Avoid patterns like "everyone is watching A, I am watching B", "on the surface it is A, the real issue is B", or "this is not A but a deeper B". Start from the concrete fact or judgment directly.
+- Do not explain the title inside the post. Avoid title-explanation sentences such as "the title means", "by X I mean", or "the phrase in the title refers to". The title hooks the reader; the body advances the argument.
 
 ### Structure
 
@@ -114,6 +116,8 @@ Overall narrative line: **hook -> observation -> insight / analogy -> judgment**
 
 - Start with a concrete, vivid hook rather than an abstract problem statement.
 - The opening should make readers want to continue.
+- Openings must not use a staged contrast just to sound deep. Do not manufacture height by contrasting public attention with the author's "deeper" angle.
+- Do not start the body by unpacking the title or explaining what the title "really means".
 - Let paragraphs advance the argument. Do not rely on empty transition phrases.
 - `##` headings must carry information.
 - Avoid generic headings such as "First Point" or "Background".
@@ -143,4 +147,6 @@ Overall narrative line: **hook -> observation -> insight / analogy -> judgment**
 - Do not use bold text as a heading. Use `###`.
 - Do not keep self-evident modifiers.
 - Do not use filler connectors when the sentence can state the point directly.
+- Do not use "contrast first, elevate second" narration, including "many people watch A, I watch B", "surface vs real issue", "not A but deeper B", or "the real point is".
+- Do not write sentences that explain or justify the post title.
 - Do not start with generic technology-progress boilerplate or end with a vague "wait and see" conclusion.

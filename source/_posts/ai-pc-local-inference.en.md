@@ -22,7 +22,7 @@ The interesting move was buried in the system layer. Apple still did not say "AI
 
 <!-- more -->
 
-Apple has not won AI. Siri still carries old debt. But Apple has finally understood the next question: personal AI will not stay inside browsers and chat apps forever. It will move back into devices, operating systems, and default workflows.
+Apple still trails the frontier labs. Siri still carries old debt. Apple has finally understood the next question: personal AI will not stay inside browsers and chat apps forever. It will move back into devices, operating systems, and default workflows.
 
 ## The Bill Put the PC Back on the Table
 
@@ -172,7 +172,7 @@ If the iPhone is the carried entry point of personal AI, the Mac is the producti
 
 ## Bottlenecks Beat Slogans
 
-For investing, do not get excited just because something says "AI PC." Terminal brands matter, but the real bottlenecks sit further upstream: memory capacity, memory bandwidth, NPU/GPU inference capability, unified memory architecture, advanced packaging, power management, thermals, local model runtime, OS-level AI APIs, and developer ecosystem.
+For investing, do not get excited just because something says "AI PC." Terminal brands matter, but the bottlenecks sit further upstream: memory capacity, memory bandwidth, NPU/GPU inference capability, unified memory architecture, advanced packaging, power management, thermals, local model runtime, OS-level AI APIs, and developer ecosystem.
 
 This chain touches Apple, Microsoft, NVIDIA, Qualcomm, AMD, Intel, ARM, storage and memory supply chains, PC OEMs, and software development tools. A crowded chain does not mean every AI PC concept wins.
 
