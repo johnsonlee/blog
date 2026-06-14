@@ -14,13 +14,13 @@ tags:
   - Token
 ---
 
-Siri is an awkward name now.
+I did not watch the WWDC26 livestream.
 
-When it came to iPhone in 2011, it felt like the future arriving early. More than a decade later, it feels like a voice shortcut. Simple commands still work. Anything slightly complex and it mishears, answers around the question, or sends you to search.
+When the Siri news crossed my screen, my first reaction was blunt: that's it? Didn't Siri already exist?
 
-So when WWDC26 put Siri back at the center of Apple Intelligence, my first reaction was: that's it? Didn't Siri already exist?
+Siri came to iPhone in 2011 and felt like the future. More than a decade later, it feels like a voice shortcut. Simple commands still work. Anything slightly twisted and it mishears, answers around the question, or sends you to search.
 
-But a few minutes later, it felt off.
+Then I went through Apple’s developer material, and the question got harder.
 
 Siri is no longer just listening to a sentence. It has to see the screen, read personal context, know what each app can do, and handle permission before execution. The voice entry point is the same. The chain behind it changed.
 
@@ -62,7 +62,7 @@ App Intents decides how the action lands in an app. Apps hand entities, actions,
 
 Core AI decides how the model runs on hardware. Model conversion, AOT compilation, specialization, cache, profiling, all the way down to CPU, GPU, and Neural Engine.
 
-Once those pieces connect, Siri starts looking like a system router: which context stays local, which app takes over, when PCC enters, and when a third-party model fills the gap.
+Once Foundation Models, App Intents, PCC, and Core AI connect, Siri starts looking like a system router: which context stays local, which app takes over, when PCC enters, and when a third-party model fills the gap.
 
 That is the WWDC26 signal: Apple wants task routing back at the system layer.
 
@@ -97,7 +97,7 @@ So "iPhone runs 20B" cannot be read with server logic. 20B is closer to a parame
 1B INT2 ≈ 0.25GB
 ```
 
-That starts to look like something a phone can carry. In Apple’s latest public [AFM 3](https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models) material, the on-device family has two paths: AFM 3 Core, a 3B dense model, and AFM 3 Core Advanced, a 20B sparse model. The key line is this: 20B parameters, only 1B to 4B active per request, full weights in flash memory, meaning NAND.
+With an active set, the phone can carry the bill. In Apple’s latest public [AFM 3](https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models) material, the on-device family has two paths: AFM 3 Core, a 3B dense model, and AFM 3 Core Advanced, a 20B sparse model. The key line is this: 20B parameters, only 1B to 4B active per request, full weights in flash memory, meaning NAND.
 
 That line matters.
 
@@ -214,9 +214,9 @@ During Transformer generation, every token leaves key/value behind. Longer conte
 
 Apple already touched this in the 2025 technical report. It split the on-device model into two blocks, removed key/value projections from the later 37.5 percent of transformer layers, and reused the KV cache from the first block. KV cache memory dropped 37.5 percent. Prefill TTFT also dropped about 37.5 percent.
 
-That is what running an LLM on a phone really looks like.
+Phone-side LLM inference lives at this level of detail.
 
-The problem lives at the level of every memory block, every transfer, every token cache.
+Every memory block, every transfer, every token cache has to be counted.
 
 ## App Intents Catch The Action
 
@@ -230,13 +230,13 @@ A user says one sentence. The system reads context locally first. If the local m
 
 The model enters the OS scheduling path.
 
-What runs locally, what goes to PCC, which app can execute, which context can be read, and which result returns to system UI all move back to the system layer. Apple Intelligence cannot become a system capability without that.
+Local execution, PCC, apps, context, and system UI all move back to the system layer. Apple Intelligence cannot become a system capability without system-level routing.
 
-Apple has been slow in AI narrative, and Siri’s debt is real. But this is the kind of work Apple is good at: turning model, apps, runtime, privacy, and cloud routing into one system ledger.
+Apple has been slow in AI narrative, and Siri’s debt is real. But system ledgers are Apple’s home field: model, apps, runtime, privacy, and cloud routing in one scheduling layer.
 
 ## From iPhone Back To AI PC
 
-If iPhone can run this bill, Mac and PC have no excuse to stare only at TOPS. Mac has larger DRAM, more forgiving thermal and power budgets, and the same Apple Silicon path. Core AI also lands on Mac. Apple’s macOS and AI and Machine Learning guides describe Core AI as built directly into the OS and purpose-built for Apple Silicon. Developers can download, run, benchmark Qwen, Mistral, SAM3, and wire them into apps.
+If iPhone can run this memory bill, Mac and PC have no excuse to stare only at TOPS. Mac has larger DRAM, more forgiving thermal and power budgets, and the same Apple Silicon path. Core AI also lands on Mac. Apple’s macOS and AI and Machine Learning guides describe Core AI as built directly into the OS and purpose-built for Apple Silicon. Developers can download, run, benchmark Qwen, Mistral, SAM3, and wire them into apps.
 
 AI PC cannot be judged by one NPU.
 
@@ -251,17 +251,15 @@ local and cloud routing
 
 iPhone proves the hardest memory constraint can be split: 20B in NAND, 1B to 4B in DRAM, QAT for low bit, KV cache optimized separately. Mac and PC scale that mechanism up.
 
-That is how I read AI PC now.
+I read AI PC through one question now: whoever keeps more useful tokens alive under limited DRAM, power, and thermals, and turns those tokens into system actions, gets a real seat at the table.
 
-Whoever keeps more useful tokens alive under limited DRAM, power, and thermals, and turns those tokens into system actions, gets a real seat at the table.
+WWDC26 at least laid Apple’s AI ledger out: natural-language entry point, on-device models, app capability graph, PCC, Core AI runtime, and Apple Silicon finally in one place.
 
-WWDC26 at least laid Apple’s route out: natural-language entry point, on-device models, app capability graph, PCC, Core AI runtime, and Apple Silicon all in one ledger.
-
-This path will not be quick. App Intents need developer work. PCC has to prove availability. The full AFM 3 Core Advanced technical report is still not public. Siri still has a long way from "can hear" to "can finish."
+The path will not be quick. App Intents need developer work. PCC has to prove availability. The full AFM 3 Core Advanced technical report is still not public. Siri still has a long way from "can hear" to "can finish."
 
 But the direction is finally right.
 
-This starts with Siri. It will not stop at Siri.
+The story starts with Siri. It will not stop at Siri.
 
 ## References
 
