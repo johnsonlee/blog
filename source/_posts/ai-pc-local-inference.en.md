@@ -18,15 +18,15 @@ Siri is an awkward name now. In 2011, Siri entering the iPhone felt like the fut
 
 So when I saw WWDC26 put Siri back at the center of Apple Intelligence, my first reaction was: that's it? Didn't Siri already exist?
 
-I did not care much at first either. Siri has been an entry point for too long; swapping in a larger model is not interesting by itself. This time the object changed: screen content, personal context, app actions, and execution permissions. Siri starts moving from answering to acting.
+I did not care much at first either. Siri has been an entry point for too long; swapping in a larger model is not interesting by itself. This time the object changed: screen content, personal context, app actions, and execution permissions. How does it know what I am looking at? How does one sentence become an app action? Who manages permission and confirmation before execution?
 
-Once it has to act, the question lands on the iPhone. Natural language gets understood locally first. Work that can stay local stays local. Harder tasks go to PCC. That sounds like product language until you open the ledger: the phone has to run a useful enough LLM locally.
+Those questions push Siri one step forward: it has to act. Once it has to act, the question lands on the iPhone: if natural language is understood locally first, local work stays local, and harder work goes to PCC, how much inference does the phone have to carry?
 
-Where weights live, how much DRAM is active, how KV cache is controlled, and when work goes cloud decide whether this works. If those bills do not add up, the keynote story does not land. Leave aside whether Siri sounds smart. Start with the iPhone ledger.
+I started paying attention because the problem became an engineering ledger: how does an iPhone run a useful enough LLM at all? Where weights live, how much DRAM is active, how KV cache is controlled, and when work goes cloud decide whether this works. If those bills do not add up, the keynote story does not land.
 
 <!-- more -->
 
-WWDC26 pulled several pieces behind Siri that used to feel separate: Apple Intelligence, Foundation Models, App Intents, Private Cloud Compute, and Core AI. None of those names is surprising alone. Together, they change the shape of the product.
+WWDC26 pulled several pieces behind Siri that used to feel separate: Apple Intelligence, Foundation Models, App Intents, Private Cloud Compute, and Core AI. None of those names is surprising alone. Together, they force a question: is Siri still a voice entry point, or is it becoming a system-level AI router?
 
 Old Siri was closer to a voice-command router. Hear a sentence, match a domain, call a capability. The new path has to understand context on device, map the request to app actions, finish locally when the local model is enough, and hand off to PCC or another provider when it is not.
 
@@ -40,7 +40,7 @@ I start with the names.
 
 At the model layer, Apple’s latest public [AFM 3](https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models) material shows two on-device paths: AFM 3 Core, a 3B dense model, and AFM 3 Core Advanced, a 20B sparse model. The latter activates only 1B to 4B parameters per request. The full weights live in flash memory, meaning NAND.
 
-Once I put those pieces back behind Siri, the line starts to make sense: natural-language entry point, system context, app actions, local model, PCC fallback, and low-level runtime all sit on one path.
+Once I put those pieces back behind Siri, the line starts to make sense. Natural-language entry point, system context, app actions, local model, PCC fallback, and low-level runtime all sit on one path. The sharper question follows: which parts of that path have to stay local?
 
 A user says one sentence. The system has to break it into executable steps:
 
