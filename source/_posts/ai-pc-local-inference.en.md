@@ -18,7 +18,7 @@ Siri is an awkward name now. In 2011, Siri entering the iPhone felt like the fut
 
 So when WWDC26 put Siri back at the center of Apple Intelligence, the first reaction is easy to imagine: that's it? Didn't Siri already exist?
 
-Peel back one layer and the feeling changes. Siri looks like more than a voice front end with a better chat backend. It starts touching screen content, personal context, and app actions. The reaction shifts to: this is a little different.
+Peel back one layer and the first reaction starts to loosen. Siri looks like more than a voice front end with a better chat backend. It starts touching screen content, personal context, and app actions. The reaction shifts to: this is a little different.
 
 Go one layer deeper, and screen content, personal context, app actions, local models, and PCC start connecting. Now it gets interesting. Once the question lands on iPhone running an LLM locally, it gets technical fast. If a phone can keep that layer of understanding and routing local, the reaction moves again: this is seriously impressive. After the memory math, there is only one line left: this is wild.
 
