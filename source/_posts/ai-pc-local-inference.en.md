@@ -14,67 +14,53 @@ tags:
   - Token
 ---
 
-Siri is an awkward name now. In 2011, Siri entering the iPhone felt like the future arriving early. More than a decade later, it feels like a voice shortcut that sometimes works. Ask anything slightly complicated and it mishears, answers around the question, or throws you into web search. Users have stopped even getting angry.
+Siri is awkward now. In 2011, it felt like the future on an iPhone. More than a decade later, it feels like a voice shortcut. Ask anything complex and it mishears, answers around the question, or sends you to search.
 
-So when I saw WWDC26 put Siri back at the center of Apple Intelligence, my first reaction was: that's it? Didn't Siri already exist?
+So when WWDC26 put Siri back at the center of Apple Intelligence, my first reaction was: that's it? Didn't Siri already exist?
 
-I did not care much at first either. Siri has been an entry point for too long; swapping in a larger model is not interesting by itself. This time the object changed: screen content, personal context, app actions, and execution permissions. How does it know what I am looking at? How does one sentence become an app action? Who manages permission and confirmation before execution?
+But as I kept watching, something changed. Siri has to see the screen, read personal context, call apps, and handle permission. It has to act.
 
-Those questions push Siri one step forward: it has to act. Once it has to act, the question lands on the iPhone: if natural language is understood locally first, local work stays local, and harder work goes to PCC, how much inference does the phone have to carry?
+Then the question gets hard: why can iPhone understand locally first? What stays on device? What goes to PCC? If that bill does not add up, a smarter Siri is still just a demo.
 
-I started paying attention because the problem became an engineering ledger: how does an iPhone run a useful enough LLM at all? Where weights live, how much DRAM is active, how KV cache is controlled, and when work goes cloud decide whether this works. If those bills do not add up, the keynote story does not land.
+I cared about one question: **how does an iPhone run a useful enough LLM.**
 
 <!-- more -->
 
-WWDC26 pulled several pieces behind Siri that used to feel separate: Apple Intelligence, Foundation Models, App Intents, Private Cloud Compute, and Core AI. None of those names is surprising alone. Together, they force a question: is Siri still a voice entry point, or is it becoming a system-level AI router?
+WWDC26 puts Foundation Models, App Intents, Private Cloud Compute, and Core AI behind Siri. The names are familiar. Together, they become interesting: Siri starts looking like a system AI router.
 
-Old Siri was closer to a voice-command router. Hear a sentence, match a domain, call a capability. The new path has to understand context on device, map the request to app actions, finish locally when the local model is enough, and hand off to PCC or another provider when it is not.
+Old Siri was a voice-command dispatcher. Hear a sentence, match a domain, call a capability. The new Siri has to understand context on device, then decide whether the local model runs, an app acts, PCC takes over, or a third-party model fills the gap.
 
-The hard part is engineering: **how does a memory-constrained, power-constrained iPhone run an LLM at all.**
+"Voice assistant upgrade" is too small a frame. This is a system ledger.
 
-## A Full Stack Behind The Entry Point
+## A Stack Behind Siri
 
-I start with the names.
+If this were just a larger model behind Siri, I would not buy it. What stopped me was that the stack suddenly became whole.
 
-[Foundation Models framework](https://developer.apple.com/wwdc26/guides/apple-intelligence/) gives apps a Swift API for the on-device model behind Apple Intelligence. It can also connect to Private Cloud Compute, Claude, Gemini, or any provider that conforms to the Language Model protocol. [App Intents](https://developer.apple.com/videos/play/wwdc2026/240/) expose app content and actions to Apple Intelligence, so Siri can find content through natural language, perform cross-app actions, and use screen context. [Core AI](https://developer.apple.com/videos/play/wwdc2026/324/) sits lower, handling model conversion, optimization, deployment, profiling, ahead-of-time compilation, model specialization, and cache.
+[Foundation Models framework](https://developer.apple.com/wwdc26/guides/apple-intelligence/) lets apps call the on-device model behind Apple Intelligence, and also connect to PCC, Claude, Gemini, or another provider. [App Intents](https://developer.apple.com/videos/play/wwdc2026/240/) hands app entities, actions, schemas, semantic indexes, and onscreen context to the system. [Core AI](https://developer.apple.com/videos/play/wwdc2026/324/) goes lower: model conversion, AOT compilation, specialization, cache, and profiling.
 
-At the model layer, Apple’s latest public [AFM 3](https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models) material shows two on-device paths: AFM 3 Core, a 3B dense model, and AFM 3 Core Advanced, a 20B sparse model. The latter activates only 1B to 4B parameters per request. The full weights live in flash memory, meaning NAND.
+Then the model. Apple’s latest public [AFM 3](https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models) material has two on-device paths: AFM 3 Core, a 3B dense model, and AFM 3 Core Advanced, a 20B sparse model. The latter activates only 1B to 4B parameters per request. The full weights live in NAND.
 
-Once I put those pieces back behind Siri, the line starts to make sense. Natural-language entry point, system context, app actions, local model, PCC fallback, and low-level runtime all sit on one path. The sharper question follows: which parts of that path have to stay local?
+Siri’s position changes. It is making system choices: where context comes from, which app can act, how far the local model runs, and when PCC takes over.
 
-A user says one sentence. The system has to break it into executable steps:
+Take a plain request:
 
 ```text
-understand intent
-read current context
-find the relevant app capability
-choose local or cloud execution
-write the result back into the user experience
+send this boarding pass to my wife
 ```
 
-Old Siri was stuck in fixed intents and backend services. New Siri has to deal with on-device models, system context, app schemas, runtime, and privacy boundaries at the same time. The old question-and-answer frame does not survive that.
+A chat box can answer with fluff. The OS cannot. It has to know which image on screen is the boarding pass, who "my wife" is in Contacts, which messaging app to use, what attachment to include, and whether to ask for confirmation.
 
-## Siri Hooks Into System Reasoning
+That is where App Intents sits. The LLM reads language and context. App Intents lands that understanding on executable actions. Without that schema layer, Siri can understand and still fail to act.
 
-Imagine a very ordinary request: "send this boarding pass to my wife."
+The longer the action chain, the more the local model matters. Shipping screen content, Contacts, and app data to the cloud every time breaks privacy, latency, and cost. iPhone has to filter most of it locally first.
 
-That sentence is easy to answer in a chat box and hard to execute inside an operating system. The system has to know which image on screen is the boarding pass, who "my wife" is in Contacts, which messaging app to use, what attachment to include, and whether confirmation is required. Fixed intents leave too many cracks.
+## Memory Comes First
 
-WWDC26’s App Intents and App Schemas are filling that map. Apps expose their entities, actions, schemas, semantic index, and onscreen context to the system. The LLM understands language and context. App Intents turn that understanding into executable actions.
+The first wall for on-device LLMs is DRAM, before TOPS.
 
-Siri and a chatbot split here. A chatbot generates text. Siri calls system capabilities. A polished sentence is cheap; getting the task done is the point.
+Even with a strong NPU, weights, KV cache, activations, runtime buffers, vision features, audio features, the foreground app, and background services still compete for the same memory pool. The phone cannot evict camera, keyboard, and notifications just to serve one model.
 
-As the action chain gets longer, the local model becomes more important. Sending every bit of personal context, screen content, and app data to the cloud blows up privacy, latency, and cost. The iPhone has to handle a large chunk of understanding and filtering on device.
-
-At that point, I stop caring whether Siri can chat. The hard ledger sits one layer down: how does a phone run an LLM?
-
-## iPhone Starts With Memory
-
-The first wall for on-device LLMs is DRAM footprint.
-
-Compute matters. NPU TOPS, GPU throughput, and CPU cores all affect token speed. LLM inference still has to fit. Weights, KV cache, activations, runtime buffers, vision features, audio features, the app itself, foreground UI, and background services all compete for the same memory pool.
-
-Start with the weight bill:
+Start with 20B weights:
 
 ```text
 20B FP16 ≈ 40GB
@@ -83,11 +69,11 @@ Start with the weight bill:
 20B INT2 ≈ 5GB
 ```
 
-That excludes KV cache. Even at 2-bit, keeping 5GB of weights resident in phone DRAM is expensive. The system cannot push out the camera, keyboard, notifications, foreground app, and background work just to serve one model.
+That excludes KV cache. Even at 2-bit, keeping 5GB of weights resident in phone DRAM is expensive.
 
-"The iPhone runs 20B" is easy to misread. A better description is this: the iPhone has a 20B-class parameter pool, and one request puts only a 1B to 4B active set on the hot path.
+So "iPhone runs 20B" cannot mean the whole 20B sits hot. A better description: iPhone has a 20B parameter pool, and one request puts only a 1B to 4B active set on the hot path.
 
-The bill becomes realistic:
+Switch to the active set and the bill loosens:
 
 ```text
 4B FP16 ≈ 8GB
@@ -99,36 +85,34 @@ The bill becomes realistic:
 1B INT2 ≈ 0.25GB
 ```
 
-Real inference still needs KV cache and buffers, but the pressure moves from the whole 20B model to the current 1B to 4B slice. Local inference starts with that memory bill.
+That starts to look like something a phone can carry. The door to local LLMs opens through DRAM.
 
-## 20B Becomes An Active Set
+## 20B Becomes The Current Task
 
-Server-side MoE models can route each token to different experts because the experts usually already sit in HBM or large VRAM. iPhone does not have that luxury.
+Server-side MoE models can route each token to different experts because those experts usually already sit in HBM or large VRAM. iPhone does not have that luxury.
 
-NAND has capacity, so it can hold the full model. DRAM has bandwidth, so it has to hold the hot path for token generation. NAND-to-DRAM bandwidth and latency cannot support swapping experts on every token. If the device tried that, users would leave before the first token arrived.
+NAND handles capacity. DRAM handles the hot path. NAND-to-DRAM bandwidth and latency cannot support swapping experts on every token. If the phone tried that, the user would leave before the first token arrived.
 
-AFM 3 Core Advanced moves routing earlier. The system looks at the prompt, selects the experts needed for this stretch of work, reuses that active set during generation, and can periodically reselect experts when the task changes.
+AFM 3 Core Advanced moves routing earlier. After the prompt comes in, a lightweight dense block decides which experts this task needs, pulls those routed experts from NAND into DRAM, reuses them during generation, and periodically reselects for longer tasks.
 
 ```text
-a lightweight dense block processes the prompt
-a router selects a fixed number of experts
-shared experts stay on the active path
-routed experts move from NAND into DRAM
-decoding reuses the active set
-longer tasks periodically reselect experts
+prompt arrives
+router picks experts
+NAND loads routed experts
+DRAM forms the active set
+CPU GPU ANE run inference
+KV cache reuses context
 ```
 
-It is closer to assembling a small dense model for the task. The 20B pool provides capability. The 1B to 4B active set serves the current request.
+It leaves 20B as the capability pool and assembles a task-sized dense model. The 1B to 4B active set does the work.
 
-Apple’s 2025 [Instruction-Following Pruning](https://machinelearning.apple.com/research/pruning-large-language) work looks like the technical precursor. IFP trains a sparse mask predictor that selects task-relevant parameters from the user instruction. In the paper, the mask applies to rows and columns in FFN matrices. The LLM and mask predictor are trained together so the selected parameters preserve instruction-following behavior.
+Apple’s 2025 [Instruction-Following Pruning](https://machinelearning.apple.com/research/pruning-large-language) work already pointed this way: choose parameters dynamically from the instruction. In that paper, pruning a 9B-class model to 3B active parameters beat a 3B dense model by 5 to 8 points in math and coding, got close to the 9B dense model, and kept TTFT near the 3B dense model.
 
-Apple gave a useful number in the IFP paper: dynamically pruning a 9B-class model to 3B active parameters beats a 3B dense model by 5 to 8 absolute points in domains such as math and coding, gets close to the 9B dense model, and keeps TTFT near the dense 3B model.
+That is the shape a phone needs: keep the large model cold, assemble a smaller model for the current task.
 
-That shape is exactly what the phone needs. The large parameter pool stays cold. The current task gets a task-sized model assembled from it.
+## NAND DRAM And Router
 
-## NAND DRAM And Routing
-
-The AFM 3 Core Advanced ledger is easier to see with NAND, DRAM, and the router in one diagram.
+The picture in my head is simple: NAND is the warehouse, DRAM is the workbench, and the router is the dispatcher.
 
 ```plantuml
 @startuml
@@ -165,68 +149,47 @@ kv --> compute : reuse
 @enduml
 ```
 
-NAND holds capacity. DRAM holds the hot path. The router keeps the large model in NAND from entering DRAM as one block.
+The full capability lives in NAND. The current task lives in DRAM. The router keeps the warehouse from driving onto the workbench.
 
-Shared experts are designed around the same constraint. If everything is routed, the device moves too much data. If everything is shared, the model drifts back toward a small dense model. A large shared component plus a routed expert slice is the compromise among latency, memory, and capability.
+Shared experts are the same bill. If everything is routed, the device moves too much data. If everything is shared, the model drifts back toward a small dense model. A large shared component plus a routed slice is the compromise among latency, memory, and capability.
 
 AI PCs will hit the same ledger. SSD can hold the model warehouse, DRAM can hold the active set, and NPU/GPU/CPU handle the hot-path computation. PCs have more memory, thermal headroom, and power budget, so they can tolerate longer context, larger active sets, and heavier multimodal inputs.
 
 ## QAT And KV Cache
 
-Sparsity keeps the full weights out of DRAM. Quantization makes the active set thinner.
+Sparsity keeps the whole model out of DRAM. Quantization makes the part that does move thinner.
 
 The full AFM 3 technical report is not public yet. Apple’s 2026 overview only says the latest models use Quantization Aware Training for compression. The most detailed current public description is the 2025 [Apple Intelligence Foundation Language Models Tech Report](https://machinelearning.apple.com/research/apple-foundation-models-tech-report-2025): the previous on-device model used QAT to reach 2 bits per weight, embeddings used 4-bit weights, KV cache used 8-bit values, and LoRA adapters recovered quality lost to compression.
 
-2-bit LLM inference cannot be a casual export-time compression step. Apple’s report lists several training details:
+2-bit is not casual export-time compression. Training has to simulate quantization error, use a straight-through estimator for the backward pass, learn tensor scaling factors, control outliers with clipping, then use EMA and LoRA to pull quality back.
 
-```text
-simulate quantization during training
-use a straight-through estimator for rounding
-learn the scaling factor per tensor
-initialize clipping to reduce outlier damage
-smooth weights with EMA
-recover compression loss with LoRA adapters
-```
-
-Low-bit behavior is shaped during training. Exporting the model is the last step. For AFM 3 Core Advanced, sparsity first cuts 20B into the current 1B to 4B active set, then QAT squeezes that set into the phone’s DRAM budget.
+For AFM 3 Core Advanced, the route is clear: sparsity cuts 20B into a 1B to 4B active set, then QAT squeezes that set into phone DRAM.
 
 Once weights shrink, KV cache appears.
 
-During Transformer generation, each token leaves behind keys and values for later tokens to attend to. Longer context means larger KV cache. The cache roughly scales with:
-
-```text
-number of layers
-number of KV heads
-head dimension
-number of tokens
-bytes per element
-```
-
-Apple already optimized this in the 2025 technical report. The on-device model was split into two blocks. The later 37.5 percent of transformer layers removed key and value projections and reused the KV cache from the first block. That reduced KV cache memory by 37.5 percent and reduced TTFT by about 37.5 percent because prefill skipped that computation.
+During Transformer generation, every token leaves keys and values behind. Longer context means larger KV cache. Apple already optimized this in the 2025 technical report: split the on-device model into two blocks, remove key and value projections from the later 37.5 percent of transformer layers, and reuse the KV cache from the first block. KV cache memory drops 37.5 percent, and prefill TTFT drops by about 37.5 percent.
 
 Users do not see KV cache. They see late first tokens, heat, and battery drain. A usable local LLM depends on accounting for those small bills.
 
-## App Intents PCC And System Routing
+## Routing Returns To The System
 
-Running a model on iPhone only solves Siri’s understanding layer. Siri still has to connect to apps and cloud models to finish work.
+Running the model only solves understanding. Siri still has to connect to apps and cloud models.
 
-If I were Apple, I would not let every app attach its own model. That turns permissions, context, cost, and experience into a mess. The better move is to make apps hand entities, actions, schemas, and semantic indexes to the system, let the model understand natural language at the system layer, and use App Intents to land that understanding on executable actions.
+I do not believe Apple will let every app attach its own model. Permissions, context, cost, and experience would scatter. The Apple-shaped move is cleaner: apps hand over schemas, the system owns understanding, App Intents owns execution, Foundation Models owns model sources, Core AI owns local runtime, and PCC owns complex work and privacy boundaries.
 
-Foundation Models framework manages model sources. Under one abstraction, Apple Foundation Models on device, Private Cloud Compute, and third-party providers can all plug in. Developers can even implement their own Language Model provider. Where the model lives, who runs it, and when work goes cloud all move back into the system layer.
+That is what actually interests me here: Apple wants task routing power back.
 
-Core AI handles local execution. It manages model conversion, AOT compilation, specialization, cache, and profiling, placing work across CPU, GPU, and Neural Engine. On-device inference cannot assume exclusive control of the machine. It has to coexist with the camera, keyboard, notifications, foreground app, background tasks, battery management, and thermal policy.
+What runs locally, what goes to PCC, which app can execute, which context can be read, and which result returns to system UI cannot be scattered across apps. If that scatters, Apple Intelligence stays a bundle of features and never becomes a system capability.
 
-My read: Apple wants task routing power. The chat entry point is the surface. What runs locally, what goes to PCC, which app can execute, which personal context can be read, and which result returns to system UI cannot be scattered across apps if Apple Intelligence is supposed to become a system capability.
+Apple is good at this kind of work. The model is one layer. Turning model, apps, runtime, privacy, and cloud routing into one system ledger is Apple’s home field.
 
-Apple is good at this kind of work. The model is one layer. The system manages the model, apps, runtime, privacy, and cloud routing together.
+## iPhone Breaks The Floor
 
-## From iPhone Back To Mac
+If iPhone can run this, Mac has much more room.
 
-If iPhone can run this path, Mac has much more room.
+Mac has larger DRAM, wider thermal and power budgets, and the same Apple Silicon path. Core AI also lands on Mac. Apple’s macOS and AI and Machine Learning guides describe Core AI as built directly into the OS and purpose-built for Apple Silicon. Developers can download, run, and benchmark Qwen, Mistral, SAM3, then wire them into apps.
 
-Mac has more forgiving DRAM, thermal, and power budgets, and it sits on the same Apple Silicon path. WWDC26’s Core AI is not only an iPhone story. In Apple’s macOS and AI and Machine Learning guides, Core AI is described as built directly into the OS and purpose-built for Apple Silicon. Developers can download, run, and benchmark models such as Qwen, Mistral, and SAM3 on Mac, then integrate them into apps through Core AI.
-
-Look at AI PCs from here, and an NPU or a TOPS number is nowhere near enough. At least four layers have to line up:
+So an AI PC should not be judged by NPU or TOPS alone. At least four layers have to line up:
 
 ```text
 local model
@@ -235,19 +198,19 @@ app action schema
 local and cloud routing
 ```
 
-iPhone proves the hardest memory constraint can be decomposed: 20B in NAND, 1B to 4B in DRAM, QAT for low bit width, and separate KV cache optimization. Mac shows how the same mechanism can scale inside a larger local-compute environment.
+iPhone proves the hardest memory constraint can be decomposed: 20B in NAND, 1B to 4B in DRAM, QAT for low bit width, and separate KV cache optimization. Mac scales the same mechanism up.
 
-From iOS to macOS, the logic is continuous. The phone breaks the engineering floor for on-device LLMs. The PC raises the application ceiling.
+The phone breaks the engineering floor. The PC raises the application ceiling. iOS to macOS is one line.
 
-## Apple Starts Counting Systems
+## Apple Starts Counting The System
 
-Apple has been slow in AI narrative for the last few years. After ChatGPT, it did not immediately ship an assistant that ended the debate. Siri’s debt was heavy enough that every new demo got judged against more than a decade of disappointment.
+Apple has been slow in AI. No need to defend it. After ChatGPT, it did not ship an assistant that ended the debate. Siri’s debt was heavy enough that every new demo got marked against it.
 
-WWDC26 laid out the route: natural-language entry point, on-device models, app capability graph, PCC, Core AI runtime, and Apple Silicon all in one system account.
+But WWDC26 at least laid out the route: natural-language entry point, on-device models, app capability graph, PCC, Core AI runtime, and Apple Silicon finally in one ledger.
 
-This path will not be quick. App Intents need developer work. PCC has to prove experience and availability. The full AFM 3 Core Advanced technical report is still not public. Siri still has to move from "can hear" to "can finish," and that gap is large.
+This path will not be quick. App Intents need developer work. PCC has to prove availability. The full AFM 3 Core Advanced technical report is still not public. Siri still has to move from "can hear" to "can finish."
 
-Once the iPhone can run this chain, the AI PC question becomes clearer. Local AI competition starts with who can keep more tokens useful under limited DRAM, power, and thermals, then who can turn those tokens into system actions.
+But this is where I would start judging AI PCs: who can keep more tokens useful under limited DRAM, power, and thermals, and who can turn those tokens into system actions.
 
 This starts with Siri. It will not stop at Siri.
 
