@@ -18,7 +18,7 @@ Siri is an awkward name now. In 2011, Siri entering the iPhone felt like the fut
 
 So when WWDC26 put Siri back at the center of Apple Intelligence, the first reaction is easy to imagine: that's it? Didn't Siri already exist?
 
-The answer sits behind the harder words in the second half of the keynote: Foundation Models, App Intents, Private Cloud Compute, Core AI. Keep digging and the question becomes much more concrete: how does an iPhone run an LLM locally?
+The odd part is that this Siri looks like more than a voice front end with a better chat backend. It starts touching screen content, personal context, and app actions. When an old entry point suddenly looks like it has gained reasoning ability, the next question is: where does that ability come from?
 
 <!-- more -->
 
