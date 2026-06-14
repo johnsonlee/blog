@@ -152,6 +152,29 @@ function checkHeadingPunctuation(file, text, errors) {
   }
 }
 
+function checkFormulaicHeadings(file, text, errors) {
+  const patterns = [
+    /不是.+而是/,
+    /是.+才是/,
+    /真正/,
+    /\bnot\b.+\bbut\b/i,
+    /\bis not\b/i,
+    /\bthe real\b/i,
+  ];
+  const lines = text.split('\n');
+
+  for (let index = 0; index < lines.length; index += 1) {
+    const line = lines[index];
+    const match = line.match(/^(#{2,6})\s+(.+?)\s*#*\s*$/);
+    if (!match) continue;
+
+    const heading = match[2].trim();
+    if (patterns.some(pattern => pattern.test(heading))) {
+      errors.push(`${file}:${index + 1}: Markdown heading uses a formulaic AI-like contrast pattern. Rewrite it as a concrete action, scene, or consequence.`);
+    }
+  }
+}
+
 function main() {
   const errors = [];
   const files = changedPostFiles();
@@ -160,6 +183,7 @@ function main() {
     const absolute = path.join(ROOT, file);
     const text = bodyWithoutFrontMatter(fs.readFileSync(absolute, 'utf8'));
     checkHeadingPunctuation(file, text, errors);
+    checkFormulaicHeadings(file, text, errors);
     checkFragmentedParagraphs(file, text, errors);
   }
 
