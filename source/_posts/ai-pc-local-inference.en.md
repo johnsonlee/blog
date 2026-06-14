@@ -16,13 +16,13 @@ tags:
 
 Siri is an awkward name now. In 2011, Siri entering the iPhone felt like the future arriving early. More than a decade later, it feels like a voice shortcut that sometimes works. Ask anything slightly complicated and it mishears, answers around the question, or throws you into web search. Users have stopped even getting angry.
 
-So when WWDC26 put Siri back at the center of Apple Intelligence, the first reaction is easy to imagine: that's it? Didn't Siri already exist?
+So when I saw WWDC26 put Siri back at the center of Apple Intelligence, my first reaction was: that's it? Didn't Siri already exist?
 
-Peel back one layer and the first reaction starts to loosen. Siri looks like more than a voice front end with a better chat backend. It starts touching screen content, personal context, and app actions. The reaction shifts to: this is a little different.
+This time Siri is wired into the system reasoning path. It has to read screen content, personal context, and actions exposed by apps, then turn a natural-language request into executable system steps. Old Siri with a chat backend cannot do that.
 
-Go one layer deeper, and screen content, personal context, app actions, local models, and PCC start connecting. Now it gets interesting. Once the question lands on iPhone running an LLM locally, it gets technical fast. If a phone can keep that layer of understanding and routing local, the reaction moves again: this is seriously impressive. After the memory math, there is only one line left: this is wild.
+Go one layer down, and screen content, personal context, app actions, local models, PCC, and Core AI sit on the same path. The iPhone understands and routes locally first, then sends harder work to the cloud. The question moves from "can it chat" to "can a phone carry this inference layer," and that is where it gets technical.
 
-Then only one question remains: how does it work?
+A phone running an LLM locally is not just a compute story. Where weights live, how much DRAM is active, how KV cache is controlled, and when work goes cloud are all hard bills. One question remains: how does it work?
 
 <!-- more -->
 
