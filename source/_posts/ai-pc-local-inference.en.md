@@ -14,15 +14,15 @@ tags:
   - Token
 ---
 
-After WWDC, a lot of people watched Siri. I watched something else: Apple finally started treating AI as a system-level cost problem.
+After WWDC, I did not come away with fresh expectations for Siri. It owes too much from too many years, and one keynote cannot repay that debt.
 
 Apple has looked bad in AI for the past two years. ChatGPT took the chat entry point. Claude broke open the coding workflow. Google pushed Gemini across search, mail, and Android. Apple owned the devices closest to the user, yet still looked like a slow observer: talk about privacy at the keynote, add a few small features, and leave Siri feeling like a support bot from another era.
 
-That is why this WWDC mattered. Apple still did not say "AI PC." It did not pretend to have the strongest model either. It pushed models, personal context, permissions, App Intents, and Private Cloud Compute back into the OS. For Apple, that matters more than chasing another chat box.
+The interesting move was buried in the system layer. Apple still did not say "AI PC." It did not pretend to have the strongest model either. It pushed models, personal context, permissions, App Intents, and Private Cloud Compute back into the OS. For Apple, that matters more than chasing another chat box.
 
 <!-- more -->
 
-Apple is not suddenly winning AI. It has finally understood the next question: personal AI will not stay inside browsers and chat apps forever. It will move back into devices, operating systems, and default workflows.
+Apple has not won AI. Siri still carries old debt. But Apple has finally understood the next question: personal AI will not stay inside browsers and chat apps forever. It will move back into devices, operating systems, and default workflows.
 
 ## The Bill Put the PC Back on the Table
 
