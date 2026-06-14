@@ -136,6 +136,22 @@ function checkFragmentedParagraphs(file, text, errors) {
   flush();
 }
 
+function checkHeadingPunctuation(file, text, errors) {
+  const headingPunctuation = /[!"#$%&'()*+,./:;<=>?@[\\\]^_`{|}~，。；：？！、（）【】《》“”‘’「」『』—–-]/;
+  const lines = text.split('\n');
+
+  for (let index = 0; index < lines.length; index += 1) {
+    const line = lines[index];
+    const match = line.match(/^(#{2,6})\s+(.+?)\s*#*\s*$/);
+    if (!match) continue;
+
+    const heading = match[2].trim();
+    if (headingPunctuation.test(heading)) {
+      errors.push(`${file}:${index + 1}: Markdown headings must not contain punctuation marks. Rewrite the heading text instead.`);
+    }
+  }
+}
+
 function main() {
   const errors = [];
   const files = changedPostFiles();
@@ -143,6 +159,7 @@ function main() {
   for (const file of files) {
     const absolute = path.join(ROOT, file);
     const text = bodyWithoutFrontMatter(fs.readFileSync(absolute, 'utf8'));
+    checkHeadingPunctuation(file, text, errors);
     checkFragmentedParagraphs(file, text, errors);
   }
 

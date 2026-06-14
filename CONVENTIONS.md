@@ -117,6 +117,7 @@ Overall narrative line: **hook -> observation -> insight / analogy -> judgment**
 - Let paragraphs advance the argument. Do not rely on empty transition phrases.
 - `##` headings must carry information.
 - Avoid generic headings such as "First Point" or "Background".
+- Do not use punctuation marks in Markdown headings. Rewrite the heading instead of using commas, colons, dashes, question marks, or other punctuation.
 - Use `###` for subpoints inside a section. Do not simulate headings with bold text.
 - The ending should return to the opening or core tension and make a clear judgment.
 - Ending with a sharp question or compressed final sentence is acceptable when it fits the argument.

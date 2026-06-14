@@ -50,7 +50,7 @@ Human engineers explore and take wrong turns too. The difference is that human e
 
 The heat around AI PC keeps circling back to one plain question: can we pay less token tax?
 
-## TOPS Is the Ticket, Routing Is the Profit Pool
+## TOPS Is the Ticket Routing Is the Profit Pool
 
 TOPS is easy to explain. It also looks good on a slide. The moment an AI PC enters a real workflow, the questions get more specific.
 
@@ -108,7 +108,7 @@ A tens-of-gigabytes problem drops to hundreds of megabytes or a few gigabytes. A
 
 That same problem will hit more than the iPhone. MacBooks, Windows AI PCs, and RTX workstations all end up asking the same questions: where weights live, how the KV cache is controlled, how context is selected, whether bandwidth is enough, and whether power can be contained.
 
-## NAND Is the Warehouse, DRAM Is the Workbench
+## NAND Is the Warehouse DRAM Is the Workbench
 
 Do not think of NAND as a drive the model reads from while generating. Apple is not running the model directly from NAND.
 
@@ -174,7 +174,7 @@ If the iPhone is the carried entry point of personal AI, the Mac is the producti
 
 8GB was still enough to fool ordinary users in the past. In the AI PC era, it will look increasingly awkward. Unified memory will be repriced.
 
-## The Opportunity Is in the Bottleneck, Not the Slogan
+## The Opportunity Is in the Bottleneck Not the Slogan
 
 For investing, do not get excited just because something says "AI PC." Terminal brands matter, but the bottlenecks sit further upstream: memory capacity, memory bandwidth, NPU/GPU inference capability, unified memory architecture, advanced packaging, power management, thermals, local model runtime, OS-level AI APIs, and developer ecosystem.
 
