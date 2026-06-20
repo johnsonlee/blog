@@ -1,5 +1,5 @@
 ---
-title: Serenity，瓶颈猎人
+title: Serenity——传说中的白毛股神
 date: 2026-06-06 23:33:16
 categories:
   - Independent Thinking
