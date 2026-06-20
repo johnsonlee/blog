@@ -1,6 +1,6 @@
 ---
 title: "AI's Next Wave: On-Device Intelligence"
-date: 2026-06-20 16:29:15
+date: 2026-06-20 16:55:10
 lang: en
 i18n_key: on-device-ai-next-wave
 categories:
@@ -8,159 +8,141 @@ categories:
 tags:
   - AI
   - On-device AI
+  - AI PC
   - Apple
   - Agent
-  - Local LLM
 ---
 
-After WWDC 2026, everyone seemed to ask the same question: has Apple finally caught up with ChatGPT? I barely remember what Siri answered in the demos. What stuck with me was one number: 12GB.
+At the end of May, Windows, NVIDIA, and Arm almost simultaneously posted the same line: "A new era of PC." I have already unpacked that phrase in two articles. [The Wintel Era Is Over][wintel] explains why the PC is becoming a compute asset again. [When AI PCs Become the Next Boom, Where Is the Real Opportunity?][ai-pc-opportunity] looks at local runtimes, context layers, and cost-aware execution.
 
-Morgan Stanley says the most advanced Siri features require 12GB of unified memory. More than 850 million iPhones cannot run even basic Apple Intelligence queries, while over 1.3 billion cannot use the advanced Siri features.[Reuters][reuters-memory]
+Those articles focused on how a PC could absorb intelligence moving down from the cloud. A little over a week later, Apple unveiled the next generation of Siri AI at WWDC 2026, emphasizing personal context understanding, on-screen awareness, app actions, and actions across apps. It also extended the same conversation across iPhone, iPad, Mac, Apple Watch, and Vision Pro.[Apple][apple-siri]
 
-The old reasons to upgrade a phone were a better camera, a faster chip, and longer battery life. Apple now wants users to accept a new one: the old phone is not slow. It is simply no longer intelligent enough.
+One side appeared to be talking about PCs, the other about Siri. Put together, they point to the same migration: AI is growing from a brain in the cloud into a nervous system distributed across personal devices.
 
-**Once memory determines whether you get the full AI experience, on-device intelligence stops being a feature and becomes a new platform cycle.**
+This article takes the argument one step further. The PC matters, but the board for on-device intelligence is much larger than the PC.
 
 <!-- more -->
 
-## The Stronger the Cloud Gets, the More Valuable Local Becomes
+## The Edge Is a Computing Network First
 
-Many people see local AI as a diminished version of a cloud model: smaller, weaker, and useful only when the network is unavailable. Viewed that way, the device will always be a supporting actor because a phone-sized model cannot beat GPT, Claude, or Gemini running in a data center.
+Treating the edge as another word for mobile leaves out half the picture. Treating it as another word for local models leaves out the other half.
 
-It does not need to.
+The edge includes every nearby device that can sense, compute, or act. A phone sees your current location, screen, messages, and camera. A watch knows whether you are wearing it, whether you are moving, and whether you just confirmed your identity. Earbuds sit next to your voice and surroundings. A PC holds files, code, browser sessions, enterprise accounts, and long-lived working state. Cars, glasses, and home devices understand the physical environment around you.
 
-It only needs to absorb enough high-frequency, low-latency, privacy-sensitive work to change the cost structure and product form of AI. Intent detection, notification summaries, screen understanding, local retrieval, photo search, message classification, simple planning, and the first routing decision before an Agent calls a larger model do not always require the best model. They do, however, run constantly.
+These devices possess different context and suit different tasks. Copying the same small model onto every machine has limited value. The interesting part begins when they coordinate around the same person.
 
-Sending every one of those calls to the cloud means paying the latency, token cost, network dependency, and privacy risk every single time. The deeper AI enters daily life, the worse that trade becomes.
+**The unit of on-device intelligence will ultimately shift from the device to the person.**
 
-An on-device model is closer to an L1 cache for an AI system. Its capacity is limited, but it sits closest to the user, responds fastest, and knows what is happening on the machine right now. Hard problems can still go to the cloud. Most small decisions do not need a round trip across the planet.
+The cloud will continue to handle world knowledge and compute-intensive reasoning. The edge handles the scene: what you are looking at, what just happened, which device is currently trusted, and what action can be taken immediately. "Edge" describes a boundary for data and permission. Offline execution is only one possible result.
 
-**Cloud models know the world. Local models know what you are doing right now.**
+## The PC Is the Heavy Node in This Network
 
-As AI moves from conversation to action, the second advantage becomes increasingly valuable.
+The previous two articles already covered why the PC has returned to the table: frequent agent use amplifies cloud costs, making local compute an asset again. I will not repeat that calculation here. The PC also has another, more important role.
 
-## Apple Has Finally Found Its Home Field
+It is the best place for a personal agent to work for long periods.
 
-A web chat box was never Apple's home field. The user has to open it, explain the problem, copy in the context, and carry the answer back into the original workflow. Apple controls something else: the lock screen, notifications, photos, messages, mail, Safari, calendars, files, Spotlight, Shortcuts, and the boundary around what every app is allowed to do.
+A phone is good at capturing intent. It is always nearby and can see notifications, location, photos, and immediate conversations. Complex work, however, accumulates on the PC: dozens of files, a complete repository, email history, design files, financial spreadsheets, terminals, enterprise systems, and authenticated browser sessions. The PC also has stable power, more memory, and better cooling, making it suitable for tasks that run for tens of minutes or even hours.
 
-At WWDC 2026, Apple defined the new Siri in very direct terms: it can understand what is on screen, draw context from messages, email, photos, and other personal data, search and act across apps, and reach the web for current information when needed.[Apple][apple-wwdc]
+Imagine this: on the subway, you receive a contract from a client and tell your phone, "Compare this with the previous version, find every clause that conflicts with what we agreed over email, draft a reply, and have it ready before I reach the office."
 
-Imagine saying, "Book the restaurant I went to with Lao Wang last time, avoid my client dinner next Tuesday, and use the card with the best cashback."
+The phone captures the current email and your intent. The Watch confirms your identity. The Mac at the office reads the project directory and email index. A local model filters sensitive information first, and difficult clauses go to a cloud model. The result returns to the phone.
 
-That sentence contains no restaurant name, date, location, or list of credit cards. A normal chatbot has to ask follow-up questions. A real personal Agent has to identify "Lao Wang" from messages, infer "the restaurant last time" from photos or maps, check the calendar for conflicts, and hand the booking to the right app.
+No single device completed the task by itself. The agent lived in the handoff between them.
 
-Model capability matters, but this kind of task is even more constrained by context and permission. The Agent needs to know what is on screen, what exists on the device, which data it may read, which actions it may take, and how to preserve one goal while crossing several apps.
+**The phone keeps the agent with you. The PC puts it to work.**
 
-The recently released [iOSWorld benchmark][iosworld] shows how hard that is. It places one person's transactions, messages, trips, and social relationships across 26 iOS apps, then asks Agents to complete realistic tasks. The best configuration scores only 52% overall and just 37% on multi-app tasks.
+This is the deeper meaning of "A new era of PC." The PC is gaining more than a new compute workload. It is beginning to carry heavy computation, long-running tasks, and private working state inside a personal intelligence network.
 
-Tapping the correct button inside one app is no longer the hard part. The hard part is carrying one person's memory across several apps without forgetting the goal halfway through.
+## Apple Is Building the Control Plane for Personal Intelligence
 
-**The bottleneck for phone Agents has shifted from "understanding buttons" to "understanding a person."**
+Seeing WWDC 2026 as the moment Siri finally became more like ChatGPT misses the actual product. Siri is the visible interface. The system layer connecting devices, data, identity, models, and apps is the core.
 
-That is exactly where Apple has a chance. Its model may not be the strongest, but Apple stands where personal context is created.
+Apple announced that Siri AI would be deeply integrated across iPhone, iPad, Mac, Apple Watch, and Vision Pro, with conversation history privately synchronized through iCloud. A user can begin on a Mac and continue on an iPhone, iPad, Watch, or Vision Pro.[Apple][apple-siri-sync] That is only the easiest layer to demonstrate.
 
-## On-Device Intelligence Does Not Mean Staying Offline
+The hard part is preserving a task across devices: where the intent entered, which context remains valid, which device has the right execution conditions, which action needs confirmation again, when to use the cloud, and which app should complete the final step.
 
-"Local AI" often evokes a world where every model is crammed into the device and nothing ever reaches the cloud. That is neither realistic nor necessary.
+This system looks more like a control plane for personal intelligence. It schedules more than models. It schedules devices, permissions, identity, and actions.
 
-The viable architecture will be hybrid: light work runs on-device, complex reasoning goes to larger models, sensitive data stays local whenever possible, cloud requests enter a controlled environment when unavoidable, and apps execute the final domain-specific actions.
+**Models determine how smart an answer is. The control plane determines whether AI can actually work on your behalf.**
 
-Apple's [Foundation Models framework][apple-dev] lays out the pieces. Developers can use a native Swift API to access Apple's on-device model, connect Claude, Gemini, or any provider conforming to the Language Model protocol, run heavier work through Private Cloud Compute, and use App Intents to turn natural language into concrete actions.
+That is also Apple's advantage. It controls the chips, operating systems, account system, security hardware, app permissions, and an entire family of personal devices. Apple may not lead when models are evaluated in isolation. When the job is organizing one person's devices into a continuous system, it starts from a position that is difficult to copy.
 
-Apple does not call this a model router, but the system will eventually have to answer these questions:
+## Personal Context Is a Real-Time State
 
-* Can this task be completed on the device?
-* Does it contain personal data that must not leave the device?
-* Does it require current information from the web?
-* Is it worth calling a more expensive model?
-* Which app has permission to complete the last step?
+"Personal context" is easy to imagine as a larger user database: embed every email, photo, calendar event, and chat record, then retrieve them when the agent needs something.
 
-The user says one sentence. Behind the scenes, the system decides where the data goes, which model runs, how much compute to spend, and who performs the action.
+That is not enough.
 
-**The most powerful model in the future may not be the smartest one. It may be the layer that decides who gets to answer this time.**
+Data tells AI what you did in the past. Real-time state tells it what you are doing now: which file is open on screen, whether your earbuds are being worn, whether the Mac is unlocked, whether one of your trusted devices is nearby, which notification just arrived, and whether a payment was confirmed.
 
-Google controlled search distribution in the previous era. Personal task distribution may be even more valuable in the next one: who receives the restaurant booking, which tool organizes the email, which ledger records the receipt, and which service monitors a web page for changes.
+This information changes quickly, expires quickly, and is tightly coupled to permission. Screen state from ten minutes ago may already be invalid. A file readable on an unlocked Mac should not automatically be uploaded because of one voice command from a phone. A confirmation on the Watch should not authorize every later action indefinitely.
 
-Models can be replaced. Default task entry points are much harder to dislodge. That is the layer Apple is trying to own.
+Data tells AI who you are. Edge state tells it what you want at this moment.
 
-## 12GB Is Rewriting the Value of Hardware
+This is the opening for operating system vendors. A chatbot can only see what the user actively gives it. An OS stands where context is created. The gap between personal agents may eventually depend less on how much they remember and more on whether they can determine which information is still valid and which permissions are still active.
 
-Morgan Stanley's 12GB estimate matters because it turns an abstract idea into a hardware threshold.
+## Apps Will Be Decomposed into Callable Capabilities
 
-In the past, buying another 8GB of memory meant keeping more apps open and seeing fewer spinning wheels. Now memory determines how large a local model can be, how much context it can retain, how many tasks avoid the cloud, and whether an Agent can remain resident. Memory bandwidth affects token throughput. ANE and NPU utilization affect latency. Power determines whether intelligence can run all day. Thermal limits determine how long it can keep going.
+Apple's signal to developers is just as clear. App Intents schemas can add app entities to Spotlight's semantic index and expose actions to Siri. View Annotations allow the system to understand the object currently visible on screen.[Apple Developer][apple-intents]
 
-A recent [study][npumoe] of Apple Silicon NPUs found that offloading parts of MoE LLM inference to the NPU improved latency by 1.32x to 5.55x and energy efficiency by 1.81x to 7.37x across several M-series devices.
+In the past, an app was a destination. The user found an icon, opened the home screen, moved through several pages, and eventually completed an action.
 
-That does not mean a Mac is about to catch a cloud cluster. It means local inference is nowhere near its endpoint. There is still a vast optimization space between model architecture, runtime, memory, and silicon.
+Once the agent owns the entry point, apps begin to look like capability providers. The user says, "Record this receipt," "Turn the contract risks into project tasks," or "Notify me when registration opens on this page." The system chooses the right app and chains multiple actions together. The entire workflow may finish without opening a single interface.
 
-**Every AI hardware specification will eventually be translated into one metric: how much intelligence can it run per watt?**
+I call this layer the Intent Store. It may never become a literal store, but it will create a new distribution model:
 
-This is Apple's long-term advantage. It controls the chips, unified memory, operating system, app permissions, and device network at the same time. Others build GPU clusters. Apple can distribute inference across every new iPhone, Mac, and Watch, then let them share the context of the same person.
+**The App Store decides whether software enters the device. The Intent Store decides whether it enters the task.**
 
-The boundary between old and new devices will shift from "is it fast?" to "does it have access to intelligence?"
+This matters especially on the PC. IDEs, office suites, design tools, database clients, and enterprise applications contain deep capabilities that have historically been hidden behind menus, commands, and complicated interfaces. Once agents can understand and combine them, PC software will compete on more than what its interface contains. It will also compete on what the system can call.
 
-## The App Store Is Growing an Intent Store
+Software an agent cannot understand can still be opened by a person. It will simply lose its place in automated workflows over time.
 
-The most important developer signal from WWDC 2026 was not a new interface. It was the chain connecting App Intents, Foundation Models, Spotlight, and Siri AI.
+## The Giants Are Fighting for the Same Entry Point
 
-Apple's developer documentation is explicit: Entity schemas can contribute app content to the Spotlight semantic index so the system understands what the app contains. Intent schemas let users invoke actions in natural language without memorizing fixed phrases. View Annotations let Siri understand the content currently visible on screen.[Apple Developer][apple-dev]
+Microsoft and NVIDIA are approaching from the PC. They emphasize local agents, unified memory, and continuously running workloads. NVIDIA even describes agents as the future of personal computing.[Microsoft][windows-rtx-spark]
 
-Apps used to compete for icon placement, push-notification opens, search ranking, and App Store charts. They will now face harsher questions: does Siri know what data you have? Can it call your capabilities? When a user gives the system a task, why should it choose you?
+Apple is approaching from personal context. It is putting Siri on every screen, connecting App Intents to system actions, and combining on-device models with Private Cloud Compute for workloads of different intensity.
 
-A user might say, "Record this receipt in my ledger," "Put this email into the project notes," or "Tell me when these shoes go on sale," without opening an app once. Accounting, notes, and shopping trackers still provide the value. The interface moves backward; the Intent moves forward.
+The starting points differ, but the destination is converging: a personal AI fabric organized around the user.
 
-Apps will shift from destinations people visit to tool nodes Agents invoke whenever needed.
+Inside that fabric, the PC is the heaviest compute node. The phone is the densest sensing node. The Watch and earbuds provide identity and immediate interaction. Cloud models supply external knowledge and difficult reasoning. The operating system turns them into one completed task.
 
-**An app that an Agent cannot understand will look like a website that was never indexed by a search engine.**
+The next competition therefore cannot be measured only by model capability. Model vendors provide intelligence. Operating systems decide when that intelligence enters a user's life, with what context, and through which device.
 
-This creates an opening for small apps. They do not have to win the home screen first. Clear capabilities, unique data, and reliable Intents can earn a place in system-level workflows. It is also a threat: once Siri owns the entry point, developers gain a new source of traffic while becoming more dependent on Apple's routing rules.
+The PC is the heaviest piece. On-device intelligence is the whole board.
 
-The App Store handles installation. The Intent Store decides what gets used.
+## The Real Barrier Is the Handoff
 
-## The Opportunity Is Hidden in Four Bottlenecks
+Cross-device interaction sounds natural. In practice, it is harder than crossing apps.
 
-The on-device opportunity is therefore not "another local chat app." A chat box is an old product wrapped around a new model. The real growth sits behind four bottlenecks.
+iOSWorld tests phone agents using 26 apps and one persistent user identity. The best setup reaches only 52 percent overall and 37 percent on multi-app tasks.[iOSWorld][iosworld] Even on one phone, in a controlled environment, with privileged interfaces, agents still frequently lose their way. Expanding the task to several devices adds network failures, sleep states, expired context, permission elevation, state conflicts, and recovery from partial failure.
 
-The first is hardware. Unified memory, memory bandwidth, low-power NPUs, advanced packaging, thermal design, and power management will all become part of the AI experience. Consumers used to have little reason to care about memory bandwidth. Soon they will feel it directly through Agent latency, residency, and cloud dependency.
+Synchronizing a conversation does not mean a piece of work can continue.
 
-The second is runtime. Devices need an execution layer that routes across CPUs, GPUs, NPUs, local models, private clouds, and third-party models. Whoever can put latency, cost, privacy, battery, and model capability into the same routing decision owns the foundation of on-device AI.
+A useful personal agent must remember how far the task has progressed, recognize which state has expired, resume after switching devices, and let the user inspect what it has read, what it has done, and what it plans to do. It must support undo, stop before crossing a permission boundary, and avoid silently choosing a more dangerous path when one device goes offline.
 
-The third is the personal context layer. Messages, photos, calendars, files, location, health, and screen state are not ordinary training data. They are private, continuously changing context. Indexing, compressing, authorizing, revoking, and synchronizing it across devices will become a new infrastructure layer.
+The easiest demo is "continue the conversation over there." The real barrier is "continue the work over there"—without getting it wrong.
 
-The fourth is the Intent ecosystem. Apps built around high-frequency personal data — notes, calendars, email, task management, finance, health, education, travel, and shopping tracking — will be rewritten first. Their competitiveness will come not only from the interface, but from whether Agents can call them reliably.
+This is also the biggest test for Apple's approach. A closed ecosystem gives it the ability to connect devices, but it also means one unreliable component can damage the entire experience. If an agent selects the wrong file twice, sends duplicate messages, or forgets an action the user explicitly rejected, the personal intelligence network immediately collapses into a more annoying notification system.
 
-Pure consumer chat assistants face pressure in the opposite direction. They lack system entry points and default permissions, so users must carry context into them every time. Unless they own unique data, a vertical workflow, or an experience far beyond the system default, even a stronger model remains trapped behind copy and paste.
+## The Cloud Has a Brain. The Edge Is Growing a Body
 
-## Apple May Not Win the Model War, but It Could Win On-Device Intelligence
+Look again at "A new era of PC" and WWDC 2026. They are two parts of the same story.
 
-Apple has not won this race. Cross-app success rates, App Intents adoption, trust in Private Cloud Compute, and regional availability can each block the vision.
+The first asks where AI's heavy workloads will run. The second asks what gives AI the right to understand and represent a person. The answers are converging in the same place: devices owned by the user.
 
-PCC is designed to send heavy work to the cloud without retaining user data or making request contents accessible even to Apple.[Apple Security][apple-pcc] Yet an independent 2026 study notes that PCC lacks reproducible builds, its compiled binaries contain no symbols, and its underlying models and interfaces remain difficult to evaluate publicly.[PCC Study][pcc-study] A privacy promise ultimately depends on verifiability, not keynote language.
+Cloud models will keep getting larger and will continue to handle the hardest reasoning. But a brain in a data center does not have your screen, files, sensors, identity, or execution permissions. It can answer questions about the world while still struggling to enter daily life.
 
-Regional fragmentation is equally real. Apple says Siri AI will initially be unavailable on iOS, iPadOS, and watchOS in the EU, and the new Apple Intelligence features will remain unavailable in China while regulatory requirements are addressed.[Apple][apple-wwdc]
+On-device intelligence gives AI a body. The phone senses. The PC works. The Watch confirms. Apps act. The cloud supplies a stronger brain when necessary. The agent passes through them while keeping the same goal.
 
-Reliability matters most. After an Agent fails twice, users go back to doing the task manually. Apple's easiest failure mode is a product that is "very private, but not very useful."
+**The next AI platform is a set of devices finally beginning to coordinate around the same person.**
 
-That leaves only three things worth watching: whether Siri can complete cross-app tasks reliably, whether developers rapidly adopt App Intents, and whether Apple Intelligence drives device upgrades and iCloud+ conversion. Apple has already placed daily limits on some server-model features and included higher access in most iCloud+ plans.[Apple][apple-wwdc]
+When a task can begin on your wrist, finish on your PC, and return to your phone for delivery, will we still describe on-device intelligence as a model running inside a phone?
 
-Hardware sells the entry point. The operating system creates lock-in. Services collect the recurring rent. It is still Apple's most familiar business.
-
-## Final Thought
-
-Return to that 12GB number. It used to be one line in a specification sheet. Now it begins to determine how much context a device can retain, how large a model it can run, and which intelligent capabilities it may access.
-
-The real signal from WWDC 2026 is not that Apple finally built its own ChatGPT. It is that the next wave of AI growth is beginning to move from cloud data centers into the devices people already carry.
-
-The cloud model war will continue, and parameter counts will keep growing. But once AI can understand your screen, interpret your life, call your apps, and complete real tasks, the chip closest to you matters more.
-
-**The next wave is not only in the cloud. It is also in everyone's pocket.**
-
-When every device begins to carry its own context, who will still dismiss local AI as a diminished cloud model?
-
-[apple-wwdc]: https://www.apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/
-[apple-dev]: https://developer.apple.com/wwdc26/guides/apple-intelligence/
-[apple-pcc]: https://security.apple.com/blog/private-cloud-compute/
+[wintel]: https://johnsonlee.io/2026/05/31/a-new-era-of-pc/
+[ai-pc-opportunity]: https://johnsonlee.io/2026/05/31/ai-pc-real-opportunity/
+[apple-siri]: https://www.apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/
+[apple-siri-sync]: https://www.apple.com/newsroom/2026/06/apple-introduces-siri-ai-a-profoundly-more-capable-and-personal-assistant/
+[apple-intents]: https://developer.apple.com/wwdc26/guides/apple-intelligence/
+[windows-rtx-spark]: https://blogs.windows.com/windowsexperience/2026/05/31/introducing-a-powerful-new-chapter-for-windows-pcs-accelerated-by-nvidia-rtx-spark/
 [iosworld]: https://arxiv.org/abs/2606.09764
-[reuters-memory]: https://www.reuters.com/business/apples-ai-siri-will-be-held-back-by-aging-devices-morgan-stanley-says-2026-06-09/
-[npumoe]: https://arxiv.org/abs/2604.18788
-[pcc-study]: https://arxiv.org/abs/2605.24239
