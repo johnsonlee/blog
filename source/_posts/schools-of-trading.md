@@ -1,5 +1,5 @@
 ---
-title: 交易者的流派
+title: 股票交易的流派
 date: 2026-06-20 11:52:09
 categories:
   - Investing
