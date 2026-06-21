@@ -15,13 +15,13 @@ tags:
 
 At the end of May, Windows, NVIDIA, and Arm almost simultaneously posted the same line: "A new era of PC." I have already unpacked that phrase in two articles. [The Wintel Era Is Over][wintel] explains why the PC is becoming a compute asset again. [When AI PCs Become the Next Boom, Where Is the Real Opportunity?][ai-pc-opportunity] looks at local runtimes, context layers, and cost-aware execution.
 
-Those articles focused on how a PC could absorb intelligence moving down from the cloud. A little over a week later, Apple unveiled the next generation of Siri AI at WWDC 2026, emphasizing personal context understanding, on-screen awareness, app actions, and actions across apps. It also extended the same conversation across iPhone, iPad, Mac, Apple Watch, and Vision Pro.[Apple][apple-siri]
+Those articles focused on how a PC could absorb intelligence moving down from the cloud. A little over a week later, Apple unveiled the next generation of Siri AI at WWDC 2026, emphasizing personal context understanding, on-screen awareness, app actions, and actions across apps. It also extended the same conversation across iPhone, iPad, Mac, Apple Watch, and Vision Pro.
+
+<!-- more -->
 
 One side appeared to be talking about PCs, the other about Siri. Put together, they point to the same migration: AI is growing from a brain in the cloud into a nervous system distributed across personal devices.
 
 This article takes the argument one step further. The PC matters, but the board for on-device intelligence is much larger than the PC.
-
-<!-- more -->
 
 ## The Edge Is a Computing Network First
 
@@ -83,7 +83,7 @@ This is the opening for operating system vendors. A chatbot can only see what th
 
 ## Apps Will Be Decomposed into Callable Capabilities
 
-Apple's signal to developers is just as clear. App Intents schemas can add app entities to Spotlight's semantic index and expose actions to Siri. View Annotations allow the system to understand the object currently visible on screen.[Apple Developer][apple-intents]
+Apple's signal to developers is just as clear. App Intents schemas can add app entities to Spotlight's semantic index and expose actions to Siri. View Annotations allow the system to understand the object currently visible on screen.
 
 In the past, an app was a destination. The user found an icon, opened the home screen, moved through several pages, and eventually completed an action.
 
@@ -99,7 +99,7 @@ Software an agent cannot understand can still be opened by a person. It will sim
 
 ## The Giants Are Fighting for the Same Entry Point
 
-Microsoft and NVIDIA are approaching from the PC. They emphasize local agents, unified memory, and continuously running workloads. NVIDIA even describes agents as the future of personal computing.[Microsoft][windows-rtx-spark]
+Microsoft and NVIDIA are approaching from the PC. They emphasize local agents, unified memory, and continuously running workloads. NVIDIA even describes agents as the future of personal computing.
 
 Apple is approaching from personal context. It is putting Siri on every screen, connecting App Intents to system actions, and combining on-device models with Private Cloud Compute for workloads of different intensity.
 
