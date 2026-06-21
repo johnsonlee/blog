@@ -12,6 +12,7 @@ tags:
   - Infrastructure
   - ROI
   - SaaS
+mathjax: true
 ---
 
 Picture this: an engineer cuts an Agent task from 100,000 tokens to 40,000, and the dashboard turns 60% greener. The month-end invoice arrives. Cloud cost has not moved by a cent. The company rents eight GPUs on a monthly contract. The model says 60,000 fewer tokens, but the machines keep running and the contract keeps billing.
@@ -65,12 +66,9 @@ The bill moves from a language unit back to a time unit.
 
 At that point, whether a task consumes 40,000 or 100,000 tokens no longer determines cost directly. The real equation becomes:
 
-\[
-\text{Cost per Task}
-=
-\frac{\text{GPU Hour Price}}
-{\text{Successful Tasks per GPU Hour}}
-\]
+{% raw %}
+$$\text{Cost per Task} = \frac{\text{GPU Hour Price}}{\text{Successful Tasks per GPU Hour}}$$
+{% endraw %}
 
 If fewer tokens let the same eight GPUs process twice as many requests, that improvement is valuable. If traffic does not grow and the GPU count does not fall, the optimization has only created more empty machine time.
 
@@ -168,12 +166,9 @@ The valuable capability has expanded beyond shortening a single call. It is the 
 
 Token Efficiency still matters, but it needs a more honest denominator:
 
-\[
-\text{Economic Efficiency}
-=
-\frac{\text{Useful Work}}
-{\text{Paid Resource}}
-\]
+{% raw %}
+$$\text{Economic Efficiency} = \frac{\text{Useful Work}}{\text{Paid Resource}}$$
+{% endraw %}
 
 With an API, the paid resource is token dollars. With rented GPUs, it is GPU-hours. With managed capacity, it is committed model units. With SaaS, it is seats, credits, and plans.
 

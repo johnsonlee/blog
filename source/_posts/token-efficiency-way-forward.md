@@ -10,6 +10,7 @@ tags:
   - Infrastructure
   - ROI
   - SaaS
+mathjax: true
 i18n_key: token-efficiency-way-forward
 ---
 
@@ -64,12 +65,9 @@ Token API 是 AI 时代的 Serverless。
 
 此时，一次任务用了 4 万还是 10 万 Token，已经不再直接决定成本。真正的公式变成：
 
-\[
-\text{Cost per Task}
-=
-\frac{\text{GPU Hour Price}}
-{\text{Successful Tasks per GPU Hour}}
-\]
+{% raw %}
+$$\text{Cost per Task} = \frac{\text{GPU Hour Price}}{\text{Successful Tasks per GPU Hour}}$$
+{% endraw %}
 
 如果 Token 降低让同样的 8 张 GPU 多处理一倍请求，当然有价值。如果流量没有增长，GPU 数也没减少，那只是空出了更多机器时间。
 
@@ -167,12 +165,9 @@ Cloud --> SaaS
 
 Token Efficiency 仍然重要，但它需要一个更诚实的分母：
 
-\[
-\text{Economic Efficiency}
-=
-\frac{\text{Useful Work}}
-{\text{Paid Resource}}
-\]
+{% raw %}
+$$\text{Economic Efficiency} = \frac{\text{Useful Work}}{\text{Paid Resource}}$$
+{% endraw %}
 
 按 API 买，Paid Resource 是 Token Dollar；按 GPU 租，是 GPU-hour；买托管容量，是承诺的 Model Unit；买 SaaS，是 Seat、Credit 和套餐。
 
