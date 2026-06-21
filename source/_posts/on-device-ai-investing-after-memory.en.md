@@ -14,17 +14,17 @@ tags:
   - Risk Management
 ---
 
-Put the charts of SK hynix, Samsung, and SanDisk side by side, and one conclusion feels almost unavoidable: smart money has already turned memory into the most crowded on-device AI trade.
+Put the charts of SK hynix, Samsung, and SanDisk side by side, and one conclusion feels almost unavoidable: smart money has already turned memory into the most crowded trade in the entire AI sector.
 
 Over the past year, all three have run from the bottom of the cycle into some of the market's most crowded positions. The earnings are even more extreme. SK hynix posted a 72% operating margin in the first quarter. Samsung's semiconductor division generated KRW 53.7 trillion in quarterly operating profit. SanDisk reported a 78.4% gross margin, then guided the next quarter to nearly 80%. This no longer looks like the memory industry. It looks like a printing press.
+
+<!-- more -->
 
 Yet the most dangerous moment in investing is often when every number looks perfect.
 
 The question has shifted from "Will the memory boom continue?" to "How much of that boom is already embedded in the price?" My view is straightforward:
 
 > **Memory still has earnings upside, but the easy rerating is over. Edge SoCs, advanced packaging, and foundries have already front-run the thesis. Smart money should no longer ask which sector has risen the least. It should ask which company’s future free cash flow has not yet been purchased by today’s price. Arm has the strongest growth quality, Qualcomm the larger expectations gap, Intel the greatest turnaround convexity, and Amkor and ASE the clearest order visibility. They do not belong on one linear ranking.**
-
-<!-- more -->
 
 ## Earnings Can Keep Rising While the Stock Stops Running
 
