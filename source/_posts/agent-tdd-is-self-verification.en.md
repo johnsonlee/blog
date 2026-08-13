@@ -4,7 +4,7 @@ date: 2026-08-13 09:23:00
 lang: en
 i18n_key: agent-tdd-is-self-verification
 categories:
-  - Independent Thinking
+  - Harness Engineering
 tags:
   - AI
   - Agentic Coding

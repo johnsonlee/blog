@@ -2,7 +2,7 @@
 title: Agent 真的需要 TDD 吗？
 date: 2026-08-13 09:23:00
 categories:
-  - Independent Thinking
+  - Harness Engineering
 tags:
   - AI
   - Agentic Coding
