@@ -16,17 +16,35 @@ i18n_key: agent-tdd-is-self-verification
 
 <!-- more -->
 
-## TDD 解决的本来就是人的问题
+## TDD 当初解决的是什么？
 
-TDD 有两样东西经常被混在一起：测试，和写代码的方式。
+TDD 针对的典型开发方式，是先写一大段实现，过很久才验证。等测试失败时，中间已经改了几十处，没人知道错在哪。改动越大，反馈越慢；反馈越慢，人越怕改；越怕改，代码越不敢重构。
 
-测试当然有用。它记录行为，保护回归，也让重构有底气。但 Red-Green-Refactor 这套流程，本来是在帮人思考。先写测试，逼着我们从调用者的角度看接口；一步只做一点，避免脑子同时装太多东西；每亮一盏绿灯，就敢再往前走一步。
+Red-Green-Refactor 把这个长反馈链切碎。先定义一个很小的行为，看它失败，只写够让它通过的代码，再清理设计。每次只改变一个变量，出了问题很容易定位；代码一直处于可工作状态，人也敢继续往前走。
 
-Kent Beck 说 TDD 是用来管理 fear 的。Agent 没有 fear，也不会因为问题太大而不敢下手。它拿到完整需求时，通常已经在同时规划测试和实现。要求它先把测试写进文件，只是换了落盘顺序，不代表它真的经历了人写测试时那段思考。
+Kent Beck 说 TDD 是用来管理 fear 的。这个 fear 很具体：怕改坏，怕失控，怕一个问题大到脑子装不下。Test-first 还会逼着人先从调用者看接口，不至于一头扎进实现，写出一个只有自己会用的 API。
 
-这就像要求挖掘机开工前先活动手腕。动作没错，机器没有那块肌肉。
+**TDD 当初解决的核心，是让人用短反馈控制复杂度；测试是这套反馈机制留下的可执行资产。**
 
-**TDD 对人的价值，不能靠一段 prompt 原样搬给 Agent。**
+Agent 没有 fear，也不会因为问题太大而不敢下手。它拿到完整需求时，通常已经在同时规划测试和实现。要求它先把测试写进文件，只是换了落盘顺序，不代表它经历了人写测试时那段思考。
+
+把这套流程原样搬进 Agent Loop，就像要求挖掘机开工前先活动手腕。动作没错，机器没有那块肌肉。
+
+## TDD 优化局部，Architecture Design 决定全局
+
+TDD 每一轮只问两个问题：下一个失败用例是什么？让它通过的最小改动是什么？这是一种局部搜索。问题边界已经清楚时，它很好用；复杂任务的边界还没画出来时，它很容易把“下一步正确”误当成“方向正确”。
+
+想象让 Agent 重写一个支付模块。第一个测试是单币种付款，第二个是优惠券，第三个是退款。每一步都可以 Red-Green，代码也一直能跑。等多币种、部分退款、幂等、对账一起进来，才发现最开始的数据模型就错了。前面那些绿灯没有帮忙，反而把错误结构焊得更牢。
+
+复杂任务的第一步不该是写第一个 test，而是做 Architecture Design：模块边界怎么划，状态归谁，数据往哪流，事务在哪里结束，失败怎么恢复，哪些约束不能破。这些都是全局问题，没法从一个个局部用例里自然长出来。
+
+Architecture Design 也不是先写一份几十页的大文档。它只是要求动手前先把系统的形状想清楚，让后面的局部搜索在正确边界里发生。**Architecture 决定往哪走，TDD 只负责每一步别踩空。**
+
+[Birgitta Böckeler 的实验](https://martinfowler.com/articles/exploring-gen-ai/tdd-in-the-agent-loop.html)正好印证了这一点。5 个 batch 里，非 TDD 实现在小型和中型任务中多次排在前两名，TDD 实现落在后两名；大型任务里，TDD 也只排在中间。两组的 mutation score 没拉开差距。
+
+Opus 看完执行记录后发现，不受 TDD 限制时，Agent 往往先把数据结构、边界条件和整体设计想一遍；按 TDD 做时，它围着第一个测试不断做局部最小修改，早期设计很快被锁死，后面又没有认真回头 Refactor。
+
+实验很小，任务都是从零实现，质量还是另一个 LLM 评的，证明不了“TDD 一定让 Agent 变差”。但它把真正的问题露了出来：**我们需要的不是一个更守规矩的 coding loop，而是先有全局设计，再让 Agent 在边界里跑。**
 
 ## Red 过，不等于测试对
 
@@ -40,18 +58,6 @@ Kent Beck 说 TDD 是用来管理 fear 的。Agent 没有 fear，也不会因为
 
 **测试最重要的不是先写，而是答案从哪里来。**
 
-## TDD 反而挡住了 Agent
-
-[Birgitta Böckeler 的实验](https://martinfowler.com/articles/exploring-gen-ai/tdd-in-the-agent-loop.html)一共做了 5 个 batch。小型和中型任务里，非 TDD 实现多次排在前两名，TDD 实现落在后两名；大型任务里，TDD 只排在中间。两组的 mutation score 也没拉开差距。
-
-Opus 看完执行记录后给了一个解释：不受 TDD 限制时，Agent 往往先把数据结构、边界条件和整体设计想一遍；按 TDD 做时，它围着第一个测试不断做局部最小修改，早期设计很快被锁死，后面却没有像人一样认真回头 Refactor。
-
-这和我们熟悉的经验正好相反。人通过小步慢慢发现设计，Agent 却更擅长先看完整问题，再一次性生成一个相对完整的方案。硬逼它走 baby steps，可能是在拿人的认知限制约束机器。
-
-当然，这个实验很小，任务都是从零实现，质量还是由另一个 LLM 评的。它证明不了“Agent 做 TDD 一定更差”。而且缓存会让 3 倍 Token 不等于 3 倍账单。
-
-但已经足够问一句：质量没提升，Token 烧得更多，我们为什么默认这套流程值得保留？
-
 ## 测试要放在 Agent Loop 外面
 
 我不是要扔掉 TDD，而是要把它拆开。
@@ -64,18 +70,18 @@ Opus 看完执行记录后给了一个解释：不受 TDD 限制时，Agent 往�
 
 这是 [What Caps How](https://johnsonlee.io/2026/03/10/what-caps-how/) 在测试里的版本。测试应该是可执行的 What。What 也让 Agent 自己定义，接下来无论 How 跑得多勤快，都只是在完成一次自证。
 
-## 我不关心 Agent 怎么写
+## 边界画完，我不关心 Agent 怎么写
 
-Agent 产出越快，我越需要 regression test、architecture test、static analysis、mutation testing 和 benchmark。只是这些东西应该成为外部 gate，而不是 Agent 用来证明自己认真工作的过程记录。
+Architecture Design 定方向，regression test、architecture test、static analysis、mutation testing 和 benchmark 守边界。边界画完以后，Agent 先写测试还是先写实现，我不关心。
 
-测试杀不掉 mutation，就补测试；模块边界开始漂移，就加 architecture rule；真实样本漏了，就把它放进 regression corpus。至于 Agent 是先写测试还是先写实现，我不关心。
+测试杀不掉 mutation，就补测试；模块边界开始漂移，就加 architecture rule；真实样本漏了，就把它放进 regression corpus。
 
 Refactor 也不必绑在每次 Green 后面。复杂度、依赖方向、一次改动碰了多少文件、性能有没有退化，都可以直接触发 review。对着坏结果修，比在 prompt 里提醒它“现在该认真 Refactor 了”靠谱。
 
 这和我在[《从 Prompt 到 Harness》](https://johnsonlee.io/2026/05/15/from-prompt-to-harness/)里的判断一样：告诉 Agent 应该怎么做，只能改变它做对的概率；能把错误挡住的，才叫 Harness。
 
-TDD 没过时。人写代码时，它还是很好的思考工具；人写测试、Agent 写实现时，它也是很好的协作方式。
+TDD 没过时。人写代码时，它还是很好的思考工具；人写测试、Agent 写实现时，它也是很好的协作方式。只是面对复杂任务，顺序应该变成 Architecture Design、外部验证、Agent 实现，而不是一上来就钻进 Red-Green-Refactor。
 
 该停掉的，是 Agent 在 Loop 里那场无人观看的 Red-Green-Refactor。
 
-下次 Agent 告诉你“已严格遵循 TDD”，先别急着放心。问一句：**测试里的答案，是谁给的？**
+下次 Agent 告诉你“已严格遵循 TDD”，先别急着放心。问一句：**Architecture 是谁设计的，测试里的答案又是谁给的？**

@@ -17,17 +17,35 @@ A few days ago I came across an experiment on Martin Fowler's site. The author g
 
 <!-- more -->
 
-## TDD Was Solving a Human Problem
+## What Problem Was TDD Originally Solving?
 
-Two things often get bundled together under TDD: tests, and a way of writing code.
+TDD targets a familiar way of building software: write a large chunk of implementation, then verify it much later. By the time a test fails, dozens of things have changed and nobody knows where the mistake came from. Bigger changes create slower feedback. Slower feedback makes people afraid to change the code. The more afraid they become, the less willing they are to refactor it.
 
-Tests are useful. They record behavior, protect against regressions, and make refactoring safer. But Red-Green-Refactor is first of all a way to help humans think. Writing the test first makes us look at the interface from the caller's side. Moving one small step at a time keeps the problem from overflowing our heads. Each green light gives us enough confidence to take the next step.
+Red-Green-Refactor cuts that long feedback chain into small pieces. Define one small behavior, watch it fail, write only enough code to make it pass, then clean up the design. Only one variable changes at a time, so failures are easy to locate. The code stays in a working state, which gives the developer enough confidence to continue.
 
-Kent Beck described TDD as a way to manage fear. Agents do not feel fear, and they do not hesitate because a problem looks too large. Given a complete requirement, an Agent is usually planning the tests and implementation together. Making it write the test file first changes the order in which text lands on disk. It does not mean the Agent went through the same thinking a human does.
+Kent Beck described TDD as a way to manage fear. That fear is concrete: fear of breaking the code, losing control, or holding a problem too large to fit in your head. Test-first also forces developers to see an interface from the caller's side before disappearing into implementation and producing an API only its author can use.
 
-It is like asking an excavator to stretch its wrists before work. The motion is fine. The machine does not have those muscles.
+**The original value of TDD was helping humans control complexity through short feedback loops. Tests are the executable assets those loops leave behind.**
 
-**The value TDD gives humans cannot be copied into an Agent with a prompt.**
+Agents do not feel fear, and they do not hesitate because a problem looks too large. Given a complete requirement, an Agent is usually planning the tests and implementation together. Making it write the test file first changes the order in which text lands on disk. It does not mean the Agent went through the same thinking a human does.
+
+Copying the workflow into an Agent Loop is like asking an excavator to stretch its wrists before work. The motion is fine. The machine does not have those muscles.
+
+## TDD Optimizes Locally; Architecture Design Sets the Direction
+
+Each TDD cycle asks two questions: what is the next failing example, and what is the smallest change that makes it pass? This is local search. It works well when the problem boundary is already clear. On a complex task where the boundary has not been drawn, it can easily confuse a correct next step with a correct direction.
+
+Imagine asking an Agent to rebuild a payment module. The first test covers a single-currency payment, the second adds a coupon, and the third adds a refund. Every step can go Red-Green, and the code keeps running. Then multi-currency, partial refunds, idempotency, and reconciliation arrive together, and it becomes obvious that the original data model was wrong. The green tests did not help. They welded the wrong structure in place.
+
+The first step of a complex task should not be the first test. It should be Architecture Design: where module boundaries sit, who owns state, how data flows, where transactions end, how failures recover, and which constraints may never be broken. These are global questions. They do not naturally emerge from a sequence of local examples.
+
+Architecture Design does not mean writing a fifty-page document before touching code. It means deciding the shape of the system first so that local search happens inside the right boundaries. **Architecture decides where to go. TDD helps each step avoid a pothole.**
+
+[Birgitta Böckeler's experiment](https://martinfowler.com/articles/exploring-gen-ai/tdd-in-the-agent-loop.html) supports this explanation. Across five batches, non-TDD solutions repeatedly took the top two spots on small and medium tasks while TDD solutions landed in the bottom two. TDD finished in the middle on the large task. Mutation scores showed no meaningful gap.
+
+After reading the traces, Opus found that Agents without TDD instructions tended to think through the data model, edge cases, contracts, and overall design before writing anything. Under TDD, they kept making locally minimal changes around the first test. The early design hardened quickly, and the Agents rarely returned for a serious Refactor.
+
+The experiment was small. Every task was greenfield, and another LLM judged quality, so it cannot prove that TDD always makes Agents worse. But it exposes the real issue: **we do not need a more obedient coding loop. We need global design first, then an Agent running inside its boundaries.**
 
 ## A Red Test Can Still Be Wrong
 
@@ -41,18 +59,6 @@ That is why I care more about mutation testing. Deliberately break the implement
 
 **What matters most is not when the test was written, but where its answer came from.**
 
-## TDD May Be Getting in the Agent's Way
-
-[Birgitta Böckeler's experiment](https://martinfowler.com/articles/exploring-gen-ai/tdd-in-the-agent-loop.html) ran five batches. In the small and medium tasks, non-TDD solutions repeatedly took the top two spots while TDD solutions landed in the bottom two. On the large task, TDD finished in the middle. Mutation scores showed no meaningful gap.
-
-After reading the execution traces, Opus suggested an explanation. Without TDD instructions, the Agent tended to think through the data model, edge cases, contracts, and overall design before writing anything. Under TDD, it kept making locally minimal changes around the first test. The early design hardened quickly, and the Agent rarely returned for the kind of serious Refactor a human would do.
-
-That is the opposite of our familiar experience. Humans use small steps to discover a design. Agents may be better at seeing the whole problem and generating a reasonably complete solution in one pass. Forcing baby steps on them may simply impose a human cognitive limit on a machine.
-
-The experiment was small. Every task was greenfield, and another LLM judged quality. It cannot prove that TDD always makes Agents worse. Cache hits also mean three times the tokens does not mean three times the bill.
-
-But it is enough to ask: if quality did not improve and token use went up, why are we treating this workflow as the default?
-
 ## Keep the Tests Outside the Agent Loop
 
 I am not arguing that we should throw away TDD. I am arguing that we should take it apart.
@@ -65,18 +71,18 @@ Examples supplied by stakeholders, regression cases from production incidents, g
 
 This is [What Caps How](https://johnsonlee.io/2026/03/10/what-caps-how.en/) applied to testing. A test should be an executable What. If the Agent defines the What and then uses its own How to satisfy it, the whole exercise becomes self-verification.
 
-## I Do Not Care How the Agent Writes It
+## Once the Boundaries Are Drawn, I Do Not Care How the Agent Writes It
 
-The faster Agents produce code, the more I need regression tests, architecture tests, static analysis, mutation testing, and benchmarks. But these should be external gates, not a process log the Agent uses to prove that it worked diligently.
+Architecture Design sets the direction. Regression tests, architecture tests, static analysis, mutation testing, and benchmarks guard the boundaries. Once those boundaries are drawn, I do not care whether the Agent writes the test or implementation first.
 
-If tests cannot kill mutations, improve the tests. If module boundaries drift, add an architecture rule. If a real sample exposes a missed edge case, put it into the regression corpus. Whether the Agent wrote the test or the implementation first does not matter to me.
+If tests cannot kill mutations, improve the tests. If module boundaries drift, add an architecture rule. If a real sample exposes a missed edge case, put it into the regression corpus.
 
 Refactoring does not have to follow every Green step either. Complexity, dependency direction, change spread, and performance regression can trigger a review directly. Fixing an observable bad result is more reliable than reminding the Agent in a prompt that "now it is time to Refactor carefully."
 
 This is the same argument I made in ["From Prompt to Harness"](https://johnsonlee.io/2026/05/15/from-prompt-to-harness.en/): telling an Agent how to work can only change the probability that it gets the answer right. A Harness is what stops the wrong answer from getting through.
 
-TDD is not obsolete. It is still a good thinking tool when humans write code, and a good collaboration model when humans write tests and Agents write the implementation.
+TDD is not obsolete. It is still a good thinking tool when humans write code, and a good collaboration model when humans write tests and Agents write the implementation. But for a complex task, the order should be Architecture Design, external verification, then Agent implementation—not an immediate dive into Red-Green-Refactor.
 
 What should disappear is the unwatched Red-Green-Refactor performance inside the Agent Loop.
 
-The next time an Agent says, "Strictly followed TDD," do not relax just yet. Ask one question: **who supplied the answers in those tests?**
+The next time an Agent says, "Strictly followed TDD," do not relax just yet. Ask one question: **who designed the architecture, and who supplied the answers in those tests?**
