@@ -7,7 +7,6 @@ tags:
   - AI
   - Agentic Coding
   - TDD
-  - Harness Engineering
   - Testing
 i18n_key: agent-tdd-is-self-verification
 ---

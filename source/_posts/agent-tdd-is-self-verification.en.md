@@ -9,7 +9,6 @@ tags:
   - AI
   - Agentic Coding
   - TDD
-  - Harness Engineering
   - Testing
 ---
 
