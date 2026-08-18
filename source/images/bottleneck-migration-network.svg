@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1300" viewBox="0 0 1600 1300" role="img" aria-labelledby="title desc">
   <title id="title">瓶颈迁移网络</title>
-  <desc id="desc">一张按四个产业域和四级瓶颈深度组织的网络图，展示复制压力如何从已确认瓶颈迁移到直接投入、工艺产能与共享物理约束。</desc>
+  <desc id="desc">一张按四个产业域和四级瓶颈深度组织的网络图，展示复制压力如何从已确认瓶颈迁移到直接投入、工艺产能与共享物理约束，以及需求可以转向哪些替代路径。</desc>
   <defs>
     <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
       <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.14"/>
@@ -16,6 +16,9 @@
     </marker>
     <marker id="arrow-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#0f766e"/>
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7c3aed"/>
     </marker>
     <style>
       .canvas { fill: #f8fafc; }
@@ -39,8 +42,10 @@
       .candidate { fill: #fef3c7; stroke: #a16207; }
       .shared { fill: #bfdbfe; stroke: #1d4ed8; }
       .context { fill: #e5e7eb; stroke: #64748b; }
+      .substitute { fill: #ede9fe; stroke: #7c3aed; }
       .node-text { font: 600 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111827; text-anchor: middle; }
       .node-small { font: 500 12px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111827; text-anchor: middle; }
+      .substitute-text { font: 500 11px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #4c1d95; text-anchor: middle; }
       .node-center { dominant-baseline: middle; }
       .edge { fill: none; stroke: #64748b; stroke-width: 2; marker-end: url(#arrow); }
       .pressure { fill: none; stroke: #dc2626; stroke-width: 2; stroke-dasharray: 7 5; marker-end: url(#arrow-red); }
@@ -48,6 +53,7 @@
       .shared-edge { fill: none; stroke: #2563eb; stroke-width: 2.2; marker-end: url(#arrow-blue); }
       .feedback { fill: none; stroke: #0f766e; stroke-width: 2; stroke-dasharray: 6 5; marker-end: url(#arrow-teal); }
       .feedback-trunk { fill: none; stroke: #0f766e; stroke-width: 2; stroke-dasharray: 6 5; }
+      .substitution { fill: none; stroke: #7c3aed; stroke-width: 2; stroke-dasharray: 3 4; marker-end: url(#arrow-purple); }
       .edge-label { font: 500 11px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #475569; }
       .legend { font: 500 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #334155; }
       .legend-strong { font: 700 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #0f172a; }
@@ -96,7 +102,7 @@
   <text class="lane-note" x="36" y="995">光模块 + 光子</text>
 
   <!-- Edges: demand, D0 pressure, and feedback -->
-  <path class="edge" d="M290 213 V270"/>
+  <path class="edge" d="M290 213 V244"/>
   <path class="pressure-trunk" d="M380 301 H420 V958"/>
   <path class="pressure" d="M420 478 H380"/>
   <path class="pressure" d="M420 718 H380"/>
@@ -106,6 +112,10 @@
   <text class="edge-label" x="414" y="888" text-anchor="end">横向扩展流量</text>
   <path class="feedback-trunk" d="M205 485 H165 M205 965 H165 V301"/>
   <path class="feedback" d="M165 301 H205"/>
+  <path class="substitution" d="M292.5 305 V319"/>
+  <path class="substitution" d="M292.5 515 V530"/>
+  <path class="substitution" d="M292.5 755 V770"/>
+  <path class="substitution" d="M292.5 995 V1010"/>
 
   <!-- Compute edges -->
   <path class="edge" d="M380 289 H450 V175 H475"/>
@@ -157,17 +167,25 @@
   <rect class="node context" x="205" y="158" width="170" height="55"/>
   <text class="node-text" x="290" y="181"><tspan x="290">AI 需求</tspan><tspan class="node-small" x="290" dy="17">10× 冲击</tspan></text>
 
-  <rect class="node confirmed" x="205" y="271" width="175" height="60"/>
-  <text class="node-text" x="292.5" y="294"><tspan x="292.5">算力</tspan><tspan class="node-small" x="292.5" dy="18">GPU · ASIC</tspan></text>
+  <rect class="node confirmed" x="205" y="245" width="175" height="60"/>
+  <text class="node-text" x="292.5" y="268"><tspan x="292.5">算力</tspan><tspan class="node-small" x="292.5" dy="18">GPU</tspan></text>
+  <rect class="node substitute" x="205" y="319" width="175" height="50"/>
+  <text class="substitute-text" x="292.5"><tspan x="292.5" y="337">ASIC · CPU</tspan><tspan x="292.5" y="354">部分负载</tspan></text>
 
   <rect class="node confirmed" x="205" y="455" width="175" height="60"/>
   <text class="node-text" x="292.5" y="478"><tspan x="292.5">电力</tspan><tspan class="node-small" x="292.5" dy="18">燃气轮机 · GEV</tspan></text>
+  <rect class="node substitute" x="205" y="530" width="175" height="50"/>
+  <text class="substitute-text" x="292.5"><tspan x="292.5" y="543">煤电 · 核电 · 水电</tspan><tspan x="292.5" y="560">风电 · 光伏 + 储能</tspan><tspan x="292.5" y="577">燃料电池 · 电网扩容</tspan></text>
 
   <rect class="node confirmed" x="205" y="695" width="175" height="60"/>
   <text class="node-text" x="292.5" y="718"><tspan x="292.5">存储</tspan><tspan class="node-small" x="292.5" dy="18">企业级 SSD</tspan></text>
+  <rect class="node substitute" x="205" y="770" width="175" height="50"/>
+  <text class="substitute-text node-center" x="292.5" y="795">HDD · 分层存储</text>
 
   <rect class="node confirmed" x="205" y="935" width="175" height="60"/>
   <text class="node-text" x="292.5" y="958"><tspan x="292.5">网络</tspan><tspan class="node-small" x="292.5" dy="18">光模块 · 800G · 1.6T</tspan></text>
+  <rect class="node substitute" x="205" y="1010" width="175" height="50"/>
+  <text class="substitute-text node-center" x="292.5" y="1035">铜互连 · CPO</text>
 
   <!-- D1 nodes -->
   <rect class="node direct" x="475" y="145" width="230" height="60"/>
@@ -255,7 +273,7 @@
   <text class="node-text" x="1402.5" y="1040">InP 外延 · 对准 · 老化设备</text>
 
   <!-- Legend -->
-  <rect x="20" y="1175" width="1560" height="90" rx="10" fill="#ffffff" stroke="#cbd5e1"/>
+  <rect x="20" y="1175" width="1560" height="110" rx="10" fill="#ffffff" stroke="#cbd5e1"/>
   <text class="legend-strong" x="42" y="1203">怎么看：</text>
   <text class="legend" x="145" y="1203">Depth 是相对的。D1 节点一旦变红，就成为新的 D0，整张图重新计数。</text>
   <rect x="42" y="1222" width="22" height="16" rx="4" class="confirmed"/>
@@ -266,8 +284,10 @@
   <text class="legend" x="567" y="1235">更深层候选</text>
   <rect x="740" y="1222" width="22" height="16" rx="4" class="shared"/>
   <text class="legend" x="772" y="1235">共享产能 · 冲突</text>
-  <line x1="1015" y1="1230" x2="1055" y2="1230" class="pressure"/>
-  <text class="legend" x="1067" y="1235">迁移压力</text>
-  <line x1="1240" y1="1230" x2="1280" y2="1230" class="feedback"/>
-  <text class="legend" x="1292" y="1235">产能反馈</text>
+  <line x1="42" y1="1260" x2="82" y2="1260" class="pressure"/>
+  <text class="legend" x="94" y="1265">迁移压力</text>
+  <line x1="270" y1="1260" x2="310" y2="1260" class="feedback"/>
+  <text class="legend" x="322" y="1265">产能反馈</text>
+  <line x1="535" y1="1260" x2="575" y2="1260" class="substitution"/>
+  <text class="legend" x="587" y="1265">替代路径</text>
 </svg>

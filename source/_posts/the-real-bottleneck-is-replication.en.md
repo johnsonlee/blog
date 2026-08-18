@@ -137,6 +137,8 @@ D0 is the bottleneck the market already sees. D1 is capacity pulled directly by 
 
 Depth is not a permanent property of a node. Once today's D1 turns red, it becomes the new D0 and the network is measured again. That is migration: the red light moves, and the starting point of the research moves with it.
 
+One relationship does not change Depth: substitution. Demand can route around a red node, but the bottleneck is relieved only if the substitute path can absorb the flow fast enough. Otherwise the pressure merely enters through another route.
+
 ![Bottleneck Migration Network](/images/bottleneck-migration-network.en.svg)
 
 A node turning red is where the research begins. Every new order required for its expansion pushes pressure into upstream suppliers and other industries competing for the same materials, equipment, and capacity.
