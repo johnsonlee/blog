@@ -153,7 +153,7 @@ In the Bottleneck Hunter framework, we follow demand until we find the narrowest
 
 This network applies not only to AI. Replace the GPU with a new drug and the nodes become active ingredients, bioreactors, fill-finish, cold chain, and approval. Replace it with an SMR and the nodes become nuclear-grade forgings, fuel, licensing, welders, and site construction. The names change. The propagation does not.
 
-## Two directions for AI bottleneck migration: power and semiconductors
+## The data center is AI's largest bottleneck
 
 Shrink the map until only its structure remains. The Serving Plane, Data Center, and Delivery Network are still three roots, but D1 through D4 do not spread evenly. AI may look as if it lives in the cloud; replication happens on the ground. Cards must go into racks, power must reach them, heat must leave, and storage and networks must connect before a service can go live.
 
@@ -175,11 +175,13 @@ The research cannot stop at “buy semiconductors.” If semiconductor demand gr
 
 After GPUs, GEV, enterprise SSDs, or optical modules turn red, I first ask whether the demand they release will hit power or semiconductors. If it is power, I follow generation, delivery, cooling, and facility integration while checking their semiconductor dependencies. If it is semiconductors, I continue from the chip into equipment, materials, packaging, and test. Then I compare supply elasticity, Replication Gap, and Price-in Score.
 
-The next alpha is not hidden inside the labels “power stock” or “semiconductor stock.” It sits at the layer on these two paths with the slowest replication, the highest criticality, and the lowest market recognition.
+Along the current path, the next alpha is not hidden inside the labels “power stock” or “semiconductor stock.” It sits at the layer on these two paths with the slowest replication, the highest criticality, and the lowest market recognition.
+
+That leaves a larger question than how to replicate power and semiconductors faster: can the whole terrestrial path be replaced instead of optimized?
 
 ## SpaceX does not optimize the data center. It replaces it
 
-If the data center is the center of AI's bottleneck, the opening question now has an answer. When Elon Musk says AI could become the largest source of SpaceX's value, the data center is the bottleneck SpaceX is trying to solve.
+When Elon Musk says AI could become the largest source of SpaceX's value, the claim should not be read as a bet on models or GPUs. SpaceX is targeting the data center.
 
 The conventional response is to improve the terrestrial path one part at a time: build more generation, expand the grid, lower PUE, and shorten interconnection and construction schedules. Yet the same path still requires generation, grid delivery, distribution, cooling, facilities, and networking to replicate together. One slow component can still hold up the entire data center.
 
