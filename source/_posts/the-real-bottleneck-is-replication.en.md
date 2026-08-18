@@ -23,7 +23,7 @@ SpaceX has a way of making people forget that they are investing. The moment it 
 
 ## A stock list cannot give you alpha
 
-I started by asking for stocks. Eventually I realized that was the wrong question.
+I started by looking for stocks. Only later did I realize that the starting point itself was wrong.
 
 “Who is the next GEV?” and “Who is the next Micron?” will always produce a list. A list can only summarize what has already happened. By the time everyone knows that GPUs, gas turbines, and memory are bottlenecks, the fattest part of the re-rating is usually over. The fundamentals may remain excellent while the alpha moves elsewhere.
 
