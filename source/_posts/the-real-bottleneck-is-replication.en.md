@@ -203,6 +203,12 @@ StarMind must raise the first term, Starship the second, and Starlink must recon
 
 SpaceX is not replacing the GPU path. It is replacing the deployment path in which power, cooling, facilities, and networking must expand together on Earth. The wager is that satellite manufacturing throughput and launch throughput can scale faster than a construction project spread across a dozen industries. If they do, SpaceX could become a machine for manufacturing compute capacity. If radiators, launch cadence, or satellite production fall behind, the red light has merely moved from the ground into orbit.
 
+### The crossover: when OpenAI moves from 10GW toward 30 to 50GW
+
+OpenAI is the best available stress test for these two routes. In April 2026, OpenAI said Stargate had passed its initial 10GW planning milestone and that it was evaluating sites beyond 10GW. [OpenAI's published update](https://openai.com/index/building-the-compute-infrastructure-for-the-intelligence-age/) shows that 10GW is no longer a distant scenario, although multiple terrestrial sites and dedicated energy projects can still deliver it. At continuous load, 10GW consumes 87.6TWh per year. If one platform moves next to 30 or 50GW, annual electricity use rises to 263 or 438TWh. The latter is already in the same range as the 415TWh consumed by all data centers worldwide in 2024. The [IEA](https://www.iea.org/reports/energy-and-ai/executive-summary) expects the global total to reach only about 945TWh by 2030.
+
+The crossover is therefore not a fixed year, nor the moment orbital electricity suddenly becomes cheaper than terrestrial electricity. It requires a more specific condition: OpenAI's next block of desired capacity is moving toward 30 to 50GW, while the annual delivery of power-ready terrestrial capacity persistently falls behind GPU and ASIC supply. Only then does the marginal Time-to-Compute of the orbital route have a chance to catch the terrestrial route. Based on the demand path disclosed so far, I would watch 2028 to 2032 as the earliest window. At 50 to 100GW, orbital compute could shift from a long-dated option into a strategic one. Faster model-efficiency gains or faster replication of deployable terrestrial power would push the crossover farther out, perhaps indefinitely.
+
 SpaceX was missing from the list at the beginning because it is neither the next GEV nor the next SK hynix. It is a bet on a new Bottleneck Substitution Path.
 
 **Technology turns zero into one. Replication determines how many zeros come after the one.**
