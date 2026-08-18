@@ -13,7 +13,7 @@ tags:
   - Bottleneck
 ---
 
-Lately I have been looking for the next batch of high-alpha stocks capable of breaking the market's old valuation model. The starting point was embarrassingly ordinary: who comes after GEV? Who comes after SNDK? The candidate list was long. I reached the end and noticed one name was missing: SpaceX.
+Lately I have been looking for the next batch of high-alpha stocks capable of breaking the market's old valuation model. The starting point was embarrassingly ordinary: who comes after GEV? Who comes after SK hynix? The candidate list was long. I reached the end and noticed one name was missing: SpaceX.
 
 SpaceX did not necessarily belong on the list. But if a method cannot explain why it was excluded, a longer list only gives me more unexplained answers. I did not rush to add SpaceX back. I asked one question: why was it missing?
 
@@ -25,7 +25,7 @@ SpaceX has a way of making people forget that they are investing. The moment it 
 
 I started by looking for stocks. Only later did I realize that the starting point itself was wrong.
 
-“Who is the next GEV?” and “Who is the next SNDK?” will always produce a list. A list can only summarize what has already happened. By the time everyone knows that GPUs, gas turbines, and memory are bottlenecks, the fattest part of the re-rating is usually over. The fundamentals may remain excellent while the alpha moves elsewhere.
+“Who is the next GEV?” and “Who is the next SK hynix?” will always produce a list. A list can only summarize what has already happened. By the time everyone knows that GPUs, gas turbines, and memory are bottlenecks, the fattest part of the re-rating is usually over. The fundamentals may remain excellent while the alpha moves elsewhere.
 
 The useful thing is not the answer. It is the method that keeps producing answers.
 
