@@ -182,19 +182,9 @@ D0 和 Depth 不需要跟着红灯重新编号。真正迁移的是约束状态�
 
 SpaceX 不该被塞进 D2 或 D3 的某一个框。它代表的是一条从 Data Center 分叉、再通过 Starlink 接回 Delivery Network 的替代路径。
 
-地面数据中心的部署路径是：
+地面数据中心与 SpaceX 轨道方案的路径差异可以画成：
 
-```text
-算力部署：半导体 → 数据中心（发电与电网 + 配电 + 制冷 + 设施）
-结果交付：数据中心 → DCI + 骨干网 + CDN / Edge
-```
-
-SpaceX 试图把它改成：
-
-```text
-算力部署：半导体 → 计算卫星（太阳能阵列 + 散热器）→ Starship → 轨道部署
-结果交付：计算卫星 → Starlink 激光网络 → 地面网络
-```
+![地面数据中心与 SpaceX 轨道计算的瓶颈替代路径](/images/spacex-bottleneck-substitution-path.svg)
 
 [SpaceX 公布的 StarMind 架构](https://www.spacex.com/spacexai/starmind)已经把这几个部件放在了一起：计算载荷使用太阳能供电，通过散热器把热量辐射出去，再用星间激光链路把结果送回 Starlink。它没有绕过半导体，却试图绕过地面数据中心最慢的那组物理依赖：新增发电、并网、输电、变压器、土地、许可、土建和传统制冷。
 

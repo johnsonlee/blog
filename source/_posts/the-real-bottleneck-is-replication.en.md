@@ -183,19 +183,9 @@ We can now return to the question at the beginning. If Elon Musk says that AI co
 
 SpaceX does not belong in a single D2 or D3 box. It represents an alternative route that branches from the Data Center and reconnects to the Delivery Network through Starlink.
 
-The terrestrial deployment path looks like this:
+The difference between terrestrial deployment and the SpaceX orbital alternative looks like this:
 
-```text
-Compute deployment: Semiconductors → Data center (generation and grid + distribution + cooling + facilities)
-Result delivery: Data center → DCI + backbone + CDN / edge
-```
-
-SpaceX is trying to replace it with:
-
-```text
-Compute deployment: Semiconductors → Compute satellite (solar array + radiator) → Starship → Orbit
-Result delivery: Compute satellite → Starlink laser network → Terrestrial network
-```
+![Bottleneck substitution from terrestrial data centers to SpaceX orbital compute](/images/spacex-bottleneck-substitution-path.en.svg)
 
 [SpaceX's published StarMind architecture](https://www.spacex.com/spacexai/starmind) already puts those components together: a compute payload powered by solar arrays, radiators that reject heat, and inter-satellite lasers that return results through Starlink. It does not bypass semiconductors. It tries to bypass the slowest physical dependencies of terrestrial data centers: new generation, grid connection, transmission, transformers, land, permits, civil works, and conventional cooling.
 
