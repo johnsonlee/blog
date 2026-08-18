@@ -16,6 +16,7 @@
     </style>
   </defs>
 
+  <rect width="1600" height="760" fill="#f8fafc"/>
   <rect x="30" y="28" width="280" height="46" rx="10" class="current-badge" filter="url(#shadow)"/>
   <text x="170" y="52" class="section" text-anchor="middle" dominant-baseline="middle">TERRESTRIAL PATH</text>
   <text x="330" y="55" class="note">Several industries must scale together</text>

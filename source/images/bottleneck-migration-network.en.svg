@@ -7,7 +7,7 @@
     <marker id="arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#7c3aed"/></marker>
     <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#dc2626"/></marker>
     <style>
-      .lane-a{fill:#fff}.lane-b{fill:#f8fafc}.grid{stroke:#cbd5e1;stroke-width:1}
+      .canvas{fill:#f8fafc}.lane-a{fill:#fff}.lane-b{fill:#f8fafc}.grid{stroke:#cbd5e1;stroke-width:1}
       .depth-0{fill:#f1f5f9}.depth-1{fill:#fff7ed}.depth-2{fill:#fff7ed}.depth-3{fill:#fefce8}.depth-4{fill:#eff6ff}
       .title{font:700 27px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#0f172a}.subtitle{font:400 14px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#64748b}
       .depth-label{font:700 14px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#334155;letter-spacing:.4px}.depth-note{font:400 11.5px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#64748b}
@@ -19,6 +19,7 @@
     </style>
   </defs>
 
+  <rect class="canvas" width="1600" height="2300" rx="18"/>
   <text class="title" x="30" y="40">Bottleneck Migration Network</text>
   <text class="subtitle" x="30" y="64">External demand hits three D0 roots at once; effective capacity is limited by the narrowest of Serving Plane, Data Center, and Delivery Network.</text>
   <rect class="depth-0" x="175" y="78" width="225" height="2022" rx="10"/><rect class="depth-1" x="400" y="78" width="230" height="2022" rx="10"/><rect class="depth-2" x="630" y="78" width="295" height="2022" rx="10"/><rect class="depth-3" x="925" y="78" width="330" height="2022" rx="10"/><rect class="depth-4" x="1255" y="78" width="325" height="2022" rx="10"/>
