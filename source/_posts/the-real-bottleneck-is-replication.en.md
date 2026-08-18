@@ -13,21 +13,23 @@ tags:
   - Bottleneck
 ---
 
-Imagine waking up tomorrow to find that a customer has raised an order from ten thousand units to one hundred thousand. The prototype passed every test, and you own the core technology. But the equipment is still on order, suppliers have no spare capacity, and new hires have not learned how to hold yield steady. Technology answered whether it could be made. The order asks how quickly you can make ten times as many. **Replication speed is the real bottleneck.**
+GE Vernova entered the second quarter with 116GW of gas-turbine equipment backlog and slot reservations, against only 20GW of output planned for 2026. Raising annual output to 30GW will take until 2030. [GE Vernova Q2 2026](https://www.gevernova.com/news/articles/ge-vernova-releases-second-quarter-2026-financial-results) Gas turbines are mature technology, and orders are not the problem. The constraint is an industrial system that can expand only so fast. **Demand can jump tenfold overnight. Supply cannot.**
 
 <!-- more -->
 
-## Mature technology is easier to misread
+## The demo works. Now what?
 
-While a technology is still in the lab, everyone asks whether it works. Once the prototype passes, the problem starts to look solved. The industry calculates TAM, investors search for the next breakthrough, and capacity expansion gets filed under execution.
+Technology is easy to talk about. GPUs have FLOPS, optical modules have Gbps, SSDs have IOPS, and gas turbines have MW. Put the numbers on a table and the winner looks obvious.
 
-Those execution details decide whether an order becomes revenue. The factory will eventually be built. The equipment will arrive. A second supplier may pass qualification. The customer, however, wants delivery today. Demand is already here while supply is still ramping. The gap creates scarcity, backlog, and pricing power.
+Customers do not buy benchmarks. They buy products that arrive. Building one GPU and shipping one hundred thousand every month are two different businesses. So are building one gas turbine and delivering on time when the whole world orders at once.
 
-The gap fits into a simple equation:
+The market likes to file the second half under "execution." It is a convenient word, and a good way to miss where the money goes. A factory, a piece of equipment, yield, raw material, qualification, or skilled labor can keep an order from becoming revenue.
+
+I would rather compare two clocks: how soon demand arrives and how long supply takes to expand. The mismatch is the Scale Gap:
 
 > **Scale Gap = Supply expansion time − Demand arrival time**
 
-Suppose demand arrives in eighteen months while supply needs forty-eight months to catch up. Those thirty months are the scarcity window. Mature technology makes this gap easier to miss. Everyone knows the product works, so few keep asking how fast it can be replicated.
+If demand arrives in eighteen months while supply needs forty-eight months to catch up, those thirty months are the scarcity window. Mature technology makes the gap easier to miss. Everyone knows the product works, so few keep asking how fast it can be replicated.
 
 When I study an industry, I start with three questions. How large is incremental demand relative to current supply? How long would it take to add 50% more supply? Which other congested chain must that expansion pass through?
 
@@ -55,7 +57,7 @@ Once GPU supply eases, the bottleneck migrates into HBM and packaging, then netw
 
 Gas turbines make the argument even more counterintuitive. The technology is neither new nor an AI invention. But when data centers jump from megawatts to gigawatts, customers need a firm delivery slot, not another paper explaining how a turbine works.
 
-GE Vernova offers a useful example. In the second quarter of 2026, Gas Power equipment backlog and slot reservations reached 116GW. The company plans to raise annual output from 20GW in 2026 to 24GW in 2028 and 30GW in 2030. [GE Vernova Q2 2026](https://www.gevernova.com/news/articles/ge-vernova-releases-second-quarter-2026-financial-results)
+Return to the 116GW from the opening. GEV has the orders and knows how to build gas turbines. What it lacks is the speed to expand the entire delivery system at once.
 
 Orders grow in multiples while supply climbs over years. Large forgings and castings, specialty alloys, coatings, compressor parts, assembly workers, test stands, and the supplier quality system all have to expand together. Miss one link and the machine does not ship.
 
