@@ -99,7 +99,7 @@
 
   <!-- Compute paths -->
   <path class="edge" d="M380 185H450"/>
-  <path class="alt-trunk" d="M292.5 215V225H420V365"/>
+  <path class="alt-trunk" d="M380 185H420V365"/>
   <path class="alt-edge" d="M420 275H450"/>
   <path class="alt-edge" d="M420 365H450"/>
   <path class="edge" d="M690 185H760"/>
@@ -135,7 +135,7 @@
 
   <!-- Power paths -->
   <path class="edge" d="M380 485H450"/>
-  <path class="alt-trunk" d="M292.5 515V525H420V1080"/>
+  <path class="alt-trunk" d="M380 485H420V1080"/>
   <path class="alt-edge" d="M420 570H450"/>
   <path class="alt-edge" d="M420 655H450"/>
   <path class="alt-edge" d="M420 740H450"/>
@@ -156,14 +156,14 @@
   <text class="node-text" x="292.5" y="481"><tspan x="292.5">24×7 可用电力</tspan><tspan class="node-small" x="292.5" dy="18">Firm Power</tspan></text>
 
   <rect class="node direct" x="450" y="450" width="240" height="70"/>
-  <text class="node-text" x="570" y="478"><tspan x="570">重型燃气轮机</tspan><tspan class="node-small" x="570" dy="18">本文案例路径</tspan></text>
+  <text class="node-text" x="570" y="490">燃气发电</text>
   <rect class="node candidate" x="760" y="450" width="370" height="70"/>
-  <text class="node-text" x="945" y="478"><tspan x="945">大型锻件 · 热通道部件</tspan><tspan class="node-small" x="945" dy="18">总装 · 测试台 · 天然气接入</tspan></text>
+  <text class="node-text" x="945" y="478"><tspan x="945">重型燃气轮机 · 发电机</tspan><tspan class="node-small" x="945" dy="18">总装 · 测试台 · 天然气接入</tspan></text>
   <rect class="node shared" x="1190" y="450" width="350" height="70"/>
-  <text class="node-small" x="1365" y="469"><tspan x="1365">高温合金 · 单晶 · TBC · 冷却孔</tspan><tspan x="1365" dy="17">重型压力机 · VIM-VAR · 热处理炉</tspan><tspan x="1365" dy="17">与核能、国防争抢产能</tspan></text>
+  <text class="node-small" x="1365" y="469"><tspan x="1365">大型锻件 · 热通道部件 · 高温合金</tspan><tspan x="1365" dy="17">单晶 · TBC · 冷却孔 · 重型压力机</tspan><tspan x="1365" dy="17">VIM-VAR · 热处理炉 · 核能 · 国防共享</tspan></text>
 
   <rect class="node direct alt" x="450" y="535" width="240" height="70"/>
-  <text class="node-text alt-text" x="570" y="563"><tspan x="570">煤电</tspan><tspan class="node-small alt-text" x="570" dy="18">中国路径</tspan></text>
+  <text class="node-text alt-text" x="570" y="575">煤电</text>
   <rect class="node candidate alt" x="760" y="535" width="370" height="70"/>
   <text class="node-text alt-text" x="945" y="563"><tspan x="945">锅炉 · 汽轮机 · 发电机</tspan><tspan class="node-small alt-text" x="945" dy="18">接网 · 电煤物流 · 灵活性改造</tspan></text>
   <rect class="node shared alt" x="1190" y="535" width="350" height="70"/>
@@ -213,7 +213,7 @@
 
   <!-- Storage paths -->
   <path class="edge" d="M380 1195H450"/>
-  <path class="alt-trunk" d="M292.5 1225V1235H420V1365"/>
+  <path class="alt-trunk" d="M380 1195H420V1365"/>
   <path class="alt-edge" d="M420 1280H450"/>
   <path class="alt-edge" d="M420 1365H450"/>
   <path class="edge" d="M690 1195H760"/><path class="edge" d="M1130 1195H1190"/>
@@ -245,7 +245,7 @@
 
   <!-- Networking paths -->
   <path class="edge" d="M380 1485H450"/>
-  <path class="alt-trunk" d="M292.5 1515V1525H420V1675"/>
+  <path class="alt-trunk" d="M380 1485H420V1675"/>
   <path class="alt-edge" d="M420 1580H450"/>
   <path class="alt-edge" d="M420 1675H450"/>
   <path class="edge" d="M690 1485H760"/><path class="edge" d="M1130 1485H1190"/>
