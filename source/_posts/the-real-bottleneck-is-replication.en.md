@@ -141,7 +141,7 @@ The four tracks also have to live at the same level of abstraction: **Compute, P
 
 This is one graph, not four supply-chain charts. Bottleneck Depth runs horizontally from D0 to D3; the four domains run vertically. Blue nodes reconnect the domains wherever they compete for the same underlying capacity.
 
-![Bottleneck Migration Network — Depth Map](/images/bottleneck-migration-network.svg)
+![Bottleneck Migration Network — Depth Map](/images/bottleneck-migration-network.en.svg)
 
 A node turning red is where the research begins. Every new order required for its expansion pushes pressure into upstream suppliers and other industries competing for the same materials, equipment, and capacity.
 

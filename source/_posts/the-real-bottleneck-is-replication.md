@@ -140,7 +140,7 @@ Depth 不是节点的永久属性。今天的 D1 一旦变红，就会成为新�
 
 这是一张图，不是四张供应链图。横向是 D0 → D3 的 Bottleneck Depth，纵向是四个 domain；蓝色节点把不同 domain 对同一份底层产能的争抢重新连在一起。
 
-![Bottleneck Migration Network — Depth Map](/images/bottleneck-migration-network.svg)
+![瓶颈迁移网络——深度图](/images/bottleneck-migration-network.svg)
 
 一个 node 变红，研究才刚刚开始。它为扩产新增的每一笔订单，都会把压力推给上游 supplier，也推给那些和它争抢同一种材料、设备和产能的行业。
 
