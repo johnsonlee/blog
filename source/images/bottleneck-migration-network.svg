@@ -209,14 +209,14 @@
   <text class="node-text node-center" x="1094" y="313">老化 / 成品测试</text>
 
   <rect class="node candidate" x="805" y="390" width="180" height="60"/>
-  <text class="node-text node-center" x="895"><tspan x="895" y="411">高温合金熔炼</tspan><tspan x="895" y="429">/ 热处理</tspan></text>
+  <text class="node-text node-center" x="895" y="420">高温合金熔炼 / 热处理</text>
   <rect class="node candidate" x="995" y="460" width="195" height="60"/>
-  <text class="node-text node-center" x="1092.5"><tspan x="1092.5" y="481">单晶 / TBC</tspan><tspan x="1092.5" y="499">/ 冷却孔</tspan></text>
+  <text class="node-text node-center" x="1092.5" y="490">单晶 / TBC / 冷却孔</text>
   <rect class="node candidate" x="805" y="535" width="180" height="60"/>
-  <text class="node-text node-center" x="895"><tspan x="895" y="556">NDT / 供应商 QA</tspan><tspan x="895" y="574">/ 合格劳动力</tspan></text>
+  <text class="node-small node-center" x="895" y="565">NDT / 供应商 QA / 合格劳动力</text>
 
   <rect class="node candidate" x="805" y="625" width="180" height="60"/>
-  <text class="node-text node-center" x="895"><tspan x="895" y="646">NAND 晶圆 / 堆叠层数</tspan><tspan x="895" y="664">/ 封装测试</tspan></text>
+  <text class="node-small node-center" x="895" y="655">NAND 晶圆 / 层数 / 封装测试</text>
   <rect class="node candidate" x="995" y="695" width="195" height="60"/>
   <text class="node-small node-center" x="1092.5" y="725">晶圆代工 / SerDes / DRAM / PLP</text>
   <rect class="node candidate" x="805" y="765" width="180" height="60"/>
@@ -236,7 +236,7 @@
   <text class="node-small" x="1402.5" y="251"><tspan x="1402.5">键合 / 光刻 / 量测设备</tspan><tspan x="1402.5" dy="18">HBM + 先进封装</tspan></text>
 
   <rect class="node shared" x="1260" y="425" width="285" height="60"/>
-  <text class="node-small node-center" x="1402.5"><tspan x="1402.5" y="437">重型压力机 / VIM-VAR</tspan><tspan x="1402.5" y="455">/ 热处理炉</tspan><tspan x="1402.5" y="473">电力 + 核能 + 国防</tspan></text>
+  <text class="node-small node-center" x="1402.5"><tspan x="1402.5" y="446">重型压力机 / VIM-VAR / 热处理炉</tspan><tspan x="1402.5" y="464">电力 + 核能 + 国防</tspan></text>
   <rect class="node context" x="1307.5" y="520" width="190" height="50"/>
   <text class="node-small node-center" x="1402.5" y="545">核能 / 国防需求</text>
 
