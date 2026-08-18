@@ -156,7 +156,7 @@
   <rect class="node context" x="205" y="158" width="170" height="55"/>
   <text class="node-text" x="290" y="181"><tspan x="290">AI DEMAND</tspan><tspan class="node-small" x="290" dy="17">10× shock</tspan></text>
 
-  <rect class="node confirmed" x="205" y="270" width="175" height="62"/>
+  <rect class="node confirmed" x="205" y="271" width="175" height="60"/>
   <text class="node-text" x="292.5" y="294"><tspan x="292.5">COMPUTE</tspan><tspan class="node-small" x="292.5" dy="18">GPU / ASIC</tspan></text>
 
   <rect class="node confirmed" x="205" y="455" width="175" height="60"/>
@@ -165,87 +165,87 @@
   <rect class="node confirmed" x="205" y="695" width="175" height="60"/>
   <text class="node-text" x="292.5" y="718"><tspan x="292.5">STORAGE</tspan><tspan class="node-small" x="292.5" dy="18">Enterprise SSD</tspan></text>
 
-  <rect class="node confirmed" x="205" y="930" width="175" height="70"/>
-  <text class="node-text" x="292.5" y="953"><tspan x="292.5">NETWORKING</tspan><tspan class="node-small" x="292.5" dy="18">Optical Module</tspan><tspan class="node-small" x="292.5" dy="16">800G / 1.6T</tspan></text>
+  <rect class="node confirmed" x="205" y="935" width="175" height="60"/>
+  <text class="node-text" x="292.5" y="958"><tspan x="292.5">NETWORKING</tspan><tspan class="node-small" x="292.5" dy="18">Optical Module · 800G / 1.6T</tspan></text>
 
   <!-- D1 nodes -->
-  <rect class="node direct" x="475" y="185" width="230" height="56"/>
+  <rect class="node direct" x="475" y="183" width="230" height="60"/>
   <text class="node-text" x="590" y="218">HBM</text>
-  <rect class="node direct" x="475" y="285" width="230" height="56"/>
+  <rect class="node direct" x="475" y="283" width="230" height="60"/>
   <text class="node-text" x="590" y="318">Advanced Packaging</text>
 
-  <rect class="node direct" x="475" y="392" width="230" height="56"/>
-  <text class="node-text" x="590" y="416"><tspan x="590">Large Forgings</tspan><tspan x="590" dy="17">/ Castings</tspan></text>
-  <rect class="node direct" x="475" y="462" width="230" height="56"/>
-  <text class="node-text" x="590" y="486"><tspan x="590">Hot-gas-path</tspan><tspan x="590" dy="17">Parts</tspan></text>
-  <rect class="node direct" x="475" y="537" width="230" height="56"/>
-  <text class="node-text" x="590" y="561"><tspan x="590">Assembly</tspan><tspan x="590" dy="17">/ Test Bays</tspan></text>
+  <rect class="node direct" x="475" y="390" width="230" height="60"/>
+  <text class="node-text" x="590" y="425">Large Forgings / Castings</text>
+  <rect class="node direct" x="475" y="460" width="230" height="60"/>
+  <text class="node-text" x="590" y="495">Hot-gas-path Parts</text>
+  <rect class="node direct" x="475" y="535" width="230" height="60"/>
+  <text class="node-text" x="590" y="570">Assembly / Test Bays</text>
 
-  <rect class="node direct" x="475" y="627" width="230" height="56"/>
+  <rect class="node direct" x="475" y="625" width="230" height="60"/>
   <text class="node-text" x="590" y="660">NAND Die</text>
-  <rect class="node direct" x="475" y="697" width="230" height="56"/>
+  <rect class="node direct" x="475" y="695" width="230" height="60"/>
   <text class="node-text" x="590" y="730">Controller ASIC</text>
-  <rect class="node direct" x="475" y="767" width="230" height="56"/>
-  <text class="node-text" x="590" y="791"><tspan x="590">Firmware</tspan><tspan x="590" dy="17">/ Qualification</tspan></text>
+  <rect class="node direct" x="475" y="765" width="230" height="60"/>
+  <text class="node-text" x="590" y="800">Firmware / Qualification</text>
 
-  <rect class="node direct" x="475" y="857" width="230" height="56"/>
+  <rect class="node direct" x="475" y="855" width="230" height="60"/>
   <text class="node-text" x="590" y="890">Optical DSP</text>
-  <rect class="node direct" x="475" y="917" width="230" height="56"/>
+  <rect class="node direct" x="475" y="915" width="230" height="60"/>
   <text class="node-text" x="590" y="950">Laser Source</text>
-  <rect class="node direct" x="475" y="977" width="230" height="56"/>
+  <rect class="node direct" x="475" y="975" width="230" height="60"/>
   <text class="node-text" x="590" y="1010">SiPh / PIC</text>
-  <rect class="node direct" x="475" y="1037" width="230" height="56"/>
+  <rect class="node direct" x="475" y="1035" width="230" height="60"/>
   <text class="node-text" x="590" y="1070">Assembly / Test</text>
 
   <!-- D2 nodes -->
   <rect class="node candidate" x="805" y="183" width="385" height="60"/>
   <line x1="997.5" y1="183" x2="997.5" y2="243" stroke="#a16207" stroke-width="1.2"/>
-  <text class="node-text" x="901" y="207"><tspan x="901">DRAM Wafer</tspan><tspan x="901" dy="17">Starts + Yield</tspan></text>
-  <text class="node-text" x="1094" y="207"><tspan x="1094">TSV / Thinning</tspan><tspan x="1094" dy="17">/ Stacking</tspan></text>
+  <text class="node-small" x="901" y="218">DRAM Wafer Starts + Yield</text>
+  <text class="node-small" x="1094" y="218">TSV / Thinning / Stacking</text>
   <rect class="node candidate" x="805" y="283" width="385" height="60"/>
   <line x1="997.5" y1="283" x2="997.5" y2="343" stroke="#a16207" stroke-width="1.2"/>
-  <text class="node-text" x="901" y="307"><tspan x="901">Interposer</tspan><tspan x="901" dy="17">/ Substrate</tspan></text>
-  <text class="node-text" x="1094" y="307"><tspan x="1094">Burn-in</tspan><tspan x="1094" dy="17">/ Final Test</tspan></text>
+  <text class="node-text" x="901" y="318">Interposer / Substrate</text>
+  <text class="node-text" x="1094" y="318">Burn-in / Final Test</text>
 
   <rect class="node candidate" x="805" y="390" width="180" height="60"/>
   <text class="node-text" x="895" y="414"><tspan x="895">Superalloy Melt</tspan><tspan x="895" dy="17">/ Heat Treatment</tspan></text>
-  <rect class="node candidate" x="995" y="455" width="195" height="70"/>
-  <text class="node-text" x="1092.5" y="478"><tspan x="1092.5">Single-crystal / TBC</tspan><tspan x="1092.5" dy="17">/ Cooling Holes</tspan></text>
+  <rect class="node candidate" x="995" y="460" width="195" height="60"/>
+  <text class="node-text" x="1092.5" y="484"><tspan x="1092.5">Single-crystal / TBC</tspan><tspan x="1092.5" dy="17">/ Cooling Holes</tspan></text>
   <rect class="node candidate" x="805" y="535" width="180" height="60"/>
   <text class="node-text" x="895" y="551"><tspan x="895">NDT / Supplier QA</tspan><tspan x="895" dy="17">/ Qualified Labor</tspan></text>
 
   <rect class="node candidate" x="805" y="625" width="180" height="60"/>
   <text class="node-text" x="895" y="641"><tspan x="895">NAND Wafer / Layer</tspan><tspan x="895" dy="17">/ Package Test</tspan></text>
-  <rect class="node candidate" x="995" y="690" width="195" height="70"/>
-  <text class="node-text" x="1092.5" y="714"><tspan x="1092.5">Foundry / SerDes</tspan><tspan x="1092.5" dy="17">/ DRAM / PLP</tspan></text>
+  <rect class="node candidate" x="995" y="695" width="195" height="60"/>
+  <text class="node-small" x="1092.5" y="730">Foundry / SerDes / DRAM / PLP</text>
   <rect class="node candidate" x="805" y="765" width="180" height="60"/>
-  <text class="node-text" x="895" y="789"><tspan x="895">OEM Lab</tspan><tspan x="895" dy="17">/ Workload Cycles</tspan></text>
+  <text class="node-text" x="895" y="800">OEM Lab / Workload Cycles</text>
 
   <rect class="node candidate" x="805" y="855" width="180" height="60"/>
-  <text class="node-text" x="895" y="879"><tspan x="895">3nm DSP</tspan><tspan x="895" dy="17">Foundry + Test</tspan></text>
+  <text class="node-text" x="895" y="890">3nm DSP Foundry + Test</text>
   <rect class="node candidate" x="995" y="915" width="195" height="60"/>
-  <text class="node-text" x="1092.5" y="939"><tspan x="1092.5">InP Epitaxy</tspan><tspan x="1092.5" dy="17">/ Laser Yield</tspan></text>
+  <text class="node-text" x="1092.5" y="950">InP Epitaxy / Laser Yield</text>
   <rect class="node candidate" x="805" y="975" width="180" height="60"/>
-  <text class="node-text" x="895" y="999"><tspan x="895">SiPh Foundry</tspan><tspan x="895" dy="17">/ Wafer Yield</tspan></text>
+  <text class="node-small" x="895" y="1010">SiPh Foundry / Wafer Yield</text>
   <rect class="node candidate" x="995" y="1035" width="195" height="60"/>
-  <text class="node-text" x="1092.5" y="1059"><tspan x="1092.5">Active Alignment</tspan><tspan x="1092.5" dy="17">/ Burn-in</tspan></text>
+  <text class="node-text" x="1092.5" y="1070">Active Alignment / Burn-in</text>
 
   <!-- D3 nodes -->
-  <rect class="node shared" x="1260" y="215" width="285" height="80"/>
-  <text class="node-text" x="1402.5" y="241"><tspan x="1402.5">Bonding / Lithography</tspan><tspan x="1402.5" dy="18">/ Metrology Tools</tspan><tspan class="node-small" x="1402.5" dy="17">HBM + advanced packaging</tspan></text>
+  <rect class="node shared" x="1260" y="225" width="285" height="60"/>
+  <text class="node-small" x="1402.5" y="251"><tspan x="1402.5">Bonding / Lithography / Metrology Tools</tspan><tspan x="1402.5" dy="18">HBM + advanced packaging</tspan></text>
 
-  <rect class="node shared" x="1260" y="440" width="285" height="80"/>
-  <text class="node-text" x="1402.5" y="466"><tspan x="1402.5">Heavy Press / VIM-VAR</tspan><tspan x="1402.5" dy="18">/ Heat-treatment Furnaces</tspan><tspan class="node-small" x="1402.5" dy="17">power + nuclear + defense</tspan></text>
+  <rect class="node shared" x="1260" y="450" width="285" height="60"/>
+  <text class="node-small" x="1402.5" y="465"><tspan x="1402.5">Heavy Press / VIM-VAR</tspan><tspan x="1402.5" dy="17">/ Heat-treatment Furnaces</tspan><tspan x="1402.5" dy="17">power + nuclear + defense</tspan></text>
   <rect class="node context" x="1260" y="555" width="190" height="50"/>
   <text class="node-small" x="1355" y="576"><tspan x="1355">Nuclear / Defense</tspan><tspan x="1355" dy="16">Demand</tspan></text>
 
-  <rect class="node candidate" x="1260" y="642" width="285" height="76"/>
-  <text class="node-text" x="1402.5" y="668"><tspan x="1402.5">NAND Etch / Deposition</tspan><tspan x="1402.5" dy="18">/ Metrology Tools</tspan></text>
-  <rect class="node shared" x="1260" y="755" width="285" height="80"/>
-  <text class="node-text" x="1402.5" y="781"><tspan x="1402.5">Advanced-node Wafer</tspan><tspan x="1402.5" dy="18">/ Package-test Capacity</tspan><tspan class="node-small" x="1402.5" dy="17">SSD controller + optical DSP</tspan></text>
+  <rect class="node candidate" x="1260" y="650" width="285" height="60"/>
+  <text class="node-small" x="1402.5" y="685">NAND Etch / Deposition / Metrology Tools</text>
+  <rect class="node shared" x="1260" y="765" width="285" height="60"/>
+  <text class="node-small" x="1402.5" y="791"><tspan x="1402.5">Advanced-node Wafer / Package-test Capacity</tspan><tspan x="1402.5" dy="18">SSD controller + optical DSP</tspan></text>
 
-  <rect class="node candidate" x="1260" y="977" width="285" height="76"/>
-  <text class="node-text" x="1402.5" y="1003"><tspan x="1402.5">InP Epi / Alignment</tspan><tspan x="1402.5" dy="18">/ Burn-in Equipment</tspan></text>
+  <rect class="node candidate" x="1260" y="985" width="285" height="60"/>
+  <text class="node-text" x="1402.5" y="1020">InP Epi / Alignment / Burn-in Equipment</text>
 
   <!-- Legend -->
   <rect x="20" y="1140" width="1560" height="90" rx="10" fill="#ffffff" stroke="#cbd5e1"/>
