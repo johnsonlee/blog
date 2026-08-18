@@ -153,23 +153,29 @@ In the Bottleneck Hunter framework, we follow demand until we find the narrowest
 
 This network applies not only to AI. Replace the GPU with a new drug and the nodes become active ingredients, bioreactors, fill-finish, cold chain, and approval. Replace it with an SMR and the nodes become nuclear-grade forgings, fuel, licensing, welders, and site construction. The names change. The propagation does not.
 
-## The next alpha is in the yellow lights created by red ones
+## Two directions for AI bottleneck migration: power and semiconductors
 
-GPUs, GEV, and memory have already demonstrated Bottleneck Migration. Once the market sees the red lights, another list of “bottleneck stocks” is just alpha viewed through a rear-view mirror.
+Shrink the map until only its structure remains. The Serving Plane, Data Center, and Delivery Network are still three roots, but D1 through D4 do not spread evenly. AI may look as if it lives in the cloud; replication happens on the ground. Cards must go into racks, power must reach them, heat must leave, and storage and networks must connect before a service can go live.
 
-I care about three questions:
+For physical delivery, the data center is the center of the AI bottleneck. Capacity added to the Serving Plane and Delivery Network still has to be absorbed by compute, storage, networking, power, cooling, and facility integration inside the data center.
 
-- Where has the arrival rate of demand suddenly overtaken the replication rate of supply?
-- If that red node expands tenfold, which smaller supplier gets pushed to its limit?
-- Is the market still valuing that supplier as an old business, or has the bottleneck already been priced in?
+Keep moving down the graph and only two paths remain.
 
-The practical move is simple:
+The first is **power**. Gas, coal, nuclear, and renewables sit at the generation layer. Grid connections, transmission, substations, transformers, switchgear, UPS, PDU, cooling, and field construction must scale with the data center. Generation routes can substitute for one another. Power delivery cannot be skipped. The Replication Gap usually hides in permits, heavy-equipment capacity, grid construction, and project delivery cycles.
 
-> **Red → Find the Yellow nodes it is creating.**
+The second is **semiconductors**. In this network, they look more like a general means of production. Compute descends into GPUs, CPUs, HBM, and advanced packaging. Storage descends into NAND, controllers, and qualification. Networking descends into DSPs, SiPh, PICs, ASICs, and optical chips. The servers in the Serving Plane and the routers and edge servers in the Delivery Network eventually depend on logic, memory, analog, power, and sensors as well.
 
-When GEV turns red, break down its forging, alloy, coating, and compressor supply chains. When enterprise SSDs turn red, inspect controllers, firmware, and qualification. When optical modules turn red, move into lasers, DSPs, SiPh, and test equipment. None of those names is guaranteed to rise. The network tells us where pressure is most likely to travel next.
+The power path also bends back into semiconductors. Generation equipment has relatively little dependence on advanced nodes, but the modern grid, UPS, storage, cooling, motor drives, protection, and sensing all use power semiconductors, analog chips, MCUs, and sensors. When AI, the grid, BESS, solar, EVs, and robotics expand together, they may compete for the same unglamorous chips and manufacturing capacity.
 
-That is the upgrade from finding a bottleneck to modeling bottleneck migration. The first explains scarcity that has already appeared. The second tries to locate the next narrowing node before a financial statement confirms it.
+Power and semiconductors are not two independent parallel lines. Power is an industrial system that is hard to replicate quickly. Semiconductors run through compute, storage, networking, cooling, and power control. The two lines meet again in power electronics and control systems.
+
+The market sees GPUs, HBM, and advanced nodes first, so their Price-in Scores tend to be high. The Bottleneck Migration Network points to a different class of semiconductor: a cheap part in the BOM that can block delivery of an expensive machine. Analog, MCUs, power management, power semiconductors, sensors, industrial connectivity, and motor control may never be marketed as AI chips, yet they can absorb demand from data centers, grids, storage, cooling, and automation at the same time.
+
+The research cannot stop at “buy semiconductors.” If semiconductor demand grows tenfold, can wafers, equipment, materials, advanced packaging, and test capacity scale with it? Which step is slowest: etch, deposition, metrology, bonding, specialty wafers, or specialty gases? The next red light may not be a chip. It may be a manufacturing step that every chip must pass through and only a few suppliers can deliver.
+
+After GPUs, GEV, enterprise SSDs, or optical modules turn red, I first ask whether the demand they release will hit power or semiconductors. If it is power, I follow generation, delivery, cooling, and facility integration while checking their semiconductor dependencies. If it is semiconductors, I continue from the chip into equipment, materials, packaging, and test. Then I compare supply elasticity, Replication Gap, and Price-in Score.
+
+The next alpha is not hidden inside the labels “power stock” or “semiconductor stock.” It sits at the layer on these two paths with the slowest replication, the highest criticality, and the lowest market recognition.
 
 SpaceX's vision can be the stars. Capital speaks a colder language: the value of the first success depends on whether the second, fifth, and hundredth can be replicated faster.
 
