@@ -135,7 +135,7 @@ It is not technical difficulty or the number of tiers in a conventional supply c
 
 D0 is the capacity constraint the market already sees. D1 is the first-order response after it turns red, including both the current route and substitute routes not yet adopted. D2 contains the equipment, materials, process steps, and qualification needed to replicate each D1 route. D3 reaches the physical capacity and cross-industry constraints underneath them. The deeper the node, the less familiar the market usually is with it, the harder its capacity is to measure, and the more likely it has not been priced in.
 
-Depth counts hops from D0; it does not prescribe an edge type. Solid lines show the current route. Purple dashed lines show substitute routes not yet adopted. Every substitute route must continue through D2 and D3: if gas turbines cannot keep up, coal can absorb the load, but its own bottleneck may appear in grid access, coal logistics, water, or main transformers.
+Depth counts hops from D0; it does not prescribe an edge type. Solid lines show the current route. Purple dashed lines show substitute routes not yet adopted. Every substitute route must continue through D2 and D3. In Power, gas, coal, nuclear, and the other generation routes can substitute for one another; interconnection, transmission, and transformation form a separate delivery path that must be satisfied at the same time.
 
 Fill and border encode different dimensions. Yellow marks a deeper bottleneck candidate that has not yet turned red. A purple dashed border marks a route that has not yet been adopted. A node can therefore be both yellow and purple-dashed.
 

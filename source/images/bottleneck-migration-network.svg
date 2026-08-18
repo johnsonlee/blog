@@ -135,14 +135,14 @@
 
   <!-- Power paths -->
   <path class="edge" d="M380 485H450"/>
-  <path class="alt-trunk" d="M380 485H420V1080"/>
+  <path class="alt-trunk" d="M380 485H420V995"/>
   <path class="alt-edge" d="M420 570H450"/>
   <path class="alt-edge" d="M420 655H450"/>
   <path class="alt-edge" d="M420 740H450"/>
   <path class="alt-edge" d="M420 825H450"/>
   <path class="alt-edge" d="M420 910H450"/>
   <path class="alt-edge" d="M420 995H450"/>
-  <path class="alt-edge" d="M420 1080H450"/>
+  <path class="edge" d="M380 485H400V1080H450"/>
   <path class="edge" d="M690 485H760"/><path class="edge" d="M1130 485H1190"/>
   <path class="alt-edge" d="M690 570H760"/><path class="alt-edge" d="M1130 570H1190"/>
   <path class="alt-edge" d="M690 655H760"/><path class="alt-edge" d="M1130 655H1190"/>
@@ -150,10 +150,10 @@
   <path class="alt-edge" d="M690 825H760"/><path class="alt-edge" d="M1130 825H1190"/>
   <path class="alt-edge" d="M690 910H760"/><path class="alt-edge" d="M1130 910H1190"/>
   <path class="alt-edge" d="M690 995H760"/><path class="alt-edge" d="M1130 995H1190"/>
-  <path class="alt-edge" d="M690 1080H760"/><path class="alt-edge" d="M1130 1080H1190"/>
+  <path class="edge" d="M690 1080H760"/><path class="edge" d="M1130 1080H1190"/>
 
   <rect class="node confirmed" x="205" y="455" width="175" height="60"/>
-  <text class="node-text" x="292.5" y="481"><tspan x="292.5">24×7 可用电力</tspan><tspan class="node-small" x="292.5" dy="18">Firm Power</tspan></text>
+  <text class="node-text" x="292.5" y="481"><tspan x="292.5">24×7 可用电力</tspan><tspan class="node-small" x="292.5" dy="18">发电 AND 交付</tspan></text>
 
   <rect class="node direct" x="450" y="450" width="240" height="70"/>
   <text class="node-text" x="570" y="490">燃气发电</text>
@@ -165,37 +165,37 @@
   <rect class="node direct alt" x="450" y="535" width="240" height="70"/>
   <text class="node-text alt-text" x="570" y="575">煤电</text>
   <rect class="node candidate alt" x="760" y="535" width="370" height="70"/>
-  <text class="node-text alt-text" x="945" y="563"><tspan x="945">锅炉 · 汽轮机 · 发电机</tspan><tspan class="node-small alt-text" x="945" dy="18">接网 · 电煤物流 · 灵活性改造</tspan></text>
+  <text class="node-text alt-text" x="945" y="563"><tspan x="945">锅炉 · 汽轮机 · 发电机</tspan><tspan class="node-small alt-text" x="945" dy="18">电煤物流 · 灵活性改造</tspan></text>
   <rect class="node shared alt" x="1190" y="535" width="350" height="70"/>
-  <text class="node-small alt-text" x="1365" y="554"><tspan x="1365">转子锻件 · 锅炉管 · 主变压器</tspan><tspan x="1365" dy="17">水 · 铁路 · 输电走廊</tspan><tspan x="1365" dy="17">脱硫 · 脱硝 · 灰渣处理能力</tspan></text>
+  <text class="node-small alt-text" x="1365" y="554"><tspan x="1365">转子锻件 · 锅炉管 · 高压阀门</tspan><tspan x="1365" dy="17">水 · 铁路 · 储煤场</tspan><tspan x="1365" dy="17">脱硫 · 脱硝 · 灰渣处理能力</tspan></text>
 
   <rect class="node direct alt" x="450" y="620" width="240" height="70"/>
   <text class="node-text alt-text" x="570" y="660">核电</text>
   <rect class="node candidate alt" x="760" y="620" width="370" height="70"/>
-  <text class="node-text alt-text" x="945" y="648"><tspan x="945">核岛 · 汽轮发电机 · 燃料</tspan><tspan class="node-small alt-text" x="945" dy="18">许可 · 选址 · 并网</tspan></text>
+  <text class="node-text alt-text" x="945" y="648"><tspan x="945">核岛 · 汽轮发电机 · 燃料</tspan><tspan class="node-small alt-text" x="945" dy="18">许可 · 选址 · 长周期建设</tspan></text>
   <rect class="node shared alt" x="1190" y="620" width="350" height="70"/>
   <text class="node-small alt-text" x="1365" y="639"><tspan x="1365">核级锻件 · 压力容器 · 合格焊工</tspan><tspan x="1365" dy="17">安全壳施工 · NDT · 长周期测试</tspan><tspan x="1365" dy="17">与燃机、国防共享重型制造</tspan></text>
 
   <rect class="node direct alt" x="450" y="705" width="240" height="70"/>
   <text class="node-text alt-text" x="570" y="745">水电</text>
   <rect class="node candidate alt" x="760" y="705" width="370" height="70"/>
-  <text class="node-text alt-text" x="945" y="733"><tspan x="945">水轮机 · 发电机 · 土建</tspan><tspan class="node-small alt-text" x="945" dy="18">选址 · 环评 · 输电通道</tspan></text>
+  <text class="node-text alt-text" x="945" y="733"><tspan x="945">水轮机 · 发电机 · 土建</tspan><tspan class="node-small alt-text" x="945" dy="18">选址 · 环评 · 水文条件</tspan></text>
   <rect class="node shared alt" x="1190" y="705" width="350" height="70"/>
   <text class="node-small alt-text" x="1365" y="724"><tspan x="1365">大型铸锻件 · 铜 · 电工钢</tspan><tspan x="1365" dy="17">地质条件 · 水资源 · 水泥</tspan><tspan x="1365" dy="17">大件运输与现场施工能力</tspan></text>
 
   <rect class="node direct alt" x="450" y="790" width="240" height="70"/>
   <text class="node-text alt-text" x="570" y="830">风电</text>
   <rect class="node candidate alt" x="760" y="790" width="370" height="70"/>
-  <text class="node-text alt-text" x="945" y="818"><tspan x="945">风机 · 叶片 · 塔筒</tspan><tspan class="node-small alt-text" x="945" dy="18">海缆 · 集电线路 · 并网</tspan></text>
+  <text class="node-text alt-text" x="945" y="818"><tspan x="945">风机 · 叶片 · 塔筒</tspan><tspan class="node-small alt-text" x="945" dy="18">海缆 · 集电线路 · 场站施工</tspan></text>
   <rect class="node shared alt" x="1190" y="790" width="350" height="70"/>
-  <text class="node-small alt-text" x="1365" y="809"><tspan x="1365">轴承 · 磁材 · 碳纤维</tspan><tspan x="1365" dy="17">铜 · 电工钢 · 大型铸件</tspan><tspan x="1365" dy="17">吊装船 · 吊装能力 · 变压器</tspan></text>
+  <text class="node-small alt-text" x="1365" y="809"><tspan x="1365">轴承 · 磁材 · 碳纤维</tspan><tspan x="1365" dy="17">铜 · 电工钢 · 大型铸件</tspan><tspan x="1365" dy="17">吊装船 · 吊装能力 · 场站施工</tspan></text>
 
   <rect class="node direct alt" x="450" y="875" width="240" height="70"/>
   <text class="node-text alt-text" x="570" y="903"><tspan x="570">光伏 + 储能</tspan><tspan class="node-small alt-text" x="570" dy="18">Firming 路径</tspan></text>
   <rect class="node candidate alt" x="760" y="875" width="370" height="70"/>
-  <text class="node-text alt-text" x="945" y="903"><tspan x="945">组件 · 逆变器 · BESS</tspan><tspan class="node-small alt-text" x="945" dy="18">EMS · 并网 · 消防认证</tspan></text>
+  <text class="node-text alt-text" x="945" y="903"><tspan x="945">组件 · 逆变器 · BESS</tspan><tspan class="node-small alt-text" x="945" dy="18">EMS · 消防认证 · 调度控制</tspan></text>
   <rect class="node shared alt" x="1190" y="875" width="350" height="70"/>
-  <text class="node-small alt-text" x="1365" y="894"><tspan x="1365">硅片 · 电池片 · LFP 电芯</tspan><tspan x="1365" dy="17">PCS · 主变 · 电缆</tspan><tspan x="1365" dy="17">土地 · 长时储能 · 调度能力</tspan></text>
+  <text class="node-small alt-text" x="1365" y="894"><tspan x="1365">硅片 · 电池片 · LFP 电芯</tspan><tspan x="1365" dy="17">PCS · 电缆 · 电池舱</tspan><tspan x="1365" dy="17">土地 · 长时储能 · 调度能力</tspan></text>
 
   <rect class="node direct alt" x="450" y="960" width="240" height="70"/>
   <text class="node-text alt-text" x="570" y="1000">燃料电池</text>
@@ -204,12 +204,12 @@
   <rect class="node shared alt" x="1190" y="960" width="350" height="70"/>
   <text class="node-small alt-text" x="1365" y="979"><tspan x="1365">催化剂 · 膜 · SOFC 陶瓷</tspan><tspan x="1365" dy="17">压缩机 · 逆变器 · 氢与天然气</tspan><tspan x="1365" dy="17">寿命验证与维护能力</tspan></text>
 
-  <rect class="node direct alt" x="450" y="1045" width="240" height="70"/>
-  <text class="node-text alt-text" x="570" y="1085">电网扩容</text>
-  <rect class="node candidate alt" x="760" y="1045" width="370" height="70"/>
-  <text class="node-text alt-text" x="945" y="1073"><tspan x="945">变电站 · 主变 · GIS</tspan><tspan class="node-small alt-text" x="945" dy="18">线路 · 接网审批 · 调度</tspan></text>
-  <rect class="node shared alt" x="1190" y="1045" width="350" height="70"/>
-  <text class="node-small alt-text" x="1365" y="1064"><tspan x="1365">取向硅钢 · 铜 · 套管 · 开关</tspan><tspan x="1365" dy="17">变压器测试台 · 输电走廊</tspan><tspan x="1365" dy="17">与新能源、工业负荷争抢产能</tspan></text>
+  <rect class="node direct" x="450" y="1045" width="240" height="70"/>
+  <text class="node-text" x="570" y="1085">电力交付</text>
+  <rect class="node candidate" x="760" y="1045" width="370" height="70"/>
+  <text class="node-text" x="945" y="1073"><tspan x="945">接网审批 · 输电线路 · 变电站</tspan><tspan class="node-small" x="945" dy="18">主变 · GIS · 园区配电</tspan></text>
+  <rect class="node shared" x="1190" y="1045" width="350" height="70"/>
+  <text class="node-small" x="1365" y="1064"><tspan x="1365">取向硅钢 · 铜 · 套管 · 开关</tspan><tspan x="1365" dy="17">变压器测试台 · 输电走廊</tspan><tspan x="1365" dy="17">调度容量 · N-1 冗余 · 工业负荷争用</tspan></text>
 
   <!-- Storage paths -->
   <path class="edge" d="M380 1195H450"/>
