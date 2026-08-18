@@ -67,7 +67,7 @@
   <!-- D1 -> D2 route fan-out -->
   <path class="edge" d="M610 170H660"/><path class="edge" d="M610 240H660"/><path class="edge" d="M610 310H660"/>
   <path class="edge" d="M610 450H620V380H660"/><path class="alt-trunk" d="M610 450H640V520"/><path class="alt-edge" d="M640 450H660"/><path class="alt-edge" d="M640 520H660"/>
-  <path class="edge" d="M610 835H620V590H660"/><path class="edge" d="M610 835H625V1080H660"/><path class="alt-trunk" d="M610 835H640V660M640 835V1010"/><path class="alt-edge" d="M640 660H660"/><path class="alt-edge" d="M640 730H660"/><path class="alt-edge" d="M640 800H660"/><path class="alt-edge" d="M640 870H660"/><path class="alt-edge" d="M640 940H660"/><path class="alt-edge" d="M640 1010H660"/>
+  <path class="edge" d="M610 835H620V590H660"/><path class="edge" d="M610 835H620V1080H660"/><path class="alt-trunk" d="M610 835H640V660M640 835V1010"/><path class="alt-edge" d="M640 660H660"/><path class="alt-edge" d="M640 730H660"/><path class="alt-edge" d="M640 800H660"/><path class="alt-edge" d="M640 870H660"/><path class="alt-edge" d="M640 940H660"/><path class="alt-edge" d="M640 1010H660"/>
   <path class="edge" d="M610 1220H620V1150H660"/><path class="alt-trunk" d="M610 1220H640V1290"/><path class="alt-edge" d="M640 1220H660"/><path class="alt-edge" d="M640 1290H660"/>
   <path class="edge" d="M610 1430H620V1360H660"/><path class="alt-trunk" d="M610 1430H640V1500"/><path class="alt-edge" d="M640 1430H660"/><path class="alt-edge" d="M640 1500H660"/>
   <path class="edge" d="M610 1640H620V1570H660"/><path class="alt-trunk" d="M610 1640H640V1710"/><path class="alt-edge" d="M640 1640H660"/><path class="alt-edge" d="M640 1710H660"/>
