@@ -138,25 +138,9 @@ Depth 不是节点的永久属性。今天的 D1 一旦变红，就会成为新�
 
 图里的四条 track 也必须在同一个维度上：**Compute、Power、Storage、Networking**。GPU / ASIC、GEV gas turbine、enterprise SSD 和 optical module，是四个 domain 里当前亮红的 D0 产品节点，不是四个支路的名字。
 
-这是一张图，不是四张供应链图。横向是 D0 → D3 的 Bottleneck Depth，纵向是四个 domain；蓝色节点把不同 domain 对同一份底层产能的争抢重新连在一起。图可以左右滚动。
-
-<style>
-.bottleneck-network {
-  margin: 1.5em 0;
-  overflow-x: auto;
-  overscroll-behavior-inline: contain;
-}
-.bottleneck-network img {
-  width: 1600px !important;
-  max-width: none !important;
-  height: auto !important;
-}
-</style>
-<div class="bottleneck-network">
+这是一张图，不是四张供应链图。横向是 D0 → D3 的 Bottleneck Depth，纵向是四个 domain；蓝色节点把不同 domain 对同一份底层产能的争抢重新连在一起。
 
 ![Bottleneck Migration Network — Depth Map](/images/bottleneck-migration-network.svg)
-
-</div>
 
 一个 node 变红，研究才刚刚开始。它为扩产新增的每一笔订单，都会把压力推给上游 supplier，也推给那些和它争抢同一种材料、设备和产能的行业。
 

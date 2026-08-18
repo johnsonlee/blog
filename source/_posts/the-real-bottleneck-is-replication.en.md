@@ -139,25 +139,9 @@ Depth is not a permanent property of a node. Once today's D1 turns red, it becom
 
 The four tracks also have to live at the same level of abstraction: **Compute, Power, Storage, and Networking**. GPU / ASIC, the GEV gas turbine, the enterprise SSD, and the optical module are the D0 product nodes currently glowing red inside those four domains. They are not the names of the tracks.
 
-This is one graph, not four supply-chain charts. Bottleneck Depth runs horizontally from D0 to D3; the four domains run vertically. Blue nodes reconnect the domains wherever they compete for the same underlying capacity. The graph scrolls horizontally.
-
-<style>
-.bottleneck-network {
-  margin: 1.5em 0;
-  overflow-x: auto;
-  overscroll-behavior-inline: contain;
-}
-.bottleneck-network img {
-  width: 1600px !important;
-  max-width: none !important;
-  height: auto !important;
-}
-</style>
-<div class="bottleneck-network">
+This is one graph, not four supply-chain charts. Bottleneck Depth runs horizontally from D0 to D3; the four domains run vertically. Blue nodes reconnect the domains wherever they compete for the same underlying capacity.
 
 ![Bottleneck Migration Network — Depth Map](/images/bottleneck-migration-network.svg)
-
-</div>
 
 A node turning red is where the research begins. Every new order required for its expansion pushes pressure into upstream suppliers and other industries competing for the same materials, equipment, and capacity.
 
