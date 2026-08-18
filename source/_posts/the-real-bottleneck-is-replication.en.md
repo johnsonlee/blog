@@ -13,7 +13,11 @@ tags:
   - Bottleneck
 ---
 
-This essay began with a request I gave ChatGPT: find the next batch of high-alpha stocks. The conversation somehow ended up at SpaceX. Retail investors look at SpaceX and see Mars, the stars, and Elon Musk's vision. Capital is less romantic. A great mission bought at the wrong price still has no alpha. Capital asks a colder question: if SpaceX makes demand in an industry jump tenfold, which layer of supply cannot replicate tenfold in time?
+Lately I have been looking for the next batch of high-alpha stocks capable of breaking the market's old valuation model. The starting point was embarrassingly ordinary: who comes after GEV? Who comes after Micron? I followed the trail through AI, compute, power, and energy-to-compute efficiency. Somehow, it ended at SpaceX.
+
+SpaceX has a way of making people forget that they are investing. The moment it comes up, the conversation drifts toward Mars, the stars, and a multi-planetary civilization. Sentiment is worthless to capital. Strip away the mission and SpaceX leaves behind a hard cost curve: launch cadence, reuse, and dollars per kilogram. The economics depend on whether something once done only once can be repeated a hundred times, reliably, cheaply, and quickly.
+
+That was when I realized I was not really looking for the next stock. I was looking for a structure that appears every time an industry explodes.
 
 <!-- more -->
 

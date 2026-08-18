@@ -12,7 +12,11 @@ tags:
 i18n_key: the-real-bottleneck-is-replication
 ---
 
-这篇文章的起点，是我让 ChatGPT 找下一批 high alpha 股票，话题却一路拐到了 SpaceX。普通散户看 SpaceX，看到的是火星、星辰大海和 Elon Musk 的 vision；资本没那么浪漫。再伟大的 mission，买贵了也没有 alpha。它只问一个问题：如果 SpaceX 真把一个产业的需求放大 10 倍，哪一层供给来不及复制 10 倍？
+最近我一直在找下一批能把估值体系打穿的 high alpha。起点很俗：GEV 之后还有谁？Micron 之后还有谁？沿着 AI、算力、电力和能源转换效率一路往下推，最后竟然推到了 SpaceX。
+
+SpaceX 这家公司有个毛病：太容易让人忘记自己是在做投资。一聊它，火星、星辰大海、人类多行星文明全来了。可在资本面前，情怀一文不值。把 mission 拿掉，SpaceX 留下的是一条很硬的成本曲线：launch cadence、reuse 和 $/kg。原来只能做一次的东西，能不能稳定、便宜、快速地做一百次，这才决定故事值多少钱。
+
+也正是在这里，我发现自己真正想找的根本不是下一只股票，而是一种会在每轮产业爆发中反复出现的结构。
 
 <!-- more -->
 
