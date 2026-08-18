@@ -213,6 +213,8 @@ OpenAI is the best available stress test for these two routes. In April 2026, Op
 
 The crossover is therefore not a fixed year, nor the moment orbital electricity suddenly becomes cheaper than terrestrial electricity. It requires a more specific condition: OpenAI's next block of desired capacity is moving toward 30 to 50GW, while the annual delivery of power-ready terrestrial capacity persistently falls behind GPU and ASIC supply. Only then does the marginal Time-to-Compute of the orbital route have a chance to catch the terrestrial route. Based on the demand path disclosed so far, I would watch 2028 to 2032 as the earliest window. At 50 to 100GW, orbital compute could shift from a long-dated option into a strategic one. Faster model-efficiency gains or faster replication of deployable terrestrial power would push the crossover farther out, perhaps indefinitely.
 
-SpaceX was missing from the list at the beginning because it is neither the next GEV nor the next SK hynix. It is a bet on a new Bottleneck Substitution Path.
+SpaceX was missing from the opening list because that list looked for the next bottleneck node on the current path: GEV maps to gas turbines, SK hynix to HBM. SpaceX is not the next node. Its bet is that the existing data-center path itself replicates too slowly.
 
-**Technology turns zero into one. Replication determines how many zeros come after the one.**
+By connecting StarMind, Gigasat Factory, Starship, and Starlink, SpaceX changes the unit of data-center replication. A site-specific project that needs permits, construction, and grid interconnection becomes a product that can be manufactured, launched continuously, and networked automatically. That Bottleneck Substitution Path ultimately exists to replicate data centers faster.
+
+**Technology takes the first orbital data center from zero to one. Replication determines how soon the next nine can follow.**

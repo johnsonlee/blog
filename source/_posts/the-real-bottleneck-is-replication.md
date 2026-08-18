@@ -212,6 +212,8 @@ OpenAI 是观察这两条路线最合适的压力测试。OpenAI 在 2026 年 4 
 
 所以交叉点不是某个固定年份，也不是轨道电价突然低过地面电价。它出现于一个更具体的条件：OpenAI 想增加的下一批算力已经走向 30 到 50GW，但每年能按时交付的 power-ready 地面容量持续落后于 GPU 和 ASIC 供给，此时轨道路线的边际 Time-to-Compute 才有机会追上地面。按目前公开的需求轨迹推演，我会把最早的观察窗口放在 2028 到 2032 年；到了 50 到 100GW，orbital compute 才会从远期期权变成战略选项。如果模型效率提升得足够快，或者地面可部署电力复制得更快，这个交叉点就会继续右移，甚至永远不会出现。
 
-开篇那张清单里没有 SpaceX，因为它不是下一只 GEV，也不是下一只 SK hynix。它赌的是一条新的瓶颈替代路径（Bottleneck Substitution Path）。
+开篇那张清单里没有 SpaceX，因为那张清单找的是现有路径上的下一个瓶颈节点：GEV 对应燃气轮机，SK hynix 对应 HBM。SpaceX 不是下一个节点。它赌的是现有的数据中心路径本身复制得太慢。
 
-**技术负责把 0 变成 1，replication 决定 1 后面的那些 0。**
+把 StarMind、Gigasat Factory、Starship 和 Starlink 串起来，SpaceX 是在改变 data center 的复制单位：从一座需要逐地审批、建设和并网的工程，变成一套可以在工厂制造、连续发射、自动组网的产品。这条 Bottleneck Substitution Path，最终要实现的就是 data center 的快速 replication。
+
+**技术负责把第一座轨道 data center 从 0 变成 1，replication 决定后面的九座多久能跟上。**
