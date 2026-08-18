@@ -217,4 +217,4 @@ SpaceX was missing from the opening list because that list looked for the next b
 
 By connecting StarMind, Gigasat Factory, Starship, and Starlink, SpaceX changes the unit of data-center replication. A site-specific project that needs permits, construction, and grid interconnection becomes a product that can be manufactured, launched continuously, and networked automatically. That Bottleneck Substitution Path ultimately exists to replicate data centers faster.
 
-**Technology takes the first orbital data center from zero to one. Replication determines how soon the next nine can follow.**
+**Technology determines whether orbital data centers work. Replication determines whether their capacity can scale tenfold fast enough.**

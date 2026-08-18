@@ -216,4 +216,4 @@ OpenAI 是观察这两条路线最合适的压力测试。OpenAI 在 2026 年 4 
 
 把 StarMind、Gigasat Factory、Starship 和 Starlink 串起来，SpaceX 是在改变 data center 的复制单位：从一座需要逐地审批、建设和并网的工程，变成一套可以在工厂制造、连续发射、自动组网的产品。这条 Bottleneck Substitution Path，最终要实现的就是 data center 的快速 replication。
 
-**技术负责把第一座轨道 data center 从 0 变成 1，replication 决定后面的九座多久能跟上。**
+**技术解决 orbital data center 能不能工作，replication 决定它能不能快速扩张到 10 倍。**
