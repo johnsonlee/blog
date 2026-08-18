@@ -117,7 +117,7 @@ Behind one optical module sit DSPs, lasers, photodiodes, silicon photonics, pack
 
 At this point, a linear supply chain no longer explains what is happening.
 
-GPUs, GEV, storage, and optical modules are not four isolated examples. They are lights coming on across the same network.
+GPUs, gas turbines, enterprise SSDs, and optical modules are not four isolated examples. They are lights coming on across the same network.
 
 ## The Bottleneck Migration Network
 
@@ -127,240 +127,37 @@ GPU expansion raises demand for HBM, packaging, networking, storage, and power a
 
 Stopping at forgings, controllers, or DSPs is still too coarse. Those are product categories, not capacity that can be tracked. A node has to be broken down into equipment, materials, process steps, or qualification until lead time, utilization, yield, and expansion plans become measurable.
 
-So I am not cramming everything into one unreadable chart. First comes the migration map; then four branches are broken down until orders, lead times, yields, and expansion plans can be investigated.
+To draw that migration clearly, the network needs another coordinate: **Bottleneck Depth**.
 
-```plantuml
-@startuml
-top to bottom direction
-skinparam backgroundColor white
-skinparam shadowing false
-skinparam defaultFontSize 12
-skinparam ArrowColor #4B5563
-skinparam linetype ortho
-skinparam nodesep 24
-skinparam ranksep 32
-skinparam rectangle {
-  BorderColor #374151
-  FontColor #111827
-  RoundCorner 10
+It is not technical difficulty or the number of tiers in a conventional supply chain. It is the shortest distance from a bottleneck already confirmed by the market, measured along replication dependencies:
+
+> **Bottleneck Depth(node) = Shortest replication path from a confirmed bottleneck to node**
+
+D0 is the bottleneck the market already sees. D1 is capacity pulled directly by the replication of D0. D2 contains the materials, process steps, tests, and qualification needed to replicate D1. D3 reaches the physical equipment and shared capacity underneath them. The deeper the node, the less familiar the market usually is with it, the harder its capacity is to measure, and the more likely it has not been priced in.
+
+Depth is not a permanent property of a node. Once today's D1 turns red, it becomes the new D0 and the network is measured again. That is migration: the red light moves, and the starting point of the research moves with it.
+
+The four tracks also have to live at the same level of abstraction: **Compute, Power, Storage, and Networking**. GPU / ASIC, the GEV gas turbine, the enterprise SSD, and the optical module are the D0 product nodes currently glowing red inside those four domains. They are not the names of the tracks.
+
+This is one graph, not four supply-chain charts. Bottleneck Depth runs horizontally from D0 to D3; the four domains run vertically. Blue nodes reconnect the domains wherever they compete for the same underlying capacity. The graph scrolls horizontally.
+
+<style>
+.bottleneck-network {
+  margin: 1.5em 0;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
 }
-title Bottleneck Migration Network
-
-rectangle "AI Demand\n10x shock" as AI #E5E7EB
-rectangle "GPU / ASIC" as GPU #FCA5A5
-AI --> GPU : compute
-
-rectangle "HBM + Advanced\nPackaging" as MEMORY #FDBA74
-rectangle "Power" as PWR #E5E7EB
-rectangle "Gas Turbine\n(GEV)" as GEV #FCA5A5
-rectangle "Grid Equipment" as GRID #FDBA74
-rectangle "Enterprise SSD" as SSD #FCA5A5
-rectangle "Optical Module\n800G / 1.6T" as OPTICS #FCA5A5
-
-GPU --> MEMORY : bandwidth / package
-GPU --> PWR : more watts
-GPU --> SSD : data / context
-GPU --> OPTICS : scale-out traffic
-PWR --> GEV : generation
-PWR --> GRID : delivery
-PWR ..> GPU : more deployable GPUs
-OPTICS ..> GPU : larger clusters
-
-legend bottom
-  | Color | Meaning |
-  |<#FCA5A5>| Red: proven / consensus bottleneck |
-  |<#FDBA74>| Orange: immediate replication dependency |
-  |<#FEF3C7>| Yellow: physical third-order constraint |
-  |<#BFDBFE>| Blue: shared capacity / cross-track collision |
-endlegend
-@enduml
-```
-
-**Compute / Memory: from HBM to wafers, TSV, bonding, and test**
-
-```plantuml
-@startuml
-left to right direction
-skinparam backgroundColor white
-skinparam shadowing false
-skinparam defaultFontSize 12
-skinparam ArrowColor #4B5563
-skinparam linetype ortho
-skinparam nodesep 22
-skinparam ranksep 28
-skinparam rectangle {
-  BorderColor #374151
-  FontColor #111827
-  RoundCorner 10
+.bottleneck-network img {
+  width: 1600px !important;
+  max-width: none !important;
+  height: auto !important;
 }
+</style>
+<div class="bottleneck-network">
 
-title Compute / Memory Replication Path
+![Bottleneck Migration Network — Depth Map](/images/bottleneck-migration-network.svg)
 
-rectangle "GPU / ASIC" as GPU #FCA5A5
-rectangle "HBM" as HBM #FDBA74
-rectangle "Advanced Packaging" as APKG #FDBA74
-rectangle "DRAM Wafer\nStarts + Yield" as DRAM #FEF3C7
-rectangle "TSV / Thinning /\nCMP Throughput" as TSV #FEF3C7
-rectangle "Die Stacking /\nUnderfill" as STACK #FEF3C7
-rectangle "Burn-in /\nElectrical Test" as HBMTEST #FEF3C7
-rectangle "Interposer\nWafer Capacity" as INTERPOSER #FEF3C7
-rectangle "Package\nSubstrate" as SUBSTRATE #FEF3C7
-rectangle "Bonding / Lithography /\nMetrology Tools" as PKGTOOLS #BFDBFE
-rectangle "Final Package\nTest" as PKGTEST #FEF3C7
-
-GPU --> HBM
-GPU --> APKG
-HBM --> DRAM
-HBM --> TSV
-HBM --> STACK
-HBM --> HBMTEST
-APKG --> INTERPOSER
-APKG --> SUBSTRATE
-APKG --> PKGTOOLS
-APKG --> PKGTEST
-STACK ..> PKGTOOLS : shared tools
-@enduml
-```
-
-**Power / GEV: from “forgings” to heavy equipment, metallurgical processes, and inspection**
-
-```plantuml
-@startuml
-left to right direction
-skinparam backgroundColor white
-skinparam shadowing false
-skinparam defaultFontSize 12
-skinparam ArrowColor #4B5563
-skinparam linetype ortho
-skinparam nodesep 22
-skinparam ranksep 28
-skinparam rectangle {
-  BorderColor #374151
-  FontColor #111827
-  RoundCorner 10
-}
-
-title Power / GEV Replication Path
-
-rectangle "Gas Turbine\n(GEV)" as GEV #FCA5A5
-rectangle "Large Forgings /\nCastings" as FORGE #FDBA74
-rectangle "Hot-gas-path\nParts" as HOTPATH #FDBA74
-rectangle "Assembly /\nTest Bays" as ASSEMBLY #FDBA74
-rectangle "Heavy Press" as PRESS #BFDBFE
-rectangle "Superalloy Melt /\nHeat Treatment" as MELT #FEF3C7
-rectangle "NDT / Dimensional\nInspection" as NDT #FEF3C7
-rectangle "Single-crystal\nCasting" as SX #FEF3C7
-rectangle "TBC Coating / Cooling-\nhole Machining" as COATING #FEF3C7
-rectangle "Qualified Labor /\nSupplier QA" as LABOR #FEF3C7
-rectangle "Nuclear / Defense\nDemand" as OTHER #E5E7EB
-
-GEV --> FORGE
-GEV --> HOTPATH
-GEV --> ASSEMBLY
-FORGE --> PRESS
-FORGE --> MELT
-FORGE --> NDT
-HOTPATH --> SX
-HOTPATH --> COATING
-ASSEMBLY --> LABOR
-OTHER ..> PRESS : shared capacity
-OTHER ..> MELT : shared capacity
-@enduml
-```
-
-**Storage: from controller and qualification to foundry capacity, components, and validation time**
-
-```plantuml
-@startuml
-left to right direction
-skinparam backgroundColor white
-skinparam shadowing false
-skinparam defaultFontSize 12
-skinparam ArrowColor #4B5563
-skinparam linetype ortho
-skinparam nodesep 22
-skinparam ranksep 28
-skinparam rectangle {
-  BorderColor #374151
-  FontColor #111827
-  RoundCorner 10
-}
-
-title Enterprise SSD Replication Path
-
-rectangle "Enterprise SSD" as SSD #FCA5A5
-rectangle "NAND Die" as NAND #FDBA74
-rectangle "Controller ASIC" as CTRL #FDBA74
-rectangle "Firmware /\nQualification" as FWQ #FDBA74
-rectangle "Wafer Starts /\nLayer Count / Yield" as NANDCAP #FEF3C7
-rectangle "NAND Package /\nTest" as NANDTEST #FEF3C7
-rectangle "Foundry Wafer\nCapacity" as FOUNDRY #BFDBFE
-rectangle "SerDes IP / DRAM /\nPower-loss Parts" as CTRLPARTS #FEF3C7
-rectangle "OEM / Hyperscaler\nValidation Lab" as OEMLAB #FEF3C7
-rectangle "Workload Cycles /\nQualification Time" as VALIDATION #FEF3C7
-rectangle "Optical DSP\nDemand" as DSPDEMAND #E5E7EB
-
-SSD --> NAND
-SSD --> CTRL
-SSD --> FWQ
-NAND --> NANDCAP
-NAND --> NANDTEST
-CTRL --> FOUNDRY
-CTRL --> CTRLPARTS
-FWQ --> OEMLAB
-FWQ --> VALIDATION
-DSPDEMAND ..> FOUNDRY : shared capacity
-@enduml
-```
-
-**Networking / Optics: from DSP, laser, and SiPh to wafers, epitaxy, alignment, and burn-in**
-
-```plantuml
-@startuml
-left to right direction
-skinparam backgroundColor white
-skinparam shadowing false
-skinparam defaultFontSize 12
-skinparam ArrowColor #4B5563
-skinparam linetype ortho
-skinparam nodesep 22
-skinparam ranksep 28
-skinparam rectangle {
-  BorderColor #374151
-  FontColor #111827
-  RoundCorner 10
-}
-
-title Optical Module Replication Path
-
-rectangle "Optical Module\n800G / 1.6T" as OPTICS #FCA5A5
-rectangle "Optical DSP" as DSP #FDBA74
-rectangle "Laser Source" as LASER #FDBA74
-rectangle "SiPh / PIC" as SIPH #FDBA74
-rectangle "Assembly / Test" as ASSEMBLY #FDBA74
-rectangle "Advanced-node\nFoundry + Test" as DSPFAB #BFDBFE
-rectangle "High-speed\nSerDes IP" as SERDES #FEF3C7
-rectangle "InP Substrate /\nEpitaxy" as INP #FEF3C7
-rectangle "Laser Die\nYield" as LASERYIELD #FEF3C7
-rectangle "SiPh Foundry /\nWafer Yield" as SIPHFAB #FEF3C7
-rectangle "Active Alignment\nEquipment" as ALIGN #FEF3C7
-rectangle "Burn-in / Connector /\nFiber Test" as BURNIN #FEF3C7
-rectangle "SSD Controller\nDemand" as CTRLDEMAND #E5E7EB
-
-OPTICS --> DSP
-OPTICS --> LASER
-OPTICS --> SIPH
-OPTICS --> ASSEMBLY
-DSP --> DSPFAB
-DSP --> SERDES
-LASER --> INP
-LASER --> LASERYIELD
-SIPH --> SIPHFAB
-ASSEMBLY --> ALIGN
-ASSEMBLY --> BURNIN
-CTRLDEMAND ..> DSPFAB : shared capacity
-@enduml
-```
+</div>
 
 A node turning red is where the research begins. Every new order required for its expansion pushes pressure into upstream suppliers and other industries competing for the same materials, equipment, and capacity.
 
