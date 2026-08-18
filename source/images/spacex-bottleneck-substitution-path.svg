@@ -57,13 +57,13 @@
   <text x="275" y="526" class="node-label">半导体</text>
   <rect x="440" y="495" width="270" height="60" rx="10" class="alternative" filter="url(#shadow)"/>
   <text x="575" y="526" class="node-label">计算卫星</text>
-  <rect x="800" y="495" width="180" height="60" rx="10" class="alternative" filter="url(#shadow)"/>
-  <text x="890" y="526" class="node-label">Starship</text>
-  <rect x="1040" y="495" width="180" height="60" rx="10" class="alternative" filter="url(#shadow)"/>
-  <text x="1130" y="526" class="node-label">轨道部署</text>
+  <rect x="800" y="495" width="250" height="60" rx="10" class="alternative" filter="url(#shadow)"/>
+  <text x="925" y="526" class="node-label">Starship</text>
+  <rect x="1120" y="495" width="230" height="60" rx="10" class="alternative" filter="url(#shadow)"/>
+  <text x="1235" y="526" class="node-label">轨道部署</text>
   <path d="M380 525H440" class="alt-edge"/>
   <path d="M710 525H800" class="alt-edge"/>
-  <path d="M980 525H1040" class="alt-edge"/>
+  <path d="M1050 525H1120" class="alt-edge"/>
 
   <rect x="440" y="585" width="270" height="54" rx="10" class="alternative"/>
   <text x="575" y="613" class="node-label">太阳能阵列 · 散热器</text>
@@ -76,7 +76,7 @@
   <path d="M710 525H755V670H800" class="alt-edge"/>
   <path d="M1050 670H1120" class="alt-edge"/>
 
-  <line x1="1385" y1="430" x2="1435" y2="430" class="edge"/><text x="1448" y="435" class="legend">当前依赖</text>
-  <line x1="1385" y1="470" x2="1435" y2="470" class="alt-edge"/><text x="1448" y="475" class="legend">替代路径</text>
-  <rect x="1385" y="500" width="24" height="18" rx="4" class="shared"/><text x="1420" y="515" class="legend">共同依赖</text>
+  <line x1="1090" y1="430" x2="1140" y2="430" class="edge"/><text x="1153" y="435" class="legend">当前依赖</text>
+  <line x1="1240" y1="430" x2="1290" y2="430" class="alt-edge"/><text x="1303" y="435" class="legend">替代路径</text>
+  <rect x="1395" y="421" width="24" height="18" rx="4" class="shared"/><text x="1430" y="435" class="legend">共同依赖</text>
 </svg>

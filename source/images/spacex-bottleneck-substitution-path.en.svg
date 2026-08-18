@@ -57,13 +57,13 @@
   <text x="335" y="526" class="node-label">SEMICONDUCTORS</text>
   <rect x="500" y="495" width="270" height="60" rx="10" class="alternative" filter="url(#shadow)"/>
   <text x="635" y="526" class="node-label">COMPUTE SATELLITE</text>
-  <rect x="860" y="495" width="180" height="60" rx="10" class="alternative" filter="url(#shadow)"/>
-  <text x="950" y="526" class="node-label">STARSHIP</text>
-  <rect x="1100" y="495" width="200" height="60" rx="10" class="alternative" filter="url(#shadow)"/>
-  <text x="1200" y="526" class="node-label">ORBIT</text>
+  <rect x="860" y="495" width="250" height="60" rx="10" class="alternative" filter="url(#shadow)"/>
+  <text x="985" y="526" class="node-label">STARSHIP</text>
+  <rect x="1180" y="495" width="230" height="60" rx="10" class="alternative" filter="url(#shadow)"/>
+  <text x="1295" y="526" class="node-label">ORBIT</text>
   <path d="M440 525H500" class="alt-edge"/>
   <path d="M770 525H860" class="alt-edge"/>
-  <path d="M1040 525H1100" class="alt-edge"/>
+  <path d="M1110 525H1180" class="alt-edge"/>
 
   <rect x="500" y="585" width="270" height="54" rx="10" class="alternative"/>
   <text x="635" y="613" class="node-label">SOLAR ARRAY · RADIATOR</text>
@@ -76,7 +76,7 @@
   <path d="M770 525H815V670H860" class="alt-edge"/>
   <path d="M1110 670H1180" class="alt-edge"/>
 
-  <line x1="1370" y1="420" x2="1420" y2="420" class="edge"/><text x="1433" y="425" class="legend">Current</text>
-  <line x1="1370" y1="458" x2="1420" y2="458" class="alt-edge"/><text x="1433" y="463" class="legend">Alternative</text>
-  <rect x="1370" y="487" width="24" height="18" rx="4" class="shared"/><text x="1405" y="502" class="legend">Shared dependency</text>
+  <line x1="1040" y1="430" x2="1090" y2="430" class="edge"/><text x="1103" y="435" class="legend">Current</text>
+  <line x1="1190" y1="430" x2="1240" y2="430" class="alt-edge"/><text x="1253" y="435" class="legend">Alternative</text>
+  <rect x="1380" y="421" width="24" height="18" rx="4" class="shared"/><text x="1415" y="435" class="legend">Shared dependency</text>
 </svg>
