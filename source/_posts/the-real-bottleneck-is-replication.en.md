@@ -29,7 +29,7 @@ I started by looking for stocks. Only later did I realize that the starting poin
 
 The useful thing is not the answer. It is the method that keeps producing answers.
 
-[Serenity, the Bottleneck Hunter](https://johnsonlee.io/2026/06/06/serenity-methodology-cannot-be-skill/) already covered how the white-haired investor finds bottlenecks. I will not retell that story here. That essay answered one question: how do you locate the narrowest node in an industry chain?
+[Serenity, the Bottleneck Hunter](./serenity-methodology-cannot-be-skill.md) already covered how the white-haired investor finds bottlenecks. I will not retell that story here. That essay answered one question: how do you locate the narrowest node in an industry chain?
 
 This essay asks a more basic one: **what actually qualifies as a bottleneck?**
 

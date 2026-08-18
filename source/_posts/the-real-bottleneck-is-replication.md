@@ -28,7 +28,7 @@ SpaceX 这家公司有个毛病：太容易让人忘记自己是在做投资。�
 
 真正有用的不是答案，而是制造答案的方法。
 
-《[Serenity——传说中的白毛股神](https://johnsonlee.io/2026/06/06/serenity-methodology-cannot-be-skill/)》已经讲过这位“瓶颈猎人”是怎么发现 bottleneck 的，这里不再复读。那篇文章回答的是：在一条产业链里，怎么找到最窄的 node。
+《[Serenity——传说中的白毛股神](./serenity-methodology-cannot-be-skill.md)》已经讲过这位“瓶颈猎人”是怎么发现 bottleneck 的，这里不再复读。那篇文章回答的是：在一条产业链里，怎么找到最窄的 node。
 
 这次我想追问的是另一个更底层的问题：**到底什么才算 bottleneck？**
 
