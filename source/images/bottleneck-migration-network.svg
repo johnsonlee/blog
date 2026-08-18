@@ -109,47 +109,47 @@
   <!-- Compute edges -->
   <path class="edge" d="M380 301 H425 V213 H455"/>
   <path class="edge" d="M380 301 H425 V313 H455"/>
-  <path class="edge" d="M705 213 H760 V185 H805"/>
-  <path class="edge" d="M705 213 H760 V185 H1010"/>
-  <path class="edge" d="M705 313 H760 V300 H805"/>
-  <path class="edge" d="M705 313 H760 V300 H1010"/>
-  <path class="shared-edge" d="M1190 185 H1210 V255 H1260"/>
-  <path class="shared-edge" d="M985 300 H1210 V255 H1260"/>
+  <path class="edge" d="M705 213 L805 185"/>
+  <path class="edge" d="M705 213 L1010 185"/>
+  <path class="edge" d="M705 313 L805 300"/>
+  <path class="edge" d="M705 313 L1010 300"/>
+  <path class="shared-edge" d="M1190 185 L1260 255"/>
+  <path class="shared-edge" d="M985 300 L1260 255"/>
 
   <!-- Power edges -->
   <path class="edge" d="M380 485 H425 V420 H455"/>
   <path class="edge" d="M380 485 H455"/>
   <path class="edge" d="M380 485 H425 V565 H455"/>
-  <path class="edge" d="M705 420 H760 V430 H805"/>
-  <path class="edge" d="M705 490 H760 V500 H995"/>
-  <path class="edge" d="M705 565 H760 V565 H805"/>
-  <path class="shared-edge" d="M985 430 H1210 V480 H1260"/>
-  <path class="shared-edge" d="M1190 500 H1210 V480 H1260"/>
+  <path class="edge" d="M705 420 L805 430"/>
+  <path class="edge" d="M705 490 L995 500"/>
+  <path class="edge" d="M705 565 L805 565"/>
+  <path class="shared-edge" d="M985 430 L1260 480"/>
+  <path class="shared-edge" d="M1190 500 L1260 480"/>
   <path class="shared-edge" d="M1355 590 V535"/>
 
   <!-- Storage edges -->
   <path class="edge" d="M380 725 H425 V655 H455"/>
   <path class="edge" d="M380 725 H455"/>
   <path class="edge" d="M380 725 H425 V795 H455"/>
-  <path class="edge" d="M705 655 H760 V665 H805"/>
-  <path class="edge" d="M705 725 H760 V735 H995"/>
-  <path class="edge" d="M705 795 H760 V805 H805"/>
-  <path class="shared-edge" d="M985 665 H1210 V680 H1260"/>
-  <path class="shared-edge" d="M1190 735 H1210 V795 H1260"/>
+  <path class="edge" d="M705 655 L805 665"/>
+  <path class="edge" d="M705 725 L995 735"/>
+  <path class="edge" d="M705 795 L805 805"/>
+  <path class="shared-edge" d="M985 665 L1260 680"/>
+  <path class="shared-edge" d="M1190 735 L1260 795"/>
 
   <!-- Networking edges -->
   <path class="edge" d="M380 965 H425 V885 H455"/>
   <path class="edge" d="M380 965 H425 V945 H455"/>
   <path class="edge" d="M380 965 H425 V1005 H455"/>
   <path class="edge" d="M380 965 H425 V1065 H455"/>
-  <path class="edge" d="M705 885 H760 V890 H805"/>
-  <path class="edge" d="M705 945 H760 V950 H995"/>
-  <path class="edge" d="M705 1005 H760 V1015 H805"/>
-  <path class="edge" d="M705 1065 H760 V1075 H995"/>
-  <path class="shared-edge" d="M985 890 H1205 V795 H1260"/>
-  <path class="edge" d="M1190 950 H1210 V1015 H1260"/>
-  <path class="edge" d="M985 1015 H1210 V1015 H1260"/>
-  <path class="edge" d="M1190 1075 H1210 V1015 H1260"/>
+  <path class="edge" d="M705 885 L805 890"/>
+  <path class="edge" d="M705 945 L995 950"/>
+  <path class="edge" d="M705 1005 L805 1015"/>
+  <path class="edge" d="M705 1065 L995 1075"/>
+  <path class="shared-edge" d="M985 890 L1260 795"/>
+  <path class="edge" d="M1190 950 L1260 1015"/>
+  <path class="edge" d="M985 1015 L1260 1015"/>
+  <path class="edge" d="M1190 1075 L1260 1015"/>
 
   <!-- D0 nodes -->
   <rect class="node context" x="205" y="158" width="170" height="55"/>
