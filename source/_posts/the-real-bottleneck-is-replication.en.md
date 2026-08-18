@@ -129,15 +129,17 @@ Stopping at forgings, controllers, or DSPs is still too coarse. Those are produc
 
 To draw that migration clearly, the network needs another coordinate: **Bottleneck Depth**.
 
-It is not technical difficulty or the number of tiers in a conventional supply chain. It is the shortest distance from a bottleneck already confirmed by the market, measured along replication dependencies:
+It is not technical difficulty or the number of tiers in a conventional supply chain. It is the shortest distance from a capacity constraint already confirmed by the market, measured along response paths:
 
-> **Bottleneck Depth(node) = Shortest replication path from a confirmed bottleneck to node**
+> **Bottleneck Depth(node) = Shortest response path from a confirmed capacity constraint to node**
 
-D0 is the bottleneck the market already sees. D1 is capacity pulled directly by the replication of D0. D2 contains the materials, process steps, tests, and qualification needed to replicate D1. D3 reaches the physical equipment and shared capacity underneath them. The deeper the node, the less familiar the market usually is with it, the harder its capacity is to measure, and the more likely it has not been priced in.
+D0 is the capacity constraint the market already sees. D1 is the first-order response after it turns red, including both the current route and substitute routes not yet adopted. D2 contains the equipment, materials, process steps, and qualification needed to replicate each D1 route. D3 reaches the physical capacity and cross-industry constraints underneath them. The deeper the node, the less familiar the market usually is with it, the harder its capacity is to measure, and the more likely it has not been priced in.
+
+Depth counts hops from D0; it does not prescribe an edge type. Solid lines show the current route. Purple dashed lines show substitute routes not yet adopted. Every substitute route must continue through D2 and D3: if gas turbines cannot keep up, coal can absorb the load, but its own bottleneck may appear in grid access, coal logistics, water, or main transformers.
+
+Fill and border encode different dimensions. Yellow marks a deeper bottleneck candidate that has not yet turned red. A purple dashed border marks a route that has not yet been adopted. A node can therefore be both yellow and purple-dashed.
 
 Depth is not a permanent property of a node. Once today's D1 turns red, it becomes the new D0 and the network is measured again. That is migration: the red light moves, and the starting point of the research moves with it.
-
-One relationship does not change Depth: substitution. Demand can route around a red node, but the bottleneck is relieved only if the substitute path can absorb the flow fast enough. Otherwise the pressure merely enters through another route.
 
 ![Bottleneck Migration Network](/images/bottleneck-migration-network.en.svg)
 
