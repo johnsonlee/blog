@@ -111,47 +111,45 @@
   <!-- Compute edges -->
   <path class="edge" d="M380 301 H450 V213 H475"/>
   <path class="edge" d="M380 301 H450 V313 H475"/>
-  <path class="edge" d="M705 213 H760 V185 H805"/>
-  <path class="edge" d="M705 213 H760 V185 H1010"/>
-  <path class="edge" d="M705 313 H760 V300 H805"/>
-  <path class="edge" d="M705 313 H760 V300 H1010"/>
-  <path class="shared-edge" d="M1190 185 H1210 V255 H1260"/>
-  <path class="shared-edge" d="M985 300 H1210 V255 H1260"/>
+  <path class="edge" d="M705 213 H805"/>
+  <path class="edge" d="M705 313 H805"/>
+  <path class="shared-edge" d="M1190 213 H1210 V255 H1260"/>
+  <path class="shared-edge" d="M1190 313 H1210 V255 H1260"/>
 
   <!-- Power edges -->
   <path class="edge" d="M380 485 H450 V420 H475"/>
   <path class="edge" d="M380 485 H475"/>
   <path class="edge" d="M380 485 H450 V565 H475"/>
-  <path class="edge" d="M705 420 H760 V430 H805"/>
-  <path class="edge" d="M705 490 H760 V500 H995"/>
-  <path class="edge" d="M705 565 H760 V565 H805"/>
-  <path class="shared-edge" d="M985 430 H1210 V480 H1260"/>
-  <path class="shared-edge" d="M1190 500 H1210 V480 H1260"/>
+  <path class="edge" d="M705 420 H805"/>
+  <path class="edge" d="M705 490 H995"/>
+  <path class="edge" d="M705 565 H805"/>
+  <path class="shared-edge" d="M985 420 H1210 V480 H1260"/>
+  <path class="shared-edge" d="M1190 490 H1210 V480 H1260"/>
   <path class="shared-edge" d="M1355 590 V535"/>
 
   <!-- Storage edges -->
   <path class="edge" d="M380 725 H450 V655 H475"/>
   <path class="edge" d="M380 725 H475"/>
   <path class="edge" d="M380 725 H450 V795 H475"/>
-  <path class="edge" d="M705 655 H760 V665 H805"/>
-  <path class="edge" d="M705 725 H760 V735 H995"/>
-  <path class="edge" d="M705 795 H760 V805 H805"/>
-  <path class="shared-edge" d="M985 665 H1210 V680 H1260"/>
-  <path class="shared-edge" d="M1190 735 H1210 V795 H1260"/>
+  <path class="edge" d="M705 655 H805"/>
+  <path class="edge" d="M705 725 H995"/>
+  <path class="edge" d="M705 795 H805"/>
+  <path class="shared-edge" d="M985 655 H1210 V680 H1260"/>
+  <path class="shared-edge" d="M1190 725 H1210 V795 H1260"/>
 
   <!-- Networking edges -->
   <path class="edge" d="M380 965 H450 V885 H475"/>
   <path class="edge" d="M380 965 H450 V945 H475"/>
   <path class="edge" d="M380 965 H450 V1005 H475"/>
   <path class="edge" d="M380 965 H450 V1065 H475"/>
-  <path class="edge" d="M705 885 H760 V890 H805"/>
-  <path class="edge" d="M705 945 H760 V950 H995"/>
-  <path class="edge" d="M705 1005 H760 V1015 H805"/>
-  <path class="edge" d="M705 1065 H760 V1075 H995"/>
-  <path class="shared-edge" d="M985 890 H1210 V795 H1260"/>
-  <path class="edge" d="M1190 950 H1210 V1015 H1260"/>
-  <path class="edge" d="M985 1015 H1210 V1015 H1260"/>
-  <path class="edge" d="M1190 1075 H1210 V1015 H1260"/>
+  <path class="edge" d="M705 885 H805"/>
+  <path class="edge" d="M705 945 H995"/>
+  <path class="edge" d="M705 1005 H805"/>
+  <path class="edge" d="M705 1065 H995"/>
+  <path class="shared-edge" d="M985 885 H1210 V795 H1260"/>
+  <path class="edge" d="M1190 945 H1210 V1015 H1260"/>
+  <path class="edge" d="M985 1005 H1210 V1015 H1260"/>
+  <path class="edge" d="M1190 1065 H1210 V1015 H1260"/>
 
   <!-- D0 nodes -->
   <rect class="node context" x="205" y="158" width="170" height="55"/>
@@ -199,37 +197,37 @@
   <text class="node-text" x="590" y="1070">Assembly / Test</text>
 
   <!-- D2 nodes -->
-  <rect class="node candidate" x="805" y="155" width="180" height="60"/>
-  <text class="node-text" x="895" y="179"><tspan x="895">DRAM Wafer</tspan><tspan x="895" dy="17">Starts + Yield</tspan></text>
-  <rect class="node candidate" x="1010" y="155" width="180" height="60"/>
-  <text class="node-text" x="1100" y="179"><tspan x="1100">TSV / Thinning</tspan><tspan x="1100" dy="17">/ Stacking</tspan></text>
-  <rect class="node candidate" x="805" y="270" width="180" height="60"/>
-  <text class="node-text" x="895" y="294"><tspan x="895">Interposer</tspan><tspan x="895" dy="17">/ Substrate</tspan></text>
-  <rect class="node candidate" x="1010" y="270" width="180" height="60"/>
-  <text class="node-text" x="1100" y="294"><tspan x="1100">Burn-in</tspan><tspan x="1100" dy="17">/ Final Test</tspan></text>
+  <rect class="node candidate" x="805" y="183" width="385" height="60"/>
+  <line x1="997.5" y1="183" x2="997.5" y2="243" stroke="#a16207" stroke-width="1.2"/>
+  <text class="node-text" x="901" y="207"><tspan x="901">DRAM Wafer</tspan><tspan x="901" dy="17">Starts + Yield</tspan></text>
+  <text class="node-text" x="1094" y="207"><tspan x="1094">TSV / Thinning</tspan><tspan x="1094" dy="17">/ Stacking</tspan></text>
+  <rect class="node candidate" x="805" y="283" width="385" height="60"/>
+  <line x1="997.5" y1="283" x2="997.5" y2="343" stroke="#a16207" stroke-width="1.2"/>
+  <text class="node-text" x="901" y="307"><tspan x="901">Interposer</tspan><tspan x="901" dy="17">/ Substrate</tspan></text>
+  <text class="node-text" x="1094" y="307"><tspan x="1094">Burn-in</tspan><tspan x="1094" dy="17">/ Final Test</tspan></text>
 
-  <rect class="node candidate" x="805" y="400" width="180" height="60"/>
-  <text class="node-text" x="895" y="424"><tspan x="895">Superalloy Melt</tspan><tspan x="895" dy="17">/ Heat Treatment</tspan></text>
-  <rect class="node candidate" x="995" y="465" width="195" height="70"/>
-  <text class="node-text" x="1092.5" y="488"><tspan x="1092.5">Single-crystal / TBC</tspan><tspan x="1092.5" dy="17">/ Cooling Holes</tspan></text>
+  <rect class="node candidate" x="805" y="390" width="180" height="60"/>
+  <text class="node-text" x="895" y="414"><tspan x="895">Superalloy Melt</tspan><tspan x="895" dy="17">/ Heat Treatment</tspan></text>
+  <rect class="node candidate" x="995" y="455" width="195" height="70"/>
+  <text class="node-text" x="1092.5" y="478"><tspan x="1092.5">Single-crystal / TBC</tspan><tspan x="1092.5" dy="17">/ Cooling Holes</tspan></text>
   <rect class="node candidate" x="805" y="535" width="180" height="60"/>
   <text class="node-text" x="895" y="551"><tspan x="895">NDT / Supplier QA</tspan><tspan x="895" dy="17">/ Qualified Labor</tspan></text>
 
-  <rect class="node candidate" x="805" y="635" width="180" height="60"/>
-  <text class="node-text" x="895" y="651"><tspan x="895">NAND Wafer / Layer</tspan><tspan x="895" dy="17">/ Package Test</tspan></text>
-  <rect class="node candidate" x="995" y="700" width="195" height="70"/>
-  <text class="node-text" x="1092.5" y="724"><tspan x="1092.5">Foundry / SerDes</tspan><tspan x="1092.5" dy="17">/ DRAM / PLP</tspan></text>
-  <rect class="node candidate" x="805" y="775" width="180" height="60"/>
-  <text class="node-text" x="895" y="799"><tspan x="895">OEM Lab</tspan><tspan x="895" dy="17">/ Workload Cycles</tspan></text>
+  <rect class="node candidate" x="805" y="625" width="180" height="60"/>
+  <text class="node-text" x="895" y="641"><tspan x="895">NAND Wafer / Layer</tspan><tspan x="895" dy="17">/ Package Test</tspan></text>
+  <rect class="node candidate" x="995" y="690" width="195" height="70"/>
+  <text class="node-text" x="1092.5" y="714"><tspan x="1092.5">Foundry / SerDes</tspan><tspan x="1092.5" dy="17">/ DRAM / PLP</tspan></text>
+  <rect class="node candidate" x="805" y="765" width="180" height="60"/>
+  <text class="node-text" x="895" y="789"><tspan x="895">OEM Lab</tspan><tspan x="895" dy="17">/ Workload Cycles</tspan></text>
 
-  <rect class="node candidate" x="805" y="860" width="180" height="60"/>
-  <text class="node-text" x="895" y="884"><tspan x="895">3nm DSP</tspan><tspan x="895" dy="17">Foundry + Test</tspan></text>
-  <rect class="node candidate" x="995" y="920" width="195" height="60"/>
-  <text class="node-text" x="1092.5" y="944"><tspan x="1092.5">InP Epitaxy</tspan><tspan x="1092.5" dy="17">/ Laser Yield</tspan></text>
-  <rect class="node candidate" x="805" y="985" width="180" height="60"/>
-  <text class="node-text" x="895" y="1009"><tspan x="895">SiPh Foundry</tspan><tspan x="895" dy="17">/ Wafer Yield</tspan></text>
-  <rect class="node candidate" x="995" y="1045" width="195" height="60"/>
-  <text class="node-text" x="1092.5" y="1069"><tspan x="1092.5">Active Alignment</tspan><tspan x="1092.5" dy="17">/ Burn-in</tspan></text>
+  <rect class="node candidate" x="805" y="855" width="180" height="60"/>
+  <text class="node-text" x="895" y="879"><tspan x="895">3nm DSP</tspan><tspan x="895" dy="17">Foundry + Test</tspan></text>
+  <rect class="node candidate" x="995" y="915" width="195" height="60"/>
+  <text class="node-text" x="1092.5" y="939"><tspan x="1092.5">InP Epitaxy</tspan><tspan x="1092.5" dy="17">/ Laser Yield</tspan></text>
+  <rect class="node candidate" x="805" y="975" width="180" height="60"/>
+  <text class="node-text" x="895" y="999"><tspan x="895">SiPh Foundry</tspan><tspan x="895" dy="17">/ Wafer Yield</tspan></text>
+  <rect class="node candidate" x="995" y="1035" width="195" height="60"/>
+  <text class="node-text" x="1092.5" y="1059"><tspan x="1092.5">Active Alignment</tspan><tspan x="1092.5" dy="17">/ Burn-in</tspan></text>
 
   <!-- D3 nodes -->
   <rect class="node shared" x="1260" y="215" width="285" height="80"/>
