@@ -85,7 +85,7 @@ The GPU bottleneck did not disappear. The throughput released by GPU expansion c
 
 Gas turbines make the point even better because the technology is not new.
 
-GE Vernova entered the second quarter with 116GW of gas-turbine equipment backlog and slot reservations, against only 20GW of output planned for 2026. Raising annual output to 30GW will take until 2030. [GE Vernova Q2 2026](https://www.gevernova.com/news/articles/ge-vernova-releases-second-quarter-2026-financial-results)
+In the second quarter of 2026, GE Vernova disclosed that its gas-turbine equipment backlog and slot reservations had grown to 116GW. The company expected its annualized gas-turbine output rate to reach only 20GW in the third quarter of 2026. Raising annual output to 30GW will take until 2030. [GE Vernova Q2 2026](https://www.gevernova.com/news/articles/ge-vernova-releases-second-quarter-2026-financial-results)
 
 GEV does not lack theory, orders, or the knowledge required to build a turbine. It lacks the time needed to replicate large forgings and castings, specialty alloys, coatings, compressor parts, assembly workers, test stands, and supplier quality systems together.
 

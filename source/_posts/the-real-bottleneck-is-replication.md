@@ -84,7 +84,7 @@ GPU 供给增加，更多 cluster 可以上线，于是 bottleneck 沿着依赖�
 
 燃机更能说明问题，因为它根本不是什么新技术。
 
-GE Vernova 今年二季度拿着 116GW 的燃机设备 backlog 和 slot reservation，2026 年产出却只有 20GW。公司想把年产出拉到 30GW，要等到 2030 年。[GE Vernova Q2 2026](https://www.gevernova.com/news/articles/ge-vernova-releases-second-quarter-2026-financial-results)
+GE Vernova 在 2026 年第二季度披露，燃机设备 backlog 和 slot reservation 已经增至 116GW；公司预计到 2026 年第三季度，年化燃机产出能力才达到 20GW。想把年产出拉到 30GW，要等到 2030 年。[GE Vernova Q2 2026](https://www.gevernova.com/news/articles/ge-vernova-releases-second-quarter-2026-financial-results)
 
 GEV 不缺原理，不缺订单，也不是不知道怎么造燃机。它缺的是把大型锻铸件、specialty alloy、涂层、压缩机部件、装配工人、测试台和供应商质量体系一起复制的时间。
 
