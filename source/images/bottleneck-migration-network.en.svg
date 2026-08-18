@@ -183,9 +183,9 @@
 
   <g transform="translate(0 40)">
   <rect class="node confirmed" x="205" y="455" width="175" height="60"/>
-  <text class="node-text" x="292.5" y="478"><tspan x="292.5">POWER</tspan><tspan class="node-small" x="292.5" dy="18">Gas Turbine · GEV</tspan></text>
+  <text class="node-text" x="292.5" y="478"><tspan x="292.5">POWER</tspan><tspan class="node-small" x="292.5" dy="18">24×7 Firm Power</tspan></text>
   <rect class="node substitute" x="205" y="555" width="175" height="50"/>
-  <text class="substitute-text" x="292.5"><tspan x="292.5" y="568">Coal · Nuclear · Hydro</tspan><tspan x="292.5" y="585">Wind · Solar + Storage</tspan><tspan x="292.5" y="602">Fuel Cell · Grid Expansion</tspan></text>
+  <text class="substitute-text" x="292.5"><tspan x="292.5" y="568">Gas · Coal · Nuclear · Hydro</tspan><tspan x="292.5" y="585">Wind · Solar + Storage</tspan><tspan x="292.5" y="602">Fuel Cell · Grid Expansion</tspan></text>
 
   <rect class="node confirmed" x="205" y="695" width="175" height="60"/>
   <text class="node-text" x="292.5" y="718"><tspan x="292.5">STORAGE</tspan><tspan class="node-small" x="292.5" dy="18">Enterprise SSD</tspan></text>
@@ -207,6 +207,7 @@
   <text class="node-text" x="590" y="340">Host CPU · I/O</text>
 
   <g transform="translate(0 40)">
+  <text class="edge-label" x="590" y="383" text-anchor="middle">HEAVY-DUTY GAS TURBINE CASE</text>
   <rect class="node direct" x="475" y="390" width="230" height="60"/>
   <text class="node-text" x="590" y="425">Large Forgings · Castings</text>
   <rect class="node direct" x="475" y="460" width="230" height="60"/>
@@ -307,6 +308,6 @@
   <line x1="300" y1="1260" x2="340" y2="1260" class="feedback"/>
   <text class="legend" x="352" y="1265">capacity feedback</text>
   <line x1="575" y1="1260" x2="615" y2="1260" class="substitution"/>
-  <text class="legend" x="627" y="1265">substitution path</text>
+  <text class="legend" x="627" y="1265">substitution · supply path</text>
   </g>
 </svg>

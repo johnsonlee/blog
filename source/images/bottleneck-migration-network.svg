@@ -180,9 +180,9 @@
 
   <g transform="translate(0 40)">
   <rect class="node confirmed" x="205" y="455" width="175" height="60"/>
-  <text class="node-text" x="292.5" y="478"><tspan x="292.5">电力</tspan><tspan class="node-small" x="292.5" dy="18">燃气轮机 · GEV</tspan></text>
+  <text class="node-text" x="292.5" y="478"><tspan x="292.5">电力</tspan><tspan class="node-small" x="292.5" dy="18">24×7 可用电力</tspan></text>
   <rect class="node substitute" x="205" y="555" width="175" height="50"/>
-  <text class="substitute-text" x="292.5"><tspan x="292.5" y="568">煤电 · 核电 · 水电</tspan><tspan x="292.5" y="585">风电 · 光伏 + 储能</tspan><tspan x="292.5" y="602">燃料电池 · 电网扩容</tspan></text>
+  <text class="substitute-text" x="292.5"><tspan x="292.5" y="568">燃气 · 煤电 · 核电 · 水电</tspan><tspan x="292.5" y="585">风电 · 光伏 + 储能</tspan><tspan x="292.5" y="602">燃料电池 · 电网扩容</tspan></text>
 
   <rect class="node confirmed" x="205" y="695" width="175" height="60"/>
   <text class="node-text" x="292.5" y="718"><tspan x="292.5">存储</tspan><tspan class="node-small" x="292.5" dy="18">企业级 SSD</tspan></text>
@@ -204,6 +204,7 @@
   <text class="node-text" x="590" y="340">Host CPU · I/O</text>
 
   <g transform="translate(0 40)">
+  <text class="edge-label" x="590" y="383" text-anchor="middle">重型燃机案例展开</text>
   <rect class="node direct" x="475" y="390" width="230" height="60"/>
   <text class="node-text" x="590" y="425">大型锻件 · 铸件</text>
   <rect class="node direct" x="475" y="460" width="230" height="60"/>
@@ -304,6 +305,6 @@
   <line x1="270" y1="1260" x2="310" y2="1260" class="feedback"/>
   <text class="legend" x="322" y="1265">产能反馈</text>
   <line x1="535" y1="1260" x2="575" y2="1260" class="substitution"/>
-  <text class="legend" x="587" y="1265">替代路径</text>
+  <text class="legend" x="587" y="1265">替代 · 供给路径</text>
   </g>
 </svg>
