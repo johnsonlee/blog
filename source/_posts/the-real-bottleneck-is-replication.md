@@ -40,11 +40,11 @@ Falcon 9 第一次落地当然重要。但真正改写发射经济学的，是 r
 
 技术突破只是拿到入场券。replication 才决定一个产业能走多远。
 
-## 两只钟之间，藏着真正的瓶颈
+## 真正的瓶颈，藏在时间差里
 
-看 replication，我只比较两只钟。
+看 replication，我只比较两个时间。
 
-一只是需求抵达的时间，另一只是供给复制的时间：
+一个是需求多久到，另一个是把交付能力复制出来要多久：
 
 > **Replication Gap = Time to replicate supply − Time for demand to arrive**
 
