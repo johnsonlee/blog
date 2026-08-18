@@ -136,6 +136,8 @@ D0 是市场已经看见的瓶颈；D1 是复制 D0 时直接被拉动的产能�
 
 Depth 不是节点的永久属性。今天的 D1 一旦变红，就会成为新的 D0，整张图重新计数。这才是 migration：红灯不只是沿着图移动，也在不断改写研究的起点。
 
+所以，CPU 在这张图里是 D1，不是因为 CPU 天生从属于 GPU，而是因为这里从已经变红的 GPU / ASIC 出发。复制一台 GPU system 会直接拉动 Host CPU 与 I/O；如果 CPU 供给先卡住部署，CPU 就会成为新的 D0。
+
 图里的四条 track 也必须在同一个维度上：**Compute、Power、Storage、Networking**。GPU / ASIC、GEV gas turbine、enterprise SSD 和 optical module，是四个 domain 里当前亮红的 D0 产品节点，不是四个支路的名字。
 
 这是一张图，不是四张供应链图。横向是 D0 → D3 的 Bottleneck Depth，纵向是四个 domain；蓝色节点把不同 domain 对同一份底层产能的争抢重新连在一起。
