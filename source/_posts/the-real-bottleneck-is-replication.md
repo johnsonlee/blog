@@ -46,7 +46,7 @@ Falcon 9 第一次落地当然重要。但真正改写发射经济学的，是 r
 
 一个是需求多久到，另一个是把交付能力复制出来要多久：
 
-> **Replication Gap = Time to replicate supply − Time for demand to arrive**
+> **复制缺口 = 供给复制所需时间 − 需求到达所需时间**
 
 需求 18 个月后到，供给要 48 个月才能补上，中间 30 个月就是 scarcity window。订单、backlog、涨价和超额利润，通常都挤在这段时间里。
 
@@ -60,9 +60,9 @@ EGS 也是一样。第一口井出热，不代表第五十口井还能按预算�
 
 所以我会把产业瓶颈和投资 alpha 分开看：
 
-> **Bottleneck Strength ∝ Demand Shock × Supply Inelasticity × Replication Gap**
+> **瓶颈强度 ∝ 需求冲击 × 供给刚性 × 复制缺口**
 
-> **Alpha = Bottleneck Strength × Mispricing**
+> **超额收益 = 瓶颈强度 × 错误定价**
 
 一个节点很缺，不代表它还有 alpha。GEV、VRT、主流 memory 可以继续是优秀的 bottleneck，市场一旦把这件事 price in，赔率就变了。真正值得找的，是它们扩产时正在制造、市场却还没看见的下一个 bottleneck。
 
@@ -134,7 +134,7 @@ Serving Plane 把请求变成 workload；Data Center 把 compute、power、cooli
 
 它不是技术难度，也不是传统供应链有几级，而是一个 node 离上述三个需求承接根有多远。外部需求冲击本身不计入 Depth：
 
-> **Bottleneck Depth(node) = Shortest dependency path from any D0 root to node**
+> **瓶颈深度（节点）= 从任一 D0 根节点到该节点的最短依赖路径**
 
 D0 是 Serving Plane、Data Center 和 Delivery Network；D1 是各自必须同步扩张的子系统；D2 是 GPU、燃气发电、SSD、光模块等当前或替代技术路线；D3 是复制这些路线所需的设备、部件、工艺和 qualification；D4 才继续落到底层物理产能与跨行业共享约束。Depth 越深，市场通常越陌生，容量数据越难找，但也越可能还没有被 price in。
 
@@ -164,7 +164,7 @@ GPU、GEV、memory 已经证明了 Bottleneck Migration。市场看到红灯以�
 
 所以真正可执行的动作很简单：
 
-> **Red → Find the Yellow nodes it is creating.**
+> **红灯亮起后，就去找它正在制造的黄灯。**
 
 GEV 红了，就去拆它的锻件、合金、涂层和压缩机供应链；enterprise SSD 红了，就看 controller、firmware 和 qualification；光模块红了，就继续往 laser、DSP、SiPh 和测试设备走。不是因为这些名字一定会涨，而是网络告诉我们，压力下一步最可能往哪里传。
 
