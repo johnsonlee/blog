@@ -45,6 +45,7 @@
       .pressure-trunk { fill: none; stroke: #dc2626; stroke-width: 2; stroke-dasharray: 7 5; }
       .shared-edge { fill: none; stroke: #2563eb; stroke-width: 2.2; marker-end: url(#arrow-blue); }
       .feedback { fill: none; stroke: #0f766e; stroke-width: 2; stroke-dasharray: 6 5; marker-end: url(#arrow-teal); }
+      .feedback-trunk { fill: none; stroke: #0f766e; stroke-width: 2; stroke-dasharray: 6 5; }
       .edge-label { font: 500 11px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #475569; }
       .legend { font: 500 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #334155; }
       .legend-strong { font: 700 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #0f172a; }
@@ -98,19 +99,19 @@
 
   <!-- Edges: demand, D0 pressure, and feedback -->
   <path class="edge" d="M290 213 V270"/>
-  <path class="pressure-trunk" d="M360 332 V350 H420 V958"/>
+  <path class="pressure-trunk" d="M380 301 H420 V958"/>
   <path class="pressure" d="M420 478 H380"/>
   <path class="pressure" d="M420 718 H380"/>
   <path class="pressure" d="M420 958 H380"/>
   <text class="edge-label" x="414" y="408" text-anchor="end">power</text>
   <text class="edge-label" x="414" y="648" text-anchor="end">data / context</text>
   <text class="edge-label" x="414" y="888" text-anchor="end">scale-out traffic</text>
-  <path class="feedback" d="M205 478 C172 478 172 330 205 330"/>
-  <path class="feedback" d="M205 958 C153 958 153 340 205 340"/>
+  <path class="feedback-trunk" d="M205 485 H165 M205 965 H165 V301"/>
+  <path class="feedback" d="M165 301 H205"/>
 
   <!-- Compute edges -->
-  <path class="edge" d="M380 301 H450 V213 H475"/>
-  <path class="edge" d="M380 301 H450 V313 H475"/>
+  <path class="edge" d="M380 289 H450 V213 H475"/>
+  <path class="edge" d="M380 289 H450 V313 H475"/>
   <path class="edge" d="M705 213 H805"/>
   <path class="edge" d="M705 313 H805"/>
   <path class="shared-edge" d="M1190 213 H1210 V255 H1260"/>
