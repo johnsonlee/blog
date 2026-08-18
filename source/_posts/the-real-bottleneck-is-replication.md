@@ -176,21 +176,21 @@ D0 和 Depth 不需要跟着红灯重新编号。真正迁移的是约束状态�
 
 下一批 alpha 不在“电力股”或“半导体股”这两个标签里，而在这两条主线中复制最慢、关键性最高、市场定价最低的那一层。
 
-## SpaceX 替换的，是地面数据中心的部署路径
+## SpaceX 不优化数据中心，它替换数据中心
 
-现在可以回到开篇的问题：如果 Elon Musk 说 SpaceX 最大的价值在 AI，它到底解决哪个瓶颈？
+如果 AI 的瓶颈中心是数据中心，开篇的问题也就有了答案：Elon Musk 说 SpaceX 最大的价值在 AI，SpaceX 要解决的正是数据中心这个最大的瓶颈。
 
-SpaceX 不该被塞进 D2 或 D3 的某一个框。它代表的是一条从 Data Center 分叉、再通过 Starlink 接回 Delivery Network 的替代路径。
+通常的解法是在地面路径上逐项优化：多建电厂、扩电网、降低 PUE、缩短并网和施工周期。但这条路仍然要求发电、电网、配电、制冷、设施与网络同时复制。最慢的一环没有消失，数据中心就交付不了。
 
-地面数据中心与 SpaceX 轨道方案的路径差异可以画成：
+SpaceX 选了另一种解法：把承载算力的整套数据中心从地面拿走。太阳能阵列替换发电与电网，辐射散热替换传统制冷，Gigasat Factory 和 Starship 替换土地、许可与土建，Starlink 激光网络再把计算结果接回地面。半导体和最终的地面网络仍然存在，中间那条最难复制的 data-center deployment path 却被整段换掉了。
+
+所以 SpaceX 不该被塞进 D2 或 D3 的某一个框。它不是现有路径上的优化节点，而是一条从 Data Center 分叉、再通过 Starlink 接回 Delivery Network 的完整替代路径：
 
 ![地面数据中心与 SpaceX 轨道计算的瓶颈替代路径](/images/spacex-bottleneck-substitution-path.svg)
 
 [SpaceX 公布的 StarMind 架构](https://www.spacex.com/spacexai/starmind)已经把太阳能供电、计算载荷、辐射散热、Starship 部署和 Starlink 激光网络放进了同一套系统：
 
 ![SpaceX StarMind 公开架构](/images/starmind-architecture.svg)
-
-它没有绕过半导体，却试图绕过地面数据中心最慢的那组物理依赖：新增发电、并网、输电、变压器、土地、许可、土建和传统制冷。
 
 这不是消灭瓶颈，而是替换瓶颈。地面的 grid、transformer 和 construction 不再卡住部署以后，新的红灯会出现在 satellite manufacturing、solar array、radiator mass、radiation tolerance、launch cadence 和 laser network。能不能在太空运行一台计算机只是 0→1；能不能连续制造、发射并联网几千台，才是 1→10。
 
@@ -200,7 +200,7 @@ SpaceX 不该被塞进 D2 或 D3 的某一个框。它代表的是一条从 Data
 
 StarMind 要提高前一项，Starship 要提高后一项，Starlink 负责把算力接回 Delivery Network。三者少一个，轨道计算都只是一颗能工作的卫星，算不上可复制的 AI 基础设施。
 
-SpaceX 真正要替换的不是 GPU 路径，而是“电力、散热、设施和网络必须在地面同时扩张”这条部署路径。它把一个跨越十几个产业的 construction project，改写成 satellite manufacturing throughput 和 launch throughput。如果卫星与发射的复制速度真的快过电网和数据中心建设，SpaceX 就有机会成为一台制造计算容量的机器；如果散热器、发射频率或卫星制造跟不上，红灯只是从地面迁到了轨道。
+SpaceX 把一个跨越十几个产业的 construction project，改写成 satellite manufacturing throughput 和 launch throughput。如果卫星与发射的复制速度真的快过电网和数据中心建设，SpaceX 就有机会成为一台制造计算容量的机器；如果散热器、发射频率或卫星制造跟不上，红灯只是从地面迁到了轨道。
 
 ### 交叉点：OpenAI 从 10GW 走向 30 到 50GW
 
