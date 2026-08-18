@@ -151,7 +151,7 @@ A node turning red is where the research begins. Every new order required for it
 
 In the Bottleneck Hunter framework, we follow demand until we find the narrowest node. With a Bottleneck Migration Network, the question changes: once that node turns red, which adjacent node does it push from green to yellow? Which supplier has the largest Replication Gap when the red node expands? Which node is being pulled at once by AI, the grid, defense, nuclear power, or autos?
 
-The network does not belong to AI. Replace the GPU with a new drug and the nodes become active ingredients, bioreactors, fill-finish, cold chain, and approval. Replace it with an SMR and the nodes become nuclear-grade forgings, fuel, licensing, welders, and site construction. The names change. The propagation does not.
+This network applies not only to AI. Replace the GPU with a new drug and the nodes become active ingredients, bioreactors, fill-finish, cold chain, and approval. Replace it with an SMR and the nodes become nuclear-grade forgings, fuel, licensing, welders, and site construction. The names change. The propagation does not.
 
 ## The next alpha is in the yellow lights created by red ones
 
