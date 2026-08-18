@@ -188,7 +188,7 @@ endlegend
 @enduml
 ```
 
-The point of this diagram is not to tell us which stock to buy today. It upgrades the research unit from a point to a system.
+A node turning red is where the research begins. Every new order required for its expansion pushes pressure into upstream suppliers and other industries competing for the same materials, equipment, and capacity.
 
 In the Bottleneck Hunter framework, we follow demand until we find the narrowest node. With a Bottleneck Migration Network, the question changes: once that node turns red, which adjacent node does it push from green to yellow? Which supplier has the largest Replication Gap when the red node expands? Which node is being pulled at once by AI, the grid, defense, nuclear power, or autos?
 
