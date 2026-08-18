@@ -86,17 +86,13 @@
   <line class="grid" x1="1225" y1="78" x2="1225" y2="1155"/>
 
   <text class="lane-label" x="36" y="236">算力</text>
-  <text class="lane-note" x="36" y="257">GPU + 内存</text>
-  <text class="lane-note" x="36" y="273">+ 封装</text>
+  <text class="lane-note" x="36" y="260">GPU + 内存 + 封装</text>
   <text class="lane-label" x="36" y="476">电力</text>
-  <text class="lane-note" x="36" y="497">发电</text>
-  <text class="lane-note" x="36" y="513">+ 输配电</text>
+  <text class="lane-note" x="36" y="500">发电 + 输配电</text>
   <text class="lane-label" x="36" y="716">存储</text>
-  <text class="lane-note" x="36" y="737">企业级 SSD</text>
-  <text class="lane-note" x="36" y="753">+ 认证</text>
+  <text class="lane-note" x="36" y="740">企业级 SSD + 认证</text>
   <text class="lane-label" x="36" y="971">网络</text>
-  <text class="lane-note" x="36" y="992">光模块</text>
-  <text class="lane-note" x="36" y="1008">+ 光子</text>
+  <text class="lane-note" x="36" y="995">光模块 + 光子</text>
 
   <!-- Edges: demand, D0 pressure, and feedback -->
   <path class="edge" d="M290 213 V270"/>
