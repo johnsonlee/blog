@@ -15,8 +15,6 @@
     </style>
   </defs>
 
-  <rect width="1600" height="680" fill="#f8fafc"/>
-
   <rect x="180" y="78" width="140" height="64" rx="12" class="power" filter="url(#shadow)"/><text x="250" y="111" class="label">太阳</text>
   <rect x="390" y="78" width="220" height="64" rx="12" class="power" filter="url(#shadow)"/><text x="500" y="111" class="label">太阳能阵列</text>
   <rect x="670" y="78" width="180" height="64" rx="12" class="power" filter="url(#shadow)"/><text x="760" y="111" class="label">直流供电</text>

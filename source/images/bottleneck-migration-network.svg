@@ -7,7 +7,7 @@
     <marker id="arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#7c3aed"/></marker>
     <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#dc2626"/></marker>
     <style>
-      .canvas{fill:#f8fafc}.lane-a{fill:#fff}.lane-b{fill:#f8fafc}.grid{stroke:#cbd5e1;stroke-width:1}
+      .lane-a{fill:#fff}.lane-b{fill:#f8fafc}.grid{stroke:#cbd5e1;stroke-width:1}
       .depth-0{fill:#f1f5f9}.depth-1{fill:#fff7ed}.depth-2{fill:#fff7ed}.depth-3{fill:#fefce8}.depth-4{fill:#eff6ff}
       .title{font:700 27px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#0f172a}.subtitle{font:400 14px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#64748b}
       .depth-label{font:700 14px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#334155;letter-spacing:.4px}.depth-note{font:400 11.5px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#64748b}
@@ -19,7 +19,6 @@
     </style>
   </defs>
 
-  <rect class="canvas" width="1600" height="2300" rx="18"/>
   <text class="title" x="30" y="40">瓶颈迁移网络</text>
   <text class="subtitle" x="30" y="64">外部需求同时压向三个 D0 根；有效容量取决于 Serving Plane、Data Center 与 Delivery Network 中最窄的一项。</text>
 

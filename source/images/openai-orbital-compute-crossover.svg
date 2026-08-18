@@ -10,8 +10,6 @@
     </style>
   </defs>
 
-  <rect width="1600" height="760" fill="#f8fafc"/>
-
   <rect x="568" y="74" width="300" height="490" rx="16" fill="#ffe4e6" opacity="0.78"/>
   <line x1="568" y1="74" x2="568" y2="564" stroke="#fda4af" stroke-width="2" stroke-dasharray="7 7"/>
   <line x1="868" y1="74" x2="868" y2="564" stroke="#fda4af" stroke-width="2" stroke-dasharray="7 7"/>
