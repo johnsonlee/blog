@@ -65,9 +65,9 @@
   <path d="M770 525H860" class="alt-edge"/>
   <path d="M1110 525H1180" class="alt-edge"/>
 
-  <rect x="500" y="585" width="270" height="54" rx="10" class="alternative"/>
-  <text x="635" y="613" class="node-label">SOLAR ARRAY · RADIATOR</text>
-  <path d="M635 585V561" class="alt-edge"/>
+  <rect x="500" y="640" width="270" height="60" rx="10" class="alternative"/>
+  <text x="635" y="671" class="node-label">SOLAR ARRAY · RADIATOR</text>
+  <path d="M635 640V561" class="alt-edge"/>
 
   <rect x="860" y="640" width="250" height="60" rx="10" class="alternative" filter="url(#shadow)"/>
   <text x="985" y="671" class="node-label">STARLINK LASER NETWORK</text>

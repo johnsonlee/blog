@@ -65,9 +65,9 @@
   <path d="M710 525H800" class="alt-edge"/>
   <path d="M1050 525H1120" class="alt-edge"/>
 
-  <rect x="440" y="585" width="270" height="54" rx="10" class="alternative"/>
-  <text x="575" y="613" class="node-label">太阳能阵列 · 散热器</text>
-  <path d="M575 585V561" class="alt-edge"/>
+  <rect x="440" y="640" width="270" height="60" rx="10" class="alternative"/>
+  <text x="575" y="671" class="node-label">太阳能阵列 · 散热器</text>
+  <path d="M575 640V561" class="alt-edge"/>
 
   <rect x="800" y="640" width="250" height="60" rx="10" class="alternative" filter="url(#shadow)"/>
   <text x="925" y="671" class="node-label">Starlink 激光网络</text>
