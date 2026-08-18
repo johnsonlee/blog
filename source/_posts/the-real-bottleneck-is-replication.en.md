@@ -187,7 +187,11 @@ The difference between terrestrial deployment and the SpaceX orbital alternative
 
 ![Bottleneck substitution from terrestrial data centers to SpaceX orbital compute](/images/spacex-bottleneck-substitution-path.en.svg)
 
-[SpaceX's published StarMind architecture](https://www.spacex.com/spacexai/starmind) already puts those components together: a compute payload powered by solar arrays, radiators that reject heat, and inter-satellite lasers that return results through Starlink. It does not bypass semiconductors. It tries to bypass the slowest physical dependencies of terrestrial data centers: new generation, grid connection, transmission, transformers, land, permits, civil works, and conventional cooling.
+[SpaceX's published StarMind architecture](https://www.spacex.com/spacexai/starmind) puts solar power, the compute payload, thermal radiation, Starship deployment, and the Starlink laser network into one system:
+
+![SpaceX StarMind published architecture](/images/starmind-architecture.en.svg)
+
+It does not bypass semiconductors. It tries to bypass the slowest physical dependencies of terrestrial data centers: new generation, grid connection, transmission, transformers, land, permits, civil works, and conventional cooling.
 
 That substitutes bottlenecks rather than eliminating them. Once the grid, transformers, and construction no longer gate deployment, new red lights appear in satellite manufacturing, solar arrays, radiator mass, radiation tolerance, launch cadence, and the laser network. Running a computer in space is zero to one. Manufacturing, launching, and networking thousands of them is one to ten.
 

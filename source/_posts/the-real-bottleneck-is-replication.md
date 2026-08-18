@@ -186,7 +186,11 @@ SpaceX 不该被塞进 D2 或 D3 的某一个框。它代表的是一条从 Data
 
 ![地面数据中心与 SpaceX 轨道计算的瓶颈替代路径](/images/spacex-bottleneck-substitution-path.svg)
 
-[SpaceX 公布的 StarMind 架构](https://www.spacex.com/spacexai/starmind)已经把这几个部件放在了一起：计算载荷使用太阳能供电，通过散热器把热量辐射出去，再用星间激光链路把结果送回 Starlink。它没有绕过半导体，却试图绕过地面数据中心最慢的那组物理依赖：新增发电、并网、输电、变压器、土地、许可、土建和传统制冷。
+[SpaceX 公布的 StarMind 架构](https://www.spacex.com/spacexai/starmind)已经把太阳能供电、计算载荷、辐射散热、Starship 部署和 Starlink 激光网络放进了同一套系统：
+
+![SpaceX StarMind 公开架构](/images/starmind-architecture.svg)
+
+它没有绕过半导体，却试图绕过地面数据中心最慢的那组物理依赖：新增发电、并网、输电、变压器、土地、许可、土建和传统制冷。
 
 这不是消灭瓶颈，而是替换瓶颈。地面的 grid、transformer 和 construction 不再卡住部署以后，新的红灯会出现在 satellite manufacturing、solar array、radiator mass、radiation tolerance、launch cadence 和 laser network。能不能在太空运行一台计算机只是 0→1；能不能连续制造、发射并联网几千台，才是 1→10。
 
