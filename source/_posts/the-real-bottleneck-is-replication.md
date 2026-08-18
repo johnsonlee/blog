@@ -206,6 +206,8 @@ SpaceX 真正要替换的不是 GPU 路径，而是“电力、散热、设施�
 
 OpenAI 是观察这两条路线最合适的压力测试。OpenAI 在 2026 年 4 月称，Stargate 已越过最初 10GW 的规划里程碑，并开始寻找 10GW 之外的新 site。[OpenAI 的公开进度](https://openai.com/index/building-the-compute-infrastructure-for-the-intelligence-age/)说明 10GW 已经不是远景，但这个规模仍然可以靠多个地面 site 和自建能源硬做出来。假设持续满载，10GW 一年要消耗 87.6TWh；如果下一步变成单一平台 30 到 50GW，年用电量会升到 263 到 438TWh。后一个数字已经与 2024 年全球所有数据中心 415TWh 的用电量处在同一数量级。[IEA](https://www.iea.org/reports/energy-and-ai/executive-summary)预计到 2030 年，全球数据中心用电也只有约 945TWh。
 
+![OpenAI 算力需求下地面数据中心与轨道计算的交叉点](/images/openai-orbital-compute-crossover.svg)
+
 所以交叉点不是某个固定年份，也不是轨道电价突然低过地面电价。它出现于一个更具体的条件：OpenAI 想增加的下一批算力已经走向 30 到 50GW，但每年能按时交付的 power-ready 地面容量持续落后于 GPU 和 ASIC 供给，此时轨道路线的边际 Time-to-Compute 才有机会追上地面。按目前公开的需求轨迹推演，我会把最早的观察窗口放在 2028 到 2032 年；到了 50 到 100GW，orbital compute 才会从远期期权变成战略选项。如果模型效率提升得足够快，或者地面可部署电力复制得更快，这个交叉点就会继续右移，甚至永远不会出现。
 
 开篇那张清单里没有 SpaceX，因为它不是下一只 GEV，也不是下一只 SK hynix。它赌的是一条新的瓶颈替代路径（Bottleneck Substitution Path）。

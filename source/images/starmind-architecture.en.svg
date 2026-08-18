@@ -47,5 +47,5 @@
   <rect x="970" y="500" width="310" height="70" rx="12" class="thermal" filter="url(#shadow)"/><text x="1125" y="536" class="label">THERMAL RADIATION TO SPACE</text>
   <path d="M760 424V500" class="edge-red"/><path d="M880 535H970" class="edge-red"/>
 
-  <text x="1570" y="650" text-anchor="end" class="sub">Based on SpaceX's published StarMind · AI1 architecture</text>
+  <text x="800" y="650" text-anchor="middle" class="sub">Based on SpaceX's published StarMind · AI1 architecture</text>
 </svg>

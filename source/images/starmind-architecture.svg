@@ -47,5 +47,5 @@
   <rect x="970" y="500" width="270" height="70" rx="12" class="thermal" filter="url(#shadow)"/><text x="1105" y="536" class="label">热量辐射入太空</text>
   <path d="M760 424V500" class="edge-red"/><path d="M880 535H970" class="edge-red"/>
 
-  <text x="1570" y="650" text-anchor="end" class="sub">依据 SpaceX 公开的 StarMind · AI1 架构</text>
+  <text x="800" y="650" text-anchor="middle" class="sub">依据 SpaceX 公开的 StarMind · AI1 架构</text>
 </svg>
