@@ -125,9 +125,9 @@
   <path class="edge" d="M705 420 H805"/>
   <path class="edge" d="M705 490 H995"/>
   <path class="edge" d="M705 565 H805"/>
-  <path class="shared-edge" d="M985 420 H1210 V480 H1260"/>
-  <path class="shared-edge" d="M1190 490 H1210 V480 H1260"/>
-  <path class="shared-edge" d="M1355 590 V535"/>
+  <path class="shared-edge" d="M985 420 H1210 V455 H1260"/>
+  <path class="shared-edge" d="M1190 490 H1210 V455 H1260"/>
+  <path class="shared-edge" d="M1402.5 520 V485"/>
 
   <!-- Storage edges -->
   <path class="edge" d="M380 725 H450 V655 H475"/>
@@ -235,10 +235,10 @@
   <rect class="node shared" x="1260" y="225" width="285" height="60"/>
   <text class="node-small" x="1402.5" y="251"><tspan x="1402.5">Bonding / Lithography / Metrology Tools</tspan><tspan x="1402.5" dy="18">HBM + advanced packaging</tspan></text>
 
-  <rect class="node shared" x="1260" y="450" width="285" height="60"/>
-  <text class="node-small" x="1402.5" y="465"><tspan x="1402.5">Heavy Press / VIM-VAR</tspan><tspan x="1402.5" dy="17">/ Heat-treatment Furnaces</tspan><tspan x="1402.5" dy="17">power + nuclear + defense</tspan></text>
-  <rect class="node context" x="1260" y="555" width="190" height="50"/>
-  <text class="node-small" x="1355" y="576"><tspan x="1355">Nuclear / Defense</tspan><tspan x="1355" dy="16">Demand</tspan></text>
+  <rect class="node shared" x="1260" y="425" width="285" height="60"/>
+  <text class="node-small node-center" x="1402.5"><tspan x="1402.5" y="437">Heavy Press / VIM-VAR</tspan><tspan x="1402.5" y="455">/ Heat-treatment Furnaces</tspan><tspan x="1402.5" y="473">power + nuclear + defense</tspan></text>
+  <rect class="node context" x="1307.5" y="520" width="190" height="50"/>
+  <text class="node-small node-center" x="1402.5" y="545">Nuclear / Defense Demand</text>
 
   <rect class="node candidate" x="1260" y="625" width="285" height="60"/>
   <text class="node-small node-center" x="1402.5" y="655">NAND Etch / Deposition / Metrology Tools</text>
