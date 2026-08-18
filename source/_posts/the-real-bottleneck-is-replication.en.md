@@ -177,6 +177,38 @@ After GPUs, GEV, enterprise SSDs, or optical modules turn red, I first ask wheth
 
 The next alpha is not hidden inside the labels “power stock” or “semiconductor stock.” It sits at the layer on these two paths with the slowest replication, the highest criticality, and the lowest market recognition.
 
-SpaceX's vision can be the stars. Capital speaks a colder language: the value of the first success depends on whether the second, fifth, and hundredth can be replicated faster.
+## SpaceX replaces the terrestrial data-center deployment path
+
+We can now return to the question at the beginning. If Elon Musk says that AI could become the largest source of SpaceX's value, which bottleneck does SpaceX actually solve?
+
+SpaceX does not belong in a single D2 or D3 box. It represents an alternative route that branches from the Data Center and reconnects to the Delivery Network through Starlink.
+
+The terrestrial deployment path looks like this:
+
+```text
+Compute deployment: Semiconductors → Data center (generation and grid + distribution + cooling + facilities)
+Result delivery: Data center → DCI + backbone + CDN / edge
+```
+
+SpaceX is trying to replace it with:
+
+```text
+Compute deployment: Semiconductors → Compute satellite (solar array + radiator) → Starship → Orbit
+Result delivery: Compute satellite → Starlink laser network → Terrestrial network
+```
+
+[SpaceX's published StarMind architecture](https://www.spacex.com/spacexai/starmind) already puts those components together: a compute payload powered by solar arrays, radiators that reject heat, and inter-satellite lasers that return results through Starlink. It does not bypass semiconductors. It tries to bypass the slowest physical dependencies of terrestrial data centers: new generation, grid connection, transmission, transformers, land, permits, civil works, and conventional cooling.
+
+That substitutes bottlenecks rather than eliminating them. Once the grid, transformers, and construction no longer gate deployment, new red lights appear in satellite manufacturing, solar arrays, radiator mass, radiation tolerance, launch cadence, and the laser network. Running a computer in space is zero to one. Manufacturing, launching, and networking thousands of them is one to ten.
+
+Dollars per megawatt-hour is therefore not the most useful metric for this route. A more direct one is:
+
+> **Useful compute per kilogram to orbit × kilograms launched per year = orbital compute added per year**
+
+StarMind must raise the first term, Starship the second, and Starlink must reconnect that compute to the Delivery Network. Remove any one of them and orbital compute remains a working satellite rather than replicable AI infrastructure.
+
+SpaceX is not replacing the GPU path. It is replacing the deployment path in which power, cooling, facilities, and networking must expand together on Earth. The wager is that satellite manufacturing throughput and launch throughput can scale faster than a construction project spread across a dozen industries. If they do, SpaceX could become a machine for manufacturing compute capacity. If radiators, launch cadence, or satellite production fall behind, the red light has merely moved from the ground into orbit.
+
+SpaceX was missing from the list at the beginning because it is neither the next GEV nor the next SK hynix. It is a bet on a new Bottleneck Substitution Path.
 
 **Technology turns zero into one. Replication determines how many zeros come after the one.**
