@@ -122,23 +122,27 @@ GPU、燃机、enterprise SSD 和光模块不是四个孤立的案例。它们�
 
 现实里的 bottleneck 不是从 A 搬到 B，再从 B 搬到 C。它更像拥堵在网络里传播。
 
-GPU 扩产，会同时推高 HBM、封装、网络、存储和电力需求；燃机与电网扩出来，又允许更多 GPU 上线；更多 GPU 会把 optics 和 storage 再次推向红线。每解决一个 node，释放出来的流量都会撞向相邻 node。
+但这张图不能从 GPU 开始。卡不会直接承接请求，数据中心也不在真空里工作。外部需求同时压向三个容量平面：**Serving Plane、Data Center 和 Delivery Network**。三者不是串行经过的三站，也没有必要再造一个“可对外提供的 AI 服务容量”节点；它们是并列的根，任何一项掉队，最终交付能力都会被最窄的一项锁死。
+
+Serving Plane 把请求变成 workload；Data Center 把 compute、power、cooling、storage、fabric 和 facility integration 拼成可以上线的集群；Delivery Network 再通过 DCI、骨干网、Transit、Peering 和 CDN/Edge 把流量送进来、把结果送出去。GPU 供给释放，只有经过这三套系统的共同扩张，才会变成真正可用的服务能力。
+
+这也是为什么 GPU 扩产会同时推高 HBM、封装、网络、存储和电力需求；燃机与电网扩出来，又允许更多 GPU 上线；更多 GPU 会把 optics 和 storage 再次推向红线。每解决一个 node，释放出来的流量都会撞向相邻 node。
 
 但写到 forging、controller、DSP 还远远不够。它们依然是产品类别，不是可以跟踪的产能。一个 node 至少要继续拆到设备、材料、工艺或 qualification，直到能找到具体的 lead time、utilization、yield 和扩产计划。
 
 要把这种迁移画清楚，还需要一个坐标：**Bottleneck Depth**。
 
-它不是技术难度，也不是传统供应链有几级，而是从一个已经被市场确认的供给约束出发，沿着响应路径走过的最短距离：
+它不是技术难度，也不是传统供应链有几级，而是一个 node 离上述三个需求承接根有多远。外部需求冲击本身不计入 Depth：
 
-> **Bottleneck Depth(node) = Shortest response path from a confirmed capacity constraint to node**
+> **Bottleneck Depth(node) = Shortest dependency path from any D0 root to node**
 
-D0 是市场已经看见的供给约束；D1 是它变红后的第一跳响应，既包括当前路径，也包括尚未采用的替代路线；D2 是复制每条 D1 路线所需的设备、材料、工艺或 qualification；D3 继续落到底层物理产能与跨行业共享约束。Depth 越深，市场通常越陌生，容量数据越难找，但也越可能还没有被 price in。
+D0 是 Serving Plane、Data Center 和 Delivery Network；D1 是各自必须同步扩张的子系统；D2 是 GPU、燃气发电、SSD、光模块等当前或替代技术路线；D3 是复制这些路线所需的设备、部件、工艺和 qualification；D4 才继续落到底层物理产能与跨行业共享约束。Depth 越深，市场通常越陌生，容量数据越难找，但也越可能还没有被 price in。
 
-Depth 只计算离 D0 有几跳，不规定走哪一种边。实线表示当前路径，紫色虚线表示尚未采用的替代路线。替代路线也必须继续拆到 D2、D3。Power 里的燃气、煤电、核电等是在发电路径内互相替代；接网、输电、变电则是另一条必须同时满足的交付路径。
+Depth 只计算离任一 D0 有几跳，不规定走哪一种边。实线表示当前依赖，紫色虚线表示尚未采用的替代路线。Power 里的燃气、煤电、核电等是在发电路径内互相替代；电力交付则是必须同时满足的另一条路径。替代路线也不能停在名字上，仍然要继续拆到 D3、D4。
 
-填色和边框表达的是两个维度。黄色表示尚未变红的深层 bottleneck candidate；紫色虚线表示尚未采用的路线。所以一个节点可以既是黄色，又带紫色虚线边框。
+Depth 和 bottleneck status 也是两个维度。D0 只表示拓扑上的根，不等于红色；红色表示已经成为 binding constraint，可能出现在 D2、D3，甚至 D4。黄色表示尚未变红的 bottleneck candidate；紫色虚线表示尚未采用的路线。所以一个节点可以既是黄色，又带紫色虚线边框。
 
-Depth 不是节点的永久属性。今天的 D1 一旦变红，就会成为新的 D0，整张图重新计数。这才是 migration：红灯不只是沿着图移动，也在不断改写研究的起点。
+D0 和 Depth 不需要跟着红灯重新编号。真正迁移的是约束状态：GPU 供给缓解以后，红灯可能移到 HBM，也可能跳到 power、cooling 或 Delivery Network；坐标不动，最窄的 node 在动。
 
 ![瓶颈迁移网络](/images/bottleneck-migration-network.svg)
 

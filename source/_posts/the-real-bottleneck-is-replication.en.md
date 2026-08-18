@@ -123,23 +123,27 @@ GPUs, gas turbines, enterprise SSDs, and optical modules are not four isolated e
 
 In the real world, a bottleneck does not move from A to B and then B to C. Congestion propagates through a network.
 
-GPU expansion raises demand for HBM, packaging, networking, storage, and power at the same time. More turbine and grid capacity lets additional GPUs come online. Those GPUs push optics and storage back toward the red line. Every solved node releases flow that collides with an adjacent node.
+But the map cannot start with the GPU. A card does not accept a user request by itself, and a data center does not operate in a vacuum. External demand presses on three capacity planes at once: the **Serving Plane, Data Center, and Delivery Network**. They are not three serial stops, and there is no need to invent another node called “serviceable AI capacity.” They are parallel roots. The narrowest one caps what the system can actually deliver.
+
+The Serving Plane turns requests into workloads. The Data Center integrates compute, power, cooling, storage, fabric, and facility infrastructure into clusters that can go live. The Delivery Network uses DCI, backbone, transit, peering, and CDN or edge capacity to bring traffic in and carry results out. More GPU supply becomes usable service capacity only when all three systems scale with it.
+
+That is why GPU expansion raises demand for HBM, packaging, networking, storage, and power at the same time. More turbine and grid capacity lets additional GPUs come online. Those GPUs push optics and storage back toward the red line. Every solved node releases flow that collides with an adjacent node.
 
 Stopping at forgings, controllers, or DSPs is still too coarse. Those are product categories, not capacity that can be tracked. A node has to be broken down into equipment, materials, process steps, or qualification until lead time, utilization, yield, and expansion plans become measurable.
 
 To draw that migration clearly, the network needs another coordinate: **Bottleneck Depth**.
 
-It is not technical difficulty or the number of tiers in a conventional supply chain. It is the shortest distance from a capacity constraint already confirmed by the market, measured along response paths:
+It is not technical difficulty or the number of tiers in a conventional supply chain. It measures how far a node sits from the three demand-facing roots above. The external demand shock itself is outside Depth:
 
-> **Bottleneck Depth(node) = Shortest response path from a confirmed capacity constraint to node**
+> **Bottleneck Depth(node) = Shortest dependency path from any D0 root to node**
 
-D0 is the capacity constraint the market already sees. D1 is the first-order response after it turns red, including both the current route and substitute routes not yet adopted. D2 contains the equipment, materials, process steps, and qualification needed to replicate each D1 route. D3 reaches the physical capacity and cross-industry constraints underneath them. The deeper the node, the less familiar the market usually is with it, the harder its capacity is to measure, and the more likely it has not been priced in.
+D0 contains the Serving Plane, Data Center, and Delivery Network. D1 contains the subsystems that must scale with each root. D2 contains current and substitute technology routes such as GPUs, gas-fired power, SSDs, and optical modules. D3 contains the equipment, parts, processes, and qualification required to replicate those routes. D4 reaches the physical capacity and cross-industry constraints underneath them. The deeper the node, the less familiar the market usually is with it, the harder its capacity is to measure, and the more likely it has not been priced in.
 
-Depth counts hops from D0; it does not prescribe an edge type. Solid lines show the current route. Purple dashed lines show substitute routes not yet adopted. Every substitute route must continue through D2 and D3. In Power, gas, coal, nuclear, and the other generation routes can substitute for one another; interconnection, transmission, and transformation form a separate delivery path that must be satisfied at the same time.
+Depth counts hops from any D0 root; it does not prescribe an edge type. Solid lines show current dependencies. Purple dashed lines show substitute routes not yet adopted. In Power, gas, coal, nuclear, and the other generation routes can substitute for one another; power delivery is a separate path that must be satisfied at the same time. A substitute route cannot stop at its name. It still has to be expanded through D3 and D4.
 
-Fill and border encode different dimensions. Yellow marks a deeper bottleneck candidate that has not yet turned red. A purple dashed border marks a route that has not yet been adopted. A node can therefore be both yellow and purple-dashed.
+Depth and bottleneck status are separate dimensions. D0 marks a topological root; it does not mean red. Red marks a binding constraint and may appear at D2, D3, or even D4. Yellow marks a candidate that has not yet turned red. A purple dashed border marks a route that has not yet been adopted. A node can therefore be both yellow and purple-dashed.
 
-Depth is not a permanent property of a node. Once today's D1 turns red, it becomes the new D0 and the network is measured again. That is migration: the red light moves, and the starting point of the research moves with it.
+D0 and Depth do not need to be renumbered when the red light moves. What migrates is the binding state. Once GPU supply loosens, the red light may move into HBM, or jump into power, cooling, or the Delivery Network. The coordinates stay put. The narrowest node changes.
 
 ![Bottleneck Migration Network](/images/bottleneck-migration-network.en.svg)
 
