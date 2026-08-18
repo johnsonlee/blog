@@ -124,66 +124,240 @@ GPU、GEV、存储和光模块不是四个孤立的案例。它们是同一张 n
 
 GPU 扩产，会同时推高 HBM、封装、网络、存储和电力需求；燃机与电网扩出来，又允许更多 GPU 上线；更多 GPU 会把 optics 和 storage 再次推向红线。每解决一个 node，释放出来的流量都会撞向相邻 node。
 
+但写到 forging、controller、DSP 还远远不够。它们依然是产品类别，不是可以跟踪的产能。一个 node 至少要继续拆到设备、材料、工艺或 qualification，直到能找到具体的 lead time、utilization、yield 和扩产计划。
+
+所以这里不把所有东西硬塞进一张图。先看压力怎么在产业之间迁移，再沿四条支路往下拆。每条支路都停在可以继续查订单、lead time、yield 和扩产计划的地方。
+
 ```plantuml
 @startuml
+top to bottom direction
 skinparam backgroundColor white
 skinparam shadowing false
 skinparam defaultFontSize 12
 skinparam ArrowColor #4B5563
+skinparam linetype ortho
+skinparam nodesep 24
+skinparam ranksep 32
+skinparam rectangle {
+  BorderColor #374151
+  FontColor #111827
+  RoundCorner 10
+}
+title Bottleneck Migration Network
+
+rectangle "AI Demand\n10x shock" as AI #E5E7EB
+rectangle "GPU / ASIC" as GPU #FCA5A5
+AI --> GPU : compute
+
+rectangle "HBM + Advanced\nPackaging" as MEMORY #FDBA74
+rectangle "Power" as PWR #E5E7EB
+rectangle "Gas Turbine\n(GEV)" as GEV #FCA5A5
+rectangle "Grid Equipment" as GRID #FDBA74
+rectangle "Enterprise SSD" as SSD #FCA5A5
+rectangle "Optical Module\n800G / 1.6T" as OPTICS #FCA5A5
+
+GPU --> MEMORY : bandwidth / package
+GPU --> PWR : more watts
+GPU --> SSD : data / context
+GPU --> OPTICS : scale-out traffic
+PWR --> GEV : generation
+PWR --> GRID : delivery
+PWR ..> GPU : more deployable GPUs
+OPTICS ..> GPU : larger clusters
+
+legend bottom
+  | Color | Meaning |
+  |<#FCA5A5>| Red: proven / consensus bottleneck |
+  |<#FDBA74>| Orange: immediate replication dependency |
+  |<#FEF3C7>| Yellow: physical third-order constraint |
+  |<#BFDBFE>| Blue: shared capacity / cross-track collision |
+endlegend
+@enduml
+```
+
+**Compute / Memory：从 HBM 拆到 wafer、TSV、bonding 和 test**
+
+```plantuml
+@startuml
+left to right direction
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontSize 12
+skinparam ArrowColor #4B5563
+skinparam linetype ortho
+skinparam nodesep 22
+skinparam ranksep 28
 skinparam rectangle {
   BorderColor #374151
   FontColor #111827
   RoundCorner 10
 }
 
-title Bottleneck Migration Network
-
-rectangle "AI Demand\n10x shock" as AI #FDE68A
+title Compute / Memory Replication Path
 
 rectangle "GPU / ASIC" as GPU #FCA5A5
-rectangle "Power" as POWER #E5E7EB
-rectangle "Storage" as STORAGE #E5E7EB
-rectangle "Networking" as NETWORK #E5E7EB
+rectangle "HBM" as HBM #FDBA74
+rectangle "Advanced Packaging" as APKG #FDBA74
+rectangle "DRAM Wafer\nStarts + Yield" as DRAM #FEF3C7
+rectangle "TSV / Thinning /\nCMP Throughput" as TSV #FEF3C7
+rectangle "Die Stacking /\nUnderfill" as STACK #FEF3C7
+rectangle "Burn-in /\nElectrical Test" as HBMTEST #FEF3C7
+rectangle "Interposer\nWafer Capacity" as INTERPOSER #FEF3C7
+rectangle "Package\nSubstrate" as SUBSTRATE #FEF3C7
+rectangle "Bonding / Lithography /\nMetrology Tools" as PKGTOOLS #BFDBFE
+rectangle "Final Package\nTest" as PKGTEST #FEF3C7
 
-rectangle "HBM / Advanced\nPackaging" as HBM #FDBA74
+GPU --> HBM
+GPU --> APKG
+HBM --> DRAM
+HBM --> TSV
+HBM --> STACK
+HBM --> HBMTEST
+APKG --> INTERPOSER
+APKG --> SUBSTRATE
+APKG --> PKGTOOLS
+APKG --> PKGTEST
+STACK ..> PKGTOOLS : shared tools
+@enduml
+```
+
+**Power / GEV：从“锻件”拆到重型设备、冶金工艺和检验能力**
+
+```plantuml
+@startuml
+left to right direction
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontSize 12
+skinparam ArrowColor #4B5563
+skinparam linetype ortho
+skinparam nodesep 22
+skinparam ranksep 28
+skinparam rectangle {
+  BorderColor #374151
+  FontColor #111827
+  RoundCorner 10
+}
+
+title Power / GEV Replication Path
+
 rectangle "Gas Turbine\n(GEV)" as GEV #FCA5A5
-rectangle "Grid /\nTransformer" as GRID #FDBA74
+rectangle "Large Forgings /\nCastings" as FORGE #FDBA74
+rectangle "Hot-gas-path\nParts" as HOTPATH #FDBA74
+rectangle "Assembly /\nTest Bays" as ASSEMBLY #FDBA74
+rectangle "Heavy Press" as PRESS #BFDBFE
+rectangle "Superalloy Melt /\nHeat Treatment" as MELT #FEF3C7
+rectangle "NDT / Dimensional\nInspection" as NDT #FEF3C7
+rectangle "Single-crystal\nCasting" as SX #FEF3C7
+rectangle "TBC Coating / Cooling-\nhole Machining" as COATING #FEF3C7
+rectangle "Qualified Labor /\nSupplier QA" as LABOR #FEF3C7
+rectangle "Nuclear / Defense\nDemand" as OTHER #E5E7EB
+
+GEV --> FORGE
+GEV --> HOTPATH
+GEV --> ASSEMBLY
+FORGE --> PRESS
+FORGE --> MELT
+FORGE --> NDT
+HOTPATH --> SX
+HOTPATH --> COATING
+ASSEMBLY --> LABOR
+OTHER ..> PRESS : shared capacity
+OTHER ..> MELT : shared capacity
+@enduml
+```
+
+**Storage：从 controller 和 qualification 拆到 foundry、零部件与验证周期**
+
+```plantuml
+@startuml
+left to right direction
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontSize 12
+skinparam ArrowColor #4B5563
+skinparam linetype ortho
+skinparam nodesep 22
+skinparam ranksep 28
+skinparam rectangle {
+  BorderColor #374151
+  FontColor #111827
+  RoundCorner 10
+}
+
+title Enterprise SSD Replication Path
+
 rectangle "Enterprise SSD" as SSD #FCA5A5
+rectangle "NAND Die" as NAND #FDBA74
+rectangle "Controller ASIC" as CTRL #FDBA74
+rectangle "Firmware /\nQualification" as FWQ #FDBA74
+rectangle "Wafer Starts /\nLayer Count / Yield" as NANDCAP #FEF3C7
+rectangle "NAND Package /\nTest" as NANDTEST #FEF3C7
+rectangle "Foundry Wafer\nCapacity" as FOUNDRY #BFDBFE
+rectangle "SerDes IP / DRAM /\nPower-loss Parts" as CTRLPARTS #FEF3C7
+rectangle "OEM / Hyperscaler\nValidation Lab" as OEMLAB #FEF3C7
+rectangle "Workload Cycles /\nQualification Time" as VALIDATION #FEF3C7
+rectangle "Optical DSP\nDemand" as DSPDEMAND #E5E7EB
+
+SSD --> NAND
+SSD --> CTRL
+SSD --> FWQ
+NAND --> NANDCAP
+NAND --> NANDTEST
+CTRL --> FOUNDRY
+CTRL --> CTRLPARTS
+FWQ --> OEMLAB
+FWQ --> VALIDATION
+DSPDEMAND ..> FOUNDRY : shared capacity
+@enduml
+```
+
+**Networking / Optics：从 DSP、laser 和 SiPh 拆到 wafer、epitaxy、alignment 与 burn-in**
+
+```plantuml
+@startuml
+left to right direction
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontSize 12
+skinparam ArrowColor #4B5563
+skinparam linetype ortho
+skinparam nodesep 22
+skinparam ranksep 28
+skinparam rectangle {
+  BorderColor #374151
+  FontColor #111827
+  RoundCorner 10
+}
+
+title Optical Module Replication Path
+
 rectangle "Optical Module\n800G / 1.6T" as OPTICS #FCA5A5
+rectangle "Optical DSP" as DSP #FDBA74
+rectangle "Laser Source" as LASER #FDBA74
+rectangle "SiPh / PIC" as SIPH #FDBA74
+rectangle "Assembly / Test" as ASSEMBLY #FDBA74
+rectangle "Advanced-node\nFoundry + Test" as DSPFAB #BFDBFE
+rectangle "High-speed\nSerDes IP" as SERDES #FEF3C7
+rectangle "InP Substrate /\nEpitaxy" as INP #FEF3C7
+rectangle "Laser Die\nYield" as LASERYIELD #FEF3C7
+rectangle "SiPh Foundry /\nWafer Yield" as SIPHFAB #FEF3C7
+rectangle "Active Alignment\nEquipment" as ALIGN #FEF3C7
+rectangle "Burn-in / Connector /\nFiber Test" as BURNIN #FEF3C7
+rectangle "SSD Controller\nDemand" as CTRLDEMAND #E5E7EB
 
-rectangle "Substrate / Bonding /\nPackaging Equipment" as SUBSTRATE #FEF3C7
-rectangle "Forging / Alloy / Coating /\nSkilled Labor" as FORGING #FEF3C7
-rectangle "GOES / Copper / Bushing /\nSwitchgear" as MATERIAL #FEF3C7
-rectangle "Controller / Firmware /\nQualification" as CONTROLLER #FEF3C7
-rectangle "DSP / Laser / SiPh /\nPackaging & Test" as PHOTONICS #FEF3C7
-
-AI --> GPU : compute
-GPU --> HBM : memory bandwidth
-HBM --> SUBSTRATE : capacity ramp
-
-GPU --> POWER : more watts
-POWER --> GEV : generation
-POWER --> GRID : delivery
-GEV --> FORGING : capacity ramp
-GRID --> MATERIAL : capacity ramp
-
-GPU --> STORAGE : data / context
-STORAGE --> SSD
-SSD --> CONTROLLER : reliable delivery
-
-GPU --> NETWORK : scale-out traffic
-NETWORK --> OPTICS
-OPTICS --> PHOTONICS : capacity ramp
-
-POWER ..> GPU : more deployable GPUs
-NETWORK ..> GPU : larger clusters
-
-legend bottom
-  | Color | Meaning |
-  |<#FCA5A5>| Red: proven / consensus bottleneck |
-  |<#FDBA74>| Orange: visible bottleneck |
-  |<#FEF3C7>| Yellow: next bottleneck being created |
-endlegend
+OPTICS --> DSP
+OPTICS --> LASER
+OPTICS --> SIPH
+OPTICS --> ASSEMBLY
+DSP --> DSPFAB
+DSP --> SERDES
+LASER --> INP
+LASER --> LASERYIELD
+SIPH --> SIPHFAB
+ASSEMBLY --> ALIGN
+ASSEMBLY --> BURNIN
+CTRLDEMAND ..> DSPFAB : shared capacity
 @enduml
 ```
 
