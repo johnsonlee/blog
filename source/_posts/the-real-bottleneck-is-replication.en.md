@@ -137,13 +137,7 @@ D0 is the bottleneck the market already sees. D1 is capacity pulled directly by 
 
 Depth is not a permanent property of a node. Once today's D1 turns red, it becomes the new D0 and the network is measured again. That is migration: the red light moves, and the starting point of the research moves with it.
 
-CPU is therefore D1 in this map, not because CPU is inherently subordinate to GPU, but because the map starts from a GPU / ASIC node that has already turned red. Replicating a GPU system directly pulls Host CPU and I/O capacity. If CPU supply blocks deployment first, CPU becomes the new D0.
-
-The four tracks also have to live at the same level of abstraction: **Compute, Power, Storage, and Networking**. GPU / ASIC, the GEV gas turbine, the enterprise SSD, and the optical module are the D0 product nodes currently glowing red inside those four domains. They are not the names of the tracks.
-
-This is one graph, not four supply-chain charts. Bottleneck Depth runs horizontally from D0 to D3; the four domains run vertically. Blue nodes reconnect the domains wherever they compete for the same underlying capacity.
-
-![Bottleneck Migration Network — Depth Map](/images/bottleneck-migration-network.en.svg)
+![Bottleneck Migration Network](/images/bottleneck-migration-network.en.svg)
 
 A node turning red is where the research begins. Every new order required for its expansion pushes pressure into upstream suppliers and other industries competing for the same materials, equipment, and capacity.
 

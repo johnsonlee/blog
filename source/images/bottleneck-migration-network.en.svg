@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1300" viewBox="0 0 1600 1300" role="img" aria-labelledby="title desc">
-  <title id="title">Bottleneck Migration Network — Depth Map</title>
+  <title id="title">Bottleneck Migration Network</title>
   <desc id="desc">A single network diagram organized by four industry domains and four bottleneck depths, showing how replication pressure migrates from confirmed bottlenecks into direct inputs, process capacity, and shared physical constraints.</desc>
   <defs>
     <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
@@ -54,7 +54,7 @@
   </defs>
 
   <rect class="canvas" width="1600" height="1300" rx="18"/>
-  <text class="title" x="30" y="40">Bottleneck Migration Network — Depth Map</text>
+  <text class="title" x="30" y="40">Bottleneck Migration Network</text>
   <text class="subtitle" x="30" y="64">Columns measure replication distance from a confirmed bottleneck; rows keep every branch at the same industry-domain level.</text>
 
   <!-- Depth columns -->

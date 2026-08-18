@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1300" viewBox="0 0 1600 1300" role="img" aria-labelledby="title desc">
-  <title id="title">瓶颈迁移网络——深度图</title>
+  <title id="title">瓶颈迁移网络</title>
   <desc id="desc">一张按四个产业域和四级瓶颈深度组织的网络图，展示复制压力如何从已确认瓶颈迁移到直接投入、工艺产能与共享物理约束。</desc>
   <defs>
     <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
@@ -55,7 +55,7 @@
   </defs>
 
   <rect class="canvas" width="1600" height="1300" rx="18"/>
-  <text class="title" x="30" y="40">瓶颈迁移网络——深度图</text>
+  <text class="title" x="30" y="40">瓶颈迁移网络</text>
   <text class="subtitle" x="30" y="64">列表示与已确认瓶颈的复制距离；行让每条支路保持在同一产业域层级。</text>
 
   <!-- Depth columns -->
