@@ -33,7 +33,7 @@ The useful thing is not the answer. It is the method that keeps producing answer
 
 This essay asks a more basic one: **what actually qualifies as a bottleneck?**
 
-We tend to treat “core technology” as the answer. Whoever owns the chip, the drug molecule, the reactor, or the new material owns the bottleneck. That is only half right. Core technology determines whether something can go from zero to one. Once an industry takes off, the winner is determined by whether one can become ten.
+We tend to treat “core technology” as the answer. Whoever owns the chip, the drug molecule, the reactor, or the new material owns the bottleneck. That is only half right. Core technology determines whether something can go from zero to one. Once an industry takes off, the winner is determined by how quickly one unit of delivery capacity can be replicated into ten.
 
 > **The real bottleneck is often not whether a technology works, but whether supply can replicate tenfold, fast enough, when demand suddenly grows tenfold.**
 
