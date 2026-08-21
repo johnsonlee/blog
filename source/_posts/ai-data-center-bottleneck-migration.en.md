@@ -1,6 +1,6 @@
 ---
-title: When Compute Becomes a Gigawatt Business
-date: 2026-08-21 22:54:04
+title: After 8 IT-GW Stop Chasing the Red Light
+date: 2026-08-22 04:34:27
 lang: en
 i18n_key: ai-data-center-bottleneck-migration
 categories:
@@ -14,382 +14,360 @@ tags:
   - Investing
 ---
 
-In August 2026, OpenAI put the PORTS-Pike project in Ohio on the table: roughly 8 IT-GW, with the first 800MW expected in 2028 and the full buildout running to 2032. The supporting system is not a few more buildings. It is at least 10GW of new generation, $4.2 billion of regional grid infrastructure, NVIDIA credit support for the first 4.25 IT-GW, a 20-year lease, permits, environmental review, financing, and six years of construction.
-
-The press release talks about investment and jobs. The bottleneck framework translates it into a harder question: AI demand has arrived at software speed; can data center supply replicate at industrial speed?
+I read the PORTS-Pike announcement twice. The first pass was for the number: 8 IT-GW, at least 10GW of new generation, $4.2 billion of regional grid infrastructure, and NVIDIA credit support for the first 4.25 IT-GW. The second pass was for the dates: the first 800MW expected in 2028, full buildout running to 2032. The 8 gets attention. The dates hurt more. Saying power, transformers, liquid cooling, and powered land are tight no longer adds much. The red lights are already on the screen, and many are already in the price. The better question is: as those red lights expand, which unpriced yellow light do they turn on next?
 
 <!-- more -->
 
-In the previous post, "Replication Speed Is the Real Bottleneck", I used a Bottleneck Migration Network: D0 is the root demand, D1 is a subsystem, D2 is a route, D3 is equipment, components, process, and qualification, and D4 is shared physical capacity. Depth stays fixed. The red light moves.
+The previous post introduced the Bottleneck Migration Network. The point was to track how replication gaps spread. D0 is the root demand, D1 is the subsystem, D2 is the route, D3 is equipment, process, and qualification, and D4 is the underlying physical capacity. When a node turns red, the research has only started. Expansion consumes new equipment, materials, labor, permits, testing, and capital. The next yellow light usually hides there.
 
-This post zooms in on one D0 root: Data Center.
-
-For AI data centers, I would start with three questions:
-
-1. What layers make a data center capable of supplying AI power capacity, and who charges tolls at each layer?
-2. In the public GW numbers, how much is IT load, and how much is generation, PPA, clean attributes, or a future development framework?
-3. Once Agent traffic scales, how wide does the gap get between demand arrival time and usable compute delivery time?
-
-The core equation is simple:
+Data centers are the best field test for this framework. AI demand is starting to arrive at software speed. Data center capacity still replicates at power-engineering speed.
 
 ```text
 Replication gap = time needed to replicate supply - time needed for demand to arrive
-
-Bottleneck intensity ∝ demand shock × supply rigidity × replication gap
 ```
 
-AI data centers are hard because demand behaves like software while supply behaves like power engineering.
+The AI infrastructure question has widened from GPU scarcity to a harsher conversion problem: how much headline GW leaks away before it becomes tokens in a customer's hands?
 
-## The Data Center D0 Root
+## A data center starts as a delivery calendar
 
-An AI data center is not "buy GPUs, then find a place to plug them in". The order has flipped. First you find a large block of power with a delivery date. Then you force land, transmission, substations, shell, MEP, cooling, racks, networking, storage, scheduling, and operations onto the same commissioning calendar.
+Put yourself in the PORTS-Pike project room. The customer has signed. The chip supplier is at the table. The local government wants jobs. The utility has to model load. DOE cares about energy access and the community. The developer needs financing. EPC teams need labor. NVIDIA needs racks to land. OpenAI wants to know when the first workload can run.
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 640" role="img" aria-labelledby="dc-network-title-en" style="max-width: 100%; height: auto; margin: 10px 0 18px;">
-  <title id="dc-network-title-en">Bottleneck Migration Network for AI data centers</title>
+"What is a data center made of?" turns into a delivery-calendar question in that room. If any line slips by three months, the final product does not become billable token capacity on time.
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 620" role="img" aria-labelledby="delivery-calendar-title-en" style="max-width: 100%; height: auto; margin: 10px 0 18px;">
+  <title id="delivery-calendar-title-en">Delivery calendar from contracted GW to billable tokens</title>
   <defs>
-    <marker id="dc-arrow-en" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+    <marker id="cal-arrow-en" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
       <path d="M1,1 L9,5 L1,9 Z" fill="#64748b"/>
     </marker>
-    <marker id="dc-purple-arrow-en" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
-      <path d="M1,1 L9,5 L1,9 Z" fill="#7c3aed"/>
-    </marker>
-  </defs>
-  <rect x="1" y="1" width="978" height="638" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
-  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
-    <text x="38" y="45" font-size="24" font-weight="700" fill="#111827">The Data Center D0 root: the red light migrates down the replication chain</text>
-    <text x="38" y="75" font-size="14" fill="#64748b">Fixed depth: D0 root demand -> D1 subsystems -> D2 routes -> D3 equipment/process -> D4 shared capacity</text>
-
-    <g font-size="12" font-weight="700" text-anchor="middle">
-      <rect x="34" y="104" width="70" height="32" rx="6" fill="#e2e8f0" stroke="#94a3b8"/>
-      <text x="69" y="125" fill="#334155">D0</text>
-      <rect x="34" y="184" width="70" height="32" rx="6" fill="#e2e8f0" stroke="#94a3b8"/>
-      <text x="69" y="205" fill="#334155">D1</text>
-      <rect x="34" y="286" width="70" height="32" rx="6" fill="#e2e8f0" stroke="#94a3b8"/>
-      <text x="69" y="307" fill="#334155">D2</text>
-      <rect x="34" y="408" width="70" height="32" rx="6" fill="#e2e8f0" stroke="#94a3b8"/>
-      <text x="69" y="429" fill="#334155">D3</text>
-      <rect x="34" y="536" width="70" height="32" rx="6" fill="#e2e8f0" stroke="#94a3b8"/>
-      <text x="69" y="557" fill="#334155">D4</text>
-    </g>
-
-    <g stroke="#cbd5e1" stroke-width="1">
-      <line x1="120" y1="200" x2="940" y2="200"/>
-      <line x1="120" y1="302" x2="940" y2="302"/>
-      <line x1="120" y1="424" x2="940" y2="424"/>
-      <line x1="120" y1="552" x2="940" y2="552"/>
-    </g>
-
-    <g text-anchor="middle" font-size="14">
-      <rect x="416" y="96" width="148" height="48" rx="7" fill="#111827"/>
-      <text x="490" y="126" fill="#ffffff" font-weight="700">AI Data Center</text>
-
-      <rect x="128" y="176" width="130" height="48" rx="7" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
-      <text x="193" y="205" fill="#1e3a8a" font-weight="700">Power</text>
-      <rect x="288" y="176" width="130" height="48" rx="7" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
-      <text x="353" y="205" fill="#155e75" font-weight="700">Shell + MEP</text>
-      <rect x="448" y="176" width="130" height="48" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
-      <text x="513" y="205" fill="#92400e" font-weight="700">Cooling density</text>
-      <rect x="608" y="176" width="130" height="48" rx="7" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
-      <text x="673" y="205" fill="#5b21b6" font-weight="700">Cluster</text>
-      <rect x="768" y="176" width="130" height="48" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
-      <text x="833" y="205" fill="#166534" font-weight="700">Operations</text>
-
-      <rect x="118" y="270" width="150" height="64" rx="7" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
-      <text x="193" y="296" fill="#991b1b" font-weight="700">firm power</text>
-      <text x="193" y="316" fill="#991b1b" font-size="12">grid / transmission</text>
-      <rect x="286" y="270" width="134" height="64" rx="7" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
-      <text x="353" y="296" fill="#9a3412" font-weight="700">EPC delivery</text>
-      <text x="353" y="316" fill="#9a3412" font-size="12">shell / fire / QA</text>
-      <rect x="446" y="270" width="134" height="64" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
-      <text x="513" y="296" fill="#92400e" font-weight="700">liquid cooling</text>
-      <text x="513" y="316" fill="#92400e" font-size="12">CDU / cold plates</text>
-      <rect x="606" y="270" width="134" height="64" rx="7" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
-      <text x="673" y="296" fill="#5b21b6" font-weight="700">rack fabric</text>
-      <text x="673" y="316" fill="#5b21b6" font-size="12">GPU / HBM / network</text>
-      <rect x="766" y="270" width="134" height="64" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
-      <text x="833" y="296" fill="#166534" font-weight="700">billable work</text>
-      <text x="833" y="316" fill="#166534" font-size="12">utilization / uptime</text>
-
-      <rect x="118" y="392" width="150" height="64" rx="7" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
-      <text x="193" y="418" fill="#991b1b" font-weight="700">transformers</text>
-      <text x="193" y="438" fill="#991b1b" font-size="12">switchgear / UPS</text>
-      <rect x="286" y="392" width="134" height="64" rx="7" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
-      <text x="353" y="418" fill="#9a3412" font-weight="700">skilled trades</text>
-      <text x="353" y="438" fill="#9a3412" font-size="12">HV / LV / testing</text>
-      <rect x="446" y="392" width="134" height="64" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
-      <text x="513" y="418" fill="#92400e" font-weight="700">pumps valves</text>
-      <text x="513" y="438" fill="#92400e" font-size="12">leak detection</text>
-      <rect x="606" y="392" width="134" height="64" rx="7" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
-      <text x="673" y="418" fill="#5b21b6" font-weight="700">CoWoS optics</text>
-      <text x="673" y="438" fill="#5b21b6" font-size="12">switch / storage</text>
-      <rect x="766" y="392" width="134" height="64" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
-      <text x="833" y="418" fill="#166534" font-weight="700">SRE scheduler</text>
-      <text x="833" y="438" fill="#166534" font-size="12">failures / pricing</text>
-
-      <rect x="112" y="520" width="162" height="64" rx="7" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
-      <text x="193" y="546" fill="#991b1b" font-weight="700">copper steel permits</text>
-      <text x="193" y="566" fill="#991b1b" font-size="12">queue capacity</text>
-      <rect x="286" y="520" width="134" height="64" rx="7" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
-      <text x="353" y="546" fill="#9a3412" font-weight="700">labor pool</text>
-      <text x="353" y="566" fill="#9a3412" font-size="12">regional contractors</text>
-      <rect x="446" y="520" width="134" height="64" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
-      <text x="513" y="546" fill="#92400e" font-weight="700">water noise community</text>
-      <text x="513" y="566" fill="#92400e" font-size="12">cooling permits</text>
-      <rect x="606" y="520" width="134" height="64" rx="7" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
-      <text x="673" y="546" fill="#5b21b6" font-weight="700">wafers HBM substrate</text>
-      <text x="673" y="566" fill="#5b21b6" font-size="12">packaging capacity</text>
-      <rect x="766" y="520" width="134" height="64" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
-      <text x="833" y="546" fill="#166534" font-weight="700">customer workflows</text>
-      <text x="833" y="566" fill="#166534" font-size="12">ROI / conversion</text>
-    </g>
-
-    <g stroke="#64748b" stroke-width="1.8" fill="none" marker-end="url(#dc-arrow-en)">
-      <path d="M490 144 C420 158 250 155 193 176"/>
-      <path d="M490 144 C430 166 374 166 353 176"/>
-      <path d="M490 144 C500 166 510 166 513 176"/>
-      <path d="M490 144 C560 166 632 166 673 176"/>
-      <path d="M490 144 C670 158 780 156 833 176"/>
-      <path d="M193 224 V270"/>
-      <path d="M353 224 V270"/>
-      <path d="M513 224 V270"/>
-      <path d="M673 224 V270"/>
-      <path d="M833 224 V270"/>
-      <path d="M193 334 V392"/>
-      <path d="M353 334 V392"/>
-      <path d="M513 334 V392"/>
-      <path d="M673 334 V392"/>
-      <path d="M833 334 V392"/>
-      <path d="M193 456 V520"/>
-      <path d="M353 456 V520"/>
-      <path d="M513 456 V520"/>
-      <path d="M673 456 V520"/>
-      <path d="M833 456 V520"/>
-    </g>
-    <path d="M240 302 C340 350 555 350 626 302" stroke="#7c3aed" stroke-width="2" stroke-dasharray="7 6" fill="none" marker-end="url(#dc-purple-arrow-en)"/>
-    <text x="430" y="362" font-size="12" fill="#6d28d9" text-anchor="middle">Alternative routes: relocate, behind-the-meter, self-generation, chip/network architecture shifts</text>
-
-    <g font-size="12">
-      <rect x="620" y="602" width="18" height="12" rx="3" fill="#fee2e2" stroke="#dc2626"/>
-      <text x="646" y="612" fill="#475569">Red: likely binding now</text>
-      <rect x="770" y="602" width="18" height="12" rx="3" fill="#fef3c7" stroke="#d97706"/>
-      <text x="796" y="612" fill="#475569">Yellow: candidate bottleneck</text>
-    </g>
-  </g>
-</svg>
-
-D0 does not move. AI still needs the Data Center root. What moves is the red light: in 2023 it sat on GPUs, in 2024 it moved to HBM and CoWoS, in 2025 it pressed into powered land, grid connection, electrical equipment, and liquid cooling. By 2026, projects like PORTS-Pike expose the whole chain.
-
-A data center capable of AI power capacity has roughly six replication segments.
-
-First is the power-ready site. Older site selection optimized for land, tax, network, and customer distance. Now the first question is whether the utility can give you 300MW, 500MW, or 1GW with a firm delivery date. CBRE says sites with power access inside 18 to 36 months are highly sought after, and 200MW-plus parcels have moved up the priority list.
-
-Second is generation, transmission, and interconnection. A PPA can solve long-term energy procurement without solving local instantaneous delivery. An AI cluster needs stable, dispatchable, interconnected power, preferably without breaking carbon targets. That pulls nuclear, gas, hydro, geothermal, solar plus battery, and behind-the-meter power into the same map.
-
-Third is shell, MEP, and power distribution. High-voltage power enters the site, then runs through transformers, switchgear, UPS, PDUs, busway, and finally the rack. A NVIDIA DGX GB rack is roughly a 120kW power object. Ten or twenty kW per rack used to sound dense. For an AI campus, 100kW-plus is now the starting point.
-
-Fourth is cooling. High-density racks put direct-to-chip liquid cooling, CDUs, cold plates, pumps, piping, leak detection, chillers, and heat exchangers on the critical path. Cooling is not a supporting character. It determines how much IT load fits on the same land.
-
-Fifth is rack fabric. GPUs, HBM, NVLink or Ethernet fabric, optics, storage, server integration, and firmware all need to arrive together. Owning GPUs is not enough. Training clusters care about scale-up and scale-out networking; inference clusters care about cost, latency, geography, and utilization.
-
-Sixth is operations and revenue. Customers do not buy a building or a card. They buy usable token capacity: low failure rates, low latency, enough scheduling efficiency, and workloads that turn into paid tasks.
-
-The supply chain should be read in layers. OpenAI, Microsoft, Amazon, Google, Meta, Oracle, CoreWeave, and Crusoe open demand and capital. Equinix, Digital Realty, QTS, CyrusOne, and developers deliver facilities. Constellation, Talen, Vistra, Brookfield, AEP, Dominion, PJM, and ERCOT shape the power path. Schneider, Eaton, ABB, Siemens, Vertiv, GE Vernova, Quanta, DPR, and Turner gate the electrical and construction schedule. NVIDIA, AMD, Broadcom, Marvell, Arista, Cisco, TSMC, SK hynix, Micron, and Samsung fill the cluster.
-
-NVIDIA still matters. At GW scale, the scarce capability is making land, power, equipment, buildings, and chips share the same delivery date.
-
-## Public GW Must Pass Through a Funnel
-
-As of August 21, 2026, the market has plenty of public GW numbers. The easiest mistake is adding them all together.
-
-There are four common GW units.
-
-- IT-GW: the IT load actually consumed by servers and racks. It is the closest public unit to usable compute. PORTS-Pike's 8 IT-GW belongs here, but it is still phased and conditional future capacity.
-- Facility power: data center or campus-side power, including PUE, redundancy, and infrastructure overhead.
-- Generation / PPA GW: generation capacity, power procurement, or an offtake framework. It solves energy sourcing. It is not local IT load.
-- Clean attributes: clean power attributes, time matching, and carbon goals. These support ESG and long-term supply strategy. They are not GPU capacity.
-
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 610" role="img" aria-labelledby="gw-funnel-title-en" style="max-width: 100%; height: auto; margin: 10px 0 18px;">
-  <title id="gw-funnel-title-en">The funnel from public GW to usable AI compute</title>
-  <defs>
-    <marker id="funnel-arrow-en" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
-      <path d="M1,1 L9,5 L1,9 Z" fill="#64748b"/>
-    </marker>
-  </defs>
-  <rect x="1" y="1" width="978" height="608" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
-  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
-    <text x="40" y="46" font-size="24" font-weight="700" fill="#111827">Headline GW needs unit cleanup before it enters the delivery funnel</text>
-    <text x="40" y="76" font-size="14" fill="#64748b">One table can mix IT-GW, planned capacity, PPA, generation capacity, and clean attributes</text>
-
-    <g text-anchor="middle" font-size="13" font-weight="700">
-      <rect x="52" y="112" width="180" height="70" rx="7" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
-      <text x="142" y="141" fill="#991b1b">IT-GW</text>
-      <text x="142" y="162" fill="#991b1b" font-size="12">PORTS-Pike 8 IT-GW</text>
-      <rect x="282" y="112" width="180" height="70" rx="7" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
-      <text x="372" y="141" fill="#1e3a8a">planned AI capacity</text>
-      <text x="372" y="162" fill="#1e3a8a" font-size="12">Stargate near 7GW</text>
-      <rect x="512" y="112" width="180" height="70" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
-      <text x="602" y="141" fill="#92400e">PPA / generation</text>
-      <text x="602" y="162" fill="#92400e" font-size="12">renewable / nuclear</text>
-      <rect x="742" y="112" width="180" height="70" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
-      <text x="832" y="141" fill="#166534">clean attributes</text>
-      <text x="832" y="162" fill="#166534" font-size="12">24/7 CFE / carbon</text>
-    </g>
-
-    <g stroke="#64748b" stroke-width="1.8" fill="none" marker-end="url(#funnel-arrow-en)">
-      <path d="M142 182 C155 220 225 230 300 246"/>
-      <path d="M372 182 C370 212 350 226 330 246"/>
-      <path d="M602 182 C572 218 438 226 360 246"/>
-      <path d="M832 182 C772 228 498 226 390 246"/>
-    </g>
-
-    <path d="M190 246 H790 L724 326 H256 Z" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
-    <path d="M256 342 H724 L664 422 H316 Z" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
-    <path d="M316 438 H664 L610 506 H370 Z" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
-    <path d="M370 522 H610 L570 578 H410 Z" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
-
-    <g text-anchor="middle">
-      <text x="490" y="284" font-size="20" font-weight="700" fill="#0f172a">local firm power</text>
-      <text x="490" y="309" font-size="13" fill="#334155">generation permits / transmission / interconnection / capacity market</text>
-      <text x="490" y="380" font-size="20" font-weight="700" fill="#0f172a">power train and facility</text>
-      <text x="490" y="405" font-size="13" fill="#334155">transformers / switchgear / UPS / MEP / commissioning</text>
-      <text x="490" y="475" font-size="20" font-weight="700" fill="#0f172a">AI-ready cluster</text>
-      <text x="490" y="499" font-size="13" fill="#334155">GPU / HBM / optics / storage / liquid cooling / scheduler</text>
-      <text x="490" y="556" font-size="20" font-weight="700" fill="#0f172a">billable token capacity</text>
-    </g>
-
-    <g fill="#475569" font-size="13">
-      <text x="52" y="274">Leakage 1: overlap</text>
-      <text x="52" y="298">Leakage 2: region/year mix</text>
-      <text x="52" y="382">Leakage 3: grid and equipment delay</text>
-      <text x="52" y="406">Leakage 4: PUE and redundancy</text>
-      <text x="52" y="482">Leakage 5: rack delivery and yield</text>
-      <text x="52" y="506">Leakage 6: utilization and revenue</text>
-    </g>
-  </g>
-</svg>
-
-Once the public contracts are separated by unit, the picture is cleaner:
-
-| Public item | Number | Timing | Unit judgement |
-| --- | ---: | --- | --- |
-| OpenAI / Oracle Stargate | Additional 4.5GW, more than 5GW under development in total | 2025-07 | AI data center capacity in progress, not live IT load |
-| OpenAI five new Stargate sites | Nearly 7GW planned, 10GW target | 2025-09 | Planned capacity, not something to mechanically add to every later announcement |
-| OpenAI / SB Energy / NVIDIA PORTS-Pike | About 8 IT-GW, first 800MW expected in 2028 | 2026-08 | Closest public unit to usable compute, with full delivery to 2032 |
-| Microsoft / Brookfield | 10.5GW new renewable capacity | 2024-05 | Renewable PPA framework, not IT load |
-| Microsoft / Constellation CCEC | About 835MW, 20-year PPA, expected online in 2028 | 2024-09 | Nuclear restart supporting PJM data center power matching |
-| Talen / Amazon | 1,920MW nuclear power, full volume by 2032 | 2025-06 | Front-of-meter nuclear PPA supporting AWS Pennsylvania data centers |
-| Meta nuclear portfolio | Up to 6.6GW by 2035 | 2026-01 | Mix of existing nuclear and advanced nuclear, mostly post-2030 |
-| Google / Kairos | Up to 500MW, first SMR targeted for 2030 | 2024-10 | Advanced nuclear procurement framework |
-| Google / Brookfield hydro | Up to 3,000MW, first 670MW | 2025-07 | Hydro PPA framework, closer to 24/7 carbon-free energy |
-
-The table does not say "they signed many GW, so there is no shortage". It says hyperscalers no longer trust normal queues to satisfy AI demand on time. They are locking power, land, equipment, and sometimes bringing the chip company into land, power, and shell.
-
-Demand-side numbers keep moving up. IEA estimates global data center electricity use at 415TWh in 2024 and 945TWh in 2030. The 530TWh increase is roughly 60GW of average facility power. LBNL's U.S. estimate is closer in time: 176TWh in 2023 to 325-580TWh in 2028, or roughly 17-46GW of incremental average load.
-
-McKinsey uses a capacity lens: global data center demand rises from roughly 60GW today to 171-219GW in 2030, with a high case of 298GW. That implies 111-159GW of new demand-serving capacity before 2030. JLL's 2026 outlook expects nearly 100GW of additions between 2026 and 2030, with global capacity around 200GW by 2030.
-
-The units are not identical, so I would not subtract them with fake precision. As a stress test, they are enough: central demand is above planned supply, and delays widen the gap. McKinsey gives one more concrete U.S. datapoint: even if known plans arrive on time, the United States could still have more than 15GW of data center supply deficit in 2030.
-
-The gap is not a shortage of capital. It comes from the replication chain.
-
-- D1 power access: primary-market grid connection often takes more than four years, and new transmission lines in advanced economies typically take four to eight years.
-- D2 local firm power: PPAs can be signed quickly. RTO/ISO queues, substations, and transmission cannot replicate at the same speed.
-- D3 equipment: transformers, switchgear, cables, UPS, busway, and gas turbines all face long lead times. IEA says wait times for key components such as transformers and cables have doubled in three years.
-- D3 construction: a GW campus needs civil work, high voltage, low voltage, fire systems, cooling, and commissioning on the same schedule. PORTS-Pike itself points to a six-year buildout and 35,000 construction jobs.
-- D3/D4 cooling and water: 100kW-plus rack density brings CDUs, cold plates, pumps, pipes, noise, water rights, and community approvals onto the critical path.
-- D3/D4 cluster: beyond GPUs, delivery depends on HBM, advanced packaging, network switches, optics, storage, PCB, system integration, and operating yield.
-
-The more public GW you see, the more you should ask which layer it has passed. Signing is D0/D1 evidence. Commissioning means D3/D4 survived contact with the field.
-
-## Agents Speed Up the Demand Clock
-
-Over the next five years, the biggest demand-side variable is not more people chatting. It is Agents turning one request into many steps.
-
-Ordinary chat is a back-and-forth. An Agent workflow plans, retrieves, calls tools, reads files, writes code, runs tests, fixes failures, and verifies again. The user submits one task. Behind it, there may be dozens of model calls. Add multimodal input, browser control, long context, and parallel workers, and token traffic can grow faster than users.
-
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 620" role="img" aria-labelledby="agent-gap-title-en" style="max-width: 100%; height: auto; margin: 10px 0 18px;">
-  <title id="agent-gap-title-en">Agent demand clock versus data center replication clock</title>
-  <defs>
-    <linearGradient id="agent-gap-fill-en" x1="0" x2="0" y1="0" y2="1">
-      <stop offset="0%" stop-color="#f97316" stop-opacity="0.30"/>
-      <stop offset="100%" stop-color="#f97316" stop-opacity="0.06"/>
-    </linearGradient>
   </defs>
   <rect x="1" y="1" width="978" height="618" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
   <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
-    <text x="42" y="46" font-size="24" font-weight="700" fill="#111827">Demand clock is software; supply clock is industrial engineering</text>
-    <text x="42" y="76" font-size="14" fill="#64748b">2030 anchor: McKinsey demand 171-219GW, high case 298GW; JLL supply about 200GW before delivery discount</text>
+    <text x="36" y="45" font-size="24" font-weight="700" fill="#111827">An AI data center is not a building. It is five deadlines converging.</text>
+    <text x="36" y="75" font-size="14" fill="#64748b">After D0 demand is signed, D1-D4 replication consumes grid, equipment, construction, rack fabric, and operating capacity</text>
 
-    <line x1="92" y1="430" x2="900" y2="430" stroke="#94a3b8" stroke-width="1.5"/>
-    <line x1="92" y1="120" x2="92" y2="430" stroke="#94a3b8" stroke-width="1.5"/>
-    <g stroke="#e2e8f0" stroke-width="1">
-      <line x1="92" y1="368" x2="900" y2="368"/>
-      <line x1="92" y1="306" x2="900" y2="306"/>
-      <line x1="92" y1="244" x2="900" y2="244"/>
-      <line x1="92" y1="182" x2="900" y2="182"/>
-      <line x1="92" y1="120" x2="900" y2="120"/>
-    </g>
-    <g fill="#64748b" font-size="12">
-      <text x="72" y="434" text-anchor="end">0</text>
-      <text x="72" y="372" text-anchor="end">50</text>
-      <text x="72" y="310" text-anchor="end">100</text>
-      <text x="72" y="248" text-anchor="end">150</text>
-      <text x="72" y="186" text-anchor="end">200</text>
-      <text x="72" y="124" text-anchor="end">250GW</text>
+    <g font-size="12" fill="#64748b" text-anchor="middle">
+      <line x1="170" y1="108" x2="900" y2="108" stroke="#94a3b8" stroke-width="1.5"/>
+      <text x="170" y="98">2026</text>
+      <text x="316" y="98">2027</text>
+      <text x="462" y="98">2028</text>
+      <text x="608" y="98">2029</text>
+      <text x="754" y="98">2030</text>
+      <text x="900" y="98">2032</text>
+      <circle cx="170" cy="108" r="4" fill="#64748b"/>
+      <circle cx="316" cy="108" r="4" fill="#64748b"/>
+      <circle cx="462" cy="108" r="4" fill="#64748b"/>
+      <circle cx="608" cy="108" r="4" fill="#64748b"/>
+      <circle cx="754" cy="108" r="4" fill="#64748b"/>
+      <circle cx="900" cy="108" r="4" fill="#64748b"/>
     </g>
 
-    <path d="M130 356 L285 326 L440 291 L595 247 L750 195 L870 165" fill="none" stroke="#ef4444" stroke-width="4"/>
-    <path d="M130 390 L285 362 L440 330 L595 296 L750 259 L870 244" fill="none" stroke="#2563eb" stroke-width="4"/>
-    <path d="M130 402 L285 378 L440 352 L595 326 L750 304 L870 286" fill="none" stroke="#64748b" stroke-width="3" stroke-dasharray="8 7"/>
-    <path d="M595 247 L750 195 L870 165 L870 286 L750 304 L595 326 Z" fill="url(#agent-gap-fill-en)"/>
-
-    <g fill="#111827" font-size="13" text-anchor="middle">
-      <text x="130" y="456">2025</text>
-      <text x="285" y="456">2026</text>
-      <text x="440" y="456">2027</text>
-      <text x="595" y="456">2028</text>
-      <text x="750" y="456">2029</text>
-      <text x="870" y="456">2030</text>
+    <g font-size="13" font-weight="700">
+      <text x="38" y="154" fill="#0f172a">D0 demand</text>
+      <text x="38" y="232" fill="#0f172a">D1 power path</text>
+      <text x="38" y="312" fill="#0f172a">D1 facility path</text>
+      <text x="38" y="392" fill="#0f172a">D1 cluster path</text>
+      <text x="38" y="472" fill="#0f172a">D1 revenue path</text>
     </g>
 
-    <g font-size="13">
-      <rect x="590" y="104" width="304" height="114" rx="7" fill="#ffffff" stroke="#cbd5e1"/>
-      <line x1="612" y1="132" x2="658" y2="132" stroke="#ef4444" stroke-width="4"/>
-      <text x="672" y="137" fill="#334155">Agent upside demand</text>
-      <line x1="612" y1="160" x2="658" y2="160" stroke="#2563eb" stroke-width="4"/>
-      <text x="672" y="165" fill="#334155">planned data center supply</text>
-      <line x1="612" y1="188" x2="658" y2="188" stroke="#64748b" stroke-width="3" stroke-dasharray="8 7"/>
-      <text x="672" y="193" fill="#334155">usable AI-ready supply after discount</text>
+    <g font-size="13" text-anchor="middle">
+      <rect x="150" y="128" width="184" height="44" rx="7" fill="#111827"/>
+      <text x="242" y="155" fill="#ffffff" font-weight="700">20-year lease / IT-GW</text>
+      <rect x="360" y="128" width="170" height="44" rx="7" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+      <text x="445" y="155" fill="#075985" font-weight="700">first 800MW target</text>
+      <rect x="680" y="128" width="214" height="44" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+      <text x="787" y="155" fill="#166534" font-weight="700">phased campus delivery</text>
+
+      <rect x="146" y="204" width="138" height="54" rx="7" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+      <text x="215" y="228" fill="#991b1b" font-weight="700">site + utility</text>
+      <text x="215" y="248" fill="#991b1b" font-size="12">AEP / RTO / local</text>
+      <rect x="312" y="204" width="138" height="54" rx="7" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+      <text x="381" y="228" fill="#9a3412" font-weight="700">generation</text>
+      <text x="381" y="248" fill="#9a3412" font-size="12">gas / nuclear / PPA</text>
+      <rect x="478" y="204" width="160" height="54" rx="7" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+      <text x="558" y="228" fill="#991b1b" font-weight="700">substation + grid</text>
+      <text x="558" y="248" fill="#991b1b" font-size="12">transformer / switchgear</text>
+      <rect x="666" y="204" width="158" height="54" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+      <text x="745" y="228" fill="#92400e" font-weight="700">firm power rights</text>
+      <text x="745" y="248" fill="#92400e" font-size="12">curtailment / dispatch</text>
+
+      <rect x="146" y="284" width="138" height="54" rx="7" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+      <text x="215" y="308" fill="#075985" font-weight="700">land + shell</text>
+      <text x="215" y="328" fill="#075985" font-size="12">developer / EPC</text>
+      <rect x="312" y="284" width="150" height="54" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+      <text x="387" y="308" fill="#92400e" font-weight="700">MEP modules</text>
+      <text x="387" y="328" fill="#92400e" font-size="12">UPS / busway / fire</text>
+      <rect x="490" y="284" width="150" height="54" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+      <text x="565" y="308" fill="#92400e" font-weight="700">cooling loop</text>
+      <text x="565" y="328" fill="#92400e" font-size="12">CDU / pump / service</text>
+      <rect x="668" y="284" width="150" height="54" rx="7" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+      <text x="743" y="308" fill="#5b21b6" font-weight="700">commissioning</text>
+      <text x="743" y="328" fill="#5b21b6" font-size="12">accepted MW/month</text>
+
+      <rect x="146" y="364" width="138" height="54" rx="7" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+      <text x="215" y="388" fill="#5b21b6" font-weight="700">GPU / ASIC</text>
+      <text x="215" y="408" fill="#5b21b6" font-size="12">NVIDIA / AMD / custom</text>
+      <rect x="312" y="364" width="138" height="54" rx="7" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+      <text x="381" y="388" fill="#5b21b6" font-weight="700">HBM / package</text>
+      <text x="381" y="408" fill="#5b21b6" font-size="12">TSMC / memory</text>
+      <rect x="478" y="364" width="138" height="54" rx="7" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
+      <text x="547" y="388" fill="#155e75" font-weight="700">network</text>
+      <text x="547" y="408" fill="#155e75" font-size="12">switch / optics / DCI</text>
+      <rect x="644" y="364" width="160" height="54" rx="7" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
+      <text x="724" y="388" fill="#155e75" font-weight="700">rack integration</text>
+      <text x="724" y="408" fill="#155e75" font-size="12">firmware / burn-in / yield</text>
+
+      <rect x="146" y="444" width="138" height="54" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+      <text x="215" y="468" fill="#166534" font-weight="700">scheduler</text>
+      <text x="215" y="488" fill="#166534" font-size="12">routing / batching</text>
+      <rect x="312" y="444" width="150" height="54" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+      <text x="387" y="468" fill="#166534" font-weight="700">SRE capacity</text>
+      <text x="387" y="488" fill="#166534" font-size="12">failure / repair / spares</text>
+      <rect x="490" y="444" width="150" height="54" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+      <text x="565" y="468" fill="#166534" font-weight="700">paid workload</text>
+      <text x="565" y="488" fill="#166534" font-size="12">tasks / MW / margin</text>
+      <rect x="668" y="444" width="150" height="54" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+      <text x="743" y="468" fill="#166534" font-weight="700">token capacity</text>
+      <text x="743" y="488" fill="#166534" font-size="12">usable and billable</text>
     </g>
 
-    <g>
-      <rect x="64" y="492" width="400" height="86" rx="7" fill="#ffffff" stroke="#cbd5e1"/>
-      <text x="86" y="520" font-size="15" font-weight="700" fill="#111827">Demand arrival time</text>
-      <text x="86" y="546" font-size="13" fill="#334155">users x tasks x steps x tokens x retries</text>
-      <text x="86" y="568" font-size="13" fill="#334155">product changes spread in weeks or months</text>
-      <rect x="516" y="492" width="400" height="86" rx="7" fill="#ffffff" stroke="#cbd5e1"/>
-      <text x="538" y="520" font-size="15" font-weight="700" fill="#111827">Supply replication time</text>
-      <text x="538" y="546" font-size="13" fill="#334155">grid, transformers, construction, cooling, racks</text>
-      <text x="538" y="568" font-size="13" fill="#334155">most fields queue and commission by the year</text>
+    <g stroke="#64748b" stroke-width="1.7" fill="none" marker-end="url(#cal-arrow-en)">
+      <path d="M334 150 H360"/>
+      <path d="M530 150 C590 150 620 150 680 150"/>
+      <path d="M284 231 H312"/>
+      <path d="M450 231 H478"/>
+      <path d="M638 231 H666"/>
+      <path d="M284 311 H312"/>
+      <path d="M462 311 H490"/>
+      <path d="M640 311 H668"/>
+      <path d="M284 391 H312"/>
+      <path d="M450 391 H478"/>
+      <path d="M616 391 H644"/>
+      <path d="M284 471 H312"/>
+      <path d="M462 471 H490"/>
+      <path d="M640 471 H668"/>
+    </g>
+
+    <g font-size="12">
+      <rect x="38" y="542" width="880" height="44" rx="7" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="60" y="568" fill="#334155">Players: hyperscaler / neocloud / developer / utility / RTO / generation / electrical OEM / EPC / cooling / chip / memory / network / SRE</text>
     </g>
   </g>
 </svg>
 
-McKinsey's workload chart gives a useful anchor: global data center demand rises from 82.3GW in 2025 to 219GW in 2030; AI inference moves from 20.9GW to 93.3GW, roughly a 35% CAGR; AI training moves from 23.1GW to 62.2GW, roughly a 22% CAGR. That is not an Agent forecast, but it shows inference becoming the main load.
+The least appreciated work sits near the end: commissioning and the revenue path. Markets count orders and backlog. AI data center supply only exists after commissioning. If a 1GW campus ramps acceptance at 60MW per month instead of 100MW, the press release still says 1GW, but the customer's usable compute has already changed.
 
-OpenAI traffic points in the same direction. In October 2025, Sam Altman said ChatGPT had 800 million weekly active users and the API was processing more than 6 billion tokens per minute. User adoption already moves at consumer software speed. Agents change the multiplier from "users" to "task steps".
+That is why the supply chain has to be split one layer deeper. OpenAI, Microsoft, Amazon, Google, Meta, Oracle, CoreWeave, and Crusoe open demand and capital. Equinix, Digital Realty, QTS, CyrusOne, and developers deliver facilities. Constellation, Talen, Vistra, Brookfield, AEP, Dominion, PJM, and ERCOT shape the power path. Schneider, Eaton, ABB, Siemens, Vertiv, GE Vernova, Quanta, DPR, and Turner sit on electrical and engineering delivery. NVIDIA, AMD, Broadcom, Marvell, Arista, Cisco, TSMC, SK hynix, Micron, and Samsung fill the cluster.
 
-I would use three scenarios for the next five years. The gap below is a rough order estimate for global usable AI-ready compute, not a precise forecast.
+The list itself does not create alpha. Delivery yield does. Whoever turns 1GW of headline capacity into 850MW of accepted, operating, billable capacity is the one really charging rent inside the data center.
 
-| Scenario | Demand path | Supply path | Gap around 2030 |
+## Public GW pays a haircut tax first
+
+There are enough public GW numbers now to break a spreadsheet. OpenAI's Stargate has talked about nearly 7GW of planned capacity and a 10GW commitment. PORTS-Pike alone names roughly 8 IT-GW. Microsoft, Meta, Amazon, and Google also have 500MW, 835MW, 1.9GW, 3GW, 6.6GW, and 10.5GW energy figures floating around.
+
+Putting them into one column is dangerous. IT-GW, planned AI capacity, PPA, generation capacity, nuclear development rights, and clean attributes are different units. They all prove hyperscalers are grabbing energy. Only part of that turns into usable AI compute before 2030.
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 650" role="img" aria-labelledby="gw-haircut-title-en" style="max-width: 100%; height: auto; margin: 10px 0 18px;">
+  <title id="gw-haircut-title-en">The haircut tax on public GW</title>
+  <defs>
+    <marker id="haircut-arrow-en" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M1,1 L9,5 L1,9 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect x="1" y="1" width="978" height="648" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="38" y="46" font-size="24" font-weight="700" fill="#111827">Headline GW needs a haircut before it becomes compute</text>
+    <text x="38" y="76" font-size="14" fill="#64748b">Before 2030, the farther a number sits from IT load, the heavier the discount to usable AI compute</text>
+
+    <g text-anchor="middle" font-size="13">
+      <rect x="54" y="116" width="206" height="74" rx="7" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+      <text x="157" y="145" fill="#991b1b" font-weight="700">IT-GW lease</text>
+      <text x="157" y="166" fill="#991b1b">schedule haircut</text>
+      <text x="157" y="184" fill="#991b1b" font-size="12">2030 usable: 60-75%</text>
+
+      <rect x="54" y="220" width="206" height="74" rx="7" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+      <text x="157" y="249" fill="#1e3a8a" font-weight="700">planned AI capacity</text>
+      <text x="157" y="270" fill="#1e3a8a">site and power haircut</text>
+      <text x="157" y="288" fill="#1e3a8a" font-size="12">2030 usable: 35-55%</text>
+
+      <rect x="54" y="324" width="206" height="74" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+      <text x="157" y="353" fill="#92400e" font-weight="700">PPA / generation GW</text>
+      <text x="157" y="374" fill="#92400e">local delivery haircut</text>
+      <text x="157" y="392" fill="#92400e" font-size="12">2030 usable: 5-20%</text>
+
+      <rect x="54" y="428" width="206" height="74" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+      <text x="157" y="457" fill="#166534" font-weight="700">future nuclear / CFE</text>
+      <text x="157" y="478" fill="#166534">timing haircut</text>
+      <text x="157" y="496" fill="#166534" font-size="12">mostly option value before 2030</text>
+    </g>
+
+    <g stroke="#64748b" stroke-width="1.8" fill="none" marker-end="url(#haircut-arrow-en)">
+      <path d="M260 153 C318 153 318 190 370 190"/>
+      <path d="M260 257 C318 257 318 230 370 230"/>
+      <path d="M260 361 C318 361 318 272 370 272"/>
+      <path d="M260 465 C318 465 318 318 370 318"/>
+    </g>
+
+    <g text-anchor="middle">
+      <path d="M370 150 H860 L800 245 H430 Z" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+      <text x="615" y="190" font-size="20" fill="#0f172a" font-weight="700">commissioned IT load</text>
+      <text x="615" y="216" font-size="13" fill="#334155">PUE / redundancy / substation / MEP / cooling / commissioning</text>
+
+      <path d="M430 275 H800 L746 370 H484 Z" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+      <text x="615" y="316" font-size="20" fill="#0f172a" font-weight="700">AI-ready cluster</text>
+      <text x="615" y="342" font-size="13" fill="#334155">GPU / HBM / network / storage / rack integration</text>
+
+      <path d="M484 400 H746 L706 490 H524 Z" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+      <text x="615" y="438" font-size="20" fill="#0f172a" font-weight="700">billable token capacity</text>
+      <text x="615" y="464" font-size="13" fill="#334155">scheduler utilization / failure rate / paid task conversion</text>
+    </g>
+
+    <g font-size="14">
+      <rect x="92" y="552" width="796" height="54" rx="7" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="116" y="584" fill="#0f172a" font-weight="700">Effective GW = headline GW x unit fit x delivery yield x AI-ready fit-out x utilization yield</text>
+    </g>
+  </g>
+</svg>
+
+My rough haircuts look like this: for a direct IT-GW lease, I would give 60-75% 2030 usability depending on the project schedule; for planned AI capacity, 35-55%; for PPA and generation GW, only 5-20%, because they solve energy sourcing without guaranteeing local IT load; for nuclear and CFE frameworks that mainly arrive after 2030, I would treat them as option value.
+
+Guardrail first; forecast second. The haircut keeps headline GW in the right bucket. OpenAI / Oracle's additional 4.5GW and Stargate's nearly 7GW planned capacity belong in the in-progress AI capacity bucket. PORTS-Pike's 8 IT-GW is the hardest unit, but full delivery runs to 2032. Microsoft / Brookfield's 10.5GW renewable framework, Meta's up to 6.6GW nuclear portfolio, and Google / Brookfield's up to 3GW hydro framework belong in the energy and carbon-matching bucket. They cannot be added straight to AI IT load.
+
+Demand anchors are colder. IEA estimates global data center electricity use rising from 415TWh in 2024 to 945TWh in 2030, or roughly 60GW of incremental average facility load. McKinsey, using a capacity lens, puts 2030 global data center demand at 171-219GW, with a 298GW high case. JLL expects 97GW of additions from 2025 to 2030 and roughly 200GW of global capacity by 2030.
+
+Those units should not be subtracted with fake precision, but they are useful for a pressure test. If JLL's 97GW of new supply gets through commissioning at 80% and AI-ready fit-out at 80%, the effective new addition is only about 62GW. McKinsey's demand increase is 111-159GW. That leaves a gap measured in tens of GW, possibly close to 100GW. Model efficiency and workload mix pull the number down. Agent adoption pushes it back up.
+
+I would split the 2030 gap into three cases:
+
+| Scenario | Demand assumption | Supply haircut | Usable compute gap around 2030 |
 | --- | --- | --- | --- |
-| Constrained | Agent reliability improves slowly; inference follows the base path | JLL's nearly 100GW of new supply mostly arrives; AI-ready discount is modest | 15-25GW |
-| Base | Agents penetrate coding, office work, and customer support; inference grows 30%+ | Planned supply comes online, but 10-20% is lost to grid, equipment, fit-out, and utilization friction | 30-50GW |
-| Agent upside | Tool calls, long context, background work, and parallel workers scale quickly | Supply accelerates, but the grid and equipment still replicate at industrial speed | 70GW+ |
+| Slow Agent | Agent reliability ramps slowly; inference follows the base path | Few project delays; AI-ready fit-out mostly works | 20-35GW |
+| Base | Coding, office, and support move into Agent workflows | 15-25% of capacity gets stuck in grid, equipment, acceptance, and utilization friction | 40-70GW |
+| Agent upside | Long context, tool calls, background work, and parallel workers become normal | Supply accelerates, but local grids and commissioning cap conversion yield | 80GW+ |
 
-The math is plain. McKinsey's 2030 demand midpoint is 219GW. JLL's 2030 capacity is around 200GW. The surface gap is 19GW. After delay risk, AI-ready fit-out, local grid limits, GPU/rack delivery, and actual utilization, the base gap lands in the tens of GW. If demand approaches McKinsey's 298GW high case while supply remains near 200GW, the gap jumps above 70GW very quickly.
+The gap itself does not automatically create alpha. The market already knows data centers need power. It already knows GEV, VRT, ETN, major memory, and CPO matter. The more useful inference is what those known red lights create as they expand.
 
-The dangerous part is replication time.
+## The next yellow light hides in delivery yield
+
+Once a red light is priced in, it should stop being the conclusion. It becomes the starting point.
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 660" role="img" aria-labelledby="next-yellow-title-en" style="max-width: 100%; height: auto; margin: 10px 0 18px;">
+  <title id="next-yellow-title-en">Where known red lights create the next yellow lights</title>
+  <rect x="1" y="1" width="978" height="658" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="38" y="46" font-size="24" font-weight="700" fill="#111827">Visible red lights are late work. The yellow lights matter now.</text>
+    <text x="38" y="76" font-size="14" fill="#64748b">Known bottlenecks consume more specific capacity that is harder to put into a simple AI story</text>
+
+    <g font-size="13" font-weight="700" text-anchor="middle">
+      <rect x="36" y="108" width="190" height="38" rx="7" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+      <text x="131" y="133" fill="#991b1b">known red light</text>
+      <rect x="262" y="108" width="190" height="38" rx="7" fill="#e2e8f0" stroke="#94a3b8"/>
+      <text x="357" y="133" fill="#334155">market story</text>
+      <rect x="488" y="108" width="220" height="38" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+      <text x="598" y="133" fill="#92400e">next inference</text>
+      <rect x="744" y="108" width="190" height="38" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+      <text x="839" y="133" fill="#166534">watch metric</text>
+    </g>
+
+    <g font-size="12" text-anchor="middle">
+      <rect x="36" y="170" width="190" height="58" rx="7" fill="#fff1f2" stroke="#fecdd3"/>
+      <text x="131" y="196" fill="#991b1b" font-weight="700">transformer / switchgear</text>
+      <text x="131" y="216" fill="#991b1b">electrical equipment tight</text>
+      <rect x="262" y="170" width="190" height="58" rx="7" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="357" y="196" fill="#334155">orders and backlog</text>
+      <text x="357" y="216" fill="#334155">lead times stretch</text>
+      <rect x="488" y="170" width="220" height="58" rx="7" fill="#fffbeb" stroke="#f59e0b"/>
+      <text x="598" y="196" fill="#92400e" font-weight="700">modular electrical rooms</text>
+      <text x="598" y="216" fill="#92400e">protection / FAT / commissioning</text>
+      <rect x="744" y="170" width="190" height="58" rx="7" fill="#f0fdf4" stroke="#86efac"/>
+      <text x="839" y="196" fill="#166534" font-weight="700">accepted MW/month</text>
+      <text x="839" y="216" fill="#166534">acceptance ramp</text>
+
+      <rect x="36" y="252" width="190" height="58" rx="7" fill="#fff1f2" stroke="#fecdd3"/>
+      <text x="131" y="278" fill="#991b1b" font-weight="700">firm power / turbines</text>
+      <text x="131" y="298" fill="#991b1b">power and grid tight</text>
+      <rect x="262" y="252" width="190" height="58" rx="7" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="357" y="278" fill="#334155">gas / PPA / nuclear</text>
+      <text x="357" y="298" fill="#334155">everyone grabs slots</text>
+      <rect x="488" y="252" width="220" height="58" rx="7" fill="#fffbeb" stroke="#f59e0b"/>
+      <text x="598" y="278" fill="#92400e" font-weight="700">load flexibility</text>
+      <text x="598" y="298" fill="#92400e">interruptible load / BESS / controls</text>
+      <rect x="744" y="252" width="190" height="58" rx="7" fill="#f0fdf4" stroke="#86efac"/>
+      <text x="839" y="278" fill="#166534" font-weight="700">curtailment terms</text>
+      <text x="839" y="298" fill="#166534">power price and dispatch rights</text>
+
+      <rect x="36" y="334" width="190" height="58" rx="7" fill="#fff1f2" stroke="#fecdd3"/>
+      <text x="131" y="360" fill="#991b1b" font-weight="700">liquid cooling hardware</text>
+      <text x="131" y="380" fill="#991b1b">CDU / cold plates ramp</text>
+      <rect x="262" y="334" width="190" height="58" rx="7" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="357" y="360" fill="#334155">rack density</text>
+      <text x="357" y="380" fill="#334155">100kW+ cabinets</text>
+      <rect x="488" y="334" width="220" height="58" rx="7" fill="#fffbeb" stroke="#f59e0b"/>
+      <text x="598" y="360" fill="#92400e" font-weight="700">cooling service loop</text>
+      <text x="598" y="380" fill="#92400e">water / spares / leaks / repair windows</text>
+      <rect x="744" y="334" width="190" height="58" rx="7" fill="#f0fdf4" stroke="#86efac"/>
+      <text x="839" y="360" fill="#166534" font-weight="700">uptime per MW</text>
+      <text x="839" y="380" fill="#166534">downtime and spares turn</text>
+
+      <rect x="36" y="416" width="190" height="58" rx="7" fill="#fff1f2" stroke="#fecdd3"/>
+      <text x="131" y="442" fill="#991b1b" font-weight="700">GPU / HBM / CPO</text>
+      <text x="131" y="462" fill="#991b1b">hardware story crowded</text>
+      <rect x="262" y="416" width="190" height="58" rx="7" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="357" y="442" fill="#334155">compute and bandwidth</text>
+      <text x="357" y="462" fill="#334155">market prices it well</text>
+      <rect x="488" y="416" width="220" height="58" rx="7" fill="#fffbeb" stroke="#f59e0b"/>
+      <text x="598" y="442" fill="#92400e" font-weight="700">rack acceptance yield</text>
+      <text x="598" y="462" fill="#92400e">burn-in / firmware / fabric stability</text>
+      <rect x="744" y="416" width="190" height="58" rx="7" fill="#f0fdf4" stroke="#86efac"/>
+      <text x="839" y="442" fill="#166534" font-weight="700">usable cluster ratio</text>
+      <text x="839" y="462" fill="#166534">schedulable GPU share</text>
+
+      <rect x="36" y="498" width="190" height="58" rx="7" fill="#fff1f2" stroke="#fecdd3"/>
+      <text x="131" y="524" fill="#991b1b" font-weight="700">Agent inference</text>
+      <text x="131" y="544" fill="#991b1b">inference load grows</text>
+      <rect x="262" y="498" width="190" height="58" rx="7" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="357" y="524" fill="#334155">training campus</text>
+      <text x="357" y="544" fill="#334155">remote GW story</text>
+      <rect x="488" y="498" width="220" height="58" rx="7" fill="#fffbeb" stroke="#f59e0b"/>
+      <text x="598" y="524" fill="#92400e" font-weight="700">metro powered capacity</text>
+      <text x="598" y="544" fill="#92400e">DCI / peering / stateful routing</text>
+      <rect x="744" y="498" width="190" height="58" rx="7" fill="#f0fdf4" stroke="#86efac"/>
+      <text x="839" y="524" fill="#166534" font-weight="700">latency-bound MW</text>
+      <text x="839" y="544" fill="#166534">local inference capacity</text>
+
+      <rect x="36" y="580" width="190" height="50" rx="7" fill="#fff1f2" stroke="#fecdd3"/>
+      <text x="131" y="610" fill="#991b1b" font-weight="700">capex locked in</text>
+      <rect x="262" y="580" width="190" height="50" rx="7" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="357" y="610" fill="#334155">GW becomes depreciation</text>
+      <rect x="488" y="580" width="220" height="50" rx="7" fill="#fffbeb" stroke="#f59e0b"/>
+      <text x="598" y="610" fill="#92400e" font-weight="700">tasks per MW</text>
+      <rect x="744" y="580" width="190" height="50" rx="7" fill="#f0fdf4" stroke="#86efac"/>
+      <text x="839" y="610" fill="#166534" font-weight="700">margin / capex intensity</text>
+    </g>
+  </g>
+</svg>
+
+I would look first at five directions that have not been talked to death.
+
+The first is delivery yield. Markets like backlog, but from 2027 to 2030 the more important metric may be accepted MW per month. Electrical equipment, MEP modules, cooling loops, and rack fabric still have to pass FAT, SAT, protection settings, load-bank testing, integration, and burn-in. Sites often slow down at the organizational capacity to turn a pile of long-lead equipment into accepted capacity.
+
+The second is load flexibility. Once an AI data center secures power, the utility will ask a sharper question: can this 500MW or 1GW load be interrupted, shifted, paired with BESS, fuel cells, gas units, and control systems? Training can move through time. Low-latency Agent inference cannot always move. The player that connects workload scheduling to power markets raises the value of the same power contract.
+
+The third is the cooling service loop. Liquid-cooling hardware is already a hot story. The next layer is service and reliability. When 100kW-plus racks actually run, water quality, filtration, corrosion, fittings, spares, leak detection, repair windows, and field engineers determine uptime. Selling the hardware is the first dollar. Reducing downtime per MW is the second.
+
+The fourth is metro inference capacity. Training can go to Ohio, Texas, or Arizona. Agent inference may not. Coding agents, office agents, support agents, and browser agents will create interactive latency requirements. Remote GW campuses solve training and background work. Smaller blocks of firm power near cities, DCI, peering, and stateful routing may become scarce.
+
+The fifth is tasks per MW. Once GW sits on the balance sheet, the question shifts from power availability to paid work per watt. Agent retry rate, tool-call success, context cache, model routing, batching, and failure recovery all change the revenue density of the same data center. This bottleneck may live outside the building, inside scheduling and product economics.
+
+These five directions share one trait: they fit poorly into a roadshow headline. They sit in the boring middle. That is exactly why the next leg of data-center alpha may hide there. Known red lights create specific delivery constraints before they create a bigger story.
+
+## Agents push the gap toward inference location
+
+Ordinary chat is a back-and-forth. An Agent workflow plans, retrieves, calls tools, reads files, writes code, runs tests, fixes failures, and verifies again. The user submits one task. Behind it there may be dozens of model calls. Add multimodal input, browser control, long context, and parallel workers, and token traffic can grow faster than users.
+
+McKinsey's workload chart gives one anchor: global data center demand rises from 82.3GW in 2025 to 219GW in 2030; AI inference moves from 20.9GW to 93.3GW, roughly a 35% CAGR; AI training moves from 23.1GW to 62.2GW, roughly a 22% CAGR. OpenAI traffic already moves at consumer-software speed. In October 2025, Sam Altman said ChatGPT had 800 million weekly active users and the API was processing more than 6 billion tokens per minute.
+
+Agents split demand into two buckets. Background work behaves more like training: it can queue, batch, and move to cheaper remote power. Interactive work behaves more like a trading system: it cares about latency, state, network path, and local capacity. The next five-year gap will not spread evenly across global data centers. It will split by workload.
 
 ```text
 Agent demand = active users
@@ -409,37 +387,19 @@ Usable compute = commissioned IT load
                × paid workload conversion
 ```
 
-Model efficiency will improve. Quantization, distillation, MoE, speculative decoding, KV cache improvements, and better schedulers will lower cost per token. AI may still run straight into Jevons paradox: cheaper tokens make people use models for work they previously would not spend compute on. Cheap inference does not automatically reduce total compute demand. It may unlock a much larger task space.
+Model efficiency will keep improving. Quantization, distillation, MoE, speculative decoding, KV cache improvements, and better schedulers will lower cost per token. AI may still run into Jevons paradox: once tokens get cheaper, people hand models work they previously would not automate. Efficiency pulls demand down. Product diffusion pushes it back up.
 
-Over the next five years, scarcity migrates from "who has chips" to "where can chips be powered, cooled, kept busy, and paid back through real work".
+By 2030, if the gap lands at 20-35GW, the known red lights still explain much of the market. If it lands at 40-70GW, delivery yield, load flexibility, and the cooling service loop start to reprice. If Agent upside pushes the gap above 80GW, metro inference capacity and tasks per MW become more important constraints. At that point, the market moves from asking who has GW to which kind of GW can run which kind of task.
 
-## Where the Red Light Moves
+## Past the red light
 
-The Bottleneck Migration Network is useful because it keeps the research question narrow. Do not label every AI supplier as a winner. Track the red light.
+Back to Ohio. The 8 IT-GW number is large, but the more useful thing to watch is how many MW get accepted each month before the first 800MW in 2028; how much headline GW turns into AI-ready clusters between 2028 and 2032; and how much of that then turns into paid tasks.
 
-The first red light is power-ready land and interconnection certainty. Land that can deliver 300MW-plus of firm power in 24 to 36 months is worth far more than ordinary land. The asset is not dirt. It is interconnection certainty, utility coordination, and local execution.
+Known bottlenecks can still make money. That does not mean they still hold the most alpha. GPU, HBM, gas turbines, electrical equipment, and liquid cooling have already told a full story. The better question is where their expansion sends orders, risk, and margins next. Which layer turns press-release GW into paid-token GW?
 
-The second red light is electrical equipment and high-voltage work. Transformers, switchgear, UPS, busway, cables, substations, and transmission contractors are close to the current physical constraint. GPUs iterate quickly. Substations do not iterate through product launches.
+The data center business may collapse into one final metric: **how much contracted power becomes work that customers are willing to pay for.**
 
-The third red light is EPC, labor, and commissioning. A GW campus is hard because electrical work, cooling, fire systems, structure, networking, and rack deployment have to share one schedule. If any trade is unavailable, no token capacity appears at the end.
-
-The fourth red light is high-density cooling and low-voltage distribution. As rack density rises, CDUs, cold plates, pumps, fittings, leak detection, busbars, and power shelves become small but hard constraints.
-
-The fifth red light returns to AI hardware. GPUs, ASICs, HBM, CoWoS, networking, optics, and storage still hold large profit pools. The market is already good at pricing those assets. The next excess return is more likely to come from the D3/D4 node that quietly gets narrow again.
-
-The sixth red light is operations and utilization. As projects come online, the next toll booth becomes successful work per watt. This may not show up in financials as "scheduling". It will show up as gross margin, capex intensity, lease obligations, and free cash flow.
-
-Here is the counterintuitive part: the farther upstream the data center supplier sits, the less fluent it usually is in AI storytelling; the less it talks about AI, the more likely it may be a real constraint. A transformer supplier does not need to say AGI every day. Without it, the AGI rack cannot connect to power. A transmission contractor does not appear in model launch videos. Without it, 10GW is a number in a PDF.
-
-## The Next Toll Booth
-
-The Ohio 8 IT-GW project matters because it exposes the true shape of AI infrastructure. Model companies, chip companies, energy companies, utilities, DOE, local communities, and capital markets are all in the same project.
-
-Software scales with a deploy. AI scales by securing land, power, equipment, permits, labor, financing, and then putting millions of accelerators into a system that does not overheat, lose power, or sit idle.
-
-For the last two years, the market asked who had GPUs. The better question for the next few years is: who can turn GW into tokens, and who can only put GW into a press release?
-
-The next toll booth is not in the hottest narrative. It is in the slowest delivery chain.
+The next light probably will not be in the place that tells the cleanest AI story.
 
 ## Sources
 

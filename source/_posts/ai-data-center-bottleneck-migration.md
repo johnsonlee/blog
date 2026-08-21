@@ -1,6 +1,6 @@
 ---
-title: 当算力变成吉瓦生意
-date: 2026-08-21 22:54:04
+title: 8 IT-GW 之后别再追红灯
+date: 2026-08-22 04:34:27
 categories:
   - Investing
 tags:
@@ -13,382 +13,360 @@ tags:
 i18n_key: ai-data-center-bottleneck-migration
 ---
 
-2026 年 8 月，OpenAI 把 Ohio 的 PORTS-Pike 项目放到台面上：约 8 IT-GW，首批 800MW 预计 2028 年可用，完整建设一路排到 2032 年。它背后是一整套工业系统：至少 10GW 新发电、42 亿美元区域电网基础设施、NVIDIA 对前 4.25 IT-GW 的信用支持、20 年租约、许可、环评、融资和六年施工。
-
-新闻稿讲投资和就业。瓶颈框架会把它翻译成另一个问题：AI 需求已经按软件速度到达，数据中心供给能不能按工业速度复制？
+PORTS-Pike 那条新闻我看了两遍。第一遍看数字：8 IT-GW，至少 10GW 新发电，42 亿美元区域电网基础设施，NVIDIA 给前 4.25 IT-GW 做信用支持。第二遍看日期：第一批 800MW 预计 2028 年可用，完整 buildout 到 2032 年。8 这个数字抢眼，日期更诚实。现在再说电力、变压器、液冷和 powered land 紧张，已经没有什么信息量了。红灯已经亮在屏幕上，也亮在估值里。更值得问的是：这些红灯为了扩产，会把哪一层还没被定价的黄灯点亮？
 
 <!-- more -->
 
-我在上一篇「复制速度才是真正的瓶颈」里用了一个 Bottleneck Migration Network：D0 是根需求，D1 是子系统，D2 是技术路线，D3 是设备、部件、工艺和认证，D4 是共享的物理产能。Depth 不变，红灯会迁移。
+上一篇讲 Bottleneck Migration Network，核心是看复制缺口怎么传播。D0 是根需求，D1 是子系统，D2 是路线，D3 是设备、工艺和 qualification，D4 是底层物理产能。一个 node 变红以后，研究才刚开始。它扩产时会消耗新的设备、材料、工人、许可、测试和资本，下一层黄灯通常就藏在这里。
 
-这篇只放大其中一颗 D0 根：Data Center。
-
-判断 AI 数据中心，先别问谁签了多少 GW。先问三个更硬的问题：
-
-1. 一座能提供 AI power capacity 的数据中心，到底由哪些层组成，谁在每层收费？
-2. 公开的 GW 数字里，多少是 IT load，多少只是发电、PPA、清洁属性或未来开发框架？
-3. Agent 流量起来以后，需求到达时间和供给复制时间之间，会差出多少可用算力？
-
-核心公式很简单：
+数据中心是这套框架最好的现场。因为 AI demand 的到达速度越来越像软件，data center capacity 的复制速度仍然像电力工程。
 
 ```text
 复制缺口 = 供给复制所需时间 - 需求到达所需时间
-
-瓶颈强度 ∝ 需求冲击 × 供给刚性 × 复制缺口
 ```
 
-AI 数据中心的麻烦在这里：需求侧像软件，供给侧像电力工程。
+AI 的投资问题不再是“缺不缺 GPU”这么窄。它变成了另一个问题：从新闻稿里的 GW 到客户手上的 token，中间到底漏掉多少？
 
-## 数据中心这颗 D0 根
+## 一座数据中心先是一张交付日历
 
-一座 AI 数据中心不是「买 GPU 后找地方插电」。顺序反过来了：先找能按期交付的大块电，再把土地、输电、变电站、壳体、MEP、冷却、rack、网络、存储、调度和运维压进同一个上线日期。
+把自己放进 PORTS-Pike 的项目会议里。客户已经签了，芯片供应商也坐在桌上，地方政府希望讲就业，utility 要算负荷，DOE 要看能源和社区影响，开发商要融资，EPC 要排工人，NVIDIA 要保证 rack 到货，OpenAI 要问第一批 workload 什么时候能跑。
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 640" role="img" aria-labelledby="dc-network-title" style="max-width: 100%; height: auto; margin: 10px 0 18px;">
-  <title id="dc-network-title">AI 数据中心的 Bottleneck Migration Network</title>
+这时候，“数据中心由哪些部分组成”会从教材问题变成一张交付日历。任何一条线晚三个月，都不会按时变成可收费 token。
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 620" role="img" aria-labelledby="delivery-calendar-title" style="max-width: 100%; height: auto; margin: 10px 0 18px;">
+  <title id="delivery-calendar-title">签约 GW 到可收费 token 的交付日历</title>
   <defs>
-    <marker id="dc-arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+    <marker id="cal-arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
       <path d="M1,1 L9,5 L1,9 Z" fill="#64748b"/>
     </marker>
-    <marker id="dc-purple-arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
-      <path d="M1,1 L9,5 L1,9 Z" fill="#7c3aed"/>
-    </marker>
-  </defs>
-  <rect x="1" y="1" width="978" height="638" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
-  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
-    <text x="38" y="45" font-size="24" font-weight="700" fill="#111827">Data Center 这颗 D0 根，红灯会沿着复制链迁移</text>
-    <text x="38" y="75" font-size="14" fill="#64748b">Depth 固定：D0 根需求 → D1 子系统 → D2 路线 → D3 设备/工艺 → D4 共享产能</text>
-
-    <g font-size="12" font-weight="700" text-anchor="middle">
-      <rect x="34" y="104" width="70" height="32" rx="6" fill="#e2e8f0" stroke="#94a3b8"/>
-      <text x="69" y="125" fill="#334155">D0</text>
-      <rect x="34" y="184" width="70" height="32" rx="6" fill="#e2e8f0" stroke="#94a3b8"/>
-      <text x="69" y="205" fill="#334155">D1</text>
-      <rect x="34" y="286" width="70" height="32" rx="6" fill="#e2e8f0" stroke="#94a3b8"/>
-      <text x="69" y="307" fill="#334155">D2</text>
-      <rect x="34" y="408" width="70" height="32" rx="6" fill="#e2e8f0" stroke="#94a3b8"/>
-      <text x="69" y="429" fill="#334155">D3</text>
-      <rect x="34" y="536" width="70" height="32" rx="6" fill="#e2e8f0" stroke="#94a3b8"/>
-      <text x="69" y="557" fill="#334155">D4</text>
-    </g>
-
-    <g stroke="#cbd5e1" stroke-width="1">
-      <line x1="120" y1="200" x2="940" y2="200"/>
-      <line x1="120" y1="302" x2="940" y2="302"/>
-      <line x1="120" y1="424" x2="940" y2="424"/>
-      <line x1="120" y1="552" x2="940" y2="552"/>
-    </g>
-
-    <g text-anchor="middle" font-size="14">
-      <rect x="416" y="96" width="148" height="48" rx="7" fill="#111827"/>
-      <text x="490" y="126" fill="#ffffff" font-weight="700">AI 数据中心</text>
-
-      <rect x="128" y="176" width="130" height="48" rx="7" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
-      <text x="193" y="205" fill="#1e3a8a" font-weight="700">电力</text>
-      <rect x="288" y="176" width="130" height="48" rx="7" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
-      <text x="353" y="205" fill="#155e75" font-weight="700">土建 MEP</text>
-      <rect x="448" y="176" width="130" height="48" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
-      <text x="513" y="205" fill="#92400e" font-weight="700">冷却密度</text>
-      <rect x="608" y="176" width="130" height="48" rx="7" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
-      <text x="673" y="205" fill="#5b21b6" font-weight="700">集群</text>
-      <rect x="768" y="176" width="130" height="48" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
-      <text x="833" y="205" fill="#166534" font-weight="700">调度运维</text>
-
-      <rect x="118" y="270" width="150" height="64" rx="7" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
-      <text x="193" y="296" fill="#991b1b" font-weight="700">firm power</text>
-      <text x="193" y="316" fill="#991b1b" font-size="12">并网/输电/变电</text>
-      <rect x="286" y="270" width="134" height="64" rx="7" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
-      <text x="353" y="296" fill="#9a3412" font-weight="700">EPC 交付</text>
-      <text x="353" y="316" fill="#9a3412" font-size="12">壳体/消防/验收</text>
-      <rect x="446" y="270" width="134" height="64" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
-      <text x="513" y="296" fill="#92400e" font-weight="700">液冷路线</text>
-      <text x="513" y="316" fill="#92400e" font-size="12">CDU/冷板/水路</text>
-      <rect x="606" y="270" width="134" height="64" rx="7" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
-      <text x="673" y="296" fill="#5b21b6" font-weight="700">rack fabric</text>
-      <text x="673" y="316" fill="#5b21b6" font-size="12">GPU/HBM/网络</text>
-      <rect x="766" y="270" width="134" height="64" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
-      <text x="833" y="296" fill="#166534" font-weight="700">可收费任务</text>
-      <text x="833" y="316" fill="#166534" font-size="12">利用率/可靠性</text>
-
-      <rect x="118" y="392" width="150" height="64" rx="7" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
-      <text x="193" y="418" fill="#991b1b" font-weight="700">变压器 switchgear</text>
-      <text x="193" y="438" fill="#991b1b" font-size="12">UPS / busway / cable</text>
-      <rect x="286" y="392" width="134" height="64" rx="7" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
-      <text x="353" y="418" fill="#9a3412" font-weight="700">熟练工</text>
-      <text x="353" y="438" fill="#9a3412" font-size="12">高压/低压/调试</text>
-      <rect x="446" y="392" width="134" height="64" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
-      <text x="513" y="418" fill="#92400e" font-weight="700">泵 阀 接头</text>
-      <text x="513" y="438" fill="#92400e" font-size="12">leak detection</text>
-      <rect x="606" y="392" width="134" height="64" rx="7" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
-      <text x="673" y="418" fill="#5b21b6" font-weight="700">CoWoS optics</text>
-      <text x="673" y="438" fill="#5b21b6" font-size="12">switch / storage</text>
-      <rect x="766" y="392" width="134" height="64" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
-      <text x="833" y="418" fill="#166534" font-weight="700">SRE 调度器</text>
-      <text x="833" y="438" fill="#166534" font-size="12">故障/排队/定价</text>
-
-      <rect x="112" y="520" width="162" height="64" rx="7" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
-      <text x="193" y="546" fill="#991b1b" font-weight="700">铜 电工钢 许可</text>
-      <text x="193" y="566" fill="#991b1b" font-size="12">interconnection queue</text>
-      <rect x="286" y="520" width="134" height="64" rx="7" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
-      <text x="353" y="546" fill="#9a3412" font-weight="700">劳动力池</text>
-      <text x="353" y="566" fill="#9a3412" font-size="12">区域承包商</text>
-      <rect x="446" y="520" width="134" height="64" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
-      <text x="513" y="546" fill="#92400e" font-weight="700">水权 噪音 社区</text>
-      <text x="513" y="566" fill="#92400e" font-size="12">冷却许可</text>
-      <rect x="606" y="520" width="134" height="64" rx="7" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
-      <text x="673" y="546" fill="#5b21b6" font-weight="700">晶圆 HBM 基板</text>
-      <text x="673" y="566" fill="#5b21b6" font-size="12">封装产能</text>
-      <rect x="766" y="520" width="134" height="64" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
-      <text x="833" y="546" fill="#166534" font-weight="700">客户工作流</text>
-      <text x="833" y="566" fill="#166534" font-size="12">ROI / 付费转化</text>
-    </g>
-
-    <g stroke="#64748b" stroke-width="1.8" fill="none" marker-end="url(#dc-arrow)">
-      <path d="M490 144 C420 158 250 155 193 176"/>
-      <path d="M490 144 C430 166 374 166 353 176"/>
-      <path d="M490 144 C500 166 510 166 513 176"/>
-      <path d="M490 144 C560 166 632 166 673 176"/>
-      <path d="M490 144 C670 158 780 156 833 176"/>
-      <path d="M193 224 V270"/>
-      <path d="M353 224 V270"/>
-      <path d="M513 224 V270"/>
-      <path d="M673 224 V270"/>
-      <path d="M833 224 V270"/>
-      <path d="M193 334 V392"/>
-      <path d="M353 334 V392"/>
-      <path d="M513 334 V392"/>
-      <path d="M673 334 V392"/>
-      <path d="M833 334 V392"/>
-      <path d="M193 456 V520"/>
-      <path d="M353 456 V520"/>
-      <path d="M513 456 V520"/>
-      <path d="M673 456 V520"/>
-      <path d="M833 456 V520"/>
-    </g>
-    <path d="M240 302 C340 350 555 350 626 302" stroke="#7c3aed" stroke-width="2" stroke-dasharray="7 6" fill="none" marker-end="url(#dc-purple-arrow)"/>
-    <text x="430" y="362" font-size="12" fill="#6d28d9" text-anchor="middle">替代路线：换区域、behind-the-meter、自建电源、换芯片/网络架构</text>
-
-    <g font-size="12">
-      <rect x="620" y="602" width="18" height="12" rx="3" fill="#fee2e2" stroke="#dc2626"/>
-      <text x="646" y="612" fill="#475569">红：当前更可能卡住</text>
-      <rect x="770" y="602" width="18" height="12" rx="3" fill="#fef3c7" stroke="#d97706"/>
-      <text x="796" y="612" fill="#475569">黄：候选瓶颈</text>
-    </g>
-  </g>
-</svg>
-
-D0 不会移动。AI 需要 Data Center 这颗根。会移动的是红灯：2023 年红灯在 GPU，2024 年移到 HBM 和 CoWoS，2025 年开始压到 powered land、并网、电力设备和液冷，2026 年 PORTS-Pike 这样的项目把整条链暴露出来。
-
-一座能提供 AI power capacity 的数据中心，大概有六段复制链。
-
-第一段是 power-ready site。过去选址看土地、税、网络和客户距离；现在先看 utility 能不能给出 300MW、500MW、1GW 的 firm delivery date。CBRE 说 18 到 36 个月内能拿到电的 site 已经很抢手，200MW 以上电力的大地块优先级越来越高。
-
-第二段是发电、输电和并网。PPA 解决长期采购，不能自动解决本地瞬时供电。AI cluster 要的是稳定、可调度、可并网，还要尽量满足碳目标。于是核电、燃气、hydro、geothermal、solar plus battery、behind-the-meter 都被拉进同一张图。
-
-第三段是 shell、MEP 和配电。高压电进站以后，要经过变压器、switchgear、UPS、PDU、busway，最后喂到 rack。NVIDIA DGX GB rack 的功耗量级约 120kW。以前 10-20kW 一个 rack 已经算高密度，现在 100kW 以上才是 AI campus 的起点。
-
-第四段是冷却。高密度 rack 会把 direct-to-chip liquid cooling、CDU、冷板、泵、管路、leak detection、冷机和热交换系统放到关键路径。冷却不是配角，它决定同一块地能塞进多少 IT load。
-
-第五段是 rack fabric。GPU、HBM、NVLink 或 Ethernet fabric、optics、storage、server integration 必须一起到货。单拿到 GPU 还不够，训练 cluster 要 scale-up 和 scale-out 网络，推理 cluster 要成本、延迟、地理分布和利用率。
-
-第六段是运维和收入。客户最终购买的是可用 token capacity：低故障、低延迟、能被调度器吃满，最后能变成付费任务。
-
-所以供应链玩家也要分层看。OpenAI、Microsoft、Amazon、Google、Meta、Oracle、CoreWeave、Crusoe 负责把需求和资本开出来；Equinix、Digital Realty、QTS、CyrusOne 和各类开发商负责 facility 交付；Constellation、Talen、Vistra、Brookfield、AEP、Dominion、PJM、ERCOT 这类电力和电网玩家控制供电路径；Schneider、Eaton、ABB、Siemens、Vertiv、GE Vernova、Quanta、DPR、Turner 这类设备和工程公司卡住机电交付；NVIDIA、AMD、Broadcom、Marvell、Arista、Cisco、TSMC、SK hynix、Micron、Samsung 再把 cluster 填进去。
-
-NVIDIA 仍然重要。只是当项目变成 GW scale，真正稀缺的能力变成：把土地、电、设备、机房和芯片压成同一个可交付日期。
-
-## 公开 GW 合同要走漏斗
-
-截至 2026-08-21，公开市场已经有很多 GW 数字。最大误读，是把所有 GW 直接相加。
-
-GW 有四种常见口径。
-
-- IT-GW：服务器和 rack 真正吃到的 IT load，最接近可用算力。PORTS-Pike 的 8 IT-GW 属于这个口径，但仍然是分阶段、带条件的未来容量。
-- Facility power：数据中心园区或建筑侧用电，含 PUE、冗余和基础设施损耗。
-- Generation / PPA GW：发电装机、电力采购或 offtake 框架，解决能源来源，不等于本地 IT load。
-- Clean attributes：清洁电力属性、时间匹配和碳目标，能支持 ESG 和长期供电策略，不能当成 GPU 容量。
-
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 610" role="img" aria-labelledby="gw-funnel-title" style="max-width: 100%; height: auto; margin: 10px 0 18px;">
-  <title id="gw-funnel-title">公开 GW 到可用 AI 算力的漏斗</title>
-  <defs>
-    <marker id="funnel-arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
-      <path d="M1,1 L9,5 L1,9 Z" fill="#64748b"/>
-    </marker>
-  </defs>
-  <rect x="1" y="1" width="978" height="608" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
-  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
-    <text x="40" y="46" font-size="24" font-weight="700" fill="#111827">Headline GW 先分口径，再过交付漏斗</text>
-    <text x="40" y="76" font-size="14" fill="#64748b">同一张表里混着 IT-GW、planned capacity、PPA、发电装机和清洁属性，直接相加会错</text>
-
-    <g text-anchor="middle" font-size="13" font-weight="700">
-      <rect x="52" y="112" width="180" height="70" rx="7" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
-      <text x="142" y="141" fill="#991b1b">IT-GW</text>
-      <text x="142" y="162" fill="#991b1b" font-size="12">PORTS-Pike 8 IT-GW</text>
-      <rect x="282" y="112" width="180" height="70" rx="7" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
-      <text x="372" y="141" fill="#1e3a8a">planned AI capacity</text>
-      <text x="372" y="162" fill="#1e3a8a" font-size="12">Stargate 近 7GW</text>
-      <rect x="512" y="112" width="180" height="70" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
-      <text x="602" y="141" fill="#92400e">PPA / generation</text>
-      <text x="602" y="162" fill="#92400e" font-size="12">renewable / nuclear</text>
-      <rect x="742" y="112" width="180" height="70" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
-      <text x="832" y="141" fill="#166534">clean attributes</text>
-      <text x="832" y="162" fill="#166534" font-size="12">24/7 CFE / carbon</text>
-    </g>
-
-    <g stroke="#64748b" stroke-width="1.8" fill="none" marker-end="url(#funnel-arrow)">
-      <path d="M142 182 C155 220 225 230 300 246"/>
-      <path d="M372 182 C370 212 350 226 330 246"/>
-      <path d="M602 182 C572 218 438 226 360 246"/>
-      <path d="M832 182 C772 228 498 226 390 246"/>
-    </g>
-
-    <path d="M190 246 H790 L724 326 H256 Z" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
-    <path d="M256 342 H724 L664 422 H316 Z" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
-    <path d="M316 438 H664 L610 506 H370 Z" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
-    <path d="M370 522 H610 L570 578 H410 Z" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
-
-    <g text-anchor="middle">
-      <text x="490" y="284" font-size="20" font-weight="700" fill="#0f172a">本地 firm power</text>
-      <text x="490" y="309" font-size="13" fill="#334155">发电许可 / transmission / interconnection / capacity market</text>
-      <text x="490" y="380" font-size="20" font-weight="700" fill="#0f172a">power train 与 facility</text>
-      <text x="490" y="405" font-size="13" fill="#334155">变压器 / switchgear / UPS / MEP / commissioning</text>
-      <text x="490" y="475" font-size="20" font-weight="700" fill="#0f172a">AI-ready cluster</text>
-      <text x="490" y="499" font-size="13" fill="#334155">GPU / HBM / optics / storage / liquid cooling / scheduler</text>
-      <text x="490" y="556" font-size="20" font-weight="700" fill="#0f172a">可收费 token capacity</text>
-    </g>
-
-    <g fill="#475569" font-size="13">
-      <text x="52" y="274">漏损 1：项目重叠</text>
-      <text x="52" y="298">漏损 2：跨地区跨年份</text>
-      <text x="52" y="382">漏损 3：并网和设备延迟</text>
-      <text x="52" y="406">漏损 4：PUE 与冗余</text>
-      <text x="52" y="482">漏损 5：rack 到货和良率</text>
-      <text x="52" y="506">漏损 6：利用率和收入</text>
-    </g>
-  </g>
-</svg>
-
-公开合同先按口径拆开：
-
-| 公开事项 | 数字 | 时间 | 口径判断 |
-| --- | ---: | --- | --- |
-| OpenAI / Oracle Stargate | 额外 4.5GW，合计超过 5GW under development | 2025-07 | AI data center capacity，在途，不等于已上线 IT load |
-| OpenAI Stargate 五个新站点 | nearly 7GW planned，目标 10GW | 2025-09 | planned capacity，不能和所有后续项目机械相加 |
-| OpenAI / SB Energy / NVIDIA PORTS-Pike | 约 8 IT-GW，首批 800MW 预计 2028 | 2026-08 | 最接近可用算力的口径，但完整交付到 2032 |
-| Microsoft / Brookfield | 10.5GW new renewable capacity | 2024-05 | 可再生能源 PPA 框架，不是 IT load |
-| Microsoft / Constellation CCEC | 约 835MW，20 年 PPA，2028 expected online | 2024-09 | 核电重启和 PJM 电力匹配 |
-| Talen / Amazon | 1,920MW nuclear power，full volume by 2032 | 2025-06 | 前表计核电 PPA，支持 AWS Pennsylvania data centers |
-| Meta nuclear portfolio | up to 6.6GW by 2035 | 2026-01 | 新旧核电和 advanced nuclear 混合，2030 后为主 |
-| Google / Kairos | up to 500MW，首个 SMR 目标 2030 | 2024-10 | advanced nuclear 采购框架 |
-| Google / Brookfield hydro | up to 3,000MW，首批 670MW | 2025-07 | hydro PPA framework，偏 24/7 carbon-free energy |
-
-这个表的结论不是「已经签了很多 GW，所以不缺」。它说明 hyperscaler 已经不再相信普通排队能按时满足 AI 需求。它们开始自己锁电、锁地、锁设备，甚至让芯片公司参与 land、power and shell。
-
-需求侧的量级也在往上修。IEA 估计全球数据中心用电从 2024 年 415TWh 到 2030 年 945TWh，增量 530TWh，折成平均负载约 60GW facility power。LBNL 的美国口径更近：美国数据中心用电从 2023 年 176TWh 到 2028 年 325-580TWh，增量折成平均负载约 17-46GW。
-
-McKinsey 用 capacity 口径看，全球 data center demand 从当前约 60GW 到 2030 年 171-219GW，高情景到 298GW。也就是说，2030 年前需要新增 111-159GW demand-serving capacity。JLL 的 2026 outlook 预计 2026-2030 年新增近 100GW，全球 capacity 到 2030 年约 200GW。
-
-口径不同，不能硬减。但用作压力测试足够了：需求中枢比供给计划高，项目延期后缺口会更大。McKinsey 还给出更具体的美国判断：就算已知计划按时交付，美国 2030 年仍可能有超过 15GW data center supply deficit。
-
-现在的缺口不是钱的问题。缺口来自复制链。
-
-- D1 电力接入：primary market 的 grid connection 平均等待超过四年，先进经济体新输电线通常要四到八年。
-- D2 并网和本地 firm power：PPA 可以签得很快，RTO/ISO 排队、substation 和 transmission 不能同速复制。
-- D3 设备：transformer、switchgear、cable、UPS、busway、gas turbine 都进入长交期，IEA 说 transformer 和 cable 等关键组件等待时间三年内翻倍。
-- D3 施工：GW campus 要土建、高压、低压、消防、冷却和 commissioning 同时排产。PORTS-Pike 自己给出的数字是六年 buildout、35,000 construction jobs。
-- D3/D4 冷却和水：100kW 以上 rack density 会把 CDU、冷板、泵、管路、噪音、水权和社区许可拉进关键路径。
-- D3/D4 集群：GPU 之外还有 HBM、advanced packaging、network switch、optics、storage、PCB、系统集成和运维良率。
-
-公开 GW 越多，越要看它卡在哪一层。签约是 D0/D1 证据，投运才是 D3/D4 通过验收。
-
-## Agent 把需求时钟拨快
-
-未来五年，需求侧最大的变量会从更多人聊天，转向 Agent 把一次请求拆成很多步。
-
-普通 chat 是一来一回。Agent workflow 是规划、检索、调用工具、读文件、写代码、跑测试、修错、再验证。用户只提交一次任务，后面可能有几十次模型调用。再加上 multimodal input、browser control、long context、parallel worker，token traffic 会比用户数更快。
-
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 620" role="img" aria-labelledby="agent-gap-title" style="max-width: 100%; height: auto; margin: 10px 0 18px;">
-  <title id="agent-gap-title">Agent 需求时钟与数据中心复制时钟</title>
-  <defs>
-    <linearGradient id="agent-gap-fill" x1="0" x2="0" y1="0" y2="1">
-      <stop offset="0%" stop-color="#f97316" stop-opacity="0.30"/>
-      <stop offset="100%" stop-color="#f97316" stop-opacity="0.06"/>
-    </linearGradient>
   </defs>
   <rect x="1" y="1" width="978" height="618" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
   <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
-    <text x="42" y="46" font-size="24" font-weight="700" fill="#111827">需求时钟像软件，供给时钟像工业工程</text>
-    <text x="42" y="76" font-size="14" fill="#64748b">2030 锚点：McKinsey demand 171-219GW，高情景 298GW；JLL supply 约 200GW before delivery discount</text>
+    <text x="36" y="45" font-size="24" font-weight="700" fill="#111827">AI 数据中心不是一栋楼，是五条 deadline 同时收敛</text>
+    <text x="36" y="75" font-size="14" fill="#64748b">D0 需求签约以后，D1-D4 的复制链开始消耗电网、设备、施工、rack fabric 和运维能力</text>
 
-    <line x1="92" y1="430" x2="900" y2="430" stroke="#94a3b8" stroke-width="1.5"/>
-    <line x1="92" y1="120" x2="92" y2="430" stroke="#94a3b8" stroke-width="1.5"/>
-    <g stroke="#e2e8f0" stroke-width="1">
-      <line x1="92" y1="368" x2="900" y2="368"/>
-      <line x1="92" y1="306" x2="900" y2="306"/>
-      <line x1="92" y1="244" x2="900" y2="244"/>
-      <line x1="92" y1="182" x2="900" y2="182"/>
-      <line x1="92" y1="120" x2="900" y2="120"/>
-    </g>
-    <g fill="#64748b" font-size="12">
-      <text x="72" y="434" text-anchor="end">0</text>
-      <text x="72" y="372" text-anchor="end">50</text>
-      <text x="72" y="310" text-anchor="end">100</text>
-      <text x="72" y="248" text-anchor="end">150</text>
-      <text x="72" y="186" text-anchor="end">200</text>
-      <text x="72" y="124" text-anchor="end">250GW</text>
+    <g font-size="12" fill="#64748b" text-anchor="middle">
+      <line x1="170" y1="108" x2="900" y2="108" stroke="#94a3b8" stroke-width="1.5"/>
+      <text x="170" y="98">2026</text>
+      <text x="316" y="98">2027</text>
+      <text x="462" y="98">2028</text>
+      <text x="608" y="98">2029</text>
+      <text x="754" y="98">2030</text>
+      <text x="900" y="98">2032</text>
+      <circle cx="170" cy="108" r="4" fill="#64748b"/>
+      <circle cx="316" cy="108" r="4" fill="#64748b"/>
+      <circle cx="462" cy="108" r="4" fill="#64748b"/>
+      <circle cx="608" cy="108" r="4" fill="#64748b"/>
+      <circle cx="754" cy="108" r="4" fill="#64748b"/>
+      <circle cx="900" cy="108" r="4" fill="#64748b"/>
     </g>
 
-    <path d="M130 356 L285 326 L440 291 L595 247 L750 195 L870 165" fill="none" stroke="#ef4444" stroke-width="4"/>
-    <path d="M130 390 L285 362 L440 330 L595 296 L750 259 L870 244" fill="none" stroke="#2563eb" stroke-width="4"/>
-    <path d="M130 402 L285 378 L440 352 L595 326 L750 304 L870 286" fill="none" stroke="#64748b" stroke-width="3" stroke-dasharray="8 7"/>
-    <path d="M595 247 L750 195 L870 165 L870 286 L750 304 L595 326 Z" fill="url(#agent-gap-fill)"/>
-
-    <g fill="#111827" font-size="13" text-anchor="middle">
-      <text x="130" y="456">2025</text>
-      <text x="285" y="456">2026</text>
-      <text x="440" y="456">2027</text>
-      <text x="595" y="456">2028</text>
-      <text x="750" y="456">2029</text>
-      <text x="870" y="456">2030</text>
+    <g font-size="13" font-weight="700">
+      <text x="38" y="154" fill="#0f172a">D0 需求承诺</text>
+      <text x="38" y="232" fill="#0f172a">D1 电力路径</text>
+      <text x="38" y="312" fill="#0f172a">D1 机房路径</text>
+      <text x="38" y="392" fill="#0f172a">D1 集群路径</text>
+      <text x="38" y="472" fill="#0f172a">D1 收入路径</text>
     </g>
 
-    <g font-size="13">
-      <rect x="590" y="104" width="304" height="114" rx="7" fill="#ffffff" stroke="#cbd5e1"/>
-      <line x1="612" y1="132" x2="658" y2="132" stroke="#ef4444" stroke-width="4"/>
-      <text x="672" y="137" fill="#334155">Agent upside demand</text>
-      <line x1="612" y1="160" x2="658" y2="160" stroke="#2563eb" stroke-width="4"/>
-      <text x="672" y="165" fill="#334155">planned data center supply</text>
-      <line x1="612" y1="188" x2="658" y2="188" stroke="#64748b" stroke-width="3" stroke-dasharray="8 7"/>
-      <text x="672" y="193" fill="#334155">usable AI-ready supply after discount</text>
+    <g font-size="13" text-anchor="middle">
+      <rect x="150" y="128" width="184" height="44" rx="7" fill="#111827"/>
+      <text x="242" y="155" fill="#ffffff" font-weight="700">20 年租约 / IT-GW 需求</text>
+      <rect x="360" y="128" width="170" height="44" rx="7" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+      <text x="445" y="155" fill="#075985" font-weight="700">first 800MW 目标</text>
+      <rect x="680" y="128" width="214" height="44" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+      <text x="787" y="155" fill="#166534" font-weight="700">完整 campus 分阶段交付</text>
+
+      <rect x="146" y="204" width="138" height="54" rx="7" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+      <text x="215" y="228" fill="#991b1b" font-weight="700">site + utility</text>
+      <text x="215" y="248" fill="#991b1b" font-size="12">AEP / RTO / local</text>
+      <rect x="312" y="204" width="138" height="54" rx="7" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+      <text x="381" y="228" fill="#9a3412" font-weight="700">generation</text>
+      <text x="381" y="248" fill="#9a3412" font-size="12">gas / nuclear / PPA</text>
+      <rect x="478" y="204" width="160" height="54" rx="7" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+      <text x="558" y="228" fill="#991b1b" font-weight="700">substation + grid</text>
+      <text x="558" y="248" fill="#991b1b" font-size="12">transformer / switchgear</text>
+      <rect x="666" y="204" width="158" height="54" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+      <text x="745" y="228" fill="#92400e" font-weight="700">firm power rights</text>
+      <text x="745" y="248" fill="#92400e" font-size="12">curtailment / dispatch</text>
+
+      <rect x="146" y="284" width="138" height="54" rx="7" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+      <text x="215" y="308" fill="#075985" font-weight="700">land + shell</text>
+      <text x="215" y="328" fill="#075985" font-size="12">developer / EPC</text>
+      <rect x="312" y="284" width="150" height="54" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+      <text x="387" y="308" fill="#92400e" font-weight="700">MEP modules</text>
+      <text x="387" y="328" fill="#92400e" font-size="12">UPS / busway / fire</text>
+      <rect x="490" y="284" width="150" height="54" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+      <text x="565" y="308" fill="#92400e" font-weight="700">cooling loop</text>
+      <text x="565" y="328" fill="#92400e" font-size="12">CDU / pump / service</text>
+      <rect x="668" y="284" width="150" height="54" rx="7" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+      <text x="743" y="308" fill="#5b21b6" font-weight="700">commissioning</text>
+      <text x="743" y="328" fill="#5b21b6" font-size="12">acceptance MW/month</text>
+
+      <rect x="146" y="364" width="138" height="54" rx="7" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+      <text x="215" y="388" fill="#5b21b6" font-weight="700">GPU / ASIC</text>
+      <text x="215" y="408" fill="#5b21b6" font-size="12">NVIDIA / AMD / custom</text>
+      <rect x="312" y="364" width="138" height="54" rx="7" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+      <text x="381" y="388" fill="#5b21b6" font-weight="700">HBM / package</text>
+      <text x="381" y="408" fill="#5b21b6" font-size="12">TSMC / memory</text>
+      <rect x="478" y="364" width="138" height="54" rx="7" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
+      <text x="547" y="388" fill="#155e75" font-weight="700">network</text>
+      <text x="547" y="408" fill="#155e75" font-size="12">switch / optics / DCI</text>
+      <rect x="644" y="364" width="160" height="54" rx="7" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
+      <text x="724" y="388" fill="#155e75" font-weight="700">rack integration</text>
+      <text x="724" y="408" fill="#155e75" font-size="12">firmware / burn-in / yield</text>
+
+      <rect x="146" y="444" width="138" height="54" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+      <text x="215" y="468" fill="#166534" font-weight="700">scheduler</text>
+      <text x="215" y="488" fill="#166534" font-size="12">routing / batching</text>
+      <rect x="312" y="444" width="150" height="54" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+      <text x="387" y="468" fill="#166534" font-weight="700">SRE capacity</text>
+      <text x="387" y="488" fill="#166534" font-size="12">failure / repair / spares</text>
+      <rect x="490" y="444" width="150" height="54" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+      <text x="565" y="468" fill="#166534" font-weight="700">paid workload</text>
+      <text x="565" y="488" fill="#166534" font-size="12">tasks / MW / margin</text>
+      <rect x="668" y="444" width="150" height="54" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+      <text x="743" y="468" fill="#166534" font-weight="700">token capacity</text>
+      <text x="743" y="488" fill="#166534" font-size="12">usable and billable</text>
     </g>
 
-    <g>
-      <rect x="64" y="492" width="400" height="86" rx="7" fill="#ffffff" stroke="#cbd5e1"/>
-      <text x="86" y="520" font-size="15" font-weight="700" fill="#111827">需求到达时间</text>
-      <text x="86" y="546" font-size="13" fill="#334155">用户 × 任务 × 步骤 × token × retry</text>
-      <text x="86" y="568" font-size="13" fill="#334155">产品更新可以在周/月尺度扩散</text>
-      <rect x="516" y="492" width="400" height="86" rx="7" fill="#ffffff" stroke="#cbd5e1"/>
-      <text x="538" y="520" font-size="15" font-weight="700" fill="#111827">供给复制时间</text>
-      <text x="538" y="546" font-size="13" fill="#334155">并网、变压器、施工、冷却、rack、调试</text>
-      <text x="538" y="568" font-size="13" fill="#334155">多数字段按年排队和验收</text>
+    <g stroke="#64748b" stroke-width="1.7" fill="none" marker-end="url(#cal-arrow)">
+      <path d="M334 150 H360"/>
+      <path d="M530 150 C590 150 620 150 680 150"/>
+      <path d="M284 231 H312"/>
+      <path d="M450 231 H478"/>
+      <path d="M638 231 H666"/>
+      <path d="M284 311 H312"/>
+      <path d="M462 311 H490"/>
+      <path d="M640 311 H668"/>
+      <path d="M284 391 H312"/>
+      <path d="M450 391 H478"/>
+      <path d="M616 391 H644"/>
+      <path d="M284 471 H312"/>
+      <path d="M462 471 H490"/>
+      <path d="M640 471 H668"/>
+    </g>
+
+    <g font-size="12">
+      <rect x="38" y="542" width="880" height="44" rx="7" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="60" y="568" fill="#334155">供应链玩家：hyperscaler / neocloud / developer / utility / RTO / generation / electrical OEM / EPC / cooling / chip / memory / network / SRE</text>
     </g>
   </g>
 </svg>
 
-McKinsey 的 workload chart 给了一个可用锚点：全球数据中心 demand 从 2025 年 82.3GW 到 2030 年 219GW；AI inference 从 20.9GW 到 93.3GW，CAGR 约 35%；AI training 从 23.1GW 到 62.2GW，CAGR 约 22%。这不是 Agent forecast，但它说明推理会成为主负载。
+最容易被低估的环节在结尾：commissioning 和 revenue path。市场习惯数订单和 backlog，可 AI 数据中心的供给要到 commissioning 之后才成立。一个 1GW campus，如果验收爬坡率从每月 100MW 掉到 60MW，新闻稿里的 GW 没变，客户能用的算力已经变了。
 
-OpenAI 的流量也给了方向。2025 年 10 月 Sam Altman 说 ChatGPT 已有 800 million weekly active users，API 每分钟处理超过 6 billion tokens。用户数已经是消费级软件速度。Agent 会把乘数从「用户数」换成「任务步骤数」。
+这也是 supply chain 要往下拆的原因。OpenAI、Microsoft、Amazon、Google、Meta、Oracle、CoreWeave 和 Crusoe 是需求和资本；Equinix、Digital Realty、QTS、CyrusOne 和开发商是 facility；Constellation、Talen、Vistra、Brookfield、AEP、Dominion、PJM、ERCOT 是电力路径；Schneider、Eaton、ABB、Siemens、Vertiv、GE Vernova、Quanta、DPR、Turner 是机电和工程；NVIDIA、AMD、Broadcom、Marvell、Arista、Cisco、TSMC、SK hynix、Micron、Samsung 是集群。
 
-我会用三个情景看未来五年。这里的缺口是全球可用 AI-ready compute 的 rough order，不是精确 forecast。
+这串名字本身不产生 alpha。alpha 来自交付率变化。谁能把 1GW headline capacity 变成 850MW 可验收、可运行、可收费的 capacity，谁才真的在数据中心里收费。
 
-| 情景 | 需求路径 | 供给路径 | 2030 左右缺口 |
+## 公开 GW 要先交折扣税
+
+现在公开的 GW 已经多到容易让人产生错觉。OpenAI 的 Stargate 已经讲到 nearly 7GW planned capacity 和 10GW commitment；PORTS-Pike 单独给出约 8 IT-GW；Microsoft、Meta、Amazon、Google 也都有 500MW、835MW、1.9GW、3GW、6.6GW、10.5GW 这类能源数字。
+
+这些数字放在同一个 Excel 里，会把人带偏。IT-GW、planned AI capacity、PPA、发电装机、核电开发权和 clean attributes 不是一种东西。它们都能证明 hyperscaler 在抢能源，但只有一部分会在 2030 年前变成可用 AI compute。
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 650" role="img" aria-labelledby="gw-haircut-title" style="max-width: 100%; height: auto; margin: 10px 0 18px;">
+  <title id="gw-haircut-title">公开 GW 的折扣税</title>
+  <defs>
+    <marker id="haircut-arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M1,1 L9,5 L1,9 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect x="1" y="1" width="978" height="648" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="38" y="46" font-size="24" font-weight="700" fill="#111827">Headline GW 不是答案，折扣率才是判断</text>
+    <text x="38" y="76" font-size="14" fill="#64748b">2030 之前，口径越远离 IT load，变成可用 AI compute 的折扣越重</text>
+
+    <g text-anchor="middle" font-size="13">
+      <rect x="54" y="116" width="206" height="74" rx="7" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+      <text x="157" y="145" fill="#991b1b" font-weight="700">IT-GW lease</text>
+      <text x="157" y="166" fill="#991b1b">按项目日历折扣</text>
+      <text x="157" y="184" fill="#991b1b" font-size="12">2030 可用：60-75%</text>
+
+      <rect x="54" y="220" width="206" height="74" rx="7" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+      <text x="157" y="249" fill="#1e3a8a" font-weight="700">planned AI capacity</text>
+      <text x="157" y="270" fill="#1e3a8a">按选址和电力折扣</text>
+      <text x="157" y="288" fill="#1e3a8a" font-size="12">2030 可用：35-55%</text>
+
+      <rect x="54" y="324" width="206" height="74" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+      <text x="157" y="353" fill="#92400e" font-weight="700">PPA / generation GW</text>
+      <text x="157" y="374" fill="#92400e">按本地供电折扣</text>
+      <text x="157" y="392" fill="#92400e" font-size="12">2030 可用：5-20%</text>
+
+      <rect x="54" y="428" width="206" height="74" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+      <text x="157" y="457" fill="#166534" font-weight="700">future nuclear / CFE</text>
+      <text x="157" y="478" fill="#166534">按投运年份折扣</text>
+      <text x="157" y="496" fill="#166534" font-size="12">2030 前多为期权</text>
+    </g>
+
+    <g stroke="#64748b" stroke-width="1.8" fill="none" marker-end="url(#haircut-arrow)">
+      <path d="M260 153 C318 153 318 190 370 190"/>
+      <path d="M260 257 C318 257 318 230 370 230"/>
+      <path d="M260 361 C318 361 318 272 370 272"/>
+      <path d="M260 465 C318 465 318 318 370 318"/>
+    </g>
+
+    <g text-anchor="middle">
+      <path d="M370 150 H860 L800 245 H430 Z" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+      <text x="615" y="190" font-size="20" fill="#0f172a" font-weight="700">commissioned IT load</text>
+      <text x="615" y="216" font-size="13" fill="#334155">PUE / 冗余 / 变电 / MEP / cooling / commissioning</text>
+
+      <path d="M430 275 H800 L746 370 H484 Z" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+      <text x="615" y="316" font-size="20" fill="#0f172a" font-weight="700">AI-ready cluster</text>
+      <text x="615" y="342" font-size="13" fill="#334155">GPU / HBM / network / storage / rack integration</text>
+
+      <path d="M484 400 H746 L706 490 H524 Z" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+      <text x="615" y="438" font-size="20" fill="#0f172a" font-weight="700">billable token capacity</text>
+      <text x="615" y="464" font-size="13" fill="#334155">scheduler utilization / failure rate / paid task conversion</text>
+    </g>
+
+    <g font-size="14">
+      <rect x="92" y="552" width="796" height="54" rx="7" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="116" y="584" fill="#0f172a" font-weight="700">Effective GW = headline GW × unit fit × delivery yield × AI-ready fit-out × utilization yield</text>
+    </g>
+  </g>
+</svg>
+
+我的粗略折扣是这样打的：直接 IT-GW lease，按项目日历给 60-75% 的 2030 可用率；planned AI capacity，给 35-55%；PPA 和 generation GW，只能给 5-20%，因为它们解决能源来源，不保证本地 IT load；2030 以后的 nuclear 和 CFE 框架，更多是远期期权。
+
+这个折扣不是精确 forecast，是防止自己被 headline GW 骗。OpenAI / Oracle 的 4.5GW additional 和 Stargate nearly 7GW planned，属于 AI capacity 在途；PORTS-Pike 的 8 IT-GW 是最硬的口径，但完整交付到 2032；Microsoft / Brookfield 的 10.5GW renewable、Meta up to 6.6GW nuclear、Google / Brookfield up to 3GW hydro，更适合放在能源供给和碳匹配那一栏，不能直接加到 AI IT load 里。
+
+需求侧的锚点更冷冰冰。IEA 估计全球数据中心用电从 2024 年 415TWh 到 2030 年 945TWh，增量约等于 60GW 平均 facility load。McKinsey 用 capacity 口径看，全球 data center demand 到 2030 年是 171-219GW，高情景 298GW。JLL 预计 2025-2030 新增 97GW，2030 全球 capacity 约 200GW。
+
+这几个口径不能硬减，但可以做压力测试。假设 JLL 的 97GW 新供给按 80% commissioned、80% AI-ready 通过验收，有效新增只有 62GW 左右。McKinsey 的需求增量是 111-159GW。中间很难只差 10GW，更像几十 GW 到接近 100GW 的量级。模型效率和 workload mix 会把这个数字往回拉，Agent adoption 会把它再往上推。
+
+所以我会把 2030 缺口分成三档：
+
+| 情景 | 需求假设 | 供给折扣 | 2030 左右的可用算力缺口 |
 | --- | --- | --- | --- |
-| 受阻 | Agent 可靠性进步慢，推理按基础预测走 | JLL 近 100GW 新供给大体交付，AI-ready 打折较小 | 15-25GW |
-| 基准 | coding、office、customer support 的 Agent 渗透，推理 30%+ CAGR | 规划供给上线，但 10-20% 被并网、设备、fit-out 和利用率折掉 | 30-50GW |
-| Agent upside | tool call、长上下文、后台任务和并行 worker 快速增长 | 供给加速，但电网和设备仍按工业节奏复制 | 70GW+ |
+| 慢 Agent | Agent 可靠性爬坡慢，推理增长接近基础预测 | 项目延期少，AI-ready fit-out 顺利 | 20-35GW |
+| 基准 | coding、office、customer support 进入 Agent workflow | 15-25% capacity 卡在并网、设备、验收和利用率 | 40-70GW |
+| Agent upside | 长上下文、tool call、后台任务和并行 worker 成为默认用法 | 供给加速，但转换率被局部电网和 commissioning 锁住 | 80GW+ |
 
-这些数字的逻辑很朴素。McKinsey 的 2030 demand midpoint 是 219GW，JLL 的 2030 capacity 约 200GW，表面差 19GW。扣掉 delay risk、AI-ready fit-out、局部电网限制、GPU/rack 到货和实际利用率，基准缺口会落到几十 GW。若需求接近 McKinsey 高情景 298GW，而供给仍在 200GW 附近，缺口会迅速上到 70GW 以上。
+这个缺口本身也不是 alpha。市场已经知道数据中心缺电，已经知道 GEV、VRT、ETN、主流 memory 和 CPO 很重要。更有价值的推演，是看这些已知红灯在扩产时会压出什么新约束。
 
-真正危险的地方在复制时间。
+## 下一盏黄灯藏在交付率里
+
+红灯一旦被 price in，就不该再当结论。它应该变成起点。
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 660" role="img" aria-labelledby="next-yellow-title" style="max-width: 100%; height: auto; margin: 10px 0 18px;">
+  <title id="next-yellow-title">已知红灯会把下一盏黄灯点在哪里</title>
+  <rect x="1" y="1" width="978" height="658" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="38" y="46" font-size="24" font-weight="700" fill="#111827">不要追已经亮起的红灯，追它正在制造的黄灯</text>
+    <text x="38" y="76" font-size="14" fill="#64748b">已知 bottleneck 的扩产，会消耗下一层更具体、更难讲故事的产能</text>
+
+    <g font-size="13" font-weight="700" text-anchor="middle">
+      <rect x="36" y="108" width="190" height="38" rx="7" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+      <text x="131" y="133" fill="#991b1b">已知红灯</text>
+      <rect x="262" y="108" width="190" height="38" rx="7" fill="#e2e8f0" stroke="#94a3b8"/>
+      <text x="357" y="133" fill="#334155">市场已经会讲</text>
+      <rect x="488" y="108" width="220" height="38" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+      <text x="598" y="133" fill="#92400e">下一层推测</text>
+      <rect x="744" y="108" width="190" height="38" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+      <text x="839" y="133" fill="#166534">观察指标</text>
+    </g>
+
+    <g font-size="12" text-anchor="middle">
+      <rect x="36" y="170" width="190" height="58" rx="7" fill="#fff1f2" stroke="#fecdd3"/>
+      <text x="131" y="196" fill="#991b1b" font-weight="700">transformer / switchgear</text>
+      <text x="131" y="216" fill="#991b1b">电力设备紧张</text>
+      <rect x="262" y="170" width="190" height="58" rx="7" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="357" y="196" fill="#334155">订单 backlog</text>
+      <text x="357" y="216" fill="#334155">lead time 拉长</text>
+      <rect x="488" y="170" width="220" height="58" rx="7" fill="#fffbeb" stroke="#f59e0b"/>
+      <text x="598" y="196" fill="#92400e" font-weight="700">modular electrical room</text>
+      <text x="598" y="216" fill="#92400e">保护整定 / FAT / commissioning</text>
+      <rect x="744" y="170" width="190" height="58" rx="7" fill="#f0fdf4" stroke="#86efac"/>
+      <text x="839" y="196" fill="#166534" font-weight="700">accepted MW/month</text>
+      <text x="839" y="216" fill="#166534">验收爬坡率</text>
+
+      <rect x="36" y="252" width="190" height="58" rx="7" fill="#fff1f2" stroke="#fecdd3"/>
+      <text x="131" y="278" fill="#991b1b" font-weight="700">firm power / turbines</text>
+      <text x="131" y="298" fill="#991b1b">电源和并网紧张</text>
+      <rect x="262" y="252" width="190" height="58" rx="7" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="357" y="278" fill="#334155">燃机 / PPA / nuclear</text>
+      <text x="357" y="298" fill="#334155">大家都在抢 slot</text>
+      <rect x="488" y="252" width="220" height="58" rx="7" fill="#fffbeb" stroke="#f59e0b"/>
+      <text x="598" y="278" fill="#92400e" font-weight="700">load flexibility</text>
+      <text x="598" y="298" fill="#92400e">可中断负荷 / BESS / 控制系统</text>
+      <rect x="744" y="252" width="190" height="58" rx="7" fill="#f0fdf4" stroke="#86efac"/>
+      <text x="839" y="278" fill="#166534" font-weight="700">curtailment terms</text>
+      <text x="839" y="298" fill="#166534">电价与调度权</text>
+
+      <rect x="36" y="334" width="190" height="58" rx="7" fill="#fff1f2" stroke="#fecdd3"/>
+      <text x="131" y="360" fill="#991b1b" font-weight="700">liquid cooling hardware</text>
+      <text x="131" y="380" fill="#991b1b">CDU / 冷板放量</text>
+      <rect x="262" y="334" width="190" height="58" rx="7" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="357" y="360" fill="#334155">rack density</text>
+      <text x="357" y="380" fill="#334155">100kW+ 机柜</text>
+      <rect x="488" y="334" width="220" height="58" rx="7" fill="#fffbeb" stroke="#f59e0b"/>
+      <text x="598" y="360" fill="#92400e" font-weight="700">cooling service loop</text>
+      <text x="598" y="380" fill="#92400e">水质 / 备件 / leak / 维修窗口</text>
+      <rect x="744" y="334" width="190" height="58" rx="7" fill="#f0fdf4" stroke="#86efac"/>
+      <text x="839" y="360" fill="#166534" font-weight="700">uptime per MW</text>
+      <text x="839" y="380" fill="#166534">停机小时和备件周转</text>
+
+      <rect x="36" y="416" width="190" height="58" rx="7" fill="#fff1f2" stroke="#fecdd3"/>
+      <text x="131" y="442" fill="#991b1b" font-weight="700">GPU / HBM / CPO</text>
+      <text x="131" y="462" fill="#991b1b">硬件叙事拥挤</text>
+      <rect x="262" y="416" width="190" height="58" rx="7" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="357" y="442" fill="#334155">算力和带宽</text>
+      <text x="357" y="462" fill="#334155">市场最会定价</text>
+      <rect x="488" y="416" width="220" height="58" rx="7" fill="#fffbeb" stroke="#f59e0b"/>
+      <text x="598" y="442" fill="#92400e" font-weight="700">rack acceptance yield</text>
+      <text x="598" y="462" fill="#92400e">burn-in / firmware / fabric stability</text>
+      <rect x="744" y="416" width="190" height="58" rx="7" fill="#f0fdf4" stroke="#86efac"/>
+      <text x="839" y="442" fill="#166534" font-weight="700">usable cluster ratio</text>
+      <text x="839" y="462" fill="#166534">可调度 GPU 占比</text>
+
+      <rect x="36" y="498" width="190" height="58" rx="7" fill="#fff1f2" stroke="#fecdd3"/>
+      <text x="131" y="524" fill="#991b1b" font-weight="700">Agent inference</text>
+      <text x="131" y="544" fill="#991b1b">推理负载变大</text>
+      <rect x="262" y="498" width="190" height="58" rx="7" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="357" y="524" fill="#334155">training campus</text>
+      <text x="357" y="544" fill="#334155">远郊 GW 叙事</text>
+      <rect x="488" y="498" width="220" height="58" rx="7" fill="#fffbeb" stroke="#f59e0b"/>
+      <text x="598" y="524" fill="#92400e" font-weight="700">metro powered capacity</text>
+      <text x="598" y="544" fill="#92400e">DCI / peering / stateful routing</text>
+      <rect x="744" y="498" width="190" height="58" rx="7" fill="#f0fdf4" stroke="#86efac"/>
+      <text x="839" y="524" fill="#166534" font-weight="700">latency-bound MW</text>
+      <text x="839" y="544" fill="#166534">每城可用推理容量</text>
+
+      <rect x="36" y="580" width="190" height="50" rx="7" fill="#fff1f2" stroke="#fecdd3"/>
+      <text x="131" y="610" fill="#991b1b" font-weight="700">capex 已经锁定</text>
+      <rect x="262" y="580" width="190" height="50" rx="7" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="357" y="610" fill="#334155">GW 变成折旧</text>
+      <rect x="488" y="580" width="220" height="50" rx="7" fill="#fffbeb" stroke="#f59e0b"/>
+      <text x="598" y="610" fill="#92400e" font-weight="700">tasks per MW</text>
+      <rect x="744" y="580" width="190" height="50" rx="7" fill="#f0fdf4" stroke="#86efac"/>
+      <text x="839" y="610" fill="#166534" font-weight="700">gross margin / capex intensity</text>
+    </g>
+  </g>
+</svg>
+
+我会优先看五个还没有被讲烂的方向。
+
+第一是交付率。市场喜欢看 backlog，但 2027-2030 更关键的指标会变成 accepted MW per month。电力设备、MEP module、cooling loop、rack fabric 都到现场以后，还要通过 FAT、SAT、保护整定、load bank、联调和 burn-in。真正拖慢现场的，往往是一堆长交期设备变成可验收容量的组织能力。
+
+第二是负荷可调度性。AI 数据中心拿到电以后，utility 会关心另一个问题：这 500MW 或 1GW 能不能中断，能不能错峰，能不能配 BESS、fuel cell、燃气机组和控制系统。训练负载可以挪时间，Agent inference 的低延迟请求不一定能挪。谁能把 workload 和 power market 接起来，谁就能提高同一份电力合同的有效价值。
+
+第三是 cooling service loop。液冷硬件已经热了，下一步要看服务和可靠性。100kW 以上机柜真正运行起来以后，水质、过滤、腐蚀、接头、备件、leak detection、维修窗口和现场工程师会决定 uptime。硬件卖出去是第一笔钱，减少每 MW 停机小时才是第二笔钱。
+
+第四是 metro inference capacity。训练可以去 Ohio、Texas、Arizona，Agent 推理未必都能去。coding agent、office agent、客服 agent、browser agent 的交互延迟会把一部分需求拉回用户和企业附近。远郊 GW campus 解决训练和后台任务，城市周边的小块 firm power、DCI、peering、stateful routing 可能变成新的稀缺。
+
+第五是 tasks per MW。等 GW 上了资产负债表，问题会从“有没有电”变成“每瓦能产生多少付费任务”。Agent 的 retry rate、tool call 成功率、上下文缓存、模型路由、batching、故障恢复，都会影响同一座数据中心的收入密度。这个 bottleneck 很可能不在机房里，而在调度和产品经济里。
+
+这五个方向的共同点是：它们不太适合放进路演标题。它们更像 boring middle layer。可数据中心的下一段 alpha 大概率就藏在这里，因为已知红灯扩产时，先吃紧的通常是更具体的交付环节。
+
+## Agent 把缺口推向推理地点
+
+普通 chat 是一来一回。Agent workflow 是规划、检索、调用工具、读文件、写代码、跑测试、修错、再验证。用户只提交一次任务，背后可能有几十次模型调用。再加上 multimodal input、browser control、long context、parallel worker，token traffic 会比用户数更快。
+
+McKinsey 的 workload chart 给了一个锚点：全球数据中心 demand 从 2025 年 82.3GW 到 2030 年 219GW；AI inference 从 20.9GW 到 93.3GW，CAGR 约 35%；AI training 从 23.1GW 到 62.2GW，CAGR 约 22%。OpenAI 的流量也已经到消费级软件速度：2025 年 10 月，Sam Altman 说 ChatGPT 有 800 million weekly active users，API 每分钟处理超过 6 billion tokens。
+
+Agent 会把需求拆成两类。后台任务更像训练：可以排队、可以批处理、可以去远处便宜电力。交互任务更像交易系统：对延迟、状态、网络路径和局部容量敏感。未来五年的缺口不会平均摊在全球数据中心上，它会在不同 workload 之间分裂。
 
 ```text
 Agent demand = active users
@@ -408,37 +386,19 @@ Usable compute = commissioned IT load
                × paid workload conversion
 ```
 
-模型效率一定会提高。量化、蒸馏、MoE、speculative decoding、KV cache 和更好的 scheduler 都会降低单 token 成本。但 AI 很可能出现 Jevons paradox：token 变便宜，大家会让模型做更多以前舍不得做的事。便宜推理不必然降低总算力需求，它可能释放更大的任务空间。
+模型效率会继续提高。量化、蒸馏、MoE、speculative decoding、KV cache 和更好的 scheduler 都会降低单 token 成本。可 AI 很可能遇到 Jevons paradox：token 变便宜以后，大家会把更多原来不舍得自动化的工作交给模型。效率提升抵消一部分需求，产品扩散又把需求放大。
 
-所以未来五年，AI 的稀缺会从「有没有芯片」迁移到「哪里能把芯片接上电、冷下来、跑满，并且赚回电费和折旧」。
+到 2030 年，如果缺口落在 20-35GW，已知红灯还能解释大部分走势；如果落在 40-70GW，交付率、负荷可调度性和 cooling service loop 会开始重新定价；如果 Agent upside 把缺口推到 80GW 以上，metro inference capacity 和 tasks per MW 会变成更重要的约束。那时市场会从“谁有 GW”，转向“哪一类 GW 能跑哪一类任务”。
 
-## 红灯会往哪里迁移
+## 别把红灯当终点
 
-用 Bottleneck Migration Network 看，投资研究应该少给 AI 上游贴标签，多追红灯。
+回到 Ohio。8 IT-GW 当然大，但真正值得盯的是第一批 800MW 到 2028 年，中间每个月有多少 MW 通过验收；2028 到 2032 年，多少 headline GW 变成 AI-ready cluster；cluster 上线以后，多少又变成可收费任务。
 
-第一盏红灯在 power-ready land 和 interconnection certainty。能在 24-36 个月交付 300MW 以上 firm power 的地块，会比普通土地贵得多。这里真正有价值的资产，是并网确定性、utility 协调能力和地方政府执行力。
+已知 bottleneck 还能赚钱，不代表还有最多 alpha。GPU、HBM、燃机、电力设备、液冷这些红灯已经把故事讲得很满。接下来更好的问题是：它们为了扩产，会把订单、风险和毛利推给谁？哪一层能把 press-release GW 变成 paid-token GW？
 
-第二盏红灯在电力设备和高压工程。变压器、switchgear、UPS、busway、cable、substation、transmission contractor 更接近当前物理卡点。GPU 迭代很快，变电站不会靠发布会迭代。
+数据中心这门生意，可能会压缩成一个指标：**每一瓦被签下来的电，有多少变成客户愿意付钱的任务。**
 
-第三盏红灯在 EPC、劳动力和 commissioning。GW campus 的难点是把电气、冷却、消防、结构、网络和 rack deployment 放进一个 schedule。任何一个工种排不上，最后都不会变成 token。
-
-第四盏红灯在 high-density cooling 和低压配电。rack density 上去以后，CDU、冷板、泵、接头、leak detection、busbar、power shelf 会变成小而硬的约束。
-
-第五盏红灯再回到 AI hardware。GPU、ASIC、HBM、CoWoS、networking、optics、storage 仍然是利润池大头。只是市场已经很会给这些资产定价，超额收益更可能来自「哪一个 D3/D4 节点重新变窄」，而不是重复说 AI 需要芯片。
-
-第六盏红灯在运营和利用率。等项目陆续上线，同一瓦电能产生多少成功任务，会变成新的收费站。这个能力在财报里不一定叫调度，它会表现为 gross margin、capex intensity、lease obligation 和 free cash flow。
-
-这里有一个反直觉点：数据中心供应链越往上游，越不容易讲 AI 故事；越不讲 AI 故事，越可能是真卡点。一个 transformer 厂商不会每天说 AGI，但没有它，AGI rack 接不上电。一个 transmission contractor 不会出现在模型发布会，但没有它，10GW 只是 PDF 上的数字。
-
-## 下一道收费站
-
-Ohio 的 8 IT-GW 项目最有价值的地方，不是数字大。它把 AI 基础设施的真实形态摊开了：模型公司、芯片公司、能源公司、utility、DOE、地方社区和资本市场被塞进同一个项目。
-
-软件扩容只要 deploy。AI 扩容要拿地、拿电、拿设备、拿许可、拿工人、拿融资，再把上百万张加速卡放进一个不会过热、不会断电、不会闲置的系统。
-
-过去两年，市场问的是谁有 GPU。接下来几年，更好的问题是：谁能把 GW 变成 token，谁只能把 GW 写进新闻稿？
-
-下一道收费站，不在最热的叙事里，在最慢的交付链条里。
+下一盏灯，大概率不在最会讲 AI 故事的地方。
 
 ## 资料
 
