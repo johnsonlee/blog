@@ -204,15 +204,15 @@ Production Handoff 只交付 physical capacity。它能变成多少 billable wor
 
 验算只接受能核对的东西：合同、项目进度、交期、产能、qualification、订单和财务数据。哪一个 node 已经 price in，哪一个 supplier 拥有定价权并能转化成毛利和现金流，什么事实出现时 thesis 必须作废，都要写清楚。
 
-## 读完以后就该会自己拆了
+## 下一个 100GW
 
-刚进来时，分不清 transformer、switchgear 和 PDU，也没关系。流程、结构和架构交给图，文字沿着交付链把钱追下去。
+PORTS-Pike 不会是最后一个大数字。8GW、10GW、100GW 还会继续出现，新闻稿也会继续把 planned、energized、RFS 和 production capacity 放在一起。
 
-一张“AI 数据中心受益股名单”几个月就会过期，瓶颈也会迁移。更该留下的是一套可以反复使用的拆法：看到项目新闻，知道 capacity 处在哪个状态；看到供应商订单，知道需求来自系统哪一层；看到一个 node 变红，能继续追下一个 node；看到一只已经涨了几倍的“AI 基建龙头”，还记得问一句市场到底 price in 了多少。
+“AI 数据中心受益股名单”几个月就会过期，瓶颈也会迁移。把项目状态、系统位置和 Replication Gap 对上，订单、定价权和现金流才会一层层露出来。
 
-下一次再看到 8GW、10GW 或 100GW，先别急着填进 Excel。
+所以下一个大数字出现时，先别急着填进 Excel。
 
-先问一句：它走到哪一步了？
+它走到哪一步了？
 
 ## 资料
 

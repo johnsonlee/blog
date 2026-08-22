@@ -205,15 +205,15 @@ Production Handoff delivers physical capacity. How much billable workload it bec
 
 The test accepts only evidence that can be checked: contracts, project milestones, lead times, capacity, qualification, orders, and financial data. Which node is already priced in? Which supplier can turn pricing power into margins and cash flow? What evidence would invalidate the thesis?
 
-## You should be able to do the breakdown yourself
+## The next 100 GW
 
-Not knowing the difference between a transformer, switchgear, and a PDU at the start is fine. Diagrams carry the process, structure, and architecture; the text follows money along the delivery chain.
+PORTS-Pike will not be the last large number. Eight gigawatts, 10 GW, and 100 GW will keep appearing, and press releases will keep placing planned, energized, RFS, and production capacity side by side.
 
-A list of "AI data center beneficiaries" can expire in a few months, and bottlenecks migrate. The reusable skill matters more: seeing a project announcement and knowing which state the capacity occupies; seeing supplier orders and locating demand in the correct system layer; seeing one node turn red and following pressure into the next node; seeing an "AI infrastructure leader" that has already multiplied and still asking how much the market has priced in.
+A list of "AI data center beneficiaries" can expire in a few months, and bottlenecks migrate. Match project state, system position, and Replication Gap, and the orders, pricing power, and cash flow begin to reveal themselves.
 
-The next time 8 GW, 10 GW, or 100 GW appears, do not put it straight into Excel.
+When the next large number appears, do not put it straight into Excel.
 
-Ask one question first: how far has it progressed?
+How far has it progressed?
 
 ## Sources
 
