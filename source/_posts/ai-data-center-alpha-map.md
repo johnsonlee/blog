@@ -1,5 +1,5 @@
 ---
-title: OpenAI 30GW：数据中心交付缺口
+title: OpenAI 30GW：数据中心从签约到可用算力
 date: 2026-08-22 14:55:27
 categories:
   - Investing
