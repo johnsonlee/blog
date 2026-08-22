@@ -51,71 +51,71 @@ The order of this chain cannot be reversed. First follow the project delivery li
 
 ## Deliver the facility first
 
-Every gate on the horizontal axis changes what 1 GW means. First sort the project states, then follow grid access, power distribution, thermal management, and commissioning until the facility becomes deliverable.
+The first question is immediate: when OpenAI announces 1 GW, 5 GW, or 8 GW, how far has that capacity actually progressed? Contracted, under construction, energized, and deliverable sit behind very different gates.
 
 ### 01 AI Data Center Project Delivery
 
-The first essay connects Site Selection, permitting, design, procurement, construction, energization, commissioning, and handover on one timeline. It will separate announced, planned, under-construction, energized, and RFS capacity, then identify the delivery constraint behind each gate.
+Announced, planned, under-construction, energized, and RFS capacity belong on one timeline. The current state, the next gate, and the slowest gate determine when supply can be counted. Once those states are separated, the phrase "has power" becomes suspicious. What exactly has the project secured?
 
 ### 02 AI Data Center Grid Interconnection
 
-The second follows the utility side through generation resources, transmission, interconnection, substations, and site energization. A claim that a data center "has power" may mean a signed PPA, an interconnection agreement, or electricity physically reaching the site. Those states can be years apart. The research question is whether energy, capacity, grid connection, or long-lead equipment controls the schedule.
+A claim that a data center "has power" may mean a signed PPA, an interconnection agreement, or electricity physically reaching the site. Those states can be years apart. Even after power reaches the site, why can the GPUs still not turn on?
 
 ### 03 AI Data Center Power Distribution Architecture
 
-Once power reaches the site, it still passes through transformers, switchgear, UPS systems, PDUs, busways, power shelves, and VRMs before entering a GPU. The third essay will break down that behind-the-meter power train and look for equipment and power semiconductors combining long lead times, low substitutability, and rising value per megawatt.
+Power still has to pass through transformers, switchgear, UPS systems, PDUs, busways, power shelves, and VRMs before entering a GPU. One missing segment leaves the GPU waiting. Once electricity enters the GPU, almost every watt becomes heat. Where does that heat go?
 
 ### 04 AI Data Center Thermal Management
 
-The fourth follows heat out of the GPU through cold plates, manifolds, CDUs, secondary loops, chillers, cooling towers, and dry coolers. Liquid-cooling penetration is only the first layer. The investment question is which segment of the heat-rejection loop replicates slowest.
+The cold plate is only the start of the thermal path. Manifolds, CDUs, secondary loops, chillers, cooling towers, and dry coolers still have to reject the heat. One missing segment prevents power capacity from becoming sustained compute. If power and thermal systems work and the equipment is installed, why can the facility still not be handed over?
 
 ### 05 AI Data Center Commissioning and RFS Handoff
 
-The fifth examines the gap between Mechanical Completion and RFS: startup, functional testing, L1-L5 commissioning, Integrated Systems Testing, and operational handover. Uptime Institute treats commissioning as a validation process spanning design, construction, and the transition to operations because successful component startup does not prove that a mission-critical system will survive failure scenarios. [Uptime Institute](https://journal.uptimeinstitute.com/improve-project-success-through-mission-critical-commissioning/) explains why "built" and "deliverable" are different states.
+Mechanical Completion and RFS are separated by startup, functional testing, L1-L5 commissioning, Integrated Systems Testing, and operational handover. A successful component startup does not prove that the mission-critical system will survive failure scenarios. [Uptime Institute](https://journal.uptimeinstitute.com/improve-project-success-through-mission-critical-commissioning/) explains why "built" and "deliverable" are different states. The facility is finally deliverable and the GPUs are inside. Why can available compute still be zero?
 
 ## Turn the facility into production compute
 
-RFS is the endpoint for the facility, but only the starting point for AI infrastructure. The second part follows hardware after it enters the building and becomes a healthy cluster ready for workloads.
+RFS delivers only the facility. GPU shipments, server shipments, rack deliveries, and cluster capacity then appear on the same progress sheet. Are they really the same number?
 
 ### 06 AI Data Center Rack-Scale Architecture
 
-The sixth essay moves from GPUs, CPUs, HBM, NICs, and DPUs to compute trays, NVLink switch trays, power shelves, and racks. GPU shipments, server shipments, rack deliveries, and usable cluster capacity are not interchangeable supply metrics. The replication unit belongs at the system's handoff boundary.
+GPUs, CPUs, HBM, NICs, and DPUs first become compute trays, which join NVLink switch trays and power shelves inside a rack. Component arrivals do not equal rack deliveries, and rack deliveries do not equal cluster capacity. Once the racks are ready, how do tens of thousands of GPUs become one system?
 
 ### 07 AI Data Center Supercluster Networking
 
-The seventh studies how tens of thousands of GPUs become one system. NVLink handles scale-up; InfiniBand or Ethernet handles scale-out; switch ASICs, optical transceivers, lasers, fiber, connectors, and testing sit underneath both. The topology determines where expanding GPU supply sends the next wave of pressure.
+NVLink handles scale-up; InfiniBand or Ethernet handles scale-out; switch ASICs, optical transceivers, lasers, fiber, connectors, and testing determine whether the fabric passes validation. Once the network works, where do training data, model weights, checkpoints, and KV cache live?
 
 ### 08 AI Data Center Storage Architecture
 
-The eighth follows training data, model weights, checkpoints, local NVMe, parallel file systems, object storage, and KV cache. Terabytes and bit shipments describe capacity. Firmware, controllers, reliability, and hyperscaler qualification determine whether enterprise storage can actually enter service.
+Training data, model weights, checkpoints, local NVMe, parallel file systems, object storage, and KV cache occupy different storage tiers. NAND bits describe capacity; controllers, firmware, reliability, and qualification determine whether enterprise storage can enter service. With compute, networking, and storage installed, who proves the cluster can carry production workloads?
 
 ### 09 AI Data Center Cluster Validation and Handoff
 
-The ninth fills the segment most often skipped between RFS and Production Handoff: IT deployment, firmware, provisioning, burn-in, fabric validation, cluster acceptance, and healthy handoff. At this stage, installed GPUs give way to deployment velocity, cluster yield, and healthy capacity.
+IT deployment, firmware, provisioning, burn-in, fabric validation, cluster acceptance, and healthy handoff all happen after RFS. Installed GPU counts give way to deployment velocity, cluster yield, and healthy capacity before Production Handoff. Once the healthy cluster exists, does one megawatt produce the same compute under Training and Inference?
 
 ## Compute still has to cross software and networks
 
-A healthy cluster does not automatically produce revenue. Workload scheduling, request expansion, and the path back to the user continue to change the economic output of the same megawatt.
+Production Handoff delivers physical capacity. How much billable workload it becomes first depends on what job the cluster receives.
 
 ### 10 Training and Inference Data Center Architectures
 
-The tenth compares Training and Inference across throughput, latency, batching, utilization, power density, cluster size, and geography. A bottleneck on the training side does not necessarily migrate unchanged into inference. Combining the two can produce the wrong infrastructure forecast.
+Training pursues large-scale synchronous computation. Inference trades off latency, batching, utilization, and geography. The throughput and economics of the same megawatt therefore diverge. When Inference carries Agent workloads, how much computation can one user request unfold into?
 
 ### 11 AI Data Center Agent Workload Model
 
-The eleventh expands one Agent request into routing, prefill, decode, retrieval, tool calls, retries, cache behavior, and scheduling. Tokens, requests, tasks, and tasks per megawatt answer different questions. As Agents spread, we need to reconsider which unit best connects customer demand to physical capacity consumption.
+One user request expands into multiple model invocations plus routing, prefill, decode, retrieval, tool calls, retries, cache behavior, and scheduling. Tokens, requests, tasks, and tasks per megawatt answer different questions. Once the task finishes inside the cluster, how does the result reach the user within its latency SLO?
 
 ### 12 AI Data Center Compute Delivery Networks
 
-The twelfth leaves the data center and examines DCI, backbone networks, transit, peering, CDNs, edge infrastructure, and metro inference. Once internal compute capacity expands, the constraint may migrate to inter-data-center fiber, connectivity, latency, and geographic distribution.
+DCI, backbone networks, transit, peering, CDNs, edge infrastructure, and metro inference determine whether the result meets its latency SLO. As internal compute expands, the constraint may migrate outside the data center. By this point, the original 8 GW is no longer one capacity number. Which segment is slowest, and who captures the orders and cash flow?
 
 ## PORTS-Pike tests the full map
 
 ### 13 PORTS-Pike AI Data Center Alpha Case Study
 
-The thirteenth essay returns to the opening numbers and turns PORTS-Pike's 8 IT-GW into a Bottleneck Migration Network. We will verify each project's delivery stage, expand every gigawatt into power, thermal, compute, network, and storage requirements, then compare the critical path, Replication Gap, substitution options, value capture, and market expectations.
+Put every PORTS-Pike project back into its delivery stage, expand each gigawatt into power, thermal, compute, network, and storage requirements, then trace the next bottleneck candidate through the Bottleneck Migration Network.
 
-The case study does not introduce another framework. It tests whether the map built by the first twelve essays works. Which conclusions are supported by contracts, project milestones, and supply-chain data, and which merely repeat a large demand number? Which node is already priced in? Which adjacent node is moving from green to yellow? What evidence would invalidate the thesis?
+The test accepts only evidence that can be checked: contracts, project milestones, lead times, capacity, qualification, orders, and financial data. Which node is already priced in? Which supplier can turn pricing power into margins and cash flow? What evidence would invalidate the thesis?
 
 ## You should be able to do the breakdown yourself
 

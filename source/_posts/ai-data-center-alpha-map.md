@@ -134,71 +134,71 @@ RFS 后面还有 IT deployment、burn-in、fabric validation、cluster acceptanc
 
 ## 先看数据中心建到了哪里
 
-横轴上的每一道 gate 都会改变 1GW 的含义。先把项目状态排清楚，再依次追电网、供配电、散热和 commissioning，直到机房具备交付条件。
+地图画完，最先冒出来的问题很直接：OpenAI 又宣布 1GW、5GW、8GW，这些数字到底已经走到哪一步？刚签约、已经开工、完成送电和机房可以交付，中间还隔着多少道 gate？
 
-1. 《AI 数据中心交付：从 Site Selection 到 RFS》
+1. 《AI 数据中心项目交付：从选址到设施交付》
 
-   Announced、planned、under construction、energized 和 RFS 要放回同一条时间轴。项目现在在哪、下一道 gate 是什么、哪一道最慢，后面的供给判断才有起点。
+   Announced、planned、under construction、energized 和 RFS 要放回同一条时间轴。项目现在在哪、下一道 gate 是什么、哪一道最慢，决定这笔供给什么时候才能算。状态排清以后，新闻里那句“已经拿到电”反而变得可疑：拿到的究竟是什么？
 
 2. 《AI 数据中心电网接入：第一道闸门》
 
-   项目状态理清以后，第一个 binding constraint 通常来自 utility side。PPA、interconnection agreement 和 site energization 经常被一句“已经拿到电”混在一起，它们差的可能不是一个流程，而是几年。
+   PPA、interconnection agreement 和 site energization 经常被一句“已经拿到电”混在一起。它可能只是一份购电协议，也可能是拿到并网资格，直到电真正送到 site，前后可能差几年。可电已经到了 site，GPU 为什么还不能上电？
 
 3. 《AI 数据中心供配电：从变电站到 GPU》
 
-   Site energization 只把电送到并网点。进入 GPU 之前，电力还要穿过 transformer、switchgear、UPS、PDU、busway、power shelf 和 VRM。这里要找的是 lead time 最长、替代最难、又能捕获增量价值的那一段。
+   Site energization 只把电送到并网点。进入 GPU 之前，电力还要穿过 transformer、switchgear、UPS、PDU、busway、power shelf 和 VRM。任何一段没交付，GPU 都只能等。等电终于进了 GPU，几乎每一瓦又都变成了热。这些热量往哪里走？
 
 4. 《AI 数据中心散热：液冷之后》
 
-   GPU 消耗的电力最终几乎全部转化为热。Cold plate 只是 thermal path 的起点，后面还有 CDU、secondary loop、chiller、cooling tower 和 dry cooler。液冷放量以后，哪一环会先成为 binding constraint？
+   Cold plate 只是 thermal path 的起点，后面还有 CDU、secondary loop、chiller、cooling tower 和 dry cooler。任何一段排不出去，前面的供电能力都无法变成持续算力。电能送，热能排，设备也装完了，为什么机房还不能交？
 
 5. 《AI 数据中心 Commissioning：建完不等于交付》
 
-   电能送，热能排，仍然不能直接交付。Mechanical Completion 到 RFS 之间还隔着 startup、functional testing、L1-L5 commissioning 和 Integrated Systems Testing。单台设备启动成功，不代表整套 mission-critical system 能通过故障场景验证。[Uptime Institute](https://journal.uptimeinstitute.com/improve-project-success-through-mission-critical-commissioning/)解释了这道验证为什么不能省。
+   Mechanical Completion 到 RFS 之间还隔着 startup、functional testing、L1-L5 commissioning 和 Integrated Systems Testing。单台设备启动成功，不代表整套 mission-critical system 能通过故障场景验证。[Uptime Institute](https://journal.uptimeinstitute.com/improve-project-success-through-mission-critical-commissioning/)解释了这道验证为什么不能省。机房终于可以交了，GPU 也搬进去了，可用算力为什么还可能是零？
 
 ## 再看 GPU 什么时候变成算力
 
-RFS 只说明机房可以交。接下来轮到 IT equipment：GPU 搬进去以后，还要从零件、机架、网络和存储一步步变成 healthy cluster。
+RFS 只交付 facility。GPU shipment、server shipment、rack delivery 和 cluster capacity 随后出现在同一份进度表里，它们究竟是不是同一个数字？
 
 6. 《AI 数据中心机架交付：从 GPU 到 Rack》
 
-   第一处断层在 GPU 和 rack 之间。GPU shipment、server shipment、rack delivery 和 cluster capacity 是四个数字。把 GPU、CPU、HBM、NIC、DPU、compute tray、NVLink switch tray 和 power shelf 拼成 rack，交付单位已经变了。
+   GPU、CPU、HBM、NIC 和 DPU 要先组成 compute tray，再和 NVLink switch tray、power shelf 一起装进 rack。零件到货不等于 rack delivery，rack delivery 也不等于 cluster capacity。Rack 拼好了，数万块 GPU 又怎样连成一套系统？
 
 7. 《AI 数据中心万卡集群：网络上限》
 
-   Rack delivery 不等于 cluster capacity。万卡集群也不是把 GPU 数量乘一万：NVLink 负责 scale-up，InfiniBand 或 Ethernet 负责 scale-out，switch ASIC、optical transceiver、laser、fiber、connector 和 testing 决定整张 fabric 能否通过 validation。
+   NVLink 负责 scale-up，InfiniBand 或 Ethernet 负责 scale-out，switch ASIC、optical transceiver、laser、fiber、connector 和 testing 决定整张 fabric 能否通过 validation。网络通了，Training data、model weights、checkpoint 和 KV cache 又放在哪里？
 
 8. 《AI 数据中心存储：从 Checkpoint 到 KV Cache》
 
-   Fabric 通过 validation，workload 仍然需要完整的数据路径。Training data、model weights、checkpoint、local NVMe、parallel file system、object storage 和 KV cache 分布在不同 storage tier。NAND bit 上来了，controller、firmware 和 qualification 仍然可能卡住 enterprise SSD 上线。
+   Training data、model weights、checkpoint、local NVMe、parallel file system、object storage 和 KV cache 分布在不同 storage tier。NAND bit 只回答容量，controller、firmware 和 qualification 决定 enterprise SSD 能不能上线。Compute、network 和 storage 都装好了，谁来证明这套 cluster 可以承载 production workload？
 
-9. 《AI 集群交付：RFS 到 Production Handoff》
+9. 《AI 集群交付：从设施交付到 Production Handoff》
 
-   Compute、network 和 storage 完成部署，最后还要通过系统级验证。IT deployment、firmware、provisioning、burn-in、fabric validation 和 cluster acceptance 全发生在这段。安装了多少 GPU 不再重要，deployment velocity、cluster yield 和 healthy capacity 才重要。
+   IT deployment、firmware、provisioning、burn-in、fabric validation 和 cluster acceptance 全发生在设施交付以后。安装了多少 GPU 不再重要，deployment velocity、cluster yield 和 healthy capacity 才决定 Production Handoff。Healthy cluster 已经有了，同一 MW 跑 Training 和 Inference，产出的还是同一种算力吗？
 
 ## 算力变成收入还差最后一段
 
-Production Handoff 结束，physical capacity 才算交付。它能否转化成 billable workload，还取决于同一 MW 承载的是 Training 还是 Inference，以及 Inference 请求是否会展开成 Agent workload。不同 workload 的吞吐、延迟、利用率和 economics 完全不同，结果还要穿过数据中心之间的网络才能到达用户。
+Production Handoff 只交付 physical capacity。它能变成多少 billable workload，先取决于 cluster 接到什么工作。
 
 10. 《Training vs Inference：两种数据中心》
 
-    先看 cluster 接到什么工作。Training 追求大规模同步计算，Inference 要在 latency、batching、利用率和地理位置之间取舍。把两种 workload 混在一起，基础设施需求会从第一步就算错。
+    Training 追求大规模同步计算，Inference 要在 latency、batching、利用率和地理位置之间取舍。同一 MW 的吞吐、利用率和 economics 因此完全不同。Inference 再承载 Agent workload，一次 user request 又会展开成多少计算？
 
 11. 《Agent 算力账单：从 Token 到 Task》
 
-    Inference 承载 Agent workload 后，一次 user request 会展开成多次 model invocation，以及 routing、prefill、decode、retrieval、tool call、retry、cache 和 scheduling。Token、request、task 与 tasks per MW，哪一个才是连接客户需求和物理容量的单位？
+    一次 user request 会展开成多次 model invocation，以及 routing、prefill、decode、retrieval、tool call、retry、cache 和 scheduling。Token、request、task 与 tasks per MW 回答的是四个不同问题。Task 在 cluster 里执行完了，结果怎样在 latency SLO 内送到用户面前？
 
 12. 《AI 算力交付：从 Cluster 到 User》
 
-    Task 在 cluster 内完成执行，服务仍然没有交付。DCI、backbone、transit、peering、CDN、edge 和 metro inference 决定结果能否满足 latency SLO。内部 compute capacity 扩张以后，binding constraint 可能迁移到数据中心外部。
+    DCI、backbone、transit、peering、CDN、edge 和 metro inference 决定结果能否满足 latency SLO。内部 compute capacity 扩张以后，binding constraint 可能迁移到数据中心外部。走到这里，最初那个 8GW 已经不再是一个容量数字：哪一段最慢，谁又拿走订单和现金流？
 
 ## 拿 PORTS-Pike 的 8GW 做一次验算
 
 13. 《PORTS-Pike：拆开 8GW 数据中心》
 
-    从 site 一直走到 user，8GW 已经从单一容量数字展开成一组交付状态和系统需求。最后把 PORTS-Pike 的每个项目放回 delivery stage，把每一 GW 展开成 power、thermal、compute、network 和 storage，再沿着 Bottleneck Migration Network 追踪下一个 bottleneck candidate。
+    把 PORTS-Pike 的每个项目放回 delivery stage，把每一 GW 展开成 power、thermal、compute、network 和 storage，再沿着 Bottleneck Migration Network 追踪下一个 bottleneck candidate。
 
-这篇 case study 只接受能核对的东西：合同、项目进度、交期、产能、qualification、订单和财务数据。哪一个 node 已经 price in，哪一个 supplier 拥有定价权并能转化成毛利和现金流，什么事实出现时 thesis 必须作废，都要写清楚。
+验算只接受能核对的东西：合同、项目进度、交期、产能、qualification、订单和财务数据。哪一个 node 已经 price in，哪一个 supplier 拥有定价权并能转化成毛利和现金流，什么事实出现时 thesis 必须作废，都要写清楚。
 
 ## 读完以后就该会自己拆了
 
