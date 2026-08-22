@@ -32,9 +32,9 @@ i18n_key: ai-data-center-alpha-map
 
 ![OpenAI 自 2023 年以来的美国数据中心交付状态](/images/openai-stargate-campus-map.svg)
 
-截至 2026 年 8 月 22 日，九座里只有 Abilene 已有 workload 在跑，另外七座已经进入 construction，Camellia 仍在 permitting，尚未开工。PORTS-Pike 由 SB Energy 先行开发，OpenAI 2026 年签入时，开发商已经把项目列为 [In Early Construction](https://sbenergy.com/digital-infrastructure/)。圆的面积按各站公开的最终容量缩放，不代表今天已经 available 的 GW；Abilene 的绿色圆也只说明 campus 已经投入使用，真正完成交付的仍是 42%。
+截至 2026 年 8 月 22 日，九座里只有 Abilene 已有 workload 在跑，另外七座已经进入 construction，[Camellia 仍在 permitting](https://effinghamcounty.org/m/newsflash/home/detail/466)，尚未开工。PORTS-Pike 由 SB Energy 先行开发，OpenAI 2026 年签入时，开发商已经把项目列为 [In Early Construction](https://sbenergy.com/digital-infrastructure/)。圆的面积按各站公开的最终容量缩放，不代表今天已经 available 的 GW；Abilene 的绿色圆也只说明 campus 已经投入使用，真正完成交付的仍是 42%。
 
-各站公开的 GW 口径并不相同：PORTS-Pike 是 IT capacity，Shackelford 是 critical IT load，Doña Ana 和 Camellia 是 power capacity。它们能比较单站 buildout 的量级，不能直接相加。
+各站公开的 GW 口径并不相同。PORTS-Pike 是 IT capacity，[Shackelford 是 critical IT load](https://vantage-dc.com/wp-content/uploads/2025/08/VDC_DataSheet_Frontier.pdf)，[Project Jupiter 是 installed fuel-cell capacity](https://www.oracle.com/news/announcement/oracle-borderplex-and-bloom-energy-to-power-project-jupiter-with-fuel-cell-technology-2026-04-27/)，[Lighthouse 是 campus development](https://blog.vantage-dc.com/2026/03/30/vantage-data-centers-and-partners-host-career-expo-in-port-washington-wisconsin-to-connect-local-talent-with-lighthouse-opportunities/)，Doña Ana 和 Camellia 则是 power capacity。它们能比较单站 buildout 的量级，不能直接相加。
 
 地图回答了这九座 campus 在哪里、建到哪一步，还不能用来计算 OpenAI 已经锁定了多少 GW。
 
@@ -235,37 +235,3 @@ Production Handoff 只交付 physical capacity。它能变成多少 billable wor
 下一次再看到 8GW、10GW 或 100GW，这些数字会展开成 site、power、thermal、compute、network、storage 和 workload。顺着交付链继续往下，订单、定价权和现金流也会一层层露出来。
 
 那个曾经只写着 Data Center 的方框，已经展开成一整条可以追踪的交付链。
-
-## 资料
-
-- [OpenAI plans 30GW of compute by 2030](https://x.com/OpenAINewsroom/status/2046951726683455866)
-- [A business that scales with the value of intelligence](https://openai.com/index/a-business-that-scales-with-the-value-of-intelligence/)
-- [OpenAI memo compares its compute capacity with Anthropic](https://qz.com/openai-investor-memo-compute-advantage-anthropic-041026)
-- [Epoch AI frontier-lab compute model](https://github.com/epoch-research/ai-compute-users)
-- [Anthropic expands Google Cloud TPU capacity](https://www.anthropic.com/news/expanding-our-use-of-google-cloud-tpus-and-services)
-- [Anthropic and Amazon expand collaboration for up to 5GW](https://www.anthropic.com/news/anthropic-amazon-compute)
-- [Anthropic adds more than 300MW from SpaceX](https://www.anthropic.com/news/higher-limits-spacex)
-- [Microsoft, NVIDIA and Anthropic strategic partnerships](https://www.anthropic.com/news/microsoft-nvidia-anthropic-announce-strategic-partnerships)
-- [Anthropic expands Google and Broadcom partnership](https://www.anthropic.com/news/google-broadcom-partnership-compute)
-- [OpenAI and Microsoft extend partnership](https://openai.com/index/openai-and-microsoft-extend-partnership/)
-- [AWS and OpenAI announce multi-year strategic partnership](https://openai.com/index/aws-and-openai-partnership/)
-- [OpenAI partners with Cerebras](https://openai.com/index/cerebras-partnership/)
-- [OpenAI, Oracle, and SoftBank expand Stargate with five new AI data center sites](https://openai.com/index/five-new-stargate-sites/)
-- [Crusoe's flagship 1.2GW AI data center campus in Abilene](https://crusoe.ai/blog/crusoe-2024-impact-report/)
-- [Oracle AI data center construction and delivery status](https://www.oracle.com/data-centers/)
-- [Vantage Frontier campus: 1.4GW of critical IT load](https://vantage-dc.com/wp-content/uploads/2025/08/VDC_DataSheet_Frontier.pdf)
-- [Project Jupiter: up to 2.45GW of installed fuel-cell capacity](https://www.oracle.com/news/announcement/oracle-borderplex-and-bloom-energy-to-power-project-jupiter-with-fuel-cell-technology-2026-04-27/)
-- [Vantage Lighthouse campus: 902MW development](https://blog.vantage-dc.com/2026/03/30/vantage-data-centers-and-partners-host-career-expo-in-port-washington-wisconsin-to-connect-local-talent-with-lighthouse-opportunities/)
-- [SB Energy data center construction status](https://sbenergy.com/digital-infrastructure/)
-- [Effingham County: Project Camellia review and permitting](https://effinghamcounty.org/m/newsflash/home/detail/466)
-- [Expanding Stargate to Michigan](https://openai.com/index/expanding-stargate-to-michigan/)
-- [Building AI infrastructure with the Effingham County community](https://openai.com/index/building-ai-infrastructure-with-the-effingham-county-community/)
-- [OpenAI joins PORTS-Pike project](https://openai.com/index/openai-joins-ports-pike-project/)
-- [U.S. Department of Energy PORTS-Pike fact sheet](https://www.energy.gov/articles/fact-sheet-department-energy-ensuring-affordable-energy-access-ohio-while-powering-future)
-- [NVIDIA DSX reference architecture](https://docs.nvidia.com/dsx/home)
-- [NVIDIA Requirements for AI Clouds](https://docs.nvidia.com/dsx/ncp/nvidia-requirements-for-ai-clouds/home)
-- [Schneider Electric Data Center Projects Commissioning](https://download.schneider-electric.com/files?p_Doc_Ref=SPD_DBOY-6NJNK6_EN)
-- [Uptime Institute Improve Project Success Through Mission Critical Commissioning](https://journal.uptimeinstitute.com/improve-project-success-through-mission-critical-commissioning/)
-- [SemiAnalysis Datacenter Anatomy Part 1: Electrical Systems](https://newsletter.semianalysis.com/p/datacenter-anatomy-part-1-electrical)
-- [Uptime Institute Global Data Center Survey 2025](https://datacenter.uptimeinstitute.com/rs/711-RIA-145/images/2025.Annual.Survey.Report.pdf?version=0)
-- [NVIDIA DSX Facilities Infrastructure Reference Design Overview](https://docs.nvidia.com/dsx/facilities-infra/reference-design-overview)
