@@ -133,7 +133,9 @@ Only after identifying which 1 GW we are looking at can pricing and returns ente
 
 The chain has a fixed order. First follow the project delivery lifecycle from Site Selection through power and thermal delivery, then commissioning, to RFS. Once the facility is deliverable, assemble compute, networking, and storage into a healthy cluster. After Production Handoff, follow workloads and delivery networks until physical capacity becomes billable service. Finally, put the whole chain back into PORTS-Pike's 8 GW and test which Replication Gap lasts longest and which supplier can turn it into revenue and cash flow.
 
-What follows is the series roadmap. Only this preface is live today; each title will become a link when its essay is published.
+The chain does not fit into one essay. Grid interconnection, power distribution, thermal management, cluster networking, storage, and workloads are each deep enough for a proper investigation. Forcing them together would collapse Data Center back into the box we just opened.
+
+The series will therefore move through the chain one layer at a time. The titles below mark the route; links will appear as each essay is published.
 
 ## First ask how far the data center has been built
 

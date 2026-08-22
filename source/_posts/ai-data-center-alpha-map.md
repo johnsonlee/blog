@@ -132,7 +132,9 @@ RFS 后面还有 IT deployment、burn-in、fabric validation、cluster acceptanc
 
 这条链的顺序不能反。先沿项目交付周期从 Site Selection 走到 RFS，把 site、power、thermal 和 commissioning 交出来；机房具备交付条件以后，再把 compute、network 和 storage 拼成 healthy cluster；走过 Production Handoff，再追 workload 和 delivery network，直到 physical capacity 变成 billable service。最后把整条链放回 PORTS-Pike 的 8GW 验算：哪一段 Replication Gap 最长，谁能把它变成收入和现金流。
 
-下面是系列目录。当前只有这篇序，后续文章发布后，标题会补上链接。
+可这条链也塞不进一篇文章。电网接入、供配电、散热、集群网络、存储和 workload，任何一层单独拎出来，都足够好好拆一遍。硬挤在一起，只会把刚打开的 Data Center 重新压回一个方框。
+
+所以接下来沿着这条链一层层拆。下面这些标题先把路径标出来，文章发布到哪里，链接就补到哪里。
 
 ## 先看数据中心建到了哪里
 
