@@ -34,7 +34,7 @@ i18n_key: ai-data-center-alpha-map
 
 截至 2026 年 8 月 22 日，九座里只有 Abilene 已有 workload 在跑，另外七座已经进入 construction，Camellia 仍在 permitting，尚未开工。圆的面积按各站公开的最终容量缩放，不代表今天已经 available 的 GW；Abilene 的绿色圆也只说明 campus 已经投入使用，真正完成交付的仍是 42%。
 
-Lordstown 只和 Milam County 一起披露了合计 1.5GW，OpenAI 没拆单站容量，图上也不替它倒算。各站的 GW 口径同样不能混用：PORTS-Pike 是 IT capacity，Shackelford 是 critical IT load，Doña Ana 和 Camellia 是 power capacity。它们能比较单站 buildout 的量级，不能直接相加。
+各站公开的 GW 口径并不相同：PORTS-Pike 是 IT capacity，Shackelford 是 critical IT load，Doña Ana 和 Camellia 是 power capacity。它们能比较单站 buildout 的量级，不能直接相加。
 
 地图回答了这九座 campus 在哪里、建到哪一步，还不能用来计算 OpenAI 已经锁定了多少 GW。
 

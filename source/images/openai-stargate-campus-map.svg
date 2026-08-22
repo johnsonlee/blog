@@ -73,11 +73,7 @@
     <text class="capacity" x="631.1" y="190.3" style="font-size:13.0px">902</text>
     <text class="unit" x="631.1" y="201.6" style="font-size:7.8px">MW</text>
   </g>
-  <g>
-    <circle class="site building" cx="753.4" cy="228.1" r="14.0"/>
-    <text class="capacity" x="753.4" y="226.3" style="font-size:15.0px">?</text>
-    <text class="unit" x="753.4" y="237.6" style="font-size:7.2px">GW</text>
-  </g>
+  <path class="site building" d="M753.4 216.1c-7.2 0-13 5.8-13 13 0 9.4 13 20.2 13 20.2s13-10.8 13-20.2c0-7.2-5.8-13-13-13zm0 18.2a5.2 5.2 0 1 1 0-10.4 5.2 5.2 0 0 1 0 10.4z" fill-rule="evenodd"/>
   <g text-anchor="middle">
     <text class="name" x="724" y="350">PORTS-Pike · OH</text>
     <text class="meta" x="724" y="362">2026 签约</text>
@@ -119,8 +115,7 @@
     <circle cx="0" cy="-6" r="10" fill="#047857"/><text class="legend" x="20" y="0">已投入使用</text>
     <circle cx="150" cy="-6" r="10" fill="#b45309"/><text class="legend" x="170" y="0">建设中</text>
     <circle cx="270" cy="-6" r="10" fill="#2563eb"/><text class="legend" x="290" y="0">已签约，未开工</text>
-    <circle cx="470" cy="-6" r="10" fill="#b45309"/><text x="470" y="-1" fill="#fff" font-size="13" font-weight="800" text-anchor="middle">?</text><text class="legend" x="490" y="0">单站 GW 未披露</text>
-    <circle cx="700" cy="-6" r="10" fill="#94a3b8"/><text class="legend" x="720" y="0">圆面积 ∝ 最终容量</text>
+    <circle cx="470" cy="-6" r="10" fill="#94a3b8"/><text class="legend" x="490" y="0">圆面积 ∝ 最终容量</text>
     <text class="asof" x="1305" y="0">状态截至 2026-08-22</text>
   </g>
 </svg>
