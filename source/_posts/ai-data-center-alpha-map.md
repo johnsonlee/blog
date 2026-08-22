@@ -80,8 +80,6 @@ PORTS-Pike 的公告没有写 GPU 数量，也没有写 FLOPS，只给了一个 
 
 放回 OpenAI 的算力版图，8GW 约等于 2025 年全部可用算力的 4.2 倍，也相当于 2030 年 30GW 目标的 27%。单个 campus 吃掉超过四分之一的长期目标，当然大。
 
-![PORTS-Pike 交付时间](/images/openai-compute-capacity.svg)
-
 可这 8GW 不会一起上线。[首批 800MW，也就是 0.8GW，预计 2028 年 available](https://openai.com/index/openai-joins-ports-pike-project/)，整个 buildout 要持续六年，直到 2032 年。OpenAI 今天也不会为 8GW 全额付款，completed capacity 具备交付条件以后，才开始支付 lease 费用。
 
 所以 8GW 同时有三个位置：它是 PORTS-Pike 的最终规划容量，是 2030 年目标里可能兑现的一部分，也是 2032 年才有机会完成的 buildout。把它直接记进今天的 available compute 没有依据；即使放到 2028 年的首批交付节点，也会把 800MW 高估成 8GW。
