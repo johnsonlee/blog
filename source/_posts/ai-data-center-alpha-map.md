@@ -142,19 +142,19 @@ RFS 后面还有 IT deployment、burn-in、fabric validation、cluster acceptanc
 
 可坐标系仍然是抽象的。电力、散热、计算、网络和存储已经各有位置，Data Center 本身仍然没有形状。
 
-要让它有形状，先站到 campus 外面。一座 GW 级园区不是一栋塞满 GPU 的大楼，而是园区变电站、重复建设的数据机房、中央冷却设施、道路、管线和网络出口。电力从高压电网进入，多栋机房共享 campus 级基础设施，再把数据送出园区。
+要让它有形状，先看 campus 层。一座 GW 级园区不是一栋塞满 GPU 的大楼，而是园区变电站、重复建设的数据机房、中央冷却设施、道路、管线和网络出口。电力从高压电网进入，多栋机房共享 campus 级基础设施，再把数据送出园区。
 
 ![AI 数据中心园区全貌](/images/ai-data-center-anatomy.svg)
 
-沿着电力走进其中一栋。电压从园区变电站一路降下来，经过 switchgear、ATS、UPS 和 busway 到达 rack；rack 产生的热沿 TCS、CDU 和 FWS 回到室外。两条 physical path 都完成 integrated commissioning，Facility 才能走到 RFS。
+到了 facility 层，电压从园区变电站一路降下来，经过 switchgear、ATS、UPS 和 busway 到达 rack；rack 产生的热沿 TCS、CDU 和 FWS 回到室外。两条 physical path 都完成 integrated commissioning，Facility 才能走到 RFS。
 
 ![数据中心 Facility 剖面](/images/ai-data-center-facility-anatomy.svg)
 
-RFS 仍然只交付 facility。镜头继续推到 rack，GPU、CPU、HBM、NIC 和 DPU 先组成 compute tray，再通过 scale-up 与 scale-out fabric 连成 cluster，接上 storage，通过 validation 与 cluster acceptance，最后才越过 Production Handoff。Training、Inference 和 Agent workload 从这里开始，结果再穿过 backbone 与 edge 到达用户。
+RFS 仍然只交付 facility。接下来才是 rack 里的 IT deployment：GPU、CPU、HBM、NIC 和 DPU 先组成 compute tray，再通过 scale-up 与 scale-out fabric 连成 cluster，接上 storage，通过 validation 与 cluster acceptance，最后才越过 Production Handoff。Training、Inference 和 Agent workload 从这里开始，结果再穿过 backbone 与 edge 到达用户。
 
 ![AI Cluster 剖面](/images/ai-data-center-cluster-anatomy.svg)
 
-图上的编号会跟着镜头一路往下，后面的目录也沿着同一条路径展开。顺序不能反：先沿项目交付周期从 Site Selection 走到 RFS，把 site、power、thermal 和 commissioning 交出来；机房具备交付条件以后，再把 compute、network 和 storage 拼成 healthy cluster；走过 Production Handoff，再追 workload 和 delivery network，直到 physical capacity 变成 billable service。最后把整条链放回 PORTS-Pike 的 8GW 验算：哪一段 Replication Gap 最长，谁能把它变成收入和现金流。
+三张图按 campus、facility 和 cluster 逐层展开，后面的目录也沿着同一条交付路径。顺序不能反：先沿项目交付周期从 Site Selection 走到 RFS，把 site、power、thermal 和 commissioning 交出来；机房具备交付条件以后，再把 compute、network 和 storage 拼成 healthy cluster；走过 Production Handoff，再追 workload 和 delivery network，直到 physical capacity 变成 billable service。最后把整条链放回 PORTS-Pike 的 8GW 验算：哪一段 Replication Gap 最长，谁能把它变成收入和现金流。
 
 可这条链也塞不进一篇文章。电网接入、供配电、散热、集群网络、存储和 workload，任何一层单独拎出来，都足够好好拆一遍。硬挤在一起，只会把刚打开的 Data Center 重新压回一个方框。
 

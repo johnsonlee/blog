@@ -143,19 +143,19 @@ Only after identifying which 1 GW we are looking at can pricing and returns ente
 
 The coordinate system is still abstract. Power, thermal, compute, networking, and storage now have positions, but Data Center itself still has no shape.
 
-To give it shape, start outside the campus. A gigawatt-scale site is not one large building filled with GPUs. It is a campus substation, repeated data center buildings, central cooling plants, roads, utility corridors, and network exits. Power enters from the high-voltage grid, several buildings share campus infrastructure, and data leaves through the network edge.
+To give it shape, start at the campus layer. A gigawatt-scale site is not one large building filled with GPUs. It is a campus substation, repeated data center buildings, central cooling plants, roads, utility corridors, and network exits. Power enters from the high-voltage grid, several buildings share campus infrastructure, and data leaves through the network edge.
 
 ![AI data center campus overview](/images/ai-data-center-anatomy.en.svg)
 
-Follow the power into one building. Voltage steps down from the campus substation and passes through switchgear, ATS, UPS systems, and busways before reaching the racks. Rack heat returns outdoors through TCS, CDUs, and FWS. Both physical paths must pass integrated commissioning before the facility reaches RFS.
+Inside each facility, voltage steps down from the campus substation and passes through switchgear, ATS, UPS systems, and busways before reaching the racks. Rack heat returns outdoors through TCS, CDUs, and FWS. Both physical paths must pass integrated commissioning before the facility reaches RFS.
 
 ![Data center facility cutaway](/images/ai-data-center-facility-anatomy.en.svg)
 
-RFS still delivers only the facility. Push the camera into a rack: GPUs, CPUs, HBM, NICs, and DPUs first form compute trays, then connect through scale-up and scale-out fabrics into a cluster, attach to storage, pass validation and cluster acceptance, and finally cross Production Handoff. Training, Inference, and Agent workloads start here; results then cross backbone and edge networks to reach users.
+RFS still delivers only the facility. IT deployment at the rack level comes next: GPUs, CPUs, HBM, NICs, and DPUs first form compute trays, then connect through scale-up and scale-out fabrics into a cluster, attach to storage, pass validation and cluster acceptance, and finally cross Production Handoff. Training, Inference, and Agent workloads start here; results then cross backbone and edge networks to reach users.
 
 ![AI cluster cutaway](/images/ai-data-center-cluster-anatomy.en.svg)
 
-The numbers follow the camera through each layer, and the outline below follows the same route. The order is fixed: first move through the project delivery lifecycle from Site Selection through power, thermal, and commissioning to RFS. Once the facility is deliverable, assemble compute, networking, and storage into a healthy cluster. After Production Handoff, follow workloads and delivery networks until physical capacity becomes billable service. Finally, put the whole chain back into PORTS-Pike's 8 GW and test which Replication Gap lasts longest and which supplier can turn it into revenue and cash flow.
+The three diagrams show the campus, facility, and cluster layers of one delivery chain. The outline below follows the same route. The order is fixed: first move through the project delivery lifecycle from Site Selection through power, thermal, and commissioning to RFS. Once the facility is deliverable, assemble compute, networking, and storage into a healthy cluster. After Production Handoff, follow workloads and delivery networks until physical capacity becomes billable service. Finally, put the whole chain back into PORTS-Pike's 8 GW and test which Replication Gap lasts longest and which supplier can turn it into revenue and cash flow.
 
 The chain does not fit into one essay. Grid interconnection, power distribution, thermal management, cluster networking, storage, and workloads are each deep enough for a proper investigation. Forcing them together would collapse Data Center back into the box we just opened.
 
