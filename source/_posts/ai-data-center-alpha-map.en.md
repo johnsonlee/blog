@@ -103,6 +103,18 @@ The grid, transformers, switchgear, UPS systems, liquid cooling, GPUs, HBM, swit
 
 The previous essay stopped at Data Center. This series opens that box.
 
+## AI Data Centers change the unit of delivery
+
+The buildings look similar from the outside. Workloads push their internal systems in different directions.
+
+Most enterprise and cloud workloads can be divided into relatively independent requests, VMs, or containers. When one server goes offline, the system usually loses a fraction of capacity. Power, cooling, and networking act as shared infrastructure around rows of servers that can operate independently.
+
+Large-model training and increasingly large inference workloads can put thousands or tens of thousands of GPUs into one job. Scale-up fabrics create a larger compute domain inside the rack; scale-out fabrics synchronize racks. A bandwidth shortfall, packet-loss problem, or unhealthy node can slow the entire job. The network becomes a compute backplane, storage must continuously feed training data and absorb checkpoints, and power and thermal systems must sustain rows of high-density racks at the same time.
+
+Density writes this change into the physical plant. In the [Uptime Institute Global Data Center Survey 2025](https://datacenter.uptimeinstitute.com/rs/711-RIA-145/images/2025.Annual.Survey.Report.pdf?version=0), the most common deployed rack density remains 4–5 kW. The [NVIDIA DSX reference design](https://docs.nvidia.com/dsx/facilities-infra/reference-design-overview) places AI cabinet TDP at 198–330 kW. The first number describes the installed base; the second describes a leading-edge rack design, so they cannot be divided into a growth rate. The distance between those orders of magnitude is still enough to redraw power distribution, thermal management, and commissioning.
+
+The delivery unit in an AI Data Center therefore expands from an independently operable server to a fully validated healthy cluster. Installing the GPUs completes only one intermediate step.
+
 ## Installed GPUs can still yield zero compute
 
 Data center supply follows AND logic: every subsystem has to be available at the same time.
@@ -258,3 +270,5 @@ The box that once said only Data Center has opened into an entire delivery chain
 - [Schneider Electric Data Center Projects Commissioning](https://download.schneider-electric.com/files?p_Doc_Ref=SPD_DBOY-6NJNK6_EN)
 - [Uptime Institute Improve Project Success Through Mission Critical Commissioning](https://journal.uptimeinstitute.com/improve-project-success-through-mission-critical-commissioning/)
 - [SemiAnalysis Datacenter Anatomy Part 1: Electrical Systems](https://newsletter.semianalysis.com/p/datacenter-anatomy-part-1-electrical)
+- [Uptime Institute Global Data Center Survey 2025](https://datacenter.uptimeinstitute.com/rs/711-RIA-145/images/2025.Annual.Survey.Report.pdf?version=0)
+- [NVIDIA DSX Facilities Infrastructure Reference Design Overview](https://docs.nvidia.com/dsx/facilities-infra/reference-design-overview)

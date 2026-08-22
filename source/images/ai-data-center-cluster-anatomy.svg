@@ -4,7 +4,7 @@
   <defs>
     <marker id="d" markerWidth="15" markerHeight="15" refX="12" refY="7.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L15 7.5L0 15Z" fill="#267a70"/></marker>
     <style>
-      .bg{fill:#f6f7f8}.panel{fill:#fff;stroke:#a2adb6;stroke-width:2}.rack{fill:#354a5b;stroke:#243542;stroke-width:2}.slot{fill:#9eb0be}.fabric{fill:#e4eef6;stroke:#356b92;stroke-width:2}.storage{fill:#eee7f5;stroke:#755594;stroke-width:2}.workload{fill:#f4eff8;stroke:#84679c;stroke-width:2}.gate{fill:#e7f2ea;stroke:#4d8a5e;stroke-width:2}
+      .bg{fill:#f6f7f8}.panel{fill:#fff;stroke:#a2adb6;stroke-width:2}.rack{fill:#354a5b;stroke:#243542;stroke-width:2}.slot{fill:#9eb0be}.fabric{fill:#e4eef6;stroke:#356b92;stroke-width:2}.storage{fill:#eee7f5;stroke:#755594;stroke-width:2}.workload{fill:#f4eff8;stroke:#84679c;stroke-width:2}.delivery{fill:#e5f1ef;stroke:#267a70;stroke-width:2}.gate{fill:#e7f2ea;stroke:#4d8a5e;stroke-width:2}
       .ink{fill:#202a33}.muted{fill:#65717c}.label{font:700 23px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.minor{font:600 18px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.tiny{font:600 15px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.micro{font:600 13px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.center{text-anchor:middle}
       .data{fill:none;stroke:#267a70;stroke-width:6;stroke-linecap:round;stroke-linejoin:round}.scaleup{fill:none;stroke:#356b92;stroke-width:5;stroke-linecap:round}.marker{fill:#26323c;stroke:#fff;stroke-width:3}.num{fill:#fff;font:700 18px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;text-anchor:middle;dominant-baseline:middle}
     </style>
@@ -48,11 +48,11 @@
   <circle class="marker" cx="906" cy="241" r="21"/><text class="num" x="906" y="241">8</text>
 
   <!-- Cluster validation -->
-  <rect class="gate" x="345" y="525" width="600" height="66" rx="5"/>
-  <text class="label ink center" x="645" y="566">Fabric 验证 · 集群验收</text>
+  <rect class="gate" x="345" y="515" width="600" height="82" rx="5"/>
+  <text class="label ink center" x="645" y="550">Fabric 验证 · 集群验收</text>
+  <text class="tiny muted center" x="645" y="578">Production Handoff</text>
   <circle class="marker" cx="347" cy="523" r="21"/><text class="num" x="347" y="523">9</text>
-  <text class="minor muted center" x="645" y="625">Production Handoff</text>
-  <path d="M345 611H945" stroke="#4d8a5e" stroke-width="5"/>
+  <path d="M345 620H945" stroke="#4d8a5e" stroke-width="5"/>
 
   <!-- Workloads -->
   <rect class="workload" x="350" y="675" width="245" height="88" rx="5"/>
@@ -64,13 +64,13 @@
   <circle class="marker" cx="621" cy="672" r="21"/><text class="num" x="621" y="672">11</text>
 
   <!-- Delivery network -->
-  <path d="M842 665C856 631 899 631 913 665C946 661 961 705 933 723H839C810 704 816 671 842 665Z" fill="#e5f1ef" stroke="#267a70" stroke-width="2"/>
-  <text class="minor ink center" x="886" y="694">Backbone · Edge</text>
-  <circle class="marker" cx="832" cy="657" r="21"/><text class="num" x="832" y="657">12</text>
+  <rect class="delivery" x="835" y="675" width="125" height="88" rx="5"/>
+  <text class="minor ink center" x="897" y="710">交付网络</text><text class="micro muted center" x="897" y="738">Backbone · Edge</text>
+  <circle class="marker" cx="835" cy="672" r="21"/><text class="num" x="835" y="672">12</text>
   <circle cx="910" cy="813" r="27" fill="#fff" stroke="#59656f" stroke-width="3"/><circle cx="910" cy="792" r="10" fill="#59656f"/><path d="M891 831C897 810 923 810 929 831" fill="#59656f"/><text class="minor ink center" x="910" y="862">用户</text>
 
   <!-- Data paths -->
   <path class="scaleup" d="M270 300H385"/>
-  <path class="data" d="M429 245V201M524 245V201M619 245V201M714 245V201M790 330H753M847 245V201" marker-end="url(#d)"/>
-  <path class="data" d="M645 500V525M472 675V625M715 675V625M810 719H839M886 723V786" marker-end="url(#d)"/>
+  <path class="data" d="M429 245V201M524 245V201M619 245V201M714 245V201M790 330H753M847 245V201"/>
+  <path class="data" d="M645 500V515" marker-end="url(#d)"/><path class="data" d="M472 620V675" marker-end="url(#d)"/><path class="data" d="M715 620V675" marker-end="url(#d)"/><path class="data" d="M810 719H835" marker-end="url(#d)"/><path class="data" d="M897 763V786" marker-end="url(#d)"/>
 </svg>

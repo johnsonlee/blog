@@ -102,6 +102,18 @@ OpenAI 可以在一份协议里锁下 8GW，首批 800MW 却要等到 2028 年�
 
 上一篇停在 Data Center。这套系列就从这个方框往里拆。
 
+## AI Data Center 改变了交付单位
+
+两者的建筑外壳很像，workload 却把内部结构推向了两个方向。
+
+多数 enterprise 和 cloud workload 可以拆成大量相对独立的 request、VM 或 container。一台 server 下线，通常只是少掉一部分容量；电力、散热和网络作为共享基础设施，围绕一排排可独立运行的 server 展开。
+
+大模型训练和越来越大的 inference workload 会让数千甚至数万块 GPU 参与同一个 job。Rack 内的 scale-up fabric 把 GPU 拼成更大的计算域，rack 之间再通过 scale-out fabric 同步。任何一段带宽不足、丢包或节点异常，都可能拖慢整个 job。网络开始承担 compute backplane 的角色，storage 必须持续喂入 training data 并接住 checkpoint，power 和 thermal 也要同时托住整排高密度 rack。
+
+密度把这道变化直接写在了物理世界里。[Uptime Institute 2025 年调查](https://datacenter.uptimeinstitute.com/rs/711-RIA-145/images/2025.Annual.Survey.Report.pdf?version=0)中，存量机房最常见的 rack density 仍是 4–5kW；[NVIDIA DSX reference design](https://docs.nvidia.com/dsx/facilities-infra/reference-design-overview)里的 AI cabinet TDP 已经来到 198–330kW。前者是存量调查，后者是前沿 rack 设计，不能直接相除。可两个数量级之间的距离，足以改变供配电、散热和 commissioning 的边界。
+
+AI Data Center 的交付对象因此从可独立运行的 server，扩大成经过整体验证的 healthy cluster。GPU 装进机房，只完成了中间一步。
+
 ## GPU 装进去以后 算力仍然可能是零
 
 数据中心供给遵循 AND logic：所有子系统必须同时可用。
@@ -257,3 +269,5 @@ Production Handoff 只交付 physical capacity。它能变成多少 billable wor
 - [Schneider Electric Data Center Projects Commissioning](https://download.schneider-electric.com/files?p_Doc_Ref=SPD_DBOY-6NJNK6_EN)
 - [Uptime Institute Improve Project Success Through Mission Critical Commissioning](https://journal.uptimeinstitute.com/improve-project-success-through-mission-critical-commissioning/)
 - [SemiAnalysis Datacenter Anatomy Part 1: Electrical Systems](https://newsletter.semianalysis.com/p/datacenter-anatomy-part-1-electrical)
+- [Uptime Institute Global Data Center Survey 2025](https://datacenter.uptimeinstitute.com/rs/711-RIA-145/images/2025.Annual.Survey.Report.pdf?version=0)
+- [NVIDIA DSX Facilities Infrastructure Reference Design Overview](https://docs.nvidia.com/dsx/facilities-infra/reference-design-overview)
