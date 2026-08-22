@@ -1,5 +1,5 @@
 ---
-title: 8GW 之后，谁会拿走 AI 数据中心的钱？
+title: AI 数据中心的 8GW，离可用算力还有多远？
 date: 2026-08-22 14:55:27
 categories:
   - Investing
@@ -12,13 +12,15 @@ tags:
 i18n_key: ai-data-center-alpha-map
 ---
 
-OpenAI 前几天宣布，将在 PORTS-Pike [锁定约 8 IT-GW 的容量](https://openai.com/index/openai-joins-ports-pike-project/)。对投资者来说，8GW 最容易被处理成一道乘法题：每个 GW 会带来多少 transformer、switchgear、liquid cooling、optical transceiver 和 enterprise SSD 需求，再把这组需求映射到供应商。
+OpenAI 前几天宣布，将在 PORTS-Pike [锁定约 8 IT-GW 的容量](https://openai.com/index/openai-joins-ports-pike-project/)。同一份公告里还有两个数字：首批 800MW 预计在 2028 年 available，整个项目的 buildout 将持续六年，直到 2032 年。
 
-可这道乘法连输入都没有定义清楚：8GW 到底是什么？
+8GW、800MW、六年，拼出的是同一个数据中心的交付计划。8GW 是协议锁定的总容量，800MW 是计划在 2028 年交付的首批 capacity，六年是整个项目的 buildout schedule。它们不会在同一天变成可用算力。
 
-是已经拿到的土地，签完的 PPA，送到 site 的电，还是通过 validation、可以跑 production workload 的 GPU cluster？这些状态在新闻稿里都叫“项目进展”，在财务模型里却可能差着几年。
+这正是问题的起点：8GW 到底走到了哪一步？
 
-如果连 8GW 现在走到哪一步都说不清，后面的订单、收入和 alpha，不过是把一个容量数字直接映射到上市公司。
+是已经拿到的土地，签完的 PPA，送到 site 的电，还是通过 validation、可以跑 production workload 的 GPU cluster？这些状态在新闻稿里都叫“项目进展”，离可用算力却可能差着几年。
+
+分不清这些状态，所有供给分析都会从错误的分母开始。
 
 <!-- more -->
 
