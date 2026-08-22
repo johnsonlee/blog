@@ -15,7 +15,6 @@
       .available-value{fill:#0f172a;font:800 25px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif;text-anchor:middle}
       .available-line{stroke:#94a3b8;stroke-width:2}.available-dot{fill:#334155}
       .legend{fill:#475569;font:600 22px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif}
-      .asof{fill:#64748b;font:500 20px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif;text-anchor:end}
     </style>
   </defs>
   <rect class="bg" width="1600" height="1080"/>
@@ -116,6 +115,5 @@
     <circle cx="150" cy="-6" r="10" fill="#b45309"/><text class="legend" x="170" y="0">建设中</text>
     <circle cx="270" cy="-6" r="10" fill="#2563eb"/><text class="legend" x="290" y="0">已签约，未开工</text>
     <circle cx="470" cy="-6" r="10" fill="#94a3b8"/><text class="legend" x="490" y="0">圆面积 ∝ 最终容量</text>
-    <text class="asof" x="1305" y="0">状态截至 2026-08-22</text>
   </g>
 </svg>
