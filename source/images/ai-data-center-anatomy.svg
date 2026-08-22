@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">AI 数据中心园区全貌</title>
+  <desc id="desc">高压电网进入园区变电站，电力送往多栋数据机房和中央冷却设施。数据机房通过光纤互联并接入外部网络。编号范围对应后面的系列目录。</desc>
+  <defs>
+    <marker id="p" markerWidth="16" markerHeight="16" refX="13" refY="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L16 8L0 16Z" fill="#d58a17"/></marker>
+    <marker id="h" markerWidth="16" markerHeight="16" refX="13" refY="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L16 8L0 16Z" fill="#d35443"/></marker>
+    <marker id="d" markerWidth="16" markerHeight="16" refX="13" refY="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L16 8L0 16Z" fill="#267a70"/></marker>
+    <style>
+      .bg{fill:#f5f7f8}.site{fill:#e8ecef;stroke:#9aa5af;stroke-width:2}.road{fill:none;stroke:#c6cdd3;stroke-width:18}
+      .top{fill:#fff}.front{fill:#d9e0e5}.side{fill:#c7d0d7}.roof{fill:#56636d}.yard{fill:#edf1f3;stroke:#87939d;stroke-width:1.5}
+      .ink{fill:#202a33}.muted{fill:#66727d}.label{font:700 24px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.minor{font:600 18px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.tiny{font:600 15px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.center{text-anchor:middle}
+      .power{fill:none;stroke:#d58a17;stroke-width:6;stroke-linecap:round;stroke-linejoin:round}.heat{fill:none;stroke:#d35443;stroke-width:6;stroke-linecap:round;stroke-linejoin:round}.data{fill:none;stroke:#267a70;stroke-width:6;stroke-linecap:round;stroke-linejoin:round}
+      .marker{fill:#26323c;stroke:#fff;stroke-width:3}.num{fill:#fff;font:700 17px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;text-anchor:middle;dominant-baseline:middle}.legend{font:600 17px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#46515b}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="760"/>
+
+  <!-- Campus plane -->
+  <polygon class="site" points="145,125 950,125 1060,205 255,650 145,570"/>
+  <path class="road" d="M210 555L955 150M260 610L1010 195M310 210L990 210"/>
+
+  <!-- Utility grid -->
+  <g stroke="#5d6871" stroke-width="4" fill="none">
+    <path d="M24 382L58 242L92 382M37 326H79M31 352H85M43 296H73"/>
+    <path d="M82 382L112 265L142 382M94 331H130M89 356H135M101 304H124"/>
+    <path d="M15 298H43M73 298H101M42 326H18M79 326H111"/>
+  </g>
+  <text class="minor ink center" x="78" y="414">高压电网</text>
+
+  <!-- Substation yard -->
+  <polygon class="yard" points="175,208 350,208 400,245 225,337 175,301"/>
+  <g stroke="#59656f" stroke-width="3" fill="none">
+    <path d="M215 246H340M235 266H360M248 286H375"/>
+    <path d="M228 225V306M278 218V282M328 215V263"/>
+    <rect x="196" y="232" width="34" height="52"/><rect x="246" y="228" width="34" height="52"/>
+  </g>
+  <text class="minor ink" x="188" y="190">园区变电站</text>
+  <circle class="marker" cx="172" cy="184" r="18"/><text class="num" x="172" y="184">2</text>
+
+  <!-- Data hall building 1 -->
+  <g>
+    <polygon class="front" points="395,245 625,245 625,360 395,360"/>
+    <polygon class="side" points="625,245 675,280 675,395 625,360"/>
+    <polygon class="top" points="395,245 625,245 675,280 445,280"/>
+    <polygon class="roof" points="415,255 613,255 652,282 454,282"/>
+    <text class="minor ink center" x="535" y="322">数据机房 A</text>
+  </g>
+
+  <!-- Data hall building 2 -->
+  <g>
+    <polygon class="front" points="470,395 700,395 700,510 470,510"/>
+    <polygon class="side" points="700,395 750,430 750,545 700,510"/>
+    <polygon class="top" points="470,395 700,395 750,430 520,430"/>
+    <polygon class="roof" points="490,405 688,405 727,432 529,432"/>
+    <text class="minor ink center" x="610" y="472">数据机房 B</text>
+  </g>
+
+  <!-- Data hall building 3 -->
+  <g opacity="0.78">
+    <polygon class="front" points="690,225 875,225 875,315 690,315"/>
+    <polygon class="side" points="875,225 915,253 915,343 875,315"/>
+    <polygon class="top" points="690,225 875,225 915,253 730,253"/>
+    <polygon class="roof" points="706,233 865,233 898,255 739,255"/>
+    <text class="minor ink center" x="800" y="289">数据机房 C</text>
+  </g>
+
+  <!-- Repeated campus scale -->
+  <circle class="marker" cx="390" cy="228" r="22"/><text class="num" x="390" y="228">3–5</text>
+  <circle class="marker" cx="455" cy="382" r="22"/><text class="num" x="455" y="382">6–9</text>
+
+  <!-- Central utility and heat rejection -->
+  <polygon class="yard" points="770,430 945,430 995,465 820,557 770,521"/>
+  <rect x="800" y="456" width="52" height="62" rx="3" fill="#fff" stroke="#71808b" stroke-width="2"/>
+  <rect x="864" y="449" width="52" height="62" rx="3" fill="#fff" stroke="#71808b" stroke-width="2"/>
+  <g fill="none" stroke="#71808b" stroke-width="5"><path d="M806 472H846M806 489H846M870 465H910M870 482H910"/></g>
+  <path d="M930 518C940 488 970 488 980 518" fill="none" stroke="#71808b" stroke-width="6"/>
+  <text class="minor ink center" x="882" y="583">中央冷却设施</text>
+
+  <!-- Network edge -->
+  <path d="M994 330C1007 300 1044 300 1057 330C1084 327 1096 365 1072 381H990C966 365 970 336 994 330Z" fill="#e5f1ef" stroke="#267a70" stroke-width="2"/>
+  <text class="minor ink center" x="1032" y="359">网络出口</text>
+  <circle class="marker" cx="965" cy="292" r="22"/><text class="num" x="965" y="292">10–12</text>
+
+  <!-- Site-wide markers -->
+  <circle class="marker" cx="147" cy="112" r="18"/><text class="num" x="147" y="112">1</text>
+  <text class="minor ink" x="175" y="116">园区 / Site</text>
+  <circle class="marker" cx="1024" cy="579" r="18"/><text class="num" x="1024" y="579">13</text>
+  <text class="minor ink" x="996" y="616" text-anchor="end">PORTS-Pike 8GW 全栈验算</text>
+
+  <!-- Paths -->
+  <path class="power" d="M103 350H172L238 303L420 273" marker-end="url(#p)"/>
+  <path class="power" d="M350 250L470 420" marker-end="url(#p)"/>
+  <path class="power" d="M350 250L710 245" marker-end="url(#p)"/>
+  <path class="heat" d="M650 345L816 469M720 505L816 494M900 430V390" marker-end="url(#h)"/>
+  <path class="data" d="M625 315L990 347M700 468L990 347M875 287L990 347" marker-end="url(#d)"/>
+
+  <!-- Legend -->
+  <line x1="300" y1="700" x2="352" y2="700" class="power" marker-end="url(#p)"/><text class="legend" x="370" y="706">电力</text>
+  <line x1="475" y1="700" x2="527" y2="700" class="heat" marker-end="url(#h)"/><text class="legend" x="545" y="706">热量</text>
+  <line x1="650" y1="700" x2="702" y2="700" class="data" marker-end="url(#d)"/><text class="legend" x="720" y="706">数据</text>
+</svg>
