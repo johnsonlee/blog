@@ -1,5 +1,5 @@
 ---
-title: OpenAI 为什么总缺算力？
+title: 为什么 OpenAI 总是缺算力？
 date: 2026-08-22 14:55:27
 categories:
   - Investing
