@@ -47,13 +47,11 @@ The vertical axis is the **AI Infrastructure Stack**. Power, thermal management,
 
 Once the axes intersect, every number in an announcement has coordinates. When a project announces 1 GW, ask which delivery gate it has reached. When a supplier says orders doubled, ask which layer it controls, how long expansion takes, and whether customers can route around it. **Alpha lives in the time gaps between coordinates, not in the labels.**
 
-The map also determines the sequence of the thirteen essays. First follow project delivery along the horizontal axis, from Site Selection to RFS. Then move down the vertical stack through power, thermal, compute, networking, and storage until GPUs become a healthy cluster. After Production Handoff, follow workloads and delivery networks until physical capacity becomes billable service. Finally, put the whole chain back into PORTS-Pike's 8 GW and test which Replication Gap lasts longest and who can turn it into revenue and cash flow.
-
-Each essay therefore begins where the previous one ends.
+The order of this chain cannot be reversed. First follow the project delivery lifecycle from Site Selection to RFS, delivering the site, power, thermal systems, and commissioning. Once the facility is deliverable, assemble compute, networking, and storage into a healthy cluster. After Production Handoff, follow workloads and delivery networks until physical capacity becomes billable service. Finally, put the whole chain back into PORTS-Pike's 8 GW and test which Replication Gap lasts longest and who can turn it into revenue and cash flow.
 
 ## Deliver the facility first
 
-Every gate on the horizontal axis changes what 1 GW means. The first essay sorts the project states; the next four follow grid access, power distribution, thermal management, and commissioning until the facility becomes deliverable.
+Every gate on the horizontal axis changes what 1 GW means. First sort the project states, then follow grid access, power distribution, thermal management, and commissioning until the facility becomes deliverable.
 
 ### 01 AI Data Center Project Delivery
 
@@ -121,7 +119,7 @@ The case study does not introduce another framework. It tests whether the map bu
 
 ## You should be able to do the breakdown yourself
 
-This series is written for investors who do not yet know data centers, so every essay will include a process, structure, or architecture diagram. The diagram answers how the system works; the text then asks how it replicates. A wall of component names does not help a beginner. A wiring diagram with no discussion of time and supply does not produce alpha either.
+Not knowing the difference between a transformer, switchgear, and a PDU at the start is fine. Diagrams carry the process, structure, and architecture; the text follows money along the delivery chain.
 
 By the end, a reader should have four abilities: identify the real state of capacity in a project announcement; place supplier demand in the correct system layer; follow dependencies from one shortage into the next bottleneck; and demand an evidence chain covering supply elasticity, value capture, Price-in Score, and invalidation before calling a company an "AI infrastructure beneficiary."
 

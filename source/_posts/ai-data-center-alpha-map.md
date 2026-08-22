@@ -130,13 +130,11 @@ RFS 后面还有 IT deployment、burn-in、fabric validation、cluster acceptanc
 
 先分清是哪一个 1GW，才轮得到后面的定价与收益判断。
 
-这张图也把 13 篇的顺序定了下来。先沿横轴追项目交付，从 Site Selection 走到 RFS；再沿纵轴拆 power、thermal、compute、network 和 storage，看 GPU 怎样变成 healthy cluster。走过 Production Handoff，再追 workload 和 delivery network，直到 physical capacity 变成 billable service。最后把整条链放回 PORTS-Pike 的 8GW 验算：哪一段 Replication Gap 最长，谁能把它变成收入和现金流。
-
-所以，前一篇的终点，就是下一篇的起点。
+这条链的顺序不能反。先沿项目交付周期从 Site Selection 走到 RFS，把 site、power、thermal 和 commissioning 交出来；机房具备交付条件以后，再把 compute、network 和 storage 拼成 healthy cluster；走过 Production Handoff，再追 workload 和 delivery network，直到 physical capacity 变成 billable service。最后把整条链放回 PORTS-Pike 的 8GW 验算：哪一段 Replication Gap 最长，谁能把它变成收入和现金流。
 
 ## 先看数据中心建到了哪里
 
-横轴上的每一道 gate 都会改变 1GW 的含义。第一篇先把项目状态排清楚，后面四篇依次追电网、供配电、散热和 commissioning，直到机房具备交付条件。
+横轴上的每一道 gate 都会改变 1GW 的含义。先把项目状态排清楚，再依次追电网、供配电、散热和 commissioning，直到机房具备交付条件。
 
 1. 《AI 数据中心交付：从 Site Selection 到 RFS》
 
@@ -204,7 +202,7 @@ Production Handoff 结束，physical capacity 才算交付。它能否转化成 
 
 ## 读完以后就该会自己拆了
 
-这套系列默认读者刚进来时，连 transformer、switchgear 和 PDU 有什么区别都不知道。没关系。每篇先放一张流程、结构或架构图，图负责把系统接起来，文字负责把钱追下去。
+刚进来时，分不清 transformer、switchgear 和 PDU，也没关系。流程、结构和架构交给图，文字沿着交付链把钱追下去。
 
 一张“AI 数据中心受益股名单”几个月就会过期，瓶颈也会迁移。更该留下的是一套可以反复使用的拆法：看到项目新闻，知道 capacity 处在哪个状态；看到供应商订单，知道需求来自系统哪一层；看到一个 node 变红，能继续追下一个 node；看到一只已经涨了几倍的“AI 基建龙头”，还记得问一句市场到底 price in 了多少。
 
