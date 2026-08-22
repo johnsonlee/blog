@@ -34,7 +34,8 @@
   <path class="power" d="M255 190V247" marker-end="url(#p)"/>
   <path class="power" d="M330 295H347" marker-end="url(#p)"/><path class="power" d="M470 295H507" marker-end="url(#p)"/>
   <path class="power" d="M562 182V247" marker-end="url(#p)"/><path class="power" d="M615 295H652" marker-end="url(#p)"/>
-  <path class="power" d="M715 340V477" marker-end="url(#p)"/><path class="power" d="M500 506V527" marker-end="url(#p)"/>
+  <path class="power" d="M715 340V477" marker-end="url(#p)"/>
+  <path class="power" d="M250 506V527" marker-end="url(#p)"/><path class="power" d="M390 506V527" marker-end="url(#p)"/><path class="power" d="M530 506V527" marker-end="url(#p)"/><path class="power" d="M670 506V527" marker-end="url(#p)"/>
   <path class="heat" d="M250 647V697" marker-end="url(#h)"/>
   <path class="heat" d="M310 743H437" marker-end="url(#h)"/><path class="heat" d="M560 743H652" marker-end="url(#h)"/><path class="heat" d="M775 743H817" marker-end="url(#h)"/>
 </svg>
