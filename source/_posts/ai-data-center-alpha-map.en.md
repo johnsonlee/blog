@@ -23,7 +23,7 @@ The harder question comes next: whose orders, revenue, and cash flow will those 
 
 ## A data center forces every bottleneck onto one site
 
-[Replication Speed Is the Real Bottleneck](/en/2026/08/18/the-real-bottleneck-is-replication/) introduced a general framework: compare the two clocks of demand arrival and supply replication, then follow dependencies as the bottleneck migrates. That framework sits outside this series as prior reading for any bottleneck analysis. Drugs, nuclear power, robotics, and space infrastructure can all be mapped onto the same Bottleneck Migration Network whenever demand and supply run on different clocks.
+{% post_link the-real-bottleneck-is-replication.en 'Replication Speed Is the Real Bottleneck' %} introduced a general framework: compare the two clocks of demand arrival and supply replication, then follow dependencies as the bottleneck migrates. That framework sits outside this series as prior reading for any bottleneck analysis. Drugs, nuclear power, robotics, and space infrastructure can all be mapped onto the same Bottleneck Migration Network whenever demand and supply run on different clocks.
 
 Data centers are the first deep dive because they compress many industrial systems into one delivery outcome.
 

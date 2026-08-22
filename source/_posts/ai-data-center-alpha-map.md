@@ -62,7 +62,7 @@ PORTS-Pike 的公告没有写 GPU 数量，也没有写 FLOPS，只给了一个 
 
 OpenAI 可以在一份协议里锁下 8GW，首批 800MW 却要等到 2028 年。签合同只用一支笔，复制供给要穿过 site、power、facility 和 cluster。
 
-上一篇《[复制速度才是真正的瓶颈](/2026/08/18/the-real-bottleneck-is-replication/)》留下的两只时钟，在这里终于对上了：需求多久到，供给多久才能复制出来。把 OpenAI 推向 30GW 的 workload 是需求时钟，能够承载 production workload 的 capacity 是供给时钟，中间那段 Replication Gap 才会挤出订单、涨价和超额利润。
+上一篇《{% post_link the-real-bottleneck-is-replication '复制速度才是真正的瓶颈' %}》留下的两只时钟，在这里终于对上了：需求多久到，供给多久才能复制出来。把 OpenAI 推向 30GW 的 workload 是需求时钟，能够承载 production workload 的 capacity 是供给时钟，中间那段 Replication Gap 才会挤出订单、涨价和超额利润。
 
 沿着这两只时钟往下追，AI 的瓶颈中心落在了 Data Center。SpaceX 更激进，它想把整条地面部署路径换掉。
 
