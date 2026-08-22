@@ -53,23 +53,23 @@ Every essay follows the same research contract. A diagram first explains how the
 
 The first part follows paper capacity until it becomes RFS capacity, identifying the owner of every gate and the critical path across the full project.
 
-### 01 Project Delivery Lifecycle
+### 01 How an AI Data Center Moves from Site Selection to RFS
 
 The first essay connects Site Selection, permitting, design, procurement, construction, energization, commissioning, and handover on one timeline. It will separate announced, planned, under-construction, energized, and RFS capacity, then identify the delivery constraint behind each gate.
 
-### 02 Time to Power
+### 02 How an AI Data Center Gets Usable Power from the Grid
 
 The second follows the utility side through generation resources, transmission, interconnection, substations, and site energization. A claim that a data center "has power" may mean a signed PPA, an interconnection agreement, or electricity physically reaching the site. Those states can be years apart. The research question is whether energy, capacity, grid connection, or long-lead equipment controls the schedule.
 
-### 03 Behind-the-Meter Power Train
+### 03 How Power Travels from the Data Center Substation to the GPU
 
 Once power reaches the site, it still passes through transformers, switchgear, UPS systems, PDUs, busways, power shelves, and VRMs before entering a GPU. The third essay will break down that behind-the-meter power train and look for equipment and power semiconductors combining long lead times, low substitutability, and rising value per megawatt.
 
-### 04 Thermal Management
+### 04 How GPU Heat Leaves an AI Data Center
 
 The fourth follows heat out of the GPU through cold plates, manifolds, CDUs, secondary loops, chillers, cooling towers, and dry coolers. Liquid-cooling penetration is only the first layer. The investment question is which segment of the heat-rejection loop replicates slowest.
 
-### 05 Commissioning and RFS
+### 05 How a Completed AI Data Center Passes Commissioning
 
 The fifth examines the gap between Mechanical Completion and RFS: startup, functional testing, L1-L5 commissioning, Integrated Systems Testing, and operational handover. Uptime Institute treats commissioning as a validation process spanning design, construction, and the transition to operations because successful component startup does not prove that a mission-critical system will survive failure scenarios. [Uptime Institute](https://journal.uptimeinstitute.com/improve-project-success-through-mission-critical-commissioning/) explains why "built" and "deliverable" are different states.
 
@@ -77,19 +77,19 @@ The fifth examines the gap between Mechanical Completion and RFS: startup, funct
 
 RFS is the endpoint for the facility, but only the starting point for AI infrastructure. The second part follows hardware after it enters the building and becomes a healthy cluster ready for workloads.
 
-### 06 Rack-Scale Compute
+### 06 How a GPU Becomes Rack-Scale Compute in an AI Data Center
 
 The sixth essay moves from GPUs, CPUs, HBM, NICs, and DPUs to compute trays, NVLink switch trays, power shelves, and racks. GPU shipments, server shipments, rack deliveries, and usable cluster capacity are not interchangeable supply metrics. The replication unit belongs at the system's handoff boundary.
 
-### 07 Scale-Up and Scale-Out Fabric
+### 07 How Tens of Thousands of GPUs Become One Machine Inside an AI Data Center
 
 The seventh studies how tens of thousands of GPUs become one system. NVLink handles scale-up; InfiniBand or Ethernet handles scale-out; switch ASICs, optical transceivers, lasers, fiber, connectors, and testing sit underneath both. The topology determines where expanding GPU supply sends the next wave of pressure.
 
-### 08 Storage and Data Pipeline
+### 08 Where an AI Data Center Stores Models and Agent Context
 
 The eighth follows training data, model weights, checkpoints, local NVMe, parallel file systems, object storage, and KV cache. Terabytes and bit shipments describe capacity. Firmware, controllers, reliability, and hyperscaler qualification determine whether enterprise storage can actually enter service.
 
-### 09 Cluster Bring-Up
+### 09 How a GPU Cluster Inside an AI Data Center Reaches Production Handoff
 
 The ninth fills the segment most often skipped between RFS and Production Handoff: IT deployment, firmware, provisioning, burn-in, fabric validation, cluster acceptance, and healthy handoff. At this stage, installed GPUs give way to deployment velocity, cluster yield, and healthy capacity.
 
@@ -97,21 +97,21 @@ The ninth fills the segment most often skipped between RFS and Production Handof
 
 A healthy cluster does not automatically produce revenue. Workload scheduling, request expansion, and the path back to the user continue to change the economic output of the same megawatt.
 
-### 10 Workload Architecture
+### 10 Why Training and Inference Need Different Data Centers
 
 The tenth compares Training and Inference across throughput, latency, batching, utilization, power density, cluster size, and geography. A bottleneck on the training side does not necessarily migrate unchanged into inference. Combining the two can produce the wrong infrastructure forecast.
 
-### 11 Serving Plane
+### 11 How One Agent Request Consumes AI Data Center Compute
 
 The eleventh expands one Agent request into routing, prefill, decode, retrieval, tool calls, retries, cache behavior, and scheduling. Tokens, requests, tasks, and tasks per megawatt answer different questions. As Agents spread, we need to reconsider which unit best connects customer demand to physical capacity consumption.
 
-### 12 Delivery Network
+### 12 How AI Data Center Compute Reaches the User
 
 The twelfth leaves the data center and examines DCI, backbone networks, transit, peering, CDNs, edge infrastructure, and metro inference. Once internal compute capacity expands, the constraint may migrate to inter-data-center fiber, connectivity, latency, and geographic distribution.
 
 ## PORTS-Pike tests the full map
 
-### 13 PORTS-Pike Case Study
+### 13 Rebuilding the AI Data Center Alpha Map with PORTS-Pike
 
 The thirteenth essay returns to the opening numbers and turns PORTS-Pike's 8 IT-GW into a Bottleneck Migration Network. We will verify each project's delivery stage, expand every gigawatt into power, thermal, compute, network, and storage requirements, then compare the critical path, Replication Gap, substitution options, value capture, and market expectations.
 

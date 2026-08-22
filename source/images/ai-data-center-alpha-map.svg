@@ -40,31 +40,31 @@
 
   <rect x="86" y="294" width="1450" height="52" fill="#e2e8f0" rx="5"/>
   <text class="group" x="106" y="326">项目交付</text>
-  <text class="row" x="275" y="326">01 Project Delivery Lifecycle</text>
+  <text class="row" x="275" y="316"><tspan x="275">01 一座 AI 数据中心怎样</tspan><tspan class="small" x="275" dy="16">从 Site Selection 走到 RFS</tspan></text>
   <rect class="overview" x="520" y="306" width="996" height="28" rx="5"/><text class="bartext" x="1018" y="325">Site Selection → RFS 的状态与 Critical Path</text>
 
   <text class="group" x="106" y="384">设施</text>
-  <text class="row" x="106" y="430">02 Time to Power</text><rect class="power" x="278" y="410" width="592" height="28" rx="5"/><text class="bartext" x="574" y="429">Utility Side → Energization</text>
-  <text class="row" x="106" y="486">03 BTM Power Train</text><rect class="power" x="520" y="466" width="430" height="28" rx="5"/><text class="bartext" x="735" y="485">Site Power → GPU</text>
-  <text class="row" x="106" y="542">04 Thermal Management</text><rect class="thermal" x="520" y="522" width="430" height="28" rx="5"/><text class="bartext" x="735" y="541">GPU Heat → Heat Rejection</text>
-  <text class="row" x="106" y="598">05 Commissioning and RFS</text><rect class="handoff" x="650" y="578" width="300" height="28" rx="5"/><text class="bartext" x="800" y="597">Mechanical Completion → RFS</text>
+  <text class="row" x="106" y="420"><tspan x="106">02 AI 数据中心怎样</tspan><tspan class="small" x="106" dy="16">从电网拿到可用电力</tspan></text><rect class="power" x="278" y="410" width="592" height="28" rx="5"/><text class="bartext" x="574" y="429">Utility Side → Energization</text>
+  <text class="row" x="106" y="476"><tspan x="106">03 电怎样从数据中心</tspan><tspan class="small" x="106" dy="16">变电站走到 GPU</tspan></text><rect class="power" x="520" y="466" width="430" height="28" rx="5"/><text class="bartext" x="735" y="485">Site Power → GPU</text>
+  <text class="row" x="106" y="532"><tspan x="106">04 GPU 的热怎样</tspan><tspan class="small" x="106" dy="16">排出 AI 数据中心</tspan></text><rect class="thermal" x="520" y="522" width="430" height="28" rx="5"/><text class="bartext" x="735" y="541">GPU Heat → Heat Rejection</text>
+  <text class="row" x="106" y="588"><tspan x="106">05 建完的 AI 数据中心</tspan><tspan class="small" x="106" dy="16">怎样完成 Commissioning</tspan></text><rect class="handoff" x="650" y="578" width="300" height="28" rx="5"/><text class="bartext" x="800" y="597">Mechanical Completion → RFS</text>
 
   <line class="grid" x1="86" y1="632" x2="1536" y2="632"/>
   <text class="group" x="106" y="672">AI 基础设施</text>
-  <text class="row" x="106" y="718">06 Rack-Scale Compute</text><rect class="compute" x="800" y="698" width="430" height="28" rx="5"/><text class="bartext" x="1015" y="717">Components → Rack Delivery</text>
-  <text class="row" x="106" y="774">07 Scale-Up and Scale-Out Fabric</text><rect class="compute" x="800" y="754" width="430" height="28" rx="5"/><text class="bartext" x="1015" y="773">Topology → Validated Fabric</text>
-  <text class="row" x="106" y="830">08 Storage and Data Pipeline</text><rect class="data" x="800" y="810" width="600" height="28" rx="5"/><text class="bartext" x="1100" y="829">Media → Qualified Storage → Production Data</text>
-  <text class="row" x="106" y="886">09 Cluster Bring-Up</text><rect class="handoff" x="910" y="866" width="450" height="28" rx="5"/><text class="bartext" x="1135" y="885">RFS → Healthy Cluster → Production Handoff</text>
+  <text class="row" x="106" y="708"><tspan x="106">06 一块 GPU 怎样变成</tspan><tspan class="small" x="106" dy="16">数据中心 Rack-Scale Compute</tspan></text><rect class="compute" x="800" y="698" width="430" height="28" rx="5"/><text class="bartext" x="1015" y="717">Components → Rack Delivery</text>
+  <text class="row" x="106" y="764"><tspan x="106">07 数万块 GPU 怎样</tspan><tspan class="small" x="106" dy="16">在数据中心连成一台机器</tspan></text><rect class="compute" x="800" y="754" width="430" height="28" rx="5"/><text class="bartext" x="1015" y="773">Topology → Validated Fabric</text>
+  <text class="row" x="106" y="820"><tspan x="106">08 AI 数据中心怎样存放</tspan><tspan class="small" x="106" dy="16">模型与 Agent 上下文</tspan></text><rect class="data" x="800" y="810" width="600" height="28" rx="5"/><text class="bartext" x="1100" y="829">Media → Qualified Storage → Production Data</text>
+  <text class="row" x="106" y="876"><tspan x="106">09 数据中心 GPU 集群怎样</tspan><tspan class="small" x="106" dy="16">走到 Production Handoff</tspan></text><rect class="handoff" x="910" y="866" width="450" height="28" rx="5"/><text class="bartext" x="1135" y="885">RFS → Healthy Cluster → Production Handoff</text>
 
   <line class="grid" x1="86" y1="920" x2="1536" y2="920"/>
   <text class="group" x="106" y="960">Workload 与交付</text>
-  <text class="row" x="106" y="1006">10 Workload Architecture</text><rect class="service" x="1040" y="986" width="440" height="28" rx="5"/><text class="bartext" x="1260" y="1005">Training · Inference</text>
-  <text class="row" x="106" y="1062">11 Serving Plane</text><rect class="service" x="1120" y="1042" width="360" height="28" rx="5"/><text class="bartext" x="1300" y="1061">Request → Agent Task</text>
-  <text class="row" x="106" y="1118">12 Delivery Network</text><rect class="service" x="1120" y="1098" width="360" height="28" rx="5"/><text class="bartext" x="1300" y="1117">Cluster → User</text>
+  <text class="row" x="106" y="996"><tspan x="106">10 Training 和 Inference</tspan><tspan class="small" x="106" dy="16">为什么需要不同的数据中心</tspan></text><rect class="service" x="1040" y="986" width="440" height="28" rx="5"/><text class="bartext" x="1260" y="1005">Training · Inference</text>
+  <text class="row" x="106" y="1052"><tspan x="106">11 一次 Agent 请求怎样</tspan><tspan class="small" x="106" dy="16">消耗 AI 数据中心算力</tspan></text><rect class="service" x="1120" y="1042" width="360" height="28" rx="5"/><text class="bartext" x="1300" y="1061">Request → Agent Task</text>
+  <text class="row" x="106" y="1108"><tspan x="106">12 AI 数据中心的算力</tspan><tspan class="small" x="106" dy="16">怎样到达用户</tspan></text><rect class="service" x="1120" y="1098" width="360" height="28" rx="5"/><text class="bartext" x="1300" y="1117">Cluster → User</text>
 
   <line class="grid" x1="86" y1="1152" x2="1536" y2="1152"/>
   <text class="group" x="106" y="1192">综合验证</text>
-  <text class="row" x="106" y="1238">13 PORTS-Pike Case Study</text><rect class="case" x="278" y="1218" width="1202" height="28" rx="5"/><text class="bartext" x="879" y="1237">Delivery Stage → Replication Gap → Value Capture → Mispricing</text>
+  <text class="row" x="106" y="1228"><tspan x="106">13 用 PORTS-Pike 还原</tspan><tspan class="small" x="106" dy="16">AI 数据中心 Alpha 地图</tspan></text><rect class="case" x="278" y="1218" width="1202" height="28" rx="5"/><text class="bartext" x="879" y="1237">Delivery Stage → Replication Gap → Value Capture → Mispricing</text>
 
   <text class="small" x="106" y="1310">每篇固定追问</text>
   <text class="row" x="260" y="1310">需求单位 · 复制单位 · 两只时钟 · 替代路径 · 下一瓶颈 · Price-in Score · 证伪条件</text>
