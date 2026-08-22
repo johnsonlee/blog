@@ -98,7 +98,7 @@ PORTS-Pike 的公告没有写 GPU 数量，也没有写 FLOPS，只给了一个 
 
 全球已经有那么多 Data Center，OpenAI 为什么不能把 GPU 装进现有机房，或者沿现有 campus 扩建，还要等到 2028 年？
 
-## 现有 Data Center 的复用边界
+## 现有 Data Center 为什么接不住万卡集群
 
 传统 Data Center 和 AI Data Center 的园区、机房、变电站和冷却设施看起来相似。能不能复用，取决于这些系统原来为哪种 workload 设计。
 

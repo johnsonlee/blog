@@ -99,7 +99,7 @@ The grid, transformers, switchgear, UPS systems, liquid cooling, GPUs, HBM, swit
 
 With so many data centers already operating, why can't OpenAI install GPUs in existing data halls or expand an existing campus? Why wait until 2028?
 
-## The reuse limits of existing data centers
+## Why existing data centers struggle with AI superclusters
 
 Traditional and AI data centers can look similar at the campus level, with data halls, substations, and cooling plants. Whether those systems can be reused depends on the workloads they were designed to support.
 
