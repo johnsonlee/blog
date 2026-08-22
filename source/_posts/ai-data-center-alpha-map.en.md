@@ -89,29 +89,27 @@ The question changes from "How many more gigawatts does OpenAI need?" to "When d
 
 ## Data Center is still a black box
 
-OpenAI can secure 8 GW in one agreement, yet the first 800 MW will not arrive until 2028. Signing takes a pen. Replicating supply has to pass through site, power, facility, and cluster.
+The 8 GW under agreement becomes available compute only after the entire delivery chain of site, power, facility, and cluster is complete.
 
-{% post_link the-real-bottleneck-is-replication.en 'Replication Speed Is the Real Bottleneck' %} left a time gap: how quickly OpenAI's demand for 30 GW forms, and how long capacity capable of carrying production workloads takes to replicate. Demand forms quickly while supply expands slowly. Orders, price increases, and excess returns accumulate inside that Replication Gap.
+{% post_link the-real-bottleneck-is-replication.en 'Replication Speed Is the Real Bottleneck' %} tracked that exact time gap: how quickly OpenAI's demand for 30 GW forms, and how long capacity capable of carrying production workloads takes to replicate. Demand forms quickly while supply expands slowly. Orders, price increases, and excess returns accumulate inside that Replication Gap.
 
-Follow the Replication Gap downstream and AI's bottleneck lands on Data Center. SpaceX takes the more aggressive path: replace the entire ground deployment chain.
+Follow the Replication Gap downstream and AI's bottleneck lands on Data Center. SpaceX takes the more aggressive path: replace the entire ground deployment chain. But Data Center is still one box in the Bottleneck Migration Network.
 
-But Data Center remains one box in the Bottleneck Migration Network.
+The grid, transformers, switchgear, UPS systems, liquid cooling, GPUs, HBM, switches, optical transceivers, SSDs, construction, and commissioning are all compressed into that box. Every company can pick one term and call itself an AI infrastructure beneficiary. Knowing that "data centers are constrained" does not tell us who merely benefits from demand and who controls the binding constraint.
 
-The box is too large.
+With so many data centers already operating, why can't OpenAI install GPUs in existing data halls or expand an existing campus? Why wait until 2028?
 
-The grid, transformers, switchgear, UPS systems, liquid cooling, GPUs, HBM, switches, optical transceivers, SSDs, construction, and commissioning all collapse into one delivery outcome. Every company can pick one term and call itself an AI infrastructure beneficiary. Knowing that "data centers are constrained" does not tell us who merely benefits from demand and who controls the binding constraint.
+## The reuse limits of existing data centers
 
-The previous essay stopped at Data Center. This series opens that box.
-
-## AI Data Centers change the unit of delivery
-
-The buildings look similar from the outside. Workloads push their internal systems in different directions.
+Traditional and AI data centers can look similar at the campus level, with data halls, substations, and cooling plants. Whether those systems can be reused depends on the workloads they were designed to support.
 
 Most enterprise and cloud workloads can be divided into relatively independent requests, VMs, or containers. When one server goes offline, the system usually loses a fraction of capacity. Power, cooling, and networking act as shared infrastructure around rows of servers that can operate independently.
 
 Large-model training and increasingly large inference workloads can put thousands or tens of thousands of GPUs into one job. Scale-up fabrics create a larger compute domain inside the rack; scale-out fabrics synchronize racks. A bandwidth shortfall, packet-loss problem, or unhealthy node can slow the entire job. The network becomes a compute backplane, storage must continuously feed training data and absorb checkpoints, and power and thermal systems must sustain rows of high-density racks at the same time.
 
 Density writes this change into the physical plant. In the [Uptime Institute Global Data Center Survey 2025](https://datacenter.uptimeinstitute.com/rs/711-RIA-145/images/2025.Annual.Survey.Report.pdf?version=0), the most common deployed rack density remains 4–5 kW. The [NVIDIA DSX reference design](https://docs.nvidia.com/dsx/facilities-infra/reference-design-overview) places AI cabinet TDP at 198–330 kW. The first number describes the installed base; the second describes a leading-edge rack design, so they cannot be divided into a growth rate. The distance between those orders of magnitude is still enough to redraw power distribution, thermal management, and commissioning.
+
+Existing facilities can absorb some workloads directly, and retrofits can release additional capacity. At supercluster scale, floor space is often the easiest part to reuse. The hard limit is how much power, cooling, networking, and storage capacity remains available at the same time. If any one system falls short, it has to be expanded, retrofitted, and recommissioned. Expanding an existing campus does not bypass that delivery chain. OpenAI is waiting until 2028 for all of those systems to reach a deliverable state together.
 
 The delivery unit in an AI Data Center therefore expands from an independently operable server to a fully validated healthy cluster. Installing the GPUs completes only one intermediate step.
 

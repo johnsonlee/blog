@@ -88,29 +88,27 @@ PORTS-Pike 的公告没有写 GPU 数量，也没有写 FLOPS，只给了一个 
 
 ## Data Center 还是一个黑箱
 
-OpenAI 可以在一份协议里锁下 8GW，首批 800MW 却要等到 2028 年。签合同只用一支笔，复制供给要穿过 site、power、facility 和 cluster。
+协议里的 8GW 要变成可用算力，必须走完 site、power、facility 和 cluster 的整条交付链。
 
-上一篇《{% post_link the-real-bottleneck-is-replication '复制速度才是真正的瓶颈' %}》留下的是一个时间差：OpenAI 对 30GW 的需求会在多久内形成，能够承载 production workload 的 capacity 又要多久才能复制出来。需求形成得快，供给扩得慢，中间那段 Replication Gap 才会挤出订单、涨价和超额利润。
+上一篇《{% post_link the-real-bottleneck-is-replication '复制速度才是真正的瓶颈' %}》追的正是这个时间差：OpenAI 对 30GW 的需求会在多久内形成，能够承载 production workload 的 capacity 又要多久才能复制出来。需求形成得快，供给扩得慢，中间那段 Replication Gap 才会挤出订单、涨价和超额利润。
 
-顺着 Replication Gap 往下追，AI 的瓶颈中心落在了 Data Center。SpaceX 更激进，它想把整条地面部署路径换掉。
+顺着 Replication Gap 往下追，AI 的瓶颈落在了 Data Center。SpaceX 更激进，它想把整条地面部署路径换掉。但在 Bottleneck Migration Network 里，Data Center 还是一个框。
 
-可在那张 Bottleneck Migration Network 里，Data Center 仍然只是一个方框。
+电网、变压器、开关柜、UPS、液冷、GPU、HBM、switch、光模块、SSD、施工和 commissioning，全被压在这个框里。每家公司都能从中挑一个词，说自己是 AI infrastructure beneficiary。只知道“数据中心很缺”，根本分不出谁只是需求受益，谁控制着 binding constraint。
 
-这个方框太大了。
+全球已经有那么多 Data Center，OpenAI 为什么不能把 GPU 装进现有机房，或者沿现有 campus 扩建，还要等到 2028 年？
 
-电网、变压器、开关柜、UPS、液冷、GPU、HBM、switch、光模块、SSD、施工和 commissioning，全部叠在同一个 delivery outcome 里。每家公司都能从中挑一个词，说自己是 AI infrastructure beneficiary。只知道“数据中心很缺”，根本分不出谁只是需求受益，谁控制着 binding constraint。
+## 现有 Data Center 的复用边界
 
-上一篇停在 Data Center。这套系列就从这个方框往里拆。
-
-## AI Data Center 改变了交付单位
-
-两者的建筑外壳很像，workload 却把内部结构推向了两个方向。
+传统 Data Center 和 AI Data Center 的园区、机房、变电站和冷却设施看起来相似。能不能复用，取决于这些系统原来为哪种 workload 设计。
 
 多数 enterprise 和 cloud workload 可以拆成大量相对独立的 request、VM 或 container。一台 server 下线，通常只是少掉一部分容量；电力、散热和网络作为共享基础设施，围绕一排排可独立运行的 server 展开。
 
 大模型训练和越来越大的 inference workload 会让数千甚至数万块 GPU 参与同一个 job。Rack 内的 scale-up fabric 把 GPU 拼成更大的计算域，rack 之间再通过 scale-out fabric 同步。任何一段带宽不足、丢包或节点异常，都可能拖慢整个 job。网络开始承担 compute backplane 的角色，storage 必须持续喂入 training data 并接住 checkpoint，power 和 thermal 也要同时托住整排高密度 rack。
 
 密度把这道变化直接写在了物理世界里。[Uptime Institute 2025 年调查](https://datacenter.uptimeinstitute.com/rs/711-RIA-145/images/2025.Annual.Survey.Report.pdf?version=0)中，存量机房最常见的 rack density 仍是 4–5kW；[NVIDIA DSX reference design](https://docs.nvidia.com/dsx/facilities-infra/reference-design-overview)里的 AI cabinet TDP 已经来到 198–330kW。前者是存量调查，后者是前沿 rack 设计，不能直接相除。可两个数量级之间的距离，足以改变供配电、散热和 commissioning 的边界。
+
+现有机房可以承接部分 workload，改造也能释放一些容量。可到了万卡集群，建筑面积往往是最容易复用的一部分，真正的上限来自电力、散热、网络和 storage 同时还剩多少余量。任何一项不够，都要扩容、改造并重新 commissioning；沿现有 campus 扩建，也绕不过这条交付链。OpenAI 等到 2028 年，等的就是这些系统一起走到可交付状态。
 
 AI Data Center 的交付对象因此从可独立运行的 server，扩大成经过整体验证的 healthy cluster。GPU 装进机房，只完成了中间一步。
 
