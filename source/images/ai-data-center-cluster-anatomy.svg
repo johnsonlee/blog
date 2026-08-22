@@ -2,7 +2,7 @@
   <title id="title">AI Cluster 剖面</title>
   <desc id="desc">GPU、CPU、HBM、NIC、DPU、Power Shelf 和 NVLink Switch 组成计算机架。多个机架通过 Scale-up 与 Scale-out Fabric 连接存储，完成验证后走到 Production Handoff，再承载 Training、Inference 与 Agent workload，并通过外部网络到达用户。编号六到十二对应系列目录。</desc>
   <defs>
-    <marker id="d" markerWidth="15" markerHeight="15" refX="12" refY="7.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L15 7.5L0 15Z" fill="#267a70"/></marker>
+    <marker id="d" markerWidth="15" markerHeight="15" refX="9" refY="7.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L15 7.5L0 15Z" fill="#267a70"/></marker>
     <style>
       .bg{fill:#f6f7f8}.panel{fill:#fff;stroke:#a2adb6;stroke-width:2}.rack{fill:#354a5b;stroke:#243542;stroke-width:2}.slot{fill:#9eb0be}.fabric{fill:#e4eef6;stroke:#356b92;stroke-width:2}.storage{fill:#eee7f5;stroke:#755594;stroke-width:2}.workload{fill:#f4eff8;stroke:#84679c;stroke-width:2}.delivery{fill:#e5f1ef;stroke:#267a70;stroke-width:2}.gate{fill:#e7f2ea;stroke:#4d8a5e;stroke-width:2}
       .ink{fill:#202a33}.muted{fill:#65717c}.label{font:700 23px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.minor{font:600 18px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.tiny{font:600 15px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.micro{font:600 13px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.center{text-anchor:middle}
@@ -72,5 +72,5 @@
   <!-- Data paths -->
   <path class="scaleup" d="M270 300H385"/>
   <path class="data" d="M429 245V201M524 245V201M619 245V201M714 245V201M790 330H753M847 245V201"/>
-  <path class="data" d="M645 500V512" marker-end="url(#d)"/><path class="data" d="M537 620V672" marker-end="url(#d)"/><path class="data" d="M780 620V672" marker-end="url(#d)"/><path class="data" d="M537 763V807" marker-end="url(#d)"/><path class="data" d="M780 763V807" marker-end="url(#d)"/><path class="data" d="M645 880V905" marker-end="url(#d)"/>
+  <path class="data" d="M645 500V509" marker-end="url(#d)"/><path class="data" d="M537 620V669" marker-end="url(#d)"/><path class="data" d="M780 620V669" marker-end="url(#d)"/><path class="data" d="M537 763V804" marker-end="url(#d)"/><path class="data" d="M780 763V804" marker-end="url(#d)"/><path class="data" d="M645 880V902" marker-end="url(#d)"/>
 </svg>

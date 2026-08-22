@@ -2,8 +2,8 @@
   <title id="title">数据中心 Facility 剖面</title>
   <desc id="desc">电力从园区变电站经过开关柜、变压器、ATS、UPS 和 Busway 进入机架。热量从机架经过 TCS、CDU、FWS 和室外散热设备排出。编号二到五对应电网接入、供配电、散热与综合调试。</desc>
   <defs>
-    <marker id="p" markerWidth="15" markerHeight="15" refX="12" refY="7.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L15 7.5L0 15Z" fill="#d58a17"/></marker>
-    <marker id="h" markerWidth="15" markerHeight="15" refX="12" refY="7.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L15 7.5L0 15Z" fill="#d35443"/></marker>
+    <marker id="p" markerWidth="15" markerHeight="15" refX="9" refY="7.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L15 7.5L0 15Z" fill="#d58a17"/></marker>
+    <marker id="h" markerWidth="15" markerHeight="15" refX="9" refY="7.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L15 7.5L0 15Z" fill="#d35443"/></marker>
     <style>
       .bg{fill:#f6f7f8}.floor{fill:#fff;stroke:#9aa5af;stroke-width:2}.wall{fill:none;stroke:#c1c9cf;stroke-width:8}
       .equip{fill:#fff;stroke:#71808b;stroke-width:2}.power-equip{fill:#fff7e6}.cool-equip{fill:#fff0ed}.rack-front{fill:#354a5b;stroke:#243542;stroke-width:2}.rack-top{fill:#607687}.rack-side{fill:#2a3d4c}.slot{fill:#9eb0be}
@@ -68,14 +68,14 @@
   <circle class="marker" cx="185" cy="879" r="20"/><text class="num" x="185" y="879">5</text>
 
   <!-- Power path -->
-  <path class="power" d="M115 158H177" marker-end="url(#p)"/>
-  <path class="power" d="M255 190V247" marker-end="url(#p)"/>
-  <path class="power" d="M330 295H347" marker-end="url(#p)"/><path class="power" d="M470 295H507" marker-end="url(#p)"/>
-  <path class="power" d="M562 182V247" marker-end="url(#p)"/><path class="power" d="M615 295H652" marker-end="url(#p)"/>
-  <path class="power" d="M715 340V477" marker-end="url(#p)"/>
-  <path class="power" d="M250 506V527" marker-end="url(#p)"/><path class="power" d="M390 506V527" marker-end="url(#p)"/><path class="power" d="M530 506V527" marker-end="url(#p)"/><path class="power" d="M670 506V527" marker-end="url(#p)"/>
+  <path class="power" d="M115 158H174" marker-end="url(#p)"/>
+  <path class="power" d="M255 190V244" marker-end="url(#p)"/>
+  <path class="power" d="M330 295H344" marker-end="url(#p)"/><path class="power" d="M470 295H504" marker-end="url(#p)"/>
+  <path class="power" d="M562 182V244" marker-end="url(#p)"/><path class="power" d="M615 295H649" marker-end="url(#p)"/>
+  <path class="power" d="M715 340V474" marker-end="url(#p)"/>
+  <path class="power" d="M250 506V524" marker-end="url(#p)"/><path class="power" d="M390 506V524" marker-end="url(#p)"/><path class="power" d="M530 506V524" marker-end="url(#p)"/><path class="power" d="M670 506V524" marker-end="url(#p)"/>
 
   <!-- Heat path -->
-  <path class="heat" d="M250 647V697" marker-end="url(#h)"/>
-  <path class="heat" d="M310 743H437" marker-end="url(#h)"/><path class="heat" d="M560 743H652" marker-end="url(#h)"/><path class="heat" d="M775 743H817" marker-end="url(#h)"/>
+  <path class="heat" d="M250 647V694" marker-end="url(#h)"/>
+  <path class="heat" d="M310 743H434" marker-end="url(#h)"/><path class="heat" d="M560 743H649" marker-end="url(#h)"/><path class="heat" d="M775 743H814" marker-end="url(#h)"/>
 </svg>
