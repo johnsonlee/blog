@@ -52,7 +52,7 @@ i18n_key: ai-data-center-alpha-map
 
 GW 并没有消失。2025 年 10 月，[Google 为 Anthropic 安排了 2026 年上线的 1GW 以上 TPU capacity](https://www.anthropic.com/news/expanding-our-use-of-google-cloud-tpus-and-services)；2026 年 4 月，[AWS 又签下最高 5GW，其中接近 1GW 会在 2026 年底前上线](https://www.anthropic.com/news/anthropic-amazon-compute)；一个月后，[Anthropic 接走 Colossus 1 的全部 capacity，超过 300MW](https://www.anthropic.com/news/higher-limits-spacex)。再加上 [Azure 的 1GW](https://www.anthropic.com/news/microsoft-nvidia-anthropic-announce-strategic-partnerships) 和 [2027 年开始交付的 Google/Broadcom capacity](https://www.anthropic.com/news/google-broadcom-partnership-compute)，Anthropic 也在提前锁定多年的 GW 供给，只是没有把它们包装成一张 Stargate campus map。
 
-到了 available compute，比较就卡住了。截至 2026 年 8 月 22 日，同一口径下能核对的公司级数据仍停在 2025 年底：OpenAI 披露了 1.9GW，Anthropic 没有披露总量。[一份 OpenAI 发给投资人的 memo](https://qz.com/openai-investor-memo-compute-advantage-anthropic-041026)估算 Anthropic 约有 1.4GW；[Epoch AI 把这项外部 anchor 放进模型](https://github.com/epoch-research/ai-compute-users)以后，给出的 90% 区间是 1.0GW 到 1.9GW，中位数 1.38GW。图里的 Anthropic 数据因此全部标成 estimate，不能和 OpenAI 的披露值混为一谈。
+到了 available compute，比较就卡住了。截至 2026 年 8 月 22 日，同一口径下能核对的公司级数据仍停在 2025 年底：OpenAI 披露了 1.9GW，Anthropic 没有披露总量。[一份 OpenAI memo](https://qz.com/openai-investor-memo-compute-advantage-anthropic-041026)估算 Anthropic 约有 1.4GW；[Epoch AI 把这项外部 anchor 放进模型](https://github.com/epoch-research/ai-compute-users)以后，给出的 90% 区间是 1.0GW 到 1.9GW，中位数 1.38GW。图里的 Anthropic 数据因此全部标成 estimate，不能和 OpenAI 的披露值混为一谈。
 
 ![OpenAI 与 Anthropic 可用算力趋势](/images/openai-compute-growth-forecast.svg)
 
@@ -96,7 +96,7 @@ OpenAI 可以在一份协议里锁下 8GW，首批 800MW 却要等到 2028 年�
 
 可在那张 Bottleneck Migration Network 里，Data Center 仍然只是一个方框。
 
-这个方框对投资来说太大了。
+这个方框太大了。
 
 电网、变压器、开关柜、UPS、液冷、GPU、HBM、switch、光模块、SSD、施工和 commissioning，全部叠在同一个 delivery outcome 里。每家公司都能从中挑一个词，说自己是 AI infrastructure beneficiary。只知道“数据中心很缺”，根本分不出谁只是需求受益，谁控制着 binding constraint。
 
@@ -128,11 +128,11 @@ RFS 后面还有 IT deployment、burn-in、fabric validation、cluster acceptanc
 
 两条轴一交叉，数字才有坐标。Announced 的 1GW 只是目标容量，energized 的 1GW 已经具备供电条件，RFS 的 1GW 已经具备设施交付条件，走到 Production Handoff 的 1GW 才对应可以承载生产负载的集群。它们都叫 1GW，却不是同一笔供给。
 
-先分清是哪一个 1GW，才轮得到后面的投资问题。
+先分清是哪一个 1GW，才轮得到后面的定价与收益判断。
 
 每篇先用一张图把系统接起来。接着往下追：需求单位是什么，到底要复制什么，两只时钟差多久，当前瓶颈松开以后压力会撞向哪里，最后谁能把稀缺变成收入和现金流。
 
-设备科普写到“它怎么工作”就结束了。Investment research 要再往前走一步：**它为什么会缺，缺多久，谁能捕获 economics，股价又算进去了多少。**
+设备科普写到“它怎么工作”就结束了。把系统讲清楚以后，还要再往前走一步：**它为什么会缺，缺多久，谁能捕获 economics，股价又算进去了多少。**
 
 这 13 篇的顺序也就定了下来。先把 site 交出来，再把 rack 拼成 cluster，然后让 workload 跑起来，最后把结果送到用户手里。前一篇的终点，就是下一篇的起点。
 
@@ -218,7 +218,7 @@ Production Handoff 结束，physical capacity 才算交付。它能否转化成 
 
 - [OpenAI plans 30GW of compute by 2030](https://x.com/OpenAINewsroom/status/2046951726683455866)
 - [A business that scales with the value of intelligence](https://openai.com/index/a-business-that-scales-with-the-value-of-intelligence/)
-- [OpenAI investor memo compares its compute capacity with Anthropic](https://qz.com/openai-investor-memo-compute-advantage-anthropic-041026)
+- [OpenAI memo compares its compute capacity with Anthropic](https://qz.com/openai-investor-memo-compute-advantage-anthropic-041026)
 - [Epoch AI frontier-lab compute model](https://github.com/epoch-research/ai-compute-users)
 - [Anthropic expands Google Cloud TPU capacity](https://www.anthropic.com/news/expanding-our-use-of-google-cloud-tpus-and-services)
 - [Anthropic and Amazon expand collaboration for up to 5GW](https://www.anthropic.com/news/anthropic-amazon-compute)
