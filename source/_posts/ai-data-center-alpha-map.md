@@ -1,0 +1,236 @@
+---
+title: 为什么 OpenAI 总是缺算力？
+date: 2026-08-22 14:55:27
+categories:
+  - Investing
+tags:
+  - AI
+  - Data Center
+  - Infrastructure
+  - Bottleneck
+i18n_key: ai-data-center-alpha-map
+---
+
+[2023 年，OpenAI 的可用算力只有 0.2GW](https://openai.com/index/a-business-that-scales-with-the-value-of-intelligence/)。2024 年升到 0.6GW，2025 年再到约 1.9GW。两年涨了 9.5 倍，仍然不够。2026 年 4 月，OpenAI 又把目标推到了 [2030 年 30GW](https://x.com/OpenAINewsroom/status/2046951726683455866)。
+
+30GW 是 2025 年可用算力的近 16 倍。可就在这个目标公布四个月后，OpenAI 又签下 PORTS-Pike，一座规划容量约 8 IT-GW 的数据中心。
+
+已经签了多少座数据中心，为什么还在继续签，这 8GW 放进 30GW 以后又算多大？
+
+<!-- more -->
+
+## OpenAI 到底签了多少
+
+从 2023 年往后翻，第一份大合同来自 Microsoft。那次 multi-year partnership 没有公布 GW，也没有公布 Azure supercomputer 分别落在哪座数据中心，只说双方已经[建成多套系统，用来训练 OpenAI 的全部模型](https://openai.com/index/openai-and-microsoft-extend-partnership/)。
+
+所以 0.2GW、0.6GW 和 1.9GW 是 OpenAI 各年的 available compute，不是一份可以钉到地图上的 site inventory。Azure、OCI、CoreWeave 和 AWS 分别贡献了多少，每个运行中的 data center 又有多少 GW，OpenAI 没有披露。
+
+第一块能同时钉住位置、容量和运行状态的，是 Abilene。它在 2024 年开工，不到一年就跑起了 AI workload；截至 2026 年中，[1.2GW 规划容量已经向客户交付 42%](https://www.oracle.com/data-centers/)，剩余部分仍在建设。
+
+再往后，physical campus 才开始一座座露出坐标。2025 年 9 月，Abilene 加上五座新 site，把 Stargate 带到[六座 campus、接近 7GW planned capacity](https://openai.com/index/five-new-stargate-sites/)；一个月后，[Michigan 成为第七座](https://openai.com/index/expanding-stargate-to-michigan/)。2026 年又加上 Georgia 的 [Project Camellia](https://openai.com/index/building-ai-infrastructure-with-the-effingham-county-community/) 和 Ohio 的 [PORTS-Pike](https://openai.com/index/openai-joins-ports-pike-project/)。
+
+![OpenAI 自 2023 年以来的美国数据中心交付状态](/images/openai-stargate-campus-map.svg)
+
+截至 2026 年 8 月 22 日，九座里只有 Abilene 已有 workload 在跑，另外七座已经进入 construction，[Camellia 仍在 permitting](https://effinghamcounty.org/m/newsflash/home/detail/466)，尚未开工。PORTS-Pike 由 SB Energy 先行开发，OpenAI 2026 年签入时，开发商已经把项目列为 [In Early Construction](https://sbenergy.com/digital-infrastructure/)。圆的面积按各站公开的最终容量缩放，不代表今天已经 available 的 GW；Abilene 的绿色圆也只说明 campus 已经投入使用，真正完成交付的仍是 42%。
+
+各站公开的 GW 口径并不相同。PORTS-Pike 是 IT capacity，[Shackelford 是 critical IT load](https://vantage-dc.com/wp-content/uploads/2025/08/VDC_DataSheet_Frontier.pdf)，[Project Jupiter 是 installed fuel-cell capacity](https://www.oracle.com/news/announcement/oracle-borderplex-and-bloom-energy-to-power-project-jupiter-with-fuel-cell-technology-2026-04-27/)，[Lighthouse 是 campus development](https://blog.vantage-dc.com/2026/03/30/vantage-data-centers-and-partners-host-career-expo-in-port-washington-wisconsin-to-connect-local-talent-with-lighthouse-opportunities/)，Doña Ana 和 Camellia 则是 power capacity。它们能比较单站 buildout 的量级，不能直接相加。
+
+地图回答了这九座 campus 在哪里、建到哪一步，还不能用来计算 OpenAI 已经锁定了多少 GW。
+
+同一批算力，会在 site、cloud capacity、compute system 和 chip 四层披露里反复出现。[Oracle 的 4.5GW partnership](https://openai.com/index/stargate-advances-with-partnership-with-oracle/) 会落到多座 campus；[Milam County 的 1.2GW lease](https://openai.com/index/stargate-sb-energy-partnership/) 已经包含在 2025 年公布的五座新 site 里；NVIDIA 的 10GW 还是 [letter of intent](https://openai.com/index/openai-nvidia-systems-partnership/)，Broadcom 的 10GW 是一份[系统部署 term sheet](https://openai.com/index/openai-and-broadcom-announce-strategic-collaboration/)。后两项合计 20GW，指的是将部署到 OpenAI 及其合作伙伴数据中心里的 systems，不能再算成 20GW 新机房。
+
+[Microsoft、Oracle、AWS、CoreWeave 和 Google Cloud](https://openai.com/index/accelerating-the-next-phase-ai/) 提供 cloud capacity，底下也可能落在同一批 physical infrastructure 上。把每份新闻稿里的 GW 直接相加，同一座数据中心会被算上两遍，甚至三遍。
+
+所以这张图只收录能够钉住位置和交付状态的 physical campus。容量判断回到两个不会重复计算的边界：2025 年已经 available 的 1.9GW，以及 OpenAI 计划在 2030 年拿到的 30GW。
+
+## Anthropic 的 GW 去了哪里
+
+看到这里，Anthropic 反而显得安静。Claude 的用户和收入同样在涨，为什么很少看到 Anthropic 接连宣布一座 5GW、8GW 的 data center？
+
+两家公司拿算力的路径不同。OpenAI 把 physical infrastructure 收进 Stargate，一座 campus 从选址到开工都挂着 OpenAI 的名字。Anthropic 的算力分散在 AWS Trainium、Google TPU、Azure NVIDIA、Fluidstack 和 SpaceX，新闻通常由 cloud provider、chip supplier 或 data center developer 发出来。
+
+GW 并没有消失。2025 年 10 月，[Google 为 Anthropic 安排了 2026 年上线的 1GW 以上 TPU capacity](https://www.anthropic.com/news/expanding-our-use-of-google-cloud-tpus-and-services)；2026 年 4 月，[AWS 又签下最高 5GW，其中接近 1GW 会在 2026 年底前上线](https://www.anthropic.com/news/anthropic-amazon-compute)；一个月后，[Anthropic 接走 Colossus 1 的全部 capacity，超过 300MW](https://www.anthropic.com/news/higher-limits-spacex)。再加上 [Azure 的 1GW](https://www.anthropic.com/news/microsoft-nvidia-anthropic-announce-strategic-partnerships) 和 [2027 年开始交付的 Google/Broadcom capacity](https://www.anthropic.com/news/google-broadcom-partnership-compute)，Anthropic 也在提前锁定多年的 GW 供给，只是没有把它们包装成一张 Stargate campus map。
+
+到了 available compute，比较就卡住了。截至 2026 年 8 月 22 日，同一口径下能核对的公司级数据仍停在 2025 年底：OpenAI 披露了 1.9GW，Anthropic 没有披露总量。[一份 OpenAI memo](https://qz.com/openai-investor-memo-compute-advantage-anthropic-041026)估算 Anthropic 约有 1.4GW；[Epoch AI 把这项外部 anchor 放进模型](https://github.com/epoch-research/ai-compute-users)以后，给出的 90% 区间是 1.0GW 到 1.9GW，中位数 1.38GW。图里的 Anthropic 数据因此全部标成 estimate，不能和 OpenAI 的披露值混为一谈。
+
+![OpenAI 与 Anthropic 可用算力趋势](/images/openai-compute-growth-forecast.svg)
+
+2026 年也只能推算。把 2025 年的 1.4GW 估算值，与 AWS、Google 和 SpaceX 已公布的 2026 年新增 capacity 放在一起，年末大约指向 3.7GW。它不是 Anthropic guidance，交付延迟或口径重叠都可能改变结果。
+
+再往后，OpenAI 的 memo 只给了两个区间：OpenAI 预计 2027 年进入 low-double-digit GW，Anthropic 预计在 2027 年底达到 7GW 到 8GW。OpenAI 另有 2030 年 30GW 目标；Anthropic 没有公布 2028 到 2030 年的公司级 available compute guidance，所以橙线停在 2027 年。绿色虚线也只是连接 2027 与 2030 两个锚点，不是 OpenAI 的逐年 guidance。把 AWS 最高 5GW、Google 5GW 和 Azure 1GW 直接铺到未来各年，会把 contract ceiling 伪装成 delivery schedule。
+
+这张图至少排除了一个误会：Anthropic 很少出现在大型 data center 的标题里，不等于 Anthropic 没有在抢 GW。OpenAI 把交付路径显性化了，Anthropic 则把同一条路径拆给多家基础设施供应商。两条曲线都在从不到 2GW 向 10GW 量级推进。
+
+## 30GW 对应什么需求
+
+拿算力的路径不同，新增 capacity 最终都要被 workload 吃掉。回到 OpenAI 的 30GW，它要同时喂两种需求。
+
+[Training compute 用来购买下一代模型的能力，inference compute 用来交付今天的产品](https://openai.com/index/a-scorecard-for-the-ai-age/)。用户越多，请求越多，inference 就越大；模型开始 reasoning，一次请求会消耗更多 test-time compute；进入 Agent 以后，一次请求还会展开成[持续几分钟甚至几小时](https://openai.com/index/how-agents-are-transforming-work/)的 model invocation、tool call 和 retry。
+
+OpenAI 把三年数据放在一起：可用算力增长 9.5 倍，ARR 也从 20 亿美元增长到 200 亿美元以上，正好 10 倍。OpenAI 的判断很直接：如果当时有更多 compute，产品采用和收入还会更快。[算力既在训练未来的模型，也在承接今天的收入](https://openai.com/index/a-business-that-scales-with-the-value-of-intelligence/)。
+
+于是更好的模型带来更多使用，更多使用带来更多收入，收入再去锁下一批算力。算法和硬件会不断提高 performance per watt，但需求单位也在从一次问答，变成一项持续运行的任务。效率提高释放出来的 capacity，很快又会被新的 workload 吃掉。
+
+30GW 还躺在 roadmap 上。OpenAI 每多签一份，锁定的都是几年后的供给。
+
+## PORTS-Pike 的 8GW 有多大
+
+PORTS-Pike 的公告没有写 GPU 数量，也没有写 FLOPS，只给了一个 8 IT-GW。这个数字量的是服务器、网络和存储能够使用的功率容量，回答不了 cluster 能跑出多少算力。
+
+放回 OpenAI 的算力版图，8GW 约等于 2025 年全部可用算力的 4.2 倍，也相当于 2030 年 30GW 目标的 27%。单个 campus 吃掉超过四分之一的长期目标，当然大。
+
+可这 8GW 不会一起上线。[首批 800MW，也就是 0.8GW，预计 2028 年 available](https://openai.com/index/openai-joins-ports-pike-project/)，整个 buildout 要持续六年，直到 2032 年。OpenAI 今天也不会为 8GW 全额付款，completed capacity 具备交付条件以后，才开始支付 lease 费用。
+
+所以 8GW 同时有三个位置：它是 PORTS-Pike 的最终规划容量，是 2030 年目标里可能兑现的一部分，也是 2032 年才有机会完成的 buildout。把它直接记进今天的 available compute 没有依据；即使放到 2028 年的首批交付节点，也会把 800MW 高估成 8GW。
+
+问题也就从“OpenAI 还要多少 GW”变成了“已经签下来的 GW，什么时候才能变成可用算力”。
+
+## Data Center 还是一个黑箱
+
+协议里的 8GW 要变成可用算力，必须走完 site、power、facility 和 cluster 的整条交付链。
+
+上一篇《{% post_link the-real-bottleneck-is-replication '复制速度才是真正的瓶颈' %}》追的正是这个时间差：OpenAI 对 30GW 的需求会在多久内形成，能够承载 production workload 的 capacity 又要多久才能复制出来。需求形成得快，供给扩得慢，中间那段 Replication Gap 才会挤出订单、涨价和超额利润。
+
+顺着 Replication Gap 往下追，AI 的瓶颈落在了 Data Center。SpaceX 更激进，它想把整条地面部署路径换掉。但在 Bottleneck Migration Network 里，Data Center 还是一个框。
+
+电网、变压器、开关柜、UPS、液冷、GPU、HBM、switch、光模块、SSD、施工和 commissioning，全被压在这个框里。每家公司都能从中挑一个词，说自己是 AI infrastructure beneficiary。只知道“数据中心很缺”，根本分不出谁只是需求受益，谁控制着 binding constraint。
+
+全球已经有那么多 Data Center，OpenAI 为什么不能把 GPU 装进现有机房，或者沿现有 campus 扩建，还要等到 2028 年？
+
+## 现有 Data Center 为什么接不住万卡集群
+
+传统 Data Center 和 AI Data Center 的园区、机房、变电站和冷却设施看起来相似。能不能复用，取决于这些系统原来为哪种 workload 设计。
+
+多数 enterprise 和 cloud workload 可以拆成大量相对独立的 request、VM 或 container。一台 server 下线，通常只是少掉一部分容量；电力、散热和网络作为共享基础设施，围绕一排排可独立运行的 server 展开。
+
+大模型训练和越来越大的 inference workload 会让数千甚至数万块 GPU 参与同一个 job。Rack 内的 scale-up fabric 把 GPU 拼成更大的计算域，rack 之间再通过 scale-out fabric 同步。任何一段带宽不足、丢包或节点异常，都可能拖慢整个 job。网络开始承担 compute backplane 的角色，storage 必须持续喂入 training data 并接住 checkpoint，power 和 thermal 也要同时托住整排高密度 rack。
+
+密度把这道变化直接写在了物理世界里。[Uptime Institute 2025 年调查](https://datacenter.uptimeinstitute.com/rs/711-RIA-145/images/2025.Annual.Survey.Report.pdf?version=0)中，存量机房最常见的 rack density 仍是 4–5kW；[NVIDIA DSX reference design](https://docs.nvidia.com/dsx/facilities-infra/reference-design-overview)里的 AI cabinet TDP 已经来到 198–330kW。前者是存量调查，后者是前沿 rack 设计，不能直接相除。可两个数量级之间的距离，足以改变供配电、散热和 commissioning 的边界。
+
+现有机房可以承接部分 workload，改造也能释放一些容量。可到了万卡集群，建筑面积往往是最容易复用的一部分，真正的上限来自电力、散热、网络和 storage 同时还剩多少余量。任何一项不够，都要扩容、改造并重新 commissioning；沿现有 campus 扩建，也绕不过这条交付链。OpenAI 等到 2028 年，等的就是这些系统一起走到可交付状态。
+
+AI Data Center 的交付对象因此从可独立运行的 server，扩大成经过整体验证的 healthy cluster。GPU 装进机房，只完成了中间一步。
+
+## GPU 装进去以后 算力仍然可能是零
+
+数据中心供给遵循 AND logic：所有子系统必须同时可用。
+
+GPU 到货，但 site 尚未 energize，可用算力为零。Site 已经送电，冷却系统却没有完成 integrated commissioning，容量仍然不可用。Facility 完成建设和测试，走到可以按合同交付的 Ready for Service（RFS），GPU cluster 的 firmware、network、storage 和 software stack 没有通过 validation，这套 cluster 仍然无法承载 production workload。
+
+设备进仓库，只增加 inventory。**系统通过验证并完成 handoff，才会增加可用算力。**
+
+RFS 是最容易算错的一道线。一座设施从 Site Selection 开始，经过 permitting、design、procurement、construction、energization 和 commissioning，才会走到这里。公开 colocation 合同通常把这道状态定义为设施按约完成建设和测试、具备交付条件；这不等于 GPU 集群已经开始生产。[GDS 的项目文件](https://www.sec.gov/Archives/edgar/data/1526125/000110465924053659/tm2412943d1_ex99-1.pdf)和[一份公开 colocation 合同](https://www.sec.gov/Archives/edgar/data/1854368/000121390026053566/ea028958501ex10-1.htm)都把 commissioning 放在正式交付之前。
+
+RFS 后面还有 IT deployment、burn-in、fabric validation、cluster acceptance 和 Production Handoff。NVIDIA 甚至继续把 Delivered、Healthy、Reserved 与 Active/In-Use 分开：交到客户手里、设备健康、资源被预留、资源正在使用，是四件事。[NVIDIA AI Cloud Requirements](https://docs.nvidia.com/dsx/ncp/nvidia-requirements-for-ai-clouds/home)把这几道边界写得很清楚。
+
+所以研究数据中心，不能只数 GPU shipment，也不能把 announced GW 全塞进同一张表。项目走到哪一道 handoff，决定这笔供给到底该不该算。
+
+## 把 GW 放回坐标系
+
+要拆 PORTS-Pike，先得画两条轴。
+
+横轴回答一个问题：**项目走到哪一步了？** 从 Site Selection、energization、RFS 到 Production Handoff，同样写着 1GW 的项目，处在不同位置，离可用算力的时间完全不同。
+
+纵轴回答另一个问题：**哪套系统还没有交付？** 电力、散热、计算、网络和存储必须同时可用，少了任何一层，前面的 GW 都还不能变成 production capacity。NVIDIA 的 [DSX reference architecture](https://docs.nvidia.com/dsx/home)也按 facilities、compute、networking、storage 和 operations 拆开一座 AI factory。
+
+![AI 数据中心 Alpha 地图](/images/ai-data-center-alpha-map.svg)
+
+两条轴一交叉，数字才有坐标。Announced 的 1GW 只是目标容量，energized 的 1GW 已经具备供电条件，RFS 的 1GW 已经具备设施交付条件，走到 Production Handoff 的 1GW 才对应可以承载生产负载的集群。它们都叫 1GW，却不是同一笔供给。
+
+先分清是哪一个 1GW，才轮得到后面的定价与收益判断。
+
+可坐标系仍然是抽象的。电力、散热、计算、网络和存储已经各有位置，Data Center 本身仍然没有形状。
+
+要让它有形状，先看 campus 层。一座 GW 级园区不是一栋塞满 GPU 的大楼，而是园区变电站、重复建设的数据机房、中央冷却设施、道路、管线和网络出口。电力从高压电网进入，多栋机房共享 campus 级基础设施，再把数据送出园区。
+
+![AI 数据中心园区全貌](/images/ai-data-center-anatomy.svg)
+
+到了 facility 层，电压从园区变电站一路降下来，经过 switchgear、ATS、UPS 和 busway 到达 rack；rack 产生的热沿 TCS、CDU 和 FWS 回到室外。两条 physical path 都完成 integrated commissioning，Facility 才能走到 RFS。
+
+![数据中心 Facility 剖面](/images/ai-data-center-facility-anatomy.svg)
+
+RFS 仍然只交付 facility。接下来才是 rack 里的 IT deployment：GPU、CPU、HBM、NIC 和 DPU 先组成 compute tray，再通过 scale-up 与 scale-out fabric 连成 cluster，接上 storage，通过 validation 与 cluster acceptance，最后才越过 Production Handoff。Training、Inference 和 Agent workload 从这里开始，结果再穿过 backbone 与 edge 到达用户。
+
+![AI Cluster 剖面](/images/ai-data-center-cluster-anatomy.svg)
+
+三张图按 campus、facility 和 cluster 逐层展开，后面的目录也沿着同一条交付路径。顺序不能反：先沿项目交付周期从 Site Selection 走到 RFS，把 site、power、thermal 和 commissioning 交出来；机房具备交付条件以后，再把 compute、network 和 storage 拼成 healthy cluster；走过 Production Handoff，再追 workload 和 delivery network，直到 physical capacity 变成 billable service。最后把整条链放回 PORTS-Pike 的 8GW 验算：哪一段 Replication Gap 最长，谁能把它变成收入和现金流。
+
+可这条链也塞不进一篇文章。电网接入、供配电、散热、集群网络、存储和 workload，任何一层单独拎出来，都足够好好拆一遍。硬挤在一起，只会把刚打开的 Data Center 重新压回一个方框。
+
+所以接下来沿着这条链一层层拆。下面这些标题先把路径标出来，文章发布到哪里，链接就补到哪里。
+
+## 先看数据中心建到了哪里
+
+地图画完，最先冒出来的问题很直接：OpenAI 又宣布 1GW、5GW、8GW，这些数字到底已经走到哪一步？刚签约、已经开工、完成送电和机房可以交付，中间还隔着多少道 gate？
+
+1. 《数据中心交付周期：从选址到设施交付》
+
+   Announced、planned、under construction、energized 和 RFS 要放回同一条时间轴。项目现在在哪、下一道 gate 是什么、哪一道最慢，决定这笔供给什么时候才能算。状态排清以后，新闻里那句“已经拿到电”反而变得可疑：拿到的究竟是什么？
+
+2. 《电网接入：数据中心的第一道闸门》
+
+   PPA、interconnection agreement 和 site energization 经常被一句“已经拿到电”混在一起。它可能只是一份购电协议，也可能是拿到并网资格，直到电真正送到 site，前后可能差几年。可电已经到了 site，GPU 为什么还不能上电？
+
+3. 《从变电站到机架：供配电链》
+
+   Site energization 只把电送到并网点。进入 rack 之前，电力还要穿过 transformer、switchgear、UPS、PDU、busway 和 power shelf，再由 rack 内的 power conversion 送到 GPU、CPU、HBM、NIC 和 switch。任何一段没交付，整座机架都只能等。电力进入这些设备以后，几乎每一瓦最后都会变成热。这些热量往哪里走？
+
+4. 《数据中心散热链：从机架到室外》
+
+   机架里的热量走两条路径。被 cold plate 捕获的热量进入 Technology Cooling System（TCS），经 manifold 到达 CDU，再交给 Facility Water System（FWS）；没有被 cold plate 捕获的余热，仍要由 server fan 带进 rack exhaust，再由 RDHx 或 CRAH 接走。两条路径最终都要汇入 facility cooling，再由 cooling tower、dry cooler 或 air-cooled chiller 排到室外。任何一段没交付，前面的供电能力都无法变成持续算力。电能送，热能排，设备也装完了，为什么机房还不能交？
+
+5. 《Commissioning：机房建完不等于交付》
+
+   Mechanical Completion 到 RFS 之间还隔着 startup、functional testing、L1-L5 commissioning 和 Integrated Systems Testing。单台设备启动成功，不代表整套 mission-critical system 能通过故障场景验证。[Uptime Institute](https://journal.uptimeinstitute.com/improve-project-success-through-mission-critical-commissioning/)解释了这道验证为什么不能省。机房终于可以交了，GPU 也搬进去了，可用算力为什么还可能是零？
+
+## 再看 GPU 什么时候变成算力
+
+RFS 只交付 facility。GPU shipment、server shipment、rack delivery 和 cluster capacity 随后出现在同一份进度表里，它们究竟是不是同一个数字？
+
+6. 《从 GPU 到 Rack：机架交付》
+
+   GPU、CPU、HBM、NIC 和 DPU 要先组成 compute tray，再和 NVLink switch tray、power shelf 一起装进 rack。零件到货不等于 rack delivery，rack delivery 也不等于 cluster capacity。Rack 拼好了，数万块 GPU 又怎样连成一套系统？
+
+7. 《万卡集群：网络上限》
+
+   NVLink 负责 scale-up，InfiniBand 或 Ethernet 负责 scale-out，switch ASIC、optical transceiver、laser、fiber、connector 和 testing 决定整张 fabric 能否通过 validation。网络通了，Training data、model weights、checkpoint 和 KV cache 又放在哪里？
+
+8. 《从 Checkpoint 到 KV Cache：存储层级》
+
+   Training data、model weights、checkpoint、local NVMe、parallel file system、object storage 和 KV cache 分布在不同 storage tier。NAND bit 只回答容量，controller、firmware 和 qualification 决定 enterprise SSD 能不能上线。Compute、network 和 storage 都装好了，谁来证明这套 cluster 可以承载 production workload？
+
+9. 《集群交付：从设施就绪到 Production Handoff》
+
+   IT deployment、firmware、provisioning、burn-in、fabric validation 和 cluster acceptance 全发生在设施交付以后。安装了多少 GPU 不再重要，deployment velocity、cluster yield 和 healthy capacity 才决定 Production Handoff。Healthy cluster 已经有了，同一 MW 跑 Training 和 Inference，产出的还是同一种算力吗？
+
+## 算力变成收入还差最后一段
+
+Production Handoff 只交付 physical capacity。它能变成多少 billable workload，先取决于 cluster 接到什么工作。
+
+10. 《Training vs Inference：同一 MW 的两本账》
+
+    Training 追求大规模同步计算，Inference 要在 latency、batching、利用率和地理位置之间取舍。同一 MW 的吞吐、利用率和 economics 因此完全不同。Inference 再承载 Agent workload，一次 user request 又会展开成多少计算？
+
+11. 《Agent 算力账单：从 Token 到 Task》
+
+    一次 user request 会展开成多次 model invocation，以及 routing、prefill、decode、retrieval、tool call、retry、cache 和 scheduling。Token、request、task 与 tasks per MW 回答的是四个不同问题。Task 在 cluster 里执行完了，结果怎样在 latency SLO 内送到用户面前？
+
+12. 《推理交付网络：从 Cluster 到 User》
+
+    DCI、backbone、transit、peering、CDN、edge 和 metro inference 决定结果能否满足 latency SLO。内部 compute capacity 扩张以后，binding constraint 可能迁移到数据中心外部。走到这里，最初那个 8GW 已经不再是一个容量数字：哪一段最慢，谁又拿走订单和现金流？
+
+## 拿 PORTS-Pike 的 8GW 做一次验算
+
+13. 《PORTS-Pike 8GW：交付链验算》
+
+    把 PORTS-Pike 的每个项目放回 delivery stage，把每一 GW 展开成 power、thermal、compute、network 和 storage，再沿着 Bottleneck Migration Network 追踪下一个 bottleneck candidate。
+
+验算只接受能核对的东西：合同、项目进度、交期、产能、qualification、订单和财务数据。哪一个 node 已经 price in，哪一个 supplier 拥有定价权并能转化成毛利和现金流，什么事实出现时 thesis 必须作废，都要写清楚。
+
+## Data Center 逐层展开
+
+沿着这张图一层层拆下去，原本模糊的 Data Center 开始在眼前变得清晰。1GW 不再只是容量，还带着项目状态、系统位置和交付时间；哪一层没有交出来，Replication Gap 就停在哪一层。
+
+下一次再看到 8GW、10GW 或 100GW，这些数字会展开成 site、power、thermal、compute、network、storage 和 workload。顺着交付链继续往下，订单、定价权和现金流也会一层层露出来。
+
+那个曾经只写着 Data Center 的方框，已经展开成一整条可以追踪的交付链。

@@ -4,6 +4,7 @@ var indexGenerator = require('hexo-generator-index/lib/generator');
 var archiveGenerator = require('hexo-generator-archive/lib/generator');
 var categoryGenerator = require('hexo-generator-category/lib/generator');
 var tagGenerator = require('hexo-generator-tag/lib/generator');
+var hexoUtil = require('hexo-util');
 
 var i18nMap = {};
 
@@ -38,6 +39,42 @@ function getPostUrl(post) {
   }
   return '/' + datePath + '/' + slug + '/';
 }
+
+// Resolve internal post links through the same language-aware permalink logic
+// used by the custom English post generator.
+hexo.extend.tag.register('post_link', function(args) {
+  var slug = args.shift();
+  if (!slug) {
+    throw new Error('Post not found: empty slug for {% post_link %}');
+  }
+
+  var hash = '';
+  var parts = slug.split('#');
+  if (parts.length === 2) {
+    slug = parts[0];
+    hash = parts[1];
+  }
+
+  var escape = args[args.length - 1];
+  if (escape === 'true' || escape === 'false') {
+    args.pop();
+  } else {
+    escape = 'true';
+  }
+
+  var Post = hexo.model('Post');
+  var post = Post.findOne({ slug: slug }) || Post.findOne({ title: slug });
+  if (!post) {
+    throw new Error('Post not found: post_link ' + slug + '.');
+  }
+
+  var title = args.length ? args.join(' ') : post.title || post.slug;
+  var attrTitle = hexoUtil.escapeHTML(post.title || post.slug);
+  if (escape === 'true') title = hexoUtil.escapeHTML(title);
+
+  var link = hexoUtil.url_for.call(hexo, getPostUrl(post) + (hash ? '#' + hash : ''));
+  return '<a href="' + link + '" title="' + attrTitle + '">' + title + '</a>';
+});
 
 function isDefaultLangPost(post) {
   return post.lang !== 'en';
