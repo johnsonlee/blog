@@ -44,23 +44,27 @@ i18n_key: ai-data-center-alpha-map
 
 所以这张图只收录能够钉住位置和交付状态的 physical campus。容量判断回到两个不会重复计算的边界：2025 年已经 available 的 1.9GW，以及 OpenAI 计划在 2030 年拿到的 30GW。
 
-## 30GW 隐含的需求曲线
+## Anthropic 的 GW 去了哪里
 
-九座 campus 在地图上一个个分开，OpenAI 的 capacity planning 却必须把它们接成一条逐年上升的 available compute 曲线。
+看到这里，Anthropic 反而显得安静。Claude 的用户和收入同样在涨，为什么很少看到 Anthropic 接连宣布一座 5GW、8GW 的 data center？
 
-公开数据给了四个锚点：2023 年 0.2GW、2024 年 0.6GW、2025 年约 1.9GW，以及 2030 年 30GW。OpenAI 没有公布 2026 到 2029 年的逐年 guidance。从 1.9GW 走到 30GW，五年 CAGR 约为 74%；对应 2026 年 3.3GW、2027 年 5.7GW、2028 年 9.9GW、2029 年 17.3GW。
+两家公司拿算力的路径不同。OpenAI 把 physical infrastructure 收进 Stargate，一座 campus 从选址到开工都挂着 OpenAI 的名字。Anthropic 的算力分散在 AWS Trainium、Google TPU、Azure NVIDIA、Fluidstack 和 SpaceX，新闻通常由 cloud provider、chip supplier 或 data center developer 发出来。
 
-![OpenAI 可用算力趋势预测](/images/openai-compute-growth-forecast.svg)
+GW 并没有消失。2025 年 10 月，[Google 为 Anthropic 安排了 2026 年上线的 1GW 以上 TPU capacity](https://www.anthropic.com/news/expanding-our-use-of-google-cloud-tpus-and-services)；2026 年 4 月，[AWS 又签下最高 5GW，其中接近 1GW 会在 2026 年底前上线](https://www.anthropic.com/news/anthropic-amazon-compute)；一个月后，[Anthropic 接走 Colossus 1 的全部 capacity，超过 300MW](https://www.anthropic.com/news/higher-limits-spacex)。再加上 [Azure 的 1GW](https://www.anthropic.com/news/microsoft-nvidia-anthropic-announce-strategic-partnerships) 和 [2027 年开始交付的 Google/Broadcom capacity](https://www.anthropic.com/news/google-broadcom-partnership-compute)，Anthropic 也在提前锁定多年的 GW 供给，只是没有把它们包装成一张 Stargate campus map。
 
-图里的四个中间值只是按 74% CAGR 平滑倒推，OpenAI 没有承诺这条交付曲线。真实 capacity 会跟着 data hall 和 cluster 分批上线，曲线更可能一级一级往上跳。公开的 delivery date 已经排在最陡的几年里：[AWS 2025 年协议里的 capacity 计划在 2026 年底前完成部署](https://openai.com/index/aws-and-openai-partnership/)，[Oracle 在四座新 campus 的 customer delivery 从 2027 年开始](https://www.oracle.com/data-centers/)，[Cerebras 的 750MW 分批上线到 2028 年](https://openai.com/index/cerebras-partnership/)，PORTS-Pike 的首批 0.8GW 也落在 2028 年。
+到了 available compute，比较就卡住了。截至 2026 年 8 月 22 日，同一口径下能核对的公司级数据仍停在 2025 年底：OpenAI 披露了 1.9GW，Anthropic 没有披露总量。[一份 OpenAI 发给投资人的 memo](https://qz.com/openai-investor-memo-compute-advantage-anthropic-041026)估算 Anthropic 约有 1.4GW；[Epoch AI 把这项外部 anchor 放进模型](https://github.com/epoch-research/ai-compute-users)以后，给出的 90% 区间是 1.0GW 到 1.9GW，中位数 1.38GW。图里的 Anthropic 数据因此全部标成 estimate，不能和 OpenAI 的披露值混为一谈。
 
-这些项目跨越 cloud capacity、data center 和 compute system，不能直接相加，却把交付压力指向了同一个时间窗口。按这条隐含曲线，OpenAI 每年需要新增的可用算力会从 2026 年的 1.4GW，升到 2030 年的 12.7GW。最后一年新增的 capacity，接近 2025 年全部可用算力的七倍。
+![OpenAI 与 Anthropic 可用算力趋势](/images/openai-compute-growth-forecast.svg)
 
-2023 到 2025 年，available compute 每年增长约三倍。把这个速度机械外推到 2030 年会得到 462GW，远远超过 OpenAI 给出的 30GW。目标对应的百分比增速已经放缓，绝对交付量却还在加速。**OpenAI 押注的是一条仍以指数增长、并且能在五年内消化 16 倍算力的 AI 需求曲线。**
+2026 年也只能推算。把 2025 年的 1.4GW 估算值，与 AWS、Google 和 SpaceX 已公布的 2026 年新增 capacity 放在一起，年末大约指向 3.7GW。它不是 Anthropic guidance，交付延迟或口径重叠都可能改变结果。
+
+再往后，OpenAI 的 memo 只给了两个区间：OpenAI 预计 2027 年进入 low-double-digit GW，Anthropic 预计在 2027 年底达到 7GW 到 8GW。OpenAI 另有 2030 年 30GW 目标；Anthropic 没有公布 2028 到 2030 年的公司级 available compute guidance，所以蓝线停在 2027 年。绿色虚线也只是连接 2027 与 2030 两个锚点，不是 OpenAI 的逐年 guidance。把 AWS 最高 5GW、Google 5GW 和 Azure 1GW 直接铺到未来各年，会把 contract ceiling 伪装成 delivery schedule。
+
+这张图至少排除了一个误会：Anthropic 很少出现在大型 data center 的标题里，不等于 Anthropic 没有在抢 GW。OpenAI 把交付路径显性化了，Anthropic 则把同一条路径拆给多家基础设施供应商。两条曲线都在从不到 2GW 向 10GW 量级推进。
 
 ## 30GW 对应什么需求
 
-30GW 要同时喂两种需求。
+拿算力的路径不同，新增 capacity 最终都要被 workload 吃掉。回到 OpenAI 的 30GW，它要同时喂两种需求。
 
 [Training compute 用来购买下一代模型的能力，inference compute 用来交付今天的产品](https://openai.com/index/a-scorecard-for-the-ai-age/)。用户越多，请求越多，inference 就越大；模型开始 reasoning，一次请求会消耗更多 test-time compute；进入 Agent 以后，一次请求还会展开成[持续几分钟甚至几小时](https://openai.com/index/how-agents-are-transforming-work/)的 model invocation、tool call 和 retry。
 
@@ -216,6 +220,13 @@ Production Handoff 结束，physical capacity 才算交付。它能否转化成 
 
 - [OpenAI plans 30GW of compute by 2030](https://x.com/OpenAINewsroom/status/2046951726683455866)
 - [A business that scales with the value of intelligence](https://openai.com/index/a-business-that-scales-with-the-value-of-intelligence/)
+- [OpenAI investor memo compares its compute capacity with Anthropic](https://qz.com/openai-investor-memo-compute-advantage-anthropic-041026)
+- [Epoch AI frontier-lab compute model](https://github.com/epoch-research/ai-compute-users)
+- [Anthropic expands Google Cloud TPU capacity](https://www.anthropic.com/news/expanding-our-use-of-google-cloud-tpus-and-services)
+- [Anthropic and Amazon expand collaboration for up to 5GW](https://www.anthropic.com/news/anthropic-amazon-compute)
+- [Anthropic adds more than 300MW from SpaceX](https://www.anthropic.com/news/higher-limits-spacex)
+- [Microsoft, NVIDIA and Anthropic strategic partnerships](https://www.anthropic.com/news/microsoft-nvidia-anthropic-announce-strategic-partnerships)
+- [Anthropic expands Google and Broadcom partnership](https://www.anthropic.com/news/google-broadcom-partnership-compute)
 - [OpenAI and Microsoft extend partnership](https://openai.com/index/openai-and-microsoft-extend-partnership/)
 - [AWS and OpenAI announce multi-year strategic partnership](https://openai.com/index/aws-and-openai-partnership/)
 - [OpenAI partners with Cerebras](https://openai.com/index/cerebras-partnership/)

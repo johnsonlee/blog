@@ -1,14 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-labelledby="title desc">
-  <title id="title">OpenAI 可用算力趋势预测</title>
-  <desc id="desc">OpenAI 已披露的可用算力从 2023 年 0.2GW 增长到 2025 年约 1.9GW。以 2030 年 30GW 目标倒推，2026 至 2029 年的目标隐含路径分别约为 3.3GW、5.7GW、9.9GW 和 17.3GW，对应约 74% 的复合年增长率。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="880" viewBox="0 0 1600 880" role="img" aria-labelledby="title desc">
+  <title id="title">OpenAI 与 Anthropic 可用算力趋势</title>
+  <desc id="desc">OpenAI 披露的可用算力从 2023 年 0.2GW 增至 2025 年 1.9GW，预计 2027 年进入低双位数 GW，2030 年目标为 30GW。Anthropic 2025 年估算约 1.4GW，2026 年末公开新增容量推算约为 3.7GW，OpenAI 对其 2027 年的估算为 7GW 到 8GW。Anthropic 没有公布 2028 年以后的公司级可用算力目标。</desc>
   <defs>
     <style>
-      .bg{fill:#f8fafc}.grid{stroke:#d7dee7;stroke-width:1.5}.axis{stroke:#64748b;stroke-width:2}.actual-line{fill:none;stroke:#047857;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}.forecast-line{fill:none;stroke:#b45309;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:17 15}.actual-dot{fill:#047857;stroke:#f8fafc;stroke-width:5}.forecast-dot{fill:#f8fafc;stroke:#b45309;stroke-width:6}.target-dot{fill:#b45309;stroke:#f8fafc;stroke-width:5}
-      .axis-label{font:600 18px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#64748b}.year{font:700 20px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#334155;text-anchor:middle}.value{font:800 24px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#0f172a;text-anchor:middle}.growth{font:700 19px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.legend{font:600 18px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#475569}.event-year{font:800 18px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#334155;text-anchor:middle}.event{font:600 17px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#475569;text-anchor:middle}.event-line{stroke:#94a3b8;stroke-width:2}.event-dot{fill:#475569}.unit{font:700 19px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#334155}
+      .bg{fill:#f8fafc}.grid{stroke:#d7dee7;stroke-width:1.5}.axis{stroke:#64748b;stroke-width:2}.openai-actual{fill:none;stroke:#047857;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}.openai-outlook{fill:none;stroke:#047857;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:17 15}.anthropic-estimate{fill:none;stroke:#2563eb;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:17 15}.openai-dot{fill:#047857;stroke:#f8fafc;stroke-width:5}.openai-outlook-dot{fill:#f8fafc;stroke:#047857;stroke-width:6}.anthropic-dot{fill:#f8fafc;stroke:#2563eb;stroke-width:6}.target-dot{fill:#047857;stroke:#f8fafc;stroke-width:5}.range-anthropic{stroke:#2563eb;stroke-width:6;stroke-linecap:round}.range-cap{stroke-width:4;stroke-linecap:round}
+      .axis-label{font:600 18px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#64748b}.year{font:700 20px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#334155;text-anchor:middle}.value-openai{font:800 23px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#047857}.value-anthropic{font:800 23px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#2563eb}.legend{font:650 19px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#334155}.unit{font:700 19px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#334155}
     </style>
   </defs>
 
-  <rect class="bg" width="1600" height="980"/>
+  <rect class="bg" width="1600" height="880"/>
 
   <g>
     <text class="unit" x="145" y="72">可用算力（GW）</text>
@@ -30,60 +30,47 @@
     <text class="axis-label" x="113" y="206">25</text>
     <text class="axis-label" x="113" y="116">30</text>
 
-    <path class="actual-line" d="M180 646.4L360 639.2L540 615.8"/>
-    <path class="forecast-line" d="M540 615.8L720 590.6L900 547.4L1080 471.8L1260 338.6L1440 110"/>
+    <path class="openai-actual" d="M180 646.4L360 639.2L540 615.8"/>
+    <path class="openai-outlook" d="M540 615.8L900 470L1440 110"/>
+    <path class="anthropic-estimate" d="M540 624.8L720 583.4L900 515"/>
 
-    <circle class="actual-dot" cx="180" cy="646.4" r="11"/>
-    <circle class="actual-dot" cx="360" cy="639.2" r="11"/>
-    <circle class="actual-dot" cx="540" cy="615.8" r="11"/>
-    <circle class="forecast-dot" cx="720" cy="590.6" r="11"/>
-    <circle class="forecast-dot" cx="900" cy="547.4" r="11"/>
-    <circle class="forecast-dot" cx="1080" cy="471.8" r="11"/>
-    <circle class="forecast-dot" cx="1260" cy="338.6" r="11"/>
+    <line class="range-anthropic" x1="900" y1="506" x2="900" y2="524"/>
+    <line class="range-anthropic range-cap" x1="884" y1="506" x2="916" y2="506"/>
+    <line class="range-anthropic range-cap" x1="884" y1="524" x2="916" y2="524"/>
+
+    <circle class="openai-dot" cx="180" cy="646.4" r="11"/>
+    <circle class="openai-dot" cx="360" cy="639.2" r="11"/>
+    <circle class="openai-dot" cx="540" cy="615.8" r="11"/>
+    <circle class="openai-outlook-dot" cx="900" cy="470" r="11"/>
     <circle class="target-dot" cx="1440" cy="110" r="13"/>
+    <circle class="anthropic-dot" cx="540" cy="624.8" r="11"/>
+    <circle class="anthropic-dot" cx="720" cy="583.4" r="11"/>
+    <circle class="anthropic-dot" cx="900" cy="515" r="11"/>
 
-    <text class="value" x="180" y="602">0.2</text>
-    <text class="value" x="360" y="592">0.6</text>
-    <text class="value" x="540" y="570">1.9</text>
-    <text class="value" x="720" y="548">3.3</text>
-    <text class="value" x="900" y="505">5.7</text>
-    <text class="value" x="1080" y="429">9.9</text>
-    <text class="value" x="1260" y="296">17.3</text>
-    <text class="value" x="1402" y="76">30</text>
+    <text class="value-openai" x="180" y="606" text-anchor="middle">0.2</text>
+    <text class="value-openai" x="360" y="596" text-anchor="middle">0.6</text>
+    <text class="value-openai" x="506" y="584" text-anchor="end">1.9</text>
+    <text class="value-anthropic" x="575" y="647">约 1.4</text>
+    <text class="value-anthropic" x="720" y="548" text-anchor="middle">3.7E</text>
+    <text class="value-openai" x="930" y="462">10+E</text>
+    <text class="value-anthropic" x="930" y="526">7-8E</text>
+    <text class="value-openai" x="1405" y="76">30 目标</text>
 
-    <text class="growth" x="280" y="530" fill="#047857">约 3× / 年</text>
-    <text class="growth" x="955" y="246" fill="#b45309">目标隐含 CAGR 约 74%</text>
+    <text class="year" x="180" y="696">2023</text>
+    <text class="year" x="360" y="696">2024</text>
+    <text class="year" x="540" y="696">2025</text>
+    <text class="year" x="720" y="696">2026E</text>
+    <text class="year" x="900" y="696">2027E</text>
+    <text class="year" x="1080" y="696">2028</text>
+    <text class="year" x="1260" y="696">2029</text>
+    <text class="year" x="1440" y="696">2030</text>
 
-    <text class="year" x="180" y="690">2023</text>
-    <text class="year" x="360" y="690">2024</text>
-    <text class="year" x="540" y="690">2025</text>
-    <text class="year" x="720" y="690">2026F</text>
-    <text class="year" x="900" y="690">2027F</text>
-    <text class="year" x="1080" y="690">2028F</text>
-    <text class="year" x="1260" y="690">2029F</text>
-    <text class="year" x="1440" y="690">2030</text>
   </g>
 
-  <g>
-    <line class="event-line" x1="720" y1="735" x2="720" y2="780"/>
-    <circle class="event-dot" cx="720" cy="735" r="6"/>
-    <text class="event-year" x="720" y="812">2026</text>
-    <text class="event" x="720" y="840">AWS</text>
-
-    <line class="event-line" x1="900" y1="735" x2="900" y2="780"/>
-    <circle class="event-dot" cx="900" cy="735" r="6"/>
-    <text class="event-year" x="900" y="812">2027</text>
-    <text class="event" x="900" y="840">Oracle 四站</text>
-
-    <line class="event-line" x1="1080" y1="735" x2="1080" y2="780"/>
-    <circle class="event-dot" cx="1080" cy="735" r="6"/>
-    <text class="event-year" x="1080" y="812">2028</text>
-    <text class="event" x="1080" y="840">Cerebras · PORTS</text>
-  </g>
-
-  <g transform="translate(155 930)">
-    <line class="actual-line" x1="0" y1="0" x2="54" y2="0"/><text class="legend" x="70" y="6">实际 available compute</text>
-    <line class="forecast-line" x1="300" y1="0" x2="354" y2="0"/><text class="legend" x="370" y="6">30GW 目标隐含路径</text>
-    <circle class="event-dot" cx="685" cy="0" r="6"/><text class="legend" x="701" y="6">公开交付节点</text>
+  <g transform="translate(155 774)">
+    <line class="openai-actual" x1="0" y1="0" x2="56" y2="0"/><text class="legend" x="74" y="7">OpenAI</text>
+    <line class="anthropic-estimate" x1="220" y1="0" x2="276" y2="0"/><text class="legend" x="294" y="7">Anthropic</text>
+    <line class="axis" x1="500" y1="0" x2="556" y2="0"/><text class="legend" x="574" y="7">公司披露</text>
+    <line class="axis" x1="780" y1="0" x2="836" y2="0" stroke-dasharray="17 15"/><text class="legend" x="854" y="7">估算或目标</text>
   </g>
 </svg>
