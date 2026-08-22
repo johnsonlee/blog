@@ -149,13 +149,13 @@ OpenAI announces another 1 GW, 5 GW, or 8 GW. How far has that capacity actually
 
    A claim that a data center "has power" may mean a signed PPA, an interconnection agreement, or electricity physically reaching the site. Those states can be years apart. Even after power reaches the site, why can the GPUs still not turn on?
 
-3. **Substation to GPU: The Power Distribution Chain**
+3. **Substation to Rack: The Power Distribution Chain**
 
-   Power still has to pass through transformers, switchgear, UPS systems, PDUs, busways, power shelves, and VRMs before entering a GPU. One missing segment leaves the GPU waiting. Once electricity enters the GPU, almost every watt becomes heat. Where does that heat go?
+   Power still has to pass through transformers, switchgear, UPS systems, PDUs, busways, and power shelves before reaching the rack, then through rack-level power conversion to GPUs, CPUs, HBM, NICs, and switches. One missing segment leaves the entire rack waiting. Once electricity enters that equipment, almost every watt eventually becomes heat. Where does that heat go?
 
-4. **Beyond Liquid Cooling: Data Center Thermal Management**
+4. **The Data Center Thermal Path: Rack to Ambient Air**
 
-   The cold plate is only the start of the thermal path. Manifolds, CDUs, secondary loops, chillers, cooling towers, and dry coolers still have to reject the heat. One missing segment prevents power capacity from becoming sustained compute. If power and thermal systems work and the equipment is installed, why can the facility still not be handed over?
+   Heat inside the rack follows two paths. Heat captured by cold plates enters the Technology Cooling System (TCS), passes through manifolds to a CDU, then transfers into the Facility Water System (FWS). Heat not captured by cold plates still enters the rack exhaust through server fans, then moves into rear-door heat exchangers or CRAHs. Both paths ultimately enter facility cooling; cooling towers, dry coolers, or air-cooled chillers then reject the heat to ambient air. One missing segment keeps power capacity from becoming sustained compute. Once power flows, heat leaves, and equipment is installed, why is the facility still not deliverable?
 
 5. **Commissioning: Built Does Not Mean Deliverable**
 

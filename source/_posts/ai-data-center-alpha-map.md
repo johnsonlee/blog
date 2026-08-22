@@ -148,13 +148,13 @@ RFS 后面还有 IT deployment、burn-in、fabric validation、cluster acceptanc
 
    PPA、interconnection agreement 和 site energization 经常被一句“已经拿到电”混在一起。它可能只是一份购电协议，也可能是拿到并网资格，直到电真正送到 site，前后可能差几年。可电已经到了 site，GPU 为什么还不能上电？
 
-3. 《从变电站到 GPU：供配电链》
+3. 《从变电站到机架：供配电链》
 
-   Site energization 只把电送到并网点。进入 GPU 之前，电力还要穿过 transformer、switchgear、UPS、PDU、busway、power shelf 和 VRM。任何一段没交付，GPU 都只能等。等电终于进了 GPU，几乎每一瓦又都变成了热。这些热量往哪里走？
+   Site energization 只把电送到并网点。进入 rack 之前，电力还要穿过 transformer、switchgear、UPS、PDU、busway 和 power shelf，再由 rack 内的 power conversion 送到 GPU、CPU、HBM、NIC 和 switch。任何一段没交付，整座机架都只能等。电力进入这些设备以后，几乎每一瓦最后都会变成热。这些热量往哪里走？
 
-4. 《液冷之后：数据中心热管理》
+4. 《数据中心散热链：从机架到室外》
 
-   Cold plate 只是 thermal path 的起点，后面还有 CDU、secondary loop、chiller、cooling tower 和 dry cooler。任何一段排不出去，前面的供电能力都无法变成持续算力。电能送，热能排，设备也装完了，为什么机房还不能交？
+   机架里的热量走两条路径。被 cold plate 捕获的热量进入 Technology Cooling System（TCS），经 manifold 到达 CDU，再交给 Facility Water System（FWS）；没有被 cold plate 捕获的余热，仍要由 server fan 带进 rack exhaust，再由 RDHx 或 CRAH 接走。两条路径最终都要汇入 facility cooling，再由 cooling tower、dry cooler 或 air-cooled chiller 排到室外。任何一段没交付，前面的供电能力都无法变成持续算力。电能送，热能排，设备也装完了，为什么机房还不能交？
 
 5. 《Commissioning：机房建完不等于交付》
 
