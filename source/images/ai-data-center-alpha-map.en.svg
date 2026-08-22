@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1230" viewBox="0 90 1600 1230" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1190" viewBox="0 130 1600 1190" role="img" aria-labelledby="title desc">
   <title id="title">The AI Data Center Alpha Map</title>
   <desc id="desc">The horizontal axis follows the delivery lifecycle from Site Selection to In Service. The vertical axis follows facilities, AI infrastructure, workload, and delivery. Thirteen essays locate replication gaps across both axes.</desc>
   <defs>
@@ -12,8 +12,6 @@
   </defs>
 
   <rect class="bg" width="1600" height="1320"/>
-  <text class="axis" x="1000" y="128" text-anchor="middle">PROJECT DELIVERY LIFECYCLE</text>
-
   <path class="development milestone" d="M260 166H490L514 204L490 242H260L284 204Z"/>
   <text class="phase" x="387" y="196">Development</text><text class="phase-note" x="387" y="218">Site Selection · Permitting</text>
   <path class="build milestone" d="M490 166H740L764 204L740 242H490L514 204Z"/>
