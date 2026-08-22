@@ -36,13 +36,13 @@ i18n_key: ai-data-center-alpha-map
 
 Lordstown 只和 Milam County 一起披露了合计 1.5GW，OpenAI 没拆单站容量，图上也不替它倒算。各站的 GW 口径同样不能混用：PORTS-Pike 是 IT capacity，Shackelford 是 critical IT load，Doña Ana 和 Camellia 是 power capacity。它们能比较单站 buildout 的量级，不能直接相加。
 
-九座仍然不是“合同总数”。
+地图回答了这九座 campus 在哪里、建到哪一步，还不能用来计算 OpenAI 已经锁定了多少 GW。
 
-同一批算力，会在 site、cloud capacity、compute system 和 chip 四层合同里反复出现。[Oracle 的 4.5GW partnership](https://openai.com/index/stargate-advances-with-partnership-with-oracle/) 会落到多座 campus；[Milam County 的 1.2GW lease](https://openai.com/index/stargate-sb-energy-partnership/) 已经包含在 2025 年公布的五座新 site 里；NVIDIA 的 10GW 还是 [letter of intent](https://openai.com/index/openai-nvidia-systems-partnership/)，Broadcom 的 10GW 是一份[系统部署 term sheet](https://openai.com/index/openai-and-broadcom-announce-strategic-collaboration/)。两项合计 20GW，指的是将部署到 OpenAI 及其合作伙伴数据中心里的 systems，不能再算成 20GW 新机房。
+同一批算力，会在 site、cloud capacity、compute system 和 chip 四层披露里反复出现。[Oracle 的 4.5GW partnership](https://openai.com/index/stargate-advances-with-partnership-with-oracle/) 会落到多座 campus；[Milam County 的 1.2GW lease](https://openai.com/index/stargate-sb-energy-partnership/) 已经包含在 2025 年公布的五座新 site 里；NVIDIA 的 10GW 还是 [letter of intent](https://openai.com/index/openai-nvidia-systems-partnership/)，Broadcom 的 10GW 是一份[系统部署 term sheet](https://openai.com/index/openai-and-broadcom-announce-strategic-collaboration/)。后两项合计 20GW，指的是将部署到 OpenAI 及其合作伙伴数据中心里的 systems，不能再算成 20GW 新机房。
 
 [Microsoft、Oracle、AWS、CoreWeave 和 Google Cloud](https://openai.com/index/accelerating-the-next-phase-ai/) 提供 cloud capacity，底下也可能落在同一批 physical infrastructure 上。把每份新闻稿里的 GW 直接相加，同一座数据中心会被算上两遍，甚至三遍。
 
-能确定的是公开点名的九座 campus。算不出来的，是一份不重不漏的合同总表。更可靠的两个边界，是 2025 年已经 available 的 1.9GW，以及 OpenAI 计划在 2030 年拿到的 30GW。
+所以这张图只收录能够钉住位置和交付状态的 physical campus。容量判断回到两个不会重复计算的边界：2025 年已经 available 的 1.9GW，以及 OpenAI 计划在 2030 年拿到的 30GW。
 
 ## 30GW 对应什么需求
 
