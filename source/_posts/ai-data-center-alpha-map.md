@@ -44,6 +44,20 @@ i18n_key: ai-data-center-alpha-map
 
 所以这张图只收录能够钉住位置和交付状态的 physical campus。容量判断回到两个不会重复计算的边界：2025 年已经 available 的 1.9GW，以及 OpenAI 计划在 2030 年拿到的 30GW。
 
+## 30GW 隐含的需求曲线
+
+九座 campus 在地图上一个个分开，OpenAI 的 capacity planning 却必须把它们接成一条逐年上升的 available compute 曲线。
+
+公开数据给了四个锚点：2023 年 0.2GW、2024 年 0.6GW、2025 年约 1.9GW，以及 2030 年 30GW。OpenAI 没有公布 2026 到 2029 年的逐年 guidance。从 1.9GW 走到 30GW，五年 CAGR 约为 74%；对应 2026 年 3.3GW、2027 年 5.7GW、2028 年 9.9GW、2029 年 17.3GW。
+
+![OpenAI 可用算力趋势预测](/images/openai-compute-growth-forecast.svg)
+
+图里的四个中间值只是按 74% CAGR 平滑倒推，OpenAI 没有承诺这条交付曲线。真实 capacity 会跟着 data hall 和 cluster 分批上线，曲线更可能一级一级往上跳。公开的 delivery date 已经排在最陡的几年里：[AWS 2025 年协议里的 capacity 计划在 2026 年底前完成部署](https://openai.com/index/aws-and-openai-partnership/)，[Oracle 在四座新 campus 的 customer delivery 从 2027 年开始](https://www.oracle.com/data-centers/)，[Cerebras 的 750MW 分批上线到 2028 年](https://openai.com/index/cerebras-partnership/)，PORTS-Pike 的首批 0.8GW 也落在 2028 年。
+
+这些项目跨越 cloud capacity、data center 和 compute system，不能直接相加，却把交付压力指向了同一个时间窗口。按这条隐含曲线，OpenAI 每年需要新增的可用算力会从 2026 年的 1.4GW，升到 2030 年的 12.7GW。最后一年新增的 capacity，接近 2025 年全部可用算力的七倍。
+
+2023 到 2025 年，available compute 每年增长约三倍。把这个速度机械外推到 2030 年会得到 462GW，远远超过 OpenAI 给出的 30GW。目标对应的百分比增速已经放缓，绝对交付量却还在加速。**OpenAI 押注的是一条仍以指数增长、并且能在五年内消化 16 倍算力的 AI 需求曲线。**
+
 ## 30GW 对应什么需求
 
 30GW 要同时喂两种需求。
@@ -62,7 +76,7 @@ PORTS-Pike 的公告没有写 GPU 数量，也没有写 FLOPS，只给了一个 
 
 放回 OpenAI 的算力版图，8GW 约等于 2025 年全部可用算力的 4.2 倍，也相当于 2030 年 30GW 目标的 27%。单个 campus 吃掉超过四分之一的长期目标，当然大。
 
-![OpenAI 算力增长与 PORTS-Pike 交付时间](/images/openai-compute-capacity.svg)
+![PORTS-Pike 交付时间](/images/openai-compute-capacity.svg)
 
 可这 8GW 不会一起上线。[首批 800MW，也就是 0.8GW，预计 2028 年 available](https://openai.com/index/openai-joins-ports-pike-project/)，整个 buildout 要持续六年，直到 2032 年。OpenAI 今天也不会为 8GW 全额付款，completed capacity 具备交付条件以后，才开始支付 lease 费用。
 
@@ -203,6 +217,8 @@ Production Handoff 结束，physical capacity 才算交付。它能否转化成 
 - [OpenAI plans 30GW of compute by 2030](https://x.com/OpenAINewsroom/status/2046951726683455866)
 - [A business that scales with the value of intelligence](https://openai.com/index/a-business-that-scales-with-the-value-of-intelligence/)
 - [OpenAI and Microsoft extend partnership](https://openai.com/index/openai-and-microsoft-extend-partnership/)
+- [AWS and OpenAI announce multi-year strategic partnership](https://openai.com/index/aws-and-openai-partnership/)
+- [OpenAI partners with Cerebras](https://openai.com/index/cerebras-partnership/)
 - [OpenAI, Oracle, and SoftBank expand Stargate with five new AI data center sites](https://openai.com/index/five-new-stargate-sites/)
 - [Crusoe's flagship 1.2GW AI data center campus in Abilene](https://crusoe.ai/blog/crusoe-2024-impact-report/)
 - [Oracle AI data center construction and delivery status](https://www.oracle.com/data-centers/)
