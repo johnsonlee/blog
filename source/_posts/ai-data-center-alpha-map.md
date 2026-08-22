@@ -90,9 +90,9 @@ PORTS-Pike 的公告没有写 GPU 数量，也没有写 FLOPS，只给了一个 
 
 OpenAI 可以在一份协议里锁下 8GW，首批 800MW 却要等到 2028 年。签合同只用一支笔，复制供给要穿过 site、power、facility 和 cluster。
 
-上一篇《{% post_link the-real-bottleneck-is-replication '复制速度才是真正的瓶颈' %}》留下的两只时钟，在这里终于对上了：需求多久到，供给多久才能复制出来。把 OpenAI 推向 30GW 的 workload 是需求时钟，能够承载 production workload 的 capacity 是供给时钟，中间那段 Replication Gap 才会挤出订单、涨价和超额利润。
+上一篇《{% post_link the-real-bottleneck-is-replication '复制速度才是真正的瓶颈' %}》留下的是一个时间差：OpenAI 对 30GW 的需求会在多久内形成，能够承载 production workload 的 capacity 又要多久才能复制出来。需求形成得快，供给扩得慢，中间那段 Replication Gap 才会挤出订单、涨价和超额利润。
 
-沿着这两只时钟往下追，AI 的瓶颈中心落在了 Data Center。SpaceX 更激进，它想把整条地面部署路径换掉。
+顺着 Replication Gap 往下追，AI 的瓶颈中心落在了 Data Center。SpaceX 更激进，它想把整条地面部署路径换掉。
 
 可在那张 Bottleneck Migration Network 里，Data Center 仍然只是一个方框。
 
@@ -130,7 +130,7 @@ RFS 后面还有 IT deployment、burn-in、fabric validation、cluster acceptanc
 
 先分清是哪一个 1GW，才轮得到后面的定价与收益判断。
 
-每篇先用一张图把系统接起来。接着往下追：需求单位是什么，到底要复制什么，两只时钟差多久，当前瓶颈松开以后压力会撞向哪里，最后谁能把稀缺变成收入和现金流。
+每篇先用一张图把系统接起来。接着往下追：需求单位是什么，到底要复制什么，Replication Gap 有多长，当前瓶颈松开以后压力会撞向哪里，最后谁能把稀缺变成收入和现金流。
 
 设备科普写到“它怎么工作”就结束了。把系统讲清楚以后，还要再往前走一步：**它为什么会缺，缺多久，谁能捕获 economics，股价又算进去了多少。**
 

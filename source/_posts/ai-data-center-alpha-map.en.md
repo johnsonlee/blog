@@ -23,7 +23,7 @@ The harder question comes next: whose orders, revenue, and cash flow will those 
 
 ## A data center forces every bottleneck onto one site
 
-{% post_link the-real-bottleneck-is-replication.en 'Replication Speed Is the Real Bottleneck' %} introduced a general framework: compare the two clocks of demand arrival and supply replication, then follow dependencies as the bottleneck migrates. That framework sits outside this series as prior reading for any bottleneck analysis. Drugs, nuclear power, robotics, and space infrastructure can all be mapped onto the same Bottleneck Migration Network whenever demand and supply run on different clocks.
+{% post_link the-real-bottleneck-is-replication.en 'Replication Speed Is the Real Bottleneck' %} introduced a general framework: compare how quickly demand forms with how long supply takes to replicate, then follow dependencies as the bottleneck migrates. That framework sits outside this series as prior reading for any bottleneck analysis. Drugs, nuclear power, robotics, and space infrastructure can all be mapped onto the same Bottleneck Migration Network whenever demand growth outruns supply replication.
 
 Data centers are the first deep dive because they compress many industrial systems into one delivery outcome.
 
@@ -47,7 +47,7 @@ The vertical axis is the **AI Infrastructure Stack**. Power, thermal management,
 
 Once the axes intersect, every number in an announcement has coordinates. When a project announces 1 GW, ask which delivery gate it has reached. When a supplier says orders doubled, ask which layer it controls, how long expansion takes, and whether customers can route around it. **Alpha lives in the time gaps between coordinates, not in the labels.**
 
-Every essay follows the same research contract. A diagram first explains how the system works. The analysis then defines the demand unit and replication unit, compares the two clocks, tests substitution paths, and identifies the next bottleneck. It ends with value capture, the Price-in Score, tracking metrics, and invalidation conditions. Without that second half, the essay would deliver component education but no alpha judgment worthy of the Investing category.
+Every essay follows the same research contract. A diagram first explains how the system works. The analysis then defines the demand unit and replication unit, measures the Replication Gap, tests substitution paths, and identifies the next bottleneck. It ends with value capture, the Price-in Score, tracking metrics, and invalidation conditions. Without that second half, the essay would deliver component education but no alpha judgment worthy of the Investing category.
 
 ## Deliver the facility first
 
