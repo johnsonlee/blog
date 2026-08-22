@@ -24,6 +24,12 @@ i18n_key: ai-data-center-alpha-map
 
 把 OpenAI 过去一年半的公告摊开，美国至少已经点名九座 campus。2025 年 9 月，Abilene 加上五座新 site，把 Stargate 带到[六座 campus、接近 7GW planned capacity](https://openai.com/index/five-new-stargate-sites/)；一个月后，[Michigan 成为第七座](https://openai.com/index/expanding-stargate-to-michigan/)，总规划容量超过 8GW。2026 年又加上 Georgia 的 [Project Camellia](https://openai.com/index/building-ai-infrastructure-with-the-effingham-county-community/) 和 Ohio 的 [PORTS-Pike](https://openai.com/index/openai-joins-ports-pike-project/)。
 
+地图一摊开，项目尺度先拉开了。Abilene、Milam County 和 Michigan 还在 1GW 级，PORTS-Pike 一个 campus 已经冲到 8 IT-GW。
+
+![OpenAI 在美国公布的九座数据中心 campus](/images/openai-stargate-campus-map.svg)
+
+八座有单站数字，一座没有。Lordstown 只和 Milam County 一起披露了合计 1.5GW，OpenAI 没拆单站容量，图上也不替它倒算。各站的 GW 口径沿用公告原文：PORTS-Pike 是 IT capacity，Shackelford 是 critical IT load，Doña Ana 和 Camellia 是 power capacity。它们能比较单站 buildout 的量级，不能直接相加。
+
 九座仍然不是“合同总数”。
 
 同一批算力，会在 site、cloud capacity、compute system 和 chip 四层合同里反复出现。[Oracle 的 4.5GW partnership](https://openai.com/index/stargate-advances-with-partnership-with-oracle/) 会落到多座 campus；[Milam County 的 1.2GW lease](https://openai.com/index/stargate-sb-energy-partnership/) 已经包含在 2025 年公布的五座新 site 里；NVIDIA 的 10GW 还是 [letter of intent](https://openai.com/index/openai-nvidia-systems-partnership/)，Broadcom 的 10GW 是一份[系统部署 term sheet](https://openai.com/index/openai-and-broadcom-announce-strategic-collaboration/)。两项合计 20GW，指的是将部署到 OpenAI 及其合作伙伴数据中心里的 systems，不能再算成 20GW 新机房。
@@ -191,6 +197,10 @@ Production Handoff 结束，physical capacity 才算交付。它能否转化成 
 - [OpenAI plans 30GW of compute by 2030](https://x.com/OpenAINewsroom/status/2046951726683455866)
 - [A business that scales with the value of intelligence](https://openai.com/index/a-business-that-scales-with-the-value-of-intelligence/)
 - [OpenAI, Oracle, and SoftBank expand Stargate with five new AI data center sites](https://openai.com/index/five-new-stargate-sites/)
+- [Crusoe's flagship 1.2GW AI data center campus in Abilene](https://crusoe.ai/blog/crusoe-2024-impact-report/)
+- [Vantage Frontier campus: 1.4GW of critical IT load](https://vantage-dc.com/wp-content/uploads/2025/08/VDC_DataSheet_Frontier.pdf)
+- [Bloom Energy | Doña Ana: 2.8GW power capacity](https://bloomenergydonaana.com/en)
+- [Vantage Lighthouse campus: 902MW development](https://blog.vantage-dc.com/2026/03/30/vantage-data-centers-and-partners-host-career-expo-in-port-washington-wisconsin-to-connect-local-talent-with-lighthouse-opportunities/)
 - [Expanding Stargate to Michigan](https://openai.com/index/expanding-stargate-to-michigan/)
 - [Building AI infrastructure with the Effingham County community](https://openai.com/index/building-ai-infrastructure-with-the-effingham-county-community/)
 - [OpenAI joins PORTS-Pike project](https://openai.com/index/openai-joins-ports-pike-project/)
