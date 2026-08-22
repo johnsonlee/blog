@@ -1,5 +1,5 @@
 ---
-title: AI 数据中心的 8GW，离可用算力还有多远？
+title: OpenAI 30GW：数据中心交付缺口
 date: 2026-08-22 14:55:27
 categories:
   - Investing
@@ -12,23 +12,57 @@ tags:
 i18n_key: ai-data-center-alpha-map
 ---
 
-OpenAI 前几天宣布，将在 PORTS-Pike [锁定约 8 IT-GW 的容量](https://openai.com/index/openai-joins-ports-pike-project/)。同一份公告里还有两个数字：首批 800MW 预计在 2028 年 available，整个项目的 buildout 将持续六年，直到 2032 年。
+[2023 年，OpenAI 的可用算力只有 0.2GW](https://openai.com/index/a-business-that-scales-with-the-value-of-intelligence/)。2024 年升到 0.6GW，2025 年再到约 1.9GW。两年涨了 9.5 倍，仍然不够。2026 年 4 月，OpenAI 又把目标推到了 [2030 年 30GW](https://x.com/OpenAINewsroom/status/2046951726683455866)。
 
-先把单位说清楚。GW 是功率单位，1GW 等于 1000MW；IT-GW 指数据中心用于服务器、网络和存储等 IT equipment 的功率容量。它不是 GPU 数量，也不是计算性能。
+30GW 是 2025 年可用算力的近 16 倍。可就在这个目标公布四个月后，OpenAI 又签下 PORTS-Pike，一座规划容量约 8 IT-GW 的数据中心。
 
-单位弄清楚，三个数字才接得起来。8GW 是协议锁定的总容量，800MW 是计划在 2028 年交付的首批 capacity，六年是整个项目的 buildout schedule。它们不会在同一天变成可用算力。
-
-这正是问题的起点：8GW 到底走到了哪一步？
-
-是已经拿到的土地，签完的 PPA，送到 site 的电，还是通过 validation、可以跑 production workload 的 GPU cluster？这些状态在新闻稿里都叫“项目进展”，离可用算力却可能差着几年。
-
-分不清这些状态，所有供给分析都会从错误的分母开始。
+已经签了多少座数据中心，为什么还在继续签，这 8GW 放进 30GW 以后又算多大？
 
 <!-- more -->
 
+## OpenAI 到底签了多少
+
+把 OpenAI 过去一年半的公告摊开，美国至少已经点名九座 campus。2025 年 9 月，Abilene 加上五座新 site，把 Stargate 带到[六座 campus、接近 7GW planned capacity](https://openai.com/index/five-new-stargate-sites/)；一个月后，[Michigan 成为第七座](https://openai.com/index/expanding-stargate-to-michigan/)，总规划容量超过 8GW。2026 年又加上 Georgia 的 [Project Camellia](https://openai.com/index/building-ai-infrastructure-with-the-effingham-county-community/) 和 Ohio 的 [PORTS-Pike](https://openai.com/index/openai-joins-ports-pike-project/)。
+
+九座仍然不是“合同总数”。
+
+同一批算力，会在 site、cloud capacity、compute system 和 chip 四层合同里反复出现。[Oracle 的 4.5GW partnership](https://openai.com/index/stargate-advances-with-partnership-with-oracle/) 会落到多座 campus；[Milam County 的 1.2GW lease](https://openai.com/index/stargate-sb-energy-partnership/) 已经包含在 2025 年公布的五座新 site 里；NVIDIA 的 10GW 还是 [letter of intent](https://openai.com/index/openai-nvidia-systems-partnership/)，Broadcom 的 10GW 是一份[系统部署 term sheet](https://openai.com/index/openai-and-broadcom-announce-strategic-collaboration/)。两项合计 20GW，指的是将部署到 OpenAI 及其合作伙伴数据中心里的 systems，不能再算成 20GW 新机房。
+
+[Microsoft、Oracle、AWS、CoreWeave 和 Google Cloud](https://openai.com/index/accelerating-the-next-phase-ai/) 提供 cloud capacity，底下也可能落在同一批 physical infrastructure 上。把每份新闻稿里的 GW 直接相加，同一座数据中心会被算上两遍，甚至三遍。
+
+能确定的是公开点名的九座 campus。算不出来的，是一份不重不漏的合同总表。更可靠的两个边界，是 2025 年已经 available 的 1.9GW，以及 OpenAI 计划在 2030 年拿到的 30GW。
+
+## 30GW 对应什么需求
+
+30GW 要同时喂两种需求。
+
+[Training compute 用来购买下一代模型的能力，inference compute 用来交付今天的产品](https://openai.com/index/a-scorecard-for-the-ai-age/)。用户越多，请求越多，inference 就越大；模型开始 reasoning，一次请求会消耗更多 test-time compute；进入 Agent 以后，一次请求还会展开成[持续几分钟甚至几小时](https://openai.com/index/how-agents-are-transforming-work/)的 model invocation、tool call 和 retry。
+
+OpenAI 把三年数据放在一起：可用算力增长 9.5 倍，ARR 也从 20 亿美元增长到 200 亿美元以上，正好 10 倍。OpenAI 的判断很直接：如果当时有更多 compute，产品采用和收入还会更快。[算力既在训练未来的模型，也在承接今天的收入](https://openai.com/index/a-business-that-scales-with-the-value-of-intelligence/)。
+
+于是更好的模型带来更多使用，更多使用带来更多收入，收入再去锁下一批算力。算法和硬件会不断提高 performance per watt，但需求单位也在从一次问答，变成一项持续运行的任务。效率提高释放出来的 capacity，很快又会被新的 workload 吃掉。
+
+30GW 还躺在 roadmap 上。OpenAI 每多签一份，锁定的都是几年后的供给。
+
+## PORTS-Pike 的 8GW 有多大
+
+PORTS-Pike 的公告没有写 GPU 数量，也没有写 FLOPS，只给了一个 8 IT-GW。这个数字量的是服务器、网络和存储能够使用的功率容量，回答不了 cluster 能跑出多少算力。
+
+放回 OpenAI 的算力版图，8GW 约等于 2025 年全部可用算力的 4.2 倍，也相当于 2030 年 30GW 目标的 27%。单个 campus 吃掉超过四分之一的长期目标，当然大。
+
+![OpenAI 算力增长与 PORTS-Pike 交付时间](/images/openai-compute-capacity.svg)
+
+可这 8GW 不会一起上线。[首批 800MW，也就是 0.8GW，预计 2028 年 available](https://openai.com/index/openai-joins-ports-pike-project/)，整个 buildout 要持续六年，直到 2032 年。OpenAI 今天也不会为 8GW 全额付款，completed capacity 具备交付条件以后，才开始支付 lease 费用。
+
+所以 8GW 同时有三个位置：它是 PORTS-Pike 的最终规划容量，是 2030 年目标里可能兑现的一部分，也是 2032 年才有机会完成的 buildout。把它直接记进今天的 available compute 没有依据；即使放到 2028 年的首批交付节点，也会把 800MW 高估成 8GW。
+
+问题也就从“OpenAI 还要多少 GW”变成了“已经签下来的 GW，什么时候才能变成可用算力”。
+
 ## Data Center 还是一个黑箱
 
-上一篇《[复制速度才是真正的瓶颈](/2026/08/18/the-real-bottleneck-is-replication/)》写到最后，只留下两只时钟：需求多久到，供给多久才能复制出来。需求跑得快，供给爬得慢，中间那段 Replication Gap 才会挤出订单、涨价和超额利润。
+OpenAI 可以在一份协议里锁下 8GW，首批 800MW 却要等到 2028 年。签合同只用一支笔，复制供给要穿过 site、power、facility 和 cluster。
+
+上一篇《[复制速度才是真正的瓶颈](/2026/08/18/the-real-bottleneck-is-replication/)》留下的两只时钟，在这里终于对上了：需求多久到，供给多久才能复制出来。把 OpenAI 推向 30GW 的 workload 是需求时钟，能够承载 production workload 的 capacity 是供给时钟，中间那段 Replication Gap 才会挤出订单、涨价和超额利润。
 
 沿着这两只时钟往下追，AI 的瓶颈中心落在了 Data Center。SpaceX 更激进，它想把整条地面部署路径换掉。
 
@@ -54,7 +88,7 @@ RFS 后面还有 IT deployment、burn-in、fabric validation、cluster acceptanc
 
 所以研究数据中心，不能只数 GPU shipment，也不能把 announced GW 全塞进同一张表。项目走到哪一道 handoff，决定这笔供给到底该不该算。
 
-## 把 8GW 放回坐标系
+## 把 GW 放回坐标系
 
 要拆 PORTS-Pike，先得画两条轴。
 
@@ -74,13 +108,13 @@ RFS 后面还有 IT deployment、burn-in、fabric validation、cluster acceptanc
 
 这 13 篇的顺序也就定了下来。先把 site 交出来，再把 rack 拼成 cluster，然后让 workload 跑起来，最后把结果送到用户手里。前一篇的终点，就是下一篇的起点。
 
-## 先看 8GW 到底建到了哪里
+## 先看数据中心建到了哪里
 
 先从荒地一路追到 RFS。以后看到一家公司宣布 1GW、5GW 或 8GW，至少先知道这个数字离可用算力还有多远。
 
 1. 《AI 数据中心交付：从 Site Selection 到 RFS》
 
-   先把 announced、planned、under construction、energized 和 RFS 放回同一条时间轴。项目现在在哪、下一道 gate 是什么、哪一道最慢，后面的供给判断才有起点。
+   Announced、planned、under construction、energized 和 RFS 要放回同一条时间轴。项目现在在哪、下一道 gate 是什么、哪一道最慢，后面的供给判断才有起点。
 
 2. 《AI 数据中心电网接入：第一道闸门》
 
@@ -154,6 +188,11 @@ Production Handoff 结束，physical capacity 才算交付。它能否转化成 
 
 ## 资料
 
+- [OpenAI plans 30GW of compute by 2030](https://x.com/OpenAINewsroom/status/2046951726683455866)
+- [A business that scales with the value of intelligence](https://openai.com/index/a-business-that-scales-with-the-value-of-intelligence/)
+- [OpenAI, Oracle, and SoftBank expand Stargate with five new AI data center sites](https://openai.com/index/five-new-stargate-sites/)
+- [Expanding Stargate to Michigan](https://openai.com/index/expanding-stargate-to-michigan/)
+- [Building AI infrastructure with the Effingham County community](https://openai.com/index/building-ai-infrastructure-with-the-effingham-county-community/)
 - [OpenAI joins PORTS-Pike project](https://openai.com/index/openai-joins-ports-pike-project/)
 - [U.S. Department of Energy PORTS-Pike fact sheet](https://www.energy.gov/articles/fact-sheet-department-energy-ensuring-affordable-energy-access-ohio-while-powering-future)
 - [NVIDIA DSX reference architecture](https://docs.nvidia.com/dsx/home)
