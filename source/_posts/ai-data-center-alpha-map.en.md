@@ -47,11 +47,13 @@ The vertical axis is the **AI Infrastructure Stack**. Power, thermal management,
 
 Once the axes intersect, every number in an announcement has coordinates. When a project announces 1 GW, ask which delivery gate it has reached. When a supplier says orders doubled, ask which layer it controls, how long expansion takes, and whether customers can route around it. **Alpha lives in the time gaps between coordinates, not in the labels.**
 
-Every essay follows the same research contract. A diagram first explains how the system works. The analysis then defines the demand unit and replication unit, measures the Replication Gap, tests substitution paths, and identifies the next bottleneck. It ends with value capture, the Price-in Score, tracking metrics, and invalidation conditions. Without that second half, the essay would deliver component education but no alpha judgment worthy of the Investing category.
+The map also determines the sequence of the thirteen essays. First follow project delivery along the horizontal axis, from Site Selection to RFS. Then move down the vertical stack through power, thermal, compute, networking, and storage until GPUs become a healthy cluster. After Production Handoff, follow workloads and delivery networks until physical capacity becomes billable service. Finally, put the whole chain back into PORTS-Pike's 8 GW and test which Replication Gap lasts longest and who can turn it into revenue and cash flow.
+
+Each essay therefore begins where the previous one ends.
 
 ## Deliver the facility first
 
-The first part follows paper capacity until it becomes RFS capacity, identifying the owner of every gate and the critical path across the full project.
+Every gate on the horizontal axis changes what 1 GW means. The first essay sorts the project states; the next four follow grid access, power distribution, thermal management, and commissioning until the facility becomes deliverable.
 
 ### 01 AI Data Center Project Delivery
 

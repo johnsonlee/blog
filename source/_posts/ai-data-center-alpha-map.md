@@ -130,15 +130,13 @@ RFS 后面还有 IT deployment、burn-in、fabric validation、cluster acceptanc
 
 先分清是哪一个 1GW，才轮得到后面的定价与收益判断。
 
-每篇先用一张图把系统接起来。接着往下追：需求单位是什么，到底要复制什么，Replication Gap 有多长，当前瓶颈松开以后压力会撞向哪里，最后谁能把稀缺变成收入和现金流。
+这张图也把 13 篇的顺序定了下来。先沿横轴追项目交付，从 Site Selection 走到 RFS；再沿纵轴拆 power、thermal、compute、network 和 storage，看 GPU 怎样变成 healthy cluster。走过 Production Handoff，再追 workload 和 delivery network，直到 physical capacity 变成 billable service。最后把整条链放回 PORTS-Pike 的 8GW 验算：哪一段 Replication Gap 最长，谁能把它变成收入和现金流。
 
-设备科普写到“它怎么工作”就结束了。把系统讲清楚以后，还要再往前走一步：**它为什么会缺，缺多久，谁能捕获 economics，股价又算进去了多少。**
-
-这 13 篇的顺序也就定了下来。先把 site 交出来，再把 rack 拼成 cluster，然后让 workload 跑起来，最后把结果送到用户手里。前一篇的终点，就是下一篇的起点。
+所以，前一篇的终点，就是下一篇的起点。
 
 ## 先看数据中心建到了哪里
 
-先从荒地一路追到 RFS。以后看到一家公司宣布 1GW、5GW 或 8GW，至少先知道这个数字离可用算力还有多远。
+横轴上的每一道 gate 都会改变 1GW 的含义。第一篇先把项目状态排清楚，后面四篇依次追电网、供配电、散热和 commissioning，直到机房具备交付条件。
 
 1. 《AI 数据中心交付：从 Site Selection 到 RFS》
 
