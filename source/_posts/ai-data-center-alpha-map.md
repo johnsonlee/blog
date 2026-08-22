@@ -52,23 +52,23 @@ RFS 之后还有 IT deployment、cluster validation 和 Production Handoff。NVI
 
 系列的第一部分从项目交付开始。我们沿着纸面容量走到 RFS capacity，找出每一道 gate 的控制者和整条路径的 critical path。
 
-### 01 一座 AI 数据中心怎样从 Site Selection 走到 RFS
+### 01 AI 数据中心项目交付全周期
 
 第一篇把 Site Selection、permitting、design、procurement、construction、energization、commissioning 和 handover 串成一条时间轴。重点是识别 announced、planned、under construction、energized 与 RFS 的边界，以及每一道 gate 对真实供给的约束。
 
-### 02 AI 数据中心怎样从电网拿到可用电力
+### 02 AI 数据中心电网接入
 
 第二篇沿 utility side 追踪发电资源、输电、interconnection、变电站和 site energization。数据中心“有电”究竟指签了 PPA、拿到 interconnection agreement，还是电已经送到 site，时间差可能以年计算。研究要判断卡住项目的是 energy、capacity、grid connection，还是 long-lead equipment。
 
-### 03 电怎样从数据中心变电站走到 GPU
+### 03 AI 数据中心供配电架构
 
 电到达 site 以后，仍要经过 transformer、switchgear、UPS、PDU、busway、power shelf 和 VRM 才能进入 GPU。第三篇会拆开这条 behind-the-meter power train，寻找同时具备长交期、低替代性和高增量价值的设备与功率半导体。
 
-### 04 GPU 的热怎样排出 AI 数据中心
+### 04 AI 数据中心热管理
 
 第四篇沿热量离开 GPU 的方向，拆 cold plate、manifold、CDU、secondary loop、chiller、cooling tower 和 dry cooler。液冷渗透率只是第一层，投资研究还要找出 heat rejection loop 里复制最慢的一段。
 
-### 05 建完的 AI 数据中心怎样完成 Commissioning
+### 05 AI 数据中心调试与 RFS 交付
 
 第五篇专门研究 Mechanical Completion 到 RFS 之间的 gap：startup、functional testing、L1-L5 commissioning、Integrated Systems Testing 与 operational handover。Uptime Institute 把 commissioning 视为贯穿设计、施工和 operations transition 的验证过程，因为单台设备启动成功，不代表整套 mission-critical system 能在故障场景下工作。[Uptime Institute](https://journal.uptimeinstitute.com/improve-project-success-through-mission-critical-commissioning/)解释了为什么“建完”与“可交付”是两件事。
 
@@ -76,19 +76,19 @@ RFS 之后还有 IT deployment、cluster validation 和 Production Handoff。NVI
 
 RFS 是设施侧的终点，却只是 AI infrastructure 的起点。第二部分会继续追踪硬件进入机房以后，怎样变成一套可以交给 workload 的 healthy cluster。
 
-### 06 一块 GPU 怎样变成 AI 数据中心的 Rack-Scale Compute
+### 06 AI 数据中心机架级计算架构
 
 第六篇从 GPU、CPU、HBM、NIC 和 DPU 一直拆到 compute tray、NVLink switch tray、power shelf 和 rack。研究供给时，GPU shipment、server shipment、rack delivery 与可用 cluster capacity 不能混为一谈。系统在哪里完成 handoff，replication unit 就应该画在哪里。
 
-### 07 数万块 GPU 怎样在 AI 数据中心里连成一台机器
+### 07 AI 数据中心万卡集群互联
 
 第七篇研究数万块 GPU 怎样连成一个系统：NVLink 负责 scale-up，InfiniBand 或 Ethernet 承担 scale-out，背后还有 switch ASIC、optical transceiver、laser、fiber、connector 和 testing。GPU 增长释放出来的带宽需求，会沿 topology 把压力推向不同节点。
 
-### 08 AI 数据中心怎样存放模型与 Agent 上下文
+### 08 AI 数据中心存储架构
 
 第八篇追踪 training data、model weights、checkpoint、local NVMe、parallel file system、object storage 与 KV cache。TB 和 bit shipment 只描述容量，firmware、controller、可靠性与 hyperscaler qualification 决定 enterprise storage 能否真正上线。
 
-### 09 AI 数据中心里的 GPU 集群怎样走到 Production Handoff
+### 09 AI 数据中心集群验证与交付
 
 第九篇填上 RFS 到 Production Handoff 之间最容易被忽略的一段：IT deployment、firmware、provisioning、burn-in、fabric validation、cluster acceptance 和 healthy handoff。到了这一步，“安装了多少 GPU”要换成 deployment velocity、cluster yield 和 healthy capacity。
 
@@ -96,21 +96,21 @@ RFS 是设施侧的终点，却只是 AI infrastructure 的起点。第二部分
 
 一座 healthy cluster 不会自动产生收入。workload 如何调度、请求怎样展开、结果能否按延迟要求送到用户，会继续改变同一 MW 的经济产出。
 
-### 10 Training 和 Inference 为什么需要不同的数据中心
+### 10 训练与推理数据中心架构
 
 第十篇比较 Training 与 Inference 的吞吐、延迟、batching、利用率、功率密度、cluster size 和地理位置。Training 侧出现的 bottleneck 不一定会原样迁移到 Inference，把两种 workload 混在一起，会直接算错未来的基础设施需求。
 
-### 11 一次 Agent 请求怎样消耗 AI 数据中心算力
+### 11 AI 数据中心 Agent 工作负载模型
 
 第十一篇从一次 Agent 请求往下拆 routing、prefill、decode、retrieval、tool call、retry、cache 和 scheduler。token、request、task 与 tasks per MW 分别回答不同问题。Agent 普及以后，哪一个指标最接近客户需求，又能解释物理容量消耗，需要重新判断。
 
-### 12 AI 数据中心的算力怎样到达用户
+### 12 AI 数据中心算力交付网络
 
 第十二篇走出数据中心，研究 DCI、backbone、transit、peering、CDN、edge 与 metro inference。内部 compute capacity 增加以后，约束可能迁移到数据中心之间的光纤、互联容量、延迟和地理分布。
 
 ## PORTS-Pike 检验整张地图
 
-### 13 用 PORTS-Pike 还原 AI 数据中心 Alpha 地图
+### 13 PORTS-Pike AI 数据中心 Alpha 案例
 
 第十三篇回到开篇那组数字，把 PORTS-Pike 的 8 IT-GW 还原成一张 Bottleneck Migration Network。我们会核查每个项目的 delivery stage，把每一 GW 展开成 power、thermal、compute、network 和 storage 需求，再比较 critical path、Replication Gap、替代路径、价值捕获与市场预期。
 

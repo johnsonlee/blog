@@ -40,31 +40,31 @@
 
   <rect x="86" y="294" width="1450" height="52" fill="#e2e8f0" rx="5"/>
   <text class="group" x="106" y="326">Project delivery</text>
-  <text class="row" x="275" y="316"><tspan x="275">01 How an AI Data Center Moves</tspan><tspan class="small" x="275" dy="16">from Site Selection to RFS</tspan></text>
+  <text class="row" x="275" y="325">01 AI Data Center Project Delivery</text>
   <rect class="overview" x="520" y="306" width="996" height="28" rx="5"/><text class="bartext" x="1018" y="325">States and the Critical Path from Site Selection to RFS</text>
 
   <text class="group" x="106" y="384">Facilities</text>
-  <text class="row" x="106" y="420"><tspan x="106">02 How an AI Data Center</tspan><tspan class="small" x="106" dy="16">Gets Usable Power from the Grid</tspan></text><rect class="power" x="278" y="410" width="592" height="28" rx="5"/><text class="bartext" x="574" y="429">Utility Side → Energization</text>
-  <text class="row" x="106" y="476"><tspan x="106">03 How Power Travels</tspan><tspan class="small" x="106" dy="16">from the Substation to the GPU</tspan></text><rect class="power" x="520" y="466" width="430" height="28" rx="5"/><text class="bartext" x="735" y="485">Site Power → GPU</text>
-  <text class="row" x="106" y="532"><tspan x="106">04 How GPU Heat Leaves</tspan><tspan class="small" x="106" dy="16">an AI Data Center</tspan></text><rect class="thermal" x="520" y="522" width="430" height="28" rx="5"/><text class="bartext" x="735" y="541">GPU Heat → Heat Rejection</text>
-  <text class="row" x="106" y="588"><tspan x="106">05 How an AI Data Center</tspan><tspan class="small" x="106" dy="16">Passes Commissioning</tspan></text><rect class="handoff" x="650" y="578" width="300" height="28" rx="5"/><text class="bartext" x="800" y="597">Mechanical Completion → RFS</text>
+  <text class="row" x="106" y="420"><tspan x="106">02 AI Data Center</tspan><tspan x="106" dy="16">Grid Interconnection</tspan></text><rect class="power" x="278" y="410" width="592" height="28" rx="5"/><text class="bartext" x="574" y="429">Utility Side → Energization</text>
+  <text class="row" x="106" y="476"><tspan x="106">03 AI Data Center</tspan><tspan x="106" dy="16">Power Distribution</tspan></text><rect class="power" x="520" y="466" width="430" height="28" rx="5"/><text class="bartext" x="735" y="485">Site Power → GPU</text>
+  <text class="row" x="106" y="532"><tspan x="106">04 AI Data Center</tspan><tspan x="106" dy="16">Thermal Management</tspan></text><rect class="thermal" x="520" y="522" width="430" height="28" rx="5"/><text class="bartext" x="735" y="541">GPU Heat → Heat Rejection</text>
+  <text class="row" x="106" y="588"><tspan x="106">05 AI Data Center</tspan><tspan x="106" dy="16">Commissioning and RFS</tspan></text><rect class="handoff" x="650" y="578" width="300" height="28" rx="5"/><text class="bartext" x="800" y="597">Mechanical Completion → RFS</text>
 
   <line class="grid" x1="86" y1="632" x2="1536" y2="632"/>
   <text class="group" x="106" y="672">AI infrastructure</text>
-  <text class="row" x="106" y="708"><tspan x="106">06 How a GPU Becomes</tspan><tspan class="small" x="106" dy="16">Rack-Scale Compute in a Data Center</tspan></text><rect class="compute" x="800" y="698" width="430" height="28" rx="5"/><text class="bartext" x="1015" y="717">Components → Rack Delivery</text>
-  <text class="row" x="106" y="764"><tspan x="106">07 How Thousands of GPUs</tspan><tspan class="small" x="106" dy="16">Become One Data Center Machine</tspan></text><rect class="compute" x="800" y="754" width="430" height="28" rx="5"/><text class="bartext" x="1015" y="773">Topology → Validated Fabric</text>
-  <text class="row" x="106" y="820"><tspan x="106">08 Where an AI Data Center</tspan><tspan class="small" x="106" dy="16">Stores Models and Agent Context</tspan></text><rect class="data" x="800" y="810" width="600" height="28" rx="5"/><text class="bartext" x="1100" y="829">Media → Qualified Storage → Production Data</text>
-  <text class="row" x="106" y="876"><tspan x="106">09 How a GPU Cluster</tspan><tspan class="small" x="106" dy="16">Reaches Production Handoff</tspan></text><rect class="handoff" x="910" y="866" width="450" height="28" rx="5"/><text class="bartext" x="1135" y="885">RFS → Healthy Cluster → Production Handoff</text>
+  <text class="row" x="106" y="708"><tspan x="106">06 AI Data Center</tspan><tspan x="106" dy="16">Rack-Scale Architecture</tspan></text><rect class="compute" x="800" y="698" width="430" height="28" rx="5"/><text class="bartext" x="1015" y="717">Components → Rack Delivery</text>
+  <text class="row" x="106" y="764"><tspan x="106">07 AI Data Center</tspan><tspan x="106" dy="16">Supercluster Networking</tspan></text><rect class="compute" x="800" y="754" width="430" height="28" rx="5"/><text class="bartext" x="1015" y="773">Topology → Validated Fabric</text>
+  <text class="row" x="106" y="820"><tspan x="106">08 AI Data Center</tspan><tspan x="106" dy="16">Storage Architecture</tspan></text><rect class="data" x="800" y="810" width="600" height="28" rx="5"/><text class="bartext" x="1100" y="829">Media → Qualified Storage → Production Data</text>
+  <text class="row" x="106" y="876"><tspan x="106">09 AI Data Center</tspan><tspan x="106" dy="16">Cluster Validation and Handoff</tspan></text><rect class="handoff" x="910" y="866" width="450" height="28" rx="5"/><text class="bartext" x="1135" y="885">RFS → Healthy Cluster → Production Handoff</text>
 
   <line class="grid" x1="86" y1="920" x2="1536" y2="920"/>
   <text class="group" x="106" y="960">Workload and delivery</text>
-  <text class="row" x="106" y="996"><tspan x="106">10 Training and Inference</tspan><tspan class="small" x="106" dy="16">Need Different Data Centers</tspan></text><rect class="service" x="1040" y="986" width="440" height="28" rx="5"/><text class="bartext" x="1260" y="1005">Training · Inference</text>
-  <text class="row" x="106" y="1052"><tspan x="106">11 How an Agent Request</tspan><tspan class="small" x="106" dy="16">Consumes Data Center Compute</tspan></text><rect class="service" x="1120" y="1042" width="360" height="28" rx="5"/><text class="bartext" x="1300" y="1061">Request → Agent Task</text>
-  <text class="row" x="106" y="1108"><tspan x="106">12 How AI Data Center Compute</tspan><tspan class="small" x="106" dy="16">Reaches the User</tspan></text><rect class="service" x="1120" y="1098" width="360" height="28" rx="5"/><text class="bartext" x="1300" y="1117">Cluster → User</text>
+  <text class="row" x="106" y="996"><tspan x="106">10 Training and Inference</tspan><tspan x="106" dy="16">Data Center Architectures</tspan></text><rect class="service" x="1040" y="986" width="440" height="28" rx="5"/><text class="bartext" x="1260" y="1005">Training · Inference</text>
+  <text class="row" x="106" y="1052"><tspan x="106">11 AI Data Center</tspan><tspan x="106" dy="16">Agent Workload Model</tspan></text><rect class="service" x="1120" y="1042" width="360" height="28" rx="5"/><text class="bartext" x="1300" y="1061">Request → Agent Task</text>
+  <text class="row" x="106" y="1108"><tspan x="106">12 AI Data Center</tspan><tspan x="106" dy="16">Compute Delivery Networks</tspan></text><rect class="service" x="1120" y="1098" width="360" height="28" rx="5"/><text class="bartext" x="1300" y="1117">Cluster → User</text>
 
   <line class="grid" x1="86" y1="1152" x2="1536" y2="1152"/>
   <text class="group" x="106" y="1192">Full-stack test</text>
-  <text class="row" x="106" y="1228"><tspan x="106">13 PORTS-Pike Rebuilds</tspan><tspan class="small" x="106" dy="16">the AI Data Center Alpha Map</tspan></text><rect class="case" x="278" y="1218" width="1202" height="28" rx="5"/><text class="bartext" x="879" y="1237">Delivery Stage → Replication Gap → Value Capture → Mispricing</text>
+  <text class="row" x="106" y="1218"><tspan x="106">13 PORTS-Pike</tspan><tspan x="106" dy="14">AI Data Center Alpha</tspan><tspan x="106" dy="14">Case Study</tspan></text><rect class="case" x="278" y="1218" width="1202" height="28" rx="5"/><text class="bartext" x="879" y="1237">Delivery Stage → Replication Gap → Value Capture → Mispricing</text>
 
   <text class="small" x="106" y="1310">Every essay asks</text>
   <text class="row" x="260" y="1310">Demand Unit · Replication Unit · Two Clocks · Substitution · Next Bottleneck · Price-in Score · Invalidation</text>

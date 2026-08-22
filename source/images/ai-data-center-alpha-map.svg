@@ -40,31 +40,31 @@
 
   <rect x="86" y="294" width="1450" height="52" fill="#e2e8f0" rx="5"/>
   <text class="group" x="106" y="326">项目交付</text>
-  <text class="row" x="275" y="316"><tspan x="275">01 一座 AI 数据中心怎样</tspan><tspan class="small" x="275" dy="16">从选址走到 RFS</tspan></text>
+  <text class="row" x="275" y="325">01 AI 数据中心项目交付全周期</text>
   <rect class="overview" x="520" y="306" width="996" height="28" rx="5"/><text class="bartext" x="1018" y="325">选址 → RFS 的状态与关键路径</text>
 
   <text class="group" x="106" y="384">设施</text>
-  <text class="row" x="106" y="420"><tspan x="106">02 AI 数据中心怎样</tspan><tspan class="small" x="106" dy="16">从电网拿到可用电力</tspan></text><rect class="power" x="278" y="410" width="592" height="28" rx="5"/><text class="bartext" x="574" y="429">电网侧 → 站点送电</text>
-  <text class="row" x="106" y="476"><tspan x="106">03 电怎样从数据中心</tspan><tspan class="small" x="106" dy="16">变电站走到 GPU</tspan></text><rect class="power" x="520" y="466" width="430" height="28" rx="5"/><text class="bartext" x="735" y="485">站内供电 → GPU</text>
-  <text class="row" x="106" y="532"><tspan x="106">04 GPU 的热怎样</tspan><tspan class="small" x="106" dy="16">排出 AI 数据中心</tspan></text><rect class="thermal" x="520" y="522" width="430" height="28" rx="5"/><text class="bartext" x="735" y="541">GPU 发热 → 排出站外</text>
-  <text class="row" x="106" y="588"><tspan x="106">05 建完的 AI 数据中心</tspan><tspan class="small" x="106" dy="16">怎样完成系统调试</tspan></text><rect class="handoff" x="650" y="578" width="300" height="28" rx="5"/><text class="bartext" x="800" y="597">机械完工 → RFS</text>
+  <text class="row" x="106" y="420"><tspan x="106">02 AI 数据中心</tspan><tspan x="106" dy="16">电网接入</tspan></text><rect class="power" x="278" y="410" width="592" height="28" rx="5"/><text class="bartext" x="574" y="429">电网侧 → 站点送电</text>
+  <text class="row" x="106" y="476"><tspan x="106">03 AI 数据中心</tspan><tspan x="106" dy="16">供配电架构</tspan></text><rect class="power" x="520" y="466" width="430" height="28" rx="5"/><text class="bartext" x="735" y="485">站内供电 → GPU</text>
+  <text class="row" x="106" y="532"><tspan x="106">04 AI 数据中心</tspan><tspan x="106" dy="16">热管理</tspan></text><rect class="thermal" x="520" y="522" width="430" height="28" rx="5"/><text class="bartext" x="735" y="541">GPU 发热 → 排出站外</text>
+  <text class="row" x="106" y="588"><tspan x="106">05 AI 数据中心调试</tspan><tspan x="106" dy="16">与 RFS 交付</tspan></text><rect class="handoff" x="650" y="578" width="300" height="28" rx="5"/><text class="bartext" x="800" y="597">机械完工 → RFS</text>
 
   <line class="grid" x1="86" y1="632" x2="1536" y2="632"/>
   <text class="group" x="106" y="672">AI 基础设施</text>
-  <text class="row" x="106" y="708"><tspan x="106">06 一块 GPU 怎样变成</tspan><tspan class="small" x="106" dy="16">数据中心机架级计算</tspan></text><rect class="compute" x="800" y="698" width="430" height="28" rx="5"/><text class="bartext" x="1015" y="717">部件 → 机架交付</text>
-  <text class="row" x="106" y="764"><tspan x="106">07 数万块 GPU 怎样</tspan><tspan class="small" x="106" dy="16">在数据中心连成一台机器</tspan></text><rect class="compute" x="800" y="754" width="430" height="28" rx="5"/><text class="bartext" x="1015" y="773">网络拓扑 → 网络验证</text>
-  <text class="row" x="106" y="820"><tspan x="106">08 AI 数据中心怎样存放</tspan><tspan class="small" x="106" dy="16">模型与 Agent 上下文</tspan></text><rect class="data" x="800" y="810" width="600" height="28" rx="5"/><text class="bartext" x="1100" y="829">存储介质 → 资格认证 → 生产数据</text>
-  <text class="row" x="106" y="876"><tspan x="106">09 数据中心 GPU 集群怎样</tspan><tspan class="small" x="106" dy="16">走到生产移交</tspan></text><rect class="handoff" x="910" y="866" width="450" height="28" rx="5"/><text class="bartext" x="1135" y="885">RFS → 健康集群 → 生产移交</text>
+  <text class="row" x="106" y="708"><tspan x="106">06 AI 数据中心</tspan><tspan x="106" dy="16">机架级计算架构</tspan></text><rect class="compute" x="800" y="698" width="430" height="28" rx="5"/><text class="bartext" x="1015" y="717">部件 → 机架交付</text>
+  <text class="row" x="106" y="764"><tspan x="106">07 AI 数据中心</tspan><tspan x="106" dy="16">万卡集群互联</tspan></text><rect class="compute" x="800" y="754" width="430" height="28" rx="5"/><text class="bartext" x="1015" y="773">网络拓扑 → 网络验证</text>
+  <text class="row" x="106" y="820"><tspan x="106">08 AI 数据中心</tspan><tspan x="106" dy="16">存储架构</tspan></text><rect class="data" x="800" y="810" width="600" height="28" rx="5"/><text class="bartext" x="1100" y="829">存储介质 → 资格认证 → 生产数据</text>
+  <text class="row" x="106" y="876"><tspan x="106">09 AI 数据中心</tspan><tspan x="106" dy="16">集群验证与交付</tspan></text><rect class="handoff" x="910" y="866" width="450" height="28" rx="5"/><text class="bartext" x="1135" y="885">RFS → 健康集群 → 生产移交</text>
 
   <line class="grid" x1="86" y1="920" x2="1536" y2="920"/>
   <text class="group" x="106" y="960">工作负载与交付</text>
-  <text class="row" x="106" y="996"><tspan x="106">10 训练和推理</tspan><tspan class="small" x="106" dy="16">为什么需要不同的数据中心</tspan></text><rect class="service" x="1040" y="986" width="440" height="28" rx="5"/><text class="bartext" x="1260" y="1005">训练 · 推理</text>
-  <text class="row" x="106" y="1052"><tspan x="106">11 一次 Agent 请求怎样</tspan><tspan class="small" x="106" dy="16">消耗 AI 数据中心算力</tspan></text><rect class="service" x="1120" y="1042" width="360" height="28" rx="5"/><text class="bartext" x="1300" y="1061">请求 → Agent 任务</text>
-  <text class="row" x="106" y="1108"><tspan x="106">12 AI 数据中心的算力</tspan><tspan class="small" x="106" dy="16">怎样到达用户</tspan></text><rect class="service" x="1120" y="1098" width="360" height="28" rx="5"/><text class="bartext" x="1300" y="1117">集群 → 用户</text>
+  <text class="row" x="106" y="996"><tspan x="106">10 训练与推理</tspan><tspan x="106" dy="16">数据中心架构</tspan></text><rect class="service" x="1040" y="986" width="440" height="28" rx="5"/><text class="bartext" x="1260" y="1005">训练 · 推理</text>
+  <text class="row" x="106" y="1052"><tspan x="106">11 AI 数据中心</tspan><tspan x="106" dy="16">Agent 工作负载模型</tspan></text><rect class="service" x="1120" y="1042" width="360" height="28" rx="5"/><text class="bartext" x="1300" y="1061">请求 → Agent 任务</text>
+  <text class="row" x="106" y="1108"><tspan x="106">12 AI 数据中心</tspan><tspan x="106" dy="16">算力交付网络</tspan></text><rect class="service" x="1120" y="1098" width="360" height="28" rx="5"/><text class="bartext" x="1300" y="1117">集群 → 用户</text>
 
   <line class="grid" x1="86" y1="1152" x2="1536" y2="1152"/>
   <text class="group" x="106" y="1192">综合验证</text>
-  <text class="row" x="106" y="1228"><tspan x="106">13 用 PORTS-Pike 还原</tspan><tspan class="small" x="106" dy="16">AI 数据中心 Alpha 地图</tspan></text><rect class="case" x="278" y="1218" width="1202" height="28" rx="5"/><text class="bartext" x="879" y="1237">交付阶段 → 复制缺口 → 价值捕获 → 错误定价</text>
+  <text class="row" x="106" y="1228"><tspan x="106">13 PORTS-Pike</tspan><tspan x="106" dy="16">AI 数据中心 Alpha 案例</tspan></text><rect class="case" x="278" y="1218" width="1202" height="28" rx="5"/><text class="bartext" x="879" y="1237">交付阶段 → 复制缺口 → 价值捕获 → 错误定价</text>
 
   <text class="small" x="106" y="1310">每篇固定追问</text>
   <text class="row" x="260" y="1310">需求单位 · 复制单位 · 两只时钟 · 替代路径 · 下一瓶颈 · 定价程度 · 证伪条件</text>
