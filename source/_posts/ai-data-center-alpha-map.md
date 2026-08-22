@@ -14,7 +14,9 @@ i18n_key: ai-data-center-alpha-map
 
 OpenAI 前几天宣布，将在 PORTS-Pike [锁定约 8 IT-GW 的容量](https://openai.com/index/openai-joins-ports-pike-project/)。同一份公告里还有两个数字：首批 800MW 预计在 2028 年 available，整个项目的 buildout 将持续六年，直到 2032 年。
 
-8GW、800MW、六年，拼出的是同一个数据中心的交付计划。8GW 是协议锁定的总容量，800MW 是计划在 2028 年交付的首批 capacity，六年是整个项目的 buildout schedule。它们不会在同一天变成可用算力。
+先把单位说清楚。GW 是功率单位，1GW 等于 1000MW；IT-GW 指数据中心用于服务器、网络和存储等 IT equipment 的功率容量。它不是 GPU 数量，也不是计算性能。
+
+单位弄清楚，三个数字才接得起来。8GW 是协议锁定的总容量，800MW 是计划在 2028 年交付的首批 capacity，六年是整个项目的 buildout schedule。它们不会在同一天变成可用算力。
 
 这正是问题的起点：8GW 到底走到了哪一步？
 
@@ -52,17 +54,19 @@ RFS 后面还有 IT deployment、burn-in、fabric validation、cluster acceptanc
 
 所以研究数据中心，不能只数 GPU shipment，也不能把 announced GW 全塞进同一张表。项目走到哪一道 handoff，决定这笔供给到底该不该算。
 
-## 两条轴把 8GW 还原成订单
+## 把 8GW 放回坐标系
 
 要拆 PORTS-Pike，先得画两条轴。
 
-横轴回答一个问题：**项目走到哪一步了？** 从 Site Selection、energization、RFS 到 Production Handoff，同一 GW 在不同位置，兑现订单和收入的时间完全不同。
+横轴回答一个问题：**项目走到哪一步了？** 从 Site Selection、energization、RFS 到 Production Handoff，同样写着 1GW 的项目，处在不同位置，离可用算力的时间完全不同。
 
-纵轴回答另一个问题：**哪套系统正在卡住交付？** 电力、散热、计算、网络和存储都有自己的供应链、lead time 和 qualification。NVIDIA 的 [DSX reference architecture](https://docs.nvidia.com/dsx/home)也按 facilities、compute、networking、storage 和 operations 拆开一座 AI factory。
+纵轴回答另一个问题：**哪套系统还没有交付？** 电力、散热、计算、网络和存储必须同时可用，少了任何一层，前面的 GW 都还不能变成 production capacity。NVIDIA 的 [DSX reference architecture](https://docs.nvidia.com/dsx/home)也按 facilities、compute、networking、storage 和 operations 拆开一座 AI factory。
 
 ![AI 数据中心 Alpha 地图](/images/ai-data-center-alpha-map.svg)
 
-两条轴一交叉，数字才有坐标。1GW 是 announced、energized 还是 RFS？订单翻倍的供应商卡在哪一层？扩产要多久？客户能不能绕开？市场又提前算进去了多少？
+两条轴一交叉，数字才有坐标。Announced 的 1GW 只是目标容量，energized 的 1GW 已经具备供电条件，RFS 的 1GW 已经具备设施交付条件，走到 Production Handoff 的 1GW 才对应可以承载生产负载的集群。它们都叫 1GW，却不是同一笔供给。
+
+先分清是哪一个 1GW，才轮得到后面的投资问题。
 
 每篇先用一张图把系统接起来。接着往下追：需求单位是什么，到底要复制什么，两只时钟差多久，当前瓶颈松开以后压力会撞向哪里，最后谁能把稀缺变成收入和现金流。
 
