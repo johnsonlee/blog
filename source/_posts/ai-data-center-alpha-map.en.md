@@ -1,5 +1,5 @@
 ---
-title: "OpenAI's 30 GW: From Data Center Contracts to Available Compute"
+title: "Why Is OpenAI Always Short on Compute?"
 date: 2026-08-22 14:55:27
 lang: en
 i18n_key: ai-data-center-alpha-map
