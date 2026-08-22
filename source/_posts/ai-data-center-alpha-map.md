@@ -132,6 +132,8 @@ RFS 后面还有 IT deployment、burn-in、fabric validation、cluster acceptanc
 
 这条链的顺序不能反。先沿项目交付周期从 Site Selection 走到 RFS，把 site、power、thermal 和 commissioning 交出来；机房具备交付条件以后，再把 compute、network 和 storage 拼成 healthy cluster；走过 Production Handoff，再追 workload 和 delivery network，直到 physical capacity 变成 billable service。最后把整条链放回 PORTS-Pike 的 8GW 验算：哪一段 Replication Gap 最长，谁能把它变成收入和现金流。
 
+下面是系列目录。当前只有这篇序，后续文章发布后，标题会补上链接。
+
 ## 先看数据中心建到了哪里
 
 地图画完，最先冒出来的问题很直接：OpenAI 又宣布 1GW、5GW、8GW，这些数字到底已经走到哪一步？刚签约、已经开工、完成送电和机房可以交付，中间还隔着多少道 gate？

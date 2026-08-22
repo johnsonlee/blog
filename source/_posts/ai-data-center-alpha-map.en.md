@@ -133,6 +133,8 @@ Only after identifying which 1 GW we are looking at can pricing and returns ente
 
 The chain has a fixed order. First follow the project delivery lifecycle from Site Selection through power and thermal delivery, then commissioning, to RFS. Once the facility is deliverable, assemble compute, networking, and storage into a healthy cluster. After Production Handoff, follow workloads and delivery networks until physical capacity becomes billable service. Finally, put the whole chain back into PORTS-Pike's 8 GW and test which Replication Gap lasts longest and which supplier can turn it into revenue and cash flow.
 
+What follows is the series roadmap. Only this preface is live today; each title will become a link when its essay is published.
+
 ## First ask how far the data center has been built
 
 OpenAI announces another 1 GW, 5 GW, or 8 GW. How far has that capacity actually progressed? Contracted, under construction, energized, and deliverable sit behind very different gates.
