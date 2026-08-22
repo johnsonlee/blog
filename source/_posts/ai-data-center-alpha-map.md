@@ -204,15 +204,13 @@ Production Handoff 只交付 physical capacity。它能变成多少 billable wor
 
 验算只接受能核对的东西：合同、项目进度、交期、产能、qualification、订单和财务数据。哪一个 node 已经 price in，哪一个 supplier 拥有定价权并能转化成毛利和现金流，什么事实出现时 thesis 必须作废，都要写清楚。
 
-## 下一个 100GW
+## Data Center 逐层展开
 
-PORTS-Pike 不会是最后一个大数字。8GW、10GW、100GW 还会继续出现，新闻稿也会继续把 planned、energized、RFS 和 production capacity 放在一起。
+沿着这张图一层层拆下去，原本模糊的 Data Center 开始在眼前变得清晰。1GW 不再只是容量，还带着项目状态、系统位置和交付时间；哪一层没有交出来，Replication Gap 就停在哪一层。
 
-“AI 数据中心受益股名单”几个月就会过期，瓶颈也会迁移。把项目状态、系统位置和 Replication Gap 对上，订单、定价权和现金流才会一层层露出来。
+下一次再看到 8GW、10GW 或 100GW，这些数字会展开成 site、power、thermal、compute、network、storage 和 workload。顺着交付链继续往下，订单、定价权和现金流也会一层层露出来。
 
-所以下一个大数字出现时，先别急着填进 Excel。
-
-它走到哪一步了？
+那个曾经只写着 Data Center 的方框，已经展开成一整条可以追踪的交付链。
 
 ## 资料
 

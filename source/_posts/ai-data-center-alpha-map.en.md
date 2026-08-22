@@ -205,15 +205,13 @@ Production Handoff delivers physical capacity. How much billable workload it bec
 
 The test accepts only evidence that can be checked: contracts, project milestones, lead times, capacity, qualification, orders, and financial data. Which node is already priced in? Which supplier can turn pricing power into margins and cash flow? What evidence would invalidate the thesis?
 
-## The next 100 GW
+## Data Center unfolds layer by layer
 
-PORTS-Pike will not be the last large number. Eight gigawatts, 10 GW, and 100 GW will keep appearing, and press releases will keep placing planned, energized, RFS, and production capacity side by side.
+Follow this map layer by layer, and the Data Center that once looked vague begins to come into focus. A gigawatt is no longer just capacity; it now carries a project state, a system position, and a delivery timeline. Wherever one layer remains undelivered, the Replication Gap stops there.
 
-A list of "AI data center beneficiaries" can expire in a few months, and bottlenecks migrate. Match project state, system position, and Replication Gap, and the orders, pricing power, and cash flow begin to reveal themselves.
+The next 8 GW, 10 GW, or 100 GW will unfold into site, power, thermal, compute, networking, storage, and workloads. Follow the delivery chain further, and orders, pricing power, and cash flow begin to emerge as well.
 
-When the next large number appears, do not put it straight into Excel.
-
-How far has it progressed?
+The box that once said only Data Center has opened into an entire delivery chain that can be traced.
 
 ## Sources
 
