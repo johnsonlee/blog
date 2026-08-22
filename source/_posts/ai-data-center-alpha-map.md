@@ -106,11 +106,11 @@ OpenAI 可以在一份协议里锁下 8GW，首批 800MW 却要等到 2028 年�
 
 数据中心供给遵循 AND logic：所有子系统必须同时可用。
 
-GPU 到货，但 site 尚未 energize，可用算力为零。Site 已经送电，冷却系统却没有完成 integrated commissioning，容量仍然不可用。Facility 已经 Ready for Service，GPU cluster 的 firmware、network、storage 和 software stack 没有通过 validation，这套 cluster 仍然无法承载 production workload。
+GPU 到货，但 site 尚未 energize，可用算力为零。Site 已经送电，冷却系统却没有完成 integrated commissioning，容量仍然不可用。Facility 完成建设和测试，走到可以按合同交付的 Ready for Service（RFS），GPU cluster 的 firmware、network、storage 和 software stack 没有通过 validation，这套 cluster 仍然无法承载 production workload。
 
 设备进仓库，只增加 inventory。**系统通过验证并完成 handoff，才会增加可用算力。**
 
-RFS 是最容易算错的一道线。一座设施从 Site Selection 开始，经过 permitting、design、procurement、construction、energization 和 commissioning，才会走到 Ready for Service。公开 colocation 合同通常把 RFS 定义为设施按约完成建设和测试、具备交付条件；这不等于 GPU 集群已经开始生产。[GDS 的项目文件](https://www.sec.gov/Archives/edgar/data/1526125/000110465924053659/tm2412943d1_ex99-1.pdf)和[一份公开 colocation 合同](https://www.sec.gov/Archives/edgar/data/1854368/000121390026053566/ea028958501ex10-1.htm)都把 commissioning 放在正式交付之前。
+RFS 是最容易算错的一道线。一座设施从 Site Selection 开始，经过 permitting、design、procurement、construction、energization 和 commissioning，才会走到这里。公开 colocation 合同通常把这道状态定义为设施按约完成建设和测试、具备交付条件；这不等于 GPU 集群已经开始生产。[GDS 的项目文件](https://www.sec.gov/Archives/edgar/data/1526125/000110465924053659/tm2412943d1_ex99-1.pdf)和[一份公开 colocation 合同](https://www.sec.gov/Archives/edgar/data/1854368/000121390026053566/ea028958501ex10-1.htm)都把 commissioning 放在正式交付之前。
 
 RFS 后面还有 IT deployment、burn-in、fabric validation、cluster acceptance 和 Production Handoff。NVIDIA 甚至继续把 Delivered、Healthy、Reserved 与 Active/In-Use 分开：交到客户手里、设备健康、资源被预留、资源正在使用，是四件事。[NVIDIA AI Cloud Requirements](https://docs.nvidia.com/dsx/ncp/nvidia-requirements-for-ai-clouds/home)把这几道边界写得很清楚。
 
