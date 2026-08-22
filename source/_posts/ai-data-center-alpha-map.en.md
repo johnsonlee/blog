@@ -141,23 +141,23 @@ The series will therefore move through the chain one layer at a time. The titles
 
 OpenAI announces another 1 GW, 5 GW, or 8 GW. How far has that capacity actually progressed? Contracted, under construction, energized, and deliverable sit behind very different gates.
 
-1. **AI Data Center Project Delivery: Site Selection to Facility Handoff**
+1. **Data Center Delivery Cycle: Site Selection to Facility Handoff**
 
    Announced, planned, under-construction, energized, and RFS capacity belong on one timeline. The current state, the next gate, and the slowest gate determine when supply can be counted. Once those states are separated, the phrase "has power" becomes suspicious. What exactly has the project secured?
 
-2. **AI Data Center Grid Interconnection: The First Gate**
+2. **Grid Interconnection: The Data Center's First Gate**
 
    A claim that a data center "has power" may mean a signed PPA, an interconnection agreement, or electricity physically reaching the site. Those states can be years apart. Even after power reaches the site, why can the GPUs still not turn on?
 
-3. **AI Data Center Power Distribution: Substation to GPU**
+3. **Substation to GPU: The Power Distribution Chain**
 
    Power still has to pass through transformers, switchgear, UPS systems, PDUs, busways, power shelves, and VRMs before entering a GPU. One missing segment leaves the GPU waiting. Once electricity enters the GPU, almost every watt becomes heat. Where does that heat go?
 
-4. **AI Data Center Thermal Management: Beyond Liquid Cooling**
+4. **Beyond Liquid Cooling: Data Center Thermal Management**
 
    The cold plate is only the start of the thermal path. Manifolds, CDUs, secondary loops, chillers, cooling towers, and dry coolers still have to reject the heat. One missing segment prevents power capacity from becoming sustained compute. If power and thermal systems work and the equipment is installed, why can the facility still not be handed over?
 
-5. **AI Data Center Commissioning: Built Is Not Deliverable**
+5. **Commissioning: Built Does Not Mean Deliverable**
 
    Mechanical Completion and RFS are separated by startup, functional testing, L1-L5 commissioning, Integrated Systems Testing, and operational handover. A successful component startup does not prove that the mission-critical system will survive failure scenarios. [Uptime Institute](https://journal.uptimeinstitute.com/improve-project-success-through-mission-critical-commissioning/) explains why "built" and "deliverable" are different states. The facility is finally deliverable and the GPUs are inside. Why can available compute still be zero?
 
@@ -165,19 +165,19 @@ OpenAI announces another 1 GW, 5 GW, or 8 GW. How far has that capacity actually
 
 RFS delivers only the facility. GPU shipments, server shipments, rack deliveries, and cluster capacity then appear on the same progress sheet. Are they really the same number?
 
-6. **AI Data Center Rack Delivery: GPU to Rack**
+6. **GPU to Rack: Delivering the Compute Rack**
 
    GPUs, CPUs, HBM, NICs, and DPUs first become compute trays, which join NVLink switch trays and power shelves inside a rack. Component arrivals do not equal rack deliveries, and rack deliveries do not equal cluster capacity. Once the racks are ready, how do tens of thousands of GPUs become one system?
 
-7. **AI Data Center Superclusters: The Network Ceiling**
+7. **Superclusters: The Network Ceiling**
 
    NVLink handles scale-up; InfiniBand or Ethernet handles scale-out; switch ASICs, optical transceivers, lasers, fiber, connectors, and testing determine whether the fabric passes validation. Once the network works, where do training data, model weights, checkpoints, and KV cache live?
 
-8. **AI Data Center Storage: Checkpoint to KV Cache**
+8. **Checkpoint to KV Cache: The Storage Hierarchy**
 
    Training data, model weights, checkpoints, local NVMe, parallel file systems, object storage, and KV cache occupy different storage tiers. NAND bits describe capacity; controllers, firmware, reliability, and qualification determine whether enterprise storage can enter service. With compute, networking, and storage installed, who proves the cluster can carry production workloads?
 
-9. **AI Cluster Delivery: Facility Handoff to Production Handoff**
+9. **Cluster Delivery: Facility Readiness to Production Handoff**
 
    IT deployment, firmware, provisioning, burn-in, fabric validation, cluster acceptance, and healthy handoff all happen after RFS. Installed GPU counts give way to deployment velocity, cluster yield, and healthy capacity before Production Handoff. Once the healthy cluster exists, does one megawatt produce the same compute under Training and Inference?
 
@@ -185,7 +185,7 @@ RFS delivers only the facility. GPU shipments, server shipments, rack deliveries
 
 Production Handoff delivers physical capacity. How much billable workload it becomes first depends on what job the cluster receives.
 
-10. **Training vs. Inference: Two Data Centers**
+10. **Training vs. Inference: Two Ledgers for the Same MW**
 
     Training pursues large-scale synchronous computation. Inference trades off latency, batching, utilization, and geography. The throughput and economics of the same megawatt therefore diverge. When Inference carries Agent workloads, how much computation can one user request unfold into?
 
@@ -193,13 +193,13 @@ Production Handoff delivers physical capacity. How much billable workload it bec
 
     One user request expands into multiple model invocations plus routing, prefill, decode, retrieval, tool calls, retries, cache behavior, and scheduling. Tokens, requests, tasks, and tasks per megawatt answer different questions. Once the task finishes inside the cluster, how does the result reach the user within its latency SLO?
 
-12. **AI Compute Delivery: Cluster to User**
+12. **Inference Delivery Network: Cluster to User**
 
     DCI, backbone networks, transit, peering, CDNs, edge infrastructure, and metro inference determine whether the result meets its latency SLO. As internal compute expands, the constraint may migrate outside the data center. By this point, the original 8 GW is no longer one capacity number. Which segment is slowest, and who captures the orders and cash flow?
 
 ## Test the map with PORTS-Pike's 8 GW
 
-13. **PORTS-Pike: Breaking Down an 8 GW Data Center**
+13. **PORTS-Pike 8 GW: Testing the Delivery Chain**
 
     Put every PORTS-Pike project back into its delivery stage, expand each gigawatt into power, thermal, compute, network, and storage requirements, then trace the next bottleneck candidate through the Bottleneck Migration Network.
 
