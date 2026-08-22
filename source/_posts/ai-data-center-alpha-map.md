@@ -32,7 +32,7 @@ i18n_key: ai-data-center-alpha-map
 
 ![OpenAI 自 2023 年以来的美国数据中心交付状态](/images/openai-stargate-campus-map.svg)
 
-截至 2026 年 8 月 22 日，九座里只有 Abilene 已有 workload 在跑，另外七座已经进入 construction，Camellia 仍在 permitting，尚未开工。圆的面积按各站公开的最终容量缩放，不代表今天已经 available 的 GW；Abilene 的绿色圆也只说明 campus 已经投入使用，真正完成交付的仍是 42%。
+截至 2026 年 8 月 22 日，九座里只有 Abilene 已有 workload 在跑，另外七座已经进入 construction，Camellia 仍在 permitting，尚未开工。PORTS-Pike 由 SB Energy 先行开发，OpenAI 2026 年签入时，开发商已经把项目列为 [In Early Construction](https://sbenergy.com/digital-infrastructure/)。圆的面积按各站公开的最终容量缩放，不代表今天已经 available 的 GW；Abilene 的绿色圆也只说明 campus 已经投入使用，真正完成交付的仍是 42%。
 
 各站公开的 GW 口径并不相同：PORTS-Pike 是 IT capacity，Shackelford 是 critical IT load，Doña Ana 和 Camellia 是 power capacity。它们能比较单站 buildout 的量级，不能直接相加。
 
