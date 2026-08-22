@@ -22,13 +22,19 @@ i18n_key: ai-data-center-alpha-map
 
 ## OpenAI 到底签了多少
 
-把 OpenAI 过去一年半的公告摊开，美国至少已经点名九座 campus。2025 年 9 月，Abilene 加上五座新 site，把 Stargate 带到[六座 campus、接近 7GW planned capacity](https://openai.com/index/five-new-stargate-sites/)；一个月后，[Michigan 成为第七座](https://openai.com/index/expanding-stargate-to-michigan/)，总规划容量超过 8GW。2026 年又加上 Georgia 的 [Project Camellia](https://openai.com/index/building-ai-infrastructure-with-the-effingham-county-community/) 和 Ohio 的 [PORTS-Pike](https://openai.com/index/openai-joins-ports-pike-project/)。
+从 2023 年往后翻，第一份大合同来自 Microsoft。那次 multi-year partnership 没有公布 GW，也没有公布 Azure supercomputer 分别落在哪座数据中心，只说双方已经[建成多套系统，用来训练 OpenAI 的全部模型](https://openai.com/index/openai-and-microsoft-extend-partnership/)。
 
-地图一摊开，项目尺度先拉开了。Abilene、Milam County 和 Michigan 还在 1GW 级，PORTS-Pike 一个 campus 已经冲到 8 IT-GW。
+所以 0.2GW、0.6GW 和 1.9GW 是 OpenAI 各年的 available compute，不是一份可以钉到地图上的 site inventory。Azure、OCI、CoreWeave 和 AWS 分别贡献了多少，每个运行中的 data center 又有多少 GW，OpenAI 没有披露。
 
-![OpenAI 在美国公布的九座数据中心 campus](/images/openai-stargate-campus-map.svg)
+第一块能同时钉住位置、容量和运行状态的，是 Abilene。它在 2024 年开工，不到一年就跑起了 AI workload；截至 2026 年中，[1.2GW 规划容量已经向客户交付 42%](https://www.oracle.com/data-centers/)，剩余部分仍在建设。
 
-八座有单站数字，一座没有。Lordstown 只和 Milam County 一起披露了合计 1.5GW，OpenAI 没拆单站容量，图上也不替它倒算。各站的 GW 口径沿用公告原文：PORTS-Pike 是 IT capacity，Shackelford 是 critical IT load，Doña Ana 和 Camellia 是 power capacity。它们能比较单站 buildout 的量级，不能直接相加。
+再往后，physical campus 才开始一座座露出坐标。2025 年 9 月，Abilene 加上五座新 site，把 Stargate 带到[六座 campus、接近 7GW planned capacity](https://openai.com/index/five-new-stargate-sites/)；一个月后，[Michigan 成为第七座](https://openai.com/index/expanding-stargate-to-michigan/)。2026 年又加上 Georgia 的 [Project Camellia](https://openai.com/index/building-ai-infrastructure-with-the-effingham-county-community/) 和 Ohio 的 [PORTS-Pike](https://openai.com/index/openai-joins-ports-pike-project/)。
+
+![OpenAI 自 2023 年以来的美国数据中心交付状态](/images/openai-stargate-campus-map.svg)
+
+截至 2026 年 8 月 22 日，九座里只有 Abilene 已有 workload 在跑，另外七座已经进入 construction，Camellia 仍在 permitting，尚未开工。圆的面积按各站公开的最终容量缩放，不代表今天已经 available 的 GW；Abilene 的绿色圆也只说明 campus 已经投入使用，真正完成交付的仍是 42%。
+
+Lordstown 只和 Milam County 一起披露了合计 1.5GW，OpenAI 没拆单站容量，图上也不替它倒算。各站的 GW 口径同样不能混用：PORTS-Pike 是 IT capacity，Shackelford 是 critical IT load，Doña Ana 和 Camellia 是 power capacity。它们能比较单站 buildout 的量级，不能直接相加。
 
 九座仍然不是“合同总数”。
 
@@ -196,11 +202,15 @@ Production Handoff 结束，physical capacity 才算交付。它能否转化成 
 
 - [OpenAI plans 30GW of compute by 2030](https://x.com/OpenAINewsroom/status/2046951726683455866)
 - [A business that scales with the value of intelligence](https://openai.com/index/a-business-that-scales-with-the-value-of-intelligence/)
+- [OpenAI and Microsoft extend partnership](https://openai.com/index/openai-and-microsoft-extend-partnership/)
 - [OpenAI, Oracle, and SoftBank expand Stargate with five new AI data center sites](https://openai.com/index/five-new-stargate-sites/)
 - [Crusoe's flagship 1.2GW AI data center campus in Abilene](https://crusoe.ai/blog/crusoe-2024-impact-report/)
+- [Oracle AI data center construction and delivery status](https://www.oracle.com/data-centers/)
 - [Vantage Frontier campus: 1.4GW of critical IT load](https://vantage-dc.com/wp-content/uploads/2025/08/VDC_DataSheet_Frontier.pdf)
-- [Bloom Energy | Doña Ana: 2.8GW power capacity](https://bloomenergydonaana.com/en)
+- [Project Jupiter: up to 2.45GW of installed fuel-cell capacity](https://www.oracle.com/news/announcement/oracle-borderplex-and-bloom-energy-to-power-project-jupiter-with-fuel-cell-technology-2026-04-27/)
 - [Vantage Lighthouse campus: 902MW development](https://blog.vantage-dc.com/2026/03/30/vantage-data-centers-and-partners-host-career-expo-in-port-washington-wisconsin-to-connect-local-talent-with-lighthouse-opportunities/)
+- [SB Energy data center construction status](https://sbenergy.com/digital-infrastructure/)
+- [Effingham County: Project Camellia review and permitting](https://effinghamcounty.org/m/newsflash/home/detail/466)
 - [Expanding Stargate to Michigan](https://openai.com/index/expanding-stargate-to-michigan/)
 - [Building AI infrastructure with the Effingham County community](https://openai.com/index/building-ai-infrastructure-with-the-effingham-county-community/)
 - [OpenAI joins PORTS-Pike project](https://openai.com/index/openai-joins-ports-pike-project/)
