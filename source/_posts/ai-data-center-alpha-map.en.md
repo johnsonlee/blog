@@ -9,7 +9,6 @@ tags:
   - AI
   - Data Center
   - Infrastructure
-  - Investing
   - Bottleneck
 ---
 

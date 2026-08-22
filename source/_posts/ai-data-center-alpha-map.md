@@ -7,7 +7,6 @@ tags:
   - AI
   - Data Center
   - Infrastructure
-  - Investing
   - Bottleneck
 i18n_key: ai-data-center-alpha-map
 ---
