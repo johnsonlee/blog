@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="980" viewBox="0 0 1000 980" role="img" aria-labelledby="title desc">
   <title id="title">数据中心 Facility 剖面</title>
-  <desc id="desc">电力从园区变电站经过开关柜、变压器、ATS、UPS 和 Busway 进入机架。热量从机架经过 TCS、CDU、FWS 和室外散热设备排出。编号二到五对应电网接入、供配电、散热与 Commissioning。</desc>
+  <desc id="desc">电力从园区变电站经过开关柜、变压器、ATS、UPS 和 Busway 进入机架。热量从机架经过 TCS、CDU、FWS 和室外散热设备排出。编号二到五对应电网接入、供配电、散热与综合调试。</desc>
   <defs>
     <marker id="p" markerWidth="15" markerHeight="15" refX="12" refY="7.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L15 7.5L0 15Z" fill="#d58a17"/></marker>
     <marker id="h" markerWidth="15" markerHeight="15" refX="12" refY="7.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L15 7.5L0 15Z" fill="#d35443"/></marker>
@@ -42,7 +42,7 @@
 
   <!-- Cooling train -->
   <rect class="equip cool-equip" x="190" y="700" width="120" height="86" rx="4"/>
-  <text class="minor ink center" x="250" y="734">TCS</text><text class="tiny muted center" x="250" y="762">Manifold</text>
+  <text class="minor ink center" x="250" y="734">TCS</text><text class="tiny muted center" x="250" y="762">技术冷却系统</text>
   <rect class="equip cool-equip" x="440" y="700" width="120" height="86" rx="4"/>
   <text class="minor ink center" x="500" y="734">CDU</text><text class="tiny muted center" x="500" y="762">换热器</text>
   <rect class="equip cool-equip" x="655" y="700" width="120" height="86" rx="4"/>
@@ -64,7 +64,7 @@
 
   <!-- Commissioning gate -->
   <rect class="gate" x="185" y="855" width="630" height="48" rx="5"/>
-  <text class="label ink center" x="500" y="887">Integrated Commissioning · RFS</text>
+  <text class="label ink center" x="500" y="887">综合调试 · 具备交付条件（RFS）</text>
   <circle class="marker" cx="185" cy="879" r="20"/><text class="num" x="185" y="879">5</text>
 
   <!-- Power path -->
