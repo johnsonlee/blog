@@ -1,22 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1560" viewBox="0 0 1600 1560" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1230" viewBox="0 90 1600 1230" role="img" aria-labelledby="title desc">
   <title id="title">The AI Data Center Alpha Map</title>
   <desc id="desc">The horizontal axis follows the delivery lifecycle from Site Selection to In Service. The vertical axis follows facilities, AI infrastructure, workload, and delivery. Thirteen essays locate replication gaps across both axes.</desc>
   <defs>
     <style>
       .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:1}.grid{stroke:#dbe2ea;stroke-width:1}.milestone{stroke:#fff;stroke-width:2}
-      .title{font:700 34px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#0f172a}.subtitle{font:400 18px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#475569}
       .axis{font:700 15px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#334155}.phase{font:700 15px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#fff;text-anchor:middle}.phase-note{font:500 12px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#e2e8f0;text-anchor:middle}
-      .group{font:700 14px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#0f172a}.row{font:600 13px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#1e293b}.small{font:500 11px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#64748b}.bartext{font:700 12px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#fff;text-anchor:middle}.legend{font:500 13px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#475569}
+      .group{font:700 14px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#0f172a}.row{font:600 13px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#1e293b}.small{font:500 11px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#64748b}.bartext{font:700 12px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#fff;text-anchor:middle}
       .development{fill:#475569}.build{fill:#b45309}.facility{fill:#047857}.cluster{fill:#1d4ed8}.operations{fill:#7e22ce}
       .overview{fill:#334155}.power{fill:#c2410c}.thermal{fill:#0f766e}.handoff{fill:#15803d}.compute{fill:#1d4ed8}.data{fill:#6d28d9}.service{fill:#be185d}.case{fill:#b91c1c}
     </style>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#64748b"/></marker>
   </defs>
 
-  <rect class="bg" width="1600" height="1560"/>
-  <text class="title" x="44" y="58">The AI Data Center Alpha Map</text>
-  <text class="subtitle" x="44" y="88">Trace Replication Gaps and Bottleneck Migration across the delivery lifecycle and infrastructure stack</text>
-
+  <rect class="bg" width="1600" height="1320"/>
   <text class="axis" x="1000" y="128" text-anchor="middle">PROJECT DELIVERY LIFECYCLE</text>
   <path d="M280 145H1535" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
 
@@ -31,12 +27,12 @@
   <rect class="operations milestone" x="1270" y="166" width="286" height="76" rx="6"/>
   <text class="phase" x="1413" y="196">Operations</text><text class="phase-note" x="1413" y="218">Production Handoff · In Service</text>
 
-  <rect class="panel" x="30" y="270" width="1526" height="1120" rx="8"/>
+  <rect class="panel" x="30" y="270" width="1526" height="1010" rx="8"/>
   <text class="axis" transform="translate(64 890) rotate(-90)" text-anchor="middle">AI INFRASTRUCTURE STACK</text>
 
-  <line class="grid" x1="260" y1="270" x2="260" y2="1390"/><line class="grid" x1="490" y1="270" x2="490" y2="1390"/>
-  <line class="grid" x1="740" y1="270" x2="740" y2="1390"/><line class="grid" x1="990" y1="270" x2="990" y2="1390"/>
-  <line class="grid" x1="1270" y1="270" x2="1270" y2="1390"/><line class="grid" x1="1556" y1="270" x2="1556" y2="1390"/>
+  <line class="grid" x1="260" y1="270" x2="260" y2="1280"/><line class="grid" x1="490" y1="270" x2="490" y2="1280"/>
+  <line class="grid" x1="740" y1="270" x2="740" y2="1280"/><line class="grid" x1="990" y1="270" x2="990" y2="1280"/>
+  <line class="grid" x1="1270" y1="270" x2="1270" y2="1280"/><line class="grid" x1="1556" y1="270" x2="1556" y2="1280"/>
 
   <rect x="86" y="294" width="1450" height="52" fill="#e2e8f0" rx="5"/>
   <text class="group" x="106" y="326">Project delivery</text>
@@ -66,12 +62,4 @@
   <text class="group" x="106" y="1192">Full-stack test</text>
   <text class="row" x="106" y="1218"><tspan x="106">13 PORTS-Pike</tspan><tspan x="106" dy="14">AI Data Center Alpha</tspan><tspan x="106" dy="14">Case Study</tspan></text><rect class="case" x="278" y="1218" width="1202" height="28" rx="5"/><text class="bartext" x="879" y="1237">Delivery Stage → Replication Gap → Value Capture → Mispricing</text>
 
-  <text class="small" x="106" y="1310">Every essay asks</text>
-  <text class="row" x="260" y="1310">Demand Unit · Replication Unit · Two Clocks · Substitution · Next Bottleneck · Price-in Score · Invalidation</text>
-  <text class="small" x="106" y="1350">Colors identify research domains, not bottleneck status. Each essay will mark red, yellow, and green nodes on its own Bottleneck Migration Network.</text>
-
-  <text class="legend" x="44" y="1440">Prior framework</text>
-  <text class="row" x="170" y="1440">Replication Speed Is the Real Bottleneck</text>
-  <text class="legend" x="44" y="1480">Series output</text>
-  <text class="row" x="170" y="1480">Map projects, systems, and suppliers together, then evaluate Bottleneck Strength × Mispricing</text>
 </svg>
