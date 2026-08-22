@@ -12,9 +12,9 @@ tags:
 i18n_key: ai-data-center-alpha-map
 ---
 
-OpenAI 前几天又公布了一个大数字：[8 IT-GW](https://openai.com/index/openai-joins-ports-pike-project/)。沿电力系统、热管理、networking 和 storage 四条供应链往上游追，很快就能列出一串“8GW 受益股”。
+OpenAI 前几天宣布，将在 PORTS-Pike [锁定约 8 IT-GW 的容量](https://openai.com/index/openai-joins-ports-pike-project/)。对投资者来说，8GW 最容易被处理成一道乘法题：每个 GW 会带来多少 transformer、switchgear、liquid cooling、optical transceiver 和 enterprise SSD 需求，再把这组需求映射到供应商。
 
-可这张表的第一行还没算清楚：8GW 到底是什么？
+可这道乘法连输入都没有定义清楚：8GW 到底是什么？
 
 是已经拿到的土地，签完的 PPA，送到 site 的电，还是通过 validation、可以跑 production workload 的 GPU cluster？这些状态在新闻稿里都叫“项目进展”，在财务模型里却可能差着几年。
 
