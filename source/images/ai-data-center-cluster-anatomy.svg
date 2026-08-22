@@ -2,11 +2,11 @@
   <title id="title">AI Cluster 剖面</title>
   <desc id="desc">GPU、CPU、HBM、NIC、DPU、Power Shelf 和 NVLink Switch 组成计算机架。多个机架通过 Scale-up 与 Scale-out Fabric 连接存储，完成验证后走到 Production Handoff，再承载 Training、Inference 与 Agent workload，并通过外部网络到达用户。编号六到十二对应系列目录。</desc>
   <defs>
-    <marker id="d" markerWidth="15" markerHeight="15" refX="12" refY="7.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L15 7.5L0 15Z" fill="#267a70"/></marker>
+    <marker id="d" markerWidth="15" markerHeight="15" refX="15" refY="7.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L15 7.5L0 15Z" fill="#267a70"/></marker>
     <style>
       .bg{fill:#f6f7f8}.panel{fill:#fff;stroke:#a2adb6;stroke-width:2}.rack{fill:#354a5b;stroke:#243542;stroke-width:2}.slot{fill:#9eb0be}.fabric{fill:#e4eef6;stroke:#356b92;stroke-width:2}.storage{fill:#eee7f5;stroke:#755594;stroke-width:2}.workload{fill:#f4eff8;stroke:#84679c;stroke-width:2}.delivery{fill:#e5f1ef;stroke:#267a70;stroke-width:2}.gate{fill:#e7f2ea;stroke:#4d8a5e;stroke-width:2}
       .ink{fill:#202a33}.muted{fill:#65717c}.label{font:700 23px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.minor{font:600 18px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.tiny{font:600 15px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.micro{font:600 13px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.center{text-anchor:middle}
-      .data{fill:none;stroke:#267a70;stroke-width:6;stroke-linecap:round;stroke-linejoin:round}.scaleup{fill:none;stroke:#356b92;stroke-width:5;stroke-linecap:round}.marker{fill:#26323c;stroke:#fff;stroke-width:3}.num{fill:#fff;font:700 18px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;text-anchor:middle;dominant-baseline:middle}
+      .data{fill:none;stroke:#267a70;stroke-width:6;stroke-linecap:butt;stroke-linejoin:round}.scaleup{fill:none;stroke:#356b92;stroke-width:5;stroke-linecap:round}.marker{fill:#26323c;stroke:#fff;stroke-width:3}.num{fill:#fff;font:700 18px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;text-anchor:middle;dominant-baseline:middle}
     </style>
   </defs>
   <rect class="bg" width="1000" height="900"/>
@@ -67,7 +67,7 @@
   <rect class="delivery" x="835" y="675" width="125" height="88" rx="5"/>
   <text class="minor ink center" x="897" y="710">交付网络</text><text class="micro muted center" x="897" y="738">Backbone · Edge</text>
   <circle class="marker" cx="835" cy="672" r="21"/><text class="num" x="835" y="672">12</text>
-  <circle cx="910" cy="813" r="27" fill="#fff" stroke="#59656f" stroke-width="3"/><circle cx="910" cy="792" r="10" fill="#59656f"/><path d="M891 831C897 810 923 810 929 831" fill="#59656f"/><text class="minor ink center" x="910" y="862">用户</text>
+  <circle cx="910" cy="813" r="27" fill="#fff" stroke="#59656f" stroke-width="3"/><circle cx="910" cy="802" r="8" fill="#59656f"/><path d="M892 830C894 817 901 811 910 811C919 811 926 817 928 830Z" fill="#59656f"/><text class="minor ink center" x="910" y="862">用户</text>
 
   <!-- Data paths -->
   <path class="scaleup" d="M270 300H385"/>
