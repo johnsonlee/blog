@@ -58,7 +58,7 @@ GW 并没有消失。2025 年 10 月，[Google 为 Anthropic 安排了 2026 年�
 
 2026 年也只能推算。把 2025 年的 1.4GW 估算值，与 AWS、Google 和 SpaceX 已公布的 2026 年新增 capacity 放在一起，年末大约指向 3.7GW。它不是 Anthropic guidance，交付延迟或口径重叠都可能改变结果。
 
-再往后，OpenAI 的 memo 只给了两个区间：OpenAI 预计 2027 年进入 low-double-digit GW，Anthropic 预计在 2027 年底达到 7GW 到 8GW。OpenAI 另有 2030 年 30GW 目标；Anthropic 没有公布 2028 到 2030 年的公司级 available compute guidance，所以蓝线停在 2027 年。绿色虚线也只是连接 2027 与 2030 两个锚点，不是 OpenAI 的逐年 guidance。把 AWS 最高 5GW、Google 5GW 和 Azure 1GW 直接铺到未来各年，会把 contract ceiling 伪装成 delivery schedule。
+再往后，OpenAI 的 memo 只给了两个区间：OpenAI 预计 2027 年进入 low-double-digit GW，Anthropic 预计在 2027 年底达到 7GW 到 8GW。OpenAI 另有 2030 年 30GW 目标；Anthropic 没有公布 2028 到 2030 年的公司级 available compute guidance，所以橙线停在 2027 年。绿色虚线也只是连接 2027 与 2030 两个锚点，不是 OpenAI 的逐年 guidance。把 AWS 最高 5GW、Google 5GW 和 Azure 1GW 直接铺到未来各年，会把 contract ceiling 伪装成 delivery schedule。
 
 这张图至少排除了一个误会：Anthropic 很少出现在大型 data center 的标题里，不等于 Anthropic 没有在抢 GW。OpenAI 把交付路径显性化了，Anthropic 则把同一条路径拆给多家基础设施供应商。两条曲线都在从不到 2GW 向 10GW 量级推进。
 
