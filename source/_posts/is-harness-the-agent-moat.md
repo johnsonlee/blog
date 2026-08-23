@@ -34,7 +34,7 @@ i18n_key: is-harness-the-agent-moat
 
 平台正在把一项重要能力做成标准件。于是第一个矛盾出现了：**如果别人能通过 SDK 获得同一套 Loop，它还是壁垒吗？**
 
-## SDK 化先吃掉重复实现
+## SDK 会先替代什么？
 
 判断一套自研 Harness 还剩多少价值，可以先做一个替换测试：把 planner、tool loop、retry、context compaction、sandbox 和 approval 换成 Codex SDK 或 Claude Agent SDK，观察产品失去了什么。
 
@@ -48,7 +48,7 @@ i18n_key: is-harness-the-agent-moat
 
 可如果 SDK 化会不断向上移动，Eval 会不会成为下一层？
 
-## 下一层是 Verification Loop
+## Verification Loop 也会被 SDK 化吗？
 
 这个过程已经开始。[OpenAI 的 Agent Evals](https://developers.openai.com/api/docs/guides/agent-evals) 把 traces、graders、datasets 和 eval runs 连成一套产品。Trace 记录 model call、tool call、guardrail 和 handoff，grader 负责给行为打分，dataset 和 eval run 负责重复比较不同版本。连根据 dataset 自动改进 prompt，也已经进入 [Prompt Optimizer](https://developers.openai.com/api/docs/guides/prompt-optimizer)。
 
@@ -65,7 +65,7 @@ i18n_key: is-harness-the-agent-moat
 
 **Verification 的机器会商品化，定义“做对了”的权力不会。**
 
-## Ground Truth 不是一份 Dataset
+## Ground Truth 只是一份 Dataset 吗？
 
 把壁垒简单移动到 eval dataset 仍然不够。静态 dataset 会过时，会被模型适配，也覆盖不了生产环境不断出现的新 failure mode。比一份静态 dataset 更难复制的，是公司持续生产 Ground Truth 的过程：
 
@@ -77,7 +77,7 @@ i18n_key: is-harness-the-agent-moat
 
 Eval framework 可以采购，grader 可以生成，甚至 case mining 也会逐步自动化。公司仍然要拥有真实结果的访问权、错误代价的定义权，以及把一次失败变成永久约束的能力。这三件事合在一起，才构成 Ground Truth 的生产系统。
 
-## Harness Engineering 的边界会继续移动
+## Harness Engineering 的边界在哪里？
 
 走到这里，“Harness 是 Agent 的壁垒”已经不能简单回答 yes 或 no。
 

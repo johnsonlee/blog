@@ -35,7 +35,7 @@ After showing how much the harness can change results, [Codex as a platform](htt
 
 Platforms are turning an important capability into a standard component. That creates the first contradiction: **if another team can get the same loop through an SDK, is the loop still a moat?**
 
-## SDKs Absorb Repeated Implementation First
+## What Will SDKs Replace First?
 
 A replacement test reveals how much value remains in an in-house harness. Swap the planner, tool loop, retries, context compaction, sandbox, and approval flow for Codex SDK or Claude Agent SDK, then inspect what the product loses.
 
@@ -49,7 +49,7 @@ The first generation of Agent teams is splitting along this boundary. Teams that
 
 But if the SDK boundary keeps moving upward, will evaluation be next?
 
-## The Verification Loop Is Next
+## Will the Verification Loop Become an SDK Too?
 
 That transition has already started. [OpenAI Agent Evals](https://developers.openai.com/api/docs/guides/agent-evals) connects traces, graders, datasets, and eval runs in one product surface. Traces record model calls, tool calls, guardrails, and handoffs. Graders score behavior. Datasets and eval runs make versions repeatably comparable. Even automatic prompt improvement from a dataset is now part of [Prompt Optimizer](https://developers.openai.com/api/docs/guides/prompt-optimizer).
 
@@ -66,7 +66,7 @@ A platform can record the tool-call trace for `refund_order`, but it does not kn
 
 **The machinery of verification will commoditize. The authority to define "correct" will not.**
 
-## Ground Truth Is Not a Dataset
+## Is Ground Truth Just a Dataset?
 
 Moving the moat to an eval dataset is still too shallow. A static dataset becomes stale, can be adapted to, and cannot cover new failure modes that emerge in production. The difficult asset is a company's process for continuously producing ground truth:
 
@@ -78,7 +78,7 @@ Expert judgment cannot be outsourced either. When two outputs both look plausibl
 
 Eval frameworks can be bought. Graders can be generated. Case mining will become more automated. A company still needs access to real outcomes, authority over the cost of errors, and the ability to turn one failure into a lasting constraint. Together, those capabilities form a ground-truth production system.
 
-## The Boundary of Harness Engineering Keeps Moving
+## Where Is the Boundary of Harness Engineering?
 
 At this point, "the harness is the Agent's moat" no longer has a simple yes-or-no answer.
 
