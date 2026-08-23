@@ -155,7 +155,7 @@ RFS 仍然只交付 facility。接下来才是 rack 里的 IT deployment：GPU�
 
 三张图按 campus、facility 和 cluster 逐层展开，后面的目录也沿着同一条交付路径。顺序不能反：先沿项目交付周期从 Site Selection 走到 RFS，把 site、power、thermal 和 commissioning 交出来；机房具备交付条件以后，再把 compute、network 和 storage 拼成 healthy cluster；走过 Production Handoff，再追 workload 和 delivery network，直到 physical capacity 变成 billable service。最后把整条链放回 PORTS-Pike 的 8GW 验算：哪一段 Replication Gap 最长，谁能把它变成收入和现金流。
 
-可这条链也塞不进一篇文章。电网接入、供配电、散热、集群网络、存储和 workload，任何一层单独拎出来，都足够好好拆一遍。硬挤在一起，只会把刚打开的 Data Center 重新压回一个方框。
+可这条链也塞不进一篇文章。光是 power，就能沿着发电、输电、负荷接入、site energization 和供配电继续展开；散热、集群网络、存储和 workload 也各自藏着一整条交付链。硬挤在一起，只会把刚打开的 Data Center 重新压回一个框。
 
 所以接下来沿着这条链一层层拆。下面这些标题先把路径标出来，文章发布到哪里，链接就补到哪里。
 
@@ -169,17 +169,29 @@ RFS 仍然只交付 facility。接下来才是 rack 里的 IT deployment：GPU�
 
 2. 《电网接入：数据中心的第一道闸门》
 
-   PPA、interconnection agreement 和 site energization 经常被一句“已经拿到电”混在一起。它可能只是一份购电协议，也可能是拿到并网资格，直到电真正送到 site，前后可能差几年。可电已经到了 site，GPU 为什么还不能上电？
+   PPA、interconnection agreement 和 site energization 经常被一句“已经拿到电”混在一起。它可能只是一份购电协议，也可能是拿到接入资格，直到电真正送到 site，前后可能差几年。把这些状态分开以后，Power 这层才刚刚打开：数据中心要用的电究竟从哪里来？
 
-3. 《从变电站到机架：供配电链》
+3. 《发电侧：AI 数据中心的电从哪里来》
 
-   Site energization 只把电送到并网点。进入 rack 之前，电力还要穿过 transformer、switchgear、UPS、PDU、busway 和 power shelf，再由 rack 内的 power conversion 送到 GPU、CPU、HBM、NIC 和 switch。任何一段没交付，整座机架都只能等。电力进入这些设备以后，几乎每一瓦最后都会变成热。这些热量往哪里走？
+   1GW 是任何时刻都可能出现的 power demand，不是一年累计使用了多少电。现有 generation 还能承担多少 firm load，新建 gas、nuclear、renewable 和 storage 分别能交付什么，fuel supply、capacity factor、ramp 与备用怎样进入同一笔账，决定发电侧能否跟上 Data Center。附近即使有电厂，电又为什么送不过来？
 
-4. 《数据中心散热链：从机架到室外》
+4. 《输电网：1GW 为什么送不过来》
+
+   发电量充足，不代表目标 site 所在的节点还能接住 1GW。Power flow、N-1 contingency、thermal limit、voltage 与 stability 会把约束推到几十甚至几百公里外；新的 765kV line 又要经过 planning、route、right of way、siting、长周期设备和施工。输电 backbone 建好以后，电还差哪一步才能真正到达数据中心？
+
+5. 《Site Energization：电怎样到达数据中心》
+
+   Regional transmission 要先进入 interconnection substation，再通过 local service facilities、保护、计量和对应的 utility 工程到达 service delivery point。外部线路与现场接入工程必须同时完成，测试和调度条件也要同时满足，utility 才能合闸。到了这一步，Power 才真正交给 Data Center；可电只到了交付点，离 rack 还有一整条供配电链。
+
+6. 《从变电站到机架：供配电链》
+
+   Site energization 只把电送到 service delivery point。进入 rack 之前，电力还要穿过 transformer、switchgear、UPS、PDU、busway 和 power shelf，再由 rack 内的 power conversion 送到 GPU、CPU、HBM、NIC 和 switch。任何一段没交付，整座机架都只能等。电力进入这些设备以后，几乎每一瓦最后都会变成热。这些热量往哪里走？
+
+7. 《数据中心散热链：从机架到室外》
 
    机架里的热量走两条路径。被 cold plate 捕获的热量进入 Technology Cooling System（TCS），经 manifold 到达 CDU，再交给 Facility Water System（FWS）；没有被 cold plate 捕获的余热，仍要由 server fan 带进 rack exhaust，再由 RDHx 或 CRAH 接走。两条路径最终都要汇入 facility cooling，再由 cooling tower、dry cooler 或 air-cooled chiller 排到室外。任何一段没交付，前面的供电能力都无法变成持续算力。电能送，热能排，设备也装完了，为什么机房还不能交？
 
-5. 《Commissioning：机房建完不等于交付》
+8. 《Commissioning：机房建完不等于交付》
 
    Mechanical Completion 到 RFS 之间还隔着 startup、functional testing、L1-L5 commissioning 和 Integrated Systems Testing。单台设备启动成功，不代表整套 mission-critical system 能通过故障场景验证。[Uptime Institute](https://journal.uptimeinstitute.com/improve-project-success-through-mission-critical-commissioning/)解释了这道验证为什么不能省。机房终于可以交了，GPU 也搬进去了，可用算力为什么还可能是零？
 
@@ -187,19 +199,19 @@ RFS 仍然只交付 facility。接下来才是 rack 里的 IT deployment：GPU�
 
 RFS 只交付 facility。GPU shipment、server shipment、rack delivery 和 cluster capacity 随后出现在同一份进度表里，它们究竟是不是同一个数字？
 
-6. 《从 GPU 到 Rack：机架交付》
+9. 《从 GPU 到 Rack：机架交付》
 
    GPU、CPU、HBM、NIC 和 DPU 要先组成 compute tray，再和 NVLink switch tray、power shelf 一起装进 rack。零件到货不等于 rack delivery，rack delivery 也不等于 cluster capacity。Rack 拼好了，数万块 GPU 又怎样连成一套系统？
 
-7. 《万卡集群：网络上限》
+10. 《万卡集群：网络上限》
 
    NVLink 负责 scale-up，InfiniBand 或 Ethernet 负责 scale-out，switch ASIC、optical transceiver、laser、fiber、connector 和 testing 决定整张 fabric 能否通过 validation。网络通了，Training data、model weights、checkpoint 和 KV cache 又放在哪里？
 
-8. 《从 Checkpoint 到 KV Cache：存储层级》
+11. 《从 Checkpoint 到 KV Cache：存储层级》
 
    Training data、model weights、checkpoint、local NVMe、parallel file system、object storage 和 KV cache 分布在不同 storage tier。NAND bit 只回答容量，controller、firmware 和 qualification 决定 enterprise SSD 能不能上线。Compute、network 和 storage 都装好了，谁来证明这套 cluster 可以承载 production workload？
 
-9. 《集群交付：从设施就绪到 Production Handoff》
+12. 《集群交付：从设施就绪到 Production Handoff》
 
    IT deployment、firmware、provisioning、burn-in、fabric validation 和 cluster acceptance 全发生在设施交付以后。安装了多少 GPU 不再重要，deployment velocity、cluster yield 和 healthy capacity 才决定 Production Handoff。Healthy cluster 已经有了，同一 MW 跑 Training 和 Inference，产出的还是同一种算力吗？
 
@@ -207,21 +219,21 @@ RFS 只交付 facility。GPU shipment、server shipment、rack delivery 和 clus
 
 Production Handoff 只交付 physical capacity。它能变成多少 billable workload，先取决于 cluster 接到什么工作。
 
-10. 《Training vs Inference：同一 MW 的两本账》
+13. 《Training vs Inference：同一 MW 的两本账》
 
     Training 追求大规模同步计算，Inference 要在 latency、batching、利用率和地理位置之间取舍。同一 MW 的吞吐、利用率和 economics 因此完全不同。Inference 再承载 Agent workload，一次 user request 又会展开成多少计算？
 
-11. 《Agent 算力账单：从 Token 到 Task》
+14. 《Agent 算力账单：从 Token 到 Task》
 
     一次 user request 会展开成多次 model invocation，以及 routing、prefill、decode、retrieval、tool call、retry、cache 和 scheduling。Token、request、task 与 tasks per MW 回答的是四个不同问题。Task 在 cluster 里执行完了，结果怎样在 latency SLO 内送到用户面前？
 
-12. 《推理交付网络：从 Cluster 到 User》
+15. 《推理交付网络：从 Cluster 到 User》
 
     DCI、backbone、transit、peering、CDN、edge 和 metro inference 决定结果能否满足 latency SLO。内部 compute capacity 扩张以后，binding constraint 可能迁移到数据中心外部。走到这里，最初那个 8GW 已经不再是一个容量数字：哪一段最慢，谁又拿走订单和现金流？
 
 ## 拿 PORTS-Pike 的 8GW 做一次验算
 
-13. 《PORTS-Pike 8GW：交付链验算》
+16. 《PORTS-Pike 8GW：交付链验算》
 
     把 PORTS-Pike 的每个项目放回 delivery stage，把每一 GW 展开成 power、thermal、compute、network 和 storage，再沿着 Bottleneck Migration Network 追踪下一个 bottleneck candidate。
 

@@ -156,7 +156,7 @@ RFS still delivers only the facility. IT deployment at the rack level comes next
 
 The three diagrams show the campus, facility, and cluster layers of one delivery chain. The outline below follows the same route. The order is fixed: first move through the project delivery lifecycle from Site Selection through power, thermal, and commissioning to RFS. Once the facility is deliverable, assemble compute, networking, and storage into a healthy cluster. After Production Handoff, follow workloads and delivery networks until physical capacity becomes billable service. Finally, put the whole chain back into PORTS-Pike's 8 GW and test which Replication Gap lasts longest and which supplier can turn it into revenue and cash flow.
 
-The chain does not fit into one essay. Grid interconnection, power distribution, thermal management, cluster networking, storage, and workloads are each deep enough for a proper investigation. Forcing them together would collapse Data Center back into the box we just opened.
+The chain does not fit into one essay. Power alone unfolds into generation, transmission, load interconnection, site energization, and facility power distribution. Thermal management, cluster networking, storage, and workloads each hide another delivery chain of their own. Forcing them together would collapse Data Center back into the box we just opened.
 
 The series will therefore move through the chain one layer at a time. The titles below mark the route; links will appear as each essay is published.
 
@@ -170,17 +170,29 @@ OpenAI announces another 1 GW, 5 GW, or 8 GW. How far has that capacity actually
 
 2. **Grid Interconnection: The Data Center's First Gate**
 
-   A claim that a data center "has power" may mean a signed PPA, an interconnection agreement, or electricity physically reaching the site. Those states can be years apart. Even after power reaches the site, why can the GPUs still not turn on?
+   A claim that a data center "has power" may mean a signed PPA, an interconnection agreement, or electricity physically reaching the site. Those states can be years apart. Once they are separated, the Power layer has only begun to open. Where does the data center's electricity actually come from?
 
-3. **Substation to Rack: The Power Distribution Chain**
+3. **Generation: Where Does AI Data Center Power Come From?**
 
-   Power still has to pass through transformers, switchgear, UPS systems, PDUs, busways, and power shelves before reaching the rack, then through rack-level power conversion to GPUs, CPUs, HBM, NICs, and switches. One missing segment leaves the entire rack waiting. Once electricity enters that equipment, almost every watt eventually becomes heat. Where does that heat go?
+   One gigawatt is power demand that can appear at any moment, not annual energy consumption. How much firm load existing generation can serve, what new gas, nuclear, renewable, and storage projects actually deliver, and how fuel supply, capacity factor, ramp, and reserves fit together determine whether generation can keep pace with the Data Center. Even with a power plant nearby, why can the electricity still fail to arrive?
 
-4. **The Data Center Thermal Path: Rack to Ambient Air**
+4. **Transmission: Why Can't the Grid Deliver 1 GW?**
+
+   Sufficient generation does not mean the node serving the target site can absorb another gigawatt. Power flow, N-1 contingencies, thermal limits, voltage, and stability can move the constraint tens or hundreds of miles away. A new 765 kV line still requires planning, routing, rights of way, siting, long-lead equipment, and construction. Once the transmission backbone is ready, what still separates electricity from the data center?
+
+5. **Site Energization: How Power Reaches the Data Center**
+
+   Regional transmission first enters an interconnection substation, then reaches the service delivery point through local service facilities, protection, metering, and the corresponding utility works. External lines and site-connection works must finish together, and testing and dispatch conditions must also pass before the utility closes the breaker. Only here does Power reach the Data Center. It has reached the delivery point, but an entire distribution chain still separates it from the rack.
+
+6. **Substation to Rack: The Power Distribution Chain**
+
+   Site energization only brings electricity to the service delivery point. Before reaching the rack, power still has to pass through transformers, switchgear, UPS systems, PDUs, busways, and power shelves, then through rack-level power conversion to GPUs, CPUs, HBM, NICs, and switches. One missing segment leaves the entire rack waiting. Once electricity enters that equipment, almost every watt eventually becomes heat. Where does that heat go?
+
+7. **The Data Center Thermal Path: Rack to Ambient Air**
 
    Heat inside the rack follows two paths. Heat captured by cold plates enters the Technology Cooling System (TCS), passes through manifolds to a CDU, then transfers into the Facility Water System (FWS). Heat not captured by cold plates still enters the rack exhaust through server fans, then moves into rear-door heat exchangers or CRAHs. Both paths ultimately enter facility cooling; cooling towers, dry coolers, or air-cooled chillers then reject the heat to ambient air. One missing segment keeps power capacity from becoming sustained compute. Once power flows, heat leaves, and equipment is installed, why is the facility still not deliverable?
 
-5. **Commissioning: Built Does Not Mean Deliverable**
+8. **Commissioning: Built Does Not Mean Deliverable**
 
    Mechanical Completion and RFS are separated by startup, functional testing, L1-L5 commissioning, Integrated Systems Testing, and operational handover. A successful component startup does not prove that the mission-critical system will survive failure scenarios. [Uptime Institute](https://journal.uptimeinstitute.com/improve-project-success-through-mission-critical-commissioning/) explains why "built" and "deliverable" are different states. The facility is finally deliverable and the GPUs are inside. Why can available compute still be zero?
 
@@ -188,19 +200,19 @@ OpenAI announces another 1 GW, 5 GW, or 8 GW. How far has that capacity actually
 
 RFS delivers only the facility. GPU shipments, server shipments, rack deliveries, and cluster capacity then appear on the same progress sheet. Are they really the same number?
 
-6. **GPU to Rack: Delivering the Compute Rack**
+9. **GPU to Rack: Delivering the Compute Rack**
 
    GPUs, CPUs, HBM, NICs, and DPUs first become compute trays, which join NVLink switch trays and power shelves inside a rack. Component arrivals do not equal rack deliveries, and rack deliveries do not equal cluster capacity. Once the racks are ready, how do tens of thousands of GPUs become one system?
 
-7. **Superclusters: The Network Ceiling**
+10. **Superclusters: The Network Ceiling**
 
    NVLink handles scale-up; InfiniBand or Ethernet handles scale-out; switch ASICs, optical transceivers, lasers, fiber, connectors, and testing determine whether the fabric passes validation. Once the network works, where do training data, model weights, checkpoints, and KV cache live?
 
-8. **Checkpoint to KV Cache: The Storage Hierarchy**
+11. **Checkpoint to KV Cache: The Storage Hierarchy**
 
    Training data, model weights, checkpoints, local NVMe, parallel file systems, object storage, and KV cache occupy different storage tiers. NAND bits describe capacity; controllers, firmware, reliability, and qualification determine whether enterprise storage can enter service. With compute, networking, and storage installed, who proves the cluster can carry production workloads?
 
-9. **Cluster Delivery: Facility Readiness to Production Handoff**
+12. **Cluster Delivery: Facility Readiness to Production Handoff**
 
    IT deployment, firmware, provisioning, burn-in, fabric validation, cluster acceptance, and healthy handoff all happen after RFS. Installed GPU counts give way to deployment velocity, cluster yield, and healthy capacity before Production Handoff. Once the healthy cluster exists, does one megawatt produce the same compute under Training and Inference?
 
@@ -208,21 +220,21 @@ RFS delivers only the facility. GPU shipments, server shipments, rack deliveries
 
 Production Handoff delivers physical capacity. How much billable workload it becomes first depends on what job the cluster receives.
 
-10. **Training vs. Inference: Two Ledgers for the Same MW**
+13. **Training vs. Inference: Two Ledgers for the Same MW**
 
     Training pursues large-scale synchronous computation. Inference trades off latency, batching, utilization, and geography. The throughput and economics of the same megawatt therefore diverge. When Inference carries Agent workloads, how much computation can one user request unfold into?
 
-11. **The Agent Compute Bill: Token to Task**
+14. **The Agent Compute Bill: Token to Task**
 
     One user request expands into multiple model invocations plus routing, prefill, decode, retrieval, tool calls, retries, cache behavior, and scheduling. Tokens, requests, tasks, and tasks per megawatt answer different questions. Once the task finishes inside the cluster, how does the result reach the user within its latency SLO?
 
-12. **Inference Delivery Network: Cluster to User**
+15. **Inference Delivery Network: Cluster to User**
 
     DCI, backbone networks, transit, peering, CDNs, edge infrastructure, and metro inference determine whether the result meets its latency SLO. As internal compute expands, the constraint may migrate outside the data center. By this point, the original 8 GW is no longer one capacity number. Which segment is slowest, and who captures the orders and cash flow?
 
 ## Test the map with PORTS-Pike's 8 GW
 
-13. **PORTS-Pike 8 GW: Testing the Delivery Chain**
+16. **PORTS-Pike 8 GW: Testing the Delivery Chain**
 
     Put every PORTS-Pike project back into its delivery stage, expand each gigawatt into power, thermal, compute, network, and storage requirements, then trace the next bottleneck candidate through the Bottleneck Migration Network.
 
