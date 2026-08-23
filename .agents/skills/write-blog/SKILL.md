@@ -19,6 +19,7 @@ description: >
 4. Investing 类文章再读 [references/investing.md](references/investing.md)。
 5. 文章需要图表、架构图或地图时，读 [references/visuals.md](references/visuals.md)。
 6. 创建或修改 post、站内链接、英文版或准备发布时，读 [references/publishing.md](references/publishing.md)。
+7. 草稿的结构、事实和判断稳定后，调用 `$humanizer` 做最终语言验收；作者样本与 [references/style.md](references/style.md) 的优先级高于通用 humanizer 规则。
 
 ## 工作方法
 
@@ -64,15 +65,23 @@ description: >
 
 任一上游问题失败，回到研究模型或结构重写，不能只润色暴露问题的那一句。
 
-### 5. 把反馈作用到上游
+### 5. 用 humanizer 清掉 AI 痕迹
+
+结构、事实和判断稳定后，对中文稿执行 `$humanizer` 的完整 rewrite process，再回答两件事：哪些地方仍像 AI 写的，以及改写有没有增加、删掉或改变任何 claim、数字、日期、引用、排名、链接与不确定性。Humanizer 是最后的 prose QA，不替代研究、结构重写或事实核验。
+
+按 `$humanizer` 的 content、language、style、chatbot 和 filler patterns 逐段检查，并与 [references/style.md](references/style.md) 的“需要重写的信号”交叉核对。不要逐个替换所谓 AI 高频词；发现问题时围绕这一段真正要表达的意思重写。
+
+保留作者真实的判断、具体细节、专业术语、必要限定、刻意重复和长短句变化。不得为了“更像人”虚构经历、情绪、第一人称、事实或来源，也不能把 johnsonlee.io 的 casual 叙事洗成中性的百科文本。中文和英文分别执行这一步，英文版完成后再次核对双语 claim。
+
+### 6. 把反馈作用到上游
 
 用户反馈如果改变了文章切入点、系统边界、问题链或判断，重新检查全文、英文版、配图和 Sources。不要局部打补丁后保留旧结构，也不要把单篇文章的一次事故追加成全局禁令。
 
-### 6. 中文稳定后再扩展
+### 7. 中文稳定后再扩展
 
-中文主线通过验收后，再生成英文版和最终配图。英文版是同一篇文章的母语化表达，不是旧稿翻译或独立改写；图表必须服务已经稳定的叙事与证据。按 [references/visuals.md](references/visuals.md) 交付 SVG、对应 PNG、5:2 横版封面和基于横版重构的 3:4 竖版封面。
+中文主线通过验收后，再生成英文版和最终配图。英文版是同一篇文章的母语化表达，不是旧稿翻译或独立改写；完成后按第 5 步单独执行 humanizer 验收。图表必须服务已经稳定的叙事与证据。按 [references/visuals.md](references/visuals.md) 交付 SVG、对应 PNG、5:2 横版封面和基于横版重构的 3:4 竖版封面。
 
-### 7. 验证后再发布
+### 8. 验证后再发布
 
 运行仓库现有的 agent guidance、post style、quotes 和 Hexo build 检查；逐项核对双语章节、图片、正文链接和 Sources。图表需要实际渲染，不能只检查源码。
 
@@ -88,6 +97,7 @@ description: >
 - 每个章节都由上一节推导出来，数据和图表各自承担明确问题
 - 观点、事实、推论和不确定性边界清楚
 - 中文像原生写作，英文像原生英文文章
+- 中英文均通过 humanizer 验收，且没有因此改变任何 claim、数据、引用或作者立场
 - 双语正文、Sources 和文字型配图保持事实一致
 - 每个 SVG 均有经过对照验收的 PNG，文章的 5:2 与 3:4 封面均已生成并检查最终裁切
 - 所有仓库检查和视觉检查已经执行，未验证项明确披露
