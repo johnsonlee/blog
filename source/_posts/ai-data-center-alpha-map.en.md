@@ -188,9 +188,9 @@ OpenAI announces another 1 GW, 5 GW, or 8 GW. How far has that capacity actually
 
    Site energization only brings electricity to the service delivery point. Before reaching the rack, power still has to pass through transformers, switchgear, UPS systems, PDUs, busways, and power shelves, then through rack-level power conversion to GPUs, CPUs, HBM, NICs, and switches. One missing segment leaves the entire rack waiting. Once electricity enters that equipment, almost every watt eventually becomes heat. Where does that heat go?
 
-7. **The Data Center Thermal Path: Rack to Ambient Air**
+7. **{% post_link data-center-thermal-path.en 'How Do You Cool 800 MW Without Cooling Towers?' %}**
 
-   Heat inside the rack follows two paths. Heat captured by cold plates enters the Technology Cooling System (TCS), passes through manifolds to a CDU, then transfers into the Facility Water System (FWS). Heat not captured by cold plates still enters the rack exhaust through server fans, then moves into rear-door heat exchangers or CRAHs. Both paths ultimately enter facility cooling; cooling towers, dry coolers, or air-cooled chillers then reject the heat to ambient air. One missing segment keeps power capacity from becoming sustained compute. Once power flows, heat leaves, and equipment is installed, why is the facility still not deliverable?
+   If PORTS-Pike's first 800 MW reaches the IT-load boundary, full load will create a similar scale of heat, yet the campus will not rely on cooling towers that continuously consume water. Whether power becomes sustained compute depends on how liquid and air paths inside the rack enter the TCS, CDU, and facility cooling, and whether the closed-loop air-cooled system can reject that heat on the hottest design day. Once power flows, heat leaves, and equipment is installed, why is the facility still not deliverable?
 
 8. **Commissioning: Built Does Not Mean Deliverable**
 

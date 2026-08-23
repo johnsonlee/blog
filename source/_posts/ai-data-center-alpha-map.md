@@ -187,9 +187,9 @@ RFS 仍然只交付 facility。接下来才是 rack 里的 IT deployment：GPU�
 
    Site energization 只把电送到 service delivery point。进入 rack 之前，电力还要穿过 transformer、switchgear、UPS、PDU、busway 和 power shelf，再由 rack 内的 power conversion 送到 GPU、CPU、HBM、NIC 和 switch。任何一段没交付，整座机架都只能等。电力进入这些设备以后，几乎每一瓦最后都会变成热。这些热量往哪里走？
 
-7. 《数据中心散热链：从机架到室外》
+7. 《{% post_link data-center-thermal-path '不用 Cooling Tower，800MW 怎么散热？' %}》
 
-   机架里的热量走两条路径。被 cold plate 捕获的热量进入 Technology Cooling System（TCS），经 manifold 到达 CDU，再交给 Facility Water System（FWS）；没有被 cold plate 捕获的余热，仍要由 server fan 带进 rack exhaust，再由 RDHx 或 CRAH 接走。两条路径最终都要汇入 facility cooling，再由 cooling tower、dry cooler 或 air-cooled chiller 排到室外。任何一段没交付，前面的供电能力都无法变成持续算力。电能送，热能排，设备也装完了，为什么机房还不能交？
+   PORTS-Pike 首批 800MW 如果落到 IT load，满载时就会变成同等量级的热负荷，园区却不依赖持续耗水的 cooling tower。Rack 内的液冷与风冷怎样接入 TCS、CDU 和 facility cooling，closed-loop air-cooled system 又怎样在最热设计日把热交给室外空气，决定供电能力能否变成持续算力。电能送，热能排，设备也装完了，为什么机房还不能交？
 
 8. 《Commissioning：机房建完不等于交付》
 

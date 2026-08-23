@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1080" viewBox="0 0 720 1080" role="img" aria-labelledby="title desc">
+  <title id="title">How outdoor temperature compresses deliverable thermal MW</title>
+  <desc id="desc">The public NVIDIA DSX reference mentions a 45 degree Celsius liquid-cooling design point, but this is not a disclosed PORTS-Pike parameter. A generic temperature budget subtracts CDU and outdoor-equipment approach temperatures from the IT liquid temperature boundary to establish the ambient limit for dry cooling. Deliverable capacity must still exceed actual heat load at project design ambient under the required fault.</desc>
+  <defs>
+    <style>
+      text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", sans-serif; fill: #172033; letter-spacing: 0; }
+      .white { fill: #ffffff; }
+      .light { fill: #d7e2ef; }
+      .muted { fill: #52647a; }
+      .small { font-size: 21px; }
+      .body { font-size: 24px; }
+      .label { font-size: 27px; font-weight: 700; }
+      .value { font-size: 31px; font-weight: 760; }
+      .line { stroke: #52647a; stroke-width: 5; fill: none; stroke-linecap: round; }
+    </style>
+  </defs>
+
+  <rect width="720" height="1080" fill="#f5f7fa"/>
+
+  <rect x="40" y="34" width="640" height="104" rx="6" fill="#172033"/>
+  <text x="360" y="75" text-anchor="middle" class="white label">NVIDIA DSX Reference</text>
+  <text x="360" y="112" text-anchor="middle" class="white body">45°C Liquid-cooling Design Point</text>
+  <text x="360" y="133" text-anchor="middle" class="light small">Not a disclosed PORTS-Pike parameter</text>
+
+  <rect x="80" y="174" width="560" height="68" rx="6" fill="#ffffff" stroke="#9aabc0" stroke-width="2" stroke-dasharray="10 8"/>
+  <text x="360" y="216" text-anchor="middle" class="label">Generic Temperature Budget</text>
+
+  <rect x="130" y="278" width="460" height="102" rx="6" fill="#e8f1fa" stroke="#3973a8" stroke-width="3"/>
+  <text x="360" y="319" text-anchor="middle" class="label">IT Liquid Temperature Limit</text>
+  <text x="360" y="357" text-anchor="middle" class="value">T<tspan baseline-shift="sub" font-size="21">liquid</tspan></text>
+
+  <path d="M360 380 V423" class="line"/>
+  <polygon points="346,423 374,423 360,445" fill="#52647a"/>
+  <rect x="390" y="393" width="250" height="38" rx="4" fill="#fff3e8"/>
+  <text x="515" y="420" text-anchor="middle" class="small">− ΔT CDU Approach</text>
+
+  <rect x="130" y="445" width="460" height="102" rx="6" fill="#eef7ef" stroke="#2d8a4e" stroke-width="3"/>
+  <text x="360" y="486" text-anchor="middle" class="label">FWS Supply Limit</text>
+  <text x="360" y="524" text-anchor="middle" class="body">T<tspan baseline-shift="sub" font-size="18">FWS</tspan> = T<tspan baseline-shift="sub" font-size="18">liquid</tspan> − ΔT<tspan baseline-shift="sub" font-size="18">CDU</tspan></text>
+
+  <path d="M360 547 V590" class="line"/>
+  <polygon points="346,590 374,590 360,612" fill="#52647a"/>
+  <rect x="390" y="560" width="275" height="38" rx="4" fill="#fff3e8"/>
+  <text x="527" y="587" text-anchor="middle" class="small">− ΔT Outdoor Approach</text>
+
+  <rect x="130" y="612" width="460" height="102" rx="6" fill="#fff6d8" stroke="#b98100" stroke-width="3"/>
+  <text x="360" y="653" text-anchor="middle" class="label">Dry-only Ambient Limit</text>
+  <text x="360" y="691" text-anchor="middle" class="body">T<tspan baseline-shift="sub" font-size="18">ambient</tspan> ≤ T<tspan baseline-shift="sub" font-size="18">FWS</tspan> − ΔT<tspan baseline-shift="sub" font-size="18">outdoor</tspan></text>
+
+  <rect x="50" y="754" width="295" height="116" rx="6" fill="#e8f5ea" stroke="#2d8a4e" stroke-width="3"/>
+  <text x="198" y="796" text-anchor="middle" class="label">Cool Day</text>
+  <text x="198" y="833" text-anchor="middle" class="small">Large ΔT · Lower Fan Speed</text>
+  <text x="198" y="860" text-anchor="middle" fill="#1f6f3d" class="small">Q available ≥ Q actual</text>
+
+  <rect x="375" y="754" width="295" height="116" rx="6" fill="#fff0e5" stroke="#c85a16" stroke-width="3"/>
+  <text x="523" y="796" text-anchor="middle" class="label">Design Day</text>
+  <text x="523" y="833" text-anchor="middle" class="small">Small ΔT · Fans at Full Speed</text>
+  <text x="523" y="860" text-anchor="middle" fill="#a94710" class="small">Selection Curve Sets MW</text>
+
+  <rect x="45" y="908" width="630" height="86" rx="6" fill="#172033"/>
+  <text x="360" y="946" text-anchor="middle" class="white body">Thermal MW is deliverable only when</text>
+  <text x="360" y="980" text-anchor="middle" class="white body" font-weight="700">Q available (T ambient, Required Fault) ≥ Q actual</text>
+
+  <rect x="65" y="1010" width="590" height="58" rx="5" fill="#ffffff" stroke="#c85a16" stroke-width="2" stroke-dasharray="9 7"/>
+  <text x="360" y="1035" text-anchor="middle" class="small" font-weight="700">PORTS-Pike Undisclosed</text>
+  <text x="360" y="1058" text-anchor="middle" font-size="18">Design Ambient · Fluid Temperatures · Fan Point · Redundancy</text>
+</svg>
