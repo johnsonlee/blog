@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">800MW 在三种口径下对应的 GPU Rack 数量</title>
+  <desc id="desc">同一个 800MW，直接除以 GB200 的 120kW 并向下取整得到 6666 座静态上限，按 NVIDIA 250MW-class DSX reference site 比例得到约 4915 座参照值，按 198 到 330kW 下一代机柜得到 4040 到 2424 座直接上限。这些都不是 PORTS-Pike 预测。</desc>
+  <defs>
+    <style>
+      text { font-family: Inter, "PingFang SC", "Microsoft YaHei", Arial, sans-serif; letter-spacing: 0; fill: #172033; }
+      .label { font-size: 22px; font-weight: 760; text-anchor: middle; }
+      .value { font-size: 38px; font-weight: 840; text-anchor: middle; }
+      .formula { font-size: 22px; font-weight: 700; text-anchor: middle; }
+      .body { font-size: 18px; fill: #405169; text-anchor: middle; }
+      .small { font-size: 16px; fill: #607089; text-anchor: middle; }
+      .warning { font-size: 18px; font-weight: 720; fill: #a34d18; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect width="1600" height="900" fill="#f7f9fc"/>
+
+  <rect x="640" y="55" width="320" height="105" rx="6" fill="#172033"/>
+  <text x="800" y="100" class="label" style="fill:#ffffff">同一个分子</text>
+  <text x="800" y="142" class="value" style="fill:#ffffff">800MW</text>
+
+  <line x1="800" y1="160" x2="800" y2="205" stroke="#52647a" stroke-width="4"/>
+  <line x1="300" y1="205" x2="1300" y2="205" stroke="#52647a" stroke-width="4"/>
+  <line x1="300" y1="205" x2="300" y2="250" stroke="#52647a" stroke-width="4"/>
+  <polygon points="288,250 312,250 300,275" fill="#52647a"/>
+  <line x1="800" y1="205" x2="800" y2="250" stroke="#52647a" stroke-width="4"/>
+  <polygon points="788,250 812,250 800,275" fill="#52647a"/>
+  <line x1="1300" y1="205" x2="1300" y2="250" stroke="#52647a" stroke-width="4"/>
+  <polygon points="1288,250 1312,250 1300,275" fill="#52647a"/>
+
+  <rect x="70" y="285" width="460" height="430" rx="6" fill="#eaf2fb" stroke="#3f6f9f" stroke-width="3"/>
+  <text x="300" y="340" class="label">GB200 Direct Division</text>
+  <text x="300" y="395" class="formula">800,000kW ÷ 120kW</text>
+  <text x="300" y="465" class="value" fill="#2f6fab">6,666 Rack</text>
+  <text x="300" y="510" class="body">≈ 480,000 GPU</text>
+  <line x1="130" y1="555" x2="470" y2="555" stroke="#b7c8dc" stroke-width="2"/>
+  <text x="300" y="600" class="body">同款 Rack · 无 Shared IT</text>
+  <text x="300" y="632" class="body">无 Reserve · 静态 Nameplate</text>
+  <text x="300" y="680" class="warning">数学上限，不是安装数量</text>
+
+  <rect x="570" y="285" width="460" height="430" rx="6" fill="#e8f5e9" stroke="#24864a" stroke-width="3"/>
+  <text x="800" y="340" class="label">DSX Reference Ratio</text>
+  <text x="800" y="390" class="formula">250MW-class → 1,536 Rack</text>
+  <text x="800" y="425" class="formula">800MW × 1,536 ÷ 250</text>
+  <text x="800" y="485" class="value" fill="#24864a">≈ 4,915 Rack</text>
+  <text x="800" y="530" class="body">≈ 354,000 GPU</text>
+  <line x1="630" y1="570" x2="970" y2="570" stroke="#bdd8c5" stroke-width="2"/>
+  <text x="800" y="610" class="body">96 SU · 110,592 GPU</text>
+  <text x="800" y="642" class="body">完整 Reference Architecture</text>
+  <text x="800" y="680" class="warning">Sizing Reference，不是项目预测</text>
+
+  <rect x="1070" y="285" width="460" height="430" rx="6" fill="#fff7d8" stroke="#b88407" stroke-width="3"/>
+  <text x="1300" y="340" class="label">Next-Gen Cabinet TDP</text>
+  <text x="1300" y="390" class="formula">800,000kW ÷ 198kW</text>
+  <text x="1300" y="435" class="value" fill="#9a6a00">4,040 Rack</text>
+  <text x="1300" y="490" class="formula">800,000kW ÷ 330kW</text>
+  <text x="1300" y="535" class="value" fill="#9a6a00">2,424 Rack</text>
+  <line x1="1130" y1="575" x2="1470" y2="575" stroke="#dec987" stroke-width="2"/>
+  <text x="1300" y="615" class="body">Rack Generation 决定分母</text>
+  <text x="1300" y="647" class="body">未扣除 Shared IT 与 Reserve</text>
+  <text x="1300" y="680" class="warning">直接上限，不是项目预测</text>
+
+  <rect x="210" y="775" width="1180" height="70" rx="6" fill="#fff0e5" stroke="#c85a16" stroke-width="2"/>
+  <text x="800" y="818" class="warning">三组数字都不能替代 PORTS-Pike 的 Electrical Basis of Design</text>
+</svg>

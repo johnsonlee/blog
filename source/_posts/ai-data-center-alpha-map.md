@@ -183,9 +183,9 @@ RFS 仍然只交付 facility。接下来才是 rack 里的 IT deployment：GPU�
 
    Regional transmission 要先进入 interconnection substation，再通过 local service facilities、保护、计量和对应的 utility 工程到达 service delivery point。外部线路与现场接入工程必须同时完成，测试和调度条件也要同时满足，utility 才能合闸。到了这一步，Power 才真正交给 Data Center；可电只到了交付点，离 rack 还有一整条供配电链。
 
-6. 《从变电站到机架：供配电链》
+6. 《{% post_link data-center-power-distribution-chain '800MW 能装多少个 GPU Rack？' %}》
 
-   Site energization 只把电送到 service delivery point。进入 rack 之前，电力还要穿过 transformer、switchgear、UPS、PDU、busway 和 power shelf，再由 rack 内的 power conversion 送到 GPU、CPU、HBM、NIC 和 switch。任何一段没交付，整座机架都只能等。电力进入这些设备以后，几乎每一瓦最后都会变成热。这些热量往哪里走？
+   PORTS-Pike 首期公开了 800MW，GB200 NVL72 rack 的功耗约 120kW，直接相除却算不出可安装的 rack 数。Site MW、IT MW、冗余设备铭牌和 GPU rack MW 分属不同边界；rack generation、shared IT、required contingency 与 power block 也会继续改变答案。
 
 7. 《数据中心散热链：从机架到室外》
 

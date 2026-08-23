@@ -184,9 +184,9 @@ OpenAI announces another 1 GW, 5 GW, or 8 GW. How far has that capacity actually
 
    Regional transmission first enters an interconnection substation, then reaches the service delivery point through local service facilities, protection, metering, and the corresponding utility works. External lines and site-connection works must finish together, and testing and dispatch conditions must also pass before the utility closes the breaker. Only here does Power reach the Data Center. It has reached the delivery point, but an entire distribution chain still separates it from the rack.
 
-6. **Substation to Rack: The Power Distribution Chain**
+6. **{% post_link data-center-power-distribution-chain.en 'How Many GPU Racks Fit Into 800 MW?' %}**
 
-   Site energization only brings electricity to the service delivery point. Before reaching the rack, power still has to pass through transformers, switchgear, UPS systems, PDUs, busways, and power shelves, then through rack-level power conversion to GPUs, CPUs, HBM, NICs, and switches. One missing segment leaves the entire rack waiting. Once electricity enters that equipment, almost every watt eventually becomes heat. Where does that heat go?
+   PORTS-Pike has disclosed an initial 800 MW, while a GB200 NVL72 rack consumes approximately 120 kW, yet direct division cannot produce an installable rack count. Site MW, IT MW, redundant equipment nameplate, and GPU-rack MW sit at different boundaries; rack generation, shared IT, required contingency, and power-block granularity change the result again.
 
 7. **The Data Center Thermal Path: Rack to Ambient Air**
 
