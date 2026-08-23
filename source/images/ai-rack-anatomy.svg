@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1470" viewBox="0 0 720 1470" role="img" aria-labelledby="title desc">
+  <title id="title">GB200 NVL72 的 Rack-scale System 组成</title>
+  <desc id="desc">两个 GB200 Superchip 组成一个 Compute Tray，十八个 Compute Tray 再与九个 NVLink Switch Tray、八个 Power Shelf、铜缆背板、Busbar、液冷 Manifold 和管理平面组成一个 72 GPU NVLink Domain。</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans CJK SC", sans-serif; fill: #182338; }
+    .h { font-size: 28px; font-weight: 750; }
+    .b { font-size: 24px; font-weight: 650; }
+    .s { font-size: 21px; fill: #526176; }
+    .inv { fill: #fff; }
+    .muted-inv { fill: #dce5f2; }
+  </style>
+  <rect width="720" height="1470" fill="#f6f8fb"/>
+
+  <rect x="32" y="28" width="656" height="130" rx="6" fill="#182338"/>
+  <text x="360" y="78" text-anchor="middle" class="h inv">GB200 Superchip × 2</text>
+  <text x="360" y="118" text-anchor="middle" class="b muted-inv">2 Grace CPU · 4 Blackwell GPU</text>
+
+  <line x1="360" y1="158" x2="360" y2="194" stroke="#617086" stroke-width="4"/>
+  <polygon points="350,194 370,194 360,210" fill="#617086"/>
+
+  <rect x="32" y="224" width="656" height="300" rx="6" fill="#fff" stroke="#2774c5" stroke-width="3"/>
+  <text x="64" y="272" class="h">1 个 Compute Tray</text>
+  <rect x="60" y="302" width="284" height="82" rx="5" fill="#e8f1fb"/>
+  <text x="202" y="336" text-anchor="middle" class="b">Compute</text>
+  <text x="202" y="369" text-anchor="middle" class="s">2 CPU · 4 GPU</text>
+  <rect x="376" y="302" width="284" height="82" rx="5" fill="#f0eafb"/>
+  <text x="518" y="336" text-anchor="middle" class="b">Scale-out</text>
+  <text x="518" y="369" text-anchor="middle" class="s">4 CX-7 · 2 BF-3</text>
+  <rect x="60" y="406" width="284" height="82" rx="5" fill="#fff3d8"/>
+  <text x="202" y="440" text-anchor="middle" class="b">Storage / Control</text>
+  <text x="202" y="473" text-anchor="middle" class="s">NVMe · BMC · HMC</text>
+  <rect x="376" y="406" width="284" height="82" rx="5" fill="#e6f4ec"/>
+  <text x="518" y="440" text-anchor="middle" class="b">Thermal</text>
+  <text x="518" y="473" text-anchor="middle" class="s">Cold Plate · Fan</text>
+
+  <line x1="360" y1="524" x2="360" y2="558" stroke="#617086" stroke-width="4"/>
+  <polygon points="350,558 370,558 360,574" fill="#617086"/>
+  <rect x="386" y="538" width="64" height="34" rx="17" fill="#2774c5"/>
+  <text x="418" y="562" text-anchor="middle" font-size="20" font-weight="700" class="inv">×18</text>
+
+  <rect x="32" y="588" width="656" height="822" rx="6" fill="#fff" stroke="#182338" stroke-width="3"/>
+  <text x="64" y="638" class="h">1 座 GB200 NVL72 Rack</text>
+
+  <rect x="60" y="672" width="600" height="214" rx="6" fill="#e8f1fb" stroke="#2774c5" stroke-width="2"/>
+  <text x="360" y="716" text-anchor="middle" class="h">Compute Tray × 18</text>
+  <rect x="94" y="746" width="532" height="20" rx="3" fill="#fff" stroke="#2774c5"/>
+  <rect x="94" y="776" width="532" height="20" rx="3" fill="#fff" stroke="#2774c5"/>
+  <text x="360" y="826" text-anchor="middle" font-size="30" fill="#73839a">···</text>
+  <rect x="94" y="842" width="532" height="20" rx="3" fill="#fff" stroke="#2774c5"/>
+
+  <rect x="60" y="910" width="286" height="126" rx="6" fill="#f0eafb" stroke="#7048b0" stroke-width="2"/>
+  <text x="203" y="954" text-anchor="middle" class="b">NVLink Switch Tray × 9</text>
+  <text x="203" y="994" text-anchor="middle" class="s">18 颗 NVSwitch</text>
+  <rect x="374" y="910" width="286" height="126" rx="6" fill="#fff0e5" stroke="#d96513" stroke-width="2"/>
+  <text x="517" y="954" text-anchor="middle" class="b">Power Shelf × 8</text>
+  <text x="517" y="994" text-anchor="middle" class="s">33kW · N+N</text>
+
+  <rect x="60" y="1060" width="600" height="92" rx="6" fill="#f4effc" stroke="#7048b0" stroke-width="2"/>
+  <text x="360" y="1098" text-anchor="middle" class="b">Passive Copper Backplane</text>
+  <text x="360" y="1132" text-anchor="middle" class="s">4 组 Cable Cartridge · 连接 GPU 与 NVSwitch</text>
+
+  <rect x="60" y="1176" width="286" height="112" rx="6" fill="#fff0e5" stroke="#d96513" stroke-width="2"/>
+  <text x="203" y="1218" text-anchor="middle" class="b">50-51V DC Busbar</text>
+  <text x="203" y="1254" text-anchor="middle" class="s">向 Tray 与 Switch 配电</text>
+  <rect x="374" y="1176" width="286" height="112" rx="6" fill="#e6f4ec" stroke="#198754" stroke-width="2"/>
+  <text x="517" y="1218" text-anchor="middle" class="b">Liquid Manifold</text>
+  <text x="517" y="1254" text-anchor="middle" class="s">向 Cold Plate 分配流量</text>
+
+  <rect x="60" y="1312" width="600" height="70" rx="6" fill="#e7f4f3" stroke="#008b8b" stroke-width="2"/>
+  <text x="360" y="1356" text-anchor="middle" class="b">Management ToR · BMC/HMC · Control Plane</text>
+
+  <rect x="32" y="1426" width="656" height="44" fill="#182338"/>
+  <text x="360" y="1456" text-anchor="middle" font-size="22" font-weight="700" class="inv">36 Grace CPU · 72 B200 GPU · 1 个 NVLink Domain</text>
+</svg>

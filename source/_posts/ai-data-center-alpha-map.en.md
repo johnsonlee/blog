@@ -200,9 +200,9 @@ OpenAI announces another 1 GW, 5 GW, or 8 GW. How far has that capacity actually
 
 RFS delivers only the facility. GPU shipments, server shipments, rack deliveries, and cluster capacity then appear on the same progress sheet. Are they really the same number?
 
-9. **GPU to Rack: Delivering the Compute Rack**
+9. **{% post_link data-center-rack-delivery.en 'How Is an AI Rack Delivered?' %}**
 
-   GPUs, CPUs, HBM, NICs, and DPUs first become compute trays, which join NVLink switch trays and power shelves inside a rack. Component arrivals do not equal rack deliveries, and rack deliveries do not equal cluster capacity. Once the racks are ready, how do tens of thousands of GPUs become one system?
+   Seven hundred twenty GPUs are enough on paper for ten NVL72 racks, but they do not imply ten Rack Ready systems. Complete kits, full-rack tests, first-pass yield, rework, and the destination's power, cooling, and network interfaces progressively narrow deliverable rack count. Aligning those physical gates with contract milestones reveals what remains between shipment and Rack Ready. Once racks are ready, how do tens of thousands of GPUs become one system?
 
 10. **Superclusters: The Network Ceiling**
 

@@ -199,9 +199,9 @@ RFS 仍然只交付 facility。接下来才是 rack 里的 IT deployment：GPU�
 
 RFS 只交付 facility。GPU shipment、server shipment、rack delivery 和 cluster capacity 随后出现在同一份进度表里，它们究竟是不是同一个数字？
 
-9. 《从 GPU 到 Rack：机架交付》
+9. 《{% post_link data-center-rack-delivery 'AI Rack 怎样完成交付？' %}》
 
-   GPU、CPU、HBM、NIC 和 DPU 要先组成 compute tray，再和 NVLink switch tray、power shelf 一起装进 rack。零件到货不等于 rack delivery，rack delivery 也不等于 cluster capacity。Rack 拼好了，数万块 GPU 又怎样连成一套系统？
+   720 块 GPU 在账面上足够组十座 NVL72，却不能直接推出十座 Rack Ready。Complete kit、full-rack test、first-pass yield、rework 与目标机房的 power、cooling、network interface 会逐层收窄可交付 rack；再把 physical gate 与合同 milestone 对齐，才能知道 shipment 到 Rack Ready 之间还积压了什么。Rack Ready 以后，数万块 GPU 又怎样连成一套系统？
 
 10. 《万卡集群：网络上限》
 

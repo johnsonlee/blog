@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1270" viewBox="0 0 720 1270" role="img" aria-labelledby="title desc">
+  <title id="title">GB200 NVL72 与目标机房的四组现场接口</title>
+  <desc id="desc">同一个机架位置要同时匹配结构运输、电力、液冷和网络控制接口，才能把工厂通过的 GB200 NVL72 接入目标机房。</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans CJK SC", sans-serif; fill: #182338; }
+    .h { font-size: 28px; font-weight: 750; }
+    .b { font-size: 23px; font-weight: 650; }
+    .s { font-size: 20px; fill: #526176; }
+    .inv { fill: #fff; }
+    .muted-inv { fill: #dce5f2; }
+  </style>
+  <rect width="720" height="1270" fill="#f6f8fb"/>
+
+  <rect x="170" y="28" width="380" height="156" rx="6" fill="#182338"/>
+  <text x="360" y="78" text-anchor="middle" class="h inv">GB200 NVL72 示例</text>
+  <text x="360" y="118" text-anchor="middle" class="b muted-inv">72 GPU · 约 120kW Rack Load</text>
+  <text x="360" y="151" text-anchor="middle" class="s muted-inv">Factory Baseline 已固定</text>
+
+  <rect x="32" y="220" width="656" height="190" rx="6" fill="#fff" stroke="#697b92" stroke-width="2"/>
+  <rect x="52" y="242" width="264" height="146" rx="5" fill="#edf1f6"/>
+  <text x="184" y="286" text-anchor="middle" class="b">机房 / 运输路径</text>
+  <text x="184" y="324" text-anchor="middle" class="s">位置 · Floor Load</text>
+  <text x="184" y="358" text-anchor="middle" class="s">搬运 · 维护空间</text>
+  <line x1="316" y1="315" x2="406" y2="315" stroke="#697b92" stroke-width="4"/>
+  <rect x="355" y="309" width="12" height="12" transform="rotate(45 361 315)" fill="#697b92"/>
+  <rect x="406" y="242" width="262" height="146" rx="5" fill="#edf1f6"/>
+  <text x="537" y="286" text-anchor="middle" class="b">Rack Frame</text>
+  <text x="537" y="324" text-anchor="middle" class="s">尺寸 · 重量 · 后部延伸</text>
+  <text x="537" y="358" text-anchor="middle" class="s">Service Envelope</text>
+
+  <rect x="32" y="434" width="656" height="190" rx="6" fill="#fff" stroke="#d96513" stroke-width="2"/>
+  <rect x="52" y="456" width="264" height="146" rx="5" fill="#fff0e5"/>
+  <text x="184" y="500" text-anchor="middle" class="b">A/B Power Whip</text>
+  <text x="184" y="538" text-anchor="middle" class="s">Voltage · Phase</text>
+  <text x="184" y="572" text-anchor="middle" class="s">Protection · Redundancy</text>
+  <line x1="316" y1="529" x2="406" y2="529" stroke="#d96513" stroke-width="4"/>
+  <rect x="355" y="523" width="12" height="12" transform="rotate(45 361 529)" fill="#d96513"/>
+  <rect x="406" y="456" width="262" height="146" rx="5" fill="#fff0e5"/>
+  <text x="537" y="500" text-anchor="middle" class="b">8 个 Power Shelf</text>
+  <text x="537" y="538" text-anchor="middle" class="s">AC → 50-51V DC</text>
+  <text x="537" y="572" text-anchor="middle" class="s">33kW · N+N</text>
+
+  <rect x="32" y="648" width="656" height="190" rx="6" fill="#fff" stroke="#198754" stroke-width="2"/>
+  <rect x="52" y="670" width="264" height="146" rx="5" fill="#e6f4ec"/>
+  <text x="184" y="714" text-anchor="middle" class="b">Facility TCS</text>
+  <text x="184" y="752" text-anchor="middle" class="s">供回水 · Flow · ΔP</text>
+  <text x="184" y="786" text-anchor="middle" class="s">Water Quality</text>
+  <line x1="316" y1="743" x2="406" y2="743" stroke="#198754" stroke-width="4"/>
+  <rect x="355" y="737" width="12" height="12" transform="rotate(45 361 743)" fill="#198754"/>
+  <rect x="406" y="670" width="262" height="146" rx="5" fill="#e6f4ec"/>
+  <text x="537" y="714" text-anchor="middle" class="b">QD / Manifold</text>
+  <text x="537" y="752" text-anchor="middle" class="s">Rack Supply / Return</text>
+  <text x="537" y="786" text-anchor="middle" class="s">CPU / GPU Cold Plate</text>
+
+  <rect x="32" y="862" width="656" height="190" rx="6" fill="#fff" stroke="#008b8b" stroke-width="2"/>
+  <rect x="52" y="884" width="264" height="146" rx="5" fill="#e7f4f3"/>
+  <text x="184" y="928" text-anchor="middle" class="b">Network / Control</text>
+  <text x="184" y="966" text-anchor="middle" class="s">Management · Provisioning</text>
+  <text x="184" y="1000" text-anchor="middle" class="s">Storage · Scale-out</text>
+  <line x1="316" y1="957" x2="406" y2="957" stroke="#008b8b" stroke-width="4"/>
+  <rect x="355" y="951" width="12" height="12" transform="rotate(45 361 957)" fill="#008b8b"/>
+  <rect x="406" y="884" width="262" height="146" rx="5" fill="#e7f4f3"/>
+  <text x="537" y="928" text-anchor="middle" class="b">Rack Ports</text>
+  <text x="537" y="966" text-anchor="middle" class="s">ToR · BMC · NIC · DPU</text>
+  <text x="537" y="1000" text-anchor="middle" class="s">Fabric Configuration</text>
+
+  <line x1="688" y1="315" x2="704" y2="315" stroke="#697b92" stroke-width="4"/>
+  <line x1="688" y1="529" x2="704" y2="529" stroke="#d96513" stroke-width="4"/>
+  <line x1="688" y1="743" x2="704" y2="743" stroke="#198754" stroke-width="4"/>
+  <line x1="688" y1="957" x2="704" y2="957" stroke="#008b8b" stroke-width="4"/>
+  <line x1="704" y1="315" x2="704" y2="1078" stroke="#617086" stroke-width="4"/>
+  <line x1="704" y1="1078" x2="360" y2="1078" stroke="#617086" stroke-width="4"/>
+  <line x1="360" y1="1078" x2="360" y2="1090" stroke="#617086" stroke-width="4"/>
+  <polygon points="350,1090 370,1090 360,1106" fill="#617086"/>
+  <rect x="32" y="1120" width="656" height="118" rx="6" fill="#182338"/>
+  <text x="360" y="1166" text-anchor="middle" class="h inv">同一个 Rack Position</text>
+  <text x="360" y="1207" text-anchor="middle" class="b muted-inv">四组接口按项目 Acceptance Criteria 同时匹配</text>
+</svg>
