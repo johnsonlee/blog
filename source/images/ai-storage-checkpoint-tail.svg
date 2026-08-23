@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1320" viewBox="0 0 720 1320" role="img" aria-labelledby="title desc">
+  <title id="title">Checkpoint 完成时间由最慢 Process 决定</title>
+  <desc id="desc">1T model 的 15TB checkpoint 由 1024 个 process 并行保存。即使 1023 个 process 在 4.4 秒内完成，只要最后一个 process 超时，整份 checkpoint 仍未完成。</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans CJK SC", sans-serif; fill: #182338; }
+    .h { font-size: 30px; font-weight: 760; }
+    .k { font-size: 32px; font-weight: 780; }
+    .b { font-size: 22px; font-weight: 650; }
+    .s { font-size: 19px; fill: #526176; }
+    .xs { font-size: 17px; fill: #68778c; }
+    .p { font-size: 20px; font-weight: 650; }
+    .inv { fill: #fff; }
+    .light { font-size: 17px; fill: #b7c4d7; }
+    .result { font-size: 27px; font-weight: 760; }
+  </style>
+  <rect width="720" height="1320" fill="#f6f8fb"/>
+
+  <rect x="48" y="36" width="624" height="188" rx="6" fill="#182338"/>
+  <text x="360" y="82" text-anchor="middle" class="h inv">1T Model Checkpoint</text>
+  <rect x="76" y="112" width="172" height="82" rx="5" fill="#27364f"/>
+  <text x="162" y="148" text-anchor="middle" class="k inv">15TB</text>
+  <text x="162" y="178" text-anchor="middle" class="light">总数据量</text>
+  <rect x="274" y="112" width="172" height="82" rx="5" fill="#27364f"/>
+  <text x="360" y="148" text-anchor="middle" class="k inv">1,024</text>
+  <text x="360" y="178" text-anchor="middle" class="light">并行 Process</text>
+  <rect x="472" y="112" width="172" height="82" rx="5" fill="#27364f"/>
+  <text x="558" y="148" text-anchor="middle" class="k inv">≈15GB</text>
+  <text x="558" y="178" text-anchor="middle" class="light">每个 Process</text>
+
+  <rect x="48" y="260" width="624" height="598" rx="6" fill="#fff" stroke="#aeb9c8" stroke-width="2"/>
+  <text x="360" y="307" text-anchor="middle" class="h">1,024 路一起开始，最后一路决定结束</text>
+  <line x1="230" y1="774" x2="650" y2="774" stroke="#617086" stroke-width="2"/>
+  <g class="xs" text-anchor="middle">
+    <text x="230" y="806">0s</text><text x="310" y="806">1s</text><text x="390" y="806">2s</text>
+    <text x="470" y="806">3s</text><text x="550" y="806">4s</text><text x="630" y="806">5s</text>
+  </g>
+  <g stroke="#d8dee8" stroke-width="1">
+    <line x1="230" y1="342" x2="230" y2="774"/><line x1="310" y1="342" x2="310" y2="774"/>
+    <line x1="390" y1="342" x2="390" y2="774"/><line x1="470" y1="342" x2="470" y2="774"/>
+    <line x1="550" y1="342" x2="550" y2="774"/><line x1="630" y1="342" x2="630" y2="774"/>
+  </g>
+  <line x1="582" y1="342" x2="582" y2="774" stroke="#d96513" stroke-width="3" stroke-dasharray="9 7"/>
+  <rect x="508" y="332" width="148" height="38" rx="4" fill="#fff0e5"/>
+  <text x="582" y="358" text-anchor="middle" class="xs">4.4 秒窗口</text>
+
+  <text x="86" y="426" class="p">Process 1</text>
+  <rect x="230" y="390" width="304" height="48" rx="4" fill="#2774c5"/>
+  <text x="522" y="422" text-anchor="end" class="xs inv">3.8s</text>
+  <text x="86" y="516" class="p">Process 2</text>
+  <rect x="230" y="480" width="320" height="48" rx="4" fill="#2774c5"/>
+  <text x="538" y="512" text-anchor="end" class="xs inv">4.0s</text>
+  <text x="146" y="590" text-anchor="middle" class="h">⋮</text>
+  <text x="86" y="664" class="p">Process 1,023</text>
+  <rect x="230" y="628" width="312" height="48" rx="4" fill="#2774c5"/>
+  <text x="530" y="660" text-anchor="end" class="xs inv">3.9s</text>
+  <text x="86" y="754" class="p">Process 1,024</text>
+  <rect x="230" y="718" width="400" height="48" rx="4" fill="#d96513"/>
+  <text x="618" y="750" text-anchor="end" class="xs inv">5.0s</text>
+
+  <rect x="80" y="892" width="560" height="112" rx="6" fill="#fff0e5" stroke="#d96513" stroke-width="3"/>
+  <text x="360" y="940" text-anchor="middle" class="result">Checkpoint 完成时间 = 5.0 秒</text>
+  <text x="360" y="978" text-anchor="middle" class="s">1,023 路按时完成，也抵消不了最后一路超时</text>
+
+  <rect x="48" y="1052" width="296" height="212" rx="6" fill="#e9f2fc" stroke="#2774c5" stroke-width="2"/>
+  <text x="196" y="1100" text-anchor="middle" class="b">Aggregate Bandwidth</text>
+  <text x="196" y="1152" text-anchor="middle" class="k">≈3.6TB/s</text>
+  <text x="196" y="1194" text-anchor="middle" class="s">回答总量平均写得多快</text>
+  <text x="196" y="1230" text-anchor="middle" class="s">会隐藏最慢 Process</text>
+
+  <rect x="376" y="1052" width="296" height="212" rx="6" fill="#e6f4ec" stroke="#198754" stroke-width="3"/>
+  <text x="524" y="1100" text-anchor="middle" class="b">Completion Condition</text>
+  <text x="524" y="1152" text-anchor="middle" class="k">max(Tᵢ) ≤ 4.4s</text>
+  <text x="524" y="1194" text-anchor="middle" class="s">回答整份 Checkpoint</text>
+  <text x="524" y="1230" text-anchor="middle" class="s">能否按时完成</text>
+  <text x="360" y="1300" text-anchor="middle" class="s">MLPerf Storage 按最慢 Process 计算 Save / Load 完成时间</text>
+</svg>

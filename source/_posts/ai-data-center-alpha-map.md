@@ -207,9 +207,9 @@ RFS 只交付 facility。GPU shipment、server shipment、rack delivery 和 clus
 
    NVLink 负责 scale-up，InfiniBand 或 Ethernet 负责 scale-out，switch ASIC、optical transceiver、laser、fiber、connector 和 testing 决定整张 fabric 能否通过 validation。网络通了，Training data、model weights、checkpoint 和 KV cache 又放在哪里？
 
-11. 《从 Checkpoint 到 KV Cache：存储层级》
+11. 《{% post_link data-center-storage-hierarchy '15TB Checkpoint 为什么只有 5 秒？' %}》
 
-   Training data、model weights、checkpoint、local NVMe、parallel file system、object storage 和 KV cache 分布在不同 storage tier。NAND bit 只回答容量，controller、firmware 和 qualification 决定 enterprise SSD 能不能上线。Compute、network 和 storage 都装好了，谁来证明这套 cluster 可以承载 production workload？
+   十万个 accelerator 每 1.5 分钟就可能保存一份 15TB checkpoint，留给同步写入的时间却只有 4.4 秒。为什么 aggregate bandwidth 还不够，最慢 process 和 recovery state 又怎样决定这套 storage 能不能进入 cluster capacity？
 
 12. 《集群交付：从设施就绪到 Production Handoff》
 

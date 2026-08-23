@@ -208,9 +208,9 @@ RFS delivers only the facility. GPU shipments, server shipments, rack deliveries
 
    NVLink handles scale-up; InfiniBand or Ethernet handles scale-out; switch ASICs, optical transceivers, lasers, fiber, connectors, and testing determine whether the fabric passes validation. Once the network works, where do training data, model weights, checkpoints, and KV cache live?
 
-11. **Checkpoint to KV Cache: The Storage Hierarchy**
+11. **{% post_link data-center-storage-hierarchy.en 'Why Does a 15 TB Checkpoint Get Only Five Seconds?' %}**
 
-   Training data, model weights, checkpoints, local NVMe, parallel file systems, object storage, and KV cache occupy different storage tiers. NAND bits describe capacity; controllers, firmware, reliability, and qualification determine whether enterprise storage can enter service. With compute, networking, and storage installed, who proves the cluster can carry production workloads?
+   A 100,000-accelerator cluster may save a 15 TB checkpoint every 1.5 minutes while leaving only 4.4 seconds for a synchronous write. Why is aggregate bandwidth still insufficient, and how do the slowest process and recovery state determine whether storage enters cluster capacity?
 
 12. **Cluster Delivery: Facility Readiness to Production Handoff**
 
