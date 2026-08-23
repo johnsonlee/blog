@@ -168,9 +168,9 @@ OpenAI announces another 1 GW, 5 GW, or 8 GW. How far has that capacity actually
 
    Announced, planned, under-construction, energized, and RFS capacity belong on one timeline. The current state, the next gate, and the slowest gate determine when supply can be counted. Once those states are separated, the phrase "has power" becomes suspicious. What exactly has the project secured?
 
-2. **Grid Interconnection: The Data Center's First Gate**
+2. **{% post_link data-center-grid-interconnection.en "Why Does a Data Center Beside a Nuclear Plant Still Need the Grid?" %}**
 
-   A claim that a data center "has power" may mean a signed PPA, an interconnection agreement, or electricity physically reaching the site. Those states can be years apart. Once they are separated, the Power layer has only begun to open. Where does the data center's electricity actually come from?
+   The Susquehanna nuclear plant and AWS campus share a fence, and 300 MW of direct-connected load was already operating, yet FERC rejected the expansion to 480 MW. A PPA, a physical wire, and executable grid service are different things; one generator trip brings backup supply, protection, metering, and cost responsibility back to the grid.
 
 3. **Generation: Where Does AI Data Center Power Come From?**
 

@@ -167,9 +167,9 @@ RFS 仍然只交付 facility。接下来才是 rack 里的 IT deployment：GPU�
 
    Announced、planned、under construction、energized 和 RFS 要放回同一条时间轴。项目现在在哪、下一道 gate 是什么、哪一道最慢，决定这笔供给什么时候才能算。状态排清以后，新闻里那句“已经拿到电”反而变得可疑：拿到的究竟是什么？
 
-2. 《电网接入：数据中心的第一道闸门》
+2. 《{% post_link data-center-grid-interconnection '核电站旁的数据中心为什么还要接入电网？' %}》
 
-   PPA、interconnection agreement 和 site energization 经常被一句“已经拿到电”混在一起。它可能只是一份购电协议，也可能是拿到接入资格，直到电真正送到 site，前后可能差几年。把这些状态分开以后，Power 这层才刚刚打开：数据中心要用的电究竟从哪里来？
+   Susquehanna Nuclear Plant 与 AWS campus 只隔一道围墙，300MW direct-connect 也已经运行，扩到 480MW 的接入方案却被 FERC 拒绝。PPA、物理直连和可执行的 grid service 不是同一件事；一次机组跳闸，就会把备用供电、保护、计量与成本责任全部拉回电网。
 
 3. 《发电侧：AI 数据中心的电从哪里来》
 
