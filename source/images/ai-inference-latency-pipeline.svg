@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="760" viewBox="0 0 1600 760" role="img" aria-labelledby="title desc">
+  <title id="title">Inference request latency pipeline</title>
+  <desc id="desc">Inference request 经过网络、排队、prefill、首 Token 和逐 Token decode，形成 TTFT、TPOT 与端到端 latency。</desc>
+  <style>text{font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;letter-spacing:0;fill:#172033}.title{font-size:31px;font-weight:760;text-anchor:middle}.head{font-size:18px;font-weight:750;text-anchor:middle}.body{font-size:15px;text-anchor:middle;fill:#52647a}.small{font-size:14px;fill:#607089}.inv{fill:#fff}</style>
+  <rect width="1600" height="760" fill="#f7f9fc"/><text x="800" y="58" class="title">总 TPS 变大，不代表每个请求都变快</text>
+  <rect x="60" y="150" width="210" height="150" rx="7" fill="#fff" stroke="#64748b" stroke-width="2"/><text x="165" y="210" class="head">请求</text><text x="165" y="244" class="body">Prompt · 网络进入</text>
+  <line x1="270" y1="225" x2="308" y2="225" stroke="#52647a" stroke-width="4"/><polygon points="308,213 308,237 330,225" fill="#52647a"/>
+  <rect x="330" y="150" width="210" height="150" rx="7" fill="#fff" stroke="#b88407" stroke-width="2"/><text x="435" y="210" class="head">排队</text><text x="435" y="244" class="body">准入 · Batch</text>
+  <line x1="540" y1="225" x2="578" y2="225" stroke="#52647a" stroke-width="4"/><polygon points="578,213 578,237 600,225" fill="#52647a"/>
+  <rect x="600" y="150" width="240" height="150" rx="7" fill="#fff" stroke="#2f6fab" stroke-width="2"/><text x="720" y="210" class="head">Prefill</text><text x="720" y="244" class="body">Input Token · KV Cache</text>
+  <line x1="840" y1="225" x2="878" y2="225" stroke="#52647a" stroke-width="4"/><polygon points="878,213 878,237 900,225" fill="#52647a"/>
+  <rect x="900" y="150" width="210" height="150" rx="7" fill="#c85a16"/><text x="1005" y="210" class="head inv">首 Token</text><text x="1005" y="244" class="body inv">TTFT 截止点</text>
+  <line x1="1110" y1="225" x2="1148" y2="225" stroke="#52647a" stroke-width="4"/><polygon points="1148,213 1148,237 1170,225" fill="#52647a"/>
+  <rect x="1170" y="150" width="370" height="150" rx="7" fill="#fff" stroke="#167d73" stroke-width="2"/><text x="1355" y="210" class="head">Decode · 流式输出</text><text x="1355" y="244" class="body">Token 2 · 3 · 4 · … · N</text>
+  <path d="M60 370V420H1005V370" fill="none" stroke="#c85a16" stroke-width="4"/><text x="532" y="458" class="head">TTFT = 网络 + 排队 + Prefill + 首 Token</text>
+  <path d="M1005 495V535H1540V495" fill="none" stroke="#167d73" stroke-width="4"/><text x="1272" y="573" class="head">TPOT / ITL = 相邻输出 Token 的平均间隔</text>
+  <path d="M60 610V650H1540V610" fill="none" stroke="#64748b" stroke-width="4"/><text x="800" y="688" class="head">端到端延迟 = 请求发出到最后一枚 Token 返回</text>
+  <text x="800" y="735" class="small" text-anchor="middle">合格吞吐必须同时通过 TTFT、TPOT、错误率与质量门槛</text>
+</svg>

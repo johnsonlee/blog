@@ -220,7 +220,7 @@ RFS delivers only the facility. GPU shipments, server shipments, rack deliveries
 
 Production Handoff delivers physical capacity. How much billable workload it becomes first depends on what job the cluster receives.
 
-13. **Training vs. Inference: Two Ledgers for the Same MW**
+13. **{% post_link training-vs-inference-ledger.en 'Why Does the Same 100 MW Produce Different Compute?' %}**
 
     Training pursues large-scale synchronous computation. Inference trades off latency, batching, utilization, and geography. The throughput and economics of the same megawatt therefore diverge. When Inference carries Agent workloads, how much computation can one user request unfold into?
 

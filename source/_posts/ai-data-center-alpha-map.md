@@ -219,7 +219,7 @@ RFS 只交付 facility。GPU shipment、server shipment、rack delivery 和 clus
 
 Production Handoff 只交付 physical capacity。它能变成多少 billable workload，先取决于 cluster 接到什么工作。
 
-13. 《Training vs Inference：同一 MW 的两本账》
+13. 《{% post_link training-vs-inference-ledger '同样 100MW 为什么算力不一样？' %}》
 
     Training 追求大规模同步计算，Inference 要在 latency、batching、利用率和地理位置之间取舍。同一 MW 的吞吐、利用率和 economics 因此完全不同。Inference 再承载 Agent workload，一次 user request 又会展开成多少计算？
 
