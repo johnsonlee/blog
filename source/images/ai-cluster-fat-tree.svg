@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1540" viewBox="0 0 720 1540" role="img" aria-labelledby="title desc">
+  <title id="title">9,216 块 GPU 对应 1,040 台 Compute-fabric Switch 的推导</title>
+  <desc id="desc">一座 NVL72 机架有 72 个 400G 端口；八座机架组成一个 SU，每个 SU 有四条 rail、32 台 leaf 和 24 台 spine；16 个 SU 再增加 144 台 core，总计 1,040 台 switch。</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans CJK SC", sans-serif; fill: #182338; }
+    .h { font-size: 29px; font-weight: 750; }
+    .b { font-size: 23px; font-weight: 650; }
+    .s { font-size: 20px; fill: #526176; }
+    .inv { fill: #fff; }
+    .muted { fill: #dbe6f5; }
+  </style>
+  <rect width="720" height="1540" fill="#f6f8fb"/>
+
+  <rect x="72" y="32" width="576" height="154" rx="6" fill="#e9f2fc" stroke="#2774c5" stroke-width="2"/>
+  <text x="360" y="78" text-anchor="middle" class="h">1 座 NVL72 机架</text>
+  <text x="360" y="120" text-anchor="middle" class="b">72 GPU · 18 Compute Tray</text>
+  <text x="360" y="157" text-anchor="middle" class="s">72 × 400G GPU-facing Port</text>
+  <line x1="360" y1="186" x2="360" y2="218" stroke="#617086" stroke-width="4"/>
+  <polygon points="350,218 370,218 360,234" fill="#617086"/>
+
+  <rect x="48" y="248" width="624" height="296" rx="6" fill="#fff" stroke="#198754" stroke-width="2"/>
+  <text x="360" y="294" text-anchor="middle" class="h">1 个 Scalable Unit（SU）</text>
+  <text x="360" y="334" text-anchor="middle" class="b">8 Rack · 576 GPU</text>
+  <text x="360" y="371" text-anchor="middle" class="s">同一 GPU / NIC 位置沿四条 Rail 对齐</text>
+  <rect x="72" y="400" width="132" height="70" rx="4" fill="#e9f2fc"/><text x="138" y="443" text-anchor="middle" class="b">Rail 0</text>
+  <rect x="220" y="400" width="132" height="70" rx="4" fill="#e6f4ec"/><text x="286" y="443" text-anchor="middle" class="b">Rail 1</text>
+  <rect x="368" y="400" width="132" height="70" rx="4" fill="#f1ebfa"/><text x="434" y="443" text-anchor="middle" class="b">Rail 2</text>
+  <rect x="516" y="400" width="132" height="70" rx="4" fill="#fff0e5"/><text x="582" y="443" text-anchor="middle" class="b">Rail 3</text>
+  <text x="360" y="514" text-anchor="middle" class="b">每条 Rail：8 Leaf + 6 Spine</text>
+
+  <line x1="360" y1="544" x2="360" y2="576" stroke="#617086" stroke-width="4"/>
+  <polygon points="350,576 370,576 360,592" fill="#617086"/>
+  <rect x="72" y="606" width="576" height="146" rx="6" fill="#182338"/>
+  <text x="360" y="654" text-anchor="middle" class="h inv">16 个 Scalable Unit（SU）</text>
+  <text x="360" y="696" text-anchor="middle" class="b muted">128 Rack · 9,216 GPU</text>
+  <text x="360" y="730" text-anchor="middle" class="s muted">4 Rail · 6 Core Group</text>
+
+  <line x1="360" y1="752" x2="360" y2="784" stroke="#617086" stroke-width="4"/>
+  <polygon points="350,784 370,784 360,800" fill="#617086"/>
+  <rect x="72" y="814" width="576" height="112" rx="6" fill="#e9f2fc" stroke="#2774c5" stroke-width="2"/>
+  <text x="360" y="860" text-anchor="middle" class="h">9,216 个 GPU-facing Port</text>
+  <text x="360" y="898" text-anchor="middle" class="s">3.6864 Pbps 单向 Injection Bandwidth</text>
+
+  <line x1="360" y1="926" x2="360" y2="958" stroke="#617086" stroke-width="4"/>
+  <polygon points="350,958 370,958 360,974" fill="#617086"/>
+  <rect x="72" y="988" width="576" height="112" rx="6" fill="#e6f4ec" stroke="#198754" stroke-width="2"/>
+  <text x="360" y="1034" text-anchor="middle" class="h">Leaf Switch × 512</text>
+  <text x="360" y="1072" text-anchor="middle" class="s">32 / SU × 16 SU</text>
+
+  <line x1="360" y1="1100" x2="360" y2="1132" stroke="#617086" stroke-width="4"/>
+  <polygon points="350,1132 370,1132 360,1148" fill="#617086"/>
+  <rect x="72" y="1162" width="576" height="112" rx="6" fill="#f1ebfa" stroke="#7048b0" stroke-width="2"/>
+  <text x="360" y="1208" text-anchor="middle" class="h">Spine Switch × 384</text>
+  <text x="360" y="1246" text-anchor="middle" class="s">24 / SU × 16 SU</text>
+
+  <line x1="360" y1="1274" x2="360" y2="1306" stroke="#617086" stroke-width="4"/>
+  <polygon points="350,1306 370,1306 360,1322" fill="#617086"/>
+  <rect x="72" y="1336" width="576" height="94" rx="6" fill="#fff0e5" stroke="#d96513" stroke-width="2"/>
+  <text x="360" y="1392" text-anchor="middle" class="h">Core Switch × 144</text>
+
+  <rect x="48" y="1456" width="624" height="60" rx="5" fill="#182338"/>
+  <text x="360" y="1495" text-anchor="middle" class="b inv">512 Leaf + 384 Spine + 144 Core = 1,040</text>
+</svg>

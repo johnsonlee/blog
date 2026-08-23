@@ -203,9 +203,9 @@ RFS 只交付 facility。GPU shipment、server shipment、rack delivery 和 clus
 
    GPU、CPU、HBM、NIC 和 DPU 要先组成 compute tray，再和 NVLink switch tray、power shelf 一起装进 rack。零件到货不等于 rack delivery，rack delivery 也不等于 cluster capacity。Rack 拼好了，数万块 GPU 又怎样连成一套系统？
 
-10. 《万卡集群：网络上限》
+10. 《{% post_link data-center-cluster-network '万卡集群为什么需要一千台 Switch？' %}》
 
-   NVLink 负责 scale-up，InfiniBand 或 Ethernet 负责 scale-out，switch ASIC、optical transceiver、laser、fiber、connector 和 testing 决定整张 fabric 能否通过 validation。网络通了，Training data、model weights、checkpoint 和 KV cache 又放在哪里？
+   128 座 NVL72 只有 9,216 块 GPU，NVIDIA 的 full non-blocking compute fabric 却需要 1,040 台 switch。端口数量只是起点，topology、link quality、collective scope 和 scheduler state 还要把 installed GPU 逐层收敛成可调度容量。网络通过以后，training data、model weights、checkpoint 和 KV cache 又放在哪里？
 
 11. 《从 Checkpoint 到 KV Cache：存储层级》
 

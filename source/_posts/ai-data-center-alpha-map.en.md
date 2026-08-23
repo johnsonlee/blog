@@ -204,9 +204,9 @@ RFS delivers only the facility. GPU shipments, server shipments, rack deliveries
 
    GPUs, CPUs, HBM, NICs, and DPUs first become compute trays, which join NVLink switch trays and power shelves inside a rack. Component arrivals do not equal rack deliveries, and rack deliveries do not equal cluster capacity. Once the racks are ready, how do tens of thousands of GPUs become one system?
 
-10. **Superclusters: The Network Ceiling**
+10. **{% post_link data-center-cluster-network.en 'Why Does a Supercluster Need a Thousand Switches?' %}**
 
-   NVLink handles scale-up; InfiniBand or Ethernet handles scale-out; switch ASICs, optical transceivers, lasers, fiber, connectors, and testing determine whether the fabric passes validation. Once the network works, where do training data, model weights, checkpoints, and KV cache live?
+   A 128-rack NVL72 cluster has 9,216 GPUs, yet NVIDIA's full non-blocking compute fabric needs 1,040 switches. Port count is only the start: topology, link quality, collective scope, and scheduler state still have to narrow installed GPUs into schedulable capacity. Once the network works, where do training data, model weights, checkpoints, and KV cache live?
 
 11. **Checkpoint to KV Cache: The Storage Hierarchy**
 
