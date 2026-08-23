@@ -41,8 +41,23 @@ def category_color(name):
     )
 
 SIZE = 600
-FONT_PATH = '/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc'
+FONT_PATHS = (
+    os.environ.get('BLOG_OG_FONT'),
+    '/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc',
+    '/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc',
+    '/System/Library/Fonts/PingFang.ttc',
+    '/System/Library/Fonts/Hiragino Sans GB.ttc',
+    '/System/Library/Fonts/STHeiti Medium.ttc',
+    '/Library/Fonts/Arial Unicode.ttf',
+)
 SITE_NAME = 'Johnson Lee'
+
+
+def load_font(size):
+    for font_path in FONT_PATHS:
+        if font_path and Path(font_path).exists():
+            return ImageFont.truetype(font_path, size)
+    raise OSError('No supported CJK font found; set BLOG_OG_FONT to a .ttf/.ttc file')
 
 
 def parse_frontmatter(filepath):
@@ -94,9 +109,9 @@ def generate_card(title, category, output_path):
     draw.rectangle([0, 0, 6, SIZE], fill=accent)
 
     # Measure content height to vertically center
-    font_cat = ImageFont.truetype(FONT_PATH, 22)
-    font_title = ImageFont.truetype(FONT_PATH, 42)
-    font_site = ImageFont.truetype(FONT_PATH, 18)
+    font_cat = load_font(22)
+    font_title = load_font(42)
+    font_site = load_font(18)
 
     lines = wrap_text(draw, title, font_title, SIZE - 80)
     lines = lines[:5]

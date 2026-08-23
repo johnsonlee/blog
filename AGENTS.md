@@ -55,7 +55,7 @@ When touching posts without invoking the skill, still preserve these baseline ru
 - English posts include `lang: en`; Chinese posts do not need `lang`.
 - The permalink pattern is `:year/:month/:day/:title/`.
 - Tags are English.
-- Categories should reuse names from `_config.yml`: Android, Architecture Design, Biology, Booster, Career, Cloud, Computer Science, DIY, Flutter, Gradle, Graphics, iOS, Java, Kotlin, Life, Mobile, Observability, Open Source, Reading, Survival, Investing.
+- Categories should reuse names from `_config.yml`: Android, Architecture Design, Biology, Booster, Career, Cloud, Computer Science, DIY, Flutter, Gradle, Graphics, Harness Engineering, iOS, Java, Kotlin, Life, Mobile, Observability, Open Source, Reading, Survival, Investing.
 
 Chinese post front matter:
 
