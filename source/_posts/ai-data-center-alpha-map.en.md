@@ -176,9 +176,9 @@ OpenAI announces another 1 GW, 5 GW, or 8 GW. How far has that capacity actually
 
    One gigawatt is power demand that can appear at any moment, not annual energy consumption. How much firm load existing generation can serve, what new gas, nuclear, renewable, and storage projects actually deliver, and how fuel supply, capacity factor, ramp, and reserves fit together determine whether generation can keep pace with the Data Center. Even with a power plant nearby, why can the electricity still fail to arrive?
 
-4. **Transmission: Why Can't the Grid Deliver 1 GW?**
+4. **{% post_link data-center-transmission.en "Why Wait Until 2031 If Generation Is Adequate?" %}**
 
-   Sufficient generation does not mean the node serving the target site can absorb another gigawatt. Power flow, N-1 contingencies, thermal limits, voltage, and stability can move the constraint tens or hundreds of miles away. A new 765 kV line still requires planning, routing, rights of way, siting, long-lead equipment, and construction. Once the transmission backbone is ready, what still separates electricity from the data center?
+   AEP Ohio's model assumed adequate generation, yet 13,022.7 MW of data center load still had to wait for a PJM regional transmission project. AC power flow, N-1-1, and voltage constraints can move the bottleneck hundreds of miles away. After project approval, routing, rights of way, equipment, and system tests push the projected in-service date to 2031. Once the transmission backbone is ready, what still separates electricity from the data center?
 
 5. **Site Energization: How Power Reaches the Data Center**
 

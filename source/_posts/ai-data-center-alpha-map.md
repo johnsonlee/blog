@@ -175,9 +175,9 @@ RFS 仍然只交付 facility。接下来才是 rack 里的 IT deployment：GPU�
 
    1GW 是任何时刻都可能出现的 power demand，不是一年累计使用了多少电。现有 generation 还能承担多少 firm load，新建 gas、nuclear、renewable 和 storage 分别能交付什么，fuel supply、capacity factor、ramp 与备用怎样进入同一笔账，决定发电侧能否跟上 Data Center。附近即使有电厂，电又为什么送不过来？
 
-4. 《输电网：1GW 为什么送不过来》
+4. 《{% post_link data-center-transmission '发电够了为什么还要等到 2031？' %}》
 
-   发电量充足，不代表目标 site 所在的节点还能接住 1GW。Power flow、N-1 contingency、thermal limit、voltage 与 stability 会把约束推到几十甚至几百公里外；新的 765kV line 又要经过 planning、route、right of way、siting、长周期设备和施工。输电 backbone 建好以后，电还差哪一步才能真正到达数据中心？
+   AEP Ohio 的模型已经假设 generation 充足，13,022.7MW Data Center load 仍要等待 PJM 的区域输电工程。AC power flow、N-1-1 与 voltage constraint 会把瓶颈推到几百公里外；项目获批以后，route、right of way、设备和系统测试又把 projected in-service date 推到 2031。输电 backbone 建好以后，电还差哪一步才能真正到达数据中心？
 
 5. 《Site Energization：电怎样到达数据中心》
 
