@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="960" viewBox="0 0 1600 960" role="img" aria-labelledby="title desc">
+  <title id="title">PORTS-Pike 付款触发点</title><desc id="desc">设备商、工程方、输电和设施运营商在不同 gate 获得订单与现金流；SB Energy 的租赁付款从 completed capacity available 开始，OpenAI 的 workload 收入还要等 cluster 和 production handoff。</desc>
+  <style>text{font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;letter-spacing:0;fill:#172033}.title{font-size:31px;font-weight:760;text-anchor:middle}.head{font-size:16px;font-weight:750}.body{font-size:14px;fill:#52647a}.small{font-size:12px;fill:#607089}.inv{fill:#fff}</style>
+  <rect width="1600" height="960" fill="#f7f9fc"/><text x="800" y="58" class="title">同一批 MW，不同参与方在不同节点开始收费</text>
+  <rect x="45" y="105" width="1510" height="720" rx="7" fill="#fff" stroke="#d5dde7" stroke-width="2"/>
+  <text x="75" y="150" class="head">参与方</text><text x="420" y="150" class="small" text-anchor="middle">设计冻结</text><text x="650" y="150" class="small" text-anchor="middle">下单 / 开工</text><text x="880" y="150" class="small" text-anchor="middle">出厂验收 / 交货</text><text x="1110" y="150" class="small" text-anchor="middle">设施可用</text><text x="1340" y="150" class="small" text-anchor="middle">生产负载</text>
+  <line x1="300" y1="170" x2="300" y2="790" stroke="#d5dde7" stroke-width="2"/><line x1="535" y1="170" x2="535" y2="790" stroke="#e5eaf0" stroke-width="2"/><line x1="765" y1="170" x2="765" y2="790" stroke="#e5eaf0" stroke-width="2"/><line x1="995" y1="170" x2="995" y2="790" stroke="#e5eaf0" stroke-width="2"/><line x1="1225" y1="170" x2="1225" y2="790" stroke="#e5eaf0" stroke-width="2"/><line x1="1485" y1="170" x2="1485" y2="790" stroke="#e5eaf0" stroke-width="2"/>
+  <text x="75" y="230" class="head">设备厂商</text><rect x="365" y="195" width="550" height="52" rx="5" fill="#c85a16"/><text x="640" y="227" class="body inv" text-anchor="middle">订单 · 制造 · 出厂验收 · 发货节点</text>
+  <text x="75" y="330" class="head">EPC / 承包商</text><rect x="535" y="295" width="575" height="52" rx="5" fill="#64748b"/><text x="822" y="327" class="body inv" text-anchor="middle">开工通知 · 进度款 · 机械完工</text>
+  <text x="75" y="430" class="head">AEP / 电网建设</text><rect x="535" y="395" width="690" height="52" rx="5" fill="#7653a6"/><text x="880" y="427" class="body inv" text-anchor="middle">并网 · 输电资本开支 · 送电</text>
+  <text x="75" y="530" class="head">SB Energy</text><rect x="1080" y="495" width="405" height="52" rx="5" fill="#2f6fab"/><text x="1282" y="527" class="body inv" text-anchor="middle">持续收取租金</text><line x1="1110" y1="475" x2="1110" y2="553" stroke="#2f6fab" stroke-width="4"/><text x="1110" y="578" class="small" text-anchor="middle">设施可用节点</text>
+  <text x="75" y="630" class="head">NVIDIA 算力系统</text><rect x="765" y="595" width="575" height="52" rx="5" fill="#167d73"/><text x="1052" y="627" class="body inv" text-anchor="middle">系统发货 · 集成 · 验收</text>
+  <text x="75" y="730" class="head">OpenAI</text><rect x="1225" y="695" width="260" height="52" rx="5" fill="#24864a"/><text x="1355" y="727" class="body inv" text-anchor="middle">负载收入</text>
+  <text x="800" y="785" class="small" text-anchor="middle">具体里程碑与付款比例未披露；图示合同边界与常见项目现金流顺序</text>
+  <rect x="175" y="860" width="1250" height="64" rx="6" fill="#172033"/><text x="800" y="900" class="head inv" text-anchor="middle">规划容量只有跨过对应付款节点，才能进入该参与方的收入模型</text>
+</svg>

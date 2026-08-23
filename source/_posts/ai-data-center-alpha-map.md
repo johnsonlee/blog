@@ -233,7 +233,7 @@ Production Handoff 只交付 physical capacity。它能变成多少 billable wor
 
 ## 拿 PORTS-Pike 的 8GW 做一次验算
 
-16. 《PORTS-Pike 8GW：交付链验算》
+16. 《{% post_link ports-pike-delivery-chain 'PORTS-Pike 为什么比六座 Stargate 还大？' %}》
 
     把 PORTS-Pike 的每个项目放回 delivery stage，把每一 GW 展开成 power、thermal、compute、network 和 storage，再沿着 Bottleneck Migration Network 追踪下一个 bottleneck candidate。
 

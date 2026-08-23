@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">PORTS-Pike First-phase and Expansion Paths</title><desc id="desc">The first 800 MW relies largely on existing AEP infrastructure. The remaining 7.2 GW requires new generation, 765 kV transmission, and associated infrastructure. The two stages do not repeat the same path.</desc>
+  <style>text{font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;letter-spacing:0;fill:#172033}.title{font-size:28px;font-weight:760;text-anchor:middle}.num{font-size:35px;font-weight:800}.head{font-size:18px;font-weight:750}.body{font-size:15px;fill:#52647a}.small{font-size:13px;fill:#607089}.inv{fill:#fff}</style>
+  <rect width="1600" height="900" fill="#f7f9fc"/><text x="800" y="58" class="title">The First 10% and Remaining 90% Follow Different Power Paths</text>
+  <rect x="80" y="110" width="1440" height="650" rx="7" fill="#fff" stroke="#d5dde7" stroke-width="2"/>
+  <rect x="130" y="170" width="310" height="110" rx="7" fill="#172033"/><text x="285" y="214" class="head inv" text-anchor="middle">8 IT-GW Lease Target</text><text x="285" y="249" class="body inv" text-anchor="middle">Phased Delivery</text>
+  <line x1="440" y1="225" x2="520" y2="225" stroke="#52647a" stroke-width="4"/><line x1="520" y1="225" x2="520" y2="395" stroke="#52647a" stroke-width="4"/><line x1="520" y1="225" x2="520" y2="605" stroke="#52647a" stroke-width="4"/>
+  <line x1="520" y1="395" x2="583" y2="395" stroke="#52647a" stroke-width="4"/><polygon points="583,381 583,409 608,395" fill="#52647a"/>
+  <line x1="520" y1="605" x2="583" y2="605" stroke="#52647a" stroke-width="4"/><polygon points="583,591 583,619 608,605" fill="#52647a"/>
+  <rect x="608" y="315" width="350" height="160" rx="7" fill="#2f6fab"/><text x="783" y="362" class="num inv" text-anchor="middle">First 800 MW</text><text x="783" y="401" class="head inv" text-anchor="middle">Existing AEP Infrastructure</text><text x="783" y="437" class="small inv" text-anchor="middle">Phased Availability from 2028</text>
+  <line x1="958" y1="395" x2="1023" y2="395" stroke="#52647a" stroke-width="4"/><polygon points="1023,381 1023,409 1048,395" fill="#52647a"/>
+  <rect x="1048" y="315" width="370" height="160" rx="7" fill="#24864a"/><text x="1233" y="371" class="head inv" text-anchor="middle">Facility + Cluster Gates</text><text x="1233" y="409" class="body inv" text-anchor="middle">Commissioning · RFS</text><text x="1233" y="440" class="body inv" text-anchor="middle">Acceptance · Handoff</text>
+
+  <rect x="608" y="525" width="350" height="160" rx="7" fill="#c85a16"/><text x="783" y="572" class="num inv" text-anchor="middle">Remaining 7.2 GW</text><text x="783" y="611" class="head inv" text-anchor="middle">New Infrastructure</text><text x="783" y="647" class="small inv" text-anchor="middle">Buildout through 2032</text>
+  <line x1="958" y1="605" x2="1023" y2="605" stroke="#52647a" stroke-width="4"/><polygon points="1023,591 1023,619 1048,605" fill="#52647a"/>
+  <rect x="1048" y="525" width="370" height="160" rx="7" fill="#7653a6"/><text x="1233" y="567" class="head inv" text-anchor="middle">Generation + Transmission</text><text x="1233" y="605" class="body inv" text-anchor="middle">10GW New Generation</text><text x="1233" y="636" class="body inv" text-anchor="middle">765kV Lines · $4.2B Grid</text><text x="1233" y="667" class="body inv" text-anchor="middle">Then Enter Facility + Cluster</text>
+  <rect x="190" y="800" width="1220" height="62" rx="6" fill="#172033"/><text x="800" y="839" class="head inv" text-anchor="middle">Phase One Proves the Site; Expansion Must First Replicate the Full Power Infrastructure</text>
+</svg>

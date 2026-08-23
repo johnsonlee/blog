@@ -234,7 +234,7 @@ Production Handoff delivers physical capacity. How much billable workload it bec
 
 ## Test the map with PORTS-Pike's 8 GW
 
-16. **PORTS-Pike 8 GW: Testing the Delivery Chain**
+16. **{% post_link ports-pike-delivery-chain.en 'Why Is PORTS-Pike Larger Than Six Stargate Campuses?' %}**
 
     Put every PORTS-Pike project back into its delivery stage, expand each gigawatt into power, thermal, compute, network, and storage requirements, then trace the next bottleneck candidate through the Bottleneck Migration Network.
 
