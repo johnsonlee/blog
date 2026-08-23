@@ -1,5 +1,5 @@
 ---
-title: "Is the Harness an Agent's Moat?"
+title: "Is the Harness Still an Agent's Moat?"
 date: 2026-08-23 21:16:24
 lang: en
 i18n_key: is-harness-the-agent-moat

@@ -1,5 +1,5 @@
 ---
-title: Harness 是 Agent 的壁垒吗？
+title: Harness 还是 Agent 的壁垒吗？
 date: 2026-08-23 21:16:24
 categories:
   - Harness Engineering
