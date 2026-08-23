@@ -94,10 +94,10 @@ Eval framework 可以采购，grader 可以生成，甚至 case mining 也会逐
 
 表格左边每前进一步，Build / Buy 边界就向右移动一次。Harness Engineering 要持续识别这条边界，把工程投入放到厂商还无法替你定义的地方。
 
-## Harness 是 Agent 的壁垒吗？
+## 壁垒最后留下了什么？
 
-Harness 对 Agent 的表现至关重要，但重要性不等于壁垒。Agent SDK 化之后是 Loop SDK 化，接下来是 Eval 与 Verification Loop SDK 化。任何可以被描述成通用机制的部分，迟早都会被平台吸收。
+Agent SDK 化之后是 Loop SDK 化，接下来是 Eval 与 Verification Loop SDK 化。任何可以被描述成通用机制的部分，迟早都会被平台吸收。Harness 对 Agent 的表现依然重要，但 Build / Buy 边界不会因为我们把模型之外的一切统称为 Harness 就停止移动。
 
 每当团队准备自研一层 Harness，都可以先问：如果厂商下个月提供同等能力，系统还剩下什么？答案若只是 planner、trace collector 或 grader runner，这项优势不会持续太久。答案若是生产环境里的真实结果、专家裁决、业务约束，以及把失败写回 regression gate 的闭环，它才不会随着 SDK 升级消失。
 
-**Harness 里的通用机制会持续商品化。能够长期留下的，是把业务现实持续转化为 Ground Truth 的能力。**
+**Harness 还是 Agent 的壁垒吗？**

@@ -95,10 +95,10 @@ The more useful boundary is whether a capability can be standardized:
 
 Every advance in the middle column moves the Build / Buy boundary to the right. Harness Engineering must keep finding that boundary and place engineering effort where a vendor still cannot define the answer.
 
-## Is the Harness an Agent's Moat?
+## What Remains of the Moat?
 
-The harness is critical to Agent performance, but importance does not create a moat. Agent SDKs are followed by loop SDKs. Eval and verification loops are next. Any component that can be described as a reusable mechanism will eventually be absorbed by a platform.
+Agent SDKs are followed by loop SDKs. Eval and verification loops are next. Any component that can be described as a reusable mechanism will eventually be absorbed by a platform. The harness remains critical to Agent performance, but calling everything outside the model a harness does not stop the Build / Buy boundary from moving.
 
 Before a team builds another harness layer, it can ask what would remain if a vendor shipped the same capability next month. If the answer is a planner, trace collector, or grader runner, the advantage will not last long. If the answer is production outcomes, expert judgments, business constraints, and a feedback loop that turns failures into regression gates, the asset will survive the next SDK release.
 
-**Reusable harness mechanisms will keep commoditizing. The durable moat is a company's ability to keep turning business reality into ground truth.**
+**Is the harness still an Agent's moat?**
