@@ -192,9 +192,9 @@ OpenAI announces another 1 GW, 5 GW, or 8 GW. How far has that capacity actually
 
    Heat inside the rack follows two paths. Heat captured by cold plates enters the Technology Cooling System (TCS), passes through manifolds to a CDU, then transfers into the Facility Water System (FWS). Heat not captured by cold plates still enters the rack exhaust through server fans, then moves into rear-door heat exchangers or CRAHs. Both paths ultimately enter facility cooling; cooling towers, dry coolers, or air-cooled chillers then reject the heat to ambient air. One missing segment keeps power capacity from becoming sustained compute. Once power flows, heat leaves, and equipment is installed, why is the facility still not deliverable?
 
-8. **Commissioning: Built Does Not Mean Deliverable**
+8. **{% post_link data-center-commissioning.en 'Can a Data Center Still Deliver on Time After a Utility-Loss Test Fails?' %}**
 
-   Mechanical Completion and RFS are separated by startup, functional testing, L1-L5 commissioning, Integrated Systems Testing, and operational handover. A successful component startup does not prove that the mission-critical system will survive failure scenarios. [Uptime Institute](https://journal.uptimeinstitute.com/improve-project-success-through-mission-critical-commissioning/) explains why "built" and "deliverable" are different states. The facility is finally deliverable and the GPUs are inside. Why can available compute still be zero?
+   A facility can complete several commissioning exercises and still expose a fuel-transfer sequence delay when an all-day generator-mode demonstration triggers DRUPS low-fuel alarms. After that delay changes, which evidence survives and which scenarios need retesting depends on how the same failure chain maps back to the contract's RFS criteria. The facility is finally deliverable and the GPUs are inside. Why can available compute still be zero?
 
 ## Then ask when GPUs become compute
 

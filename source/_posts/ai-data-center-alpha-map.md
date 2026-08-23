@@ -191,9 +191,9 @@ RFS 仍然只交付 facility。接下来才是 rack 里的 IT deployment：GPU�
 
    机架里的热量走两条路径。被 cold plate 捕获的热量进入 Technology Cooling System（TCS），经 manifold 到达 CDU，再交给 Facility Water System（FWS）；没有被 cold plate 捕获的余热，仍要由 server fan 带进 rack exhaust，再由 RDHx 或 CRAH 接走。两条路径最终都要汇入 facility cooling，再由 cooling tower、dry cooler 或 air-cooled chiller 排到室外。任何一段没交付，前面的供电能力都无法变成持续算力。电能送，热能排，设备也装完了，为什么机房还不能交？
 
-8. 《Commissioning：机房建完不等于交付》
+8. 《{% post_link data-center-commissioning '断电测试失败，数据中心还能按期交付吗？' %}》
 
-   Mechanical Completion 到 RFS 之间还隔着 startup、functional testing、L1-L5 commissioning 和 Integrated Systems Testing。单台设备启动成功，不代表整套 mission-critical system 能通过故障场景验证。[Uptime Institute](https://journal.uptimeinstitute.com/improve-project-success-through-mission-critical-commissioning/)解释了这道验证为什么不能省。机房终于可以交了，GPU 也搬进去了，可用算力为什么还可能是零？
+   一座机房已经做过多次 commissioning exercise，到了全天 generator-mode demonstration，DRUPS 的 low-fuel alarm 却暴露了 fuel transfer sequence 的 delay。改掉这个 delay 以后，哪些旧证据仍然有效、哪些 scenario 必须重测，取决于同一条故障链怎样接回合同里的 RFS criteria。机房终于可以交了，GPU 也搬进去了，可用算力为什么还可能是零？
 
 ## 再看 GPU 什么时候变成算力
 
