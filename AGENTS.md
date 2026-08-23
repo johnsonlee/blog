@@ -32,7 +32,7 @@ Run `npm run build` before opening a PR when you change posts, theme templates, 
 
 ## Writing Workflow
 
-Use the repo-scoped `$write-blog` skill for any substantial post planning, drafting, rewriting, translation, publishing, or style-sensitive edit. The skill's references are the canonical source for Johnson's writing style, publishing flow, investing-article rules, visuals, and helper scripts.
+Use the repo-scoped `$write-blog` skill for any substantial post planning, research, drafting, rewriting, translation, publishing, or style-sensitive edit. The skill's references are the canonical source for research depth, Johnson's writing style, publishing flow, investing-article rules, visuals, and helper scripts.
 
 When touching posts without invoking the skill, still preserve these baseline rules:
 
