@@ -40,6 +40,37 @@
 - 重复节点共享同一基线、间距和连接规则，不逐个目测摆放。
 - 删除文字或元素后重新裁切画布，避免无意义空白。
 
+## SVG 与 PNG 一起交付
+
+文章定稿后，每个最终 SVG 都必须生成同名 PNG，不能只交 SVG 源文件。默认文件映射为：
+
+```text
+source/images/name.svg     -> ../wxmp/name.png
+source/images/name.en.svg  -> ../wxmp/name.en.png
+```
+
+PNG 是 SVG 的 raster 版本，不是重新设计的一张图。必须使用可靠的 SVG renderer 按完整 `viewBox` 导出，保留原始宽高比、背景、字体、颜色、线条、marker、clip path 和 filter；不要用带网页边距的截图代替导出，也不要为了修 PNG 单独修改位图。
+
+导出后把 SVG 与 PNG 渲染到相同尺寸逐项对照：画布边界、节点位置、文字换行、connector 终点、箭头、图例和数据必须一致。再单独检查 PNG 的实际像素尺寸与移动端可读性。出现字体替换、文字溢出、裁切、缺失元素或布局位移时，修正 SVG 或渲染环境后重新生成。
+
+## 每篇文章的封面
+
+中文标题和主视觉稳定后，为每篇文章生成一张 5:2 横版封面。默认保存到 `../wxmp/<slug>.png`；Hexo build 自动生成的通用 OG card 不能替代它。生成时使用下面这组约束；用户提供了样例时，必须把样例作为 reference image，而不是只用文字猜它的风格：
+
+```text
+Generate an image with a 5:2 aspect ratio for my blog, and make it work in both contexts:
+1. A blog cover banner.
+2. A square sharing thumbnail.
+
+Keep all essential text and the primary visual subject inside the centered square safe area. Set the exact article title in a compact two-line layout. Match the composition, typography, visual language, and finish of the provided reference image. Do not add unrequested copy, logos, or watermarks.
+```
+
+中央正方形安全区的边长等于横图高度；左右区域只能承载即使被裁掉也不影响识别的延伸画面。标题必须使用已经确认的准确文字，紧凑排成两行，不能擅自改写，也不能生成乱码、错字或额外文案。文章主题、核心对象和视觉冲突要在第一眼成立，不能只做成气氛背景。
+
+5:2 版本完成后，以它作为 reference image 再生成一张 3:4 竖版封面，保存到 `../wxmp/<slug>-3x4.png`。3:4 版本要重新组织构图，保持同一标题、主体、色彩、材质和视觉语言；禁止把横图直接拉伸，也不要机械裁切到主体或文字残缺。
+
+两种封面都要实际打开验收。5:2 版本同时检查完整横幅和中央 1:1 裁切结果；3:4 版本检查完整竖图。确认宽高比准确、标题两行可读、核心信息未越出安全区、边缘无裁切、人物或物体没有生成缺陷，再视为完成。
+
 ## 视觉验收
 
 SVG 源码通过 XML 检查不代表图是对的。每个语言版本都要实际渲染：
@@ -49,5 +80,7 @@ SVG 源码通过 XML 检查不代表图是对的。每个语言版本都要实�
 3. 对文字密集区和 connector 以 3x-4x 放大检查。
 4. 检查文字溢出、遮挡、错位、断线、交叉、箭头穿透和图例一致性。
 5. 对照正文逐项确认数据、状态和术语。
+6. 对照同名 PNG，确认 raster 输出完整还原 SVG。
+7. 对封面检查 5:2 横幅、中央 1:1 裁切和 3:4 竖版三个最终画面。
 
 发现一类几何问题时检查整组图和双语版本，不只修用户指出的单个节点。
