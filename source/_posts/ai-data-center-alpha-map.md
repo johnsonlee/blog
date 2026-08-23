@@ -211,9 +211,9 @@ RFS 只交付 facility。GPU shipment、server shipment、rack delivery 和 clus
 
    Training data、model weights、checkpoint、local NVMe、parallel file system、object storage 和 KV cache 分布在不同 storage tier。NAND bit 只回答容量，controller、firmware 和 qualification 决定 enterprise SSD 能不能上线。Compute、network 和 storage 都装好了，谁来证明这套 cluster 可以承载 production workload？
 
-12. 《集群交付：从设施就绪到 Production Handoff》
+12. 《{% post_link data-center-cluster-delivery 'GPU 都正常就算万卡集群了吗？' %}》
 
-   IT deployment、firmware、provisioning、burn-in、fabric validation 和 cluster acceptance 全发生在设施交付以后。安装了多少 GPU 不再重要，deployment velocity、cluster yield 和 healthy capacity 才决定 Production Handoff。Healthy cluster 已经有了，同一 MW 跑 Training 和 Inference，产出的还是同一种算力吗？
+   9,216 块 GPU 已经上架，9,124 块也显示 Healthy，仍然不能证明它们组成了可交付的万卡集群。Per-host health 看不见 NVLink domain、scale-out topology、storage path 与 scheduler allocation；故障分布和 workload shape 还会把同一个健康率变成完全不同的 capacity。只有 acceptance scope 固定下来，Production Handoff 才有了可复查的交付单位。同一座 healthy cluster 交给 Training 和 Inference，产出的还是同一种算力吗？
 
 ## 算力变成收入还差最后一段
 

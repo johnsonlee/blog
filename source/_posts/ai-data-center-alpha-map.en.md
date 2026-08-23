@@ -212,9 +212,9 @@ RFS delivers only the facility. GPU shipments, server shipments, rack deliveries
 
    Training data, model weights, checkpoints, local NVMe, parallel file systems, object storage, and KV cache occupy different storage tiers. NAND bits describe capacity; controllers, firmware, reliability, and qualification determine whether enterprise storage can enter service. With compute, networking, and storage installed, who proves the cluster can carry production workloads?
 
-12. **Cluster Delivery: Facility Readiness to Production Handoff**
+12. **{% post_link data-center-cluster-delivery.en 'Do Healthy GPUs Make a Supercluster?' %}**
 
-   IT deployment, firmware, provisioning, burn-in, fabric validation, cluster acceptance, and healthy handoff all happen after RFS. Installed GPU counts give way to deployment velocity, cluster yield, and healthy capacity before Production Handoff. Once the healthy cluster exists, does one megawatt produce the same compute under Training and Inference?
+   Installing 9,216 GPUs and seeing 9,124 of them report Healthy still does not prove that they form a deliverable supercluster. Per-host health cannot see the NVLink domain, scale-out topology, storage path, or scheduler allocation. Fault distribution and workload shape can also turn one health rate into very different capacity. Production Handoff becomes auditable only after the acceptance scope fixes the delivery unit. Once the cluster is healthy, does one megawatt produce the same compute under Training and Inference?
 
 ## Compute still has one more leg before revenue
 
