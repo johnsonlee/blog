@@ -164,9 +164,9 @@ The series will therefore move through the chain one layer at a time. The titles
 
 OpenAI announces another 1 GW, 5 GW, or 8 GW. How far has that capacity actually progressed? Contracted, under construction, energized, and deliverable sit behind very different gates.
 
-1. **Data Center Delivery Cycle: Site Selection to Facility Handoff**
+1. **{% post_link data-center-delivery-cycle.en "Why Doesn't a Data Center Have One Delivery Date?" %}**
 
-   Announced, planned, under-construction, energized, and RFS capacity belong on one timeline. The current state, the next gate, and the slowest gate determine when supply can be counted. Once those states are separated, the phrase "has power" becomes suspicious. What exactly has the project secured?
+   Abilene can remain under construction while handing over data halls and running workloads. The contradiction appears only when the whole campus is treated as one delivery unit. Attach state to each MW tranche, and energization, RFS, billing, and Production Handoff each acquire their own date.
 
 2. **Grid Interconnection: The Data Center's First Gate**
 

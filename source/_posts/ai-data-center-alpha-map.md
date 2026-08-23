@@ -163,9 +163,9 @@ RFS 仍然只交付 facility。接下来才是 rack 里的 IT deployment：GPU�
 
 地图画完，最先冒出来的问题很直接：OpenAI 又宣布 1GW、5GW、8GW，这些数字到底已经走到哪一步？刚签约、已经开工、完成送电和机房可以交付，中间还隔着多少道 gate？
 
-1. 《数据中心交付周期：从选址到设施交付》
+1. 《{% post_link data-center-delivery-cycle '数据中心为什么没有一个交付日？' %}》
 
-   Announced、planned、under construction、energized 和 RFS 要放回同一条时间轴。项目现在在哪、下一道 gate 是什么、哪一道最慢，决定这笔供给什么时候才能算。状态排清以后，新闻里那句“已经拿到电”反而变得可疑：拿到的究竟是什么？
+   Abilene 可以一边继续建设，一边交付 data hall，还同时跑着 workload。矛盾只会在把整座 campus 当成一个交付单元时出现；状态绑回每一批 MW，energization、RFS、收费和 Production Handoff 才各自有了日期。
 
 2. 《电网接入：数据中心的第一道闸门》
 

@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">数据中心从选址到 RFS 的交付状态</title>
+  <desc id="desc">Announced 是公开披露而非工程状态。数据中心容量依次经过场地控制、项目开发、施工、送电、调试和 RFS。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10Z" fill="#52647a"/>
+    </marker>
+    <style>
+      text { font-family: Inter, "PingFang SC", "Microsoft YaHei", Arial, sans-serif; letter-spacing: 0; }
+      .stage { font-size: 25px; font-weight: 700; fill: #172033; text-anchor: middle; }
+      .en { font-size: 17px; font-weight: 650; fill: #607089; text-anchor: middle; }
+      .body { font-size: 20px; fill: #334155; text-anchor: middle; }
+      .small { font-size: 17px; fill: #607089; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect width="1600" height="900" fill="#f7f9fc"/>
+
+  <rect x="640" y="54" width="320" height="112" rx="6" fill="#fff4e5" stroke="#c96b16" stroke-width="2"/>
+  <text x="800" y="96" class="stage" fill="#9a4b0a">已公告</text>
+  <text x="800" y="128" class="en" fill="#9a4b0a">Announced</text>
+  <text x="800" y="153" class="small" fill="#9a4b0a">一次公开披露</text>
+
+  <path d="M700 166L175 286" fill="none" stroke="#d29a61" stroke-width="2" stroke-dasharray="8 9"/>
+  <path d="M760 166L425 286" fill="none" stroke="#d29a61" stroke-width="2" stroke-dasharray="8 9"/>
+  <path d="M840 166L675 286" fill="none" stroke="#d29a61" stroke-width="2" stroke-dasharray="8 9"/>
+  <path d="M900 166L925 286" fill="none" stroke="#d29a61" stroke-width="2" stroke-dasharray="8 9"/>
+  <text x="1125" y="110" class="body" text-anchor="start">可以发生在不同工程状态</text>
+
+  <line x1="270" y1="351" x2="330" y2="351" stroke="#52647a" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="520" y1="351" x2="580" y2="351" stroke="#52647a" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="770" y1="351" x2="830" y2="351" stroke="#52647a" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="1020" y1="351" x2="1080" y2="351" stroke="#52647a" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="1270" y1="351" x2="1330" y2="351" stroke="#52647a" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <g>
+    <rect x="80" y="286" width="190" height="130" rx="6" fill="#edf2f7" stroke="#64748b" stroke-width="2"/>
+    <text x="175" y="339" class="stage">场地控制</text>
+    <text x="175" y="374" class="en">Site Control</text>
+    <circle cx="175" cy="444" r="17" fill="#64748b"/>
+    <text x="175" y="451" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">1</text>
+    <rect x="80" y="475" width="190" height="154" rx="6" fill="#fff" stroke="#d5dde7"/>
+    <text x="175" y="519" class="body">土地控制权</text>
+    <text x="175" y="554" class="body">场地边界</text>
+    <text x="175" y="599" class="small">仍是 Pipeline</text>
+  </g>
+
+  <g>
+    <rect x="330" y="286" width="190" height="130" rx="6" fill="#eaf2fb" stroke="#3f6f9f" stroke-width="2"/>
+    <text x="425" y="339" class="stage">项目开发</text>
+    <text x="425" y="374" class="en">Development</text>
+    <circle cx="425" cy="444" r="17" fill="#3f6f9f"/>
+    <text x="425" y="451" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">2</text>
+    <rect x="330" y="475" width="190" height="154" rx="6" fill="#fff" stroke="#d5dde7"/>
+    <text x="425" y="514" class="body">设计 · 许可</text>
+    <text x="425" y="549" class="body">电力 · 光纤方案</text>
+    <text x="425" y="599" class="small">目标容量仍会变化</text>
+  </g>
+
+  <g>
+    <rect x="580" y="286" width="190" height="130" rx="6" fill="#fff0e5" stroke="#c85a16" stroke-width="2"/>
+    <text x="675" y="339" class="stage">施工</text>
+    <text x="675" y="374" class="en">Construction</text>
+    <circle cx="675" cy="444" r="17" fill="#c85a16"/>
+    <text x="675" y="451" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+    <rect x="580" y="475" width="190" height="154" rx="6" fill="#fff" stroke="#d5dde7"/>
+    <text x="675" y="514" class="body">土建 · 结构</text>
+    <text x="675" y="549" class="body">机电设备安装</text>
+    <text x="675" y="599" class="small">开始消耗 CapEx</text>
+  </g>
+
+  <g>
+    <rect x="830" y="286" width="190" height="130" rx="6" fill="#fff7d8" stroke="#b88407" stroke-width="2"/>
+    <text x="925" y="339" class="stage">送电</text>
+    <text x="925" y="374" class="en">Energized</text>
+    <circle cx="925" cy="444" r="17" fill="#b88407"/>
+    <text x="925" y="451" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">4</text>
+    <rect x="830" y="475" width="190" height="154" rx="6" fill="#fff" stroke="#d5dde7"/>
+    <text x="925" y="519" class="body">电到约定边界</text>
+    <text x="925" y="554" class="body">设备可以启动</text>
+    <text x="925" y="599" class="small">尚未完成系统验证</text>
+  </g>
+
+  <g>
+    <rect x="1080" y="286" width="190" height="130" rx="6" fill="#e7f4f2" stroke="#167d73" stroke-width="2"/>
+    <text x="1175" y="339" class="stage">调试验证</text>
+    <text x="1175" y="374" class="en">Commissioning</text>
+    <circle cx="1175" cy="444" r="17" fill="#167d73"/>
+    <text x="1175" y="451" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">5</text>
+    <rect x="1080" y="475" width="190" height="154" rx="6" fill="#fff" stroke="#d5dde7"/>
+    <text x="1175" y="514" class="body">启动 · 功能测试</text>
+    <text x="1175" y="549" class="body">集成系统测试</text>
+    <text x="1175" y="599" class="small">验证设计与故障场景</text>
+  </g>
+
+  <g>
+    <rect x="1330" y="286" width="190" height="130" rx="6" fill="#e8f5e9" stroke="#24864a" stroke-width="3"/>
+    <text x="1425" y="339" class="stage">设施交付</text>
+    <text x="1425" y="374" class="en">RFS</text>
+    <circle cx="1425" cy="444" r="17" fill="#24864a"/>
+    <text x="1425" y="451" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">6</text>
+    <rect x="1330" y="475" width="190" height="154" rx="6" fill="#fff" stroke="#8fc7a3" stroke-width="2"/>
+    <text x="1425" y="514" class="body">Contracted IT Load</text>
+    <text x="1425" y="549" class="body">可供客户设备上电</text>
+    <text x="1425" y="599" class="small" fill="#24864a">Facility Supply</text>
+  </g>
+
+  <path d="M80 705V735H1270V705" fill="none" stroke="#94a3b8" stroke-width="2"/>
+  <text x="675" y="778" class="body">交付中的 Capacity</text>
+  <rect x="1330" y="700" width="190" height="78" rx="6" fill="#24864a"/>
+  <text x="1425" y="733" font-size="20" font-weight="700" fill="#fff" text-anchor="middle">已跨过 RFS</text>
+  <text x="1425" y="760" font-size="16" fill="#d9f3e2" text-anchor="middle">设施容量才可交付</text>
+  <text x="800" y="849" class="small">RFS 之后仍需完成 IT deployment 与 Production Handoff</text>
+</svg>
