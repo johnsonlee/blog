@@ -73,7 +73,7 @@ npm run build
 需要自动修正引号时运行：
 
 ```bash
-python3 .agents/skills/write-blog/scripts/fix_quotes.py <post.md>
+python3 .agents/skills/blog/scripts/fix_quotes.py <post.md>
 ```
 
 不要只比较 Sources 数量。至少核对两种语言的 H2/H3 结构、图片引用、正文外链 URL 集合和 Sources URL 集合，并解释确有必要的语言差异。

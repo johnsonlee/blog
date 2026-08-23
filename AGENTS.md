@@ -28,11 +28,11 @@ Run `npm run build` before opening a PR when you change posts, theme templates, 
 - `themes/maupassant/`: active Hexo theme.
 - `scaffolds/`: Hexo templates for new content.
 - `tools/`: repository validation scripts.
-- `.agents/skills/write-blog/`: repo-scoped Codex skill for planning, writing, rewriting, translating, and publishing posts.
+- `.agents/skills/blog/`: repo-scoped Codex skill for planning, writing, rewriting, translating, and publishing posts.
 
 ## Writing Workflow
 
-Use the repo-scoped `$write-blog` skill for any substantial post planning, research, drafting, rewriting, translation, publishing, or style-sensitive edit. The skill's references are the canonical source for research depth, Johnson's writing style, publishing flow, investing-article rules, visuals, and helper scripts.
+Use the repo-scoped `$blog` skill for any substantial post planning, research, drafting, rewriting, translation, publishing, or style-sensitive edit. The skill's references are the canonical source for research depth, Johnson's writing style, publishing flow, investing-article rules, visuals, and helper scripts.
 
 When touching posts without invoking the skill, still preserve these baseline rules:
 

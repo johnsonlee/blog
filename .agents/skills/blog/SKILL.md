@@ -1,5 +1,5 @@
 ---
-name: write-blog
+name: blog
 description: >
   在 johnsonlee/blog 仓库中策划、研究、撰写、改写、翻译和发布
   johnsonlee.io 中英文博客文章。用于“写博客”、“整理成 post”、产业或技术
@@ -7,7 +7,7 @@ description: >
   普通文案、社交媒体短帖或通用写作。
 ---
 
-# Blog Writer
+# Blog
 
 把一个问题研究透，再组织成一篇像 Johnson 本人写的文章。风格不是套用口头禅；深度也不是堆字数、术语、Sources 或配图。
 

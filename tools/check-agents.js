@@ -20,7 +20,7 @@ function main() {
     ['layout section', /^## Layout$/m],
     ['writing workflow section', /^## Writing Workflow$/m],
     ['post format section', /^## Post Format$/m],
-    ['repo-scoped write-blog skill', /\.agents\/skills\/write-blog\//],
+    ['repo-scoped blog skill', /\.agents\/skills\/blog\//],
     ['build command', /npm run build/],
     ['post directory', /source\/_posts\//],
     ['front matter alignment', /i18n_key/],
