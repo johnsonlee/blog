@@ -228,7 +228,7 @@ Production Handoff delivers physical capacity. How much billable workload it bec
 
     One user request expands into multiple model invocations plus routing, prefill, decode, retrieval, tool calls, retries, cache behavior, and scheduling. Tokens, requests, tasks, and tasks per megawatt answer different questions. Once the task finishes inside the cluster, how does the result reach the user within its latency SLO?
 
-15. **Inference Delivery Network: Cluster to User**
+15. **{% post_link inference-delivery-network.en 'Why Is the User Still Waiting After the GPU Finishes?' %}**
 
     DCI, backbone networks, transit, peering, CDNs, edge infrastructure, and metro inference determine whether the result meets its latency SLO. As internal compute expands, the constraint may migrate outside the data center. By this point, the original 8 GW is no longer one capacity number. Which segment is slowest, and who captures the orders and cash flow?
 

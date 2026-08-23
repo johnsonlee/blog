@@ -227,7 +227,7 @@ Production Handoff 只交付 physical capacity。它能变成多少 billable wor
 
     一次 user request 会展开成多次 model invocation，以及 routing、prefill、decode、retrieval、tool call、retry、cache 和 scheduling。Token、request、task 与 tasks per MW 回答的是四个不同问题。Task 在 cluster 里执行完了，结果怎样在 latency SLO 内送到用户面前？
 
-15. 《推理交付网络：从 Cluster 到 User》
+15. 《{% post_link inference-delivery-network 'GPU 算完了为什么用户还在等？' %}》
 
     DCI、backbone、transit、peering、CDN、edge 和 metro inference 决定结果能否满足 latency SLO。内部 compute capacity 扩张以后，binding constraint 可能迁移到数据中心外部。走到这里，最初那个 8GW 已经不再是一个容量数字：哪一段最慢，谁又拿走订单和现金流？
 

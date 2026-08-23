@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">End-to-end inference delivery path</title><desc id="desc">推理请求从用户经过 ISP、Edge、Backbone、Regional Front Door、Inference Gateway 到 GPU worker，再沿同一路径返回 streaming chunks。</desc>
+  <style>text{font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;letter-spacing:0;fill:#172033}.title{font-size:31px;font-weight:760;text-anchor:middle}.head{font-size:17px;font-weight:750;text-anchor:middle}.body{font-size:14px;fill:#52647a;text-anchor:middle}.inv{fill:#fff}</style>
+  <rect width="1600" height="900" fill="#f7f9fc"/><text x="800" y="58" class="title">统一 Endpoint 背后，是三层网络与一条双向路径</text>
+  <rect x="45" y="110" width="250" height="640" rx="7" fill="#fff" stroke="#d5dde7" stroke-width="2"/><text x="170" y="150" class="head">用户接入网</text>
+  <rect x="85" y="245" width="170" height="90" rx="6" fill="#64748b"/><text x="170" y="283" class="head inv">客户端</text><text x="170" y="312" class="body inv">App · Browser</text>
+  <rect x="85" y="455" width="170" height="90" rx="6" fill="#64748b"/><text x="170" y="493" class="head inv">ISP / 最后一公里</text><text x="170" y="522" class="body inv">接入网络</text>
+  <rect x="325" y="110" width="300" height="640" rx="7" fill="#fff" stroke="#2f6fab" stroke-width="2"/><text x="475" y="150" class="head">边缘网络</text>
+  <rect x="370" y="245" width="210" height="90" rx="6" fill="#2f6fab"/><text x="475" y="283" class="head inv">Anycast / DNS</text><text x="475" y="312" class="body inv">最近入口</text>
+  <rect x="370" y="455" width="210" height="90" rx="6" fill="#2f6fab"/><text x="475" y="493" class="head inv">Edge PoP</text><text x="475" y="522" class="body inv">TLS · WAF · 流量调度</text>
+  <rect x="655" y="110" width="390" height="640" rx="7" fill="#fff" stroke="#167d73" stroke-width="2"/><text x="850" y="150" class="head">Region 服务网络</text>
+  <rect x="700" y="245" width="300" height="90" rx="6" fill="#167d73"/><text x="850" y="283" class="head inv">云厂商骨干网</text><text x="850" y="312" class="body inv">Edge → 目标 Region</text>
+  <rect x="700" y="455" width="300" height="90" rx="6" fill="#7653a6"/><text x="850" y="493" class="head inv">Region 统一入口</text><text x="850" y="522" class="body inv">鉴权 · 限流 · 策略</text>
+  <rect x="1075" y="110" width="480" height="640" rx="7" fill="#fff" stroke="#c85a16" stroke-width="2"/><text x="1315" y="150" class="head">推理 Region</text>
+  <rect x="1120" y="245" width="190" height="90" rx="6" fill="#7653a6"/><text x="1215" y="283" class="head inv">推理网关</text><text x="1215" y="312" class="body inv">模型 · KV · 负载</text>
+  <rect x="1360" y="245" width="150" height="90" rx="6" fill="#b88407"/><text x="1435" y="283" class="head inv">排队</text><text x="1435" y="312" class="body inv">Batch</text>
+  <rect x="1120" y="505" width="190" height="90" rx="6" fill="#c85a16"/><text x="1215" y="543" class="head inv">预填充 Worker</text><text x="1215" y="572" class="body inv">Prompt → KV</text>
+  <rect x="1360" y="505" width="150" height="90" rx="6" fill="#24864a"/><text x="1435" y="543" class="head inv">解码</text><text x="1435" y="572" class="body inv">Token 流</text>
+  <line x1="155" y1="335" x2="155" y2="433" stroke="#52647a" stroke-width="4"/><polygon points="143,433 167,433 155,455" fill="#52647a"/>
+  <path d="M255 500H300V290H348" fill="none" stroke="#52647a" stroke-width="4"/><polygon points="348,278 348,302 370,290" fill="#52647a"/>
+  <path d="M475 335V400H650V290H678" fill="none" stroke="#52647a" stroke-width="4"/><polygon points="678,278 678,302 700,290" fill="#52647a"/>
+  <path d="M1000 290H1060V290H1098" fill="none" stroke="#52647a" stroke-width="4"/><polygon points="1098,278 1098,302 1120,290" fill="#52647a"/>
+  <line x1="1310" y1="290" x2="1338" y2="290" stroke="#52647a" stroke-width="4"/><polygon points="1338,278 1338,302 1360,290" fill="#52647a"/>
+  <path d="M1435 335V450H1215V483" fill="none" stroke="#52647a" stroke-width="4"/><polygon points="1203,483 1227,483 1215,505" fill="#52647a"/>
+  <line x1="1310" y1="550" x2="1338" y2="550" stroke="#52647a" stroke-width="4"/><polygon points="1338,538 1338,562 1360,550" fill="#52647a"/>
+  <path d="M1435 595V680H850V567" fill="none" stroke="#24864a" stroke-width="4"/><polygon points="838,567 862,567 850,545" fill="#24864a"/>
+  <path d="M700 500H602" fill="none" stroke="#24864a" stroke-width="4"/><polygon points="602,488 602,512 580,500" fill="#24864a"/>
+  <line x1="370" y1="500" x2="277" y2="500" stroke="#24864a" stroke-width="4"/><polygon points="277,488 277,512 255,500" fill="#24864a"/>
+  <path d="M185 455V357" fill="none" stroke="#24864a" stroke-width="4"/><polygon points="173,357 197,357 185,335" fill="#24864a"/>
+  <text x="830" y="718" class="head" fill="#24864a">Streaming Chunk 返回</text>
+  <rect x="190" y="795" width="1220" height="62" rx="6" fill="#172033"/><text x="800" y="832" class="head inv">Cluster Fabric 负责 GPU 互联；交付网络负责把结果变成用户可感知的 Service</text>
+</svg>
