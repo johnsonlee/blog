@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Why can parallel work still stall at an interface?</title>
+  <desc id="desc">Utility, campus, protection and data, and commercial and operations work can proceed in parallel but must cross common design-basis, notice-to-proceed, joint-acceptance, and control-room gates.</desc>
+  <rect width="1600" height="900" fill="#F7F9FC"/>
+  <style>
+    text{font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;letter-spacing:0;fill:#172033}
+    .title{font-size:31px;font-weight:760}.lane{font-size:20px;font-weight:740}.head{font-size:17px;font-weight:720}.small{font-size:14px;font-weight:520;fill:#607089}.gate{font-size:14px;font-weight:740;fill:#CF3F4F}.inverse{fill:#fff}
+  </style>
+  <text x="800" y="58" class="title" text-anchor="middle">Why can parallel work still stall at an interface?</text>
+  <text x="55" y="105" class="small">DEPENDENCY VIEW · NOT A TIMELINE</text>
+
+  <g stroke="#CF3F4F" stroke-width="2" stroke-dasharray="7 8"><line x1="550" y1="132" x2="550" y2="710"/><line x1="860" y1="132" x2="860" y2="710"/><line x1="1180" y1="132" x2="1180" y2="710"/></g>
+  <g class="gate" text-anchor="middle"><text x="550" y="125">DESIGN BASIS</text><text x="860" y="125">NOTICE TO PROCEED</text><text x="1180" y="125">JOINT ACCEPTANCE</text></g>
+
+  <g>
+    <text x="55" y="202" class="lane">UTILITY / GRID</text><text x="55" y="232" class="small">external supply</text>
+    <rect x="280" y="160" width="250" height="90" rx="6" fill="#E8F1FB" stroke="#2F6FAB" stroke-width="2"/><text x="405" y="212" class="head" text-anchor="middle">System study</text>
+    <line x1="530" y1="205" x2="556" y2="205" stroke="#2F6FAB" stroke-width="3" stroke-linecap="round"/><polygon points="570,205 556,197 556,213" fill="#2F6FAB"/>
+    <rect x="570" y="160" width="270" height="90" rx="6" fill="#E8F1FB" stroke="#2F6FAB" stroke-width="2"/><text x="705" y="212" class="head" text-anchor="middle">Design · ROW · permits</text>
+    <line x1="840" y1="205" x2="866" y2="205" stroke="#2F6FAB" stroke-width="3" stroke-linecap="round"/><polygon points="880,205 866,197 866,213" fill="#2F6FAB"/>
+    <rect x="880" y="160" width="280" height="90" rx="6" fill="#E8F1FB" stroke="#2F6FAB" stroke-width="2"/><text x="1020" y="212" class="head" text-anchor="middle">Substation · connection line</text>
+    <line x1="1160" y1="205" x2="1186" y2="205" stroke="#2F6FAB" stroke-width="3" stroke-linecap="round"/><polygon points="1200,205 1186,197 1186,213" fill="#2F6FAB"/>
+    <rect x="1200" y="160" width="230" height="90" rx="6" fill="#E8F1FB" stroke="#2F6FAB" stroke-width="2"/><text x="1315" y="202" class="head" text-anchor="middle">Equipment and</text><text x="1315" y="227" class="head" text-anchor="middle">grounding tests</text>
+    <line x1="1430" y1="205" x2="1466" y2="205" stroke="#2F6FAB" stroke-width="3" stroke-linecap="round"/><polygon points="1480,205 1466,197 1466,213" fill="#2F6FAB"/>
+  </g>
+  <g>
+    <text x="55" y="352" class="lane">CAMPUS / EPC</text><text x="55" y="382" class="small">customer facilities</text>
+    <rect x="280" y="310" width="250" height="90" rx="6" fill="#E4F4F1" stroke="#16877B" stroke-width="2"/><text x="405" y="352" class="head" text-anchor="middle">Site control</text><text x="405" y="377" class="small" text-anchor="middle">load ramp</text>
+    <line x1="530" y1="355" x2="556" y2="355" stroke="#16877B" stroke-width="3" stroke-linecap="round"/><polygon points="570,355 556,347 556,363" fill="#16877B"/>
+    <rect x="570" y="310" width="270" height="90" rx="6" fill="#E4F4F1" stroke="#16877B" stroke-width="2"/><text x="705" y="362" class="head" text-anchor="middle">One-line · equipment ratings</text>
+    <line x1="840" y1="355" x2="866" y2="355" stroke="#16877B" stroke-width="3" stroke-linecap="round"/><polygon points="880,355 866,347 866,363" fill="#16877B"/>
+    <rect x="880" y="310" width="280" height="90" rx="6" fill="#E4F4F1" stroke="#16877B" stroke-width="2"/><text x="1020" y="352" class="head" text-anchor="middle">Customer substation</text><text x="1020" y="377" class="small" text-anchor="middle">data halls</text>
+    <line x1="1160" y1="355" x2="1186" y2="355" stroke="#16877B" stroke-width="3" stroke-linecap="round"/><polygon points="1200,355 1186,347 1186,363" fill="#16877B"/>
+    <rect x="1200" y="310" width="230" height="90" rx="6" fill="#E4F4F1" stroke="#16877B" stroke-width="2"/><text x="1315" y="362" class="head" text-anchor="middle">Ready to receive power</text>
+    <line x1="1430" y1="355" x2="1466" y2="355" stroke="#16877B" stroke-width="3" stroke-linecap="round"/><polygon points="1480,355 1466,347 1466,363" fill="#16877B"/>
+  </g>
+  <g>
+    <text x="55" y="502" class="lane">PROTECTION + DATA</text><text x="55" y="532" class="small">relays / telemetry</text>
+    <rect x="280" y="460" width="250" height="90" rx="6" fill="#FFF5D6" stroke="#C58D0A" stroke-width="2"/><text x="405" y="502" class="head" text-anchor="middle">Fault current</text><text x="405" y="527" class="small" text-anchor="middle">dynamic model</text>
+    <line x1="530" y1="505" x2="556" y2="505" stroke="#C58D0A" stroke-width="3" stroke-linecap="round"/><polygon points="570,505 556,497 556,513" fill="#C58D0A"/>
+    <rect x="570" y="460" width="270" height="90" rx="6" fill="#FFF5D6" stroke="#C58D0A" stroke-width="2"/><text x="705" y="512" class="head" text-anchor="middle">Relays · SCADA · metering</text>
+    <line x1="840" y1="505" x2="866" y2="505" stroke="#C58D0A" stroke-width="3" stroke-linecap="round"/><polygon points="880,505 866,497 866,513" fill="#C58D0A"/>
+    <rect x="880" y="460" width="280" height="90" rx="6" fill="#FFF5D6" stroke="#C58D0A" stroke-width="2"/><text x="1020" y="512" class="head" text-anchor="middle">End-to-end commissioning</text>
+    <line x1="1160" y1="505" x2="1186" y2="505" stroke="#C58D0A" stroke-width="3" stroke-linecap="round"/><polygon points="1200,505 1186,497 1186,513" fill="#C58D0A"/>
+    <rect x="1200" y="460" width="230" height="90" rx="6" fill="#FFF5D6" stroke="#C58D0A" stroke-width="2"/><text x="1315" y="502" class="head" text-anchor="middle">Telemetry and control</text><text x="1315" y="527" class="small" text-anchor="middle">visible in control room</text>
+    <line x1="1430" y1="505" x2="1466" y2="505" stroke="#C58D0A" stroke-width="3" stroke-linecap="round"/><polygon points="1480,505 1466,497 1466,513" fill="#C58D0A"/>
+  </g>
+  <g>
+    <text x="55" y="652" class="lane">COMMERCIAL + OPS</text><text x="55" y="682" class="small">contracts / dispatch</text>
+    <rect x="280" y="610" width="250" height="90" rx="6" fill="#FDEBED" stroke="#CF3F4F" stroke-width="2"/><text x="405" y="662" class="head" text-anchor="middle">Study fee · site proof</text>
+    <line x1="530" y1="655" x2="556" y2="655" stroke="#CF3F4F" stroke-width="3" stroke-linecap="round"/><polygon points="570,655 556,647 556,663" fill="#CF3F4F"/>
+    <rect x="570" y="610" width="270" height="90" rx="6" fill="#FDEBED" stroke="#CF3F4F" stroke-width="2"/><text x="705" y="662" class="head" text-anchor="middle">LOA · ESA · security</text>
+    <line x1="840" y1="655" x2="866" y2="655" stroke="#CF3F4F" stroke-width="3" stroke-linecap="round"/><polygon points="880,655 866,647 866,663" fill="#CF3F4F"/>
+    <rect x="880" y="610" width="280" height="90" rx="6" fill="#FDEBED" stroke="#CF3F4F" stroke-width="2"/><text x="1020" y="652" class="head" text-anchor="middle">Operating agreement</text><text x="1020" y="677" class="small" text-anchor="middle">45-day notice</text>
+    <line x1="1160" y1="655" x2="1186" y2="655" stroke="#CF3F4F" stroke-width="3" stroke-linecap="round"/><polygon points="1200,655 1186,647 1186,663" fill="#CF3F4F"/>
+    <rect x="1200" y="610" width="230" height="90" rx="6" fill="#FDEBED" stroke="#CF3F4F" stroke-width="2"/><text x="1315" y="652" class="head" text-anchor="middle">Switching order</text><text x="1315" y="677" class="small" text-anchor="middle">initial MW ceiling</text>
+    <line x1="1430" y1="655" x2="1466" y2="655" stroke="#CF3F4F" stroke-width="3" stroke-linecap="round"/><polygon points="1480,655 1466,647 1466,663" fill="#CF3F4F"/>
+  </g>
+
+  <line x1="1480" y1="205" x2="1480" y2="746" stroke="#172033" stroke-width="3"/><polygon points="1480,760 1472,746 1488,746" fill="#16877B"/>
+  <rect x="1150" y="760" width="380" height="100" rx="6" fill="#16877B" stroke="#16877B" stroke-width="2"/>
+  <text x="1340" y="804" class="head inverse" text-anchor="middle">INITIAL ENERGIZATION</text><text x="1340" y="834" class="head inverse" text-anchor="middle">only within approved MW ceiling</text>
+</svg>

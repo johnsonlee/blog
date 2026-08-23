@@ -179,9 +179,9 @@ RFS 仍然只交付 facility。接下来才是 rack 里的 IT deployment：GPU�
 
    发电量充足，不代表目标 site 所在的节点还能接住 1GW。Power flow、N-1 contingency、thermal limit、voltage 与 stability 会把约束推到几十甚至几百公里外；新的 765kV line 又要经过 planning、route、right of way、siting、长周期设备和施工。输电 backbone 建好以后，电还差哪一步才能真正到达数据中心？
 
-5. 《Site Energization：电怎样到达数据中心》
+5. 《{% post_link data-center-site-energization '送电了为什么还没有可用算力？' %}》
 
-   Regional transmission 要先进入 interconnection substation，再通过 local service facilities、保护、计量和对应的 utility 工程到达 service delivery point。外部线路与现场接入工程必须同时完成，测试和调度条件也要同时满足，utility 才能合闸。到了这一步，Power 才真正交给 Data Center；可电只到了交付点，离 rack 还有一整条供配电链。
+   Centreport 最终申请 262MW，却只能先拿到 7MVA 和 11MVA bridging power；永久供电投运时，预计 summer peak 也只有 4MW。临时电源、首次合闸、commercial service、获批升载和 full buildout 是不同状态。电到了 service delivery point，为什么仍然不能直接算成 available compute？
 
 6. 《从变电站到机架：供配电链》
 

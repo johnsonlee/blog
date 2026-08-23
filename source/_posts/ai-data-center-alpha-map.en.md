@@ -180,9 +180,9 @@ OpenAI announces another 1 GW, 5 GW, or 8 GW. How far has that capacity actually
 
    Sufficient generation does not mean the node serving the target site can absorb another gigawatt. Power flow, N-1 contingencies, thermal limits, voltage, and stability can move the constraint tens or hundreds of miles away. A new 765 kV line still requires planning, routing, rights of way, siting, long-lead equipment, and construction. Once the transmission backbone is ready, what still separates electricity from the data center?
 
-5. **Site Energization: How Power Reaches the Data Center**
+5. **{% post_link data-center-site-energization.en "Why Doesn't Energization Mean Usable Compute?" %}**
 
-   Regional transmission first enters an interconnection substation, then reaches the service delivery point through local service facilities, protection, metering, and the corresponding utility works. External lines and site-connection works must finish together, and testing and dispatch conditions must also pass before the utility closes the breaker. Only here does Power reach the Data Center. It has reached the delivery point, but an entire distribution chain still separates it from the rack.
+   Centreport ultimately requested 262 MW but could initially receive only 7 MVA and 11 MVA of bridging power. Even when permanent service entered operation, its projected summer peak was 4 MW. Temporary power, initial energization, commercial service, approved load ramps, and full buildout are different states. Why can power at the service delivery point still not be counted as available compute?
 
 6. **Substation to Rack: The Power Distribution Chain**
 
