@@ -171,9 +171,9 @@ RFS 仍然只交付 facility。接下来才是 rack 里的 IT deployment：GPU�
 
    PPA、interconnection agreement 和 site energization 经常被一句“已经拿到电”混在一起。它可能只是一份购电协议，也可能是拿到接入资格，直到电真正送到 site，前后可能差几年。把这些状态分开以后，Power 这层才刚刚打开：数据中心要用的电究竟从哪里来？
 
-3. 《发电侧：AI 数据中心的电从哪里来》
+3. 《{% post_link data-center-power-generation '10GW 发电为什么只对应 8 IT-GW？' %}》
 
-   1GW 是任何时刻都可能出现的 power demand，不是一年累计使用了多少电。现有 generation 还能承担多少 firm load，新建 gas、nuclear、renewable 和 storage 分别能交付什么，fuel supply、capacity factor、ramp 与备用怎样进入同一笔账，决定发电侧能否跟上 Data Center。附近即使有电厂，电又为什么送不过来？
+   PORTS-Pike 为 8 IT-GW 配套至少 10GW 新建发电，其中 9.2GW 来自天然气。IT capacity、facility demand、规划发电容量和 accredited capacity 不在同一个边界，燃料与备用又会继续改写这笔账。发电容量对上以后，电为什么仍然送不过来？
 
 4. 《输电网：1GW 为什么送不过来》
 

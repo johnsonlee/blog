@@ -172,9 +172,9 @@ OpenAI announces another 1 GW, 5 GW, or 8 GW. How far has that capacity actually
 
    A claim that a data center "has power" may mean a signed PPA, an interconnection agreement, or electricity physically reaching the site. Those states can be years apart. Once they are separated, the Power layer has only begun to open. Where does the data center's electricity actually come from?
 
-3. **Generation: Where Does AI Data Center Power Come From?**
+3. **{% post_link data-center-power-generation.en 'Why Does 10 GW of Generation Support Only 8 IT-GW?' %}**
 
-   One gigawatt is power demand that can appear at any moment, not annual energy consumption. How much firm load existing generation can serve, what new gas, nuclear, renewable, and storage projects actually deliver, and how fuel supply, capacity factor, ramp, and reserves fit together determine whether generation can keep pace with the Data Center. Even with a power plant nearby, why can the electricity still fail to arrive?
+   PORTS-Pike pairs 8 IT-GW with at least 10 GW of new generation, including 9.2 GW of natural gas. IT capacity, facility demand, planned generation, and accredited capacity sit at different boundaries, while fuel and reserves change the arithmetic again. Once the generation numbers reconcile, why can the electricity still fail to arrive?
 
 4. **Transmission: Why Can't the Grid Deliver 1 GW?**
 
