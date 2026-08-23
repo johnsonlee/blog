@@ -13,69 +13,67 @@ tags:
   - Software Engineering
 ---
 
-Over the past year, many company Agent projects started with the same shape: a planner, a tool-calling layer, a task queue, a retry mechanism, and a few prompts wired into a working directory, browser, enterprise systems, and approval flows. At the time, that looked advanced because everyone was assembling a usable loop from scratch.
+Put an Agent project's backlog from a year ago next to the Codex SDK today, and the comparison is awkward.
 
-By August 2026, the public products look more alike than different. OpenAI has exposed the Codex harness, SDK, and app-server. Anthropic has turned the Claude Code agent loop into the Agent SDK. GitHub and Cursor have connected background engineering Agents to branches, pull requests, artifacts, and review. The first teams that built Agents in-house have not disappeared, but their problem has changed: they no longer lack an Agent that can loop. They lack a work system worth looping through.
+Teams used to build their own planner, tool loop, task queue, retries, context summaries, sandbox, and approval flow. OpenAI now packages the Codex harness as an SDK and app-server. Anthropic has done the same with the Claude Code agent loop. An execution layer that once occupied a team is becoming a few lines of initialization code.
+
+Should the first wave of in-house Agent teams shut down?
 
 <!-- more -->
 
-## The Generic Loop Was the First Part to Commoditize
+## What Is Left to Build When the SDK Runs the Loop?
 
-Early in-house Agents got much of their value from the runtime. Models did not work continuously by themselves, so teams wrote loops. Tool calls were unstable, so they wrote schemas, retries, and recovery. Context overflowed, so they wrote summaries. Execution could cross boundaries, so they wrote sandboxes, approvals, and audit logs.
+The most direct Build / Buy answer appears to be: shut them down.
 
-Those things were worth building because they were hard to buy.
+Early in-house Agents got much of their value from the runtime. Models did not work continuously, so teams wrote loops. Unstable tool calls needed schemas, retries, and recovery. Context overflow required summaries. Execution could cross boundaries, so teams added sandboxes, approvals, and audit logs. That work made sense because companies could not buy it.
 
-That has changed. The [Codex SDK](https://learn.chatgpt.com/docs/codex-sdk) can start, continue, and resume Codex threads from application code. [Codex app-server](https://learn.chatgpt.com/docs/app-server) supports deeper product integrations with authentication, conversation history, approvals, and streamed agent events. In [Codex as a platform](https://developers.openai.com/blog/codex-as-a-platform), OpenAI describes the harness directly: conversation state, streaming execution, tools, sandboxing, approval policy, and carrying work across turns are now reusable parts of the Agent loop.
+Now they can. The [Codex SDK](https://learn.chatgpt.com/docs/codex-sdk) can start, continue, and resume Codex threads from application code. [Codex app-server](https://learn.chatgpt.com/docs/app-server) adds authentication, conversation history, approvals, and streamed agent events for deeper integrations. The conversation state, streaming execution, tools, sandboxing, approval policy, and work across turns described in [Codex as a platform](https://developers.openai.com/blog/codex-as-a-platform) look a lot like the runtime backlog of an early Agent team.
 
-Anthropic is moving in the same direction. The [Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/overview) exposes the Claude Code agent loop, context management, tools, hooks, subagents, MCP, permissions, and sessions as Python and TypeScript libraries. Its docs draw the boundary plainly: call the API directly and you implement the tool loop yourself; use the Agent SDK and the library runs the loop.
+Anthropic is packaging the same layer. The [Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/overview) exposes the Claude Code agent loop, context management, tools, hooks, subagents, MCP, permissions, and sessions as Python and TypeScript libraries. Call the model API directly and the developer implements the tool loop. Use the Agent SDK and the library runs it.
 
-This is where the boundary changed.
+If a team still spends most of its time designing planners, chaining tool calls, continuing sessions, or pausing and resuming approvals, it is duplicating platform work. Most companies should no longer build this layer from scratch unless the runtime itself is their product.
 
-In the past, building an Agent meant filling an infrastructure gap. Today, if a team still spends most of its energy on how to write the planner, chain tool calls, continue sessions, or pause and resume approvals, it should ask a colder question: **is this runtime product differentiation, or legacy burden?**
+At this point, the case against building in-house looks complete. But it cannot explain one observation: if a generic loop is becoming easy to obtain, why are the Agents from GitHub, Cursor, and Devin still different products?
 
-## The Survivors Move Into the Workflow
+## If They Can All Run, Why Do Their Results Differ?
 
-The public products make the pattern visible.
+[GitHub Copilot cloud agent](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent) lives inside a GitHub workflow. It receives work from an issue or PR comment, then uses a GitHub Actions environment to read the repository, create a plan, open a branch, run tests and linters, write commits, open a pull request, and hand control to review. The model's ability to call tools is only the beginning of that chain.
 
-The important part of [GitHub Copilot cloud agent](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent) is not that it can call a model. It lives inside GitHub: it reads repositories, creates plans, opens branches, runs tests and linters, writes commits, opens pull requests, and waits for review. Its execution environment is GitHub Actions. Its entry points are issues, PR comments, GitHub.com, VS Code, Slack, and automation.
+[Cursor Cloud Agents](https://cursor.com/docs/cloud-agent) run in isolated VMs and connect to team-configured MCP servers and hooks. They return pull requests, screenshots, videos, logs, and a remote desktop a person can take over. This covers more than keeping an Agent running. It defines how a person takes control, reviews the change, and inspects the evidence.
 
-[Cursor Cloud Agents](https://cursor.com/docs/cloud-agent) follow the same direction. They run in isolated VMs, work in parallel, use team-configured MCP servers, execute hooks, and return with pull requests, screenshots, videos, logs, and a remote desktop you can take over. The value is not that the loop exists. The value is whether the team can review what changed, how it was verified, and what artifacts came back.
+[Devin](https://devin.ai/) brings together multi-repo work, code migration, incident triage, Slack, Datadog, Linear, tribal knowledge, and automations. Cognition emphasizes that Devin works in a team's existing codebases and tools because companies are not buying an abstract loop. They are buying an executor that can enter an existing engineering process.
 
-[Devin](https://devin.ai/) is even more explicit: multi-repo work, code migration, incident triage, Slack, Datadog, Linear, tribal knowledge, and automations. Cognition says Devin works inside the codebases and tools teams already use. In practice, the pitch is not another generic chat window. It is an Agent embedded into enterprise engineering workflows.
+If the loop were the whole Agent product, these differences should not exist. The products use similar foundations, yet their value lands in different places: where tasks enter, what the Agent can see, which actions require approval, what artifact comes back, and who accepts the result.
 
-These products point in the same direction: **the Agent is moving out of the chat window and into the execution path of real workflows**.
+The original question now needs its first revision. SDKs are commoditizing how a model keeps running. Companies still have to decide what work it runs inside. The first problem belongs to the runtime. The second belongs to the workflow.
 
-That means in-house Agent teams now roughly fall into three groups.
+Where is the boundary between them? A replacement test is more useful than an architecture debate.
 
-The first group is still building generic runtime. They maintain planners, memory, tool registries, retries, sandboxes, permissions, and queues. This is useful in the short term, but increasingly exhausting over time because model vendors and developer-tool vendors are packaging these capabilities as SDKs, CLIs, cloud agents, and app-servers.
+## Remove the In-House Loop. What Survives?
 
-The second group has become workflow teams. They understand the state machine of a business object. They know which gates belong to a ticket, incident, shipment, contract, pull request, release, or invoice; which actions require approval; and which results must be written back to the system of record. These teams are becoming more important. A generic Agent does not know the true boundaries of an internal workflow.
+Replace the in-house coding loop with Codex SDK or Claude Agent SDK. If the task sits entirely inside a standard engineering workflow, try a hosted option such as GitHub Copilot cloud agent or Cursor Cloud Agents. Then inspect what remains.
 
-The third group is building ground truth and evals. They no longer debate which prompt sounds more elegant. They translate "done correctly" into fixtures, golden outputs, schemas, trace graders, privacy scanners, architecture tests, mutation tests, and cost budgets. This is the same line of thinking as {% post_link ground-truth-core-competency-of-ai-engineering.en 'Ground Truth: The Most Underrated Competitive Edge in the AI Era' %}: the more work Agents can do, the more they need external standards that make them accountable.
+If the project collapses to a few prompts, tool wrappers, and session records, it was filling a runtime gap. Once platforms fill that gap, the project's value shrinks. Further investment means asking an internal team to chase generic capabilities that vendors update every month.
 
-Seen through that lens, the conclusion is neither that those early teams died nor that they all won. **Teams that depend on a self-built loop are being squeezed. Teams that own workflow, context, and ground truth are becoming core platforms.**
+If the system still has a business state machine, permission boundaries, MCP tools, approval policies, eval datasets, golden outputs, artifact schemas, trace graders, cost routers, and contracts for writing back to systems of record, the answer changes. Those assets survive the loop. Every model and runtime still needs them.
 
-## Codex SDK Changes the Build / Buy Boundary
+This test also explains where the first Agent teams went. Teams maintaining generic planners, memory, retries, sandboxes, and queues are being squeezed. Teams that own the state machine for a ticket, incident, contract, release, or invoice are becoming workflow teams. Teams that encode "done correctly" as datasets, schemas, graders, and tests are building ground truth.
 
-The naive conclusion after seeing the Codex SDK is simple: if platforms already provide the execution layer, companies no longer need in-house Agent teams.
+The question has narrowed again: if an SDK does not replace every in-house asset, **which assets must the company own?**
 
-That conclusion is half right.
+## The Build Boundary Is Not the Code Boundary
 
-Teams should stop rebuilding generic coding Agent runtime. Starting tasks, maintaining threads, reading and writing files, running commands, calling tools, handling approvals, resuming across turns, and streaming progress are no longer worth building from scratch unless they are the product itself. Otherwise the team ends up in an awkward race: spend six months catching up to infrastructure someone else opened last month, only to watch the next layer become an SDK too.
+OpenAI assigns the application responsibility for the interface, context and tools, and operational boundaries. Codex can run the harness loop, but it does not know how a company defines "this order can be refunded," "the incident is resolved," or "this pull request can merge." Those judgments do not arrive with the SDK.
 
-But this does not mean companies no longer need to build Agent systems. Codex handles the execution loop. It does not define the business boundary.
+Consider a `refund_order` tool. To the runtime, it is a tool call. To the business system, it includes operator permissions, refund limits, order state, risk rules, audit records, and compensation after failure. A company can let an SDK make the call. It cannot let the SDK guess those semantics. The company must define its tool and data access layer.
 
-OpenAI draws the boundary clearly in its platform article: the application still owns the interface, context and tools, and operational boundaries. In other words, Codex can provide the harness loop, while the product must provide business context, tools, permissions, approvals, and the place where results land.
+Tools alone are insufficient. The Agent must know whether the current state is draft or approved, investigation or execution, recommendation or action. Many apparent reasoning failures come from a system that never supplied workflow state. The state machine determines when the Agent continues, pauses, rolls back, or hands work to a person. It can only come from the actual business process.
 
-This matches the argument in {% post_link what-engineers-are-still-for.en 'What Are Engineers Still For?' %}. An Agent can execute without sleeping, but a goal does not become a gate by itself. "Trusted" in a business system, "maintainable" in engineering, and "no leakage" in security all have to be compressed into standards a machine can execute.
+Even with the correct state, the team must answer whether the result is correct. Without evals, improvement is a feeling. Without traces, failure is a chat transcript. Without artifact contracts, nobody can reproduce an Agent's claim that it verified the work. [OpenAI's agent eval docs](https://developers.openai.com/api/docs/guides/agent-evals) connect traces, graders, datasets, and eval runs to turn workflow behavior into comparable evidence. This follows the argument in {% post_link ground-truth-core-competency-of-ai-engineering.en 'Ground Truth: The Most Underrated Competitive Edge in the AI Era' %}: the more an Agent can execute, the more clearly a team must define the standard it answers to.
 
-The question has to move up one layer.
+The last layer is the product surface. Asking a user to start from a blank chat box and letting them click "investigate this alert" on an incident page are not two skins over the same interaction. The incident page can give the Agent the business object, current state, logs, permissions, and allowed next actions together. It can also return the result to the place where the decision is made.
 
-It is: **which layer of the Agent are you building?**
-
-## The Layers You Cannot Outsource
-
-An Agent system can be split into five layers.
+Only now does the Agent system divide naturally into five layers.
 
 | Layer | Should you build it? | Why |
 | --- | --- | --- |
@@ -85,42 +83,20 @@ An Agent system can be split into five layers.
 | Ground truth / eval | You must own it | Correctness comes from real samples, historical incidents, schemas, and business constraints |
 | Product surface | Depends on whether it is core | If the Agent is part of the product experience, interface, approvals, and artifacts must fit the workflow |
 
-The first layer is commoditizing. The other four are where Harness Engineering lives.
+The code in the first layer does not need to belong to the company. The judgment in the other four does. This is the boundary of Harness Engineering. It asks who defines the work object, action space, state transitions, acceptance evidence, and human takeover points, rather than who wrote the loop.
 
-The tool layer looks like API plumbing, but it is really compressed business semantics. A `refund_order` tool is not just an HTTP call. It implies who can issue a refund, the amount limit, order state, risk rules, audit records, and compensation paths. Expose tools too coarsely and the Agent cannot make fine judgments. Expose them too granularly and the Agent thrashes through the action space.
+That distinction also changes the meaning of "building in-house." Owning a capability does not require implementing every line of code. Adopting an SDK does not outsource responsibility for the system. Build / Buy should follow ownership of judgment, not repository boundaries.
 
-Workflow state tells the Agent when to continue, pause, roll back, or hand the task to a person. Many in-house Agents fail not because the model cannot reason, but because the system never tells the Agent which state it is in. It treats draft as approved, investigation as execution, and recommendation as action. That is not a prompt problem. It is a missing state machine.
+This matches the argument in {% post_link what-engineers-are-still-for.en 'What Are Engineers Still For?' %}. An Agent can keep executing, but a goal does not become a gate by itself. "Trusted" in a business system, "maintainable" in engineering, and "no leakage" in security must become standards that an engineering system can execute and verify.
 
-Ground truth determines whether the team can iterate. Without evals, improvement is just a feeling. Without traces, failure is just a chat transcript. Without artifact contracts, the Agent can claim it verified the work and nobody can reproduce that claim. [OpenAI's agent eval docs](https://developers.openai.com/api/docs/guides/agent-evals) point toward traces, graders, datasets, and eval runs for a reason. The goal is not to write a report saying the Agent did well. The goal is to turn workflow behavior into comparable evidence.
+## Do Agents Still Need to Be Built In-House?
 
-The product surface defines the relationship between the human and the Agent. Asking the user to start from a blank chat box is very different from letting the user click "investigate this alert" on an incident page. In the first case, the person has to assemble the task. In the second, the product hands the Agent the object, state, logs, permissions, and possible next actions together.
+We can now return to the backlog from the opening.
 
-**Agent differentiation is moving from the loop itself into the business reality around the loop.**
+If the project is still centered on a planner, tool loop, memory layer, approval flow, and sandbox, most teams should migrate to an SDK. Continuing to build a generic runtime will increasingly resemble rewriting the Kubernetes scheduler to prove that the team understands cloud native infrastructure.
 
-## A Simple Test
+If the workflow, tools, permissions, ground truth, evals, and artifact contracts survive a runtime replacement, the system still deserves investment. A more mature design should make the underlying Agent replaceable on purpose. It may use Codex today and Claude or an internal model tomorrow without rewriting business state or acceptance criteria.
 
-There is a simple way to judge whether an in-house Agent project should continue: delete your self-built coding loop and replace the lower layer with Codex SDK or Claude Agent SDK. If the work is only an engineering task, hand it to hosted coding agents such as GitHub Copilot cloud agent or Cursor Cloud Agents. How much value is left?
+The answer is still yes, but "in-house" no longer means what it meant in the opening. The opening asks: now that platforms have Agents, should a company still build one? After the replacement test, the question becomes: **which judgments would cost the company its ability to define how work gets done if they were handed to a platform?**
 
-If deleting the loop leaves only a few prompts, some tool wrappers, and session records, the system probably has no moat. It was temporary scaffolding from the period before vendors packaged the runtime.
-
-If deleting the loop leaves a business state machine, permission boundaries, MCP tools, approval policies, eval datasets, golden outputs, artifact schemas, trace graders, cost routers, and contracts for writing back into systems of record, then it is worth continuing. Those pieces are needed no matter which underlying Agent runs the work.
-
-Even better, a good in-house system should make the underlying Agent replaceable. Today it may be Codex. Tomorrow it may be Claude. Later it may be an internal model or a vertical Agent. As long as the workflow, tools, ground truth, and artifact contracts hold, switching the lower-level loop should feel like replacing an execution engine, not rebuilding the whole system.
-
-Many teams misread control here. They think building an Agent means owning more. Once the runtime is welded directly to the business system, the system can become more dependent, not less. Control comes from knowing which layer must be owned and which layer should remain replaceable.
-
-## The Endpoint of Building Agents Is Not an Agent
-
-Seen as an engineering decision, the arrival of Codex SDK does not erase in-house Agent work. It changes what should be built.
-
-The answer is yes, but the target has changed.
-
-If building in-house means writing another generic planner, tool loop, memory layer, approval flow, and sandbox, most teams should stop. That path is being eaten by platforms. Over time it will feel like building your own Kubernetes scheduler to prove you understand cloud native infrastructure.
-
-If building in-house means turning a company's workflow, context, tools, permissions, ground truth, evals, and artifact contracts into a system where any strong Agent can work safely, then it is not only necessary. It will become more important.
-
-The old question for Agent teams was how to make the model do work by itself. Platforms are starting to answer that. The next question is harder: **how do you make an increasingly capable system do the right thing inside the right boundaries?**
-
-That is where Harness Engineering belongs.
-
-Codex SDK gives you the execution layer, not the judgment layer. The part worth building is the system that defines direction, boundaries, accountability, and where the evidence belongs.
+The first question compares lines of code. The second assigns system responsibility. Codex SDK provides the execution layer. The part a company should own is the harness that constrains any execution layer with the correct state, permissions, and verifiable standards.

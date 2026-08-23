@@ -12,69 +12,67 @@ tags:
 i18n_key: agent-loop-is-not-the-moat
 ---
 
-过去一年，很多公司的 Agent 项目第一版长得都差不多：一个 planner，一个工具调用层，一个任务队列，一个 retry 机制，再配几段 prompt，把工作目录、浏览器、企业系统和审批流接起来。那时看起来很先进，因为大家都在从零拼一套能跑起来的 loop。
+把一年前的 Agent 项目 backlog 和今天的 Codex SDK 放在一起看，会有点尴尬。
 
-到 2026 年 8 月再看，公开产品反而越来越像。OpenAI 把 Codex harness、SDK 和 app-server 摆出来，Anthropic 把 Claude Code 的 agent loop 做成 Agent SDK，GitHub 和 Cursor 把后台工程 Agent 接进 branch、PR、artifact 和 review。最早那批自研 Agent 团队没有集体消失，但很多人的问题变了：他们不再缺一个会循环的 Agent，缺的是一个值得循环的工作系统。
+当时团队要自己写 planner、tool loop、任务队列、retry、context summary、sandbox 和 approval。现在 OpenAI 把 Codex 的 harness 做成了 SDK 和 app-server，Anthropic 也把 Claude Code 的 agent loop 做成 Agent SDK。原来要养一支团队才能拼起来的执行层，正在变成几行初始化代码。
+
+那最早那批自研 Agent 的团队，是不是该停了？
 
 <!-- more -->
 
-## 先商品化的是通用 Loop
+## SDK 都能跑 Loop 了，还自研什么？
 
-早期自研 Agent 的价值很大一部分来自 runtime。模型不会自己连续工作，你得写循环；工具调用不稳定，你得写 schema、重试和错误恢复；上下文会爆，你得写 summary；执行会越界，你得写 sandbox、approval 和 audit log。
+按最直观的 Build / Buy 逻辑，答案似乎很简单：停掉。
 
-这些东西当时值得做，因为买不到。
+早期自研 Agent 的价值很大一部分来自 runtime。模型不会自己连续工作，团队就写循环；工具调用不稳定，就补 schema、重试和错误恢复；上下文会爆，就做 summary；执行可能越界，再加 sandbox、approval 和 audit log。这些东西当时值得做，因为买不到。
 
-现在情况变了。[Codex SDK](https://learn.chatgpt.com/docs/codex-sdk) 已经能从应用代码里启动、继续和恢复 Codex thread；[Codex app-server](https://learn.chatgpt.com/docs/app-server) 面向更深的产品集成，处理 authentication、conversation history、approvals 和 streamed agent events；OpenAI 在 [Codex as a platform](https://developers.openai.com/blog/codex-as-a-platform) 里直接把 harness 说清楚：conversation state、streaming execution、tools、sandbox、approval policy、跨 turn 工作，这些都属于可复用的 Agent loop。
+现在可以买到了。[Codex SDK](https://learn.chatgpt.com/docs/codex-sdk) 能从应用代码里启动、继续和恢复 Codex thread；[Codex app-server](https://learn.chatgpt.com/docs/app-server) 进一步处理 authentication、conversation history、approvals 和 streamed agent events。OpenAI 在 [Codex as a platform](https://developers.openai.com/blog/codex-as-a-platform) 里列出的 conversation state、streaming execution、tools、sandbox、approval policy 和跨 turn 工作，几乎就是早期 Agent 团队的 runtime backlog。
 
-Anthropic 也在同一方向走。[Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/overview) 把 Claude Code 里的 agent loop、context management、tools、hooks、subagents、MCP、permissions 和 session 暴露成 Python / TypeScript 库。它甚至明确区分了两件事：直接调 API，是你自己实现 tool loop；用 Agent SDK，是库替你跑 loop。
+Anthropic 也在做同一件事。[Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/overview) 把 Claude Code 里的 agent loop、context management、tools、hooks、subagents、MCP、permissions 和 session 暴露成 Python / TypeScript 库。直接调模型 API，开发者自己实现 tool loop；使用 Agent SDK，库替开发者运行 loop。
 
-这就是分界线变化的地方。
+如果团队仍把主要精力花在 planner 怎么写、tool call 怎么串、session 怎么续、approval 怎么暂停恢复，它确实在和平台重复建设。除非 runtime 本身就是产品，大多数公司都不该继续从零造这一层。
 
-过去自研 Agent 是在补基础设施空白。现在如果一个团队还把主要精力花在 planner 怎么写、tool call 怎么串、session 怎么续、approval 怎么暂停恢复，就要先问一个残酷的问题：**这套 runtime 是产品差异，还是历史包袱？**
+到这里，“不用自研”看起来已经成立了。可它解释不了一个现象：既然通用 loop 越来越容易获得，为什么 GitHub、Cursor 和 Devin 做出来的 Agent 仍然不是同一个东西？
 
-## 活下来的团队都在往 Workflow 里钻
+## 同样会跑，为什么做不出同样的结果？
 
-看几个公开形态就很明显。
+[GitHub Copilot cloud agent](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent) 生活在 GitHub 的工作流里。它从 issue 或 PR comment 接到任务，在 GitHub Actions 环境里读 repo、建 plan、开 branch、跑 test 和 linter、写 commit、开 PR，再把控制权交给 review。模型会不会调用工具，只是这条链的起点。
 
-[GitHub Copilot cloud agent](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent) 的关键不是它能调用模型，而是它直接生活在 GitHub 里：读 repo、建 plan、开 branch、跑 test 和 linter、写 commit、开 PR、等 review。它的执行环境是 GitHub Actions，入口是 issue、PR comment、GitHub.com、VS Code、Slack 或 automation。
+[Cursor Cloud Agents](https://cursor.com/docs/cloud-agent) 跑在隔离 VM 里，接入团队配置的 MCP server 和 hooks，最后交回 PR、screenshot、video、log，以及可远程接管的桌面。它解决的不只是“让 Agent 多跑几步”，还包括人怎样接手、怎样复核改动、怎样看到验证证据。
 
-[Cursor Cloud Agents](https://cursor.com/docs/cloud-agent) 也是同一个方向。它们跑在隔离 VM 里，能并行工作，能用 team 配置的 MCP server，能执行 hooks，最后产出 PR、screenshot、video、log 和可远程接管的桌面。这里真正值钱的不是循环，而是 Agent 跑完以后，团队能不能复核它到底改了什么、怎么验证的、有没有带着 artifacts 回来。
+[Devin](https://devin.ai/) 则把 multi-repo、code migration、incident triage、Slack、Datadog、Linear、tribal knowledge 和 automations 放在一起。Cognition 强调 Devin 工作在团队已有的 codebase 和工具里，因为企业买的不是一段抽象的循环，而是一个能进入现有工程流程的执行者。
 
-[Devin](https://devin.ai/) 的包装更直白：multi-repo、code migration、incident triage、Slack、Datadog、Linear、tribal knowledge、automations。Cognition 自己的网站说 Devin 工作在团队已有的 codebase 和工具里。换句话说，它卖的不是另一个通用聊天框，而是把 Agent 塞进企业工程流程。
+如果 loop 就是 Agent 产品的全部，这些差异都不该存在。它们已经使用相似的基础能力，价值却落在不同位置：任务从哪里进入，执行时能看见什么，哪些动作需要批准，结果以什么 artifact 返回，又由谁验收。
 
-这些产品都指向同一件事：**Agent 正在从聊天窗口，搬进真实 workflow 的执行路径里。**
+这时原来的问题第一次需要改写。SDK 商品化的只是“怎么让模型继续跑”，企业面对的是“它在什么工作里跑”。前一个问题属于 runtime，后一个问题属于 workflow。
 
-所以那些自研团队现在大概分成三类。
+两者的边界在哪里？最直接的办法不是争论架构，而是做一次替换。
 
-第一类还停在通用 runtime。他们维护 planner、memory、tool registry、retry、sandbox、权限和队列。短期看有用，长期会越来越累，因为模型厂商和开发工具厂商正在把这些能力直接打包成 SDK、CLI、cloud agent 和 app-server。
+## 把自研 Loop 拔掉，项目还剩什么？
 
-第二类已经变成 workflow team。他们关心某个业务对象的状态机，知道 ticket、incident、shipment、contract、PR、release、invoice 分别有哪些 gate，哪些 action 需要审批，哪些结果必须回写系统 of record。这类团队反而变重要了。通用 Agent 不知道公司内部 workflow 的真实边界。
+把自研 coding loop 换成 Codex SDK 或 Claude Agent SDK。如果任务只发生在标准工程流程里，甚至可以换成 GitHub Copilot cloud agent 或 Cursor Cloud Agents。然后看系统还剩什么。
 
-第三类在做 ground truth 和 eval。他们不再争论 prompt 哪个更优雅，而是把“做对”翻译成 fixture、golden output、schema、trace grader、privacy scanner、architecture test、mutation test 和 cost budget。这个方向和我之前写的 {% post_link ground-truth-core-competency-of-ai-engineering 'Ground Truth：AI 时代最被低估的竞争力' %} 是同一条线：Agent 越会干活，越需要外部标准让它认账。
+如果只剩几段 prompt、几个 tool wrapper 和一堆 session 记录，这个项目过去填补的是 runtime 空白。平台把空白补上以后，它的价值自然会缩水。继续投入，相当于用内部团队追赶供应商每个月都在更新的通用能力。
 
-把视角拉回那批自建项目，结论不是死了，也不是都赢了。**靠自研 loop 吃饭的团队在被挤压，靠 workflow、context 和 ground truth 吃饭的团队在变成核心平台。**
+如果拔掉 loop，系统仍然保留业务对象的状态机、权限边界、MCP tool、approval policy、eval dataset、golden output、artifact schema、trace grader、cost router，以及回写系统 of record 的契约，情况就不同了。这些资产不随底层 Agent 消失，换任何模型和 runtime 都还需要。
 
-## Codex SDK 改的是 Build / Buy 边界
+这个测试也解释了最早那批团队现在的去向。维护通用 planner、memory、retry、sandbox 和 queue 的团队正在被挤压；掌握 ticket、incident、contract、release 或 invoice 状态机的团队，逐渐变成 workflow team；把“做对”写成 dataset、schema、grader 和 test 的团队，则在建设 ground truth。
 
-Codex SDK 出来以后，最容易得出的朴素结论是：平台都把执行层做出来了，企业没必要再养 Agent 团队。
+于是问题又收窄了一层：既然不是所有自研资产都会被 SDK 替代，**哪些东西必须由公司自己拥有？**
 
-这个结论对一半。
+## 自研的边界，不等于代码的边界
 
-不该再自研的，是通用 coding Agent runtime。启动任务、维持 thread、读写文件、跑命令、调用工具、处理审批、跨 turn 恢复、流式回传进度，这些能力如果不是你的产品本体，就不应该继续从零造。否则团队会陷入一种很尴尬的状态：你花半年追上别人上个月已经开放的基础设施，追上时对方又把下一层也 SDK 化了。
+OpenAI 在平台文章里把 application 的责任写成 interface、context and tools、operational boundaries。Codex 可以运行 harness loop，却不知道一家公司如何定义“可以退款”“事故已经解除”或“这个 PR 能够合并”。这些判断不会随着 SDK 一起交付。
 
-但这不等于公司不需要自研 Agent 系统。Codex 解决的是执行循环，不替你定义业务边界。
+先看一个 `refund_order` 工具。对 runtime 来说，它只是一次 tool call；对业务系统来说，它同时包含操作者权限、退款上限、订单状态、风控规则、审计记录和失败后的补偿。公司可以让 SDK 负责调用，却不能把这些语义交给 SDK 猜。Tool 和 data access 因此必须由公司定义。
 
-OpenAI 自己在平台文章里也把边界画得很清楚：application 仍然拥有 interface、context and tools、operational boundaries。也就是说，Codex 可以提供 harness loop，产品必须提供业务上下文、工具、权限、审批和结果落点。
+只有工具还不够。Agent 还要知道当前是 draft 还是 approved，是 investigation 还是 execution，是 recommendation 还是 action。很多看起来像推理错误的问题，其实是系统没有提供 workflow state。状态机决定它什么时候继续、暂停、回滚或交给人，也只能从真实业务里长出来。
 
-这和 {% post_link what-engineers-are-still-for '还要工程师干什么？' %} 里的判断一致。Agent 可以不眠不休地执行，但 goal 不会自己变成 gate。业务里的“可信”、工程里的“可维护”、安全里的“不泄露”，都要有人压缩成机器能执行的标准。
+即使状态正确，团队还需要回答“这次到底做对没有”。没有 eval，效果提升只剩体感；没有 trace，失败只剩聊天记录；没有 artifact contract，Agent 声称验证过也无法复核。[OpenAI 的 agent eval 文档](https://developers.openai.com/api/docs/guides/agent-evals) 把 trace、grader、dataset 和 eval run 连在一起，就是要把一次 workflow 的行为变成可比较的证据。这个方向和 {% post_link ground-truth-core-competency-of-ai-engineering 'Ground Truth：AI 时代最被低估的竞争力' %} 是同一条线：Agent 越会执行，团队越要明确它向什么标准负责。
 
-所以问题要换一层：
+最后是 product surface。让用户面对空白聊天框写 prompt，和让用户在 incident 页面点击“调查这个告警”，不是两种皮肤。后者能把业务对象、当前状态、日志、权限和允许的下一步一起交给 Agent，也能把结果放回原来的决策现场。
 
-**你到底在自研 Agent 的哪一层？**
-
-## 不能外包的几层
-
-可以把 Agent 系统拆成五层来看。
+走到这里，Agent 系统才自然拆成五层：
 
 | 层级 | 现在该不该自研 | 原因 |
 | --- | --- | --- |
@@ -84,42 +82,20 @@ OpenAI 自己在平台文章里也把边界画得很清楚：application 仍然�
 | Ground truth / eval | 必须自己拥有 | “做对”的答案来自真实样本、历史事故、schema 和业务约束 |
 | Product surface | 取决于是否核心 | 如果 Agent 是产品体验的一部分，界面、审批和 artifact 必须贴合工作流 |
 
-第一层正在商品化，后四层才是 Harness Engineering 的主战场。
+第一层的代码可以不属于公司，后四层的判断必须属于公司。这就是 Harness Engineering 的边界。它关心的不是 loop 由谁写，而是谁定义工作对象、动作空间、状态转换、验收证据和人的接管点。
 
-Tool 层看起来只是接 API，其实是业务语义的压缩。一个 `refund_order` 工具不只是 HTTP call，它隐含了谁能退款、金额上限、订单状态、风控规则、审计记录和异常补偿。工具暴露得太粗，Agent 没法做细判断；暴露得太散，Agent 会在动作空间里乱撞。
+这也修正了对“自研”的理解。拥有一层能力，不等于每行代码都要自己实现；采用 SDK，也不等于把系统责任外包。Build / Buy 决策应该跟着判断权走，而不是跟着代码仓库走。
 
-Workflow state 决定 Agent 在什么时候该继续、暂停、回滚或交给人。很多自研 Agent 翻车，不是模型不会推理，而是系统没有明确告诉它“现在处于哪一个状态”。它把 draft 当成 approved，把 investigation 当成 execution，把 recommendation 当成 action。这不是 prompt 问题，是状态机缺失。
+这和 {% post_link what-engineers-are-still-for '还要工程师干什么？' %} 里的判断一致。Agent 可以持续执行，但 goal 不会自己变成 gate。业务里的“可信”、工程里的“可维护”、安全里的“不泄露”，都要由工程系统压缩成机器可以执行和验证的标准。
 
-Ground truth 决定团队能不能迭代。没有 eval，所谓效果提升就是体感；没有 trace，失败就只剩一段聊天记录；没有 artifact contract，Agent 说自己验证过也没法复核。[OpenAI 的 agent eval 文档](https://developers.openai.com/api/docs/guides/agent-evals) 也把路径放在 trace、grader、dataset 和 eval run 上。它不是写一份“Agent 表现不错”的报告，而是把一次 workflow 的行为变成可比较的证据。
+## Agent 真的还需要自研吗？
 
-Product surface 则决定人和 Agent 的关系。让用户从空白聊天框开始写 prompt，和让用户在 incident 页面点“调查这个告警”，给 Agent 的上下文完全不同。前者让人负责拼装任务，后者由产品把对象、状态、日志、权限和下一步动作一起递过去。
+现在可以回到开头那份 backlog 了。
 
-**Agent 的差异开始从 loop 本身，转移到 loop 外面的业务现实。**
+如果项目的核心仍是 planner、tool loop、memory、approval 和 sandbox，大多数团队应该迁移到 SDK。继续自研通用 runtime，越来越像为了证明自己懂云原生而重写 Kubernetes scheduler。
 
-## 一个判断测试
+如果替换 runtime 以后，workflow、tools、permission、ground truth、eval 和 artifact contract 仍然成立，这套系统就值得继续投入。更成熟的设计还应该主动让底层 Agent 可替换：今天用 Codex，明天换 Claude 或内部模型，业务状态和验收标准都不必跟着重写。
 
-判断一个自研 Agent 项目该不该继续，有个简单测试：把你们自研的 coding loop 删掉，底层换成 Codex SDK 或 Claude Agent SDK；如果只是工程任务，也可以直接交给 GitHub Copilot cloud agent 或 Cursor Cloud Agents 这类 hosted coding agent。系统还剩多少价值？
+所以答案仍然是“需要”，但这已经不是开头那个问题里的“自研”。开头的问题是：平台有 Agent 了，公司还要不要自己做一个？做完替换测试以后，问题会变成：**哪些判断一旦交给平台，公司就失去了定义自己工作方式的能力？**
 
-如果删掉 loop 以后，剩下的只有几段 prompt、几个工具 wrapper 和一堆 session 记录，那这套系统大概率没有护城河。它只是在模型厂商还没把 runtime 包好之前，临时补了一段脚手架。
-
-如果删掉 loop 以后，剩下的是一整套业务状态机、权限边界、MCP tool、approval policy、eval dataset、golden output、artifact schema、trace grader、cost router 和回写系统 of record 的契约，那它就值得继续做。因为这些东西换任何底层 Agent 都需要。
-
-更进一步，好的自研系统应该主动让底层 Agent 可替换。今天是 Codex，明天可能是 Claude，后天可能是内部模型或某个垂直 Agent。只要 workflow、tools、ground truth 和 artifact contract 稳住，底层 loop 的替换应该像换执行引擎，而不是重写整套系统。
-
-很多团队会在这里误判。他们以为自研 Agent 是为了掌控更多，可一旦把 runtime 和业务系统焊死，系统反而更被动。掌控感不来自全部自己造，而来自知道哪一层必须拥有，哪一层应该随时替换。
-
-## 自研 Agent 的终点不是 Agent
-
-把这条线拉回企业技术决策，Codex SDK 的出现并没有把自研 Agent 这件事清零，它只是改变了自研的对象。
-
-答案是：需要，但目标变了。
-
-如果自研的意思是再写一套通用 planner、tool loop、memory、approval 和 sandbox，那大多数团队都不该继续。那是一条正在被平台吃掉的路，越往后越像自研 Kubernetes scheduler 来证明自己懂云原生。
-
-如果自研的意思是把公司的 workflow、context、tools、permission、ground truth、eval 和 artifact contract 做成一个能让任何强 Agent 安全工作的系统，那不仅需要，而且会越来越重要。
-
-过去 Agent 团队的核心问题是“怎么让模型自己干活”。现在这个问题正在被平台回答。下一层问题更难：**怎么让一个越来越能干的系统，只在正确的边界里干正确的事。**
-
-这才是 Harness Engineering 的位置。
-
-Codex SDK 给的是执行层，不是判断层。真正值得自研的，是那套能定义方向、边界、责任和证据归档的系统。
+前一个问题在比较代码量，后一个问题在划分系统责任。Codex SDK 给出执行层；值得公司掌握的，是让任何执行层都只能在正确状态、正确权限和可验证标准下工作的 harness。
