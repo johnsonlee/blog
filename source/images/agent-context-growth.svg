@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Agent context growth across turns</title><desc id="desc">Static prefix、user goal、tool observation 和 intermediate state 随 Agent turn 增长；prompt cache 只复用稳定且完全一致的 prefix，compaction 缩短 context 但可能重置复用边界。</desc>
+  <style>text{font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;letter-spacing:0;fill:#172033}.title{font-size:31px;font-weight:760;text-anchor:middle}.head{font-size:18px;font-weight:750}.body{font-size:15px;fill:#52647a}.small{font-size:14px;fill:#607089}.inv{fill:#fff}</style>
+  <rect width="1600" height="900" fill="#f7f9fc"/><text x="800" y="58" class="title">每一轮都要重新携带足够的 State，才能继续行动</text>
+  <text x="190" y="130" class="head" text-anchor="middle">第 1 轮</text><text x="550" y="130" class="head" text-anchor="middle">第 2 轮</text><text x="910" y="130" class="head" text-anchor="middle">第 3 轮</text><text x="1270" y="130" class="head" text-anchor="middle">压缩后</text>
+  <rect x="70" y="170" width="240" height="100" fill="#64748b"/><text x="190" y="214" class="head inv" text-anchor="middle">静态前缀</text><text x="190" y="244" class="small inv" text-anchor="middle">指令 · Tool</text>
+  <rect x="70" y="270" width="240" height="70" fill="#2f6fab"/><text x="190" y="313" class="body inv" text-anchor="middle">用户目标</text>
+  <rect x="430" y="170" width="240" height="100" fill="#64748b"/><text x="550" y="214" class="head inv" text-anchor="middle">缓存前缀</text><text x="550" y="244" class="small inv" text-anchor="middle">精确匹配</text>
+  <rect x="430" y="270" width="240" height="70" fill="#2f6fab"/><text x="550" y="313" class="body inv" text-anchor="middle">用户目标</text>
+  <rect x="430" y="340" width="240" height="115" fill="#167d73"/><text x="550" y="390" class="head inv" text-anchor="middle">观测 1</text><text x="550" y="422" class="small inv" text-anchor="middle">日志 · 代码 · 结果</text>
+  <rect x="790" y="170" width="240" height="100" fill="#64748b"/><text x="910" y="214" class="head inv" text-anchor="middle">缓存前缀</text><text x="910" y="244" class="small inv" text-anchor="middle">精确匹配</text>
+  <rect x="790" y="270" width="240" height="70" fill="#2f6fab"/><text x="910" y="313" class="body inv" text-anchor="middle">用户目标</text>
+  <rect x="790" y="340" width="240" height="115" fill="#167d73"/><text x="910" y="390" class="head inv" text-anchor="middle">观测 1</text><text x="910" y="422" class="small inv" text-anchor="middle">上轮 Tool 结果</text>
+  <rect x="790" y="455" width="240" height="140" fill="#7653a6"/><text x="910" y="515" class="head inv" text-anchor="middle">观测 2</text><text x="910" y="547" class="small inv" text-anchor="middle">测试 · 产物 · 状态</text>
+  <rect x="1150" y="170" width="240" height="100" fill="#64748b"/><text x="1270" y="214" class="head inv" text-anchor="middle">新前缀</text><text x="1270" y="244" class="small inv" text-anchor="middle">缓存可能重置</text>
+  <rect x="1150" y="270" width="240" height="70" fill="#2f6fab"/><text x="1270" y="313" class="body inv" text-anchor="middle">用户目标</text>
+  <rect x="1150" y="340" width="240" height="150" fill="#c85a16"/><text x="1270" y="402" class="head inv" text-anchor="middle">压缩状态</text><text x="1270" y="434" class="small inv" text-anchor="middle">摘要 · 保留证据</text>
+  <path d="M310 255H408" stroke="#52647a" stroke-width="4"/><polygon points="408,243 408,267 430,255" fill="#52647a"/><path d="M670 330H768" stroke="#52647a" stroke-width="4"/><polygon points="768,318 768,342 790,330" fill="#52647a"/><path d="M1030 382H1128" stroke="#52647a" stroke-width="4"/><polygon points="1128,370 1128,394 1150,382" fill="#52647a"/>
+  <rect x="175" y="680" width="1250" height="70" rx="6" fill="#172033"/><text x="800" y="709" class="head inv" text-anchor="middle">每轮 Input 成本 = 缓存前缀 + 新 Context + 当前观测</text><text x="800" y="737" class="small inv" text-anchor="middle">压缩减少 Token，也可能丢失细节或改变可复用前缀</text>
+  <rect x="300" y="790" width="1000" height="55" rx="6" fill="#fff" stroke="#d5dde7" stroke-width="2"/><text x="800" y="825" class="body" text-anchor="middle">同时记录缓存命中、Context 长度、压缩事件与 Task 成功率</text>
+</svg>

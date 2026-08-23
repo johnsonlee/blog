@@ -51,7 +51,7 @@
   <line class="grid" x1="86" y1="920" x2="1536" y2="920"/>
   <text class="group" x="106" y="960">Workload and delivery</text>
   <text class="row" x="106" y="1004">10 Training vs. Inference</text><rect class="service" x="1040" y="986" width="440" height="28" rx="5"/><text class="bartext" x="1260" y="1005">Two Ledgers for the Same MW</text>
-  <text class="row" x="106" y="1060">11 Agent Compute Bill</text><rect class="service" x="1120" y="1042" width="360" height="28" rx="5"/><text class="bartext" x="1300" y="1061">Token → Task</text>
+  <text class="row" x="106" y="1060">11 Agent Task</text><rect class="service" x="1120" y="1042" width="360" height="28" rx="5"/><text class="bartext" x="1300" y="1061">Task → Invocation → Acceptance</text>
   <text class="row" x="106" y="1116">12 Inference Delivery Network</text><rect class="service" x="1120" y="1098" width="360" height="28" rx="5"/><text class="bartext" x="1300" y="1117">Cluster → User</text>
 
   <line class="grid" x1="86" y1="1152" x2="1536" y2="1152"/>

@@ -224,9 +224,9 @@ Production Handoff delivers physical capacity. How much billable workload it bec
 
     Training pursues large-scale synchronous computation. Inference trades off latency, batching, utilization, and geography. The throughput and economics of the same megawatt therefore diverge. When Inference carries Agent workloads, how much computation can one user request unfold into?
 
-14. **The Agent Compute Bill: Token to Task**
+14. **{% post_link agent-task-compute.en 'How Much Compute Does One Agent Task Consume?' %}**
 
-    One user request expands into multiple model invocations plus routing, prefill, decode, retrieval, tool calls, retries, cache behavior, and scheduling. Tokens, requests, tasks, and tasks per megawatt answer different questions. Once the task finishes inside the cluster, how does the result reach the user within its latency SLO?
+    One Agent Task expands into model, tool, wait, retry, and verification spans. Wall-clock time, tokens, and GPU time therefore belong to different ledgers. Only active model invocations reconciled to successful tasks reveal real capacity demand. Once the task passes acceptance, how does its result reach the user within the latency SLO?
 
 15. **Inference Delivery Network: Cluster to User**
 

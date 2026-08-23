@@ -223,9 +223,9 @@ Production Handoff 只交付 physical capacity。它能变成多少 billable wor
 
     Training 追求大规模同步计算，Inference 要在 latency、batching、利用率和地理位置之间取舍。同一 MW 的吞吐、利用率和 economics 因此完全不同。Inference 再承载 Agent workload，一次 user request 又会展开成多少计算？
 
-14. 《Agent 算力账单：从 Token 到 Task》
+14. 《{% post_link agent-task-compute '一个 Agent Task 消耗多少算力？' %}》
 
-    一次 user request 会展开成多次 model invocation，以及 routing、prefill、decode、retrieval、tool call、retry、cache 和 scheduling。Token、request、task 与 tasks per MW 回答的是四个不同问题。Task 在 cluster 里执行完了，结果怎样在 latency SLO 内送到用户面前？
+    一项 Agent Task 会展开成 model、tool、wait、retry 和 verification span。Wall-clock、Token 与 GPU time 因而不是同一本账；只有把所有 active model invocation 归回 successful task，才能折算真实的 capacity demand。Task 通过验收以后，结果怎样在 latency SLO 内送到用户面前？
 
 15. 《推理交付网络：从 Cluster 到 User》
 
