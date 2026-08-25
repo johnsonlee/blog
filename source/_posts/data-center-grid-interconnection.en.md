@@ -1,5 +1,5 @@
 ---
-title: "Why Does a Data Center Beside a Nuclear Plant Still Need the Grid?"
+title: "Why Is an AWS Data Center Beside a Nuclear Plant Still Hard to Expand?"
 date: 2026-08-23 02:15:00
 lang: en
 i18n_key: data-center-grid-interconnection

@@ -1,5 +1,5 @@
 ---
-title: 核电站旁的数据中心为什么还要接入电网？
+title: AWS 数据中心紧邻核电站为何难扩容？
 date: 2026-08-23 02:15:00
 categories:
   - Investing
