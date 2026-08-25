@@ -106,11 +106,22 @@ Agent 认为目标已经达成时，会调用 [`update_goal({ status: "complete"
 
 Resume session 会恢复仍然 active 的 Goal，但 turn count 会清零，timer 和 token-spend baseline 也会从恢复时重新起算。`/goal` 不会修改 permission mode。想让工具无人值守地执行，还要打开 auto mode，否则权限确认仍会把任务卡住。
 
-从现有架构看，两条路线都沿用了各自已有的 control plane。Claude Code 的 `/goal` 直接封装 Hook 系统：worker 结束一轮触发 Stop event，prompt-based hook 调用小模型决定是否放行，因此 completion condition 交给了 fresh evaluator。Codex 的控制点在 thread：Goal 作为 thread state 保存，idle 后由 extension runtime 决定是否再开一轮，最直接的实现就是让 worker 审计完成度，再用 `update_goal` 改写状态；另起 judge 还得重新定义第二个模型的上下文、tool access、token budget 和 SDK event。于是 Claude Code 先防止 worker 说停就停，代价是 evaluator 只能听 conversation；Codex 先保证 turn 停下不丢 Goal，代价是 worker 仍然验收自己。
+## 为什么 Codex 和 Claude Code 选择了不同路线
+
+打开代码一看，两边的选择都来自现成的 control plane。Codex 已经用 thread state 和 idle callback 管理 continuation，最短路径就是让 worker 通过 `update_goal` 改写状态；Claude Code 已经有 Stop hook 和 prompt-based hook，最短路径就是在每次 Stop 时叫来一个 fresh evaluator。
+
+| 对比 | Codex | Claude Code |
+| --- | --- | --- |
+| 现成的扩展点 | thread state + idle callback | Hook system + Stop event |
+| 最短实现路径 | worker 改写 Goal 状态；状态仍为 `active` 就续跑 | Stop hook 调用小模型；condition 未满足就拦截退出 |
+| 谁判断完成 | 执行任务的 worker | Stop hook 启动的 fresh evaluator |
+| 判断时能看到什么 | 原 thread context，也能继续调用工具检查 repo | completion condition 和 conversation，不能调用工具或读文件 |
+| 优先解决的问题 | turn 结束后不能丢掉尚未完成的 Goal | worker 不能只凭一句完成总结结束 Goal |
+| 主要代价 | worker 仍然验收自己，可能过早调用 `complete` | evaluator 依赖 worker 写进 conversation 的证据 |
 
 ![Codex 与 Claude Code 的 Goal 控制回路](/images/goal-runtime-comparison.svg)
 
-Codex 用持久化状态和 idle callback 做到“不显式 complete 就继续”，完成审计仍由 worker 负责。Claude Code 则在每个 Stop 边界叫来一个 fresh model，单独判断 condition 是否满足。
+两条路线没有脱离使用场景的绝对优劣。更怕任务被 turn lifecycle 截断，Codex 的持久化状态更直接；更怕 worker 过早宣布完成，Claude Code 多出来的 evaluator 更有价值。Codex 仍可能在自我验收时误判；Claude Code 虽然换了 evaluator，它却只能根据 transcript 判断。
 
 所以 `/goal` 并不保证目标一定完成。它改变的是默认行为：**以前回答结束就退出；现在停止条件没满足，就再开一轮。**
 
