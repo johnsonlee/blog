@@ -1,5 +1,5 @@
 ---
-title: 不用 Cooling Tower，800MW 怎么散热？
+title: 数据中心闭式循环受制于最热一天
 date: 2026-08-23 05:00:00
 categories:
   - Investing

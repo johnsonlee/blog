@@ -1,5 +1,5 @@
 ---
-title: "How Do You Cool 800 MW Without Cooling Towers?"
+title: "Data Center Closed-Loop Cooling Is Constrained by the Hottest Day"
 date: 2026-08-23 05:00:00
 lang: en
 i18n_key: data-center-thermal-path
