@@ -1,5 +1,5 @@
 ---
-title: 万卡集群为什么需要一千台 Switch？
+title: 128 座机架竟要 1040 台交换机
 date: 2026-08-23 08:00:00
 categories:
   - Investing

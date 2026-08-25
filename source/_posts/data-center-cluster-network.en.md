@@ -1,5 +1,5 @@
 ---
-title: "Why Does a Supercluster Need a Thousand Switches?"
+title: "128 Racks Need 1040 Switches"
 date: 2026-08-23 08:00:00
 lang: en
 i18n_key: data-center-cluster-network
