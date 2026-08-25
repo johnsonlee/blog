@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "start": "npx hexo server -p 8000 --debug --draft --open",
-    "build": "npm run check:agents && npm run check:post-style && npx hexo generate && npm run check:quotes",
+    "build": "npm run check:agents && npm run check:bilingual && npm run check:post-style && npx hexo generate && npm run check:quotes",
     "check:agents": "node tools/check-agents.js",
+    "check:bilingual": "node tools/check-bilingual-posts.js",
     "check:post-style": "node tools/check-post-style.js",
     "check:quotes": "node tools/check-quotes.js",
     "clean": "npx hexo clean",

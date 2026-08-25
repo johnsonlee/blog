@@ -34,7 +34,9 @@ head
     meta(property='og:type', content=is_post() ? 'article' : 'website')
     meta(property='og:url', content=page.permalink || config.url + url_for(page.path))
     -
-      var ogImage = is_post() ? config.url + url_for('og-cards/' + page.slug + '.png') : config.url + url_for('logo.png');
+      var ogCardSlug = page.slug;
+      if (page.lang === 'en' && !/\.en$/.test(ogCardSlug)) ogCardSlug += '.en';
+      var ogImage = is_post() ? config.url + url_for('og-cards/' + ogCardSlug + '.png') : config.url + url_for('logo.png');
     meta(property='og:image', content=ogImage)
     meta(property='og:site_name', content=config.title)
     meta(property='og:locale', content=page.lang === 'en' ? 'en_US' : 'zh_CN')

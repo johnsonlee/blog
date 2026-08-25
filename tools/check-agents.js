@@ -22,6 +22,7 @@ function main() {
     ['post format section', /^## Post Format$/m],
     ['repo-scoped blog skill', /\.agents\/skills\/blog\//],
     ['build command', /npm run build/],
+    ['bilingual hard gate', /npm run check:bilingual/],
     ['post directory', /source\/_posts\//],
     ['front matter alignment', /i18n_key/],
   ];

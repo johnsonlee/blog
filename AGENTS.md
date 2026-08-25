@@ -11,6 +11,7 @@ Treat post edits as editorial work with a stable author voice, not generic Markd
 - `npm start`: run the local Hexo server on port 8000 with drafts and debug output.
 - `npm run build`: run repo guidance checks, changed-post style checks, Hexo generation, and quote checks.
 - `npm run check:agents`: validate this file still contains the repo guidance Codex needs.
+- `npm run check:bilingual`: require every changed published post to have a structurally aligned Chinese/English pair.
 - `npm run check:post-style`: check changed posts for overly fragmented mobile-reading rhythm.
 - `npm run check:quotes`: check mixed Chinese/English quote handling in source and generated HTML.
 - `npm run clean`: remove generated Hexo artifacts.
@@ -50,7 +51,7 @@ When touching posts without invoking the skill, still preserve these baseline ru
 - Published posts use `source/_posts/<slug>.md`.
 - Drafts use `source/_drafts/<slug>.md`.
 - Post filenames use lowercase kebab-case.
-- Bilingual posts use paired files: `<slug>.md` and `<slug>.en.md`.
+- Every new or changed published post must ship as a bilingual pair: `<slug>.md` and `<slug>.en.md`. This is a build-blocking hard gate.
 - Paired Chinese and English posts share the same `i18n_key`.
 - English posts include `lang: en`; Chinese posts do not need `lang`.
 - The permalink pattern is `:year/:month/:day/:title/`.
@@ -89,6 +90,7 @@ tags:
 ```
 
 Keep `date`, `categories`, `tags`, and `i18n_key` aligned between bilingual pairs.
+Keep the H2/H3 structure, `<!-- more -->`, external URL set, and image set aligned as well. Visible-text SVGs require paired `.svg` and `.en.svg` assets.
 
 ## Excerpts And Rhythm
 

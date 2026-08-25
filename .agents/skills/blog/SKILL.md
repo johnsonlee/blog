@@ -17,12 +17,13 @@ description: >
 
 1. 确认当前目录是 `johnsonlee/blog`，读取 `AGENTS.md` 和相关 scripts；仓库规则优先。
 2. 每次写作都读取 [references/style.md](references/style.md)。
-3. 系列文章和 subsystem deep dive 读取 [references/series.md](references/series.md)。
-4. 产业、技术、公司或任何需要外部证据的文章读取 [references/research.md](references/research.md)。
-5. Investing 类文章再读取 [references/investing.md](references/investing.md)。
-6. 文章需要图表、架构图或地图时读取 [references/visuals.md](references/visuals.md)。
-7. 创建或修改 post、站内链接、英文版或准备发布时读取 [references/publishing.md](references/publishing.md)。
-8. 结构、事实和判断稳定后调用 `$humanizer`；作者样本与 [references/style.md](references/style.md) 的优先级高于通用 humanizer 规则。
+3. 拟定、修改或审查标题时读取 [references/titles.md](references/titles.md)。
+4. 系列文章和 subsystem deep dive 读取 [references/series.md](references/series.md)。
+5. 产业、技术、公司或任何需要外部证据的文章读取 [references/research.md](references/research.md)。
+6. Investing 类文章再读取 [references/investing.md](references/investing.md)。
+7. 文章需要图表、架构图或地图时读取 [references/visuals.md](references/visuals.md)。
+8. 创建或修改 post、站内链接、英文版或准备发布时读取 [references/publishing.md](references/publishing.md)。
+9. 结构、事实和判断稳定后调用 `$humanizer`；作者样本与 [references/style.md](references/style.md) 的优先级高于通用 humanizer 规则。
 
 ## 先定义认知契约
 
@@ -39,6 +40,8 @@ description: >
 ```
 
 第 0 个问题不是“介绍一下 X”，也不是把研究清单改写成一串问号。它来自读者已经看见的具体矛盾：一个有基本常识、但没有行业知识的读者能够先给出合理答案，真实系统再暴露这个答案缺少的边界或关系。
+
+第 0 个问题控制正文的认知起点，不规定标题句式。标题按 [references/titles.md](references/titles.md) 单独设计：先向尚未点击的读者交付信息，再留下值得进入正文的解释空间；不得把第 0 个问题机械改成问句。
 
 第 0 个问题的下限是基本常识。写完以后先替读者回答一次；如果答案只是“没建完当然不能用”“没送到当然不能算”“合同签了不等于已经交付”这类不需要行业知识的事实，说明作者把读者降成了没有常识的人，必须继续向下找到第一个真正的解释断点。好的第 0 个问题不是否定常识，而是让常识不足以在两个合理解释之间作出判断。
 
@@ -96,7 +99,7 @@ Investing 类文章按 [references/investing.md](references/investing.md) 检查
 
 中英文分别执行 `$humanizer` 的完整 rewrite process。它只负责 prose QA，不得增加、删除或改变 claim、数字、日期、引用、链接、不确定性和作者立场，也不能把 casual 叙事洗成百科文本。
 
-按 [references/publishing.md](references/publishing.md) 验证 front matter、站内链接、双语对应、Sources 和构建；视觉交付按 [references/visuals.md](references/visuals.md) 实际渲染检查。只有用户明确要求 push、开 PR、merge 或发布时才执行外部操作。
+双语发布是 hard gate：任何新增或修改的 published post 都必须同时交付中文和英文版本，不能把英文版留作后续工作。按 [references/publishing.md](references/publishing.md) 运行 `npm run check:bilingual`，验证 front matter、章节结构、`<!-- more -->`、外链、图片、Sources 和中英文对应，再运行完整构建；视觉交付按 [references/visuals.md](references/visuals.md) 实际渲染检查。只有用户明确要求 push、开 PR、merge 或发布时才执行外部操作。
 
 ## 完成标准
 

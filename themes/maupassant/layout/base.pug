@@ -20,7 +20,9 @@ html(lang=page.lang || config.language)
 
   body: .body_container
     if is_post()
-      img(src=url_for('og-cards/' + page.slug + '.png'), style='display:none')
+      - var ogCardSlug = page.slug
+      - if (page.lang === 'en' && !/\.en$/.test(ogCardSlug)) ogCardSlug += '.en'
+      img(src=url_for('og-cards/' + ogCardSlug + '.png'), style='display:none')
     else
       img(src=url_for('logo.png'), style='display:none')
     #header

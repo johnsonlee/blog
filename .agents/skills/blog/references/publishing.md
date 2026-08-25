@@ -2,6 +2,10 @@
 
 仓库中的 `AGENTS.md` 是 post 格式规则的 canonical source。本 reference 补充执行顺序和容易出错的发布边界。
 
+## 双语是 Hard Gate
+
+任何新增或修改的 published post 都必须同时交付中文和英文版本。缺少任一版本、front matter 不对齐、H2/H3 结构不对应、`<!-- more -->` 缺失、外链集合不一致、图片集合不一致，或英文正文没有引用配套的 `.en.svg`，`npm run check:bilingual` 和 `npm run build` 必须失败。不得用“先发中文、以后补英文”绕过。
+
 ## 文件与 Front Matter
 
 中文版使用 `source/_posts/<slug>.md`，英文版使用 `source/_posts/<slug>.en.md`。slug 使用 lowercase kebab-case。
@@ -65,6 +69,7 @@ tags:
 按仓库实际提供的 scripts 运行检查，通常包括：
 
 ```bash
+npm run check:bilingual
 npm run build
 ```
 
