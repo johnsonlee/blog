@@ -1,5 +1,5 @@
 ---
-title: "Why Does the Same 100 MW Produce Different Compute?"
+title: "Training and Inference Cannot Share One Capacity Ledger"
 date: 2026-08-23 11:00:00
 lang: en
 i18n_key: training-vs-inference-ledger

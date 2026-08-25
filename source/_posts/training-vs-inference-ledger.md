@@ -1,5 +1,5 @@
 ---
-title: 同样 100MW 为什么算力不一样？
+title: 训练和推理不能共用算力账
 date: 2026-08-23 11:00:00
 categories:
   - Investing
