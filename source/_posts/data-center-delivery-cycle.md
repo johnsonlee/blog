@@ -1,5 +1,5 @@
 ---
-title: 数据中心为什么没有一个交付日？
+title: 数据中心工期为何按 MW 计算？
 date: 2026-08-23 00:45:00
 categories:
   - Investing

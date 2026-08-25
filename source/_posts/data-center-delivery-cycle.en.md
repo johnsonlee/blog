@@ -1,5 +1,5 @@
 ---
-title: "Why Doesn't a Data Center Have One Delivery Date?"
+title: "Why Is a Data Center Schedule Measured in MW?"
 date: 2026-08-23 00:45:00
 lang: en
 i18n_key: data-center-delivery-cycle
