@@ -1,5 +1,5 @@
 ---
-title: GPU 算完了为什么用户还在等？
+title: 推理网络既调度 GPU 也交付结果
 date: 2026-08-23 13:00:00
 categories:
   - Investing

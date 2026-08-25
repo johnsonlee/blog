@@ -1,5 +1,5 @@
 ---
-title: "Why Is the User Still Waiting After the GPU Finishes?"
+title: "Inference Networks Both Schedule GPUs and Deliver Results"
 date: 2026-08-23 13:00:00
 lang: en
 i18n_key: inference-delivery-network
