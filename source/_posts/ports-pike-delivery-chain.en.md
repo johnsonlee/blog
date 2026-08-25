@@ -1,5 +1,5 @@
 ---
-title: "Why Is PORTS-Pike Larger Than Six Stargate Campuses?"
+title: "OpenAI's Largest Campus Nearly Matches Its Previous Six in Capacity"
 date: 2026-08-23 14:00:00
 lang: en
 i18n_key: ports-pike-delivery-chain

@@ -1,5 +1,5 @@
 ---
-title: PORTS-Pike 为什么比六座 Stargate 还大？
+title: OpenAI 最大园区容量接近此前六座
 date: 2026-08-23 14:00:00
 categories:
   - Investing
