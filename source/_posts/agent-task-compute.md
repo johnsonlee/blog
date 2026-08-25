@@ -1,5 +1,5 @@
 ---
-title: 一个 Agent Task 消耗多少算力？
+title: Agent 算力账要从成功任务倒推
 date: 2026-08-23 12:00:00
 categories:
   - Investing

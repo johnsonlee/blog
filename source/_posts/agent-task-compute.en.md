@@ -1,5 +1,5 @@
 ---
-title: "How Much Compute Does One Agent Task Consume?"
+title: "Agent Compute Must Be Traced Back from Successful Tasks"
 date: 2026-08-23 12:00:00
 lang: en
 i18n_key: agent-task-compute
