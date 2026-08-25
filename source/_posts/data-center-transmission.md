@@ -1,5 +1,5 @@
 ---
-title: 发电够了为什么还要等到 2031？
+title: 36座数据中心无一能接入现有输电网
 date: 2026-08-23 03:00:00
 categories:
   - Investing

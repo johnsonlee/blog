@@ -1,5 +1,5 @@
 ---
-title: "Why Wait Until 2031 If Generation Is Adequate?"
+title: "Not One of 36 Data Centers Can Connect to the Existing Transmission Grid"
 date: 2026-08-23 03:00:00
 lang: en
 i18n_key: data-center-transmission
