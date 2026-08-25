@@ -1,5 +1,5 @@
 ---
-title: 送电了为什么还没有可用算力？
+title: 262MW 园区永久送电时预计用 4MW
 date: 2026-08-23 03:15:00
 categories:
   - Investing

@@ -1,5 +1,5 @@
 ---
-title: "Why Doesn't Energization Mean Usable Compute?"
+title: "A 262 MW Campus Expects to Use 4 MW When Permanent Power Arrives"
 date: 2026-08-23 03:15:00
 lang: en
 i18n_key: data-center-site-energization
