@@ -1,5 +1,5 @@
 ---
-title: 10GW 发电为什么只对应 8 IT-GW？
+title: 10GW减8GW为何不是2GW备用电？
 date: 2026-08-23 02:45:00
 categories:
   - Investing

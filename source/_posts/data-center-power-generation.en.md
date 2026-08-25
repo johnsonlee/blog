@@ -1,5 +1,5 @@
 ---
-title: "Why Does 10 GW of Generation Support Only 8 IT-GW?"
+title: "Why Doesn't 10 GW Minus 8 GW Equal 2 GW of Reserve Power?"
 date: 2026-08-23 02:45:00
 lang: en
 i18n_key: data-center-power-generation
