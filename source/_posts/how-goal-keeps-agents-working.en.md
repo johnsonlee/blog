@@ -14,11 +14,9 @@ tags:
   - Eval
 ---
 
-Everyone who has handed a long task to an Agent has woken up to the same result.
+Anyone who has handed a long task to an Agent knows the pattern: hand it over before bed and expect it to keep moving overnight. By morning, the Agent has already stopped, but it has left a confident summary behind: task complete. Open the code, and not even 10 percent is done.
 
-You hand the task to an Agent before bed and expect it to keep moving while you sleep. By morning, the Agent has already stopped, but it has left a confident summary behind: task complete. Open the code, and not even 10 percent is done.
-
-This is not an edge case. It happens every time. The problem is larger than model laziness. An ordinary Agent is built to produce one answer, so when the answer ends, it treats the task as finished too. `/goal` addresses what happens after the human leaves: who checks whether the original objective is complete, and who starts another turn when it is not?
+Model laziness is only part of the problem. An ordinary Agent is built to produce one answer, so when the answer ends, it treats the task as finished too. `/goal` addresses what happens after the human leaves: who checks whether the original objective is complete, and who starts another turn when it is not?
 
 <!-- more -->
 
@@ -108,6 +106,8 @@ The evaluator cannot call tools or read files. It can inspect only the evidence 
 Claude Code skips evaluation while a subagent or background shell command is still running. By default, it checks in after 30 minutes, then after one hour and two hours. An idle interactive session can start a check-in turn on its own. If Claude spends several consecutive turns answering the evaluator without using tools, the Stop hook hits its block cap. Control returns to the user while the Goal remains set. Without that cap, two models could keep saying “continue” to each other without doing any work.
 
 Resuming a session restores an active Goal, but the turn count resets and the timer and token-spend baseline start over. `/goal` does not change permission mode. Fully unattended tool use still requires auto mode; otherwise a permission request can stop the task until the user returns.
+
+Judging from the existing architecture, both routes follow their existing control planes. Claude Code's `/goal` wraps the Hook system: finishing a worker turn fires a Stop event, and a prompt-based hook calls a small model to decide whether to allow it, so the completion condition goes to a fresh evaluator. Codex puts the control point on the thread: the Goal is stored as thread state, and the extension runtime decides whether to start another turn after the thread becomes idle. The direct implementation is to let the worker audit completion and use `update_goal` to change the state; adding a separate judge would also require a new contract for its context, tool access, token budget, and SDK events. Claude Code therefore first prevents the worker from stopping just because it says so, at the cost of an evaluator limited to the conversation. Codex first makes sure ending a turn does not discard the Goal, at the cost of leaving the worker to review its own work.
 
 ![The Goal control loops in Codex and Claude Code](/images/goal-runtime-comparison.en.svg)
 
