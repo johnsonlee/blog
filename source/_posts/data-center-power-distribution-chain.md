@@ -1,5 +1,5 @@
 ---
-title: 800MW 能装多少个 GPU Rack？
+title: 从变电站到机架：供配电链
 date: 2026-08-23 04:00:00
 categories:
   - Investing

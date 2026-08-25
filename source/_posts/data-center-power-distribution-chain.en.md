@@ -1,5 +1,5 @@
 ---
-title: "How Many GPU Racks Fit Into 800 MW?"
+title: "From Substation to Rack: The Power Distribution Chain"
 date: 2026-08-23 04:00:00
 lang: en
 i18n_key: data-center-power-distribution-chain
