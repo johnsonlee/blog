@@ -1,5 +1,5 @@
 ---
-title: "How Is an AI Rack Delivered?"
+title: "The AI Rack Delivery Bottleneck May Not Be the GPU"
 date: 2026-08-23 07:00:00
 lang: en
 i18n_key: data-center-rack-delivery

@@ -1,5 +1,5 @@
 ---
-title: AI Rack 怎样完成交付？
+title: AI Rack 交付瓶颈未必是 GPU
 date: 2026-08-23 07:00:00
 categories:
   - Investing
