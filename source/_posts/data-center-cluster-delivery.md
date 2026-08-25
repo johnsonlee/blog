@@ -1,5 +1,5 @@
 ---
-title: GPU 都正常就算万卡集群了吗？
+title: GPU 健康率99%可能只剩28%容量
 date: 2026-08-23 10:00:00
 categories:
   - Investing

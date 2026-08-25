@@ -1,5 +1,5 @@
 ---
-title: "Do Healthy GPUs Make a Supercluster?"
+title: "99% GPU Health Can Leave Only 28% Cluster Capacity"
 date: 2026-08-23 10:00:00
 lang: en
 i18n_key: data-center-cluster-delivery
