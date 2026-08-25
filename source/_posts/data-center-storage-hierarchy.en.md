@@ -1,5 +1,5 @@
 ---
-title: "Why Does a 15 TB Checkpoint Get Only Five Seconds?"
+title: "Writing a Checkpoint Is Not Enough to Restore Training"
 date: 2026-08-23 09:00:00
 lang: en
 i18n_key: data-center-storage-hierarchy
