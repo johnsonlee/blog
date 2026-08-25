@@ -1,5 +1,5 @@
 ---
-title: 断电测试失败，数据中心还能按期交付吗？
+title: 数据中心最终验收要主动制造故障
 date: 2026-08-23 06:00:00
 categories:
   - Investing

@@ -1,5 +1,5 @@
 ---
-title: "Can a Data Center Still Deliver on Time After a Utility-Loss Test Fails?"
+title: "Final Data Center Acceptance Deliberately Creates Failures"
 date: 2026-08-23 06:00:00
 lang: en
 i18n_key: data-center-commissioning
