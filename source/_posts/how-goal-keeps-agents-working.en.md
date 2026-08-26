@@ -14,11 +14,9 @@ tags:
   - Eval
 ---
 
-Everyone who has handed a long task to an Agent has woken up to the same result.
+Anyone who has handed a long task to an Agent knows the pattern: hand it over before bed and expect it to keep moving overnight. By morning, the Agent has already stopped, but it has left a confident summary behind: task complete. Open the code, and not even 10 percent is done.
 
-You hand the task to an Agent before bed and expect it to keep moving while you sleep. By morning, the Agent has already stopped, but it has left a confident summary behind: task complete. Open the code, and not even 10 percent is done.
-
-This is not an edge case. It happens every time. The problem is larger than model laziness. An ordinary Agent is built to produce one answer, so when the answer ends, it treats the task as finished too. `/goal` addresses what happens after the human leaves: who checks whether the original objective is complete, and who starts another turn when it is not?
+Model laziness is only part of the problem. An ordinary Agent is built to produce one answer, so when the answer ends, it treats the task as finished too. `/goal` addresses what happens after the human leaves: who checks whether the original objective is complete, and who starts another turn when it is not?
 
 <!-- more -->
 
@@ -109,9 +107,22 @@ Claude Code skips evaluation while a subagent or background shell command is sti
 
 Resuming a session restores an active Goal, but the turn count resets and the timer and token-spend baseline start over. `/goal` does not change permission mode. Fully unattended tool use still requires auto mode; otherwise a permission request can stop the task until the user returns.
 
+## Why Codex and Claude Code Chose Different Paths
+
+Open the code and both choices follow the control plane already in place. Codex already manages continuation through thread state and an idle callback, so the shortest path is to let the worker change state through `update_goal`. Claude Code already has Stop hooks and prompt-based hooks, so the shortest path is to call a fresh evaluator whenever the worker tries to stop.
+
+| Comparison | Codex | Claude Code |
+| --- | --- | --- |
+| Existing extension point | thread state + idle callback | Hook system + Stop event |
+| Shortest implementation path | worker changes the Goal state; continue while it remains `active` | Stop hook calls a small model; block exit while the condition is unmet |
+| Completion judge | the worker doing the task | a fresh evaluator launched by the Stop hook |
+| Evidence available to the judge | the original thread context, plus tools for inspecting the repo | the completion condition and conversation, with no tool or file access |
+| First problem it solves | a turn ending must not discard an unfinished Goal | a worker cannot end the Goal with a completion claim alone |
+| Main cost | the worker still reviews its own work and may call `complete` too early | the evaluator depends on evidence the worker put in the conversation |
+
 ![The Goal control loops in Codex and Claude Code](/images/goal-runtime-comparison.en.svg)
 
-Codex uses persisted state and an idle callback to enforce “continue unless complete is explicitly submitted,” while the worker still handles the completion audit. Claude Code brings in a fresh model at every Stop boundary to judge the condition separately.
+Neither path is universally better. If the larger risk is losing unfinished work at a turn boundary, Codex's persisted state is the more direct answer. If the larger risk is a worker declaring victory too early, Claude Code's extra evaluator is more useful. Codex can still misjudge its own work. Claude Code uses a separate evaluator, but that evaluator can judge only what appears in the transcript.
 
 So `/goal` does not guarantee that the objective will be completed. It changes the default behavior: **an ordinary Agent exits when the answer ends; `/goal` starts another turn while the stopping condition remains unsatisfied.**
 

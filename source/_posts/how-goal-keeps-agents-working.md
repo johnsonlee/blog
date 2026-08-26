@@ -19,7 +19,7 @@ i18n_key: how-goal-keeps-agents-working
 
 <!-- more -->
 
-## Agent 为什么总在 10% 的地方停下
+## Agent 为什么总是没做完就停下
 
 普通 prompt 只管当前 turn。Agent 读完要求，改几个文件，跑一部分测试，再写一份总结，这轮回答就结束了。原始目标还剩多少，通常还是它自己说了算。
 
@@ -106,9 +106,22 @@ Agent 认为目标已经达成时，会调用 [`update_goal({ status: "complete"
 
 Resume session 会恢复仍然 active 的 Goal，但 turn count 会清零，timer 和 token-spend baseline 也会从恢复时重新起算。`/goal` 不会修改 permission mode。想让工具无人值守地执行，还要打开 auto mode，否则权限确认仍会把任务卡住。
 
+## 为什么 Codex 和 Claude Code 选择了不同路线
+
+打开代码一看，两边的选择都来自现成的 control plane。Codex 已经用 thread state 和 idle callback 管理 continuation，最短路径就是让 worker 通过 `update_goal` 改写状态；Claude Code 已经有 Stop hook 和 prompt-based hook，最短路径就是在每次 Stop 时叫来一个 fresh evaluator。
+
+| 对比 | Codex | Claude Code |
+| --- | --- | --- |
+| 现成的扩展点 | thread state + idle callback | Hook system + Stop event |
+| 最短实现路径 | worker 改写 Goal 状态；状态仍为 `active` 就续跑 | Stop hook 调用小模型；condition 未满足就拦截退出 |
+| 谁判断完成 | 执行任务的 worker | Stop hook 启动的 fresh evaluator |
+| 判断时能看到什么 | 原 thread context，也能继续调用工具检查 repo | completion condition 和 conversation，不能调用工具或读文件 |
+| 优先解决的问题 | turn 结束后不能丢掉尚未完成的 Goal | worker 不能只凭一句完成总结结束 Goal |
+| 主要代价 | worker 仍然验收自己，可能过早调用 `complete` | evaluator 依赖 worker 写进 conversation 的证据 |
+
 ![Codex 与 Claude Code 的 Goal 控制回路](/images/goal-runtime-comparison.svg)
 
-Codex 用持久化状态和 idle callback 做到“不显式 complete 就继续”，完成审计仍由 worker 负责。Claude Code 则在每个 Stop 边界叫来一个 fresh model，单独判断 condition 是否满足。
+两条路线没有脱离使用场景的绝对优劣。更怕任务被 turn lifecycle 截断，Codex 的持久化状态更直接；更怕 worker 过早宣布完成，Claude Code 多出来的 evaluator 更有价值。Codex 仍可能在自我验收时误判；Claude Code 虽然换了 evaluator，它却只能根据 transcript 判断。
 
 所以 `/goal` 并不保证目标一定完成。它改变的是默认行为：**以前回答结束就退出；现在停止条件没满足，就再开一轮。**
 
@@ -142,7 +155,7 @@ Codex 的 continuation prompt 要求先确认 tests、manifests、verifiers 和 
 
 它也不会无限跑下去。Codex 碰到 token budget、usage limit 或无法恢复的 turn error 会切换状态；Claude Code 在自行管理凭据时遇到认证失败，或者遇到余额耗尽、无法恢复的 context overflow、模型不可用，会清除 Goal，连续几轮没有 tool use 则暂停 loop。用户也可以随时 pause、clear 或中断。
 
-回到睡觉前交出去的那个任务。普通 Agent 在 10% 的位置写完总结，系统便认为工作结束。`/goal` 下，final answer 只结束当前 turn。只要 Goal 还是 `active`，runtime 就会把原始 objective、剩余预算和完成审计重新送进下一轮。
+回到睡觉前交出去的那个长任务。普通 Agent 随便糊弄一下就交差。`/goal` 下，final answer 只结束当前 turn。只要 Goal 还是 `active`，runtime 就会把原始 objective、剩余预算和完成审计重新送进下一轮。
 
 区别不在 Agent 突然变得可靠，而在系统不再接受它说完就走。目标会被保存，没达到就继续，什么时候停也有明确规则。因此，`/goal` 才能把一个长任务留在后台持续推进。
 
