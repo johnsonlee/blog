@@ -19,7 +19,7 @@ i18n_key: how-goal-keeps-agents-working
 
 <!-- more -->
 
-## Agent 为什么总在 10% 的地方停下
+## Agent 为什么总是没做完就停下
 
 普通 prompt 只管当前 turn。Agent 读完要求，改几个文件，跑一部分测试，再写一份总结，这轮回答就结束了。原始目标还剩多少，通常还是它自己说了算。
 
@@ -155,7 +155,7 @@ Codex 的 continuation prompt 要求先确认 tests、manifests、verifiers 和 
 
 它也不会无限跑下去。Codex 碰到 token budget、usage limit 或无法恢复的 turn error 会切换状态；Claude Code 在自行管理凭据时遇到认证失败，或者遇到余额耗尽、无法恢复的 context overflow、模型不可用，会清除 Goal，连续几轮没有 tool use 则暂停 loop。用户也可以随时 pause、clear 或中断。
 
-回到睡觉前交出去的那个任务。普通 Agent 在 10% 的位置写完总结，系统便认为工作结束。`/goal` 下，final answer 只结束当前 turn。只要 Goal 还是 `active`，runtime 就会把原始 objective、剩余预算和完成审计重新送进下一轮。
+回到睡觉前交出去的那个长任务。普通 Agent 随便糊弄一下就交差。`/goal` 下，final answer 只结束当前 turn。只要 Goal 还是 `active`，runtime 就会把原始 objective、剩余预算和完成审计重新送进下一轮。
 
 区别不在 Agent 突然变得可靠，而在系统不再接受它说完就走。目标会被保存，没达到就继续，什么时候停也有明确规则。因此，`/goal` 才能把一个长任务留在后台持续推进。
 
