@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="820" viewBox="0 0 1600 820" role="img" aria-labelledby="title desc">
+  <title id="title">Inference TTFT latency path</title><desc id="desc">第一枚 Token 到达用户前，依次经过用户网络、Edge、Backbone、Gateway、Queue、Prefill 和返回路径。</desc>
+  <style>text{font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;letter-spacing:0;fill:#172033}.title{font-size:31px;font-weight:760;text-anchor:middle}.head{font-size:18px;font-weight:750;text-anchor:middle}.body{font-size:15px;fill:#52647a;text-anchor:middle}.small{font-size:13px;fill:#607089;text-anchor:middle}.inv{fill:#fff}</style>
+  <rect width="1600" height="820" fill="#f7f9fc"/><text x="800" y="58" class="title">第一枚 Token 到达以前，等待分布在整条路径上</text>
+  <text x="70" y="125" class="head" text-anchor="start">请求路径</text>
+  <rect x="70" y="155" width="210" height="105" rx="6" fill="#64748b"/><text x="175" y="199" class="head inv">客户端 → Edge</text><text x="175" y="230" class="body inv">DNS · TCP/TLS · 最后一公里</text>
+  <rect x="290" y="155" width="210" height="105" rx="6" fill="#2f6fab"/><text x="395" y="199" class="head inv">边缘入口</text><text x="395" y="230" class="body inv">终止连接 · 防护 · 路由</text>
+  <rect x="510" y="155" width="210" height="105" rx="6" fill="#167d73"/><text x="615" y="199" class="head inv">骨干网</text><text x="615" y="230" class="body inv">Edge → Region</text>
+  <rect x="730" y="155" width="210" height="105" rx="6" fill="#7653a6"/><text x="835" y="199" class="head inv">推理网关</text><text x="835" y="230" class="body inv">鉴权 · 策略 · 路由</text>
+  <rect x="950" y="155" width="180" height="105" rx="6" fill="#b88407"/><text x="1040" y="199" class="head inv">排队</text><text x="1040" y="230" class="body inv">Batch · 准入</text>
+  <rect x="1140" y="155" width="220" height="105" rx="6" fill="#c85a16"/><text x="1250" y="199" class="head inv">预填充</text><text x="1250" y="230" class="body inv">Prompt → KV Cache</text>
+  <rect x="1370" y="155" width="160" height="105" rx="6" fill="#24864a"/><text x="1450" y="199" class="head inv">第 1 枚 Token</text><text x="1450" y="230" class="body inv">已经生成</text>
+  <path d="M1450 260V345H480V403" fill="none" stroke="#52647a" stroke-width="4"/><polygon points="468,403 492,403 480,425" fill="#52647a"/>
+  <text x="70" y="395" class="head" text-anchor="start">返回路径</text>
+  <rect x="70" y="425" width="190" height="105" rx="6" fill="#24864a"/><text x="165" y="469" class="head inv">用户看到 Token</text><text x="165" y="500" class="body inv">客户端渲染</text>
+  <rect x="330" y="425" width="300" height="105" rx="6" fill="#2f6fab"/><text x="480" y="469" class="head inv">首个 Chunk 返回</text><text x="480" y="500" class="body inv">Region · 骨干网 · Edge · ISP</text>
+  <line x1="330" y1="477" x2="282" y2="477" stroke="#24864a" stroke-width="4"/><polygon points="282,465 282,489 260,477" fill="#24864a"/>
+  <rect x="70" y="595" width="1460" height="82" rx="6" fill="#172033"/><text x="800" y="630" class="head inv">用户感知的 TTFT = 客户端 → Edge → Region → 网关 → 排队 → 预填充 → 首个 Chunk 返回</text><text x="800" y="660" class="body inv">Server-side latency 只覆盖其中一段，不能代表用户等待</text>
+  <rect x="250" y="720" width="1100" height="54" rx="6" fill="#fff" stroke="#d5dde7" stroke-width="2"/><text x="800" y="753" class="body">同一 SLO 下分别记录网络、网关、排队和预填充，才能定位瓶颈迁移</text>
+</svg>
