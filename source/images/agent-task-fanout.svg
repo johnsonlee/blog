@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Single agent and multi-agent compute fan-out</title><desc id="desc">Chat、single agent 与 multi-agent 把同一 request 展开成不同数量的 model、tool 和 coordination call；Anthropic 的 research workload 观测约为 1 倍、4 倍和 15 倍 Token。</desc>
+  <style>text{font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;letter-spacing:0;fill:#172033}.title{font-size:31px;font-weight:760;text-anchor:middle}.head{font-size:19px;font-weight:750;text-anchor:middle}.body{font-size:15px;text-anchor:middle;fill:#52647a}.small{font-size:14px;fill:#607089}.inv{fill:#fff}</style>
+  <rect width="1600" height="900" fill="#f7f9fc"/><text x="800" y="58" class="title">Fan-out 扩大搜索面，也放大协作成本与 Token</text>
+  <rect x="55" y="110" width="430" height="650" rx="7" fill="#fff" stroke="#64748b" stroke-width="2"/><text x="270" y="160" class="head">Chat</text>
+  <rect x="150" y="220" width="240" height="86" rx="6" fill="#64748b"/><text x="270" y="272" class="head inv">单次生成</text>
+  <rect x="150" y="370" width="240" height="86" rx="6" fill="#24864a"/><text x="270" y="422" class="head inv">响应</text>
+  <line x1="270" y1="306" x2="270" y2="348" stroke="#52647a" stroke-width="4"/><polygon points="258,348 282,348 270,370" fill="#52647a"/>
+  <text x="270" y="570" class="head">约 1× Token</text><text x="270" y="608" class="body">基准</text>
+  <rect x="585" y="110" width="430" height="650" rx="7" fill="#fff" stroke="#2f6fab" stroke-width="2"/><text x="800" y="160" class="head">单 Agent</text>
+  <rect x="680" y="205" width="240" height="72" rx="6" fill="#2f6fab"/><text x="800" y="249" class="head inv">规划</text>
+  <rect x="680" y="330" width="240" height="72" rx="6" fill="#167d73"/><text x="800" y="374" class="head inv">Tool 调用</text>
+  <rect x="680" y="455" width="240" height="72" rx="6" fill="#2f6fab"/><text x="800" y="499" class="head inv">观测 · 重试</text>
+  <line x1="800" y1="277" x2="800" y2="308" stroke="#52647a" stroke-width="4"/><polygon points="788,308 812,308 800,330" fill="#52647a"/><line x1="800" y1="402" x2="800" y2="433" stroke="#52647a" stroke-width="4"/><polygon points="788,433 812,433 800,455" fill="#52647a"/>
+  <text x="800" y="570" class="head">约 4× Token</text><text x="800" y="608" class="body">Anthropic Agent 观测</text>
+  <rect x="1115" y="110" width="430" height="650" rx="7" fill="#fff" stroke="#c85a16" stroke-width="2"/><text x="1330" y="160" class="head">多 Agent</text>
+  <rect x="1230" y="200" width="200" height="68" rx="6" fill="#c85a16"/><text x="1330" y="242" class="head inv">主 Agent</text>
+  <path d="M1330 268V305H1195V332M1330 305V332M1330 305H1465V332" fill="none" stroke="#52647a" stroke-width="4"/><polygon points="1183,332 1207,332 1195,354" fill="#52647a"/><polygon points="1318,332 1342,332 1330,354" fill="#52647a"/><polygon points="1453,332 1477,332 1465,354" fill="#52647a"/>
+  <rect x="1140" y="354" width="110" height="100" rx="6" fill="#2f6fab"/><text x="1195" y="397" class="body inv">子 Agent</text><text x="1195" y="425" class="small inv">A</text>
+  <rect x="1275" y="354" width="110" height="100" rx="6" fill="#2f6fab"/><text x="1330" y="397" class="body inv">子 Agent</text><text x="1330" y="425" class="small inv">B</text>
+  <rect x="1410" y="354" width="110" height="100" rx="6" fill="#2f6fab"/><text x="1465" y="397" class="body inv">子 Agent</text><text x="1465" y="425" class="small inv">C</text>
+  <path d="M1195 454V492H1330V520M1330 454V520M1465 454V492H1330" fill="none" stroke="#52647a" stroke-width="4"/><polygon points="1318,520 1342,520 1330,542" fill="#52647a"/>
+  <rect x="1230" y="542" width="200" height="68" rx="6" fill="#7653a6"/><text x="1330" y="584" class="head inv">汇总 · 验证</text>
+  <text x="1330" y="665" class="head">约 15× Token</text><text x="1330" y="703" class="body">Anthropic 多 Agent 观测</text>
+  <rect x="170" y="805" width="1260" height="60" rx="6" fill="#172033"/><text x="800" y="832" class="head inv">特定 Research Workload 的生产观测，不是所有 Agent 的固定倍率</text><text x="800" y="855" class="small inv" text-anchor="middle">并行收益要扣除协作、重复工作、汇总与验证</text>
+</svg>

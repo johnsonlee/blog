@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="960" viewBox="0 0 1600 960" role="img" aria-labelledby="title desc">
+  <title id="title">Agent task capacity ledger</title><desc id="desc">Task arrival 经过 in-flight、turn、model invocation、SLO-qualified inference、verification 和 quality gate，最终形成 successful tasks per MW。</desc>
+  <style>text{font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;letter-spacing:0;fill:#172033}.title{font-size:31px;font-weight:760;text-anchor:middle}.head{font-size:18px;font-weight:750}.body{font-size:15px;fill:#52647a}.small{font-size:14px;fill:#607089}.inv{fill:#fff}</style>
+  <rect width="1600" height="960" fill="#f7f9fc"/><text x="800" y="58" class="title">Task 先展开成模型调用，才能落回推理容量</text>
+  <rect x="70" y="105" width="1460" height="690" rx="7" fill="#fff" stroke="#d5dde7" stroke-width="2"/>
+  <text x="110" y="150" class="head">容量口径</text><text x="1140" y="150" class="head">这一层改变什么</text>
+  <rect x="110" y="180" width="920" height="72" rx="5" fill="#64748b"/><text x="145" y="224" class="head inv">每分钟 Task 到达量</text><text x="1140" y="224" class="body">接受、拒绝、排队</text>
+  <rect x="160" y="275" width="870" height="72" rx="5" fill="#7653a6"/><text x="195" y="319" class="head inv">进行中 Task</text><text x="1140" y="319" class="body">模型活跃、Tool 等待、审批等待</text>
+  <rect x="210" y="370" width="820" height="72" rx="5" fill="#2f6fab"/><text x="245" y="414" class="head inv">每 Task 轮次</text><text x="1140" y="414" class="body">规划、观测、执行、重试、Handoff</text>
+  <rect x="260" y="465" width="770" height="72" rx="5" fill="#167d73"/><text x="295" y="509" class="head inv">活跃模型调用</text><text x="1140" y="509" class="body">模型组合 · Context · Output · 并行宽度</text>
+  <rect x="310" y="560" width="720" height="72" rx="5" fill="#c85a16"/><text x="345" y="604" class="head inv">满足 SLO 的推理</text><text x="1140" y="604" class="body">TTFT · TPOT · 错误率 · Deadline</text>
+  <rect x="360" y="655" width="670" height="72" rx="5" fill="#24864a"/><text x="395" y="699" class="head inv">成功 Task</text><text x="1140" y="699" class="body">质量门槛 · 验收通过 · 无需返工</text>
+  <rect x="170" y="835" width="1260" height="72" rx="6" fill="#172033"/><text x="800" y="865" class="head inv" text-anchor="middle">Tasks / MW = SLO 内通过质量门槛的 Task ÷ 计量电量</text><text x="800" y="893" class="small inv" text-anchor="middle">受每 Task 调用数、每次调用 Token、缓存、模型组合、重试与成功率共同影响</text>
+  <text x="800" y="944" class="small" text-anchor="middle">平均 Token 会隐藏 P99 Task 的长 Context、fan-out、Tool timeout 与重试突发</text>
+</svg>

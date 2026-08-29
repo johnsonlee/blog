@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="800" viewBox="0 0 1600 800" role="img" aria-labelledby="title desc">
+  <title id="title">Agent task wall-clock and model active time</title><desc id="desc">Task wall-clock includes model generation, tools, queue, tests, human approval, and waiting. Only model spans directly consume inference capacity.</desc>
+  <style>text{font-family:Inter,Arial,sans-serif;letter-spacing:0;fill:#172033}.title{font-size:31px;font-weight:760;text-anchor:middle}.head{font-size:18px;font-weight:750}.body{font-size:15px;fill:#52647a}.small{font-size:14px;fill:#607089}.inv{fill:#fff}</style>
+  <rect width="1600" height="800" fill="#f7f9fc"/><text x="800" y="58" class="title">A One-hour Task Does Not Occupy a GPU for One Hour</text>
+  <text x="70" y="125" class="head">Task Wall-clock</text>
+  <rect x="70" y="155" width="220" height="92" fill="#2f6fab"/><text x="180" y="194" class="head inv" text-anchor="middle">Model</text><text x="180" y="222" class="small inv" text-anchor="middle">Plan</text>
+  <rect x="290" y="155" width="270" height="92" fill="#167d73"/><text x="425" y="194" class="head inv" text-anchor="middle">Tool</text><text x="425" y="222" class="small inv" text-anchor="middle">Search · Read</text>
+  <rect x="560" y="155" width="150" height="92" fill="#64748b"/><text x="635" y="208" class="head inv" text-anchor="middle">Queue</text>
+  <rect x="710" y="155" width="210" height="92" fill="#2f6fab"/><text x="815" y="194" class="head inv" text-anchor="middle">Model</text><text x="815" y="222" class="small inv" text-anchor="middle">Act</text>
+  <rect x="920" y="155" width="280" height="92" fill="#7653a6"/><text x="1060" y="194" class="head inv" text-anchor="middle">Sandbox · Test</text><text x="1060" y="222" class="small inv" text-anchor="middle">GPU Serves Other Requests</text>
+  <rect x="1200" y="155" width="180" height="92" fill="#b88407"/><text x="1290" y="194" class="head inv" text-anchor="middle">Approval</text><text x="1290" y="222" class="small inv" text-anchor="middle">Human Wait</text>
+  <rect x="1380" y="155" width="150" height="92" fill="#2f6fab"/><text x="1455" y="194" class="head inv" text-anchor="middle">Model</text><text x="1455" y="222" class="small inv" text-anchor="middle">Finish</text>
+  <path d="M70 290V325H1530V290" fill="none" stroke="#52647a" stroke-width="4"/><text x="800" y="365" class="head" text-anchor="middle">End-to-end Task Time</text>
+  <text x="70" y="440" class="head">Inference Capacity Counts Only Active Model Spans</text>
+  <rect x="70" y="475" width="220" height="82" rx="5" fill="#2f6fab"/><text x="180" y="524" class="head inv" text-anchor="middle">Model Plan</text>
+  <rect x="420" y="475" width="210" height="82" rx="5" fill="#2f6fab"/><text x="525" y="524" class="head inv" text-anchor="middle">Model Act</text>
+  <rect x="760" y="475" width="150" height="82" rx="5" fill="#2f6fab"/><text x="835" y="524" class="head inv" text-anchor="middle">Finish</text>
+  <rect x="1040" y="475" width="490" height="82" rx="5" fill="#eef3f8" stroke="#b8c6d6" stroke-width="2" stroke-dasharray="9 8"/><text x="1285" y="510" class="head" text-anchor="middle">Tool / Test / Approval Wait</text><text x="1285" y="539" class="body" text-anchor="middle">Retains Task State, Not a Model GPU</text>
+  <rect x="250" y="650" width="1100" height="72" rx="6" fill="#172033"/><text x="800" y="680" class="head inv" text-anchor="middle">In-flight Task ≠ Concurrent Model Call</text><text x="800" y="708" class="small inv" text-anchor="middle">Tool results returning together wake waiting tasks into a new inference burst</text>
+</svg>
