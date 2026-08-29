@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <style>.title{font:700 36px Arial,sans-serif;fill:#172033}.kicker{font:600 20px Arial,sans-serif;fill:#52647a}.num{font:700 58px Arial,sans-serif}.head{font:700 25px Arial,sans-serif;fill:#172033}.body{font:500 21px Arial,sans-serif;fill:#52647a}.small{font:500 18px Arial,sans-serif;fill:#52647a}.inv{fill:#fff}</style>
+  <rect width="1600" height="900" fill="#f7f9fc"/>
+  <text x="800" y="62" class="title" text-anchor="middle">A Portfolio of Sites Became One Campus</text>
+  <text x="800" y="103" class="kicker" text-anchor="middle">Planned-capacity scale disclosed by OpenAI</text>
+
+  <rect x="85" y="155" width="650" height="570" rx="7" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="125" y="205" class="head">September 2025 · Earlier Stargate Round</text>
+  <text x="125" y="242" class="body">Six campuses + CoreWeave projects</text>
+  <g>
+    <rect x="105" y="285" width="175" height="90" rx="6" fill="#2f6fab"/><text x="192" y="324" class="head inv" text-anchor="middle">Abilene</text><text x="192" y="353" class="small inv" text-anchor="middle">Texas</text>
+    <rect x="302" y="285" width="175" height="90" rx="6" fill="#7653a6"/><text x="389" y="324" class="body inv" text-anchor="middle">Shackelford</text><text x="389" y="353" class="small inv" text-anchor="middle">Texas</text>
+    <rect x="499" y="285" width="175" height="90" rx="6" fill="#167d73"/><text x="586" y="324" class="head inv" text-anchor="middle">Doña Ana</text><text x="586" y="353" class="small inv" text-anchor="middle">New Mexico</text>
+    <rect x="105" y="400" width="175" height="90" rx="6" fill="#b88407"/><text x="192" y="439" class="head inv" text-anchor="middle">Lighthouse</text><text x="192" y="468" class="small inv" text-anchor="middle">Wisconsin</text>
+    <rect x="302" y="400" width="175" height="90" rx="6" fill="#64748b"/><text x="389" y="439" class="head inv" text-anchor="middle">Lordstown</text><text x="389" y="468" class="small inv" text-anchor="middle">Ohio</text>
+    <rect x="499" y="400" width="175" height="90" rx="6" fill="#24864a"/><text x="586" y="439" class="body inv" text-anchor="middle">Milam County</text><text x="586" y="468" class="small inv" text-anchor="middle">Texas</text>
+    <rect x="105" y="515" width="569" height="44" rx="5" fill="#e5eaf0"/><text x="389" y="543" class="small" text-anchor="middle">Plus ongoing CoreWeave projects</text>
+  </g>
+  <text x="410" y="625" class="num" fill="#2f6fab" text-anchor="middle">Nearly 7 GW</text>
+  <text x="410" y="668" class="body" text-anchor="middle">Planned Capacity</text>
+
+  <text x="800" y="445" class="num" fill="#94a3b8" text-anchor="middle">vs.</text>
+
+  <rect x="865" y="155" width="650" height="570" rx="7" fill="#fff" stroke="#d8bd70" stroke-width="2"/>
+  <text x="905" y="205" class="head">August 2026 · PORTS-Pike</text>
+  <text x="905" y="242" class="body">One technology campus</text>
+  <rect x="965" y="300" width="450" height="260" rx="7" fill="#c85a16"/>
+  <text x="1190" y="415" class="num inv" text-anchor="middle">8 IT-GW</text>
+  <text x="1190" y="462" class="head inv" text-anchor="middle">OpenAI Lease Target</text>
+  <text x="1190" y="505" class="small inv" text-anchor="middle">Six-year buildout through 2032</text>
+  <text x="1190" y="625" class="head" text-anchor="middle">One Campus · Portfolio Scale</text>
+  <text x="1190" y="668" class="body" text-anchor="middle">About 27% of OpenAI's 30 GW target for 2030</text>
+
+  <rect x="180" y="790" width="1240" height="64" rx="6" fill="#172033"/>
+  <text x="800" y="830" class="head inv" text-anchor="middle">Capacity boundaries differ; scale is comparable, but exact totals are not</text>
+</svg>

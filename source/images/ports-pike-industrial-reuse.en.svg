@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="940" viewBox="0 0 1600 940">
+  <style>.title{font:700 36px Arial,sans-serif;fill:#172033}.year{font:700 27px Arial,sans-serif;fill:#52647a}.num{font:700 45px Arial,sans-serif}.head{font:700 24px Arial,sans-serif;fill:#172033}.body{font:500 20px Arial,sans-serif;fill:#52647a}.small{font:500 17px Arial,sans-serif;fill:#52647a}.inv{fill:#fff}</style>
+  <rect width="1600" height="940" fill="#f7f9fc"/>
+  <text x="800" y="62" class="title" text-anchor="middle">One Site, Two National Power-Intensive Missions</text>
+
+  <text x="155" y="135" class="year">1952–2001</text>
+  <rect x="95" y="170" width="520" height="520" rx="7" fill="#fff" stroke="#9cb9dc" stroke-width="2"/>
+  <text x="135" y="220" class="head">Portsmouth Uranium Enrichment</text>
+  <rect x="135" y="270" width="195" height="105" rx="6" fill="#64748b"/>
+  <text x="232" y="312" class="body inv" text-anchor="middle">Two Power Plants</text><text x="232" y="345" class="small inv" text-anchor="middle">OVEC / IKEC</text>
+  <line x1="330" y1="322" x2="370" y2="322" stroke="#52647a" stroke-width="4"/><polygon points="370,309 370,335 394,322" fill="#52647a"/>
+  <rect x="394" y="270" width="180" height="105" rx="6" fill="#2f6fab"/>
+  <text x="484" y="312" class="head inv" text-anchor="middle">330 kV Lines</text><text x="484" y="345" class="small inv" text-anchor="middle">Two double circuits</text>
+  <line x1="484" y1="375" x2="484" y2="415" stroke="#52647a" stroke-width="4"/><polygon points="471,415 497,415 484,439" fill="#52647a"/>
+  <rect x="135" y="439" width="439" height="135" rx="6" fill="#7653a6"/>
+  <text x="354" y="480" class="num inv" text-anchor="middle">1,950 MW</text>
+  <text x="354" y="518" class="head inv" text-anchor="middle">Continuous Supply</text>
+  <text x="354" y="550" class="small inv" text-anchor="middle">Gaseous-Diffusion Enrichment</text>
+  <text x="135" y="625" class="body">3,700+ acres · Water · Rail / Road · Skilled Labor</text>
+  <text x="135" y="657" class="small">Enrichment ended in 2001; remediation and reuse followed</text>
+
+  <line x1="615" y1="430" x2="680" y2="430" stroke="#52647a" stroke-width="4"/><polygon points="680,416 680,444 706,430" fill="#52647a"/>
+  <rect x="706" y="345" width="188" height="170" rx="7" fill="#fff7e6" stroke="#d8bd70" stroke-width="2"/>
+  <text x="800" y="395" class="year" text-anchor="middle">2001–2026</text>
+  <text x="800" y="438" class="head" text-anchor="middle">Remediation</text>
+  <text x="800" y="475" class="small" text-anchor="middle">DOE + adjacent private land</text>
+
+  <line x1="894" y1="430" x2="959" y2="430" stroke="#52647a" stroke-width="4"/><polygon points="959,416 959,444 985,430" fill="#52647a"/>
+  <text x="1045" y="135" class="year">2026–2032</text>
+  <rect x="985" y="170" width="520" height="520" rx="7" fill="#fff" stroke="#d8bd70" stroke-width="2"/>
+  <text x="1025" y="220" class="head">PORTS-Pike AI Campus</text>
+  <rect x="1025" y="270" width="195" height="105" rx="6" fill="#c85a16"/>
+  <text x="1122" y="312" class="body inv" text-anchor="middle">10 GW Generation</text><text x="1122" y="345" class="small inv" text-anchor="middle">9.2 GW Natural Gas</text>
+  <line x1="1220" y1="322" x2="1260" y2="322" stroke="#52647a" stroke-width="4"/><polygon points="1260,309 1260,335 1284,322" fill="#52647a"/>
+  <rect x="1284" y="270" width="180" height="105" rx="6" fill="#b88407"/>
+  <text x="1374" y="312" class="head inv" text-anchor="middle">765 kV Grid</text><text x="1374" y="345" class="small inv" text-anchor="middle">AEP · $4.2 Billion</text>
+  <line x1="1374" y1="375" x2="1374" y2="415" stroke="#52647a" stroke-width="4"/><polygon points="1361,415 1387,415 1374,439" fill="#52647a"/>
+  <rect x="1025" y="439" width="439" height="135" rx="6" fill="#c85a16"/>
+  <text x="1244" y="490" class="num inv" text-anchor="middle">8 IT-GW</text>
+  <text x="1244" y="532" class="head inv" text-anchor="middle">OpenAI AI Compute</text>
+  <text x="1025" y="625" class="body">First 800 MW uses existing AEP infrastructure</text>
+  <text x="1025" y="657" class="small">The next 7.2 GW needs a new generation and grid path</text>
+
+  <rect x="180" y="800" width="1240" height="68" rx="6" fill="#172033"/>
+  <text x="800" y="842" class="head inv" text-anchor="middle">The reusable asset is not the old factory, but land, grid corridors, water, and industrial capability</text>
+</svg>
