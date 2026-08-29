@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="880" viewBox="0 0 1600 880" role="img" aria-labelledby="title desc">
+  <title id="title">Training strong scaling efficiency</title>
+  <desc id="desc">GPU 数量增长时，理想 throughput 线性增长，实际 throughput 因通信、pipeline bubble、straggler 和故障恢复逐渐偏离。</desc>
+  <style>text{font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;letter-spacing:0;fill:#172033}.title{font-size:31px;font-weight:760;text-anchor:middle}.head{font-size:18px;font-weight:750}.body{font-size:16px;fill:#52647a}.small{font-size:14px;fill:#607089}.inv{fill:#fff}</style>
+  <rect width="1600" height="880" fill="#f7f9fc"/><text x="800" y="58" class="title">GPU 翻倍，训练吞吐只在理想线上翻倍</text>
+  <rect x="80" y="105" width="980" height="650" rx="7" fill="#fff" stroke="#d5dde7" stroke-width="2"/>
+  <line x1="160" y1="680" x2="990" y2="680" stroke="#52647a" stroke-width="3"/><polygon points="990,668 990,692 1012,680" fill="#52647a"/>
+  <line x1="160" y1="680" x2="160" y2="165" stroke="#52647a" stroke-width="3"/><polygon points="148,165 172,165 160,143" fill="#52647a"/>
+  <text x="585" y="728" class="head" text-anchor="middle">GPU 数量</text><text x="105" y="420" class="head" text-anchor="middle" transform="rotate(-90 105 420)">端到端训练吞吐</text>
+  <line x1="160" y1="680" x2="920" y2="205" stroke="#9aa9b9" stroke-width="4" stroke-dasharray="12 10"/>
+  <text x="810" y="190" class="body">理想强扩展</text>
+  <path d="M160 680 C330 565 500 455 650 390 C790 330 875 305 920 290" fill="none" stroke="#2f6fab" stroke-width="7"/>
+  <circle cx="160" cy="680" r="9" fill="#2f6fab"/><circle cx="350" cy="548" r="9" fill="#2f6fab"/><circle cx="540" cy="435" r="9" fill="#2f6fab"/><circle cx="730" cy="350" r="9" fill="#2f6fab"/><circle cx="920" cy="290" r="9" fill="#2f6fab"/>
+  <text x="790" y="380" class="head" fill="#2f6fab">实际端到端吞吐</text>
+  <text x="160" y="706" class="small" text-anchor="middle">1×</text><text x="350" y="706" class="small" text-anchor="middle">2×</text><text x="540" y="706" class="small" text-anchor="middle">4×</text><text x="730" y="706" class="small" text-anchor="middle">8×</text><text x="920" y="706" class="small" text-anchor="middle">16×</text>
+  <rect x="1110" y="105" width="410" height="650" rx="7" fill="#fff" stroke="#d5dde7" stroke-width="2"/>
+  <text x="1315" y="155" class="head" text-anchor="middle">偏离理想线的来源</text>
+  <rect x="1160" y="200" width="310" height="68" rx="5" fill="#e9f1f8"/><text x="1315" y="241" class="body" text-anchor="middle">集合通信</text>
+  <rect x="1160" y="292" width="310" height="68" rx="5" fill="#e8f3f1"/><text x="1315" y="333" class="body" text-anchor="middle">流水线空泡</text>
+  <rect x="1160" y="384" width="310" height="68" rx="5" fill="#f7f0dc"/><text x="1315" y="425" class="body" text-anchor="middle">最慢 Rank · 负载不均</text>
+  <rect x="1160" y="476" width="310" height="68" rx="5" fill="#faeee6"/><text x="1315" y="517" class="body" text-anchor="middle">故障 · 重启损失</text>
+  <rect x="1160" y="568" width="310" height="68" rx="5" fill="#eee9f5"/><text x="1315" y="609" class="body" text-anchor="middle">Checkpoint · 数据停顿</text>
+  <text x="1315" y="684" class="head" text-anchor="middle">扩展效率</text><text x="1315" y="716" class="body" text-anchor="middle">实际增量 ÷ 理想增量</text>
+  <rect x="270" y="795" width="1060" height="54" rx="6" fill="#172033"/><text x="800" y="829" class="head inv" text-anchor="middle">更大的 Partition 只有在缩短达标时间时才更有价值</text>
+</svg>

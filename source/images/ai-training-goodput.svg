@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="840" viewBox="0 0 1600 840" role="img" aria-labelledby="title desc">
+  <title id="title">Training wall-clock 与有效训练进度</title>
+  <desc id="desc">Training wall-clock 包含有效计算、collective、pipeline bubble、checkpoint、故障恢复和等待，只有一部分推进目标 checkpoint。</desc>
+  <style>text{font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;letter-spacing:0;fill:#172033}.title{font-size:31px;font-weight:760;text-anchor:middle}.head{font-size:19px;font-weight:750}.body{font-size:16px;fill:#52647a}.small{font-size:14px;fill:#607089}.inv{fill:#fff}</style>
+  <rect width="1600" height="840" fill="#f7f9fc"/><text x="800" y="58" class="title">GPU 运行时间不会全部变成训练进度</text>
+  <text x="80" y="120" class="head">一次训练任务的运行时间</text>
+  <rect x="80" y="150" width="650" height="95" fill="#2f6fab"/><text x="405" y="192" class="head inv" text-anchor="middle">前向 · 反向计算</text><text x="405" y="220" class="small inv" text-anchor="middle">推进模型状态</text>
+  <rect x="730" y="150" width="250" height="95" fill="#167d73"/><text x="855" y="192" class="head inv" text-anchor="middle">集合通信</text><text x="855" y="220" class="small inv" text-anchor="middle">同步必要成本</text>
+  <rect x="980" y="150" width="170" height="95" fill="#b88407"/><text x="1065" y="192" class="head inv" text-anchor="middle">流水线空泡</text><text x="1065" y="220" class="small inv" text-anchor="middle">等待</text>
+  <rect x="1150" y="150" width="170" height="95" fill="#7653a6"/><text x="1235" y="192" class="head inv" text-anchor="middle">Checkpoint</text><text x="1235" y="220" class="small inv" text-anchor="middle">保存状态</text>
+  <rect x="1320" y="150" width="200" height="95" fill="#c85a16"/><text x="1420" y="192" class="head inv" text-anchor="middle">恢复 · 空转</text><text x="1420" y="220" class="small inv" text-anchor="middle">重跑与空转</text>
+  <path d="M800 275V320" stroke="#52647a" stroke-width="4"/><polygon points="788,320 812,320 800,342" fill="#52647a"/>
+  <rect x="165" y="342" width="1270" height="86" rx="6" fill="#fff" stroke="#d5dde7" stroke-width="2"/>
+  <text x="210" y="376" class="head">已分配 GPU 时</text><text x="210" y="405" class="body">Scheduler 已经预留，包含等待与故障时间</text>
+  <rect x="245" y="462" width="1110" height="86" rx="6" fill="#eef3f8" stroke="#b8c6d6" stroke-width="2"/>
+  <text x="290" y="496" class="head">任务运行 GPU 时</text><text x="290" y="525" class="body">任务正在运行，仍包含通信、空泡与 checkpoint 开销</text>
+  <rect x="325" y="582" width="950" height="86" rx="6" fill="#dceaf6" stroke="#7ca5c9" stroke-width="2"/>
+  <text x="370" y="616" class="head">有效训练 GPU 时</text><text x="370" y="645" class="body">真正推进 Token、FLOPs 与模型状态的部分</text>
+  <rect x="405" y="702" width="790" height="78" rx="6" fill="#2f6fab"/>
+  <text x="800" y="735" class="head inv" text-anchor="middle">已验收 Checkpoint · 目标质量</text><text x="800" y="763" class="small inv" text-anchor="middle">最终验收单位</text>
+  <text x="800" y="820" class="small" text-anchor="middle">示意：各段比例随模型、topology、故障率与 checkpoint policy 改变</text>
+</svg>

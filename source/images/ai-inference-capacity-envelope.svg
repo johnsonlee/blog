@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="860" viewBox="0 0 1600 860" role="img" aria-labelledby="title desc">
+  <title id="title">Inference capacity envelope</title>
+  <desc id="desc">Prompt、output、concurrency 和 batch 共同占用 compute、HBM、KV cache 与 memory bandwidth，最终由 TTFT 和 TPOT SLO 限定可售 throughput。</desc>
+  <style>text{font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;letter-spacing:0;fill:#172033}.title{font-size:31px;font-weight:760;text-anchor:middle}.head{font-size:19px;font-weight:750;text-anchor:middle}.body{font-size:15px;text-anchor:middle;fill:#52647a}.small{font-size:14px;fill:#607089}.inv{fill:#fff}</style>
+  <rect width="1600" height="860" fill="#f7f9fc"/><text x="800" y="58" class="title">Inference Capacity 由请求形状与 SLO 共同决定</text>
+  <text x="270" y="120" class="head">请求形状</text><text x="800" y="120" class="head">GPU 资源</text><text x="1330" y="120" class="head">服务门槛</text>
+  <rect x="70" y="155" width="400" height="82" rx="6" fill="#fff" stroke="#64748b" stroke-width="2"/><text x="270" y="188" class="head">Prompt 长度</text><text x="270" y="216" class="body">Prefill 计算 · KV 起点</text>
+  <rect x="70" y="257" width="400" height="82" rx="6" fill="#fff" stroke="#64748b" stroke-width="2"/><text x="270" y="290" class="head">输出长度</text><text x="270" y="318" class="body">Decode 步数 · KV 增长</text>
+  <rect x="70" y="359" width="400" height="82" rx="6" fill="#fff" stroke="#64748b" stroke-width="2"/><text x="270" y="392" class="head">并发数</text><text x="270" y="420" class="body">同时驻留的 Sequence</text>
+  <rect x="70" y="461" width="400" height="82" rx="6" fill="#fff" stroke="#64748b" stroke-width="2"/><text x="270" y="494" class="head">Batch / Token 上限</text><text x="270" y="522" class="body">摊薄开销 · 预留 Buffer</text>
+  <line x1="470" y1="350" x2="548" y2="350" stroke="#52647a" stroke-width="4"/><polygon points="548,338 548,362 570,350" fill="#52647a"/>
+  <rect x="570" y="155" width="460" height="388" rx="7" fill="#fff" stroke="#2f6fab" stroke-width="3"/>
+  <rect x="620" y="195" width="360" height="72" rx="5" fill="#e9f1f8"/><text x="800" y="239" class="head">Prefill 计算</text>
+  <rect x="620" y="287" width="360" height="72" rx="5" fill="#dceaf6"/><text x="800" y="331" class="head">Decode 内存带宽</text>
+  <rect x="620" y="379" width="360" height="72" rx="5" fill="#c9def0"/><text x="800" y="423" class="head">HBM · KV Cache 容量</text>
+  <rect x="620" y="471" width="360" height="42" rx="5" fill="#2f6fab"/><text x="800" y="498" class="body inv">模型权重 · 运行时 Buffer</text>
+  <line x1="1030" y1="350" x2="1108" y2="350" stroke="#52647a" stroke-width="4"/><polygon points="1108,338 1108,362 1130,350" fill="#52647a"/>
+  <rect x="1130" y="155" width="400" height="388" rx="7" fill="#fff" stroke="#c85a16" stroke-width="3"/>
+  <rect x="1180" y="195" width="300" height="72" rx="5" fill="#faeee6"/><text x="1330" y="239" class="head">TTFT ≤ 目标</text>
+  <rect x="1180" y="287" width="300" height="72" rx="5" fill="#f5ddcd"/><text x="1330" y="331" class="head">TPOT ≤ 目标</text>
+  <rect x="1180" y="379" width="300" height="72" rx="5" fill="#efc8ae"/><text x="1330" y="423" class="head">错误率 · 质量通过</text>
+  <rect x="1180" y="471" width="300" height="42" rx="5" fill="#c85a16"/><text x="1330" y="498" class="body inv">准入余量</text>
+  <rect x="230" y="620" width="1140" height="112" rx="7" fill="#172033"/><text x="800" y="664" class="head inv">满足 SLO 的 TPS / MW</text><text x="800" y="702" class="body inv">Raw TPS 中同时通过延迟、错误率与质量门槛的部分</text>
+  <text x="800" y="792" class="small" text-anchor="middle">Batch 增大可能提高 Raw TPS，也可能先让 TTFT / TPOT 越线</text>
+</svg>
