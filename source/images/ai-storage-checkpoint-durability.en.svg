@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1450" viewBox="0 0 720 1450" role="img" aria-labelledby="title desc">
+  <title id="title">A Checkpoint Moves from a Fast Snapshot to a Recoverable State</title>
+  <desc id="desc">An asynchronous checkpoint first snapshots training state into host memory or local NVMe so GPUs can resume. It becomes a recovery point only after checkpoint data enters shared high-performance storage and another node can read it. Object storage then moves a retained copy beyond the shared HPS system or site failure domain.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; fill: #182338; }
+    .h { font-size: 30px; font-weight: 760; }
+    .k { font-size: 27px; font-weight: 730; }
+    .b { font-size: 22px; font-weight: 650; }
+    .s { font-size: 19px; fill: #526176; }
+    .inv { fill: #fff; }
+    .muted { fill: #dbe6f5; }
+    .wide { font-size: 25px; font-weight: 760; }
+    .section { font-size: 26px; font-weight: 760; }
+    .pill { font-size: 20px; font-weight: 650; }
+  </style>
+  <rect width="720" height="1450" fill="#f6f8fb"/>
+
+  <rect x="80" y="36" width="560" height="122" rx="6" fill="#182338"/>
+  <text x="360" y="84" text-anchor="middle" class="h inv">Training State</text>
+  <text x="360" y="124" text-anchor="middle" class="b muted">Accelerator Memory · One Global Step</text>
+  <line x1="360" y1="158" x2="360" y2="190" stroke="#617086" stroke-width="4"/>
+  <polygon points="350,190 370,190 360,206" fill="#617086"/>
+
+  <rect x="80" y="220" width="560" height="230" rx="6" fill="#fff" stroke="#d96513" stroke-width="3"/>
+  <circle cx="128" cy="268" r="26" fill="#d96513"/><text x="128" y="276" text-anchor="middle" class="b inv">1</text>
+  <text x="174" y="278" class="h">Fast Snapshot</text>
+  <text x="112" y="330" class="k">Host Memory / Local NVMe</text>
+  <rect x="112" y="358" width="496" height="54" rx="4" fill="#fff0e5"/>
+  <text x="360" y="393" text-anchor="middle" class="b">GPUs Can Resume Training</text>
+  <text x="360" y="438" text-anchor="middle" class="s">Not yet proven: another node can read after a failure</text>
+  <line x1="360" y1="450" x2="360" y2="490" stroke="#617086" stroke-width="4"/>
+  <polygon points="350,490 370,490 360,506" fill="#617086"/>
+
+  <rect x="80" y="520" width="560" height="244" rx="6" fill="#fff" stroke="#198754" stroke-width="3"/>
+  <circle cx="128" cy="568" r="26" fill="#198754"/><text x="128" y="576" text-anchor="middle" class="b inv">2</text>
+  <text x="174" y="578" class="wide">Shared High-performance Storage</text>
+  <text x="112" y="630" class="k">Shared HPS</text>
+  <text x="112" y="670" class="s">Shard · Manifest · Checksum · Atomic Commit</text>
+  <rect x="112" y="696" width="496" height="54" rx="4" fill="#e6f4ec"/>
+  <text x="360" y="731" text-anchor="middle" class="b">Recovery Point · Readable from Another Node</text>
+  <line x1="360" y1="764" x2="360" y2="804" stroke="#617086" stroke-width="4"/>
+  <polygon points="350,804 370,804 360,820" fill="#617086"/>
+
+  <rect x="80" y="834" width="560" height="230" rx="6" fill="#fff" stroke="#2774c5" stroke-width="3"/>
+  <circle cx="128" cy="882" r="26" fill="#2774c5"/><text x="128" y="890" text-anchor="middle" class="b inv">3</text>
+  <text x="174" y="892" class="h">Retention Copy</text>
+  <text x="112" y="944" class="k">Object Storage / Archive</text>
+  <rect x="112" y="972" width="496" height="54" rx="4" fill="#e9f2fc"/>
+  <text x="360" y="1007" text-anchor="middle" class="pill">Leaves the Shared HPS System / Site Domain</text>
+  <text x="360" y="1052" text-anchor="middle" class="s">Long-term recovery in an independent protection domain</text>
+
+  <rect x="48" y="1120" width="624" height="250" rx="6" fill="#fff" stroke="#aeb9c8" stroke-width="2"/>
+  <text x="360" y="1168" text-anchor="middle" class="section">Async Checkpoint Moves the Pause Boundary</text>
+  <rect x="76" y="1204" width="244" height="116" rx="5" fill="#fff0e5"/>
+  <text x="198" y="1248" text-anchor="middle" class="b">GPU Resume</text>
+  <text x="198" y="1286" text-anchor="middle" class="s">Can happen at Stage 1</text>
+  <text x="360" y="1270" text-anchor="middle" class="h">≠</text>
+  <rect x="400" y="1204" width="244" height="116" rx="5" fill="#e6f4ec"/>
+  <text x="522" y="1248" text-anchor="middle" class="b">Recoverable</text>
+  <text x="522" y="1286" text-anchor="middle" class="s">Requires at least Stage 2</text>
+  <text x="360" y="1352" text-anchor="middle" class="s">Long-run drain rate must match checkpoint generation</text>
+  <text x="360" y="1422" text-anchor="middle" class="s">State boundary: recovery after node / rack / shared HPS failure</text>
+</svg>
