@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">GPU rack counts implied by three different 800 MW boundaries</title>
+  <desc id="desc">Direct division by 120 kW and rounding down yields a static ceiling of 6666 GB200 racks, linear scaling of NVIDIA's 250 MW-class DSX reference site yields about 4915 racks, and direct division by 198 to 330 kW next-generation cabinet TDP yields 4040 to 2424 racks. None is a PORTS-Pike forecast.</desc>
+  <defs>
+    <style>
+      text { font-family: Inter, Arial, sans-serif; letter-spacing: 0; fill: #172033; }
+      .label { font-size: 22px; font-weight: 760; text-anchor: middle; }
+      .value { font-size: 38px; font-weight: 840; text-anchor: middle; }
+      .formula { font-size: 22px; font-weight: 700; text-anchor: middle; }
+      .body { font-size: 18px; fill: #405169; text-anchor: middle; }
+      .warning { font-size: 18px; font-weight: 720; fill: #a34d18; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect width="1600" height="900" fill="#f7f9fc"/>
+
+  <rect x="640" y="55" width="320" height="105" rx="6" fill="#172033"/>
+  <text x="800" y="100" class="label" style="fill:#ffffff">Same Numerator</text>
+  <text x="800" y="142" class="value" style="fill:#ffffff">800 MW</text>
+
+  <line x1="800" y1="160" x2="800" y2="205" stroke="#52647a" stroke-width="4"/>
+  <line x1="300" y1="205" x2="1300" y2="205" stroke="#52647a" stroke-width="4"/>
+  <line x1="300" y1="205" x2="300" y2="250" stroke="#52647a" stroke-width="4"/>
+  <polygon points="288,250 312,250 300,275" fill="#52647a"/>
+  <line x1="800" y1="205" x2="800" y2="250" stroke="#52647a" stroke-width="4"/>
+  <polygon points="788,250 812,250 800,275" fill="#52647a"/>
+  <line x1="1300" y1="205" x2="1300" y2="250" stroke="#52647a" stroke-width="4"/>
+  <polygon points="1288,250 1312,250 1300,275" fill="#52647a"/>
+
+  <rect x="70" y="285" width="460" height="430" rx="6" fill="#eaf2fb" stroke="#3f6f9f" stroke-width="3"/>
+  <text x="300" y="340" class="label">GB200 Direct Division</text>
+  <text x="300" y="395" class="formula">800,000 kW ÷ 120 kW</text>
+  <text x="300" y="465" class="value" fill="#2f6fab">6,666 Racks</text>
+  <text x="300" y="510" class="body">≈ 480,000 GPUs</text>
+  <line x1="130" y1="555" x2="470" y2="555" stroke="#b7c8dc" stroke-width="2"/>
+  <text x="300" y="600" class="body">One rack type · No shared IT</text>
+  <text x="300" y="632" class="body">No reserve · Static nameplate</text>
+  <text x="300" y="680" class="warning">Math ceiling, not install count</text>
+
+  <rect x="570" y="285" width="460" height="430" rx="6" fill="#e8f5e9" stroke="#24864a" stroke-width="3"/>
+  <text x="800" y="340" class="label">DSX Reference Ratio</text>
+  <text x="800" y="390" class="formula">250 MW-class → 1,536 Racks</text>
+  <text x="800" y="425" class="formula">800 MW × 1,536 ÷ 250</text>
+  <text x="800" y="485" class="value" fill="#24864a">≈ 4,915 Racks</text>
+  <text x="800" y="530" class="body">≈ 354,000 GPUs</text>
+  <line x1="630" y1="570" x2="970" y2="570" stroke="#bdd8c5" stroke-width="2"/>
+  <text x="800" y="610" class="body">96 SUs · 110,592 GPUs</text>
+  <text x="800" y="642" class="body">Complete reference architecture</text>
+  <text x="800" y="680" class="warning">Sizing reference, not forecast</text>
+
+  <rect x="1070" y="285" width="460" height="430" rx="6" fill="#fff7d8" stroke="#b88407" stroke-width="3"/>
+  <text x="1300" y="340" class="label">Next-Gen Cabinet TDP</text>
+  <text x="1300" y="390" class="formula">800,000 kW ÷ 198 kW</text>
+  <text x="1300" y="435" class="value" fill="#9a6a00">4,040 Racks</text>
+  <text x="1300" y="490" class="formula">800,000 kW ÷ 330 kW</text>
+  <text x="1300" y="535" class="value" fill="#9a6a00">2,424 Racks</text>
+  <line x1="1130" y1="575" x2="1470" y2="575" stroke="#dec987" stroke-width="2"/>
+  <text x="1300" y="615" class="body">Rack generation sets denominator</text>
+  <text x="1300" y="647" class="body">Before shared IT and reserve</text>
+  <text x="1300" y="680" class="warning">Direct ceilings, not forecast</text>
+
+  <rect x="210" y="775" width="1180" height="70" rx="6" fill="#fff0e5" stroke="#c85a16" stroke-width="2"/>
+  <text x="800" y="818" class="warning">None replaces PORTS-Pike's electrical basis of design</text>
+</svg>

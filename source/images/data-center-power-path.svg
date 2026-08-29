@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">800MW 从园区容量走到 GPU Rack 的四层口径</title>
+  <desc id="desc">电力从公用事业交付容量进入设施，扣除设施负荷后成为 IT 容量，再扣除共享 IT、运行预留和整块取整，才形成 GPU Rack 电力预算，最后除以机架设计功率得到可安装机架数。</desc>
+  <defs>
+    <style>
+      text { font-family: Inter, "PingFang SC", "Microsoft YaHei", Arial, sans-serif; letter-spacing: 0; fill: #172033; }
+      .label { font-size: 24px; font-weight: 760; text-anchor: middle; }
+      .value { font-size: 35px; font-weight: 820; text-anchor: middle; }
+      .body { font-size: 18px; fill: #405169; text-anchor: middle; }
+      .small { font-size: 16px; fill: #607089; text-anchor: middle; }
+      .minus { font-size: 17px; font-weight: 700; fill: #a34d18; text-anchor: middle; }
+      .voltage { font-size: 18px; font-weight: 720; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect width="1600" height="900" fill="#f7f9fc"/>
+
+  <rect x="615" y="55" width="370" height="105" rx="6" fill="#172033"/>
+  <text x="800" y="100" class="label" style="fill:#ffffff">PORTS-Pike 首批容量</text>
+  <text x="800" y="140" class="value" style="fill:#ffffff">800MW</text>
+  <path d="M782 160H818V194H838L800 232L762 194H782Z" fill="#52647a"/>
+  <text x="800" y="255" class="small">公告没有单独定义这 800MW 落在哪一道边界</text>
+
+  <rect x="45" y="310" width="330" height="250" rx="6" fill="#eaf2fb" stroke="#3f6f9f" stroke-width="3"/>
+  <text x="210" y="365" class="label">Utility Service</text>
+  <text x="210" y="414" class="value">可交付 MW</text>
+  <text x="210" y="462" class="body">Service Delivery Point</text>
+  <text x="210" y="500" class="small">100kV+ → 34.5kV</text>
+
+  <path d="M375 414H420V396L465 435L420 474V456H375Z" fill="#52647a"/>
+
+  <rect x="465" y="310" width="330" height="250" rx="6" fill="#e8f5e9" stroke="#24864a" stroke-width="3"/>
+  <text x="630" y="365" class="label">IT Capacity</text>
+  <text x="630" y="414" class="value">IT Equipment MW</text>
+  <text x="630" y="462" class="body">Compute · Network · Storage</text>
+  <text x="630" y="500" class="small">480V / 415V AC</text>
+  <text x="630" y="535" class="minus">Utility MW − Facility Load</text>
+
+  <path d="M795 414H840V396L885 435L840 474V456H795Z" fill="#52647a"/>
+
+  <rect x="885" y="310" width="330" height="250" rx="6" fill="#fff7d8" stroke="#b88407" stroke-width="3"/>
+  <text x="1050" y="365" class="label">GPU Rack Budget</text>
+  <text x="1050" y="414" class="value">可用于 Rack 的 MW</text>
+  <text x="1050" y="462" class="body">Required Contingency 后仍可交付</text>
+  <text x="1050" y="500" class="small">AC → 50–51V DC</text>
+  <text x="1050" y="535" class="minus">IT MW − Shared IT − Reserve</text>
+
+  <path d="M1215 414H1260V396L1305 435L1260 474V456H1215Z" fill="#52647a"/>
+
+  <rect x="1305" y="310" width="250" height="250" rx="6" fill="#f3eefe" stroke="#7653a6" stroke-width="3"/>
+  <text x="1430" y="365" class="label">Installable</text>
+  <text x="1430" y="397" class="label">GPU Racks</text>
+  <text x="1430" y="462" class="value">整数</text>
+  <text x="1430" y="500" class="small">不是连续 MW</text>
+  <text x="1430" y="518" class="small">÷ Rack Design MW</text>
+  <text x="1430" y="540" class="small">Power Block 取整</text>
+
+  <line x1="100" y1="680" x2="1500" y2="680" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="210" y="735" class="voltage">100kV+ 输电</text>
+  <text x="630" y="735" class="voltage">34.5kV Campus Bus</text>
+  <text x="1050" y="735" class="voltage">480V / 415V Busway</text>
+  <text x="1430" y="735" class="voltage">50–51V DC Busbar</text>
+  <line x1="300" y1="727" x2="515" y2="727" stroke="#52647a" stroke-width="4"/>
+  <polygon points="515,715 540,727 515,739" fill="#52647a"/>
+  <line x1="750" y1="727" x2="935" y2="727" stroke="#52647a" stroke-width="4"/>
+  <polygon points="935,715 960,727 935,739" fill="#52647a"/>
+  <line x1="1170" y1="727" x2="1330" y2="727" stroke="#52647a" stroke-width="4"/>
+  <polygon points="1330,715 1355,727 1330,739" fill="#52647a"/>
+
+  <text x="800" y="835" class="body">同样写着 MW，只有处在同一边界、同一故障条件下才能相除</text>
+</svg>
