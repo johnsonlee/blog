@@ -16,11 +16,11 @@ i18n_key: test-case-is-the-core-asset
 
 一开始看得很爽。发现一个慢 Query，Agent 找到 Hot Path，改实现、补测试、跑 Benchmark，然后交出 36 倍甚至 87 万倍的提升。以前要折腾几天的 Performance Optimization，现在几个小时就能跑完一轮。
 
-但 PR 越合越多，我越觉得不对劲：为什么每个“优化完成”后面，都紧跟着另一个 PR 补 Benchmark？Graphite 每个主要模块的 Unit Test Line Coverage 门槛已经是 98%，到底还有什么没测到？
+但 PR 越合越多，越看越觉得不对劲：为什么每个“优化完成”后面，都紧跟着另一个 PR 补 Benchmark？Graphite 每个主要模块的 Unit Test Line Coverage 门槛已经是 98%，到底还有什么没测到？
 
 <!-- more -->
 
-## 一开始，我只想把 Query 跑快
+## 一开始只想把 Query 跑快
 
 这一串从 [PR #91](https://github.com/johnsonlee/graphite/pull/91) 开始。Production 里有一条六个 Property 做模糊匹配的 Broad Discovery Query，Generic Path 会反序列化所有 Node，逐个判断、Projection、去重，最后才应用 `LIMIT`。问题看起来很清楚：把这条 Query 跑快。
 
@@ -28,9 +28,9 @@ Agent 很快加了 Mapped Index Fast Path，随后又在 [PR #95](https://github
 
 这套 Loop 很容易让人上瘾。Slow Query 是 Input，JMH 数字是 Output，中间的 Source Code 交给 Agent 搜索。Full Scan 可以换成 Index，Multi-graph Search 可以加 Bounded Parallelism，DATAFLOW Query 可以改成 Lazy Traversal。实现一版接一版地换，写代码几乎不再构成阻力。
 
-当时我以为，剩下的事情只是让 Agent 继续找 Hot Path。
+当时看起来，剩下的事情只是让 Agent 继续找 Hot Path。
 
-## 每次以为结束，下一个场景又来了
+## 每次以为结束都会冒出下一个场景
 
 第一个问题出在 Benchmark 的世界太小。之前的测试根本没有在真实场景里跑过，连千万级 Node 都没遇到过。[PR #92](https://github.com/johnsonlee/graphite/pull/92) 开始把原来不到 100 万 Node 的 Elasticsearch Fixture 换成 Tika、Hive 和 Kotlin Compiler，并把 Build、Save、Mapped Load、Cypher Query 串成 4 GiB 的 End-to-end Gate。
 
@@ -44,9 +44,9 @@ Agent 很快加了 Mapped Index Fast Path，随后又在 [PR #95](https://github
 
 最难受的地方在于，这些优化大多没有撒谎。它们在各自的 Benchmark 里确实更快，只是每个 Benchmark 都只切中了 Production 的一个截面。Graph、Query、并发、缓存、Heap 或失败方式一换，原来的结论就可能失效。
 
-## 98% Coverage，还是没见过世面
+## 98% Coverage 依然没见过世面
 
-Graphite 的 Unit Test Line Coverage 门槛是 98%。这个数字曾经给了我一种错觉：大部分代码都跑过，剩下的风险应该只是少数 Edge Case。
+Graphite 的 Unit Test Line Coverage 门槛是 98%。这个数字很容易造成一种错觉：大部分代码都跑过，剩下的风险应该只是少数 Edge Case。
 
 最近这串 PR 把这种错觉打碎了。一个小 Graph、一种 Node、一次 Query，就可以跑过和 Production 相同的代码。换成千万级 Node、40 个 Graph、混合 Node、模糊搜索、并发请求和有限 Heap，执行的还是那些 Line，系统表现却完全不同。
 
@@ -56,17 +56,17 @@ Coverage 回答的是“哪些代码被执行过”。Test Case 还要回答另�
 
 Test Code 可以继续生成。Agent 很擅长给一条新 Branch 补 Coverage，也能把 JUnit 和 JMH 写得很完整。它无法从 98% 这个数字里猜出下一个没见过的 Production 场景。
 
-## Source Code 是答案，Test Case 才是问题
+## Source Code 只是答案 Test Case 才是问题
 
-到这里我才明白，最近这些 PR 同时在做两件事：优化性能，也一笔一笔暴露 Case Debt。
+到这里，最近这些 PR 的共同点才显出来：它们在优化性能，也在一笔一笔暴露 Case Debt。
 
-87 万倍不是假数字。它准确描述了一个 590 万 Node Fixture 上，一种 `UNWIND labels(n)` Query 从 Full Scan 切到 Metadata Fast Path 之后的变化。问题出在我很容易把“这个 Case 快了 87 万倍”，读成“Graphite 快了 87 万倍”。
+87 万倍不是假数字。它准确描述了一个 590 万 Node Fixture 上，一种 `UNWIND labels(n)` Query 从 Full Scan 切到 Metadata Fast Path 之后的变化。问题在于，“这个 Case 快了 87 万倍”很容易被读成“Graphite 快了 87 万倍”。
 
-**Agent 优化的不是“软件”这个抽象概念，而是我交给它的 Case。** Case 只写 Latency，它就会沿着 Latency 搜索；没有固定 Expected Result，失败也可能成为最快路径；没有 Production Corpus，Synthetic Data 上的最优解就可能被当成产品最优解。
+**Agent 优化的不是“软件”这个抽象概念，而是给定的 Case。** Case 只写 Latency，它就会沿着 Latency 搜索；没有固定 Expected Result，失败也可能成为最快路径；没有 Production Corpus，Synthetic Data 上的最优解就可能被当成产品最优解。
 
 到这里，Source Code 和 Test Case 的价值开始分开了。Source Code 是这一版实现给出的答案：Full Scan、Index Fast Path、Work Budget、Timeout，下一轮都可以继续换。Test Case 保存的是问题和通过标准：面对这组 Corpus 和 Query，在这个资源边界里，必须给出什么结果。
 
-Source Code 已经不再稀缺，Agent 几个小时就能换一版。真正难补的是那些没跑过、没见过，也没有人做过取舍的 Case。那一刻我突然意识到：**Test Case 才是软件的核心资产。**
+Source Code 已经不再稀缺，Agent 几个小时就能换一版。真正难补的是那些没跑过、没见过，也没有人做过取舍的 Case。最近这一串 PR 最后留下的结论是：**Test Case 才是软件的核心资产。**
 
 真的吗？
 
@@ -74,7 +74,7 @@ Source Code 已经不再稀缺，Agent 几个小时就能换一版。真正难�
 
 Source Code 会被下一版 Source Code 替换。Test Case 不跟某一版实现绑定，它把 Production 里已经付过代价才知道的约束，带到下一版实现里。Architecture 决定系统的形状，Harness 负责把约束跑起来，Test Case 则保存具体场景里什么必须继续成立。
 
-{% post_link agent-tdd-is-self-verification 'Agent 真的需要 TDD 吗？' %}里写过，测试和实现由同一个 Agent 根据同一句模糊需求生成，很容易共享同一份误解。Graphite 这次让我看到更具体的一层：即使 Test Code 很多、Coverage 很高、Benchmark 也是真的，只要 Case 没有覆盖真实场景，Agent 仍然会把局部答案做得无比漂亮。
+{% post_link agent-tdd-is-self-verification 'Agent 真的需要 TDD 吗？' %}里写过，测试和实现由同一个 Agent 根据同一句模糊需求生成，很容易共享同一份误解。Graphite 这次把问题推进了更具体的一层：即使 Test Code 很多、Coverage 很高、Benchmark 也是真的，只要 Case 没有覆盖真实场景，Agent 仍然会把局部答案做得无比漂亮。
 
 ## Test Code 也会跟着实现一起漂
 
@@ -100,7 +100,7 @@ Compiler 这个反例没有推翻结论，反而把边界说清楚了。它之�
 
 ## SaaS 的护城河不是 Source Code
 
-回头再看这几天的 Graphite，我最初最兴奋的是 36 倍和 87 万倍。现在反而更看重 [PR #92](https://github.com/johnsonlee/graphite/pull/92) 和 [PR #104](https://github.com/johnsonlee/graphite/pull/104)。前者开始把真实 Corpus 带进测试，后者保证裁判不会跟着选手一起移动。
+回头再看这几天的 Graphite，36 倍和 87 万倍最先抓住眼球。现在反而更该看 [PR #92](https://github.com/johnsonlee/graphite/pull/92) 和 [PR #104](https://github.com/johnsonlee/graphite/pull/104)：前者开始把真实 Corpus 带进测试，后者保证裁判不会跟着选手一起移动。
 
 即便如此，Tika、Hive、Kotlin Compiler 也只是三个固定 Corpus，最大不过 590 多万 Node，离 8000 万 Node 的 Deployment 还有一个数量级。它们只是让原本没见过世面的测试开始接近真实世界，离完整还很远。
 

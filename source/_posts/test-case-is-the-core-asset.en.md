@@ -17,11 +17,11 @@ Over the past few days, [Graphite](https://github.com/johnsonlee/graphite) merge
 
 At first, this was great fun to watch. Find a slow query, let an Agent locate the hot path, change the implementation, add tests, run the benchmark, and collect a 36x or even 870,000x improvement. Performance work that once took days could now complete a full loop in hours.
 
-But the more PRs I merged, the stranger it looked. Why did every "optimization complete" need another benchmark PR immediately afterward? Graphite already requires 98% unit-test line coverage across its major modules. What was still going untested?
+But as the PR count rose, the sequence started to look strange. Why did every "optimization complete" need another benchmark PR immediately afterward? Graphite already requires 98% unit-test line coverage across its major modules. What was still going untested?
 
 <!-- more -->
 
-## At First, I Only Wanted to Make the Query Faster
+## At first the goal was only to make the query faster
 
 The sequence began with [PR #91](https://github.com/johnsonlee/graphite/pull/91). Production had a broad discovery query that performed fuzzy matching across six properties. The generic path deserialized every node, checked each one, projected and deduplicated the results, and only then applied `LIMIT`. The problem looked straightforward: make that query faster.
 
@@ -29,9 +29,9 @@ The Agent quickly added a mapped-index fast path, then continued the optimizatio
 
 This loop is addictive. A slow query is the input, a JMH number is the output, and the Agent searches the source code in between. A full scan can become an index lookup. Multi-graph search can gain bounded parallelism. A DATAFLOW query can switch to lazy traversal. One implementation replaces another, and writing code is barely an obstacle anymore.
 
-At the time, I thought the remaining work was simply to keep sending the Agent after hot paths.
+At the time, the remaining work seemed simple: keep sending the Agent after hot paths.
 
-## Every Time It Looked Finished, Another Scenario Appeared
+## Every finish exposed another scenario
 
 The first problem was that the benchmark world was too small. The earlier tests had never run under realistic conditions. They had not even seen ten million nodes. [PR #92](https://github.com/johnsonlee/graphite/pull/92) began replacing the Elasticsearch fixture, which had fewer than one million nodes, with Tika, Hive, and the Kotlin Compiler. It also joined build, save, mapped load, and Cypher query into an end-to-end gate with a 4 GiB heap.
 
@@ -45,9 +45,9 @@ More cases followed. Parallel search regressed when it used `NCPU`, so it ultima
 
 The frustrating part was that most of these optimizations had not lied. Each one really was faster inside its benchmark. Each benchmark simply captured one slice of Production. Change the graph, query, concurrency, cache, heap, or failure mode, and the conclusion could stop holding.
 
-## 98% Coverage, Still No Real-World Experience
+## 98% coverage still had no real-world experience
 
-Graphite requires 98% unit-test line coverage. That number once gave me a comforting illusion: most of the code had run, so the remaining risk must live in a few edge cases.
+Graphite requires 98% unit-test line coverage. That number creates a comforting illusion: most of the code has run, so the remaining risk must live in a few edge cases.
 
 This run of PRs broke that illusion. A small graph, one node type, and one query can execute the same lines as Production. Move to tens of millions of nodes, 40 graphs, mixed node types, fuzzy search, concurrent requests, and a constrained heap, and those same lines produce very different system behavior.
 
@@ -57,13 +57,13 @@ Coverage answers, "Which lines executed?" A test case must answer a different se
 
 Test code can keep growing. An Agent is good at adding coverage for a new branch and can write complete JUnit and JMH suites. It cannot infer the next unseen Production scenario from a 98% number.
 
-## Source Code Is the Answer; the Test Case Is the Question
+## Source code answers Test cases ask
 
-I finally understood that these PRs were doing two things at once. They improved performance while exposing case debt one entry at a time.
+Only then did the pattern become clear: these PRs were improving performance while exposing case debt one entry at a time.
 
-The 870,000x number was real. It precisely described one `UNWIND labels(n)` query on a 5.9-million-node fixture switching from a full scan to a metadata fast path. My mistake was reading "this case became 870,000x faster" as "Graphite became 870,000x faster."
+The 870,000x number was real. It precisely described one `UNWIND labels(n)` query on a 5.9-million-node fixture switching from a full scan to a metadata fast path. The problem was how easily "this case became 870,000x faster" could be read as "Graphite became 870,000x faster."
 
-**An Agent does not optimize the abstract idea of "the software." It optimizes the case I give it.** If the case specifies only latency, the Agent searches along that axis. Without a fixed expected result, failure may become the fastest path. Without a Production corpus, the best result on synthetic data may be mistaken for the best result for the product.
+**An Agent does not optimize the abstract idea of "the software." It optimizes the given case.** If the case specifies only latency, the Agent searches along that axis. Without a fixed expected result, failure may become the fastest path. Without a Production corpus, the best result on synthetic data may be mistaken for the best result for the product.
 
 This is where source code and test cases begin to have different values. Source code is the current implementation's answer: full scan, index fast path, work budget, or timeout. Any of those can change in the next round. A test case preserves the question and its acceptance criteria: for this corpus and query, inside this resource boundary, what result must the system produce?
 
@@ -71,11 +71,11 @@ Source code is no longer scarce. An Agent can replace an implementation in hours
 
 Really?
 
-Turn the question around on Graphite. If I delete an implementation but keep the graph model, architecture, and cases, an Agent can write another version. If I delete the cases and keep only the source code, the Agent can see what the previous implementation did, but not why it must support 80 million nodes, why partial results do not count as success, or which latency and heap limits are product commitments. Source code cannot explain whether an odd branch is a rule, a bug, or an accident.
+Turn the question around on Graphite. Delete an implementation but keep the graph model, architecture, and cases, and an Agent can write another version. Delete the cases and keep only the source code, and the Agent can see what the previous implementation did, but not why it must support 80 million nodes, why partial results do not count as success, or which latency and heap limits are product commitments. Source code cannot explain whether an odd branch is a rule, a bug, or an accident.
 
 One version of source code will be replaced by the next. Test cases are not bound to either implementation. They carry constraints learned through real Production costs into the next version. Architecture sets the system's shape. The harness runs the constraints. Test cases preserve what must continue to hold in specific scenarios.
 
-In {% post_link agent-tdd-is-self-verification.en 'Does an Agent Really Need TDD?' %}, I argued that when the same Agent generates tests and implementation from the same vague requirement, both can share the same misunderstanding. Graphite exposed a more specific version of that problem. Even with plenty of test code, high coverage, and honest benchmarks, an Agent can make a local answer look spectacular when the cases do not cover reality.
+{% post_link agent-tdd-is-self-verification.en 'Does an Agent Really Need TDD?' %} explained how tests and implementation generated by the same Agent from the same vague requirement can share the same misunderstanding. Graphite exposed a more specific version of that problem. Even with plenty of test code, high coverage, and honest benchmarks, an Agent can make a local answer look spectacular when the cases do not cover reality.
 
 ## Test Code Can Drift with the Implementation
 
@@ -89,7 +89,7 @@ Graphite's bytecode graph keeps the same kind of ledger. Eighty Java fixtures ar
 
 The case set can never be finished in one pass. Each time Production exposes another scenario, the input, expected behavior, resource boundary, and provenance must be recorded. Only then does the ledger move closer to the product itself.
 
-The argument works for Graphite. To disprove it, I only need one kind of software that an AI can rewrite from existing code without preparing extra cases.
+The argument works for Graphite. Disproving it requires one kind of software that an AI can rewrite from existing code without preparing extra cases.
 
 ## A Compiler May Be the Only Counterexample
 
@@ -101,7 +101,7 @@ The compiler counterexample does not overturn the conclusion. It clarifies the b
 
 ## Source Code Is Not the SaaS Moat
 
-Looking back at these Graphite PRs, the 36x and 870,000x improvements excited me most at first. Now I care more about [PR #92](https://github.com/johnsonlee/graphite/pull/92) and [PR #104](https://github.com/johnsonlee/graphite/pull/104). The former brought real corpora into the test loop. The latter stopped the judge from moving with the contestant.
+Looking back at these Graphite PRs, the 36x and 870,000x improvements grabbed attention first. [PR #92](https://github.com/johnsonlee/graphite/pull/92) and [PR #104](https://github.com/johnsonlee/graphite/pull/104) matter more now. The former brought real corpora into the test loop. The latter stopped the judge from moving with the contestant.
 
 Even then, Tika, Hive, and the Kotlin Compiler are only three fixed corpora. The largest has 5.9 million nodes, an order of magnitude below the 80-million-node deployment. The tests have begun to approach reality, but they are nowhere near complete.
 
