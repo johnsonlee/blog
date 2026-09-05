@@ -2,6 +2,14 @@
 
 仓库中的 `AGENTS.md` 是 post 格式规则的 canonical source。本 reference 补充执行顺序和容易出错的发布边界。
 
+## 交付范围
+
+按 `SKILL.md` 确定本次是草稿、局部改稿、翻译还是完整发布准备，再追踪受影响的文件。仅研究或策划不自动创建 post；草稿放在 `source/_drafts/`，不因完成写作而自动转为 published post。
+
+新建正式文章、草稿转正式文章及完整发布准备，都读取 [visuals.md](visuals.md) 交付 5:2 与 3:4 两套封面，即使正文没有配图。局部改稿检查既有封面和导出文件：只有其标题、事实或视觉受影响才更新，不无条件重做或补齐此前不存在的封面。
+
+已有 SVG 的变化需同步其双语版本及同名 PNG；双语正文的事实、章节、链接或图片变化也须追踪到另一版本。只改措辞时保留其他已成立的段落。所有 published post 的修改仍须满足下面的双语 hard gate。
+
 ## 双语是 Hard Gate
 
 任何新增或修改的 published post 都必须同时交付中文和英文版本。缺少任一版本、front matter 不对齐、H2/H3 结构不对应、`<!-- more -->` 缺失、外链集合不一致、图片集合不一致，或英文正文没有引用配套的 `.en.svg`，`npm run check:bilingual` 和 `npm run build` 必须失败。不得用“先发中文、以后补英文”绕过。
@@ -54,7 +62,7 @@ tags:
 
 ## 中英文顺序
 
-英文版只能从已稳定的中文稿生成。保持以下内容语义一致：
+新稿先稳定中文，再生成英文；纯翻译使用用户指定的稳定原稿，已有英文局部编辑核对配套中文，不重启整篇创作。保持以下内容语义一致：
 
 - 章节层级与论证顺序
 - 事实、数字、状态和不确定性
@@ -73,7 +81,7 @@ npm run check:bilingual
 npm run build
 ```
 
-`build` 会依次执行 agent guidance、post style、Hexo generation 和 quotes 检查。某一项失败时再单独运行对应 script 定位，不要用局部成功替代完整 build。
+`build` 按 `package.json` 执行 agent guidance、双语、post style、Hexo generation 和 quotes 检查。某一项失败时再单独运行对应 script 定位，不要用局部成功替代完整 build。仅修改 skill 文档时验证规则和引用，不要求生成无关文章资产。
 
 需要自动修正引号时运行：
 
