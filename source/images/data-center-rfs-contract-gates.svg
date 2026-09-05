@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="880" viewBox="0 0 1600 880" role="img" aria-labelledby="title desc">
+  <title id="title">RFS 如何改变数据中心合同的收费状态</title>
+  <desc id="desc">合同签署后经历设计采购施工和 Early Access。Phase 2 还需融资完成并取得客户书面批准。RFS Notice 触发 Phase Commencement，之后按千瓦收取费用并开始年度调价；延迟 RFS 会产生 credits。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10Z" fill="#52647a"/>
+    </marker>
+    <style>
+      text { font-family: Inter, "PingFang SC", "Microsoft YaHei", Arial, sans-serif; letter-spacing: 0; }
+      .head { font-size: 23px; font-weight: 750; fill: #172033; text-anchor: middle; }
+      .body { font-size: 18px; fill: #334155; text-anchor: middle; }
+      .small { font-size: 16px; fill: #607089; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect width="1600" height="880" fill="#f7f9fc"/>
+  <text x="80" y="74" font-size="24" font-weight="700" fill="#172033">每个 Phase 独立跨过 RFS</text>
+  <text x="1520" y="74" class="small" style="text-anchor:end">公开 40MW Colocation Agreement 的合同边界</text>
+
+  <line x1="280" y1="226" x2="350" y2="226" stroke="#52647a" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="590" y1="226" x2="660" y2="226" stroke="#52647a" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="900" y1="226" x2="970" y2="226" stroke="#52647a" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="1210" y1="226" x2="1280" y2="226" stroke="#52647a" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <g>
+    <rect x="60" y="145" width="220" height="162" rx="6" fill="#edf2f7" stroke="#64748b" stroke-width="2"/>
+    <text x="170" y="197" class="head">合同签署</text>
+    <text x="170" y="230" class="small">Contract Signed</text>
+    <text x="170" y="270" class="body">锁定未来 Capacity</text>
+  </g>
+  <g>
+    <rect x="350" y="145" width="240" height="162" rx="6" fill="#fff0e5" stroke="#c85a16" stroke-width="2"/>
+    <text x="470" y="191" class="head">设计 · 采购 · 施工</text>
+    <text x="470" y="228" class="small">Buildout</text>
+    <text x="470" y="266" class="body">设备与工程交付</text>
+  </g>
+  <g>
+    <rect x="660" y="145" width="240" height="162" rx="6" fill="#fff7d8" stroke="#b88407" stroke-width="2"/>
+    <text x="780" y="185" class="head">Early Access</text>
+    <text x="780" y="216" class="small">Target Delivery 前 6 周</text>
+    <text x="780" y="248" class="body">进场安装</text>
+    <text x="780" y="273" class="small">Temporary Power</text>
+    <text x="780" y="296" font-size="14" fill="#9a4b0a" text-anchor="middle">不构成 RFS Acceptance</text>
+  </g>
+  <g>
+    <rect x="970" y="145" width="240" height="162" rx="6" fill="#e7f4f2" stroke="#167d73" stroke-width="2"/>
+    <text x="1090" y="191" class="head">RFS Notice</text>
+    <text x="1090" y="228" class="small">建成 · 调试 · 测试</text>
+    <text x="1090" y="263" class="body">附 Commissioning Report</text>
+    <text x="1090" y="289" class="small">客户检查并接受</text>
+  </g>
+  <g>
+    <rect x="1280" y="145" width="260" height="162" rx="6" fill="#e8f5e9" stroke="#24864a" stroke-width="3"/>
+    <text x="1410" y="191" font-size="20" font-weight="750" fill="#172033" text-anchor="middle">Phase Commencement</text>
+    <text x="1410" y="228" class="small">Contracted IT Load 可上电</text>
+    <text x="1410" y="263" class="body">按 kW 收取 Colocation Fee</text>
+    <text x="1410" y="289" class="small" fill="#24864a">Annual Escalation 开始计时</text>
+  </g>
+
+  <rect x="60" y="355" width="840" height="80" rx="6" fill="#fff" stroke="#d5dde7" stroke-width="2"/>
+  <circle cx="105" cy="395" r="10" fill="#c85a16"/>
+  <text x="132" y="403" font-size="20" fill="#334155">RFS 之前：可安装并短暂上电，但不产生 Recurring Fee</text>
+  <rect x="970" y="355" width="570" height="80" rx="6" fill="#24864a"/>
+  <circle cx="1015" cy="395" r="10" fill="#d9f3e2"/>
+  <text x="1042" y="403" font-size="20" font-weight="700" fill="#fff">RFS 之后：Phase 进入收费期</text>
+
+  <text x="70" y="532" font-size="21" font-weight="700" fill="#172033">Phase 1 · 15MW</text>
+  <line x1="280" y1="523" x2="1480" y2="523" stroke="#cbd5e1" stroke-width="18" stroke-linecap="round"/>
+  <line x1="280" y1="523" x2="930" y2="523" stroke="#d97706" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="930" cy="523" r="18" fill="#24864a" stroke="#f7f9fc" stroke-width="5"/>
+  <line x1="930" y1="492" x2="930" y2="554" stroke="#24864a" stroke-width="3"/>
+  <text x="930" y="482" class="small">RFS / Commencement 1</text>
+  <text x="1210" y="558" class="small" fill="#24864a">Fee + Escalation Clock 1</text>
+
+  <text x="70" y="682" font-size="21" font-weight="700" fill="#172033">Phase 2 · +25MW</text>
+  <rect x="280" y="610" width="360" height="36" rx="6" fill="#fff7d8" stroke="#b88407" stroke-width="2"/>
+  <text x="460" y="634" font-size="15" font-weight="700" fill="#7a5805" text-anchor="middle">融资完成 + 客户书面批准后生效</text>
+  <line x1="280" y1="673" x2="1480" y2="673" stroke="#cbd5e1" stroke-width="18" stroke-linecap="round"/>
+  <line x1="280" y1="673" x2="1120" y2="673" stroke="#d97706" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="1120" cy="673" r="18" fill="#24864a" stroke="#f7f9fc" stroke-width="5"/>
+  <line x1="1120" y1="642" x2="1120" y2="704" stroke="#24864a" stroke-width="3"/>
+  <text x="1120" y="632" class="small">RFS / Commencement 2</text>
+  <text x="1310" y="708" class="small" fill="#24864a">Clock 2 独立开始</text>
+
+  <path d="M710 764H1120" fill="none" stroke="#bd2c2c" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="915" y="749" class="small" fill="#bd2c2c">错过 RFS Trigger Date</text>
+  <rect x="1120" y="734" width="360" height="62" rx="6" fill="#fff0f0" stroke="#bd2c2c" stroke-width="2"/>
+  <text x="1300" y="772" font-size="19" font-weight="700" fill="#9f2020" text-anchor="middle">Daily RFS Credits 随延迟累积</text>
+  <text x="80" y="837" class="small" style="text-anchor:start">Phase 1 与 Phase 2 的位置仅用于说明独立交付，不代表合同中的实际日期；Phase 2 仍受前置条件约束。</text>
+</svg>
