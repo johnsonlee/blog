@@ -63,7 +63,45 @@ Management that hands the Enter key to engineers has often handed its own work t
 
 In {% post_link who-holds-the-reins.en 'Who Holds the Reins?' %}, I wrote that the What is the reins and the How is the horsepower. AI made the How extremely cheap, which makes the What the scarcest thing in the organization: what to build, what not to build, what counts as done, and which metric means things actually got better. Engineers can translate the What into gates and harnesses, but the business goal itself has to come from management. When management outsources its own thinking to AI, engineers are left executing a goal nobody has really thought through, and speed only accelerates them in the wrong direction.
 
-So management that deserves great engineers has at least used these tools with its own hands, knows where they are reliable and where they will confidently make things up, and, more importantly, can write a goal clear enough to be verified.
+So management that deserves great engineers must first be able to write a goal clear enough to be verified. That is management's own job. Neither AI nor engineers can do it for them.
+
+## Leading While Using AI Less Than the Front Line
+
+There is an unavoidable reality here: management will never spend as much time with AI as frontline engineers do. A director with dozens of reports has a day chopped into meetings and cannot spend hours in a row with an Agent chasing a flaky test. Asking leaders to "understand AI better than the engineers" is an empty demand.
+
+But the problem in this thread comes from where leaders get their information, and has little to do with hours of use. One commenter complained about team leaders whose familiarity with new technology "starts and ends at LinkedIn posts." Another said management mandates AI and measures its use to keep up with their buddies' bragging rights at the 19th hole. Vendor demos, peers showing off, and social media only show success stories, and only the moment of generation, never who is maintaining that code three months later. Decisions built on those channels are really decisions about AI's advertising.
+
+Leaders do not need to use AI more. They need a set of signals that are hard to fake.
+
+First, finish one small real task with your own hands. The goal is not to become an expert but to calibrate your intuition. Skip the demos, pick a real task with acceptance criteria, and carry it all the way to working, including the part where you discover it is wrong and get it right. What I learned that weekend in {% post_link fast-is-the-most-expensive-slow.en 'Fast Is the Most Expensive Slow' %}, that green CI does not mean it works, is worth more than a hundred product launches.
+
+Second, watch the metrics along the outcome chain, not usage. PR size, time waiting for review, revert rate, defects that escape to production, incident recovery time, and how long a new hire takes to fix a bug independently. When understanding gets skipped, these numbers worsen first, regardless of how much AI is used.
+
+Third, pick a merged PR at random and ask its author to walk through what it does and why. It is the cheapest audit there is. If the author cannot explain it, the organization's human-in-the-loop exists in name only; the point is to measure the system, not to punish the individual. By the same logic, leaders should sit in on incident reviews. When it comes to how AI is really being used, an incident is more honest than any status report.
+
+Fourth, treat the people who say "no" as sensors. The engineer who insisted on starting with the high-level gaps and the senior told to lower his standards are exactly the people who actually read the code, and they give off the highest-resolution signal in the organization. The previous section said punishing judgment drives out the best people. It carries a second cost: leaders blindfold themselves.
+
+The reverse also holds: do not treat the heaviest users as the answer key. In {% post_link who-holds-the-reins.en 'Who Holds the Reins?' %}, I wrote about heavy users who cannot stop, and the person using AI the most may be the one being dragged along by the horse. A leader's advantage is precisely distance: seeing several teams at once, and seeing which ways of using AI leave behind assets three months later and which leave behind incidents.
+
+**Leaders do not need to understand AI better than engineers, but they must know better than anyone where their own judgment about AI comes from.**
+
+## Setting Direction When the Capability Boundary Is Unclear
+
+Push one step further: if leaders cannot see AI's capability boundary clearly to begin with, and are not familiar with frontier models, how do they set direction?
+
+Start by admitting that nobody sees the boundary clearly for long. Models turn over every few months. What a frontline heavy user concluded last quarter that "it can't do this" may no longer hold this quarter; in the other direction, the capabilities claimed at a launch event may shrink by half inside your own codebase. **Betting direction on an accurate prediction of model capability is the wrong bet in the first place.**
+
+The most damaging decisions in the thread were exactly this kind of bet: first believe AI can do it, then take an irreversible step. One acquired team was expected to take over a platform the acquirer had staffed with 20+ people using only 5 engineers, after management first thought 1 would be enough, while the company planned to cut from 200+ employees to around 60-70 within two years. An intern said the fintech company was rewriting its business code from Go to Java on the grounds that Codex makes it just as fast, deploying straight to production and leaving users to test for bugs. Layoffs, hiring freezes for juniors, and removing review are one-way doors. Once you walk through, it is hard to come back.
+
+When the boundary is unclear, there are three relatively stable ways to set direction.
+
+First, bet on things that do not change with model versions. Business goals, users, risk limits, and what counts as correct will not change when the next model ships. In {% post_link test-case-is-the-core-asset.en "Test Cases Are Software's Core Asset" %}, I wrote that source code can be regenerated, but the real world captured in test cases cannot. Investing in real samples, evals, harnesses, and verifiable acceptance criteria pays off whichever model wins. It is one of the few no-regret moves.
+
+Second, make the capability boundary something the organization measures, not something leaders believe. Build an eval from your own real tasks and past incidents, and rerun it whenever a new model ships to see how far it gets in your context. Leaders do not need to understand the model. They only need one habit: instead of asking "how good is this model," ask "what does our own eval say."
+
+Third, the blurrier the boundary, the more you should move through two-way doors. Pilot at small scale, write the success and kill criteria in advance, and expand only when results hold up. Irreversible decisions, such as how many people to cut, whether to keep hiring juniors, or whether to drop human review, belong after your own data, not after someone else's launch event.
+
+None of these require leaders to understand models better than engineers. They require an older management skill: under uncertainty, telling apart the judgments that are allowed to be wrong from the ones that are not.
 
 ## Where the Next Generation of Engineers Comes From
 
@@ -75,7 +113,7 @@ Today's great engineers were grown over a decade of reading code, stepping on la
 
 ## What "Deserves" Means
 
-Great engineers in the AI era do not need management to hand out work. Agents will break work down more finely than any person. What they need is something else: a clear What, someone who can see where the bottleneck is, authority that matches responsibility, an environment where saying "no" is not punished, and an organization willing to pay for the next generation's understanding.
+Great engineers in the AI era do not need management to hand out work. Agents will break work down more finely than any person. What they need is something else: a clear What, someone who can see where the bottleneck is and knows where their own information comes from, authority that matches responsibility, an environment where saying "no" is not punished, and an organization willing to pay for the next generation's understanding.
 
 None of this is new. Good management should have been doing it ten years ago. AI simply widened the gap. Bad management used to be covered by engineers' diligence and craft. Now diligence is replaced by Agents, craft is told to lower its standards, and nothing is left to cover for it.
 
