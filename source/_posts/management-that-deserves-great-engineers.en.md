@@ -1,5 +1,5 @@
 ---
-title: "What Kind of Management Deserves to Lead Great Engineers?"
+title: "Code Isn't the Bottleneck, So Why Are We So Slow"
 date: 2026-09-25 10:30:00
 lang: en
 i18n_key: management-that-deserves-great-engineers
