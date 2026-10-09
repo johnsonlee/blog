@@ -22,7 +22,7 @@ Claude Code took one hour. It wrote everything itself, from the architecture to 
 
 For the next two weeks, I tested its limits obsessively, trying to find something it could not do. Each attempt left me a little less room to reassure myself. In this industry, 35 is an unspoken threshold. I had worked hard to make it past that point on the experience and craft I had accumulated. Now I looked back and found that the things I had relied on were changing too.
 
-Eventually, even sleep did not interrupt that immersion. In {% post_link tetris-effect-of-ai-conversations.en 'Inception via AI: The Tetris Effect of Conversations' %}, I recorded how, after half a month of intense AI use, I started dreaming about talking to it every night, for many nights in a row. I had rarely dreamed before. The conversations carried on into my sleep. I called it the "Tetris effect" at the time. Looking back, behind that phrase were days spent urgently trying to understand where this change would take me.
+Eventually, even sleep did not interrupt that immersion. In {% post_link tetris-effect-of-ai-conversations.en 'Inception via AI: The Tetris Effect of Conversations' %}, I recorded how, after half a month of intense AI use, I started dreaming about talking to it every night, for many nights in a row. I had rarely dreamed before. The conversations carried on into my sleep. I called it the "Tetris effect" at the time. I was desperate to understand where this change would take me.
 
 Over the next three quarters, I worked intensively on agentic engineering almost every day. That question stayed with me. As I went deeper into the work, my understanding of it gradually changed.
 
@@ -56,7 +56,7 @@ Here the value of eval and verification becomes concrete. Eval defines the task,
 
 In Graphite, I put that sequence into the development process: define the benchmark gate first, then start having agents submit PRs. But deciding what counts as a performance regression already requires judgment. Left to define it, an agent focuses on building, saving, loading, and querying a single graph. Every operation is covered. At first glance, it looks entirely reasonable.
 
-I did not accept that approach to performance acceptance. Those single-graph operations in Graphite already take very little time in absolute terms. A small fluctuation in the execution environment can become a large percentage regression against the baseline. If the numbers worsen, did the change slow down the system, or did the environment affect the measurement? A PR gate that cannot distinguish the two can send an agent repeatedly optimizing around noise. In this case, the agent did not recognize that measuring every operation still did not mean it had chosen the right workload for assessing performance.
+I would not use those measurements to decide whether a change passed the performance gate. Those single-graph operations in Graphite already take very little time in absolute terms. A small fluctuation in the execution environment can become a large percentage regression against the baseline. If the numbers worsen, did the change slow down the system, or did the environment affect the measurement? A PR gate that cannot distinguish the two can send an agent repeatedly optimizing around noise. In this case, the agent did not recognize that measuring every operation still did not mean it had chosen the right workload for assessing performance.
 
 I defined performance regressions using representative load tests involving multiple graphs and large graphs, assessing changes through the metrics under that load. Multiple graphs must actually participate in the measured requests; loading several graphs while querying only one does not qualify. Single-graph tests can remain as correctness checks, while performance acceptance relies on the load tests. I want to understand how the system behaves under that workload. Changes in the duration of an isolated lightweight operation cannot answer that question.
 
@@ -133,7 +133,7 @@ An agent can write such a tool for me. Understanding what happens when a JAR or 
 
 In the agentic project, that experience has another direct use: writing lint rules. Just last week, I deleted 10,000 lines from the codebase. Code generation had become so cheap that duplicated and unused code was everywhere. Producing it takes a moment, but whatever stays still needs to be understood, changed, and maintained. Those 10,000 lines gave me a more concrete sense of what "output" means: rapid growth in code does not necessarily mean rapid progress for the project.
 
-After one cleanup, later changes can still bring the same problems back. So I turn problems with clear criteria into lint rules that participate in subsequent development. Identifying duplication and determining whether code is truly unused still require an understanding of the project. Where that judgment can become a rule, tools can apply it repeatedly. I like to call these checks an agent's "compiler": as far as possible, judgments I once voiced during review become feedback the agent receives while it works. That way, I do not have to keep chasing the pace of generation with more cleanup.
+After one cleanup, later changes can still bring the same problems back. So when I can define a clear check for a problem, I make it a lint rule and run it on later changes. Identifying duplication and determining whether code is truly unused still require an understanding of the project. Where that judgment can become a rule, tools can apply it repeatedly. I like to call these checks an agent's "compiler": as far as possible, judgments I once voiced during review become feedback the agent receives while it works. That way, I do not have to keep chasing the pace of generation with more cleanup.
 
 Of course, this "compiler" can only check rules that have been specified. [NASA's Systems Engineering Handbook](https://www.nasa.gov/reference/2-0-fundamentals-of-systems-engineering/) distinguishes verification of conformance to requirements from validation of fitness for actual use. Even if every rule passes, the change should not ship if the premise for retiring the experiment is wrong. Engineers must revisit the criteria instead of continually having agents fix code against the wrong ones.
 
@@ -163,7 +163,7 @@ This requires learning how to verify the checks themselves. [Mutation testing](h
 
 Progress therefore cannot be measured only by test counts and pass rates. Check where the answers come from, whether collection scope has shrunk, whether failing samples have been removed, which artifact version the report covers, and whether old criteria still apply. When evidence is missing, the check should return "unknown" instead of passing by default.
 
-When others can use this feedback to locate and fix problems without always waiting for you to inspect the work, your experience begins to operate beyond the time you are personally available. Making a judgment reusable for a category of tasks is one step toward responsibility across teams.
+When others can use this feedback to locate and fix problems, you no longer have to inspect every change yourself. Making that possible for a category of tasks is a step toward taking responsibility across teams.
 
 ### Apply the criteria across a wider scope
 
@@ -173,7 +173,7 @@ At Staff, attention must expand to long-term tradeoffs within a domain: which in
 
 Distinguished engineers must keep questioning the collaboration model itself: what evidence permits people to step back, how agents' autonomy boundaries should change, and what work will let the next generation of engineers gain experience. As tools change, someone must keep revising how organizations distribute responsibility and develop people.
 
-Reading a few more articles will not give you these responsibilities. You need to work on problems at the corresponding scope, record the evidence available at the time, the choices you made, and the later outcomes, then use those outcomes to calibrate your judgment. Growth can have a concrete check: did I understand one more layer of constraints this time, and take responsibility for something I previously needed someone else to decide?
+Reading a few more articles will not give you these responsibilities. You need to work on problems at the corresponding scope, record the evidence available at the time, the choices you made, and the later outcomes, then use those outcomes to calibrate your judgment. To judge your progress, ask: did I understand one more layer of constraints this time, and take responsibility for something I previously needed someone else to decide?
 
 Every step must also account for cost. A one-off problem that someone can confirm in a few minutes does not justify building a huge harness first. Judgments worth encoding recur, have meaningful consequences, and provide feedback you can obtain reliably. Deciding what to leave undone for now is also part of owning the work independently.
 
@@ -185,7 +185,7 @@ Thinking about it this way, I began to see more than a difficult career transiti
 
 Catching one change of this scale in a career is rare enough. Those of us born in the 1980s caught the mobile internet, and now we find ourselves in the AI wave. To encounter another opportunity to change how we work while we still have energy and already have some experience is an extraordinary piece of luck for our generation of engineers.
 
-Thinking of the earlier wave brings me back to the years I spent working on VirtualAPK and Booster at DiDi. I wrote about those projects in {% post_link working-at-didi.en 'My Years at DiDi' %}. The mobile internet brought new businesses and new engineering problems, giving us opportunities to turn ideas into projects and reach more users through open source. Looking back, it is difficult to separate our growth from the opportunities the era gave us.
+The previous wave takes me back to those years working on VirtualAPK and Booster at DiDi. I wrote about those projects in {% post_link working-at-didi.en 'My Years at DiDi' %}. The mobile internet brought new businesses and new engineering problems, giving us opportunities to turn ideas into projects and reach more users through open source. Looking back, it is difficult to separate our growth from the opportunities the era gave us.
 
 Some ideas from my time working on Booster remained unfinished, including that bytecode tool. As I continue building Graphite today, those earlier problems and the experience I gained are finding new uses in the AI era. My own experience connects the two waves.
 
