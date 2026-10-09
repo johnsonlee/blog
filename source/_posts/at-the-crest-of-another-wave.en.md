@@ -185,7 +185,7 @@ Thinking about it this way, I began to see more than a difficult career transiti
 
 Catching one change of this scale in a career is rare enough. Those of us born in the 1980s caught the mobile internet, and now we find ourselves in the AI wave. To encounter another opportunity to change how we work while we still have energy and already have some experience is an extraordinary piece of luck for our generation of engineers.
 
-Thinking of the earlier wave brings me back to the years I spent working on VirtualAPK and Booster at DiDi. I wrote about those projects in {% post_link working-at-didi.en 'My Years at DiDi' %}. The mobile internet brought new businesses and new engineering problems, giving us opportunities to turn ideas into projects and reach more users through open source. Looking back, it is difficult to separate our growth from the opportunities the era gave us.
+The previous wave takes me back to those years working on VirtualAPK and Booster at DiDi. I wrote about those projects in {% post_link working-at-didi.en 'My Years at DiDi' %}. The mobile internet brought new businesses and new engineering problems, giving us opportunities to turn ideas into projects and reach more users through open source. Looking back, it is difficult to separate our growth from the opportunities the era gave us.
 
 Some ideas from my time working on Booster remained unfinished, including that bytecode tool. As I continue building Graphite today, those earlier problems and the experience I gained are finding new uses in the AI era. My own experience connects the two waves.
 
