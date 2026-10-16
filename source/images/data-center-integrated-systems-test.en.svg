@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1520" viewBox="0 0 720 1520" role="img" aria-labelledby="title desc">
+  <title id="title">Cross-system timeline and retest path for a utility-loss test</title>
+  <desc id="desc">A utility interruption triggers concurrent power, cooling, controls, and operations responses. An all-day generator-mode run exposes a fuel-transfer sequence defect that requires impact review and retest.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; fill: #172033; }
+    .label { font-size: 24px; font-weight: 700; }
+    .body { font-size: 22px; font-weight: 650; }
+    .node { font-size: 19px; font-weight: 650; }
+    .small { font-size: 20px; fill: #526176; }
+    .tiny { font-size: 16px; fill: #526176; }
+    .event-label { font-size: 17px; fill: #526176; }
+    .inverse { fill: #ffffff; }
+    .inverse-sub { fill: #d8e0ec; }
+    .event { stroke: #8290a3; stroke-width: 2; stroke-dasharray: 7 7; }
+  </style>
+
+  <rect width="720" height="1520" fill="#f7f9fc"/>
+
+  <rect x="32" y="24" width="656" height="92" rx="6" fill="#172033"/>
+  <text x="360" y="61" text-anchor="middle" font-size="24" font-weight="750" class="inverse">Same fault boundary · load point · baseline</text>
+  <text x="360" y="92" text-anchor="middle" font-size="19" class="inverse-sub">Timing and permitted transients follow project acceptance criteria</text>
+
+  <line x1="176" y1="174" x2="644" y2="174" stroke="#526176" stroke-width="3"/>
+  <path d="M644 164 L662 174 L644 184 Z" fill="#526176"/>
+
+  <line class="event" x1="210" y1="154" x2="210" y2="902"/>
+  <line class="event" x1="338" y1="154" x2="338" y2="902"/>
+  <line class="event" x1="466" y1="154" x2="466" y2="902"/>
+  <line class="event" x1="610" y1="154" x2="610" y2="902"/>
+
+  <text x="210" y="142" text-anchor="middle" class="event-label">t0 · utility loss</text>
+  <text x="338" y="142" text-anchor="middle" class="event-label">generator ready</text>
+  <text x="466" y="142" text-anchor="middle" class="event-label">load transfer</text>
+  <text x="610" y="142" text-anchor="middle" class="event-label">sustained run</text>
+
+  <rect x="32" y="205" width="656" height="176" rx="6" fill="#eef4fb" stroke="#c8d8ea" stroke-width="2"/>
+  <text x="54" y="244" class="label">Power</text>
+  <rect x="190" y="220" width="276" height="58" rx="5" fill="#dceafb" stroke="#2f6fb0" stroke-width="2"/>
+  <text x="328" y="254" text-anchor="middle" class="node">UPS bridge · critical load held</text>
+  <rect x="210" y="294" width="256" height="58" rx="5" fill="#fff0d8" stroke="#c87916" stroke-width="2"/>
+  <text x="338" y="319" text-anchor="middle" class="node">Generator start · stabilize</text>
+  <text x="338" y="343" text-anchor="middle" class="small">connect to critical bus</text>
+  <rect x="466" y="294" width="178" height="58" rx="5" fill="#e5f4ea" stroke="#23894a" stroke-width="2"/>
+  <text x="555" y="328" text-anchor="middle" class="body">Generator mode</text>
+
+  <rect x="32" y="401" width="656" height="150" rx="6" fill="#eef9f7" stroke="#badfd9" stroke-width="2"/>
+  <text x="54" y="440" class="label">Cooling</text>
+  <rect x="210" y="418" width="256" height="54" rx="5" fill="#d9f0ec" stroke="#14877d" stroke-width="2"/>
+  <text x="338" y="441" text-anchor="middle" class="node">Ride-through</text>
+  <text x="338" y="464" text-anchor="middle" class="small">Flow / temperature</text>
+  <rect x="338" y="486" width="306" height="48" rx="5" fill="#ffffff" stroke="#14877d" stroke-width="2"/>
+  <text x="491" y="506" text-anchor="middle" class="node">Restart sequence</text>
+  <text x="491" y="529" text-anchor="middle" class="small">Hold project limits</text>
+
+  <rect x="32" y="571" width="656" height="176" rx="6" fill="#f4f0fb" stroke="#d7caec" stroke-width="2"/>
+  <text x="54" y="610" class="label">Controls</text>
+  <rect x="210" y="590" width="128" height="52" rx="5" fill="#e8def7" stroke="#7751b5" stroke-width="2"/>
+  <text x="274" y="622" text-anchor="middle" class="node">Loss detect</text>
+  <rect x="338" y="590" width="128" height="52" rx="5" fill="#e8def7" stroke="#7751b5" stroke-width="2"/>
+  <text x="402" y="622" text-anchor="middle" class="node">Transfer cmd</text>
+  <rect x="466" y="590" width="178" height="52" rx="5" fill="#e8def7" stroke="#7751b5" stroke-width="2"/>
+  <text x="555" y="611" text-anchor="middle" class="node">Fuel-transfer</text>
+  <text x="555" y="635" text-anchor="middle" class="small">sequence</text>
+  <rect x="210" y="659" width="434" height="66" rx="5" fill="#ffffff" stroke="#7751b5" stroke-width="2"/>
+  <text x="427" y="688" text-anchor="middle" class="node">BMS · EPMS · plant controller</text>
+  <text x="427" y="714" text-anchor="middle" class="tiny">States, commands, alarms, and trends share one clock</text>
+
+  <rect x="32" y="767" width="656" height="135" rx="6" fill="#fff7ec" stroke="#ebd2ae" stroke-width="2"/>
+  <text x="54" y="806" class="label">Operations</text>
+  <rect x="210" y="786" width="434" height="88" rx="5" fill="#ffffff" stroke="#c87916" stroke-width="2"/>
+  <text x="427" y="822" text-anchor="middle" class="node">Recognize alarms · execute EOP · intervene</text>
+  <text x="427" y="853" text-anchor="middle" class="tiny">Operator logs and system trends become test evidence</text>
+
+  <rect x="54" y="930" width="612" height="98" rx="6" fill="#fff0ed" stroke="#c84f32" stroke-width="3"/>
+  <text x="360" y="967" text-anchor="middle" font-size="24" font-weight="750" fill="#a53c26">All-day generator mode: low-fuel alarm</text>
+  <text x="360" y="997" text-anchor="middle" class="body">The delay lets the leak valve close first;</text>
+  <text x="360" y="1021" text-anchor="middle" class="small">the pump starts against a closed valve</text>
+
+  <rect x="108" y="1062" width="504" height="82" rx="6" fill="#fff0ed" stroke="#c84f32" stroke-width="2"/>
+  <text x="360" y="1096" text-anchor="middle" class="body">Baseline v1 · utility-loss procedure FAIL</text>
+  <text x="360" y="1125" text-anchor="middle" class="small">Preserve trends, alarms, issue log, and root cause</text>
+  <line x1="360" y1="1144" x2="360" y2="1164" stroke="#526176" stroke-width="3"/>
+  <path d="M350 1164 L360 1180 L370 1164 Z" fill="#526176"/>
+
+  <rect x="108" y="1180" width="504" height="76" rx="6" fill="#fff5d8" stroke="#bd8700" stroke-width="2"/>
+  <text x="360" y="1214" text-anchor="middle" class="body">Remove fuel-pump delay · baseline v2</text>
+  <text x="360" y="1241" text-anchor="middle" class="small">The new sequence cannot inherit the old signoff</text>
+  <line x1="360" y1="1256" x2="360" y2="1276" stroke="#526176" stroke-width="3"/>
+  <path d="M350 1276 L360 1292 L370 1276 Z" fill="#526176"/>
+
+  <rect x="108" y="1292" width="504" height="76" rx="6" fill="#e9f2fc" stroke="#2f6fb0" stroke-width="2"/>
+  <text x="360" y="1326" text-anchor="middle" class="node">Impact review · rerun affected procedure</text>
+  <text x="360" y="1353" text-anchor="middle" class="small">Same fault boundary · enough duration · new baseline</text>
+  <line x1="360" y1="1368" x2="360" y2="1388" stroke="#526176" stroke-width="3"/>
+  <path d="M350 1388 L360 1404 L370 1388 Z" fill="#526176"/>
+
+  <rect x="108" y="1404" width="504" height="84" rx="6" fill="#e5f4ea" stroke="#23894a" stroke-width="3"/>
+  <text x="360" y="1440" text-anchor="middle" font-size="23" font-weight="750" fill="#176536">Retest PASS · blocking issue closed</text>
+  <text x="360" y="1471" text-anchor="middle" class="body">New evidence can support the RFS decision</text>
+</svg>

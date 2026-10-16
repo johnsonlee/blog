@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1520" viewBox="0 0 720 1520" role="img" aria-labelledby="title desc">
+  <title id="title">市电中断测试的跨系统时间线与回归路径</title>
+  <desc id="desc">一次市电中断同时触发电力、冷却、控制和运营响应。全天发电机模式暴露燃油补给顺序故障，修改控制逻辑后必须评估影响并重测。</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans CJK SC", sans-serif; fill: #172033; }
+    .label { font-size: 24px; font-weight: 700; }
+    .body { font-size: 22px; font-weight: 650; }
+    .node { font-size: 19px; font-weight: 650; }
+    .small { font-size: 20px; fill: #526176; }
+    .tiny { font-size: 18px; fill: #526176; }
+    .event-label { font-size: 18px; fill: #526176; }
+    .inverse { fill: #ffffff; }
+    .inverse-sub { fill: #d8e0ec; }
+    .event { stroke: #8290a3; stroke-width: 2; stroke-dasharray: 7 7; }
+  </style>
+
+  <rect width="720" height="1520" fill="#f7f9fc"/>
+
+  <rect x="32" y="24" width="656" height="92" rx="6" fill="#172033"/>
+  <text x="360" y="61" text-anchor="middle" font-size="24" font-weight="750" class="inverse">同一 Fault Boundary · Load Point · 配置基线</text>
+  <text x="360" y="92" text-anchor="middle" font-size="20" class="inverse-sub">时间阈值与允许瞬态由项目 Acceptance Criteria 决定</text>
+
+  <line x1="176" y1="174" x2="644" y2="174" stroke="#526176" stroke-width="3"/>
+  <path d="M644 164 L662 174 L644 184 Z" fill="#526176"/>
+
+  <line class="event" x1="210" y1="154" x2="210" y2="902"/>
+  <line class="event" x1="338" y1="154" x2="338" y2="902"/>
+  <line class="event" x1="466" y1="154" x2="466" y2="902"/>
+  <line class="event" x1="610" y1="154" x2="610" y2="902"/>
+
+  <text x="210" y="142" text-anchor="middle" class="event-label">t0 · 市电中断</text>
+  <text x="338" y="142" text-anchor="middle" class="event-label">发电机就绪</text>
+  <text x="466" y="142" text-anchor="middle" class="event-label">负载接管</text>
+  <text x="610" y="142" text-anchor="middle" class="event-label">持续运行</text>
+
+  <rect x="32" y="205" width="656" height="176" rx="6" fill="#eef4fb" stroke="#c8d8ea" stroke-width="2"/>
+  <text x="54" y="244" class="label">电力</text>
+  <rect x="190" y="220" width="276" height="58" rx="5" fill="#dceafb" stroke="#2f6fb0" stroke-width="2"/>
+  <text x="328" y="244" text-anchor="middle" class="body">UPS Bridge</text>
+  <text x="328" y="268" text-anchor="middle" class="small">Critical Load 保持</text>
+  <rect x="210" y="294" width="256" height="58" rx="5" fill="#fff0d8" stroke="#c87916" stroke-width="2"/>
+  <text x="338" y="318" text-anchor="middle" class="body">Generator 启动 · 稳压</text>
+  <text x="338" y="342" text-anchor="middle" class="small">接入 Critical Bus</text>
+  <rect x="466" y="294" width="178" height="58" rx="5" fill="#e5f4ea" stroke="#23894a" stroke-width="2"/>
+  <text x="555" y="328" text-anchor="middle" class="body">Generator Mode</text>
+
+  <rect x="32" y="401" width="656" height="150" rx="6" fill="#eef9f7" stroke="#badfd9" stroke-width="2"/>
+  <text x="54" y="440" class="label">冷却</text>
+  <rect x="210" y="418" width="256" height="54" rx="5" fill="#d9f0ec" stroke="#14877d" stroke-width="2"/>
+  <text x="338" y="441" text-anchor="middle" class="body">Ride-through</text>
+  <text x="338" y="464" text-anchor="middle" class="small">Flow / Temperature</text>
+  <rect x="338" y="486" width="306" height="48" rx="5" fill="#ffffff" stroke="#14877d" stroke-width="2"/>
+  <text x="491" y="516" text-anchor="middle" class="node">Restart Sequence · 维持项目阈值</text>
+
+  <rect x="32" y="571" width="656" height="176" rx="6" fill="#f4f0fb" stroke="#d7caec" stroke-width="2"/>
+  <text x="54" y="610" class="label">控制</text>
+  <rect x="210" y="590" width="128" height="52" rx="5" fill="#e8def7" stroke="#7751b5" stroke-width="2"/>
+  <text x="274" y="622" text-anchor="middle" class="node">Loss Detect</text>
+  <rect x="338" y="590" width="128" height="52" rx="5" fill="#e8def7" stroke="#7751b5" stroke-width="2"/>
+  <text x="402" y="622" text-anchor="middle" class="node">Transfer Cmd</text>
+  <rect x="466" y="590" width="178" height="52" rx="5" fill="#e8def7" stroke="#7751b5" stroke-width="2"/>
+  <text x="555" y="611" text-anchor="middle" class="node">Fuel Transfer</text>
+  <text x="555" y="634" text-anchor="middle" class="small">Sequence</text>
+  <rect x="210" y="659" width="434" height="66" rx="5" fill="#ffffff" stroke="#7751b5" stroke-width="2"/>
+  <text x="427" y="688" text-anchor="middle" class="node">BMS · EPMS · Plant Controller</text>
+  <text x="427" y="714" text-anchor="middle" class="small">状态、命令、告警与趋势使用同一时间基准</text>
+
+  <rect x="32" y="767" width="656" height="135" rx="6" fill="#fff7ec" stroke="#ebd2ae" stroke-width="2"/>
+  <text x="54" y="806" class="label">运营</text>
+  <rect x="210" y="786" width="434" height="88" rx="5" fill="#ffffff" stroke="#c87916" stroke-width="2"/>
+  <text x="427" y="812" text-anchor="middle" class="body">识别告警 · 执行 EOP</text>
+  <text x="427" y="837" text-anchor="middle" class="small">判断自动恢复是否需要人工介入</text>
+  <text x="427" y="862" text-anchor="middle" class="tiny">操作记录与系统趋势共同进入 Test Evidence</text>
+
+  <rect x="54" y="930" width="612" height="98" rx="6" fill="#fff0ed" stroke="#c84f32" stroke-width="3"/>
+  <text x="360" y="963" text-anchor="middle" font-size="24" font-weight="750" fill="#a53c26">全天 Generator Mode：Low-Fuel Alarm</text>
+  <text x="360" y="993" text-anchor="middle" class="node">Delay 让 Leak-Detection Valve 先关闭</text>
+  <text x="360" y="1018" text-anchor="middle" class="small">Pump 对 Closed Valve 加压</text>
+
+  <rect x="108" y="1062" width="504" height="82" rx="6" fill="#fff0ed" stroke="#c84f32" stroke-width="2"/>
+  <text x="360" y="1096" text-anchor="middle" class="body">配置 v1 · Utility-Loss Procedure FAIL</text>
+  <text x="360" y="1125" text-anchor="middle" class="small">保留失败趋势、告警、Issue Log 与 Root Cause</text>
+  <line x1="360" y1="1144" x2="360" y2="1164" stroke="#526176" stroke-width="3"/>
+  <path d="M350 1164 L360 1180 L370 1164 Z" fill="#526176"/>
+
+  <rect x="108" y="1180" width="504" height="76" rx="6" fill="#fff5d8" stroke="#bd8700" stroke-width="2"/>
+  <text x="360" y="1214" text-anchor="middle" class="body">删除 Fuel-Pump Delay · 配置 v2</text>
+  <text x="360" y="1241" text-anchor="middle" class="small">新 Sequence 不能继承旧配置的签字</text>
+  <line x1="360" y1="1256" x2="360" y2="1276" stroke="#526176" stroke-width="3"/>
+  <path d="M350 1276 L360 1292 L370 1276 Z" fill="#526176"/>
+
+  <rect x="108" y="1292" width="504" height="76" rx="6" fill="#e9f2fc" stroke="#2f6fb0" stroke-width="2"/>
+  <text x="360" y="1326" text-anchor="middle" class="node">Change-Impact Review · 重跑受影响 Procedure</text>
+  <text x="360" y="1353" text-anchor="middle" class="small">同一 Fault Boundary · 足够时长 · 新配置基线</text>
+  <line x1="360" y1="1368" x2="360" y2="1388" stroke="#526176" stroke-width="3"/>
+  <path d="M350 1388 L360 1404 L370 1388 Z" fill="#526176"/>
+
+  <rect x="108" y="1404" width="504" height="84" rx="6" fill="#e5f4ea" stroke="#23894a" stroke-width="3"/>
+  <text x="360" y="1440" text-anchor="middle" font-size="23" font-weight="750" fill="#176536">Retest PASS · Blocking Issue Closed</text>
+  <text x="360" y="1471" text-anchor="middle" class="body">成为支持 RFS 判断的新 Evidence</text>
+</svg>
