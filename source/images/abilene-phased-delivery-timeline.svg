@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Abilene 数据中心分期建设与交付时间线</title>
+  <desc id="desc">Abilene 第一期在 2024 年 6 月开工，2025 年 7 月已有早期负载运行；第二期于 2025 年 3 月开工，园区施工与运行长期重叠。</desc>
+  <defs>
+    <style>
+      text { font-family: Inter, "PingFang SC", "Microsoft YaHei", Arial, sans-serif; letter-spacing: 0; }
+      .label { font-size: 24px; font-weight: 700; fill: #172033; }
+      .date { font-size: 18px; font-weight: 700; fill: #52647a; text-anchor: middle; }
+      .body { font-size: 19px; fill: #334155; }
+      .small { font-size: 16px; fill: #607089; }
+    </style>
+  </defs>
+  <rect width="1600" height="900" fill="#f7f9fc"/>
+
+  <text x="90" y="82" font-size="28" font-weight="750" fill="#172033">Abilene · 1.2GW Campus</text>
+  <text x="1510" y="82" class="small" style="text-anchor:end">Phase、Data Hall 与 Campus 是三条不同时间轴</text>
+
+  <line x1="190" y1="155" x2="1480" y2="155" stroke="#94a3b8" stroke-width="3"/>
+  <g>
+    <line x1="190" y1="143" x2="190" y2="167" stroke="#52647a" stroke-width="3"/><text x="190" y="132" class="date">2024.06</text>
+    <line x1="610" y1="143" x2="610" y2="167" stroke="#52647a" stroke-width="3"/><text x="610" y="132" class="date">2025.03</text>
+    <line x1="730" y1="143" x2="730" y2="167" stroke="#52647a" stroke-width="3"/><text x="730" y="132" class="date">2025.04</text>
+    <line x1="860" y1="143" x2="860" y2="167" stroke="#52647a" stroke-width="3"/><text x="860" y="132" class="date">2025.06</text>
+    <line x1="950" y1="143" x2="950" y2="167" stroke="#52647a" stroke-width="3"/><text x="950" y="132" class="date">2025.07</text>
+    <line x1="1370" y1="143" x2="1370" y2="167" stroke="#52647a" stroke-width="3"/><text x="1370" y="132" class="date">2026.06</text>
+  </g>
+
+  <text x="90" y="245" class="label">第一期</text>
+  <text x="90" y="271" class="small">2 栋</text>
+  <text x="90" y="295" class="small">200MW+</text>
+  <rect x="190" y="218" width="760" height="64" rx="6" fill="#c85a16"/>
+  <text x="500" y="258" font-size="20" font-weight="700" fill="#fff" text-anchor="middle">施工 · 启动 · Commissioning</text>
+  <rect x="950" y="218" width="530" height="64" rx="6" fill="#24864a"/>
+  <text x="1215" y="258" font-size="20" font-weight="700" fill="#fff" text-anchor="middle">早期 Workload 运行</text>
+
+  <line x1="190" y1="282" x2="190" y2="328" stroke="#c85a16" stroke-width="3"/>
+  <circle cx="190" cy="328" r="8" fill="#c85a16"/>
+  <text x="190" y="360" class="body" text-anchor="middle">第一期开工</text>
+
+  <line x1="730" y1="282" x2="730" y2="328" stroke="#3f6f9f" stroke-width="3"/>
+  <circle cx="730" cy="328" r="8" fill="#3f6f9f"/>
+  <text x="730" y="356" class="body" text-anchor="middle">首个 Data Hall</text>
+  <text x="730" y="382" class="small" text-anchor="middle">Core area 交给 Tenant</text>
+
+  <line x1="860" y1="218" x2="860" y2="188" stroke="#3f6f9f" stroke-width="3"/>
+  <circle cx="860" cy="188" r="8" fill="#3f6f9f"/>
+  <text x="860" y="207" class="small" text-anchor="middle">首批 GB200 Rack 到场</text>
+
+  <line x1="950" y1="282" x2="950" y2="328" stroke="#24864a" stroke-width="3"/>
+  <circle cx="950" cy="328" r="8" fill="#24864a"/>
+  <text x="950" y="356" class="body" text-anchor="middle">早期 Training / Inference</text>
+  <text x="950" y="382" class="small" text-anchor="middle">Campus 仍在 Construction</text>
+
+  <text x="90" y="478" class="label">第二期</text>
+  <text x="90" y="509" class="small">新增 6 栋</text>
+  <rect x="610" y="450" width="870" height="64" rx="6" fill="#d97706"/>
+  <text x="1045" y="490" font-size="20" font-weight="700" fill="#fff" text-anchor="middle">施工继续 · 最终规划容量扩至 1.2GW</text>
+  <line x1="610" y1="514" x2="610" y2="560" stroke="#d97706" stroke-width="3"/>
+  <circle cx="610" cy="560" r="8" fill="#d97706"/>
+  <text x="610" y="592" class="body" text-anchor="middle">第二期开工</text>
+
+  <text x="90" y="684" class="label">Campus</text>
+  <text x="90" y="710" class="small">2026.06</text>
+  <text x="90" y="734" class="small">交付状态</text>
+  <rect x="190" y="653" width="1290" height="74" rx="6" fill="#e2e8f0"/>
+  <rect x="190" y="653" width="542" height="74" rx="6" fill="#24864a"/>
+  <line x1="732" y1="653" x2="732" y2="727" stroke="#f7f9fc" stroke-width="4"/>
+  <text x="461" y="699" font-size="25" font-weight="750" fill="#fff" text-anchor="middle">42% 已交付</text>
+  <text x="1106" y="699" font-size="25" font-weight="750" fill="#52647a" text-anchor="middle">58% 后续季度继续交付</text>
+
+  <rect x="330" y="790" width="940" height="66" rx="6" fill="#172033"/>
+  <circle cx="410" cy="823" r="9" fill="#d97706"/>
+  <text x="440" y="831" font-size="21" fill="#fff">Construction</text>
+  <text x="620" y="831" font-size="25" fill="#7c8da3">+</text>
+  <circle cx="685" cy="823" r="9" fill="#24864a"/>
+  <text x="715" y="831" font-size="21" fill="#fff">Operations</text>
+  <text x="865" y="831" font-size="25" fill="#7c8da3">=</text>
+  <text x="920" y="831" font-size="21" font-weight="700" fill="#fff">同一座 Campus 的常态</text>
+</svg>

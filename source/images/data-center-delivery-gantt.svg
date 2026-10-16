@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">AI 数据中心从项目开发到 RFS 的并行计划</title>
+  <desc id="desc">按参与方展示场地许可、电网、设计、设备、土建、机电、外部服务、调试和客户 IT 的并行工作，以及设计冻结、许可、永久电力和集成测试等硬依赖。</desc>
+  <style>
+    text { font-family: Inter, "PingFang SC", "Microsoft YaHei", Arial, sans-serif; letter-spacing: 0; }
+    .phase { font-size: 18px; font-weight: 750; fill: #334155; text-anchor: middle; }
+    .owner { font-size: 19px; font-weight: 750; fill: #172033; }
+    .scope { font-size: 15px; fill: #607089; }
+    .bar { font-size: 15px; font-weight: 700; fill: #172033; text-anchor: middle; }
+    .light { fill: #ffffff; }
+    .gate { font-size: 14px; font-weight: 700; fill: #9a4b0a; text-anchor: middle; }
+  </style>
+  <rect width="1600" height="1000" fill="#f7f9fc"/>
+
+  <rect x="55" y="55" width="330" height="82" rx="6" fill="#172033"/>
+  <text x="80" y="89" font-size="18" font-weight="750" fill="#ffffff">责任方 / Workstream</text>
+  <text x="80" y="116" font-size="15" fill="#cbd5e1">每条线独立推进，在 milestone 汇合</text>
+
+  <g>
+    <rect x="430" y="55" width="150" height="82" fill="#edf2f7" stroke="#d5dde7"/>
+    <rect x="580" y="55" width="150" height="82" fill="#eaf2fb" stroke="#d5dde7"/>
+    <rect x="730" y="55" width="150" height="82" fill="#eef7ff" stroke="#d5dde7"/>
+    <rect x="880" y="55" width="150" height="82" fill="#fff4e5" stroke="#d5dde7"/>
+    <rect x="1030" y="55" width="150" height="82" fill="#fff7d8" stroke="#d5dde7"/>
+    <rect x="1180" y="55" width="150" height="82" fill="#e7f4f2" stroke="#d5dde7"/>
+    <rect x="1330" y="55" width="150" height="82" fill="#e8f5e9" stroke="#d5dde7"/>
+    <text x="505" y="104" class="phase">项目开发</text>
+    <text x="655" y="104" class="phase">方案设计</text>
+    <text x="805" y="104" class="phase">采购制造</text>
+    <text x="955" y="104" class="phase">土建封闭</text>
+    <text x="1105" y="104" class="phase">机电安装</text>
+    <text x="1255" y="104" class="phase">永久送电</text>
+    <text x="1405" y="104" class="phase">调试交付</text>
+  </g>
+
+  <g stroke="#e2e8f0" stroke-width="1">
+    <line x1="430" y1="137" x2="430" y2="875"/><line x1="580" y1="137" x2="580" y2="875"/>
+    <line x1="730" y1="137" x2="730" y2="875"/><line x1="880" y1="137" x2="880" y2="875"/>
+    <line x1="1030" y1="137" x2="1030" y2="875"/><line x1="1180" y1="137" x2="1180" y2="875"/>
+    <line x1="1330" y1="137" x2="1330" y2="875"/><line x1="1480" y1="137" x2="1480" y2="875"/>
+  </g>
+
+  <g stroke="#d29a61" stroke-width="2" stroke-dasharray="5 7">
+    <line x1="570" y1="165" x2="570" y2="875"/>
+    <line x1="760" y1="165" x2="760" y2="875"/>
+    <line x1="890" y1="165" x2="890" y2="875"/>
+    <line x1="1300" y1="165" x2="1300" y2="875"/>
+    <line x1="1480" y1="165" x2="1480" y2="875"/>
+  </g>
+  <g fill="#c96b16">
+    <polygon points="570,151 580,161 570,171 560,161"/>
+    <polygon points="760,151 770,161 760,171 750,161"/>
+    <polygon points="890,151 900,161 890,171 880,161"/>
+    <polygon points="1300,151 1310,161 1300,171 1290,161"/>
+    <polygon points="1480,151 1490,161 1480,171 1470,161"/>
+  </g>
+  <text x="570" y="194" class="gate">场地控制</text>
+  <text x="760" y="194" class="gate">关键设计冻结</text>
+  <text x="890" y="194" class="gate">主要许可</text>
+  <text x="1300" y="194" class="gate">永久电力</text>
+  <text x="1480" y="194" class="gate">IST 通过</text>
+
+  <g>
+    <rect x="55" y="220" width="330" height="62" rx="4" fill="#ffffff" stroke="#d5dde7"/>
+    <text x="78" y="247" class="owner">Owner / Program Controls</text><text x="78" y="269" class="scope">预算 · 接口 · 决策日期 · RFS 基线</text>
+    <rect x="430" y="233" width="1050" height="36" rx="4" fill="#e7f4f2" stroke="#167d73" stroke-width="2"/>
+    <text x="955" y="257" class="bar">Integrated Master Schedule · Interface Register · Risk / Change Control</text>
+
+    <rect x="55" y="294" width="330" height="62" rx="4" fill="#ffffff" stroke="#d5dde7"/>
+    <text x="78" y="321" class="owner">土地 / 主管部门</text><text x="78" y="343" class="scope">Site control · 环境与施工许可</text>
+    <rect x="440" y="307" width="125" height="36" rx="4" fill="#eaf2fb" stroke="#3f6f9f"/>
+    <text x="502" y="331" class="bar">尽调</text>
+    <rect x="585" y="307" width="300" height="36" rx="4" fill="#eaf2fb" stroke="#3f6f9f"/>
+    <text x="735" y="331" class="bar">环境 · 土地 · 建设许可</text>
+
+    <rect x="55" y="368" width="330" height="62" rx="4" fill="#ffffff" stroke="#d5dde7"/>
+    <text x="78" y="395" class="owner">Utility / Transmission</text><text x="78" y="417" class="scope">负荷研究 · 接入方案 · 电网工程</text>
+    <rect x="455" y="381" width="285" height="36" rx="4" fill="#eaf2fb" stroke="#3f6f9f"/>
+    <text x="597" y="405" class="bar">负荷研究与接入方案</text>
+    <rect x="760" y="381" width="535" height="36" rx="4" fill="#fff0e5" stroke="#c85a16" stroke-width="2"/>
+    <text x="1027" y="405" class="bar">区域输电 · 变电站 · Site Connection</text>
+
+    <rect x="55" y="442" width="330" height="62" rx="4" fill="#ffffff" stroke="#d5dde7"/>
+    <text x="78" y="469" class="owner">Architect / Engineer / EPC</text><text x="78" y="491" class="scope">Basis of design · 详细设计 · 现场支持</text>
+    <rect x="450" y="455" width="305" height="36" rx="4" fill="#e7f4f2" stroke="#167d73"/>
+    <text x="602" y="479" class="bar">Concept · Basis of Design</text>
+    <rect x="770" y="455" width="430" height="36" rx="4" fill="#e7f4f2" stroke="#167d73"/>
+    <text x="985" y="479" class="bar">详细设计 · Submittal · Field Engineering</text>
+
+    <rect x="55" y="516" width="330" height="62" rx="4" fill="#ffffff" stroke="#d5dde7"/>
+    <text x="78" y="543" class="owner">OEM / Logistics</text><text x="78" y="565" class="scope">长周期设备 · 制造 · FAT · 到货</text>
+    <rect x="760" y="529" width="410" height="36" rx="4" fill="#fff0e5" stroke="#c85a16" stroke-width="2"/>
+    <text x="965" y="553" class="bar">锁产能 · 制造 · Factory Acceptance · 交付</text>
+
+    <rect x="55" y="590" width="330" height="62" rx="4" fill="#ffffff" stroke="#d5dde7"/>
+    <text x="78" y="617" class="owner">GC / Trades</text><text x="78" y="639" class="scope">Civil · Structural · Shell · MEP</text>
+    <rect x="890" y="603" width="205" height="36" rx="4" fill="#eaf2fb" stroke="#3f6f9f"/>
+    <text x="992" y="627" class="bar">Civil · Shell · Dry-in</text>
+    <rect x="1105" y="603" width="190" height="36" rx="4" fill="#fff0e5" stroke="#c85a16" stroke-width="2"/>
+    <text x="1200" y="627" class="bar">机电安装收口</text>
+
+    <rect x="55" y="664" width="330" height="62" rx="4" fill="#ffffff" stroke="#d5dde7"/>
+    <text x="78" y="691" class="owner">Water / Fiber Providers</text><text x="78" y="713" class="scope">外部接口 · 双路光纤 · 供水工程</text>
+    <rect x="610" y="677" width="250" height="36" rx="4" fill="#eaf2fb" stroke="#3f6f9f"/>
+    <text x="735" y="701" class="bar">协议 · 路由 · 设计</text>
+    <rect x="890" y="677" width="400" height="36" rx="4" fill="#e7f4f2" stroke="#167d73"/>
+    <text x="1090" y="701" class="bar">外部施工 · 接入 · 测试</text>
+
+    <rect x="55" y="738" width="330" height="62" rx="4" fill="#ffffff" stroke="#d5dde7"/>
+    <text x="78" y="765" class="owner">Commissioning Authority</text><text x="78" y="787" class="scope">设计审查 · Startup · Functional · IST</text>
+    <rect x="580" y="751" width="205" height="36" rx="4" fill="#e7f4f2" stroke="#167d73"/>
+    <text x="682" y="775" class="bar">设计 / Submittal Review</text>
+    <rect x="1080" y="751" width="215" height="36" rx="4" fill="#fff7d8" stroke="#b88407"/>
+    <text x="1187" y="775" class="bar">Pre-functional</text>
+    <rect x="1300" y="751" width="175" height="36" rx="4" fill="#fff0e5" stroke="#c85a16" stroke-width="2"/>
+    <text x="1387" y="775" class="bar">Functional · IST</text>
+
+    <rect x="55" y="812" width="330" height="62" rx="4" fill="#ffffff" stroke="#d5dde7"/>
+    <text x="78" y="839" class="owner">客户 IT 团队</text><text x="78" y="861" class="scope">Staging · Early Access · Rack Install</text>
+    <rect x="1090" y="825" width="185" height="36" rx="4" fill="#edf2f7" stroke="#64748b"/>
+    <text x="1182" y="849" class="bar">设备 Staging</text>
+    <rect x="1300" y="825" width="175" height="36" rx="4" fill="#ffffff" stroke="#64748b" stroke-width="2" stroke-dasharray="7 6"/>
+    <text x="1387" y="849" class="bar">Early Access</text>
+  </g>
+
+  <polygon points="1520,820 1550,850 1520,880 1490,850" fill="#24864a"/>
+  <text x="1520" y="846" font-size="14" font-weight="800" fill="#ffffff" text-anchor="middle">RFS</text>
+  <text x="1520" y="905" font-size="14" font-weight="700" fill="#24864a" text-anchor="middle">设施交付</text>
+
+  <rect x="70" y="923" width="18" height="18" rx="3" fill="#fff0e5" stroke="#c85a16" stroke-width="2"/>
+  <text x="101" y="938" font-size="15" fill="#334155">常见 critical-path candidate</text>
+  <rect x="360" y="923" width="18" height="18" rx="3" fill="#eaf2fb" stroke="#3f6f9f"/>
+  <text x="391" y="938" font-size="15" fill="#334155">可并行 workstream</text>
+  <rect x="620" y="923" width="18" height="18" rx="3" fill="#ffffff" stroke="#64748b" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="651" y="938" font-size="15" fill="#334155">不构成 RFS acceptance</text>
+  <text x="1530" y="938" font-size="15" fill="#607089" text-anchor="end">相对阶段示意；实际工期与 critical path 随 site 改变</text>
+</svg>

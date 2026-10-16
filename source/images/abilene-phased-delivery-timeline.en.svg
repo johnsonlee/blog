@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Abilene's phased construction and delivery timeline</title>
+  <desc id="desc">Abilene phase one began construction in June 2024 and ran early workloads by July 2025. Phase two began in March 2025, leaving construction and operations overlapping across the campus.</desc>
+  <defs>
+    <style>
+      text { font-family: Inter, Arial, sans-serif; letter-spacing: 0; }
+      .label { font-size: 24px; font-weight: 700; fill: #172033; }
+      .date { font-size: 18px; font-weight: 700; fill: #52647a; text-anchor: middle; }
+      .body { font-size: 19px; fill: #334155; }
+      .small { font-size: 16px; fill: #607089; }
+    </style>
+  </defs>
+  <rect width="1600" height="900" fill="#f7f9fc"/>
+  <text x="90" y="82" font-size="28" font-weight="750" fill="#172033">Abilene · 1.2 GW Campus</text>
+  <text x="1510" y="82" class="small" style="text-anchor:end">Phase, data hall, and campus follow different timelines</text>
+
+  <line x1="190" y1="155" x2="1480" y2="155" stroke="#94a3b8" stroke-width="3"/>
+  <g>
+    <line x1="190" y1="143" x2="190" y2="167" stroke="#52647a" stroke-width="3"/><text x="190" y="132" class="date">Jun 2024</text>
+    <line x1="610" y1="143" x2="610" y2="167" stroke="#52647a" stroke-width="3"/><text x="610" y="132" class="date">Mar 2025</text>
+    <line x1="730" y1="143" x2="730" y2="167" stroke="#52647a" stroke-width="3"/><text x="730" y="132" class="date">Apr 2025</text>
+    <line x1="860" y1="143" x2="860" y2="167" stroke="#52647a" stroke-width="3"/><text x="860" y="132" class="date">Jun 2025</text>
+    <line x1="950" y1="143" x2="950" y2="167" stroke="#52647a" stroke-width="3"/><text x="950" y="132" class="date">Jul 2025</text>
+    <line x1="1370" y1="143" x2="1370" y2="167" stroke="#52647a" stroke-width="3"/><text x="1370" y="132" class="date">Jun 2026</text>
+  </g>
+
+  <text x="90" y="245" class="label">Phase 1</text><text x="90" y="271" class="small">2 buildings</text><text x="90" y="295" class="small">200+ MW</text>
+  <rect x="190" y="218" width="760" height="64" rx="6" fill="#c85a16"/>
+  <text x="500" y="258" font-size="20" font-weight="700" fill="#fff" text-anchor="middle">Construction · startup · commissioning</text>
+  <rect x="950" y="218" width="530" height="64" rx="6" fill="#24864a"/>
+  <text x="1215" y="258" font-size="20" font-weight="700" fill="#fff" text-anchor="middle">Early workloads operating</text>
+
+  <line x1="190" y1="282" x2="190" y2="328" stroke="#c85a16" stroke-width="3"/><circle cx="190" cy="328" r="8" fill="#c85a16"/>
+  <text x="190" y="360" class="body" text-anchor="middle">Phase 1 starts</text>
+  <line x1="730" y1="282" x2="730" y2="328" stroke="#3f6f9f" stroke-width="3"/><circle cx="730" cy="328" r="8" fill="#3f6f9f"/>
+  <text x="730" y="356" class="body" text-anchor="middle">First data hall</text><text x="730" y="382" class="small" text-anchor="middle">Core area handed to tenant</text>
+  <line x1="860" y1="218" x2="860" y2="188" stroke="#3f6f9f" stroke-width="3"/><circle cx="860" cy="188" r="8" fill="#3f6f9f"/>
+  <text x="860" y="207" class="small" text-anchor="middle">First GB200 racks arrive</text>
+  <line x1="950" y1="282" x2="950" y2="328" stroke="#24864a" stroke-width="3"/><circle cx="950" cy="328" r="8" fill="#24864a"/>
+  <text x="950" y="356" class="body" text-anchor="middle">Early training / inference</text><text x="950" y="382" class="small" text-anchor="middle">Campus remains in construction</text>
+
+  <text x="90" y="478" class="label">Phase 2</text><text x="90" y="509" class="small">6 additional buildings</text>
+  <rect x="610" y="450" width="870" height="64" rx="6" fill="#d97706"/>
+  <text x="1045" y="490" font-size="20" font-weight="700" fill="#fff" text-anchor="middle">Construction continues · planned campus expands to 1.2 GW</text>
+  <line x1="610" y1="514" x2="610" y2="560" stroke="#d97706" stroke-width="3"/><circle cx="610" cy="560" r="8" fill="#d97706"/>
+  <text x="610" y="592" class="body" text-anchor="middle">Phase 2 starts</text>
+
+  <text x="90" y="684" class="label">Campus</text><text x="90" y="710" class="small">Jun 2026</text><text x="90" y="734" class="small">Delivery state</text>
+  <rect x="190" y="653" width="1290" height="74" rx="6" fill="#e2e8f0"/>
+  <rect x="190" y="653" width="542" height="74" rx="6" fill="#24864a"/>
+  <line x1="732" y1="653" x2="732" y2="727" stroke="#f7f9fc" stroke-width="4"/>
+  <text x="461" y="699" font-size="25" font-weight="750" fill="#fff" text-anchor="middle">42% delivered</text>
+  <text x="1106" y="699" font-size="25" font-weight="750" fill="#52647a" text-anchor="middle">58% in subsequent quarters</text>
+
+  <rect x="330" y="790" width="940" height="66" rx="6" fill="#172033"/>
+  <circle cx="410" cy="823" r="9" fill="#d97706"/><text x="440" y="831" font-size="21" fill="#fff">Construction</text>
+  <text x="620" y="831" font-size="25" fill="#7c8da3">+</text>
+  <circle cx="685" cy="823" r="9" fill="#24864a"/><text x="715" y="831" font-size="21" fill="#fff">Operations</text>
+  <text x="865" y="831" font-size="25" fill="#7c8da3">=</text>
+  <text x="920" y="831" font-size="21" font-weight="700" fill="#fff">Normal for one campus</text>
+</svg>

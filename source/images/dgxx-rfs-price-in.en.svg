@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">How much of Digi Power X's 40 MW contract is priced in?</title>
+  <desc id="desc">Using the August 21, 2026 share price and second-quarter financial data, simplified operating value is 8.9 times annualized contract revenue if only the 15 MW Phase 1 reaches RFS and 3.4 times if the full 40 MW reaches RFS.</desc>
+  <rect width="1600" height="900" fill="#F7F9FC"/>
+  <style>
+    text{font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;letter-spacing:0;fill:#172033}
+    .title{font-size:32px;font-weight:760}.section{font-size:19px;font-weight:720}.value{font-size:34px;font-weight:780}.label{font-size:16px;font-weight:560;fill:#607089}.rowhead{font-size:23px;font-weight:760}.cell{font-size:23px;font-weight:720}.small{font-size:15px;font-weight:520;fill:#607089}.inverse{fill:#fff}
+  </style>
+
+  <text x="800" y="62" class="title" text-anchor="middle">How much of the 40 MW contract is priced in?</text>
+
+  <rect x="70" y="120" width="360" height="600" rx="6" fill="#273A55"/>
+  <text x="110" y="170" class="section inverse">VALUATION INPUTS</text>
+  <text x="110" y="235" class="value inverse">$4.07</text>
+  <text x="110" y="270" class="label" fill="#D4DEEA">2026-08-21 close</text>
+  <line x1="110" y1="310" x2="390" y2="310" stroke="#718198" stroke-width="2"/>
+  <text x="110" y="375" class="value inverse">108.5M</text>
+  <text x="110" y="410" class="label" fill="#D4DEEA">Fully diluted shares</text>
+  <line x1="110" y1="450" x2="390" y2="450" stroke="#718198" stroke-width="2"/>
+  <text x="110" y="515" class="value inverse">$313.6M</text>
+  <text x="110" y="550" class="label" fill="#D4DEEA">Simplified operating value</text>
+  <text x="110" y="602" class="small" fill="#D4DEEA">Equity value</text>
+  <text x="110" y="632" class="small" fill="#D4DEEA">− Cash − Digital assets</text>
+  <text x="110" y="662" class="small" fill="#D4DEEA">+ Total liabilities</text>
+
+  <text x="500" y="130" class="section">DELIVERY STATE DETERMINES WHICH REVENUE EXISTS</text>
+  <g>
+    <rect x="500" y="165" width="1020" height="145" rx="6" fill="#FDEBED" stroke="#CF3F4F" stroke-width="2"/>
+    <text x="550" y="220" class="rowhead">0 MW RFS</text>
+    <text x="550" y="263" class="label">Still under construction</text>
+    <text x="930" y="220" class="cell">$0</text>
+    <text x="930" y="263" class="label">Cerebras recurring fee</text>
+    <text x="1300" y="220" class="cell">N/M</text>
+    <text x="1300" y="263" class="label">Operating value / fee</text>
+  </g>
+  <g>
+    <rect x="500" y="340" width="1020" height="145" rx="6" fill="#FFF4D5" stroke="#C58D0A" stroke-width="2"/>
+    <text x="550" y="395" class="rowhead">15 MW RFS</text>
+    <text x="550" y="438" class="label">Phase 1 delivered on schedule</text>
+    <text x="930" y="395" class="cell">$35.1M</text>
+    <text x="930" y="438" class="label">First-year annualized fee</text>
+    <text x="1300" y="395" class="cell">8.9x</text>
+    <text x="1300" y="438" class="label">Operating value / fee</text>
+  </g>
+  <g>
+    <rect x="500" y="515" width="1020" height="145" rx="6" fill="#E3F4EF" stroke="#16877B" stroke-width="2"/>
+    <text x="550" y="570" class="rowhead">40 MW RFS</text>
+    <text x="550" y="613" class="label">Phase 1 + Phase 2 delivered</text>
+    <text x="930" y="570" class="cell">$93.6M</text>
+    <text x="930" y="613" class="label">First-year annualized fee</text>
+    <text x="1300" y="570" class="cell">3.4x</text>
+    <text x="1300" y="613" class="label">Operating value / fee</text>
+  </g>
+
+  <rect x="280" y="770" width="1040" height="80" rx="6" fill="#273A55"/>
+  <text x="800" y="806" class="section inverse" text-anchor="middle">RFS only turns on the revenue clock</text>
+  <text x="800" y="836" class="small inverse" text-anchor="middle">Project financing · Construction cost · Gross margin · Dilution determine per-share value</text>
+</svg>
