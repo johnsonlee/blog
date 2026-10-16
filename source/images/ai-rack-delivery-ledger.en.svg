@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1830" viewBox="0 0 720 1830" role="img" aria-labelledby="title desc">
+  <title id="title">Evidence chain from AI rack order to Rack Ready</title>
+  <desc id="desc">Commercial commitment, complete kit, factory test, shipment, site interfaces, bring-up, and Rack Ready are different states. Each has its own evidence and cannot substitute for the next state.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #182338; }
+    .h { font-size: 28px; font-weight: 750; }
+    .b { font-size: 23px; font-weight: 650; }
+    .s { font-size: 20px; fill: #526176; }
+    .n { font-size: 21px; font-weight: 750; fill: #fff; }
+    .warn { font-size: 20px; fill: #a33924; font-weight: 650; }
+    .inv { fill: #fff; }
+    .muted-inv { fill: #dce5f2; }
+  </style>
+  <rect width="720" height="1830" fill="#f6f8fb"/>
+
+  <rect x="72" y="24" width="576" height="184" rx="6" fill="#fff" stroke="#697b92" stroke-width="2"/>
+  <circle cx="112" cy="64" r="23" fill="#697b92"/><text x="112" y="72" text-anchor="middle" class="n">1</text>
+  <text x="150" y="72" class="h">Order / Commercial Commitment</text>
+  <text x="104" y="116" class="b">Record:</text><text x="220" y="116" class="s">PO · award · backlog</text>
+  <text x="104" y="158" class="b">Cannot prove:</text><text x="274" y="158" class="s">materials form a complete kit</text>
+
+  <line x1="360" y1="208" x2="360" y2="232" stroke="#617086" stroke-width="4"/>
+  <polygon points="350,232 370,232 360,248" fill="#617086"/>
+
+  <rect x="72" y="262" width="576" height="184" rx="6" fill="#fff" stroke="#2774c5" stroke-width="2"/>
+  <circle cx="112" cy="302" r="23" fill="#2774c5"/><text x="112" y="310" text-anchor="middle" class="n">2</text>
+  <text x="150" y="310" class="h">Complete Kit</text>
+  <text x="104" y="354" class="b">Evidence:</text><text x="220" y="354" class="s" font-size="16">BOM match · receiving ledger · serial scan</text>
+  <text x="104" y="396" class="b">Cannot prove:</text><text x="274" y="396" class="s">full rack passed factory test</text>
+
+  <line x1="360" y1="446" x2="360" y2="470" stroke="#617086" stroke-width="4"/>
+  <polygon points="350,470 370,470 360,486" fill="#617086"/>
+
+  <rect x="72" y="500" width="576" height="208" rx="6" fill="#fff" stroke="#7048b0" stroke-width="2"/>
+  <circle cx="112" cy="540" r="23" fill="#7048b0"/><text x="112" y="548" text-anchor="middle" class="n">3</text>
+  <text x="150" y="548" class="h">Rack-level Factory Pass</text>
+  <text x="104" y="592" class="b">Evidence:</text><text x="220" y="592" class="s">factory baseline · test report</text>
+  <text x="104" y="634" class="b">Cannot prove:</text><text x="274" y="634" class="s">destination interfaces are ready</text>
+  <rect x="104" y="660" width="360" height="32" rx="4" fill="#fdebe7"/>
+  <text x="284" y="683" text-anchor="middle" class="warn">FAIL: correct and retest this gate</text>
+
+  <line x1="360" y1="708" x2="360" y2="732" stroke="#617086" stroke-width="4"/>
+  <polygon points="350,732 370,732 360,748" fill="#617086"/>
+
+  <rect x="72" y="762" width="576" height="208" rx="6" fill="#fff" stroke="#c58a00" stroke-width="2"/>
+  <circle cx="112" cy="802" r="23" fill="#c58a00"/><text x="112" y="810" text-anchor="middle" class="n">4</text>
+  <text x="150" y="810" class="h">Shipment</text>
+  <text x="104" y="854" class="b">Record:</text><text x="220" y="854" class="s">bill of lading · shipment record</text>
+  <text x="104" y="896" class="b" font-size="20">Per contract:</text><text x="252" y="896" class="s" font-size="16">control transfer / product revenue</text>
+  <text x="104" y="938" class="b">Cannot prove:</text><text x="274" y="938" class="s">rack is online at the site</text>
+
+  <line x1="360" y1="970" x2="360" y2="994" stroke="#617086" stroke-width="4"/>
+  <polygon points="350,994 370,994 360,1010" fill="#617086"/>
+
+  <rect x="72" y="1024" width="576" height="184" rx="6" fill="#fff" stroke="#198754" stroke-width="2"/>
+  <circle cx="112" cy="1064" r="23" fill="#198754"/><text x="112" y="1072" text-anchor="middle" class="n">5</text>
+  <text x="150" y="1072" class="h" font-size="25">Site Installation / Interface Closure</text>
+  <text x="104" y="1116" class="b">Evidence:</text><text x="220" y="1116" class="s">position · A/B power · TCS · networks</text>
+  <text x="104" y="1158" class="b">Cannot prove:</text><text x="274" y="1158" class="s">NVLink domain is healthy</text>
+
+  <line x1="360" y1="1208" x2="360" y2="1232" stroke="#617086" stroke-width="4"/>
+  <polygon points="350,1232 370,1232 360,1248" fill="#617086"/>
+
+  <rect x="72" y="1262" width="576" height="208" rx="6" fill="#fff" stroke="#008b8b" stroke-width="2"/>
+  <circle cx="112" cy="1302" r="23" fill="#008b8b"/><text x="112" y="1310" text-anchor="middle" class="n">6</text>
+  <text x="150" y="1310" class="h" font-size="26">Bring-up / Health Validation</text>
+  <text x="104" y="1354" class="b">Evidence:</text><text x="220" y="1354" class="s">inventory · firmware · BMC · NIC · NVLink</text>
+  <text x="104" y="1396" class="b">Decision:</text><text x="220" y="1396" class="s">whether acceptance criteria pass</text>
+  <rect x="104" y="1422" width="360" height="32" rx="4" fill="#fdebe7"/>
+  <text x="284" y="1445" text-anchor="middle" class="warn">FAIL: correct and retest this gate</text>
+
+  <line x1="360" y1="1470" x2="360" y2="1494" stroke="#617086" stroke-width="4"/>
+  <polygon points="350,1494 370,1494 360,1510" fill="#617086"/>
+
+  <rect x="72" y="1524" width="576" height="184" rx="6" fill="#e6f4ec" stroke="#198754" stroke-width="3"/>
+  <circle cx="112" cy="1564" r="23" fill="#198754"/><text x="112" y="1572" text-anchor="middle" class="n">7</text>
+  <text x="150" y="1572" class="h">Rack Ready</text>
+  <text x="104" y="1616" class="b">Proves:</text><text x="200" y="1616" class="s">on-site 72-GPU domain can enter its next gate</text>
+  <text x="104" y="1658" class="b">Cannot prove:</text><text x="274" y="1658" class="s">cluster ready / available workload</text>
+
+  <rect x="32" y="1742" width="656" height="88" rx="6" fill="#182338"/>
+  <text x="360" y="1778" text-anchor="middle" font-size="19" font-weight="700" class="inv">Orders, revenue, and site capacity can use different milestones</text>
+  <text x="360" y="1810" text-anchor="middle" class="s muted-inv">Reconcile contract terms and evidence boundaries before comparing</text>
+</svg>
