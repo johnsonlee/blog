@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">PORTS-Pike Capacity Timeline Anchors</title><desc id="desc">Public information confirms only that first-phase construction starts in 2026, the first 800 MW begins becoming available in 2028, and buildout continues through 2032. Annual delivery from 2029 through 2032 is undisclosed.</desc>
+  <style>text{font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;letter-spacing:0;fill:#172033}.title{font-size:28px;font-weight:760;text-anchor:middle}.year{font-size:18px;font-weight:750}.num{font-size:31px;font-weight:800}.head{font-size:17px;font-weight:750}.body{font-size:15px;fill:#52647a}.small{font-size:13px;fill:#607089}.inv{fill:#fff}</style>
+  <rect width="1600" height="900" fill="#f7f9fc"/><text x="800" y="58" class="title">The Disclosures Give Two Capacity Anchors, Not a Straight Line</text>
+  <rect x="70" y="110" width="1460" height="640" rx="7" fill="#fff" stroke="#d5dde7" stroke-width="2"/>
+  <line x1="155" y1="570" x2="1445" y2="570" stroke="#52647a" stroke-width="4"/>
+  <line x1="210" y1="555" x2="210" y2="585" stroke="#52647a" stroke-width="3"/><text x="210" y="620" class="year" text-anchor="middle">2026</text>
+  <line x1="410" y1="555" x2="410" y2="585" stroke="#52647a" stroke-width="3"/><text x="410" y="620" class="year" text-anchor="middle">2027</text>
+  <line x1="610" y1="555" x2="610" y2="585" stroke="#52647a" stroke-width="3"/><text x="610" y="620" class="year" text-anchor="middle">2028</text>
+  <line x1="810" y1="555" x2="810" y2="585" stroke="#52647a" stroke-width="3"/><text x="810" y="620" class="year" text-anchor="middle">2029</text>
+  <line x1="1010" y1="555" x2="1010" y2="585" stroke="#52647a" stroke-width="3"/><text x="1010" y="620" class="year" text-anchor="middle">2030</text>
+  <line x1="1210" y1="555" x2="1210" y2="585" stroke="#52647a" stroke-width="3"/><text x="1210" y="620" class="year" text-anchor="middle">2031</text>
+  <line x1="1410" y1="555" x2="1410" y2="585" stroke="#52647a" stroke-width="3"/><text x="1410" y="620" class="year" text-anchor="middle">2032</text>
+
+  <rect x="145" y="390" width="220" height="110" rx="7" fill="#b88407"/><text x="255" y="430" class="head inv" text-anchor="middle">First-phase Construction</text><text x="255" y="464" class="body inv" text-anchor="middle">Starts</text>
+  <line x1="255" y1="500" x2="255" y2="548" stroke="#b88407" stroke-width="4"/><polygon points="243,548 267,548 255,569" fill="#b88407"/>
+
+  <rect x="500" y="300" width="270" height="145" rx="7" fill="#2f6fab"/><text x="635" y="343" class="num inv" text-anchor="middle">First 800 MW</text><text x="635" y="382" class="head inv" text-anchor="middle">Phased Availability Begins</text><text x="635" y="416" class="small inv" text-anchor="middle">Not the Full 8 GW</text>
+  <line x1="635" y1="445" x2="635" y2="548" stroke="#2f6fab" stroke-width="4"/><polygon points="623,548 647,548 635,569" fill="#2f6fab"/>
+
+  <path d="M770 400 C900 325 1050 270 1210 245 C1300 230 1360 215 1410 190" fill="none" stroke="#c85a16" stroke-width="12" stroke-dasharray="18 14"/>
+  <rect x="785" y="292" width="550" height="82" rx="5" fill="#fff"/><text x="1060" y="325" class="head" text-anchor="middle">Intermediate Phase Capacity and Dates Are Undisclosed</text><text x="1060" y="357" class="small" text-anchor="middle">Do Not Assume a Linear Ramp</text>
+  <rect x="1300" y="105" width="220" height="120" rx="7" fill="#c85a16"/><text x="1410" y="148" class="head inv" text-anchor="middle">Buildout Window</text><text x="1410" y="184" class="num inv" text-anchor="middle">through 2032</text>
+  <text x="800" y="685" class="body" text-anchor="middle">Every phase needs separate Power Available → Facility Available → Cluster Accepted → Production Handoff dates.</text>
+  <rect x="180" y="790" width="1240" height="68" rx="6" fill="#172033"/><text x="800" y="832" class="head inv" text-anchor="middle">2032 Ends the Planned Window; It Does Not Guarantee 8 IT-GW of Healthy Capacity</text>
+</svg>

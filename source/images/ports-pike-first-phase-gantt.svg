@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1080" viewBox="0 0 1600 1080" role="img" aria-labelledby="title desc">
+  <title id="title">PORTS-Pike 首批 800MW 并行计划</title><desc id="desc">首批 800MW 的 site、许可、AEP 电力、设施设计、长周期设备、土建机电、commissioning、NVIDIA 系统、集群验收和生产移交可以部分并行，但受前置 gate 约束。</desc>
+  <style>text{font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;letter-spacing:0;fill:#172033}.title{font-size:31px;font-weight:760;text-anchor:middle}.head{font-size:16px;font-weight:750}.body{font-size:14px;fill:#52647a}.small{font-size:12px;fill:#607089}.inv{fill:#fff}</style>
+  <rect width="1600" height="1080" fill="#f7f9fc"/><text x="800" y="58" class="title">首批 800MW：并行工作流必须在 2028 年汇合</text>
+  <rect x="35" y="100" width="1530" height="855" rx="7" fill="#fff" stroke="#d5dde7" stroke-width="2"/>
+  <text x="65" y="142" class="head">工作流</text><text x="500" y="142" class="head" text-anchor="middle">2026</text><text x="900" y="142" class="head" text-anchor="middle">2027</text><text x="1320" y="142" class="head" text-anchor="middle">2028+</text>
+  <line x1="340" y1="160" x2="340" y2="920" stroke="#d5dde7" stroke-width="2"/><line x1="700" y1="160" x2="700" y2="920" stroke="#e5eaf0" stroke-width="2"/><line x1="1100" y1="160" x2="1100" y2="920" stroke="#e5eaf0" stroke-width="2"/><line x1="1515" y1="160" x2="1515" y2="920" stroke="#e5eaf0" stroke-width="2"/>
+  <text x="65" y="215" class="head">场地 / 许可</text><rect x="390" y="180" width="470" height="48" rx="5" fill="#b88407"/><text x="625" y="210" class="body inv" text-anchor="middle">评估 · 审查 · 获得许可</text>
+  <text x="65" y="285" class="head">AEP 供电</text><rect x="390" y="250" width="570" height="48" rx="5" fill="#2f6fab"/><text x="675" y="280" class="body inv" text-anchor="middle">接入研究 · 变电站 · 永久电力</text>
+  <text x="65" y="355" class="head">设施设计</text><rect x="390" y="320" width="380" height="48" rx="5" fill="#64748b"/><text x="580" y="350" class="body inv" text-anchor="middle">设计基准 · 设计冻结</text>
+  <text x="65" y="425" class="head">长周期设备</text><rect x="650" y="390" width="520" height="48" rx="5" fill="#c85a16"/><text x="910" y="420" class="body inv" text-anchor="middle">下单 · 制造 · 出厂验收 · 交货</text>
+  <text x="65" y="495" class="head">土建 / 结构</text><rect x="700" y="460" width="440" height="48" rx="5" fill="#7653a6"/><text x="920" y="490" class="body inv" text-anchor="middle">场地 · 基础 · 建筑封闭</text>
+  <text x="65" y="565" class="head">机电安装</text><rect x="930" y="530" width="370" height="48" rx="5" fill="#167d73"/><text x="1115" y="560" class="body inv" text-anchor="middle">供电 · 冷却 · 控制</text>
+  <text x="65" y="635" class="head">调试验证</text><rect x="1190" y="600" width="210" height="48" rx="5" fill="#c85a16"/><text x="1295" y="630" class="body inv" text-anchor="middle">L1–L5 · 可交付</text>
+  <text x="65" y="705" class="head">NVIDIA 系统</text><rect x="980" y="670" width="330" height="48" rx="5" fill="#24864a"/><text x="1145" y="700" class="body inv" text-anchor="middle">规划 · 发货 · 机架上电</text>
+  <text x="65" y="775" class="head">集群验收</text><rect x="1280" y="740" width="170" height="48" rx="5" fill="#24864a"/><text x="1365" y="770" class="small inv" text-anchor="middle">网络 · 存储 · 烤机</text>
+  <text x="65" y="845" class="head">生产移交</text><rect x="1430" y="810" width="85" height="48" rx="5" fill="#172033"/><text x="1472" y="840" class="small inv" text-anchor="middle">爬坡</text>
+  <line x1="770" y1="344" x2="800" y2="344" stroke="#52647a" stroke-width="3"/><line x1="800" y1="344" x2="800" y2="382" stroke="#52647a" stroke-width="3"/><polygon points="788,382 812,382 800,403" fill="#52647a"/>
+  <line x1="860" y1="204" x2="890" y2="204" stroke="#52647a" stroke-width="3"/><line x1="890" y1="204" x2="890" y2="452" stroke="#52647a" stroke-width="3"/><polygon points="878,452 902,452 890,473" fill="#52647a"/>
+  <line x1="1140" y1="508" x2="1140" y2="516" stroke="#52647a" stroke-width="3"/><polygon points="1131,516 1149,516 1140,530" fill="#52647a"/>
+  <line x1="1300" y1="554" x2="1325" y2="554" stroke="#52647a" stroke-width="3"/><line x1="1325" y1="554" x2="1325" y2="592" stroke="#52647a" stroke-width="3"/><polygon points="1313,592 1337,592 1325,613" fill="#52647a"/>
+  <line x1="1400" y1="648" x2="1400" y2="732" stroke="#52647a" stroke-width="3"/><polygon points="1388,732 1412,732 1400,753" fill="#52647a"/>
+  <line x1="1310" y1="694" x2="1335" y2="694" stroke="#52647a" stroke-width="3"/><line x1="1335" y1="694" x2="1335" y2="732" stroke="#52647a" stroke-width="3"/><polygon points="1323,732 1347,732 1335,753" fill="#52647a"/>
+  <line x1="1450" y1="764" x2="1472" y2="764" stroke="#52647a" stroke-width="3"/><line x1="1472" y1="764" x2="1472" y2="802" stroke="#52647a" stroke-width="3"/><polygon points="1460,802 1484,802 1472,823" fill="#52647a"/>
+  <text x="800" y="940" class="small" text-anchor="middle">顺序示意；官方未披露各工作流的月度计划</text>
+  <rect x="180" y="985" width="1240" height="58" rx="6" fill="#172033"/><text x="800" y="1021" class="head inv" text-anchor="middle">关键路径取决于最后关闭的许可、电力、设施、调试或集群验收</text>
+</svg>

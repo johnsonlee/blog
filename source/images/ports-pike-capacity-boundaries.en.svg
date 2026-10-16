@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="920" viewBox="0 0 1600 920" role="img" aria-labelledby="title desc">
+  <title id="title">PORTS-Pike Capacity Boundaries</title><desc id="desc">Ten GW of new generation crosses the grid, facility auxiliary loads, and conversion losses to form an 8 IT-GW lease target. IT power is then divided among GPUs, CPUs, networking, and storage. GPU power is undisclosed.</desc>
+  <style>text{font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;letter-spacing:0;fill:#172033}.title{font-size:28px;font-weight:760;text-anchor:middle}.num{font-size:44px;font-weight:800}.head{font-size:19px;font-weight:750}.body{font-size:15px;fill:#52647a}.small{font-size:13px;fill:#607089}.inv{fill:#fff}</style>
+  <rect width="1600" height="920" fill="#f7f9fc"/><text x="800" y="58" class="title">10 GW, 8 IT-GW, and GPU Power Sit Behind Different Meters</text>
+  <rect x="105" y="115" width="1390" height="690" rx="7" fill="#fff" stroke="#d5dde7" stroke-width="2"/>
+  <rect x="155" y="180" width="330" height="160" rx="7" fill="#2f6fab"/><text x="320" y="240" class="num inv" text-anchor="middle">10GW</text><text x="320" y="280" class="head inv" text-anchor="middle">New Generation Capacity</text><text x="320" y="313" class="small inv" text-anchor="middle">Including 9.2 GW Natural Gas</text>
+  <line x1="485" y1="260" x2="563" y2="260" stroke="#52647a" stroke-width="4"/><polygon points="563,246 563,274 588,260" fill="#52647a"/>
+  <rect x="588" y="180" width="360" height="160" rx="7" fill="#64748b"/><text x="768" y="225" class="head inv" text-anchor="middle">Grid + Facility Boundary</text><text x="768" y="269" class="body inv" text-anchor="middle">Transmission · Substations · Conversion Loss</text><text x="768" y="302" class="body inv" text-anchor="middle">Cooling · Pumps · Fans · Other Auxiliary Load</text>
+  <line x1="948" y1="260" x2="1026" y2="260" stroke="#52647a" stroke-width="4"/><polygon points="1026,246 1026,274 1051,260" fill="#52647a"/>
+  <rect x="1051" y="180" width="394" height="160" rx="7" fill="#c85a16"/><text x="1248" y="240" class="num inv" text-anchor="middle">8 IT-GW</text><text x="1248" y="280" class="head inv" text-anchor="middle">OpenAI Lease Target</text><text x="1248" y="313" class="small inv" text-anchor="middle">IT Power for Servers · Network · Storage</text>
+
+  <line x1="1248" y1="340" x2="1248" y2="407" stroke="#52647a" stroke-width="4"/><polygon points="1234,407 1262,407 1248,432" fill="#52647a"/>
+  <rect x="210" y="432" width="1190" height="235" rx="7" fill="#f7f9fc" stroke="#d5dde7" stroke-width="2"/>
+  <text x="255" y="478" class="head">The 8 IT-GW Is Divided Again</text>
+  <rect x="255" y="515" width="520" height="92" rx="6" fill="#7653a6"/><text x="515" y="554" class="head inv" text-anchor="middle">Accelerator / GPU Power</text><text x="515" y="583" class="small inv" text-anchor="middle">Undisclosed</text>
+  <rect x="805" y="515" width="170" height="92" rx="6" fill="#167d73"/><text x="890" y="554" class="head inv" text-anchor="middle">CPU</text><text x="890" y="583" class="small inv" text-anchor="middle">Undisclosed</text>
+  <rect x="995" y="515" width="170" height="92" rx="6" fill="#b88407"/><text x="1080" y="554" class="head inv" text-anchor="middle">Network</text><text x="1080" y="583" class="small inv" text-anchor="middle">Undisclosed</text>
+  <rect x="1185" y="515" width="170" height="92" rx="6" fill="#2f6fab"/><text x="1270" y="554" class="head inv" text-anchor="middle">Storage</text><text x="1270" y="583" class="small inv" text-anchor="middle">Undisclosed</text>
+  <text x="800" y="715" class="body" text-anchor="middle">Operating reserves, load curves, and phase timing remain between these boundaries; 10 ÷ 8 does not prove PUE.</text>
+  <rect x="225" y="820" width="1150" height="62" rx="6" fill="#172033"/><text x="800" y="859" class="head inv" text-anchor="middle">Public Numbers Align Boundaries; They Do Not Replace Facility and Cluster Measurements</text>
+</svg>

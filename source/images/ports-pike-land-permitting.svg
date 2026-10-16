@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="940" viewBox="0 0 1600 940" role="img" aria-labelledby="title desc">
+  <title id="title">PORTS-Pike 土地与许可边界</title><desc id="desc">PORTS-Pike 同时涉及 DOE 分期租赁土地和相邻私有土地；DOE 189 acres 进入环境场地评估，私有土地约 1300 acres 的 FAST-41 环境审查与许可仍在进行。</desc>
+  <style>text{font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;letter-spacing:0;fill:#172033}.title{font-size:31px;font-weight:760;text-anchor:middle}.head{font-size:19px;font-weight:750}.body{font-size:15px;fill:#52647a}.small{font-size:13px;fill:#607089}.inv{fill:#fff}</style>
+  <rect width="1600" height="940" fill="#f7f9fc"/><text x="800" y="58" class="title">一座 Campus，至少两套土地与许可路径</text>
+  <rect x="70" y="110" width="1460" height="685" rx="7" fill="#fff" stroke="#d5dde7" stroke-width="2"/>
+  <rect x="115" y="165" width="630" height="355" rx="7" fill="#eef3fb" stroke="#9cb9dc" stroke-width="2"/><text x="430" y="215" class="head" text-anchor="middle">DOE Portsmouth 联邦土地</text><text x="430" y="248" class="body" text-anchor="middle">清理后分期释放</text>
+  <rect x="170" y="290" width="520" height="155" rx="6" fill="#2f6fab"/><text x="430" y="338" class="head inv" text-anchor="middle">首批土地 · 约 189 acres</text><text x="430" y="376" class="body inv" text-anchor="middle">租约已签</text><text x="430" y="410" class="body inv" text-anchor="middle">环境场地评估</text>
+  <text x="430" y="481" class="small" text-anchor="middle">评估用于确定可行性、许可、设计与施工条件</text>
+
+  <rect x="855" y="165" width="630" height="355" rx="7" fill="#fff7e6" stroke="#d8bd70" stroke-width="2"/><text x="1170" y="215" class="head" text-anchor="middle">相邻私有土地</text><text x="1170" y="248" class="body" text-anchor="middle">约 1,300 acres · 首批两栋建筑</text>
+  <rect x="910" y="290" width="520" height="155" rx="6" fill="#b88407"/><text x="1170" y="338" class="head inv" text-anchor="middle">FAST-41 审查</text><text x="1170" y="376" class="body inv" text-anchor="middle">进行中</text><text x="1170" y="410" class="body inv" text-anchor="middle">四项流程均未完成</text>
+  <text x="1170" y="481" class="small" text-anchor="middle">计划完成：2026-12-23</text>
+
+  <line x1="430" y1="520" x2="430" y2="590" stroke="#52647a" stroke-width="4"/><line x1="1170" y1="520" x2="1170" y2="590" stroke="#52647a" stroke-width="4"/>
+  <line x1="430" y1="590" x2="1170" y2="590" stroke="#52647a" stroke-width="4"/><line x1="800" y1="590" x2="800" y2="623" stroke="#52647a" stroke-width="4"/><polygon points="786,623 814,623 800,648" fill="#52647a"/>
+  <rect x="380" y="648" width="840" height="100" rx="7" fill="#64748b"/><text x="800" y="689" class="head inv" text-anchor="middle">可执行设计 + 对应许可</text><text x="800" y="722" class="body inv" text-anchor="middle">对应建筑才能进入完整土建、结构与机电施工</text>
+  <rect x="175" y="835" width="1250" height="64" rx="6" fill="#172033"/><text x="800" y="875" class="head inv" text-anchor="middle">开工仪式说明现场活动开始，不会替每一块土地关闭许可</text>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">PORTS-Pike 首期与扩建期路径分叉</title><desc id="desc">首批 800MW 主要使用现有 AEP infrastructure，后续 7.2GW 需要新增发电、765kV 输电和配套设施，两个阶段不是同一交付路径的简单重复。</desc>
+  <style>text{font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;letter-spacing:0;fill:#172033}.title{font-size:31px;font-weight:760;text-anchor:middle}.num{font-size:35px;font-weight:800}.head{font-size:18px;font-weight:750}.body{font-size:15px;fill:#52647a}.small{font-size:13px;fill:#607089}.inv{fill:#fff}</style>
+  <rect width="1600" height="900" fill="#f7f9fc"/><text x="800" y="58" class="title">前 10% 与后 90% 走的是两条供电路径</text>
+  <rect x="80" y="110" width="1440" height="650" rx="7" fill="#fff" stroke="#d5dde7" stroke-width="2"/>
+  <rect x="130" y="170" width="310" height="110" rx="7" fill="#172033"/><text x="285" y="214" class="head inv" text-anchor="middle">8 IT-GW 租赁目标</text><text x="285" y="249" class="body inv" text-anchor="middle">分期交付</text>
+  <line x1="440" y1="225" x2="520" y2="225" stroke="#52647a" stroke-width="4"/><line x1="520" y1="225" x2="520" y2="395" stroke="#52647a" stroke-width="4"/><line x1="520" y1="225" x2="520" y2="605" stroke="#52647a" stroke-width="4"/>
+  <line x1="520" y1="395" x2="583" y2="395" stroke="#52647a" stroke-width="4"/><polygon points="583,381 583,409 608,395" fill="#52647a"/>
+  <line x1="520" y1="605" x2="583" y2="605" stroke="#52647a" stroke-width="4"/><polygon points="583,591 583,619 608,605" fill="#52647a"/>
+  <rect x="608" y="315" width="350" height="160" rx="7" fill="#2f6fab"/><text x="783" y="362" class="num inv" text-anchor="middle">首批 800MW</text><text x="783" y="401" class="head inv" text-anchor="middle">利用现有 AEP 基础设施</text><text x="783" y="437" class="small inv" text-anchor="middle">2028 年起分期可用</text>
+  <line x1="958" y1="395" x2="1023" y2="395" stroke="#52647a" stroke-width="4"/><polygon points="1023,381 1023,409 1048,395" fill="#52647a"/>
+  <rect x="1048" y="315" width="370" height="160" rx="7" fill="#24864a"/><text x="1233" y="371" class="head inv" text-anchor="middle">设施 + 集群交付</text><text x="1233" y="409" class="body inv" text-anchor="middle">调试验证 · 设施可交付</text><text x="1233" y="440" class="body inv" text-anchor="middle">集群验收 · 生产移交</text>
+
+  <rect x="608" y="525" width="350" height="160" rx="7" fill="#c85a16"/><text x="783" y="572" class="num inv" text-anchor="middle">后续 7.2GW</text><text x="783" y="611" class="head inv" text-anchor="middle">新建基础设施</text><text x="783" y="647" class="small inv" text-anchor="middle">计划建设至 2032 年</text>
+  <line x1="958" y1="605" x2="1023" y2="605" stroke="#52647a" stroke-width="4"/><polygon points="1023,591 1023,619 1048,605" fill="#52647a"/>
+  <rect x="1048" y="525" width="370" height="160" rx="7" fill="#7653a6"/><text x="1233" y="567" class="head inv" text-anchor="middle">发电 + 输电</text><text x="1233" y="605" class="body inv" text-anchor="middle">10GW 新发电</text><text x="1233" y="636" class="body inv" text-anchor="middle">765kV 线路 · 42 亿美元电网</text><text x="1233" y="667" class="body inv" text-anchor="middle">再进入设施与集群交付</text>
+  <rect x="190" y="800" width="1220" height="62" rx="6" fill="#172033"/><text x="800" y="839" class="head inv" text-anchor="middle">首期证明 Site 能交付；后续扩建还要先复制整条电力基础设施</text>
+</svg>
