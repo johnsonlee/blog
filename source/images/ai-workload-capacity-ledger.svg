@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-labelledby="title desc">
+  <title id="title">从 Facility MW 到 Training 与 Inference 产出的账本</title>
+  <desc id="desc">Physical capacity 经过 healthy 与 scheduler gate 后分配给 Training 和 Inference，分别形成 accepted checkpoint 与 SLO-qualified billable service。</desc>
+  <style>text{font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;letter-spacing:0;fill:#172033}.title{font-size:31px;font-weight:760;text-anchor:middle}.head{font-size:18px;font-weight:750}.body{font-size:15px;fill:#52647a}.small{font-size:14px;fill:#607089}.inv{fill:#fff}</style>
+  <rect width="1600" height="980" fill="#f7f9fc"/><text x="800" y="58" class="title">100MW 先通过物理门槛，再按 Workload 分账</text>
+  <rect x="200" y="100" width="1200" height="72" rx="6" fill="#64748b"/><text x="240" y="144" class="head inv">Facility IT Load · 电表计量</text>
+  <rect x="250" y="192" width="1100" height="72" rx="6" fill="#52647a"/><text x="290" y="236" class="head inv">Healthy · 可调度容量</text><text x="1310" y="236" class="body inv" text-anchor="end">扣除 DRAIN · 维护 · 碎片</text>
+  <path d="M800 264V304H430V330M800 304H1170V330" fill="none" stroke="#52647a" stroke-width="4"/>
+  <polygon points="418,330 442,330 430,352" fill="#52647a"/><polygon points="1158,330 1182,330 1170,352" fill="#52647a"/>
+  <text x="430" y="390" class="head" text-anchor="middle">Training 分配</text><text x="1170" y="390" class="head" text-anchor="middle">Inference 分配</text>
+  <rect x="90" y="420" width="680" height="78" rx="5" fill="#e9f1f8" stroke="#7ca5c9" stroke-width="2"/><text x="130" y="453" class="head">已分配 GPU 时</text><text x="130" y="480" class="body">大型连续 Partition · Reservation</text>
+  <rect x="130" y="520" width="640" height="78" rx="5" fill="#dceaf6" stroke="#7ca5c9" stroke-width="2"/><text x="170" y="553" class="head">任务运行 GPU 时</text><text x="170" y="580" class="body">扣除启动、排队与分配失败</text>
+  <rect x="170" y="620" width="600" height="78" rx="5" fill="#c9def0" stroke="#2f6fab" stroke-width="2"/><text x="210" y="653" class="head">有效训练 Token / FLOPs</text><text x="210" y="680" class="body">扣除空泡、checkpoint 与重启损失</text>
+  <rect x="210" y="720" width="560" height="78" rx="5" fill="#2f6fab"/><text x="250" y="753" class="head inv">已验收 Checkpoint</text><text x="250" y="780" class="body inv">目标质量 · 截止时间</text>
+  <rect x="830" y="420" width="680" height="78" rx="5" fill="#faeee6" stroke="#d88a55" stroke-width="2"/><text x="870" y="453" class="head">已配置 Replica 时</text><text x="870" y="480" class="body">模型 · Region · SLO · 余量</text>
+  <rect x="830" y="520" width="640" height="78" rx="5" fill="#f5ddcd" stroke="#d88a55" stroke-width="2"/><text x="870" y="553" class="head">活跃服务 GPU 时</text><text x="870" y="580" class="body">扣除冷启动、故障切换与不可用时间</text>
+  <rect x="830" y="620" width="600" height="78" rx="5" fill="#efc8ae" stroke="#c85a16" stroke-width="2"/><text x="870" y="653" class="head">满足 SLO 的 Token</text><text x="870" y="680" class="body">TTFT · TPOT · 错误率 · 质量通过</text>
+  <rect x="830" y="720" width="560" height="78" rx="5" fill="#c85a16"/><text x="870" y="753" class="head inv">可计费请求 / Subscription</text><text x="870" y="780" class="body inv">收入边界</text>
+  <rect x="190" y="850" width="1220" height="78" rx="6" fill="#172033"/><text x="800" y="882" class="head inv" text-anchor="middle">同一分母：电表能耗 · 不同分子：训练进度 / 满足 SLO 的服务</text><text x="800" y="910" class="small inv" text-anchor="middle">没有目标质量或 SLO，任何“每 MW 产出”都缺少验收边界</text>
+  <text x="800" y="964" class="small" text-anchor="middle">每一层都要记录 yield、loss、恢复时间与当前 owner</text>
+</svg>

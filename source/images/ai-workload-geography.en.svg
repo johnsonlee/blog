@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Geographic deployment of Training and Inference</title>
+  <desc id="desc">Training concentrates in one large cluster while Inference partitions across regions for users, latency, residency, and availability.</desc>
+  <style>text{font-family:Inter,Arial,sans-serif;letter-spacing:0;fill:#172033}.title{font-size:31px;font-weight:760;text-anchor:middle}.head{font-size:20px;font-weight:760;text-anchor:middle}.body{font-size:15px;text-anchor:middle;fill:#52647a}.small{font-size:14px;fill:#607089}.inv{fill:#fff}</style>
+  <rect width="1600" height="900" fill="#f7f9fc"/><text x="800" y="58" class="title">Training Seeks Contiguous Scale; Inference Follows Demand</text>
+  <rect x="55" y="105" width="1490" height="300" rx="7" fill="#fff" stroke="#2f6fab" stroke-width="2"/><text x="190" y="155" class="head">Training</text>
+  <rect x="130" y="205" width="300" height="120" rx="6" fill="#e9f1f8" stroke="#7ca5c9" stroke-width="2"/><text x="280" y="255" class="head">Dataset · Checkpoint</text><text x="280" y="290" class="body">Staged in One Region</text>
+  <line x1="430" y1="265" x2="548" y2="265" stroke="#52647a" stroke-width="4"/><polygon points="548,253 548,277 570,265" fill="#52647a"/>
+  <rect x="570" y="170" width="620" height="190" rx="7" fill="#2f6fab"/><text x="880" y="226" class="head inv">Single Large Training Region</text><text x="880" y="268" class="body inv">Contiguous Partition · Scale-out Fabric</text><text x="880" y="306" class="body inv">Synchronous Traffic Stays on Campus</text>
+  <rect x="1280" y="205" width="180" height="120" rx="6" fill="#eef3f8" stroke="#b8c6d6" stroke-width="2"/><text x="1370" y="255" class="head">Model</text><text x="1370" y="290" class="body">Artifact</text>
+  <line x1="1190" y1="265" x2="1258" y2="265" stroke="#52647a" stroke-width="4"/><polygon points="1258,253 1258,277 1280,265" fill="#52647a"/>
+  <rect x="55" y="445" width="1490" height="380" rx="7" fill="#fff" stroke="#c85a16" stroke-width="2"/><text x="190" y="495" class="head">Inference</text>
+  <rect x="650" y="500" width="300" height="88" rx="6" fill="#172033"/><text x="800" y="554" class="head inv">Global Router</text>
+  <path d="M800 588V620H270V650M800 620H620V650M800 620H980V650M800 620H1330V650" fill="none" stroke="#52647a" stroke-width="4"/>
+  <polygon points="258,650 282,650 270,672" fill="#52647a"/><polygon points="608,650 632,650 620,672" fill="#52647a"/><polygon points="968,650 992,650 980,672" fill="#52647a"/><polygon points="1318,650 1342,650 1330,672" fill="#52647a"/>
+  <rect x="130" y="672" width="280" height="105" rx="6" fill="#faeee6" stroke="#d88a55" stroke-width="2"/><text x="270" y="714" class="head">Region A</text><text x="270" y="750" class="body">Demand · Latency</text>
+  <rect x="480" y="672" width="280" height="105" rx="6" fill="#faeee6" stroke="#d88a55" stroke-width="2"/><text x="620" y="714" class="head">Region B</text><text x="620" y="750" class="body">Residency · SLO</text>
+  <rect x="840" y="672" width="280" height="105" rx="6" fill="#faeee6" stroke="#d88a55" stroke-width="2"/><text x="980" y="714" class="head">Region C</text><text x="980" y="750" class="body">Peak · Failover</text>
+  <rect x="1190" y="672" width="280" height="105" rx="6" fill="#faeee6" stroke="#d88a55" stroke-width="2"/><text x="1330" y="714" class="head">Region D</text><text x="1330" y="750" class="body">Model Availability</text>
+  <text x="800" y="868" class="small" text-anchor="middle">Region, model, SLO, and time split the same MW into pools that cannot be borrowed freely</text>
+</svg>
