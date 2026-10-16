@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Agent task execution trace</title><desc id="desc">一次用户请求在 Agent runtime 中展开成多个 model turn、tool call、observation、guardrail、verification 和最终结果。</desc>
+  <style>text{font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;letter-spacing:0;fill:#172033}.title{font-size:31px;font-weight:760;text-anchor:middle}.head{font-size:18px;font-weight:750;text-anchor:middle}.body{font-size:15px;text-anchor:middle;fill:#52647a}.small{font-size:14px;fill:#607089}.inv{fill:#fff}</style>
+  <rect width="1600" height="900" fill="#f7f9fc"/><text x="800" y="58" class="title">一次请求只是 Agent Trace 的入口</text>
+  <rect x="60" y="125" width="220" height="120" rx="7" fill="#172033"/><text x="170" y="174" class="head inv">用户请求</text><text x="170" y="207" class="body inv">Task 已接受</text>
+  <line x1="280" y1="185" x2="328" y2="185" stroke="#52647a" stroke-width="4"/><polygon points="328,173 328,197 350,185" fill="#52647a"/>
+  <rect x="350" y="125" width="240" height="120" rx="7" fill="#2f6fab"/><text x="470" y="174" class="head inv">模型第 1 轮</text><text x="470" y="207" class="body inv">规划 · 选择 Tool</text>
+  <path d="M590 185H640V115H690M640 185H690M640 185V255H690" fill="none" stroke="#52647a" stroke-width="4"/>
+  <polygon points="690,103 690,127 712,115" fill="#52647a"/><polygon points="690,173 690,197 712,185" fill="#52647a"/><polygon points="690,243 690,267 712,255" fill="#52647a"/>
+  <rect x="712" y="75" width="250" height="80" rx="6" fill="#e8f3f1" stroke="#167d73" stroke-width="2"/><text x="837" y="123" class="head">读取代码库</text>
+  <rect x="712" y="145" width="250" height="80" rx="6" fill="#e8f3f1" stroke="#167d73" stroke-width="2"/><text x="837" y="193" class="head">搜索日志</text>
+  <rect x="712" y="215" width="250" height="80" rx="6" fill="#e8f3f1" stroke="#167d73" stroke-width="2"/><text x="837" y="263" class="head">检查测试</text>
+  <path d="M962 115H1010V185H1040M962 185H1040M962 255H1010V185" fill="none" stroke="#52647a" stroke-width="4"/><polygon points="1040,173 1040,197 1062,185" fill="#52647a"/>
+  <rect x="1062" y="125" width="250" height="120" rx="7" fill="#7653a6"/><text x="1187" y="174" class="head inv">新观测</text><text x="1187" y="207" class="body inv">Tool 结果写入 Context</text>
+  <line x1="1312" y1="185" x2="1360" y2="185" stroke="#52647a" stroke-width="4"/><polygon points="1360,173 1360,197 1382,185" fill="#52647a"/>
+  <rect x="1382" y="125" width="158" height="120" rx="7" fill="#2f6fab"/><text x="1461" y="174" class="head inv">第 2 轮</text><text x="1461" y="207" class="body inv">执行</text>
+  <path d="M1461 245V335H300V370" fill="none" stroke="#52647a" stroke-width="4"/><polygon points="288,370 312,370 300,392" fill="#52647a"/>
+  <rect x="160" y="392" width="280" height="110" rx="7" fill="#167d73"/><text x="300" y="436" class="head inv">Tool 操作</text><text x="300" y="470" class="body inv">编辑 · Shell · API</text>
+  <line x1="440" y1="447" x2="518" y2="447" stroke="#52647a" stroke-width="4"/><polygon points="518,435 518,459 540,447" fill="#52647a"/>
+  <rect x="540" y="392" width="280" height="110" rx="7" fill="#b88407"/><text x="680" y="436" class="head inv">约束检查</text><text x="680" y="470" class="body inv">权限 · 策略</text>
+  <line x1="820" y1="447" x2="898" y2="447" stroke="#52647a" stroke-width="4"/><polygon points="898,435 898,459 920,447" fill="#52647a"/>
+  <rect x="920" y="392" width="280" height="110" rx="7" fill="#c85a16"/><text x="1060" y="436" class="head inv">验证</text><text x="1060" y="470" class="body inv">测试 · 评测 · Review</text>
+  <path d="M1060 502V560H680V595" fill="none" stroke="#c85a16" stroke-width="4"/><polygon points="668,595 692,595 680,617" fill="#c85a16"/>
+  <text x="850" y="548" class="small">失败 · 产生新观测</text>
+  <rect x="540" y="617" width="280" height="104" rx="7" fill="#2f6fab"/><text x="680" y="660" class="head inv">下一轮</text><text x="680" y="693" class="body inv">修复 · 重试</text>
+  <path d="M820 669H1250V502" fill="none" stroke="#52647a" stroke-width="4"/><polygon points="1238,524 1262,524 1250,502" fill="#52647a"/>
+  <line x1="1200" y1="447" x2="1278" y2="447" stroke="#24864a" stroke-width="4"/><polygon points="1278,435 1278,459 1300,447" fill="#24864a"/>
+  <rect x="1300" y="392" width="240" height="110" rx="7" fill="#24864a"/><text x="1420" y="436" class="head inv">验收通过</text><text x="1420" y="470" class="body inv">Task 关闭</text>
+  <rect x="190" y="790" width="1220" height="62" rx="6" fill="#fff" stroke="#d5dde7" stroke-width="2"/><text x="800" y="828" class="head">一条 Trace = 多个模型 / Tool / 约束检查 / Handoff Span</text>
+</svg>

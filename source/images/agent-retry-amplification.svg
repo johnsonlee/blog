@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="880" viewBox="0 0 1600 880" role="img" aria-labelledby="title desc">
+  <title id="title">Agent retry and verification amplification</title><desc id="desc">Task 先经历 model 和 tool execution，再进入 verification；失败会带着新的 observation 重新进入 model loop，并累积前面所有成本。</desc>
+  <style>text{font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;letter-spacing:0;fill:#172033}.title{font-size:31px;font-weight:760;text-anchor:middle}.head{font-size:18px;font-weight:750;text-anchor:middle}.body{font-size:15px;text-anchor:middle;fill:#52647a}.small{font-size:14px;fill:#607089}.inv{fill:#fff}</style>
+  <rect width="1600" height="880" fill="#f7f9fc"/><text x="800" y="58" class="title">越晚发现错误，前面累积的算力越难回收</text>
+  <rect x="70" y="160" width="250" height="120" rx="7" fill="#2f6fab"/><text x="195" y="207" class="head inv">第 1 次尝试</text><text x="195" y="241" class="body inv">模型 + Tool</text>
+  <line x1="320" y1="220" x2="378" y2="220" stroke="#52647a" stroke-width="4"/><polygon points="378,208 378,232 400,220" fill="#52647a"/>
+  <rect x="400" y="160" width="250" height="120" rx="7" fill="#c85a16"/><text x="525" y="207" class="head inv">第 1 次验证</text><text x="525" y="241" class="body inv">测试 · 评测 · Review</text>
+  <path d="M650 220H720V135H780" fill="none" stroke="#24864a" stroke-width="4"/><polygon points="780,123 780,147 802,135" fill="#24864a"/>
+  <rect x="802" y="80" width="260" height="110" rx="7" fill="#24864a"/><text x="932" y="125" class="head inv">首次通过</text><text x="932" y="158" class="body inv">Task 关闭</text>
+  <path d="M650 220H720V355H780" fill="none" stroke="#c85a16" stroke-width="4"/><polygon points="780,343 780,367 802,355" fill="#c85a16"/>
+  <rect x="802" y="300" width="260" height="110" rx="7" fill="#7653a6"/><text x="932" y="345" class="head inv">新观测</text><text x="932" y="378" class="body inv">失败原因 · 反馈</text>
+  <line x1="1062" y1="355" x2="1120" y2="355" stroke="#52647a" stroke-width="4"/><polygon points="1120,343 1120,367 1142,355" fill="#52647a"/>
+  <rect x="1142" y="300" width="250" height="110" rx="7" fill="#2f6fab"/><text x="1267" y="345" class="head inv">第 2 次尝试</text><text x="1267" y="378" class="body inv">修复 + 重跑</text>
+  <path d="M1267 410V485H525V510" fill="none" stroke="#52647a" stroke-width="4"/><polygon points="513,510 537,510 525,532" fill="#52647a"/>
+  <rect x="400" y="532" width="250" height="110" rx="7" fill="#c85a16"/><text x="525" y="577" class="head inv">第 2 次验证</text><text x="525" y="610" class="body inv">回归范围</text>
+  <line x1="650" y1="587" x2="748" y2="587" stroke="#24864a" stroke-width="4"/><polygon points="748,575 748,599 770,587" fill="#24864a"/>
+  <rect x="770" y="532" width="260" height="110" rx="7" fill="#24864a"/><text x="900" y="577" class="head inv">重试后通过</text><text x="900" y="610" class="body inv">Task 关闭</text>
+  <path d="M650 610H700V680H1100V587H1128" fill="none" stroke="#c85a16" stroke-width="4"/><polygon points="1128,575 1128,599 1150,587" fill="#c85a16"/>
+  <rect x="1150" y="532" width="260" height="110" rx="7" fill="#64748b"/><text x="1280" y="577" class="head inv">升级 / 终止</text><text x="1280" y="610" class="body inv">上限 · 人工接管</text>
+  <rect x="180" y="730" width="1240" height="90" rx="6" fill="#172033"/><text x="800" y="765" class="head inv">成功 Task 成本 = 全部尝试 + Tool + 验证 + 人工返工</text><text x="800" y="796" class="small inv" text-anchor="middle">只统计最后一次成功，会把前面失败的算力从账上抹掉</text>
+</svg>
