@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Power Block 的设备铭牌容量怎样变成可安装 Rack 容量</title>
+  <desc id="desc">A 路和 B 路各有 N MW 时，设备铭牌合计接近 2N，但任一路故障后只有 N MW 可交付。再扣除共享 IT、运行预留和整块取整，最后除以机架设计功率，才能得到整数机架数。</desc>
+  <defs>
+    <style>
+      text { font-family: Inter, "PingFang SC", "Microsoft YaHei", Arial, sans-serif; letter-spacing: 0; fill: #172033; }
+      .head { font-size: 23px; font-weight: 780; text-anchor: middle; }
+      .value { font-size: 36px; font-weight: 840; text-anchor: middle; }
+      .body { font-size: 18px; fill: #405169; text-anchor: middle; }
+      .small { font-size: 16px; fill: #607089; text-anchor: middle; }
+      .inverse { fill: #ffffff; }
+    </style>
+  </defs>
+  <rect width="1600" height="900" fill="#f7f9fc"/>
+
+  <g transform="translate(0 -100)">
+  <polygon points="45,280 350,280 390,420 350,560 45,560" fill="#eaf2fb" stroke="#3f6f9f" stroke-width="3"/>
+  <text x="195" y="330" class="head">Installed Equipment</text>
+  <rect x="95" y="365" width="200" height="62" rx="5" fill="#3f6f9f"/>
+  <text x="195" y="405" class="head inverse">A Path · N MW</text>
+  <rect x="95" y="442" width="200" height="62" rx="5" fill="#3f6f9f"/>
+  <text x="195" y="482" class="head inverse">B Path · N MW</text>
+  <text x="195" y="535" class="body">Nameplate ≈ 2N</text>
+
+  <polygon points="390,280 705,280 745,420 705,560 390,560 430,420" fill="#fff0e5" stroke="#c85a16" stroke-width="3"/>
+  <text x="565" y="335" class="head">Contingency Gate</text>
+  <text x="565" y="385" class="body">任一路退出</text>
+  <text x="565" y="450" class="value" fill="#c85a16">N MW</text>
+  <text x="565" y="495" class="body">Critical IT 仍可交付</text>
+  <text x="565" y="530" class="small">2N ≠ 2× GPU Capacity</text>
+
+  <polygon points="745,280 1060,280 1100,420 1060,560 745,560 785,420" fill="#fff7d8" stroke="#b88407" stroke-width="3"/>
+  <text x="920" y="335" class="head">Budget Gate</text>
+  <text x="920" y="390" class="body">− Shared IT</text>
+  <text x="920" y="430" class="body">− Operating Reserve</text>
+  <text x="920" y="470" class="body">− Block Rounding</text>
+  <text x="920" y="520" class="small">同一 Phase · 同一 Single-line</text>
+
+  <polygon points="1100,280 1455,280 1555,420 1455,560 1100,560 1140,420" fill="#e8f5e9" stroke="#24864a" stroke-width="3"/>
+  <text x="1315" y="335" class="head">Rack Gate</text>
+  <text x="1315" y="390" class="body">÷ Rack Design MW</text>
+  <text x="1315" y="460" class="value" fill="#24864a">整数 Rack</text>
+  <text x="1315" y="505" class="body">可安装数量</text>
+  </g>
+
+  <rect x="185" y="600" width="1230" height="105" rx="6" fill="#172033"/>
+  <text x="800" y="645" class="head inverse">floor((可交付 IT MW − Shared IT MW − Reserve MW) ÷ Rack Design MW)</text>
+  <text x="800" y="685" class="body" style="fill:#dbe5ef">Power Block 无法容纳的余量继续留在账上，不会自动变成半座 Rack</text>
+</svg>
