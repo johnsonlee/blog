@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1420" viewBox="0 0 720 1420" role="img" aria-labelledby="title desc">
+  <title id="title">From a Healthy Host to a Deliverable Topology Block</title>
+  <desc id="desc">Cluster acceptance expands from host health to single-rack, multi-rack, and representative-workload validation. Each scope changes the unit of deliverable capacity.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Arial, sans-serif; fill: #182338; letter-spacing: 0; }
+    .h { font-size: 30px; font-weight: 760; }
+    .k { font-size: 25px; font-weight: 750; }
+    .b { font-size: 21px; font-weight: 680; }
+    .s { font-size: 18px; fill: #526176; }
+    .tag { font-size: 17px; font-weight: 700; }
+    .inv { fill: #fff; }
+  </style>
+  <rect width="720" height="1420" fill="#f6f8fb"/>
+  <text x="360" y="50" text-anchor="middle" class="h">As Validation Scope Expands,</text>
+  <text x="360" y="86" text-anchor="middle" class="h">the Unit of Capacity Changes</text>
+  <rect x="64" y="120" width="592" height="200" rx="6" fill="#fff" stroke="#2774c5" stroke-width="3"/>
+  <circle cx="112" cy="170" r="27" fill="#2774c5"/><text x="112" y="178" text-anchor="middle" class="b inv">1</text>
+  <rect x="454" y="144" width="172" height="42" rx="5" fill="#e9f2fc"/>
+  <text x="540" y="172" text-anchor="middle" class="tag">Unit: Node</text>
+  <text x="96" y="228" class="k">Per-Host Health</text>
+  <text x="96" y="266" class="s">Baseline Test · GPU / Memory / NIC</text>
+  <text x="96" y="300" class="s">Can this node enter the candidate pool?</text>
+  <line x1="360" y1="320" x2="360" y2="356" stroke="#617086" stroke-width="4"/>
+  <polygon points="350,356 370,356 360,374" fill="#617086"/>
+  <rect x="64" y="390" width="592" height="200" rx="6" fill="#fff" stroke="#7653a6" stroke-width="3"/>
+  <circle cx="112" cy="440" r="27" fill="#7653a6"/><text x="112" y="448" text-anchor="middle" class="b inv">2</text>
+  <rect x="454" y="414" width="172" height="42" rx="5" fill="#f1edfa"/>
+  <text x="540" y="442" text-anchor="middle" class="tag">Unit: NVLink Domain</text>
+  <text x="96" y="498" class="k">Single Rack Testing</text>
+  <text x="96" y="536" class="s">NVLink · Power · Cooling</text>
+  <text x="96" y="570" class="s">Can 72 GPUs operate as one rack?</text>
+  <line x1="360" y1="590" x2="360" y2="626" stroke="#617086" stroke-width="4"/>
+  <polygon points="350,626 370,626 360,644" fill="#617086"/>
+  <rect x="64" y="660" width="592" height="200" rx="6" fill="#fff" stroke="#d96513" stroke-width="3"/>
+  <circle cx="112" cy="710" r="27" fill="#d96513"/><text x="112" y="718" text-anchor="middle" class="b inv">3</text>
+  <rect x="454" y="684" width="172" height="42" rx="5" fill="#fff0e5"/>
+  <text x="540" y="712" text-anchor="middle" class="tag">Unit: Topology Block</text>
+  <text x="96" y="768" class="k">Multi-Rack Testing</text>
+  <text x="96" y="806" class="s">Scale-Out Fabric · Storage · Failure Domain</text>
+  <text x="96" y="840" class="s">Can adjacent racks form one block?</text>
+  <line x1="360" y1="860" x2="360" y2="896" stroke="#617086" stroke-width="4"/>
+  <polygon points="350,896 370,896 360,914" fill="#617086"/>
+  <rect x="64" y="930" width="592" height="200" rx="6" fill="#fff" stroke="#198754" stroke-width="3"/>
+  <circle cx="112" cy="980" r="27" fill="#198754"/><text x="112" y="988" text-anchor="middle" class="b inv">4</text>
+  <rect x="454" y="954" width="172" height="42" rx="5" fill="#e6f4ec"/>
+  <text x="540" y="982" text-anchor="middle" class="tag">Unit: Job Allocation</text>
+  <text x="96" y="1038" class="k">Representative Workload</text>
+  <text x="96" y="1076" class="s">Scheduler · Checkpoint · Failure Recovery</text>
+  <text x="96" y="1110" class="s">Can the target job repeatedly launch and finish?</text>
+  <line x1="360" y1="1130" x2="360" y2="1172" stroke="#617086" stroke-width="4"/>
+  <polygon points="350,1172 370,1172 360,1190" fill="#617086"/>
+  <rect x="64" y="1210" width="592" height="138" rx="6" fill="#182338"/>
+  <text x="360" y="1262" text-anchor="middle" class="k inv">Capacity the Scheduler Can Repeatedly Reserve</text>
+  <text x="360" y="1302" text-anchor="middle" class="s inv">With Baseline, Topology, Workload, and Recovery Threshold</text>
+  <text x="360" y="1392" text-anchor="middle" class="s">Node ≠ Rack ≠ Topology Block ≠ Job Allocation</text>
+</svg>

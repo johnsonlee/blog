@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1260" viewBox="0 0 720 1260" role="img" aria-labelledby="title desc">
+  <title id="title">Production Handoff 怎样固定容量口径</title>
+  <desc id="desc">Production Handoff 用数量与形状、软件 baseline、目标 workload、验收阈值和当前状态共同定义 accepted capacity。</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans CJK SC", sans-serif; fill: #182338; letter-spacing: 0; }
+    .h { font-size: 30px; font-weight: 760; }
+    .k { font-size: 25px; font-weight: 750; }
+    .b { font-size: 21px; font-weight: 680; }
+    .s { font-size: 18px; fill: #526176; }
+    .num { font-size: 24px; font-weight: 780; fill: #fff; }
+    .inv { fill: #fff; }
+  </style>
+  <rect width="720" height="1260" fill="#f6f8fb"/>
+  <text x="360" y="64" text-anchor="middle" class="h">Handoff 交付的是一句可复查的 Capacity 声明</text>
+  <rect x="48" y="112" width="624" height="120" rx="6" fill="#182338"/>
+  <text x="360" y="162" text-anchor="middle" class="k inv">Accepted Capacity</text>
+  <text x="360" y="202" text-anchor="middle" class="s inv">不是 GPU 清单，而是以下五个字段同时成立</text>
+  <rect x="48" y="270" width="624" height="128" rx="6" fill="#fff" stroke="#2774c5" stroke-width="2"/>
+  <rect x="48" y="270" width="72" height="128" rx="6" fill="#2774c5"/>
+  <rect x="106" y="270" width="14" height="128" fill="#2774c5"/>
+  <text x="84" y="342" text-anchor="middle" class="num">1</text>
+  <text x="148" y="319" class="k">数量与形状</text>
+  <text x="148" y="361" class="s">多少个 Block · 每个 Block 的 Node / Rack / Topology</text>
+  <rect x="48" y="430" width="624" height="128" rx="6" fill="#fff" stroke="#7653a6" stroke-width="2"/>
+  <rect x="48" y="430" width="72" height="128" rx="6" fill="#7653a6"/>
+  <rect x="106" y="430" width="14" height="128" fill="#7653a6"/>
+  <text x="84" y="502" text-anchor="middle" class="num">2</text>
+  <text x="148" y="479" class="k">Baseline</text>
+  <text x="148" y="521" class="s">Firmware · OS · Driver · Container · Config</text>
+  <rect x="48" y="590" width="624" height="128" rx="6" fill="#fff" stroke="#d96513" stroke-width="2"/>
+  <rect x="48" y="590" width="72" height="128" rx="6" fill="#d96513"/>
+  <rect x="106" y="590" width="14" height="128" fill="#d96513"/>
+  <text x="84" y="662" text-anchor="middle" class="num">3</text>
+  <text x="148" y="639" class="k">目标 Workload</text>
+  <text x="148" y="681" class="s">Inference / Training · GPU 数量 · Allocation Shape</text>
+  <rect x="48" y="750" width="624" height="128" rx="6" fill="#fff" stroke="#b88407" stroke-width="2"/>
+  <rect x="48" y="750" width="72" height="128" rx="6" fill="#b88407"/>
+  <rect x="106" y="750" width="14" height="128" fill="#b88407"/>
+  <text x="84" y="822" text-anchor="middle" class="num">4</text>
+  <text x="148" y="799" class="k">通过条件</text>
+  <text x="148" y="841" class="s">Performance · Soak · Failure Recovery Threshold</text>
+  <rect x="48" y="910" width="624" height="128" rx="6" fill="#fff" stroke="#198754" stroke-width="2"/>
+  <rect x="48" y="910" width="72" height="128" rx="6" fill="#198754"/>
+  <rect x="106" y="910" width="14" height="128" fill="#198754"/>
+  <text x="84" y="982" text-anchor="middle" class="num">5</text>
+  <text x="148" y="959" class="k">当前状态</text>
+  <text x="148" y="1001" class="s">Exception · DRAIN / Rejoin · Owner · Valid Time</text>
+  <rect x="48" y="1094" width="624" height="118" rx="6" fill="#e6f4ec" stroke="#198754" stroke-width="3"/>
+  <text x="360" y="1140" text-anchor="middle" class="b">Accepted Capacity = Count × Shape</text>
+  <text x="360" y="1178" text-anchor="middle" class="s">在指定 Baseline、Workload、Threshold 与 Time 下成立</text>
+  <text x="360" y="1242" text-anchor="middle" class="s">任何一个字段变化，都要重新确认受影响的 Acceptance Scope</text>
+</svg>
