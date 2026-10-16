@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1180" viewBox="0 0 720 1180" role="img" aria-labelledby="title desc">
+  <title id="title">Boundary between NVLink and the cross-rack compute fabric</title>
+  <desc id="desc">NVLink connects 72 GPUs inside one NVL72 rack. Seventy-two ConnectX-7 400G ports leave the rack through four rails and enter the leaf, spine, and core layers of the scale-out compute fabric.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #182338; }
+    .h { font-size: 29px; font-weight: 750; }
+    .b { font-size: 23px; font-weight: 650; }
+    .s { font-size: 20px; fill: #526176; }
+    .inv { fill: #fff; }
+    .muted { fill: #dbe6f5; }
+  </style>
+  <rect width="720" height="1180" fill="#f6f8fb"/>
+
+  <rect x="48" y="32" width="624" height="412" rx="6" fill="#182338"/>
+  <text x="360" y="82" text-anchor="middle" class="h inv">NVL72 Rack</text>
+  <rect x="80" y="112" width="560" height="112" rx="5" fill="#e9f2fc" stroke="#2774c5" stroke-width="2"/>
+  <text x="360" y="157" text-anchor="middle" class="b">18 Compute Trays</text>
+  <text x="360" y="194" text-anchor="middle" class="s">72 GPUs · 72 ConnectX-7 400G Ports</text>
+  <rect x="80" y="246" width="560" height="104" rx="5" fill="#f1ebfa" stroke="#7048b0" stroke-width="2"/>
+  <text x="360" y="289" text-anchor="middle" class="b">9 NVLink Switch Trays</text>
+  <text x="360" y="325" text-anchor="middle" class="s">18 NVSwitches · in-rack copper backplane</text>
+  <rect x="80" y="372" width="560" height="48" rx="4" fill="#7048b0"/>
+  <text x="360" y="404" text-anchor="middle" class="b inv">One 72-GPU NVLink Domain</text>
+
+  <line x1="48" y1="494" x2="672" y2="494" stroke="#aeb9c8" stroke-width="3" stroke-dasharray="10 8"/>
+  <rect x="260" y="473" width="200" height="42" rx="4" fill="#f6f8fb"/>
+  <text x="360" y="502" text-anchor="middle" class="b">Rack Boundary</text>
+
+  <rect x="80" y="548" width="560" height="92" rx="5" fill="#e9f2fc" stroke="#2774c5" stroke-width="2"/>
+  <text x="360" y="586" text-anchor="middle" class="b">72 GPU-facing 400G Ports</text>
+  <text x="360" y="617" text-anchor="middle" class="s">One ConnectX-7 NIC per GPU position</text>
+
+  <line x1="150" y1="640" x2="150" y2="690" stroke="#617086" stroke-width="4"/>
+  <line x1="290" y1="640" x2="290" y2="690" stroke="#617086" stroke-width="4"/>
+  <line x1="430" y1="640" x2="430" y2="690" stroke="#617086" stroke-width="4"/>
+  <line x1="570" y1="640" x2="570" y2="690" stroke="#617086" stroke-width="4"/>
+
+  <rect x="80" y="690" width="132" height="108" rx="5" fill="#e9f2fc" stroke="#2774c5" stroke-width="2"/>
+  <text x="146" y="737" text-anchor="middle" class="b">Rail 0</text><text x="146" y="771" text-anchor="middle" class="s">18 × 400G</text>
+  <rect x="220" y="690" width="132" height="108" rx="5" fill="#e6f4ec" stroke="#198754" stroke-width="2"/>
+  <text x="286" y="737" text-anchor="middle" class="b">Rail 1</text><text x="286" y="771" text-anchor="middle" class="s">18 × 400G</text>
+  <rect x="360" y="690" width="132" height="108" rx="5" fill="#f1ebfa" stroke="#7048b0" stroke-width="2"/>
+  <text x="426" y="737" text-anchor="middle" class="b">Rail 2</text><text x="426" y="771" text-anchor="middle" class="s">18 × 400G</text>
+  <rect x="500" y="690" width="132" height="108" rx="5" fill="#fff0e5" stroke="#d96513" stroke-width="2"/>
+  <text x="566" y="737" text-anchor="middle" class="b">Rail 3</text><text x="566" y="771" text-anchor="middle" class="s">18 × 400G</text>
+
+  <line x1="146" y1="798" x2="146" y2="850" stroke="#617086" stroke-width="4"/>
+  <line x1="286" y1="798" x2="286" y2="850" stroke="#617086" stroke-width="4"/>
+  <line x1="426" y1="798" x2="426" y2="850" stroke="#617086" stroke-width="4"/>
+  <line x1="566" y1="798" x2="566" y2="850" stroke="#617086" stroke-width="4"/>
+  <line x1="146" y1="850" x2="566" y2="850" stroke="#617086" stroke-width="4"/>
+  <line x1="360" y1="850" x2="360" y2="882" stroke="#617086" stroke-width="4"/>
+  <polygon points="350,882 370,882 360,898" fill="#617086"/>
+
+  <rect x="48" y="912" width="624" height="220" rx="6" fill="#fff" stroke="#008b8b" stroke-width="3"/>
+  <text x="360" y="963" text-anchor="middle" class="h">Scale-out Compute Fabric</text>
+  <rect x="80" y="994" width="560" height="54" rx="4" fill="#e7f4f3"/>
+  <text x="360" y="1029" text-anchor="middle" class="b">Leaf → Spine → Core</text>
+  <text x="360" y="1082" text-anchor="middle" class="s">InfiniBand NDR or Ethernet</text>
+  <text x="360" y="1113" text-anchor="middle" class="s">Cross-rack collective traffic starts again here</text>
+</svg>

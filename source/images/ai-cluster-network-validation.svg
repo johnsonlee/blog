@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1840" viewBox="0 0 720 1840" role="img" aria-labelledby="title desc">
+  <title id="title">从 Installed GPU 到 Schedulable Network Capacity 的验证链</title>
+  <desc id="desc">已安装 GPU 依次经过 LinkUp、topology correct、full-rate stable、collective qualified 和 scheduler placement；验证范围还要从单机架扩大到整个 9,216-GPU 集群。</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans CJK SC", sans-serif; fill: #182338; }
+    .h { font-size: 28px; font-weight: 750; }
+    .b { font-size: 22px; font-weight: 650; }
+    .s { font-size: 19px; fill: #526176; }
+    .n { font-size: 20px; font-weight: 750; fill: #fff; }
+    .inv { fill: #fff; }
+    .muted { fill: #dbe6f5; }
+  </style>
+  <rect width="720" height="1840" fill="#f6f8fb"/>
+
+  <rect x="64" y="28" width="592" height="176" rx="6" fill="#fff" stroke="#697b92" stroke-width="2"/>
+  <circle cx="108" cy="72" r="24" fill="#697b92"/><text x="108" y="79" text-anchor="middle" class="n">1</text>
+  <text x="150" y="80" class="h">GPU 已安装</text>
+  <text x="96" y="126" class="b">证据：</text><text x="176" y="126" class="s">机房资产与 Serial Inventory</text>
+  <text x="96" y="166" class="b">还不能证明：</text><text x="242" y="166" class="s">Network Port 已连接</text>
+  <line x1="360" y1="204" x2="360" y2="232" stroke="#617086" stroke-width="4"/><polygon points="350,232 370,232 360,248" fill="#617086"/>
+
+  <rect x="64" y="262" width="592" height="176" rx="6" fill="#fff" stroke="#2774c5" stroke-width="2"/>
+  <circle cx="108" cy="306" r="24" fill="#2774c5"/><text x="108" y="313" text-anchor="middle" class="n">2</text>
+  <text x="150" y="314" class="h">LinkUp</text>
+  <text x="96" y="360" class="b">证据：</text><text x="176" y="360" class="s">Neighbor · Port Admin / Oper</text>
+  <text x="96" y="400" class="b">还不能证明：</text><text x="242" y="400" class="s">Rail 与 Switch Tier 正确</text>
+  <line x1="360" y1="438" x2="360" y2="466" stroke="#617086" stroke-width="4"/><polygon points="350,466 370,466 360,482" fill="#617086"/>
+
+  <rect x="64" y="496" width="592" height="176" rx="6" fill="#fff" stroke="#198754" stroke-width="2"/>
+  <circle cx="108" cy="540" r="24" fill="#198754"/><text x="108" y="547" text-anchor="middle" class="n">3</text>
+  <text x="150" y="548" class="h">拓扑正确</text>
+  <text x="96" y="594" class="b">证据：</text><text x="176" y="594" class="s">P2P · Rail · Leaf / Spine / Core</text>
+  <text x="96" y="634" class="b">还不能证明：</text><text x="242" y="634" class="s">链路达到目标速率并稳定</text>
+  <line x1="360" y1="672" x2="360" y2="700" stroke="#617086" stroke-width="4"/><polygon points="350,700 370,700 360,716" fill="#617086"/>
+
+  <rect x="64" y="730" width="592" height="176" rx="6" fill="#fff" stroke="#7048b0" stroke-width="2"/>
+  <circle cx="108" cy="774" r="24" fill="#7048b0"/><text x="108" y="781" text-anchor="middle" class="n">4</text>
+  <text x="150" y="782" class="h">链路满速稳定</text>
+  <text x="96" y="828" class="b">证据：</text><text x="176" y="828" class="s">Speed · Width · FEC · BER · Flap</text>
+  <text x="96" y="868" class="b">还不能证明：</text><text x="242" y="868" class="s">目标 Scope 的 Collective 通过</text>
+  <line x1="360" y1="906" x2="360" y2="934" stroke="#617086" stroke-width="4"/><polygon points="350,934 370,934 360,950" fill="#617086"/>
+
+  <rect x="64" y="964" width="592" height="176" rx="6" fill="#fff" stroke="#c58a00" stroke-width="2"/>
+  <circle cx="108" cy="1008" r="24" fill="#c58a00"/><text x="108" y="1015" text-anchor="middle" class="n">5</text>
+  <text x="150" y="1016" class="h">集合通信验证通过</text>
+  <text x="96" y="1062" class="b">证据：</text><text x="176" y="1062" class="s">Busbw · Tail Rank · Repeatability</text>
+  <text x="96" y="1102" class="b">还不能证明：</text><text x="242" y="1102" class="s">Scheduler 接受整个 Failure Domain</text>
+  <line x1="360" y1="1140" x2="360" y2="1168" stroke="#617086" stroke-width="4"/><polygon points="350,1168 370,1168 360,1184" fill="#617086"/>
+
+  <rect x="64" y="1198" width="592" height="176" rx="6" fill="#e6f4ec" stroke="#198754" stroke-width="3"/>
+  <circle cx="108" cy="1242" r="24" fill="#198754"/><text x="108" y="1249" text-anchor="middle" class="n">6</text>
+  <text x="150" y="1250" class="h">可调度网络容量</text>
+  <text x="96" y="1296" class="b">证明：</text><text x="176" y="1296" class="s">目标 Job 可以放入完整网络域</text>
+  <text x="96" y="1336" class="b">口径：</text><text x="176" y="1336" class="s">前五层证据与调度器状态的交集</text>
+
+  <rect x="40" y="1410" width="640" height="382" rx="6" fill="#fff" stroke="#aeb9c8" stroke-width="2"/>
+  <text x="360" y="1460" text-anchor="middle" class="h">验证范围逐层扩大</text>
+  <rect x="80" y="1490" width="560" height="54" rx="4" fill="#e9f2fc"/><text x="360" y="1525" text-anchor="middle" class="b">单机架 · 72 GPU</text>
+  <line x1="360" y1="1544" x2="360" y2="1562" stroke="#617086" stroke-width="4"/><polygon points="350,1562 370,1562 360,1578" fill="#617086"/>
+  <rect x="80" y="1592" width="560" height="54" rx="4" fill="#e6f4ec"/><text x="360" y="1627" text-anchor="middle" class="b">1 SU · 576 GPU</text>
+  <line x1="360" y1="1646" x2="360" y2="1664" stroke="#617086" stroke-width="4"/><polygon points="350,1664 370,1664 360,1680" fill="#617086"/>
+  <rect x="80" y="1694" width="560" height="70" rx="4" fill="#182338"/>
+  <text x="360" y="1723" text-anchor="middle" class="b inv">全集群 · 16 SU · 9,216 GPU</text>
+  <text x="360" y="1752" text-anchor="middle" class="s muted">小范围通过，只证明已经覆盖的路径</text>
+</svg>
