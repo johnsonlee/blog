@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1180" viewBox="0 0 720 1180" role="img" aria-labelledby="title desc">
+  <title id="title">Cluster Scale and the Checkpoint Window</title>
+  <desc id="desc">Under the MLCommons failure model, scaling from 16000 to 100000 accelerators shortens the checkpoint interval from 9.3 minutes to 1.5 minutes and the five-percent save window from 28 seconds to 4.4 seconds.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; fill: #182338; }
+    .h { font-size: 30px; font-weight: 750; }
+    .k { font-size: 34px; font-weight: 780; }
+    .b { font-size: 22px; font-weight: 650; }
+    .s { font-size: 19px; fill: #526176; }
+    .inv { fill: #fff; }
+  </style>
+  <rect width="720" height="1180" fill="#f6f8fb"/>
+
+  <rect x="48" y="36" width="624" height="312" rx="6" fill="#fff" stroke="#2774c5" stroke-width="2"/>
+  <text x="80" y="86" class="h">16,000 accelerators</text>
+  <rect x="80" y="118" width="260" height="100" rx="5" fill="#e9f2fc"/>
+  <text x="210" y="161" text-anchor="middle" class="k">9.3 min</text>
+  <text x="210" y="195" text-anchor="middle" class="s">Checkpoint interval</text>
+  <rect x="364" y="118" width="276" height="100" rx="5" fill="#fff0e5"/>
+  <text x="502" y="161" text-anchor="middle" class="k">28 sec</text>
+  <text x="502" y="195" text-anchor="middle" class="s">Save window · overhead ≤ 5%</text>
+  <rect x="80" y="250" width="532" height="48" rx="4" fill="#198754"/>
+  <rect x="612" y="250" width="28" height="48" rx="4" fill="#d96513"/>
+  <text x="346" y="281" text-anchor="middle" class="b inv">Training time ≥ 95%</text>
+  <circle cx="526" cy="322" r="7" fill="#d96513"/><text x="544" y="329" class="s">Save ≤ 5%</text>
+
+  <rect x="48" y="388" width="624" height="312" rx="6" fill="#fff" stroke="#7048b0" stroke-width="3"/>
+  <text x="80" y="438" class="h">100,000 accelerators</text>
+  <rect x="80" y="470" width="260" height="100" rx="5" fill="#f1ebfa"/>
+  <text x="210" y="513" text-anchor="middle" class="k">1.5 min</text>
+  <text x="210" y="547" text-anchor="middle" class="s">Checkpoint interval</text>
+  <rect x="364" y="470" width="276" height="100" rx="5" fill="#fff0e5"/>
+  <text x="502" y="513" text-anchor="middle" class="k">4.4 sec</text>
+  <text x="502" y="547" text-anchor="middle" class="s">Save window · overhead ≤ 5%</text>
+  <rect x="80" y="602" width="532" height="48" rx="4" fill="#198754"/>
+  <rect x="612" y="602" width="28" height="48" rx="4" fill="#d96513"/>
+  <text x="346" y="633" text-anchor="middle" class="b inv">Training time ≥ 95%</text>
+  <circle cx="526" cy="674" r="7" fill="#d96513"/><text x="544" y="681" class="s">Save ≤ 5%</text>
+
+  <rect x="80" y="760" width="560" height="82" rx="5" fill="#182338"/>
+  <text x="360" y="811" text-anchor="middle" class="b inv">Cluster scale: 16,000 → 100,000</text>
+  <line x1="360" y1="842" x2="360" y2="870" stroke="#617086" stroke-width="4"/>
+  <polygon points="350,870 370,870 360,886" fill="#617086"/>
+  <rect x="80" y="900" width="560" height="82" rx="5" fill="#e9f2fc" stroke="#2774c5" stroke-width="2"/>
+  <text x="360" y="951" text-anchor="middle" class="b">Expected failures arrive more often</text>
+  <line x1="360" y1="982" x2="360" y2="1010" stroke="#617086" stroke-width="4"/>
+  <polygon points="350,1010 370,1010 360,1026" fill="#617086"/>
+  <rect x="80" y="1040" width="560" height="92" rx="5" fill="#fff0e5" stroke="#d96513" stroke-width="3"/>
+  <text x="360" y="1080" text-anchor="middle" class="b">More saves leave a shorter pause window</text>
+  <text x="360" y="1114" text-anchor="middle" class="s">9.3 min / 28 sec → 1.5 min / 4.4 sec</text>
+  <text x="360" y="1162" text-anchor="middle" class="s">Basis: MLCommons failure model · Checkpoint overhead ≤ 5%</text>
+</svg>
