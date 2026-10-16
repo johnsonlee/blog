@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1080" viewBox="0 0 720 1080" role="img" aria-labelledby="title desc">
+  <title id="title">How heat moves from PORTS-Pike GPU racks to ambient air</title>
+  <desc id="desc">The electrical boundary of the first 800 MW is not disclosed. Actual rack heat divides into liquid and air paths using an unknown liquid capture ratio, crosses an undisclosed campus cooling topology, and finally enters outdoor air through closed-loop air-cooled heat rejection. Water returns through the loop while heat leaves the campus.</desc>
+  <defs>
+    <style>
+      text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", sans-serif; fill: #172033; letter-spacing: 0; }
+      .white { fill: #ffffff; }
+      .light { fill: #d7e2ef; }
+      .blue { fill: #3973a8; }
+      .muted { fill: #52647a; }
+      .small { font-size: 20px; }
+      .body { font-size: 23px; }
+      .label { font-size: 26px; font-weight: 700; }
+      .value { font-size: 32px; font-weight: 760; }
+      .heat { stroke: #c85a16; stroke-width: 6; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .water { stroke: #3973a8; stroke-width: 4; fill: none; stroke-dasharray: 12 10; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+  </defs>
+
+  <rect width="720" height="1080" fill="#f5f7fa"/>
+
+  <rect x="40" y="34" width="640" height="116" rx="6" fill="#172033"/>
+  <text x="360" y="78" text-anchor="middle" class="white label">PORTS-Pike Disclosure</text>
+  <text x="360" y="113" text-anchor="middle" class="white body">First 800 MW · Electrical Boundary Undisclosed</text>
+  <text x="360" y="140" text-anchor="middle" class="light small">Closed-loop · Air-cooled · No Cooling Towers</text>
+
+  <rect x="170" y="190" width="380" height="112" rx="6" fill="#fff3e8" stroke="#c85a16" stroke-width="3"/>
+  <text x="360" y="235" text-anchor="middle" class="label">Actual Rack Heat</text>
+  <text x="360" y="274" text-anchor="middle" class="value">Q</text>
+  <text x="360" y="296" text-anchor="middle" class="muted small">Only actual IT load becomes heat load</text>
+
+  <path d="M360 302 V338 H190 V368 M360 338 H530 V368" class="heat"/>
+  <polygon points="176,368 204,368 190,390" fill="#c85a16"/>
+  <polygon points="516,368 544,368 530,390" fill="#c85a16"/>
+
+  <rect x="45" y="390" width="290" height="190" rx="6" fill="#e8f1fa" stroke="#3973a8" stroke-width="3"/>
+  <text x="190" y="432" text-anchor="middle" class="label">Liquid Path · rQ</text>
+  <text x="190" y="472" text-anchor="middle" class="body">CPU / GPU</text>
+  <text x="190" y="507" text-anchor="middle" class="body">Cold Plate · TCS</text>
+  <text x="190" y="542" text-anchor="middle" class="body">CDU</text>
+  <text x="190" y="570" text-anchor="middle" class="muted small">r = liquid capture ratio</text>
+
+  <rect x="385" y="390" width="290" height="190" rx="6" fill="#fff6d8" stroke="#b98100" stroke-width="3"/>
+  <text x="530" y="432" text-anchor="middle" class="label">Air Path · (1−r)Q</text>
+  <text x="530" y="472" text-anchor="middle" class="body">Network / Storage</text>
+  <text x="530" y="507" text-anchor="middle" class="body">Power Shelf · Fans</text>
+  <text x="530" y="542" text-anchor="middle" class="body">Hot Aisle · CRAH</text>
+  <text x="530" y="570" text-anchor="middle" class="muted small">Both paths must hold</text>
+
+  <path d="M190 580 V625 M530 580 V625" class="heat"/>
+  <polygon points="176,625 204,625 190,647" fill="#c85a16"/>
+  <polygon points="516,625 544,625 530,647" fill="#c85a16"/>
+
+  <rect x="45" y="647" width="630" height="126" rx="6" fill="#eef7ef" stroke="#2d8a4e" stroke-width="3" stroke-dasharray="12 9"/>
+  <text x="360" y="691" text-anchor="middle" class="label">Facility Cooling</text>
+  <text x="360" y="729" text-anchor="middle" class="body">Topology · Equipment · Temperatures Undisclosed</text>
+  <text x="360" y="759" text-anchor="middle" class="muted small">DSX reference: both paths can enter FWS / CUB</text>
+
+  <path d="M360 773 V798" class="heat"/>
+  <polygon points="346,798 374,798 360,820" fill="#c85a16"/>
+
+  <rect x="125" y="820" width="470" height="116" rx="6" fill="#edf2f7" stroke="#52647a" stroke-width="3"/>
+  <text x="360" y="860" text-anchor="middle" class="label">Closed-loop Air-cooled</text>
+  <text x="360" y="895" text-anchor="middle" class="body">Coils · Fans · Dry Coolers</text>
+  <text x="360" y="924" text-anchor="middle" class="small">Air-cooled Chillers · No Cooling Towers</text>
+
+  <path d="M360 936 V963" class="heat"/>
+  <polygon points="346,963 374,963 360,985" fill="#c85a16"/>
+
+  <rect x="100" y="985" width="520" height="68" rx="6" fill="#fff3e8" stroke="#c85a16" stroke-width="3"/>
+  <text x="360" y="1028" text-anchor="middle" class="value">Ambient Air · Final Heat Sink</text>
+
+  <path d="M125 878 H26 V710 H45" class="water"/>
+  <polygon points="31,696 31,724 51,710" fill="#3973a8"/>
+  <text x="45" y="806" class="blue small">Blue dashed: water returns</text>
+</svg>
