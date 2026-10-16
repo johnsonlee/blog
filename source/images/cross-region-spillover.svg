@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Cross-region inference spillover pools</title><desc id="desc">Single Region、Geographic Pool 和 Global Pool 提供逐步扩大的可用容量，同时扩大网络路径、状态复制和处理边界。</desc>
+  <style>text{font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;letter-spacing:0;fill:#172033}.title{font-size:31px;font-weight:760;text-anchor:middle}.head{font-size:18px;font-weight:750;text-anchor:middle}.body{font-size:15px;fill:#52647a;text-anchor:middle}.small{font-size:13px;fill:#607089;text-anchor:middle}.inv{fill:#fff}</style>
+  <rect width="1600" height="900" fill="#f7f9fc"/><text x="800" y="58" class="title">Spillover 扩大 Capacity Pool，也扩大交付边界</text>
+  <rect x="45" y="120" width="470" height="620" rx="7" fill="#fff" stroke="#64748b" stroke-width="2"/><text x="280" y="165" class="head">单一 Region</text>
+  <rect x="110" y="235" width="340" height="150" rx="7" fill="#2f6fab"/><text x="280" y="278" class="head inv">Region A</text><text x="280" y="312" class="body inv">主排队队列</text><text x="280" y="344" class="body inv">本地模型 Pool</text>
+  <path d="M280 385V460" stroke="#c85a16" stroke-width="5"/><polygon points="268,460 292,460 280,482" fill="#c85a16"/><rect x="110" y="482" width="340" height="92" rx="6" fill="#fff3ea" stroke="#c85a16" stroke-width="2"/><text x="280" y="520" class="head">满载或故障</text><text x="280" y="550" class="body">限流 / Error</text>
+  <text x="280" y="650" class="body">最窄处理边界</text><text x="280" y="680" class="body">最小可共享 Capacity</text>
+  <rect x="565" y="120" width="470" height="620" rx="7" fill="#fff" stroke="#167d73" stroke-width="2"/><text x="800" y="165" class="head">地理 Pool</text>
+  <rect x="620" y="225" width="160" height="120" rx="6" fill="#2f6fab"/><text x="700" y="270" class="head inv">A</text><text x="700" y="305" class="body inv">繁忙</text><rect x="820" y="225" width="160" height="120" rx="6" fill="#24864a"/><text x="900" y="270" class="head inv">B</text><text x="900" y="305" class="body inv">可用</text>
+  <line x1="780" y1="285" x2="798" y2="285" stroke="#24864a" stroke-width="4"/><polygon points="798,273 798,297 820,285" fill="#24864a"/>
+  <rect x="620" y="420" width="360" height="130" rx="6" fill="#e8f3f1" stroke="#167d73" stroke-width="2"/><text x="800" y="460" class="head">US / EU / APAC 边界</text><text x="800" y="493" class="body">在指定地理范围内 Spill</text><text x="800" y="523" class="body">复制模型 · 策略 · 运维</text>
+  <text x="800" y="650" class="body">更多吞吐与故障切换</text><text x="800" y="680" class="body">增加跨 Region 路径</text>
+  <rect x="1085" y="120" width="470" height="620" rx="7" fill="#fff" stroke="#7653a6" stroke-width="2"/><text x="1320" y="165" class="head">全球 Pool</text>
+  <rect x="1135" y="225" width="110" height="110" rx="6" fill="#2f6fab"/><text x="1190" y="287" class="head inv">A</text><rect x="1265" y="225" width="110" height="110" rx="6" fill="#167d73"/><text x="1320" y="287" class="head inv">B</text><rect x="1395" y="225" width="110" height="110" rx="6" fill="#24864a"/><text x="1450" y="287" class="head inv">C</text>
+  <path d="M1190 335V385H1450V357" fill="none" stroke="#7653a6" stroke-width="4"/><polygon points="1438,357 1462,357 1450,335" fill="#7653a6"/>
+  <rect x="1135" y="420" width="370" height="130" rx="6" fill="#f0ebf7" stroke="#7653a6" stroke-width="2"/><text x="1320" y="460" class="head">最大候选 Region 集合</text><text x="1320" y="493" class="body">更高可用 Capacity</text><text x="1320" y="523" class="body">更宽处理范围</text>
+  <text x="1320" y="650" class="body">最高共享效率</text><text x="1320" y="680" class="body">最复杂策略与 State 路径</text>
+  <rect x="160" y="790" width="1280" height="68" rx="6" fill="#172033"/><text x="800" y="821" class="head inv">Spillover 的前提：目标 Region 已有模型、Accelerator、Quota、安全策略与可观测性</text><text x="800" y="848" class="small inv">只切流量，没有预留 Capacity，不构成可用冗余</text>
+</svg>

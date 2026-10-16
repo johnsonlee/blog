@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="920" viewBox="0 0 1600 920" role="img" aria-labelledby="title desc">
+  <title id="title">Inference gateway routing decision</title><desc id="desc">Inference Gateway 同时读取 request requirement、regional policy、worker model、KV cache、queue、health 和 cost 状态，再选择目标 worker。</desc>
+  <style>text{font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;letter-spacing:0;fill:#172033}.title{font-size:31px;font-weight:760;text-anchor:middle}.head{font-size:18px;font-weight:750;text-anchor:middle}.body{font-size:15px;fill:#52647a;text-anchor:middle}.small{font-size:13px;fill:#607089;text-anchor:middle}.inv{fill:#fff}</style>
+  <rect width="1600" height="920" fill="#f7f9fc"/><text x="800" y="58" class="title">推理网关选择的不是“下一台 Server”</text>
+  <rect x="55" y="330" width="270" height="170" rx="7" fill="#64748b"/><text x="190" y="376" class="head inv">进入的 Request</text><text x="190" y="410" class="body inv">模型 · Context · SLO</text><text x="190" y="440" class="body inv">Tier · Region · 策略</text><text x="190" y="470" class="body inv">Prefix · Adapter</text>
+  <line x1="325" y1="415" x2="393" y2="415" stroke="#52647a" stroke-width="4"/><polygon points="393,403 393,427 415,415" fill="#52647a"/>
+  <rect x="415" y="280" width="400" height="270" rx="7" fill="#7653a6"/><text x="615" y="335" class="head inv">推理网关</text><text x="615" y="375" class="body inv">可选集合</text><text x="615" y="410" class="body inv">网络距离 × 排队</text><text x="615" y="445" class="body inv">KV 重合 × 模型可用性</text><text x="615" y="480" class="body inv">成本 × 数据边界 × 健康状态</text><text x="615" y="515" class="head inv">评分 → 路由</text>
+  <rect x="415" y="105" width="400" height="105" rx="6" fill="#eaf2fb" stroke="#2f6fab" stroke-width="2"/><text x="615" y="145" class="head">全局 / Region 策略</text><text x="615" y="178" class="body">可选 Region · Service Tier · 故障切换</text>
+  <line x1="615" y1="210" x2="615" y2="258" stroke="#2f6fab" stroke-width="4"/><polygon points="603,258 627,258 615,280" fill="#2f6fab"/>
+  <rect x="415" y="620" width="400" height="105" rx="6" fill="#e8f3f1" stroke="#167d73" stroke-width="2"/><text x="615" y="660" class="head">Worker 实时状态</text><text x="615" y="693" class="body">KV 事件 · 活跃负载 · 排队 · 健康状态</text>
+  <line x1="615" y1="620" x2="615" y2="572" stroke="#167d73" stroke-width="4"/><polygon points="603,572 627,572 615,550" fill="#167d73"/>
+  <rect x="925" y="125" width="280" height="175" rx="7" fill="#2f6fab"/><text x="1065" y="168" class="head inv">Worker A</text><text x="1065" y="202" class="body inv">模型已加载</text><text x="1065" y="232" class="body inv">KV 高度重合</text><text x="1065" y="262" class="body inv">排队：中等</text>
+  <rect x="1250" y="125" width="280" height="175" rx="7" fill="#167d73"/><text x="1390" y="168" class="head inv">Worker B</text><text x="1390" y="202" class="body inv">模型已加载</text><text x="1390" y="232" class="body inv">无 Prefix</text><text x="1390" y="262" class="body inv">排队：较短</text>
+  <rect x="925" y="420" width="280" height="175" rx="7" fill="#c85a16"/><text x="1065" y="463" class="head inv">Worker C</text><text x="1065" y="497" class="body inv">模型未加载</text><text x="1065" y="527" class="body inv">Capacity 空闲</text><text x="1065" y="557" class="body inv">需要加载时间</text>
+  <rect x="1250" y="420" width="280" height="175" rx="7" fill="#24864a"/><text x="1390" y="463" class="head inv">Worker D</text><text x="1390" y="497" class="body inv">模型已加载</text><text x="1390" y="527" class="body inv">Prefix 已缓存</text><text x="1390" y="557" class="body inv">排队：较短</text>
+  <path d="M815 350H870V212H903" fill="none" stroke="#52647a" stroke-width="3"/><polygon points="903,200 903,224 925,212" fill="#52647a"/>
+  <path d="M815 385H850V80H1390V103" fill="none" stroke="#52647a" stroke-width="3"/><polygon points="1378,103 1402,103 1390,125" fill="#52647a"/>
+  <path d="M815 445H870V507H903" fill="none" stroke="#52647a" stroke-width="3"/><polygon points="903,495 903,519 925,507" fill="#52647a"/>
+  <path d="M815 480H850V760H1390V617" fill="none" stroke="#24864a" stroke-width="5"/><polygon points="1378,617 1402,617 1390,595" fill="#24864a"/>
+  <rect x="250" y="790" width="1100" height="78" rx="6" fill="#172033"/><text x="800" y="823" class="head inv">最近 Region ≠ 最短排队 ≠ 最高 KV 命中</text><text x="800" y="852" class="body inv">路由决定网络路径、预填充成本与 GPU 利用率</text>
+</svg>
