@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="820" viewBox="0 0 1600 820" role="img" aria-labelledby="title desc">
+  <title id="title">为什么设备装完还不能合闸？</title>
+  <desc id="desc">物理系统、保护与数据、商业与监管、调度与运行四组证据必须同时通过，公用事业才允许在初始容量上限内合闸。</desc>
+  <rect width="1600" height="820" fill="#F7F9FC"/>
+  <style>text{font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;letter-spacing:0;fill:#172033}.title{font-size:31px;font-weight:760}.lane{font-size:20px;font-weight:740}.head{font-size:18px;font-weight:720}.small{font-size:15px;font-weight:520;fill:#607089}.check{font-size:22px;font-weight:800;fill:#fff}.inverse{fill:#fff}</style>
+  <text x="800" y="58" class="title" text-anchor="middle">为什么设备装完还不能合闸？</text>
+
+  <rect x="60" y="130" width="250" height="100" rx="6" fill="#E8F1FB" stroke="#2F6FAB" stroke-width="2"/><text x="185" y="188" class="lane" text-anchor="middle">物理系统</text>
+  <rect x="370" y="130" width="750" height="100" rx="6" fill="#fff" stroke="#D8E0E9" stroke-width="2"/><text x="745" y="168" class="head" text-anchor="middle">设备安装完成 · 接地 · 站用电 · 相序</text><text x="745" y="202" class="small" text-anchor="middle">现场检查与试验报告通过</text>
+  <line x1="1120" y1="180" x2="1231" y2="180" stroke="#2F6FAB" stroke-width="3" stroke-linecap="round"/><polygon points="1245,180 1231,172 1231,188" fill="#2F6FAB"/><circle cx="1265" cy="180" r="20" fill="#2F6FAB"/><text x="1265" y="188" class="check" text-anchor="middle">✓</text>
+
+  <rect x="60" y="270" width="250" height="100" rx="6" fill="#E4F4F1" stroke="#16877B" stroke-width="2"/><text x="185" y="328" class="lane" text-anchor="middle">保护与数据</text>
+  <rect x="370" y="270" width="750" height="100" rx="6" fill="#fff" stroke="#D8E0E9" stroke-width="2"/><text x="745" y="308" class="head" text-anchor="middle">保护定值批准 · SCADA · 电表 · 通信</text><text x="745" y="342" class="small" text-anchor="middle">端到端联调与 control room 点对点测试通过</text>
+  <line x1="1120" y1="320" x2="1231" y2="320" stroke="#16877B" stroke-width="3" stroke-linecap="round"/><polygon points="1245,320 1231,312 1231,328" fill="#16877B"/><circle cx="1265" cy="320" r="20" fill="#16877B"/><text x="1265" y="328" class="check" text-anchor="middle">✓</text>
+
+  <rect x="60" y="410" width="250" height="100" rx="6" fill="#FFF5D6" stroke="#C58D0A" stroke-width="2"/><text x="185" y="468" class="lane" text-anchor="middle">商业与监管</text>
+  <rect x="370" y="410" width="750" height="100" rx="6" fill="#fff" stroke="#D8E0E9" stroke-width="2"/><text x="745" y="448" class="head" text-anchor="middle">协议生效 · 担保 / CIAC 到位 · 施工授权</text><text x="745" y="482" class="small" text-anchor="middle">成本责任、许可与监管条件已经闭合</text>
+  <line x1="1120" y1="460" x2="1231" y2="460" stroke="#C58D0A" stroke-width="3" stroke-linecap="round"/><polygon points="1245,460 1231,452 1231,468" fill="#C58D0A"/><circle cx="1265" cy="460" r="20" fill="#C58D0A"/><text x="1265" y="468" class="check" text-anchor="middle">✓</text>
+
+  <rect x="60" y="550" width="250" height="100" rx="6" fill="#FDEBED" stroke="#CF3F4F" stroke-width="2"/><text x="185" y="608" class="lane" text-anchor="middle">调度与运行</text>
+  <rect x="370" y="550" width="750" height="100" rx="6" fill="#fff" stroke="#D8E0E9" stroke-width="2"/><text x="745" y="588" class="head" text-anchor="middle">书面送电许可 · 联系人 · 操作票</text><text x="745" y="622" class="small" text-anchor="middle">运行模型、初始 MW 上限与升载曲线已确认</text>
+  <line x1="1120" y1="600" x2="1231" y2="600" stroke="#CF3F4F" stroke-width="3" stroke-linecap="round"/><polygon points="1245,600 1231,592 1231,608" fill="#CF3F4F"/><circle cx="1265" cy="600" r="20" fill="#CF3F4F"/><text x="1265" y="608" class="check" text-anchor="middle">✓</text>
+
+  <line x1="1265" y1="200" x2="1265" y2="686" stroke="#172033" stroke-width="3"/><polygon points="1265,700 1257,686 1273,686" fill="#16877B"/>
+  <rect x="1050" y="700" width="430" height="90" rx="6" fill="#16877B" stroke="#16877B" stroke-width="2"/><text x="1265" y="740" class="head inverse" text-anchor="middle">允许合闸</text><text x="1265" y="770" class="head inverse" text-anchor="middle">但只在批准的初始容量内</text>
+</svg>

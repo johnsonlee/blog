@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="820" viewBox="0 0 1600 820" role="img" aria-labelledby="title desc">
+  <title id="title">Why can't completed equipment close the breaker?</title>
+  <desc id="desc">Physical systems, protection and data, commercial and regulatory readiness, and dispatch and operations must all pass before the utility authorizes breaker close within the initial capacity ceiling.</desc>
+  <rect width="1600" height="820" fill="#F7F9FC"/>
+  <style>text{font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;letter-spacing:0;fill:#172033}.title{font-size:31px;font-weight:760}.lane{font-size:20px;font-weight:740}.head{font-size:18px;font-weight:720}.small{font-size:15px;font-weight:520;fill:#607089}.check{font-size:22px;font-weight:800;fill:#fff}.inverse{fill:#fff}</style>
+  <text x="800" y="58" class="title" text-anchor="middle">Why can't completed equipment close the breaker?</text>
+
+  <rect x="60" y="130" width="250" height="100" rx="6" fill="#E8F1FB" stroke="#2F6FAB" stroke-width="2"/><text x="185" y="188" class="lane" text-anchor="middle">PHYSICAL SYSTEM</text>
+  <rect x="370" y="130" width="750" height="100" rx="6" fill="#fff" stroke="#D8E0E9" stroke-width="2"/><text x="745" y="168" class="head" text-anchor="middle">Equipment · grounding · station service · phase</text><text x="745" y="202" class="small" text-anchor="middle">Field inspection and test reports accepted</text>
+  <line x1="1120" y1="180" x2="1231" y2="180" stroke="#2F6FAB" stroke-width="3" stroke-linecap="round"/><polygon points="1245,180 1231,172 1231,188" fill="#2F6FAB"/><circle cx="1265" cy="180" r="20" fill="#2F6FAB"/><text x="1265" y="188" class="check" text-anchor="middle">✓</text>
+
+  <rect x="60" y="270" width="250" height="100" rx="6" fill="#E4F4F1" stroke="#16877B" stroke-width="2"/><text x="185" y="328" class="lane" text-anchor="middle">PROTECTION + DATA</text>
+  <rect x="370" y="270" width="750" height="100" rx="6" fill="#fff" stroke="#D8E0E9" stroke-width="2"/><text x="745" y="308" class="head" text-anchor="middle">Approved relay settings · SCADA · metering · telecom</text><text x="745" y="342" class="small" text-anchor="middle">End-to-end commissioning and control-room point tests passed</text>
+  <line x1="1120" y1="320" x2="1231" y2="320" stroke="#16877B" stroke-width="3" stroke-linecap="round"/><polygon points="1245,320 1231,312 1231,328" fill="#16877B"/><circle cx="1265" cy="320" r="20" fill="#16877B"/><text x="1265" y="328" class="check" text-anchor="middle">✓</text>
+
+  <rect x="60" y="410" width="250" height="100" rx="6" fill="#FFF5D6" stroke="#C58D0A" stroke-width="2"/><text x="185" y="455" class="lane" text-anchor="middle">COMMERCIAL +</text><text x="185" y="481" class="lane" text-anchor="middle">REGULATORY</text>
+  <rect x="370" y="410" width="750" height="100" rx="6" fill="#fff" stroke="#D8E0E9" stroke-width="2"/><text x="745" y="448" class="head" text-anchor="middle">Effective agreements · collateral / CIAC · authorization</text><text x="745" y="482" class="small" text-anchor="middle">Cost responsibility, permits, and regulatory conditions closed</text>
+  <line x1="1120" y1="460" x2="1231" y2="460" stroke="#C58D0A" stroke-width="3" stroke-linecap="round"/><polygon points="1245,460 1231,452 1231,468" fill="#C58D0A"/><circle cx="1265" cy="460" r="20" fill="#C58D0A"/><text x="1265" y="468" class="check" text-anchor="middle">✓</text>
+
+  <rect x="60" y="550" width="250" height="100" rx="6" fill="#FDEBED" stroke="#CF3F4F" stroke-width="2"/><text x="185" y="595" class="lane" text-anchor="middle">DISPATCH +</text><text x="185" y="621" class="lane" text-anchor="middle">OPERATIONS</text>
+  <rect x="370" y="550" width="750" height="100" rx="6" fill="#fff" stroke="#D8E0E9" stroke-width="2"/><text x="745" y="588" class="head" text-anchor="middle">Written approval · contacts · switching order</text><text x="745" y="622" class="small" text-anchor="middle">Operating model, initial MW ceiling, and load ramp confirmed</text>
+  <line x1="1120" y1="600" x2="1231" y2="600" stroke="#CF3F4F" stroke-width="3" stroke-linecap="round"/><polygon points="1245,600 1231,592 1231,608" fill="#CF3F4F"/><circle cx="1265" cy="600" r="20" fill="#CF3F4F"/><text x="1265" y="608" class="check" text-anchor="middle">✓</text>
+
+  <line x1="1265" y1="200" x2="1265" y2="686" stroke="#172033" stroke-width="3"/><polygon points="1265,700 1257,686 1273,686" fill="#16877B"/>
+  <rect x="1050" y="700" width="430" height="90" rx="6" fill="#16877B" stroke="#16877B" stroke-width="2"/><text x="1265" y="740" class="head inverse" text-anchor="middle">BREAKER CLOSE AUTHORIZED</text><text x="1265" y="770" class="head inverse" text-anchor="middle">only within approved initial capacity</text>
+</svg>
