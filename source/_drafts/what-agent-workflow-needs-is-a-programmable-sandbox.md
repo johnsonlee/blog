@@ -131,6 +131,14 @@ Git 只直接理解文件，普通 Git 仓库也不会自动记录 model output�
 
 这也是 [Chronicle 提出的 cut-point replay](https://arxiv.org/abs/2609.20625) 所做的事情：在非确定性边界记录 immutable envelope，测试时指定一部分边界运行新代码，其余从记录返回。它的公开实验规模还很小，但这个操作比“再跑一次看看”更接近我们熟悉的 regression test。
 
+## 每次崩溃都可以成为下一次起点
+
+《Source Code》真正有意思的地方，不是主人公能回到过去，而是他每次循环都带着上一轮获得的信息回来。一次没有通关，就从相同的起点再试；已经排除的错误不必再犯，离目标也更近一步。
+
+Agent workflow 也可以这样推进，只是 Sandbox 要保留的不只是 memory。每当 workflow 到达一个通过 verifier 的中间状态，Sandbox 就把当时的 action history、environment snapshot 和 boundary response 保存成 checkpoint。后面的步骤崩溃了，下一轮从崩溃前最近一个有效 checkpoint 恢复，只重新执行剩下的路径。
+
+这会把长任务从“一次跑通”变成可累积的探索。一次运行推进到第 12 步，下一次就从那里继续尝试第 13 步。此前花掉的 token、tool call 和 wall-clock time 不再因为一次 failure 全部作废。Sandbox 因而不只是 debug 和 mock 工具，它还是 Agent workflow 的存档系统，让 Agent 在循环往复中更快通关。
+
 ## 隔离让 Mock 不会变成事故
 
 Agent sandbox 通常被理解成权限隔离：不让 Agent 读不该读的文件，不让 shell 逃出 workspace，不让危险 tool 无需 approval 就执行。但对于 debug，隔离还有另一层价值：让 Sandbox 可以接管环境变量，而不用担心实验泄漏到真实世界。
@@ -159,4 +167,4 @@ side effect 更麻烦。一次 replay 不能真的再发一笔退款、再发一
 
 Git 让 Sandbox 恢复任意版本的环境，boundary mock 让它决定哪些响应沿用历史、哪些调用执行新代码、哪些故障被主动注入。两者缺一不可：只有状态恢复，没有变量控制，得到的仍然是一次随机重跑；只有 mock，没有完整环境，测试的又不是事故发生时的世界。
 
-失败的 trajectory 应该变成一个能恢复、分叉和编程的 Test Case，而不只是一条供人围观的 trace。Agent Debug 缺的，就是这样一个对内无感、对外隔离的可编程沙盒。
+失败的 trajectory 应该变成一个能恢复、分叉和编程的 Test Case，而不只是一条供人围观的 trace；通过 verifier 的 checkpoint 则应该成为下一轮继续推进的起点。Agent workflow 需要的，就是这样一个对内无感、对外隔离的可编程沙盒。

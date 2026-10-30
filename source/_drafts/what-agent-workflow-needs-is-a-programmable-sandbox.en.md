@@ -132,6 +132,14 @@ A programmed run is what turns this into debugging. Suppose an Agent deletes the
 
 That is also the operation described by [Chronicle's cut-point replay](https://arxiv.org/abs/2609.20625): record immutable envelopes at nondeterministic boundaries, run new code at selected boundaries, and serve the rest from the recording. Its public experiment is still small, but the operation is much closer to a regression test than "run it again and see."
 
+## Every crash can become the next starting point
+
+What makes *Source Code* interesting is not simply that the protagonist returns to the past. Each loop carries forward what he learned in the previous one. If he fails, he tries again from the same starting point without repeating every mistake he has already ruled out.
+
+An Agent workflow can advance in the same way, except the sandbox must preserve more than memory. Whenever the workflow reaches an intermediate state that passes its verifier, the sandbox stores the action history, environment snapshot, and boundary responses as a checkpoint. If a later step crashes, the next run restores the nearest valid checkpoint before the crash and executes only the remaining path.
+
+This turns a long task from an all-or-nothing run into cumulative exploration. One run may reach step 12; the next starts there and explores step 13. A single failure no longer discards all the tokens, tool calls, and wall-clock time already spent. The sandbox is therefore more than a debugging and mocking tool. It is the save system for an Agent workflow, helping it finish through repeated attempts.
+
 ## Isolation keeps mocks from becoming incidents
 
 An Agent sandbox is usually described as permission isolation: prevent the Agent from reading the wrong files, keep the shell inside the workspace, and require approval before dangerous tools run. For debugging, isolation has another purpose. It lets the sandbox take control of environmental variables without allowing an experiment to leak into the real world.
@@ -160,4 +168,4 @@ In {% post_link from-prompt-to-harness.en 'From Prompt to Harness' %}, I placed 
 
 Git lets the sandbox restore any version of the environment. Boundary mocks decide which responses remain historical, which calls execute new code, and which failures are injected. Both are necessary. State restoration without variable control is still a random rerun. Mocks without the complete environment do not test the world in which the incident happened.
 
-A failed trajectory should become a Test Case that can be restored, forked, and programmed, not a trace that people can only inspect. Agent Debugging needs a programmable sandbox that is transparent on the inside and isolated from the outside.
+A failed trajectory should become a Test Case that can be restored, forked, and programmed, not a trace that people can only inspect. A checkpoint that passes its verifier should become the starting point for the next attempt. An Agent workflow needs a programmable sandbox that is transparent on the inside and isolated from the outside.
