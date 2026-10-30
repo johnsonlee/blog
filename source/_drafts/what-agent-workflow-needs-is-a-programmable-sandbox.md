@@ -133,11 +133,11 @@ Git 只直接理解文件，普通 Git 仓库也不会自动记录 model output�
 
 ## 每次崩溃都可以成为下一次起点
 
-《Source Code》真正有意思的地方，不是主人公能回到过去，而是他每次循环都带着上一轮获得的信息回来。一次没有通关，就从相同的起点再试；已经排除的错误不必再犯，离目标也更近一步。
+在《Source Code》里，主人公每次失败，都会再次回到列车爆炸前的同一个时间点。场景会重置，但上一轮得到的信息不会消失：这一轮多发现一个细节，下一轮排除一个嫌疑人，再下一轮换一条路径。每次循环都可能以爆炸结束，但他并没有从零开始，而是在用一次次失败缩小剩余的搜索空间。
 
-Agent workflow 也可以这样推进，只是 Sandbox 要保留的不只是 memory。每当 workflow 到达一个通过 verifier 的中间状态，Sandbox 就把当时的 action history、environment snapshot 和 boundary response 保存成 checkpoint。后面的步骤崩溃了，下一轮从崩溃前最近一个有效 checkpoint 恢复，只重新执行剩下的路径。
+Sandbox 给 Agent workflow 的正是这种循环。Agent 在第 12 步崩溃，就把环境恢复到崩溃前最后一个有效 checkpoint，保留已经记录的 action history、environment snapshot、boundary response 和 verifier 结果，再换一种策略执行剩下的路径。真实世界不会被重复写入，前 11 步也不必重新烧一遍 token 和 tool call。
 
-这会把长任务从“一次跑通”变成可累积的探索。一次运行推进到第 12 步，下一次就从那里继续尝试第 13 步。此前花掉的 token、tool call 和 wall-clock time 不再因为一次 failure 全部作废。Sandbox 因而不只是 debug 和 mock 工具，它还是 Agent workflow 的存档系统，让 Agent 在循环往复中更快通关。
+电影里的主人公每次都回到同一个起点，可编程沙盒还可以把起点不断向前推。只要某个中间状态通过 verifier，它就成为新的 checkpoint。下一次崩溃只回到这里，而不是整个任务的开头。长 workflow 因此从“一次跑通”变成“一关一关存档”，Agent 在循环往复中累积进展，更快通关。
 
 ## 隔离让 Mock 不会变成事故
 

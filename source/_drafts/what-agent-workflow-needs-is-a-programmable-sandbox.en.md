@@ -134,11 +134,11 @@ That is also the operation described by [Chronicle's cut-point replay](https://a
 
 ## Every crash can become the next starting point
 
-What makes *Source Code* interesting is not simply that the protagonist returns to the past. Each loop carries forward what he learned in the previous one. If he fails, he tries again from the same starting point without repeating every mistake he has already ruled out.
+In *Source Code*, every failure sends the protagonist back to the same moment before the train explodes. The scene resets, but the information from the previous loop survives. One loop reveals another detail. The next rules out a suspect. The one after that tries a different path. Each loop may still end in an explosion, but he is not starting from zero. Every failure narrows the remaining search space.
 
-An Agent workflow can advance in the same way, except the sandbox must preserve more than memory. Whenever the workflow reaches an intermediate state that passes its verifier, the sandbox stores the action history, environment snapshot, and boundary responses as a checkpoint. If a later step crashes, the next run restores the nearest valid checkpoint before the crash and executes only the remaining path.
+A sandbox gives an Agent workflow the same kind of loop. If the Agent crashes at step 12, the sandbox restores the last valid checkpoint before the crash, keeps the recorded action history, environment snapshot, boundary responses, and verifier results, then tries another strategy for the remaining path. Nothing writes to the real world twice, and the first 11 steps do not burn the same tokens and tool calls again.
 
-This turns a long task from an all-or-nothing run into cumulative exploration. One run may reach step 12; the next starts there and explores step 13. A single failure no longer discards all the tokens, tool calls, and wall-clock time already spent. The sandbox is therefore more than a debugging and mocking tool. It is the save system for an Agent workflow, helping it finish through repeated attempts.
+The protagonist returns to the same starting point in every loop. A programmable sandbox can move that starting point forward. Once an intermediate state passes its verifier, it becomes the new checkpoint. The next crash returns there instead of going back to the beginning of the task. A long workflow stops being one all-or-nothing run and becomes a series of saved levels. The Agent accumulates progress across loops and finishes sooner.
 
 ## Isolation keeps mocks from becoming incidents
 
