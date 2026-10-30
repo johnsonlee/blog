@@ -2,7 +2,7 @@
 title: "What Agent Workflows Need Is a Programmable Sandbox"
 date: 2026-10-29 20:30:00
 lang: en
-i18n_key: agent-workflow-needs-programmable-sandbox
+i18n_key: what-agent-workflow-needs-is-a-programmable-sandbox
 categories:
   - Harness Engineering
 tags:
