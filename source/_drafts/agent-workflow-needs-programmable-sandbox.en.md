@@ -2,7 +2,7 @@
 title: "What Agent Workflows Need Is a Programmable Sandbox"
 date: 2026-10-29 20:30:00
 lang: en
-i18n_key: agent-debug-needs-programmable-sandbox
+i18n_key: agent-workflow-needs-programmable-sandbox
 categories:
   - Harness Engineering
 tags:
@@ -14,7 +14,7 @@ tags:
   - Mocking
 ---
 
-The most painful part of building an agentic workflow is getting the Agent to fail the same way twice.
+The most painful part of building an Agent workflow is debugging the workflow as a whole.
 
 A run breaks at the third handoff. You change one line in the prompt and run it again. The failure disappears, but you cannot tell whether the fix worked or the model simply chose another path. On the next run, the original bug stays hidden while a tool returns something different. Traditional debugging narrows variables around a fixed input. Every Agent rerun creates new variables instead.
 

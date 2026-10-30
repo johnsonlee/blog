@@ -10,10 +10,10 @@ tags:
   - Replay
   - Sandbox
   - Mocking
-i18n_key: agent-debug-needs-programmable-sandbox
+i18n_key: agent-workflow-needs-programmable-sandbox
 ---
 
-做 Agentic workflow 最折磨人的，是你很难让 Agent 把同一个错误再犯一次。
+做 Agent workflow 最折磨人的，莫过于调试整个 workflow。
 
 一次任务跑到第三个 handoff 时出错。你改了一句 prompt，重新跑，错误消失了，却不知道是修复生效，还是模型这次恰好选了另一条路。再跑一次，原来的问题没出现，tool response 又变了。传统 debug 靠固定输入缩小变量，Agent 每次重跑却都在制造新的变量。
 
