@@ -14,9 +14,7 @@ tags:
   - Mocking
 ---
 
-The most painful part of building an Agent workflow is debugging the workflow as a whole.
-
-A run breaks at the third handoff. You change one line in the prompt and run it again. The failure disappears, but you cannot tell whether the fix worked or the model simply chose another path. On the next run, the original bug stays hidden while a tool returns something different. Traditional debugging narrows variables around a fixed input. Every Agent rerun creates new variables instead.
+The most painful part of building an Agent workflow is debugging the workflow as a whole. A run breaks at the third handoff. You change one line in the prompt and run it again. The failure disappears, but you cannot tell whether the fix worked or the model simply chose another path. On the next run, the original bug stays hidden while a tool returns something different. Traditional debugging narrows variables around a fixed input. Every Agent rerun creates new variables instead.
 
 Agentic Coding needs a programmable sandbox. It isolates the Agent from the real environment while taking control of the model, tools, network, clock, filesystem, and other variables inside. Each boundary can return a recorded result or a mock result. The Agent keeps calling the same interfaces and the workflow does not change for the test, yet the system can restore the state before a failure and rerun with only one variable released.
 

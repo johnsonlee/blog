@@ -13,9 +13,7 @@ tags:
 i18n_key: agent-workflow-needs-programmable-sandbox
 ---
 
-做 Agent workflow 最折磨人的，莫过于调试整个 workflow。
-
-一次任务跑到第三个 handoff 时出错。你改了一句 prompt，重新跑，错误消失了，却不知道是修复生效，还是模型这次恰好选了另一条路。再跑一次，原来的问题没出现，tool response 又变了。传统 debug 靠固定输入缩小变量，Agent 每次重跑却都在制造新的变量。
+做 Agent workflow 最折磨人的，莫过于调试整个 workflow。一次任务跑到第三个 handoff 时出错。你改了一句 prompt，重新跑，错误消失了，却不知道是修复生效，还是模型这次恰好选了另一条路。再跑一次，原来的问题没出现，tool response 又变了。传统 debug 靠固定输入缩小变量，Agent 每次重跑却都在制造新的变量。
 
 Agentic Coding 缺的是一种可编程沙盒。它既隔离 Agent 与真实环境，又接管沙盒内的 model、tool、网络、时间和文件系统等变量，按需返回历史结果或 mock 结果。Agent 仍然调用同一套接口，workflow 不需要为了测试而改写，却能恢复到出错前的状态，只放开一个变量重新运行。
 
