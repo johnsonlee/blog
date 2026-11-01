@@ -50,7 +50,7 @@ But the feature has another question. Should revoking access also interrupt a do
 
 In {% post_link ground-truth-core-competency-of-ai-engineering.en 'Ground truth: the most underrated competitive advantage in the AI era' %}, I argued that we cannot keep using human brains as ground truth. Manual review cannot keep pace with generation. Another distinction needs to be explicit here: a human answer is not automatically the truth.
 
-“The original session can still read the resource after revocation” is a checkable fact. “Even downloads already in progress must stop” is a product choice. “Users would rather restart a download than allow continued transfer after revocation” is a hypothesis that needs testing. Store all three as a single approved label, and the next agent may treat a hypothesis as an inviolable fact.
+“The original session can still read the resource after revocation” is a checkable fact. “Even downloads already in progress must stop” is a product choice. “Resource owners would rather interrupt an ongoing download than allow transfer to continue after revocation” is a hypothesis that needs testing. Store all three as a single approved label, and the next agent may treat a hypothesis as an inviolable fact.
 
 Senior engineers can label things incorrectly. The customers they know best may no longer be the main users. A dependency boundary they insist on may have served a migration that ended long ago. Their judgment has a history and an expiration date. Writing it into AGENTS.md does not extend its shelf life.
 
