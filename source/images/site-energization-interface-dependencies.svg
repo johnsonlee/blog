@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">并行施工为什么仍会卡在接口？</title>
+  <desc id="desc">公用事业、园区、保护数据和商业运行四条工作流并行推进，但必须依次跨过设计基础、开工授权、联合验收和控制室许可。</desc>
+  <rect width="1600" height="900" fill="#F7F9FC"/>
+  <style>
+    text{font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;letter-spacing:0;fill:#172033}
+    .title{font-size:31px;font-weight:760}.lane{font-size:20px;font-weight:740}.head{font-size:17px;font-weight:720}.small{font-size:14px;font-weight:520;fill:#607089}.gate{font-size:14px;font-weight:740;fill:#CF3F4F}.inverse{fill:#fff}
+  </style>
+  <text x="800" y="58" class="title" text-anchor="middle">并行施工为什么仍会卡在接口？</text>
+  <text x="55" y="105" class="small">依赖关系示意 · 不代表实际工期</text>
+
+  <g stroke="#CF3F4F" stroke-width="2" stroke-dasharray="7 8">
+    <line x1="550" y1="132" x2="550" y2="710"/>
+    <line x1="860" y1="132" x2="860" y2="710"/>
+    <line x1="1180" y1="132" x2="1180" y2="710"/>
+  </g>
+  <g class="gate" text-anchor="middle">
+    <text x="550" y="125">设计基准</text>
+    <text x="860" y="125">开工授权</text>
+    <text x="1180" y="125">联合验收</text>
+  </g>
+
+  <g>
+    <text x="55" y="202" class="lane">公用事业 / 输电</text>
+    <text x="55" y="232" class="small">外部供电</text>
+    <rect x="280" y="160" width="250" height="90" rx="6" fill="#E8F1FB" stroke="#2F6FAB" stroke-width="2"/>
+    <text x="405" y="212" class="head" text-anchor="middle">系统研究</text>
+    <line x1="530" y1="205" x2="556" y2="205" stroke="#2F6FAB" stroke-width="3" stroke-linecap="round"/><polygon points="570,205 556,197 556,213" fill="#2F6FAB"/>
+    <rect x="570" y="160" width="270" height="90" rx="6" fill="#E8F1FB" stroke="#2F6FAB" stroke-width="2"/>
+    <text x="705" y="212" class="head" text-anchor="middle">方案 · 路权 · 许可</text>
+    <line x1="840" y1="205" x2="866" y2="205" stroke="#2F6FAB" stroke-width="3" stroke-linecap="round"/><polygon points="880,205 866,197 866,213" fill="#2F6FAB"/>
+    <rect x="880" y="160" width="280" height="90" rx="6" fill="#E8F1FB" stroke="#2F6FAB" stroke-width="2"/>
+    <text x="1020" y="212" class="head" text-anchor="middle">变电站 · 接入线</text>
+    <line x1="1160" y1="205" x2="1186" y2="205" stroke="#2F6FAB" stroke-width="3" stroke-linecap="round"/><polygon points="1200,205 1186,197 1186,213" fill="#2F6FAB"/>
+    <rect x="1200" y="160" width="230" height="90" rx="6" fill="#E8F1FB" stroke="#2F6FAB" stroke-width="2"/>
+    <text x="1315" y="212" class="head" text-anchor="middle">设备与接地测试</text>
+    <line x1="1430" y1="205" x2="1466" y2="205" stroke="#2F6FAB" stroke-width="3" stroke-linecap="round"/><polygon points="1480,205 1466,197 1466,213" fill="#2F6FAB"/>
+  </g>
+
+  <g>
+    <text x="55" y="352" class="lane">园区 / EPC</text>
+    <text x="55" y="382" class="small">客户设施</text>
+    <rect x="280" y="310" width="250" height="90" rx="6" fill="#E4F4F1" stroke="#16877B" stroke-width="2"/>
+    <text x="405" y="352" class="head" text-anchor="middle">场地控制</text><text x="405" y="377" class="small" text-anchor="middle">升载计划</text>
+    <line x1="530" y1="355" x2="556" y2="355" stroke="#16877B" stroke-width="3" stroke-linecap="round"/><polygon points="570,355 556,347 556,363" fill="#16877B"/>
+    <rect x="570" y="310" width="270" height="90" rx="6" fill="#E4F4F1" stroke="#16877B" stroke-width="2"/>
+    <text x="705" y="362" class="head" text-anchor="middle">单线图 · 设备参数</text>
+    <line x1="840" y1="355" x2="866" y2="355" stroke="#16877B" stroke-width="3" stroke-linecap="round"/><polygon points="880,355 866,347 866,363" fill="#16877B"/>
+    <rect x="880" y="310" width="280" height="90" rx="6" fill="#E4F4F1" stroke="#16877B" stroke-width="2"/>
+    <text x="1020" y="362" class="head" text-anchor="middle">客户变电站 · 机房</text>
+    <line x1="1160" y1="355" x2="1186" y2="355" stroke="#16877B" stroke-width="3" stroke-linecap="round"/><polygon points="1200,355 1186,347 1186,363" fill="#16877B"/>
+    <rect x="1200" y="310" width="230" height="90" rx="6" fill="#E4F4F1" stroke="#16877B" stroke-width="2"/>
+    <text x="1315" y="362" class="head" text-anchor="middle">受电准备</text>
+    <line x1="1430" y1="355" x2="1466" y2="355" stroke="#16877B" stroke-width="3" stroke-linecap="round"/><polygon points="1480,355 1466,347 1466,363" fill="#16877B"/>
+  </g>
+
+  <g>
+    <text x="55" y="502" class="lane">保护与数据</text>
+    <text x="55" y="532" class="small">继保 / 遥测</text>
+    <rect x="280" y="460" width="250" height="90" rx="6" fill="#FFF5D6" stroke="#C58D0A" stroke-width="2"/>
+    <text x="405" y="502" class="head" text-anchor="middle">短路电流</text><text x="405" y="527" class="small" text-anchor="middle">动态模型</text>
+    <line x1="530" y1="505" x2="556" y2="505" stroke="#C58D0A" stroke-width="3" stroke-linecap="round"/><polygon points="570,505 556,497 556,513" fill="#C58D0A"/>
+    <rect x="570" y="460" width="270" height="90" rx="6" fill="#FFF5D6" stroke="#C58D0A" stroke-width="2"/>
+    <text x="705" y="512" class="head" text-anchor="middle">继保 · SCADA · 计量</text>
+    <line x1="840" y1="505" x2="866" y2="505" stroke="#C58D0A" stroke-width="3" stroke-linecap="round"/><polygon points="880,505 866,497 866,513" fill="#C58D0A"/>
+    <rect x="880" y="460" width="280" height="90" rx="6" fill="#FFF5D6" stroke="#C58D0A" stroke-width="2"/>
+    <text x="1020" y="512" class="head" text-anchor="middle">端到端联调</text>
+    <line x1="1160" y1="505" x2="1186" y2="505" stroke="#C58D0A" stroke-width="3" stroke-linecap="round"/><polygon points="1200,505 1186,497 1186,513" fill="#C58D0A"/>
+    <rect x="1200" y="460" width="230" height="90" rx="6" fill="#FFF5D6" stroke="#C58D0A" stroke-width="2"/>
+    <text x="1315" y="502" class="head" text-anchor="middle">遥测与控制</text><text x="1315" y="527" class="small" text-anchor="middle">控制室可见</text>
+    <line x1="1430" y1="505" x2="1466" y2="505" stroke="#C58D0A" stroke-width="3" stroke-linecap="round"/><polygon points="1480,505 1466,497 1466,513" fill="#C58D0A"/>
+  </g>
+
+  <g>
+    <text x="55" y="652" class="lane">商业与运行</text>
+    <text x="55" y="682" class="small">合同 / 调度</text>
+    <rect x="280" y="610" width="250" height="90" rx="6" fill="#FDEBED" stroke="#CF3F4F" stroke-width="2"/>
+    <text x="405" y="662" class="head" text-anchor="middle">研究费 · 场地证明</text>
+    <line x1="530" y1="655" x2="556" y2="655" stroke="#CF3F4F" stroke-width="3" stroke-linecap="round"/><polygon points="570,655 556,647 556,663" fill="#CF3F4F"/>
+    <rect x="570" y="610" width="270" height="90" rx="6" fill="#FDEBED" stroke="#CF3F4F" stroke-width="2"/>
+    <text x="705" y="662" class="head" text-anchor="middle">意向书 · 供电协议 · 担保</text>
+    <line x1="840" y1="655" x2="866" y2="655" stroke="#CF3F4F" stroke-width="3" stroke-linecap="round"/><polygon points="880,655 866,647 866,663" fill="#CF3F4F"/>
+    <rect x="880" y="610" width="280" height="90" rx="6" fill="#FDEBED" stroke="#CF3F4F" stroke-width="2"/>
+    <text x="1020" y="652" class="head" text-anchor="middle">运行协议</text><text x="1020" y="677" class="small" text-anchor="middle">投运前 45 天通知</text>
+    <line x1="1160" y1="655" x2="1186" y2="655" stroke="#CF3F4F" stroke-width="3" stroke-linecap="round"/><polygon points="1200,655 1186,647 1186,663" fill="#CF3F4F"/>
+    <rect x="1200" y="610" width="230" height="90" rx="6" fill="#FDEBED" stroke="#CF3F4F" stroke-width="2"/>
+    <text x="1315" y="652" class="head" text-anchor="middle">操作票</text><text x="1315" y="677" class="small" text-anchor="middle">初始 MW 上限</text>
+    <line x1="1430" y1="655" x2="1466" y2="655" stroke="#CF3F4F" stroke-width="3" stroke-linecap="round"/><polygon points="1480,655 1466,647 1466,663" fill="#CF3F4F"/>
+  </g>
+
+  <line x1="1480" y1="205" x2="1480" y2="746" stroke="#172033" stroke-width="3"/>
+  <polygon points="1480,760 1472,746 1488,746" fill="#16877B"/>
+  <rect x="1150" y="760" width="380" height="100" rx="6" fill="#16877B" stroke="#16877B" stroke-width="2"/>
+  <text x="1340" y="804" class="head inverse" text-anchor="middle">允许初次合闸</text>
+  <text x="1340" y="834" class="head inverse" text-anchor="middle">只在获批 MW 上限内</text>
+</svg>
